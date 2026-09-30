@@ -1,35 +1,13 @@
-export default function Home() {
-  return (
-    <main className="container">
-      <section className="hero">
-        <div className="eyebrow">A visual briefing by KK Reddy</div>
-        <h1>Read deep.<br/>Think clearly.</h1>
-        <p>KKReckons turns the day's important signals across AI, markets, business, India and the world into concise visual briefings — with the source links and context behind the story.</p>
-        <div className="cta-row">
-          <a className="button" href="/daily/september-30-2026">Read the latest briefing</a>
-          <a className="button alt" href="/daily/">Browse archive</a>
-        </div>
-      </section>
-
-      <section className="edition-card">
-        <img className="edition-image" src="/daily-september-30-2026.jpg" alt="KKReckons September 30 2026 India and World briefing" />
-        <div className="edition-body">
-          <div className="eyebrow">Wednesday, 30 September 2026</div>
-          <h2>India + World Edition</h2>
-          <p>Curated by KK Reddy. Explore the full briefing for story context, source links and the interactive edition.</p>
-          <a className="button" href="/daily/september-30-2026">Open edition</a>
-        </div>
-      </section>
-
-      <div className="section-title"><h2>What you’ll find</h2><span>Editorial format</span></div>
-      <section className="story-grid">
-        {[
-          ["01","AI & Technology","Signals from AI, cloud, chips and emerging technology."],
-          ["02","Markets & Investing","Rates, markets, capital flows and economic signals."],
-          ["03","India + World","Business, policy, infrastructure and global developments."],
-          ["04","Why it matters","Context, counterpoints and the practical implication behind each story."]
-        ].map(([n,t,p])=><article className="story" key={n}><span className="num">{n}</span><h3>{t}</h3><p>{p}</p></article>)}
-      </section>
-    </main>
-  );
+export default function Admin() {
+  return <main className="container admin">
+    <section className="hero"><div className="eyebrow">Private publishing workspace</div><h1>KKReckons Publisher</h1><p>This is the V1 publishing dashboard foundation. Firebase authentication, Firestore and Storage will be connected after the first Vercel deployment.</p></section>
+    <section className="form-card">
+      <div className="field"><label>Edition date</label><input type="date" defaultValue="2026-09-30"/></div>
+      <div className="field"><label>Edition title</label><input defaultValue="India + World Edition"/></div>
+      <div className="field"><label>Infographic</label><input type="file" accept="image/*"/></div>
+      <div className="field"><label>Claude Artifact URL</label><input defaultValue="https://claude.ai/artifact/TptrwZg37dQfkjuokvRYCY"/></div>
+      <div className="field"><label>Story notes / source URLs</label><textarea placeholder="Paste source-linked story notes here..."/></div>
+      <button className="button" type="button">Preview (Firebase publishing coming next)</button>
+    </section>
+  </main>;
 }
