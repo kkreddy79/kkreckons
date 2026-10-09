@@ -10,7 +10,6 @@ import {
   DocIcon,
   GlobeIcon,
   LinkIcon,
-  MailIcon,
   MoonIcon,
   PeopleIcon,
   ScalesIcon,
@@ -182,10 +181,10 @@ export default function About() {
 
         <section className="ab-join" aria-labelledby="join-title">
           <span className="ab-join-ic" aria-hidden>
-            <MailIcon className="ab-ic" />
+            <SunIcon className="ab-ic" />
           </span>
           <div className="ab-join-text">
-            <p className="ab-join-kicker">Join KKReckons</p>
+            <p className="ab-join-kicker">Today’s edition is ready</p>
             <h2 id="join-title">Read deep. Think clearly. Leave in five.</h2>
             <p>A daily visual briefing on the stories that matter: India, the world, and what’s next.</p>
           </div>

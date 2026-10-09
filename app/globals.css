@@ -33,8 +33,6 @@ button { font: inherit; cursor: pointer; }
   border-top: 1px solid var(--line); padding: 34px 6vw; margin-top: 40px;
   display: flex; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 13px; line-height: 1.6;
 }
-.foot-links { display: flex; gap: 18px; }
-.foot-links a:hover { color: var(--ink); }
 .fine { font-size: 12px; color: var(--muted); }
 
 .container { max-width: 1180px; margin: auto; padding: 36px 20px 70px; }
