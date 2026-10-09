@@ -205,8 +205,16 @@ button { font: inherit; cursor: pointer; }
 .about { max-width: 920px; padding-top: 28px; }
 .ab-mast { position: relative; border-radius: 22px; overflow: hidden; background: #ffd9a8; container-type: inline-size; }
 .ab-mast img { display: block; width: 100%; height: auto; }
-.mast-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; padding-top: 4.2cqw; text-align: center; text-shadow: 0 0 2.4cqw rgba(255, 250, 238, 0.85); }
+.mast-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; padding-top: 6.4cqw; text-align: center; text-shadow: 0 0 2.4cqw rgba(255, 250, 238, 0.85); }
 .mast-overlay p { margin: 0; }
+.mast-top { position: absolute; top: 2.4cqw; left: 3cqw; right: 3cqw; display: flex; justify-content: space-between; align-items: flex-start; text-shadow: none; }
+.mast-tags { position: relative; padding-bottom: 0.9cqw; font: 700 1.1cqw "Playfair Display", Georgia, serif; letter-spacing: 0.14em; text-transform: uppercase; color: #16132b; }
+.mast-tags i { font-style: normal; color: #d9541f; margin: 0 0.8em; }
+.mast-ed { position: relative; padding-bottom: 0.9cqw; font: italic 600 1.9cqw "Cormorant Garamond", Georgia, serif; color: #fff; text-shadow: 0 1px 10px rgba(53, 32, 95, 0.5); }
+.mast-tags::after, .mast-ed::after { content: ""; position: absolute; bottom: 0; height: 0.22cqw; border-radius: 2px; background: linear-gradient(90deg, #ef7447, #d1224e, #6a2a9e); }
+.mast-tags::after { left: 0; width: 26%; }
+.mast-ed::after { right: 0; width: 70%; }
+.mast-under { display: none; }
 .mast-title { display: inline-flex; align-items: center; gap: 1.4cqw; font: 800 7.4cqw/1 "Playfair Display", Georgia, serif; letter-spacing: -0.01em; color: #16132b; }
 .mast-globe { width: 6.8cqw; height: 6.8cqw; flex: none; }
 .mast-title .r { font-style: italic; background: linear-gradient(120deg, #ef7447 8%, #d1224e 50%, #6a2a9e 95%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; padding-right: 0.06em; }
@@ -314,6 +322,9 @@ button { font: inherit; cursor: pointer; }
   .about { padding-top: 14px; }
   .ab-mast { border-radius: 14px; margin: 0 -4px; }
   .mast-overlay { padding-top: 3.4cqw; }
+  .mast-top { display: none; }
+  .mast-under { display: grid; gap: 2px; margin: 10px 0 0; text-align: center; font-size: clamp(9.5px, 2.85vw, 11.5px); font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; text-transform: uppercase; color: #3d3c45; }
+  .mast-under-ed { font: italic 600 15px var(--serif); letter-spacing: 0; text-transform: none; color: var(--purple); }
   .mast-title { font-size: 10.4cqw; gap: 1.8cqw; }
   .mast-globe { width: 9.6cqw; height: 9.6cqw; }
   .mast-sub { font-size: 5.2cqw; }
