@@ -31,11 +31,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         {children}
         <footer className="site-footer">
-          <div>Read deep. Think clearly. Leave in five.</div>
-          <div className="foot-links">
-            <Link href="/daily/">All editions</Link>
-            <Link href="/about">About</Link>
-          </div>
           <div>
             Curated by KK Reddy
             <br />
