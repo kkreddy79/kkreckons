@@ -205,10 +205,10 @@ button { font: inherit; cursor: pointer; }
 /* ---------- About ---------- */
 .about { max-width: 880px; padding-top: 32px; }
 .ab-mast { border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); background: #ffb07e; }
-.mh-svg { display: block; width: 100%; height: clamp(180px, 34vw, 300px); }
+.ab-mast img { display: block; width: 100%; height: auto; aspect-ratio: 2048 / 666; object-fit: cover; }
 .ab-intro { display: grid; grid-template-columns: 112px 1fr; gap: 28px; align-items: start; padding: 0 8px 24px; }
-.ab-avatar { margin-top: -44px; border: 5px solid var(--cream); position: relative; }
-.ab-intro-text { padding-top: 18px; }
+.ab-avatar { margin-top: 24px; }
+.ab-intro-text { padding-top: 26px; }
 .ab-avatar {
   width: 112px; height: 112px; border-radius: 30px; display: grid; place-items: center;
   background: linear-gradient(135deg, var(--purple), #6a3fb8 55%, var(--orange)); color: #fff;
@@ -294,11 +294,11 @@ button { font: inherit; cursor: pointer; }
   .about { padding-top: 14px; }
   .ab-mast { border-radius: 18px; margin: 0 -4px; }
   .ab-intro { padding: 0 0 18px; }
-  .ab-avatar { margin-top: -30px; border-width: 4px; }
+  .ab-avatar { margin-top: 18px; }
   .ab-intro { grid-template-columns: 64px 1fr; column-gap: 16px; row-gap: 0; align-items: center; padding-bottom: 18px; }
   .ab-intro-text { display: contents; }
   .ab-avatar { width: 64px; height: 64px; border-radius: 18px; font-size: 24px; grid-row: 1 / span 2; }
-  .ab-intro .eyebrow { grid-column: 2; align-self: end; margin-top: 10px; }
+  .ab-intro .eyebrow { grid-column: 2; align-self: end; margin-top: 18px; }
   .ab-intro h1 { grid-column: 2; align-self: start; }
   .ab-intro h1 { font-size: 34px; margin: 4px 0 0; }
   .ab-lede { font-size: 16px; grid-column: 1 / -1; margin-top: 16px; }

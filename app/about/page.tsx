@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import TwoWorldsMasthead from "@/components/TwoWorldsMasthead";
 import { editions, latest, slugFor, totalStories } from "@/lib/editions";
 
 export const metadata: Metadata = {
@@ -19,7 +18,15 @@ export default function About() {
   return (
     <main className="container about">
       <div className="ab-mast">
-        <TwoWorldsMasthead />
+        <picture>
+          <source srcSet="/about/two-worlds.webp" type="image/webp" />
+          <img
+            src="/about/two-worlds.jpg"
+            width={2048}
+            height={666}
+            alt="Sunset panorama joining two worlds: Hyderabad's Charminar and Golconda Fort on the left, a US city skyline on the right"
+          />
+        </picture>
       </div>
       <section className="ab-intro">
         <div className="ab-avatar" aria-hidden>
