@@ -20,7 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition } = found;
   return {
     title: longDate(edition.date),
-    description: edition.slice || edition.stories.map((s) => s.title).slice(0, 3).join(" · "),
+    description:
+      edition.slice ||
+      edition.stories
+        .map((s) => s.title)
+        .slice(0, 3)
+        .join(" · "),
   };
 }
 
@@ -36,23 +41,9 @@ export default async function EditionPage({ params }: Props) {
         <Link href="/daily/">Catch up</Link> <span>/</span> {longDate(edition.date)}
       </nav>
 
-      <EditionView e={content} />
-
-      <p className="ev-permalink">
-        <a href={`/editions/${edition.date}.html`} target="_blank" rel="noreferrer">
-          Original newsletter design ↗
-        </a>
-        {edition.artifact && (
-          <>
-            <span aria-hidden> · </span>
-            <a href={edition.artifact} target="_blank" rel="noreferrer">
-              Interactive version ↗
-            </a>
-          </>
-        )}
-      </p>
-
-      <SubscribeBox />
+      <EditionView e={content}>
+        <SubscribeBox />
+      </EditionView>
 
       <nav className="pager">
         {older ? (

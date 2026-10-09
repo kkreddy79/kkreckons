@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",
     "@fontsource/playfair-display": "^5.3.0",
+    "@vercel/analytics": "^2.0.1",
     "next": "16.3.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
