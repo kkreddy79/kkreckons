@@ -14,9 +14,6 @@ export default function SubscribeBox() {
         <a className="sub-btn" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
           Subscribe free ↗
         </a>
-        <a className="sub-rss" href="/feed.xml">
-          RSS feed
-        </a>
       </div>
     </aside>
   );

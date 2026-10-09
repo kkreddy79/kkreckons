@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: { default: "KKReckons — Read deep. Think clearly. Leave in five.", template: "%s · KKReckons" },
   description:
     "Visual daily briefings on AI, markets, business, India and the world. Curated by Krishnakanth Reddy.",
-  alternates: { types: { "application/rss+xml": [{ url: "/feed.xml", title: "KKReckons" }] } },
   openGraph: {
     siteName: "KKReckons",
     type: "website",
