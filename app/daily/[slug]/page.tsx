@@ -37,7 +37,7 @@ export default async function EditionPage({ params }: Props) {
 
       <header className="ed-head">
         <div>
-          <div className="eyebrow">{longDate(edition.date)} · Curated by KK Reddy</div>
+          <div className="eyebrow">{longDate(edition.date)} · Curated by Krishnakanth Reddy</div>
           <h1>{edition.slice || "The daily briefing"}</h1>
           <p className="ed-sub">
             {edition.stories.length} stories · {edition.readingMinutes} min read

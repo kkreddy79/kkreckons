@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.kkreckons.com"),
   title: { default: "KKReckons — Read deep. Think clearly. Leave in five.", template: "%s · KKReckons" },
   description:
-    "Visual daily briefings on AI, markets, business, India and the world. Curated by KK Reddy.",
+    "Visual daily briefings on AI, markets, business, India and the world. Curated by Krishnakanth Reddy.",
   alternates: { types: { "application/rss+xml": [{ url: "/feed.xml", title: "KKReckons" }] } },
   openGraph: {
     siteName: "KKReckons",
@@ -37,7 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <footer className="site-footer">
           <div>
-            Curated by KK Reddy
+            Curated by Krishnakanth Reddy
             <br />
             <span className="fine">For information only. Not financial, legal or career advice.</span>
           </div>
