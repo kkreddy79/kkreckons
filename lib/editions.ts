@@ -66,6 +66,15 @@ const PUBLISHERS: Record<string, string> = {
   "benzinga.com": "Benzinga",
   "businessday.co.za": "BusinessDay",
   "tradingview.com": "TradingView",
+  "timesofindia.indiatimes.com": "The Times of India",
+  "telegraph.co.uk": "The Telegraph",
+  "bis.org": "BIS",
+  "maket.ai": "Maket",
+  "angelsforchange.org": "Angels for Change",
+  "news18.com": "News18",
+  "ig.ft.com": "Financial Times",
+  "business-standard.com": "Business Standard",
+  "wolfstreet.com": "Wolf Street",
 };
 
 /** "https://www.livemint.com/…" → "Mint" (falls back to the domain) */
@@ -86,6 +95,7 @@ const PAYWALLED = new Set([
   "fortune.com",
   "wired.com",
   "theglobeandmail.com",
+  "telegraph.co.uk",
 ]);
 
 /** True when the link usually sits behind a paywall (FT gift links and archive copies are free). */
@@ -177,7 +187,7 @@ export const THEMES: { name: string; match: RegExp }[] = [
   { name: "Health & science", match: /health|plague|drug|science|medical|fossil|magnet|orbit|space/i },
 ];
 
-export function themesOf(s: Story) {
+export function themesOf(s: Pick<Story, "category" | "title">) {
   const hay = `${s.category} ${s.title}`;
   return THEMES.filter((t) => t.match.test(hay)).map((t) => t.name);
 }

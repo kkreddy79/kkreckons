@@ -3,12 +3,38 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { Edition, THEMES, longDate, monthLabel, publisherName, slugFor, themesOf, weekday } from "@/lib/editions";
+import {
+  Edition,
+  THEMES,
+  isPaywalled,
+  longDate,
+  monthLabel,
+  publisherName,
+  slugFor,
+  themesOf,
+  weekday,
+} from "@/lib/editions";
 import StorySource, { storyHover, storyPaid } from "@/components/StorySource";
 
 export type StoryDetails = Record<string, { url2: string; points: string[]; why: string }>;
 
-export default function ArchiveBrowser({ editions, details }: { editions: Edition[]; details: StoryDetails }) {
+export type ReadingLink = { date: string; title: string; url: string; note: string };
+
+/** "12 stories" / "1 further reading link" */
+const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+
+/** Dropdown count: stories, plus further reading links when there are any. */
+const countLabel = (stories: number, links: number) => (links ? `${stories} · ${links} reading` : `${stories}`);
+
+export default function ArchiveBrowser({
+  editions,
+  details,
+  reading,
+}: {
+  editions: Edition[];
+  details: StoryDetails;
+  reading: ReadingLink[];
+}) {
   const params = useSearchParams();
   const router = useRouter();
   const [query, setQuery] = useState(params.get("q") ?? "");
@@ -58,18 +84,39 @@ export default function ArchiveBrowser({ editions, details }: { editions: Editio
     [all, q, theme]
   );
 
-  /** Publishers by number of matching stories, most first; the selected one stays listed even at zero. */
+  /** Further reading links matching the theme and search, the same way. */
+  const readingBase = useMemo(
+    () =>
+      reading
+        .map((r) => ({ ...r, pub: publisherName(r.url), paid: isPaywalled(r.url) }))
+        .filter((r) => !theme || themesOf({ category: r.note, title: r.title }).includes(theme))
+        .filter((r) => !q || `${r.title} ${r.note} ${r.pub}`.toLowerCase().includes(q)),
+    [reading, q, theme]
+  );
+
+  /** Publishers by matching stories (then reading links), most first; the selected one stays listed even at zero. */
   const publishers = useMemo(() => {
-    const n = new Map<string, number>();
-    for (const a of base) for (const p of new Set(a.pubs)) n.set(p, (n.get(p) ?? 0) + 1);
-    if (source && source !== "free" && !n.has(source)) n.set(source, 0);
-    return [...n].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  }, [base, source]);
+    const n = new Map<string, [number, number]>();
+    const bump = (p: string, i: 0 | 1) => {
+      const c = n.get(p) ?? [0, 0];
+      c[i] += 1;
+      n.set(p, c);
+    };
+    for (const a of base) for (const p of new Set(a.pubs)) bump(p, 0);
+    for (const r of readingBase) bump(r.pub, 1);
+    if (source && source !== "free" && !n.has(source)) n.set(source, [0, 0]);
+    return [...n].sort((a, b) => b[1][0] - a[1][0] || b[1][1] - a[1][1] || a[0].localeCompare(b[0]));
+  }, [base, readingBase, source]);
   const freeCount = base.filter((a) => !a.paid).length;
+  const freeReading = readingBase.filter((r) => !r.paid).length;
 
   const matches = useMemo(
     () => base.filter((a) => !source || (source === "free" ? !a.paid : a.pubs.includes(source))),
     [base, source]
+  );
+  const readingMatches = useMemo(
+    () => readingBase.filter((r) => !source || (source === "free" ? !r.paid : r.pub === source)),
+    [readingBase, source]
   );
 
   const months = useMemo(() => {
@@ -120,12 +167,12 @@ export default function ArchiveBrowser({ editions, details }: { editions: Editio
       <div className="src-filter">
         <label htmlFor="src-select">Source</label>
         <select id="src-select" value={source} onChange={(ev) => setParam("source", ev.target.value)}>
-          <option value="">All sources ({base.length})</option>
-          <option value="free">Free to read only ({freeCount})</option>
+          <option value="">All sources ({countLabel(base.length, readingBase.length)})</option>
+          <option value="free">Free to read only ({countLabel(freeCount, freeReading)})</option>
           <optgroup label="Publisher">
-            {publishers.map(([name, count]) => (
+            {publishers.map(([name, [stories, links]]) => (
               <option key={name} value={name}>
-                {name} ({count})
+                {name} ({countLabel(stories, links)})
               </option>
             ))}
           </optgroup>
@@ -164,7 +211,8 @@ export default function ArchiveBrowser({ editions, details }: { editions: Editio
       ) : (
         <section className="story-results">
           <p className="count">
-            {matches.length} {matches.length === 1 ? "story" : "stories"}
+            {plural(matches.length, "story", "stories")}
+            {readingMatches.length > 0 && <> and {plural(readingMatches.length, "further reading link", "further reading links")}</>}
             {theme && <> in <b>{theme}</b></>}
             {source && <> from <b>{source === "free" ? "free-to-read sources" : source}</b></>}
             {q && <> matching “{query.trim()}”</>}
@@ -192,6 +240,32 @@ export default function ArchiveBrowser({ editions, details }: { editions: Editio
               </li>
             ))}
           </ul>
+
+          {readingMatches.length > 0 && (
+            <section className="sr-reading" aria-labelledby="sr-reading-t">
+              <h2 id="sr-reading-t">
+                Further reading <span>{readingMatches.length}</span>
+              </h2>
+              <ul>
+                {readingMatches.map((r) => (
+                  <li key={r.date + r.url + r.title}>
+                    <Link href={`/daily/${slugFor(r.date)}#further-reading`} className="sr-date">
+                      {longDate(r.date)}
+                    </Link>
+                    <div className="sr-title">
+                      <a href={r.url} target="_blank" rel="noreferrer">
+                        {r.title} <span aria-hidden>↗</span>
+                      </a>
+                      <p className="sr-pub">
+                        {r.pub}
+                        {r.paid && <span className="ev-paid">May need subscription</span>}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </section>
       )}
     </>
