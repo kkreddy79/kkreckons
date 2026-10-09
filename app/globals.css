@@ -206,25 +206,26 @@ button { font: inherit; cursor: pointer; }
 .about { max-width: 880px; padding-top: 32px; }
 .ab-mast { position: relative; border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); background: #ffd9a8; container-type: inline-size; }
 .ab-mast img { display: block; width: 100%; height: auto; }
-.mast-overlay { position: absolute; inset: 0; padding: 2.6cqw 3.2cqw; display: flex; flex-direction: column; color: #16132b; }
+.mast-overlay { position: absolute; inset: 0; padding: 2.4cqw 3cqw; display: flex; flex-direction: column; color: #16132b; }
 .mast-overlay p { margin: 0; }
 .mast-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 2cqw; }
-.mast-tags { font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 1.15cqw; letter-spacing: 0.14em; text-transform: uppercase; padding-bottom: 0.9cqw; position: relative; }
-.mast-tags i { font-style: normal; color: #c2337a; margin: 0 0.75em; }
-.mast-tags::after, .mast-ed::after { content: ""; position: absolute; left: 0; bottom: 0; width: 30%; height: 0.22cqw; border-radius: 2px; background: linear-gradient(90deg, #ef7447, #c2337a, #5b2a9e); }
+.mast-tags { font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 1.1cqw; letter-spacing: 0.14em; text-transform: uppercase; padding-bottom: 0.9cqw; position: relative; }
+.mast-tags i { font-style: normal; color: #ef7447; margin: 0 0.8em; }
+.mast-tags::after, .mast-ed::after { content: ""; position: absolute; left: 0; bottom: 0; width: 26%; height: 0.22cqw; border-radius: 2px; background: linear-gradient(90deg, #ef7447, #c2337a, #5b2a9e); }
 .mast-ed { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.9cqw; color: #fff; text-shadow: 0 1px 10px rgba(53, 32, 95, 0.45); padding-bottom: 0.9cqw; position: relative; }
 .mast-ed::after { left: auto; right: 0; width: 70%; }
-.mast-center { margin-top: 1.4cqw; text-align: center; text-shadow: 0 0 2.4cqw rgba(255, 250, 238, 0.85); }
-.mast-title { font-family: "Playfair Display", Georgia, serif; font-weight: 800; font-size: 8.6cqw; line-height: 1; letter-spacing: -0.015em; }
-.mast-title .kk { background: linear-gradient(120deg, #ef7447 10%, #c2337a 55%, #5b2a9e 95%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; padding-right: 0.02em; }
-.mast-sub { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 3.5cqw; line-height: 1.15; margin-top: 0.5cqw !important; color: #221d3d; }
+.mast-center { margin-top: 0.6cqw; text-align: center; text-shadow: 0 0 2.4cqw rgba(255, 250, 238, 0.85); }
+.mast-title { display: inline-flex; align-items: center; gap: 1.4cqw; font-family: "Playfair Display", Georgia, serif; font-weight: 800; font-size: 8cqw; line-height: 1; letter-spacing: -0.01em; color: #16132b; }
+.mast-globe { width: 7.4cqw; height: 7.4cqw; flex: none; }
+.mast-title .r { font-style: italic; background: linear-gradient(120deg, #ef7447 8%, #d1224e 50%, #6a2a9e 95%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; padding-right: 0.06em; }
+.mast-sub { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 3.3cqw; line-height: 1.1; color: #221d3d; }
 .mast-sub .amp { color: #ef7447; }
-.mast-motto { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 700; font-size: 2.15cqw; margin-top: 0.9cqw !important; display: flex; justify-content: center; align-items: center; gap: 0.5em; flex-wrap: wrap; }
-.mast-motto::before, .mast-motto::after { content: ""; width: 6cqw; height: 0.2cqw; border-radius: 2px; background: linear-gradient(90deg, transparent, #c2337a 40%, #5b2a9e); }
+.mast-motto { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 700; font-size: 2.05cqw; margin-top: 0.7cqw !important; display: flex; justify-content: center; align-items: center; gap: 0.5em; flex-wrap: wrap; }
+.mast-motto::before, .mast-motto::after { content: ""; width: 5.5cqw; height: 0.2cqw; border-radius: 2px; background: linear-gradient(90deg, transparent, #c2337a 40%, #5b2a9e); }
 .mast-motto::before { background: linear-gradient(90deg, transparent, #ef7447 40%, #5b2a9e); }
-.mast-motto .m1 { color: #4b237f; }
-.mast-motto .m2 { color: #d1224e; font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 0.95em; }
-.mast-motto .m3 { color: #b4560f; }
+.mast-motto .m1 { color: #3a2a7a; }
+.mast-motto .m2 { color: #c8173f; font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 0.95em; }
+.mast-motto .m3 { color: #a8500c; }
 .ab-intro { display: grid; grid-template-columns: 112px 1fr; gap: 28px; align-items: start; padding: 0 8px 24px; }
 .ab-avatar { margin-top: 24px; }
 .ab-intro-text { padding-top: 26px; }
@@ -315,8 +316,9 @@ button { font: inherit; cursor: pointer; }
   .mast-overlay { padding: 5cqw 4cqw; }
   .mast-top { display: none; }
   .mast-center { margin-top: 0; }
-  .mast-title { font-size: 14.5cqw; }
-  .mast-sub { font-size: 6.4cqw; margin-top: 1cqw !important; }
+  .mast-title { font-size: 11.2cqw; gap: 1.8cqw; }
+  .mast-globe { width: 10.4cqw; height: 10.4cqw; }
+  .mast-sub { font-size: 6cqw; margin-top: 0.6cqw !important; }
   .mast-motto { font-size: 3.7cqw; margin: 2.2cqw auto 0 !important; gap: 0.35em; width: fit-content; padding: 0.8cqw 3cqw; border-radius: 999px; background: rgba(255, 249, 238, 0.82); text-shadow: none; }
   .mast-motto::before, .mast-motto::after { display: none; }
   .ab-intro { padding: 0 0 18px; }
