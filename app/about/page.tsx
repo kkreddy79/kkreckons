@@ -20,24 +20,28 @@ export default function About() {
     <main className="container about">
       <Masthead />
       <section className="ab-intro">
-        <div className="ab-avatar" aria-hidden>
-          KK
-        </div>
-        <div className="ab-intro-text">
-          <div className="eyebrow">About KKReckons</div>
+        <div>
+          <div className="eyebrow">The person behind the briefing</div>
           <h1>Hi, I’m KK.</h1>
           <p className="ab-lede">
             I grew up in South India and now live in Southern California, so there’s always a news tab open on both
             sides of the planet. One of them is usually still awake.
           </p>
         </div>
-      </section>
-
-      <section className="ab-card ab-day">
-        <p>
-          <b>By day</b> I work where capital markets meet technology. <b>By night</b> I read far more news than is
-          healthy, so you don’t have to.
-        </p>
+        <ul className="ab-card ab-day">
+          <li>
+            <span aria-hidden>☀️</span>
+            <p>
+              <b>By day</b> I work where capital markets meet technology.
+            </p>
+          </li>
+          <li>
+            <span aria-hidden>🌙</span>
+            <p>
+              <b>By night</b> I read far more news than is healthy, so you don’t have to.
+            </p>
+          </li>
+        </ul>
       </section>
 
       <section className="ab-menu">
@@ -61,8 +65,8 @@ export default function About() {
             <span className="ab-emoji" aria-hidden>
               🍰
             </span>
-            <b>KKReckons</b>
-            <span>The third option: one plate, cooked properly, served daily.</span>
+            <b>The third option</b>
+            <span>One plate, cooked properly, served daily. That’s this briefing.</span>
           </div>
         </div>
       </section>
@@ -108,7 +112,6 @@ export default function About() {
         <p>
           Five minutes. No doomscroll hangover. I’d rather have you back tomorrow than keep you scrolling today.
         </p>
-        <p className="ab-sign">Read deep. Think clearly. Leave in five.</p>
         <div className="cta-row">
           <Link className="button light" href={`/daily/${slugFor(latest.date)}`}>
             Read today’s edition →
