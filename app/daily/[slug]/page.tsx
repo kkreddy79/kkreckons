@@ -41,9 +41,8 @@ export default async function EditionPage({ params }: Props) {
         <Link href="/daily/">Catch up</Link> <span>/</span> {longDate(edition.date)}
       </nav>
 
-      <EditionView e={content}>
-        <SubscribeBox />
-      </EditionView>
+      <EditionView e={content} />
+      <SubscribeBox />
 
       <nav className="pager">
         {older ? (

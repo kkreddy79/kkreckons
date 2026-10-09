@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Banner from "@/components/Banner";
+import SubscribeBox from "@/components/SubscribeBox";
 import {
   BuildingIcon,
   BulbIcon,
@@ -28,7 +29,14 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: "/about",
-    images: [{ url: "/about/two-worlds.jpg", width: 2000, height: 816, alt: "KKReckons: India and Southern California at sunset" }],
+    images: [
+      {
+        url: "/about/two-worlds.jpg",
+        width: 2000,
+        height: 816,
+        alt: "KKReckons: India and Southern California at sunset",
+      },
+    ],
   },
 };
 
@@ -77,7 +85,12 @@ export default function About() {
 
         <section className="ab-dn" aria-label="By day and by night">
           <article className="ab-dn-card">
-            <Pic name="day" w={880} h={372} alt="A laptop with a market chart on a desk by a window overlooking a city" />
+            <Pic
+              name="day"
+              w={880}
+              h={372}
+              alt="A laptop with a market chart on a desk by a window overlooking a city"
+            />
             <div className="ab-dn-body">
               <SunIcon className="ab-dn-ic ab-sun" />
               <div>
@@ -88,7 +101,12 @@ export default function About() {
             </div>
           </article>
           <article className="ab-dn-card">
-            <Pic name="night" w={880} h={370} alt="A stack of newspapers and a mug under a desk lamp, city lights beyond" />
+            <Pic
+              name="night"
+              w={880}
+              h={370}
+              alt="A stack of newspapers and a mug under a desk lamp, city lights beyond"
+            />
             <div className="ab-dn-body">
               <MoonIcon className="ab-dn-ic ab-moon" />
               <div>
@@ -162,24 +180,7 @@ export default function About() {
           </ul>
         </section>
 
-        <section className="ab-join" aria-labelledby="join-title">
-          <span className="ab-join-ic" aria-hidden>
-            <SunIcon className="ab-ic" />
-          </span>
-          <div className="ab-join-text">
-            <p className="ab-join-kicker">Today’s edition is ready</p>
-            <h2 id="join-title">Read deep. Think clearly. Leave in five.</h2>
-            <p>A daily visual briefing on the stories that matter: India, the world, and what’s next.</p>
-          </div>
-          <div className="ab-join-cta">
-            <Link className="ab-btn" href={today}>
-              Read Today’s Edition →
-            </Link>
-            <a className="ab-btn-ghost" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-              Get it by email ↗
-            </a>
-          </div>
-        </section>
+        <SubscribeBox />
       </div>
     </main>
   );

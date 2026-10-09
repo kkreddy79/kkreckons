@@ -132,17 +132,6 @@ button { font: inherit; cursor: pointer; }
 
 
 
-.sub-box { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px; padding: 22px 24px; border-radius: 18px; color: #fff;
-  background: radial-gradient(120% 140% at 0% 0%, #4b2b78, #24123f 75%); box-shadow: 0 14px 34px rgba(36, 18, 63, 0.16); }
-.sub-ic { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #e8622f; flex: none; }
-.sub-ic-svg { width: 20px; height: 20px; }
-.sub-copy p { margin: 0; }
-.sub-title { font: 800 22px/1.15 "Playfair Display", Georgia, serif; }
-.sub-text { margin-top: 4px !important; font-size: 14px; color: #e4ddf3; }
-.sub-btn { display: inline-flex; padding: 11px 20px; border-radius: 999px; background: #fff; color: #24123f; font-weight: 800; font-size: 14px; white-space: nowrap; }
-.sub-btn:hover { background: #ffe9dc; }
-.ev-end-solo .sub-box { flex-direction: row; align-items: center; }
-.ev-end-solo .sub-copy { flex: 1; }
 
 /* ---------- Edition (KKReckons design) ---------- */
 .ev-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 8px; }
@@ -231,8 +220,7 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-qs-src a { color: #0a716b; font-weight: 800; }
 .ev-ic-sm { width: 15px; height: 15px; color: #0a716b; }
 
-.ev-end { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; align-items: stretch; margin-top: 44px; }
-.ev-end-solo { grid-template-columns: 1fr; }
+.ev-end { margin-top: 44px; }
 .ev-reading { background: var(--ev-sand, #f3ece2); border-radius: 18px; padding: 20px 24px; scroll-margin-top: 80px; }
 .ev-reading h2 { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: #a8430f; }
 .ev-reading ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
@@ -312,10 +300,11 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ab-rules p { margin: 0; font-size: 15px; line-height: 1.4; color: #2f2840; }
 
 .ab-join { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; margin-top: 36px; background: radial-gradient(120% 140% at 0% 0%, #3d2168, #22103f 70%); color: #fff; border-radius: 20px; padding: 26px 30px; }
-.ab-join-ic { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--ab-orange); color: #fff; }
+.ab-join-ic { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #e8622f; color: #fff; }
 .ab-join-ic .ab-ic { width: 30px; height: 30px; }
+.ab-join .ab-btn, .ab-join .ab-btn-ghost { text-decoration: none; }
 .ab-join-kicker { margin: 0 0 6px; font: 800 11px var(--sans); letter-spacing: 0.3em; text-transform: uppercase; color: #e4d9f3; }
-.ab-join h2 { margin: 0 0 6px; font-size: clamp(24px, 3vw, 34px); line-height: 1.1; }
+.ab-join h2 { font-family: "Playfair Display", Georgia, serif; color: #fff; margin: 0 0 6px; font-size: clamp(24px, 3vw, 34px); line-height: 1.1; }
 .ab-join-text > p:last-child { margin: 0; font-size: 15.5px; color: #e4ddf3; }
 .ab-join-cta { display: grid; gap: 10px; justify-items: stretch; }
 .ab-btn, .ab-btn-ghost { display: inline-flex; justify-content: center; padding: 14px 24px; border-radius: 999px; font-weight: 800; font-size: 15px; white-space: nowrap; }
@@ -362,13 +351,7 @@ a.ev-call:hover { transform: translateY(-2px); }
   .ev-sec-head { flex-direction: column; gap: 2px; align-items: flex-start; }
   .ev-call { padding: 18px 18px; }
   .ev-reading { padding: 14px 16px; }
-  .ev-end { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
-  .sub-box { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 16px; }
-  .sub-ic { width: 34px; height: 34px; }
-  .sub-copy { flex: 1; min-width: 0; }
-  .sub-title { font-size: 18px; }
-  .sub-text { font-size: 13px; }
-  .sub-btn { width: 100%; justify-content: center; padding: 10px 16px; }
+  .ev-end { margin-top: 32px; }
   .tl-day { width: 64px; height: 64px; font-size: 10px; }
   .tl-day b { font-size: 24px; }
   .ab-wrap { padding: 0 16px; }

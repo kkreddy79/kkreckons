@@ -11,9 +11,8 @@ export default function Home() {
     <main>
       <Banner />
       <div className="ev-wrap">
-        <EditionView e={today}>
-          <SubscribeBox />
-        </EditionView>
+        <EditionView e={today} />
+        <SubscribeBox variant="home" />
       </div>
     </main>
   );
