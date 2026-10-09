@@ -22,10 +22,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <header className="site-header">
-          <Link className="brand" href="/">
-            KK<span>RECKONS</span>
-          </Link>
           <nav>
+            <Link href="/">Home</Link>
             <Link href={`/daily/${slugFor(latest.date)}`}>Today</Link>
             <Link href="/daily/">Archive</Link>
             <Link href="/about">About</Link>
@@ -33,11 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         {children}
         <footer className="site-footer">
-          <div>
-            <strong>KKRECKONS</strong>
-            <br />
-            Read deep. Think clearly. Leave in five.
-          </div>
+          <div>Read deep. Think clearly. Leave in five.</div>
           <div className="foot-links">
             <Link href="/daily/">All editions</Link>
             <Link href="/about">About</Link>
