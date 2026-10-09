@@ -1,6 +1,7 @@
 import type { EditionContent, FullStory } from "@/lib/content";
-import { isPaywalled, longDate, publisherName, sourceName } from "@/lib/editions";
-import { InfoIcon, LinkIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
+import { longDate, publisherName } from "@/lib/editions";
+import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
+import StorySource, { storyHover } from "@/components/StorySource";
 
 const SECTION_NOTE: Record<string, string> = {
   "Pick of the day": "One story worth slowing down for",
@@ -29,17 +30,8 @@ function loneStories(stories: FullStory[]) {
   return lone;
 }
 
-/** One-line preview used for link hover text. */
-function preview(s: FullStory) {
-  const text = s.points[0] || s.why || s.title;
-  return text.length > 220 ? `${text.slice(0, 217).trimEnd()}…` : text;
-}
-
 function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string }) {
-  const src = sourceName(s.url);
-  const paid = [s.url, s.url2].some((u) => u && isPaywalled(u));
-  const hover = `${preview(s)}${paid ? " (Source may need a subscription.)" : ""}`;
-  const gist = s.points.slice(0, 3);
+  const hover = storyHover(s);
   return (
     <article className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
@@ -116,62 +108,7 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
         </p>
       )}
 
-      {(src || s.url2) && (
-        <p className="ev-src">
-          <LinkIcon className="ev-ic-sm" />
-          <span className="ev-src-label">Original source:</span>
-          {src && (
-            <a href={s.url} target="_blank" rel="noreferrer" title={hover}>
-              {publisherName(s.url)} ↗
-            </a>
-          )}
-          {s.url2 && (
-            <a href={s.url2} target="_blank" rel="noreferrer" title={hover}>
-              {publisherName(s.url2)} ↗
-            </a>
-          )}
-          {paid && <span className="ev-paid">May need subscription</span>}
-          <button type="button" className="ev-qs-btn" popoverTarget={id}>
-            <InfoIcon className="ev-ic-sm" /> Quick summary
-          </button>
-        </p>
-      )}
-
-      {(src || s.url2) && (
-        <div id={id} popover="auto" className="ev-qs" role="dialog" aria-label={`Quick summary: ${s.title}`}>
-          <div className="ev-qs-head">
-            <p className="ev-qs-kicker">Quick summary{paid ? " · Source may need a subscription" : ""}</p>
-            <button
-              type="button"
-              className="ev-qs-close"
-              popoverTarget={id}
-              popoverTargetAction="hide"
-              aria-label="Close"
-            >
-              ×
-            </button>
-          </div>
-          <p className="ev-qs-title">{s.title}</p>
-          {gist.length > 0 && (
-            <ul>
-              {gist.map((p) => (
-                <li key={p}>{p}</li>
-              ))}
-            </ul>
-          )}
-          {s.why && (
-            <p className="ev-qs-why">
-              <b>Why it matters:</b> {s.why}
-            </p>
-          )}
-          <p className="ev-qs-src">
-            Summary based on {publisherName(s.url || s.url2)}.{" "}
-            <a href={s.url || s.url2} target="_blank" rel="noreferrer">
-              Read the full story ↗
-            </a>
-          </p>
-        </div>
-      )}
+      <StorySource s={s} id={id} />
     </article>
   );
 }

@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import { Edition, THEMES, longDate, monthLabel, slugFor, themesOf, weekday } from "@/lib/editions";
+import StorySource, { storyHover } from "@/components/StorySource";
 
-export default function ArchiveBrowser({ editions }: { editions: Edition[] }) {
+export type StoryDetails = Record<string, { url2: string; points: string[]; why: string }>;
+
+export default function ArchiveBrowser({ editions, details }: { editions: Edition[]; details: StoryDetails }) {
   const params = useSearchParams();
   const router = useRouter();
   const [query, setQuery] = useState(params.get("q") ?? "");
@@ -110,23 +113,34 @@ export default function ArchiveBrowser({ editions }: { editions: Edition[] }) {
             {q && <> matching “{query.trim()}”</>}
           </p>
           <ul>
-            {matches.map(({ edition, story }) => (
-              <li key={edition.date + story.title}>
-                <Link href={`/daily/${slugFor(edition.date)}`} className="sr-date">
-                  {longDate(edition.date)}
-                </Link>
-                <div className="sr-title">
-                  {story.category && <span className="cat">{story.category}</span>}
-                  {story.tag && <span className="tag">{story.tag}</span>}
-                  <Link href={`/daily/${slugFor(edition.date)}`}>{story.title}</Link>
-                </div>
-                {story.url && (
-                  <a className="sr-src" href={story.url} target="_blank" rel="noreferrer">
-                    Source ↗
-                  </a>
-                )}
-              </li>
-            ))}
+            {matches.map(({ edition, story }, i) => {
+              const s = {
+                title: story.title,
+                url: story.url,
+                ...(details[`${edition.date}|${story.title}`] ?? { url2: "", points: [], why: "" }),
+              };
+              return (
+                <li key={edition.date + story.title}>
+                  <Link href={`/daily/${slugFor(edition.date)}`} className="sr-date">
+                    {longDate(edition.date)}
+                  </Link>
+                  <div className="sr-title">
+                    {story.category && <span className="cat">{story.category}</span>}
+                    {story.tag && <span className="tag">{story.tag}</span>}
+                    {s.url || s.url2 ? (
+                      <a href={s.url || s.url2} target="_blank" rel="noreferrer" title={storyHover(s)}>
+                        {story.title}
+                      </a>
+                    ) : (
+                      <Link href={`/daily/${slugFor(edition.date)}`}>{story.title}</Link>
+                    )}
+                  </div>
+                  <div className="sr-src">
+                    <StorySource s={s} id={`sr-qs-${edition.date}-${i}`} />
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}
