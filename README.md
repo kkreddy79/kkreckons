@@ -1,6 +1,6 @@
 # KKReckons
 
-**Read deep. Think clearly. Leave in five.**
+**Read deep. Think clearly. Stay curious.**
 
 Mobile-first editorial site for KK Reddy's visual daily briefings, live at [kkreckons.com](https://www.kkreckons.com).
 
