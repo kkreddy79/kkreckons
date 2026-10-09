@@ -10,9 +10,15 @@ export const metadata: Metadata = {
 };
 
 const RULES = [
-  { title: "Every story links to its source.", body: "Trust, then verify." },
-  { title: "Every story has an “other side.”", body: "A headline is the trailer, not the movie." },
-  { title: "News and opinion stay in separate bowls.", body: "When I’m reckoning, I’ll tell you." },
+  { title: "Every story links to its source.", body: "Trust, then verify.", color: "#e8622f", tint: "#fff1ea" },
+  { title: "Every story has an “other side.”", body: "A headline is the trailer, not the movie.", color: "#0c8d86", tint: "#e8f6f4" },
+  { title: "News and opinion stay in separate bowls.", body: "When I’m reckoning, I’ll tell you.", color: "#6a3fb8", tint: "#f1ebfb" },
+  {
+    title: "Complex stories, made simple.",
+    body: "Jargon gets translated and numbers get context, so it makes sense in one read.",
+    color: "#d1224e",
+    tint: "#fdecf0",
+  },
 ];
 
 export default function About() {
@@ -97,7 +103,7 @@ export default function About() {
         <h2 className="ab-h2">House rules</h2>
         <ol className="ab-rules">
           {RULES.map((r, i) => (
-            <li key={r.title}>
+            <li key={r.title} style={{ "--c": r.color, "--t": r.tint } as React.CSSProperties}>
               <span className="ab-num">{i + 1}</span>
               <div>
                 <b>{r.title}</b>
