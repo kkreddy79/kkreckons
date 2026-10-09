@@ -1,8 +1,27 @@
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import ArchiveBrowser from "@/components/ArchiveBrowser";
+import { editions, totalStories } from "@/lib/editions";
+
+export const metadata: Metadata = {
+  title: "Archive",
+  description: "Every KKReckons daily edition, organised by date, with searchable headlines.",
+};
+
 export default function Archive() {
-  return <main className="container">
-    <section className="hero"><div className="eyebrow">KKReckons archive</div><h1>Daily briefings.</h1><p>Permanent editions, organized by date. Each edition keeps the visual briefing and the underlying source links together.</p></section>
-    <div className="archive">
-      <a href="/daily/september-30-2026"><strong>30 September 2026 — India + World Edition</strong><span>Open →</span></a>
-    </div>
-  </main>;
+  return (
+    <main className="container">
+      <section className="hero">
+        <div className="eyebrow">The archive</div>
+        <h1>Every edition.</h1>
+        <p>
+          {editions.length} daily briefings and {totalStories} stories, organised by date. Search across every
+          headline or browse by theme.
+        </p>
+      </section>
+      <Suspense>
+        <ArchiveBrowser editions={editions} />
+      </Suspense>
+    </main>
+  );
 }

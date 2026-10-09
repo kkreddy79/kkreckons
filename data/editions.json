@@ -1,0 +1,975 @@
+[
+  {
+    "date": "2026-10-09",
+    "title": "KKReckons, Friday, 9 October 2026",
+    "slice": "AI props growth. Stories prop stocks. Cheese props diplomacy. None is a guarantee.",
+    "artifact": "https://claude.ai/artifact/Fc9ziFPcPQkUpsgZZqviXB",
+    "readingMinutes": 6,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Nouriel Roubini: the world is in turmoil, so why is the global economy still chugging along?",
+        "category": "Global economy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/nouriel-roubini-world-is-in-turmoil-but-the-global-economy-has-been-chugging-along-how-come-11791196008961.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Mint Explainer: Why is Elon Musk’s Starlink at war with Indian telecom giants?",
+        "category": "Telecom and satellites",
+        "tag": "Explainer",
+        "url": "https://www.livemint.com/companies/elon-musk-starlink-indian-telecom-giants-11791451260121.html"
+      },
+      {
+        "section": "India edition",
+        "title": "20,000-plus people shift as IT firms buy GCCs and captive tech carve-outs",
+        "category": "IT services",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/tech/information-tech/20000-plus-people-shift-as-it-firms-buy-gcc-captive-tech-carve-outs/articleshow/134711217.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "India’s aspirational middle class gives it a demographic edge, says Verlinvest CEO Roberto Italia",
+        "category": "India consumer",
+        "tag": "Interview",
+        "url": "https://m.economictimes.com/news/india/et-interview-indias-aspirational-middle-class-gives-it-demographic-edge-says-verlinvest-ceo-roberto-italia/articleshow/134773777.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "What do you gift the Swiss President? PM Modi chose three Indian cheeses",
+        "category": "Diplomacy",
+        "tag": "",
+        "url": "https://www.indiatoday.in/lifestyle/food/story/what-do-you-gift-the-swiss-president-pm-modi-chose-3-indian-cheeses-3010285-2026-10-05"
+      },
+      {
+        "section": "World edition",
+        "title": "‘Switzerland has spoken’: will UBS leave?",
+        "category": "Global banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/2adb9508-6874-400e-adc3-231a7daebfd6?syn-25a6b1a6=1"
+      },
+      {
+        "section": "World edition",
+        "title": "Devina Mehra: the art of storytelling can turn into an investment pitfall, even for veterans",
+        "category": "Investing",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/devina-mehra-art-of-storytelling-can-turn-into-an-investment-pitfall-even-for-veteran-investors-11791285000067.html"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-08",
+    "title": "KKReckons, Thursday, 8 October 2026",
+    "slice": "Gen Z says the deal is broken. AI could test it everywhere.",
+    "artifact": "https://claude.ai/artifact/R6WYgbLC6GGuqQJKt7D9f8",
+    "readingMinutes": 5,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Gen Z’s squeeze needs new words, and a lot more talk",
+        "category": "Youth and connection",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/international/world-news/europe-gen-z-youth-protests-france-belgium-ireland-spain-student-protests-housing-crisis-cost-of-living-education-crisis/articleshow/134741772.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "How BorderPlus is turning India’s talent surplus into a global workforce",
+        "category": "Jobs abroad",
+        "tag": "",
+        "url": "https://inc42.com/startups/can-borderplus-is-turning-indias-talent-surplus-into-a-global-workforce/"
+      },
+      {
+        "section": "India edition",
+        "title": "RBI chief: a failed India–US trade deal would do ‘some’ damage",
+        "category": "Trade and economy",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/economy/policy/what-will-happen-to-economy-if-india-us-fta-doesnt-happen-rbi-governor-reveals/articleshow/134773660.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "Acemoglu: AI will replace only about 5% of human work in 10 years",
+        "category": "AI and jobs",
+        "tag": "Opinion",
+        "url": "https://humanistreview.ai/issue-1/acemoglu-ai-replace-workers/"
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents find two room-temperature magnet candidates for future memory",
+        "category": "Materials science",
+        "tag": "",
+        "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors"
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents could cost US banks $500bn by winning savers better rates",
+        "category": "Banking and AI",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/a21ec190-edcd-454e-886a-302b0a16ea82"
+      },
+      {
+        "section": "World edition",
+        "title": "Tim Harford: how AI tempts the lazy mind",
+        "category": "AI and thinking",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/f5d01c83-6133-4a01-a9c7-f8a2067b7c32"
+      },
+      {
+        "section": "World edition",
+        "title": "Bjorn Lomborg: most recycling is a waste",
+        "category": "Environment",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/most-recycling-is-a-waste-091924e1"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-07",
+    "title": "KKReckons, Wednesday, 7 October 2026",
+    "slice": "Money is in the hospitals and the AI labs. Diesel lingers. Someone still pays.",
+    "artifact": "https://claude.ai/artifact/BhMTV1Dd1SfZEi5285nLyS",
+    "readingMinutes": 6,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Wall Street’s $10bn India hospital bet sparks a fight over bills",
+        "category": "Health and money",
+        "tag": "",
+        "url": "https://www.ndtv.com/business-news/wall-streets-10-billion-india-hospital-bet-sparks-a-fight-over-bills-12139365"
+      },
+      {
+        "section": "Pick of the day",
+        "title": "AI is junk food for the mind, an essay argues",
+        "category": "AI and learning",
+        "tag": "Opinion",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1003794/ai-education-computational-model-thought"
+      },
+      {
+        "section": "India edition",
+        "title": "Indian banks move from buying AI to owning a piece of it",
+        "category": "Banking and AI",
+        "tag": "",
+        "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/"
+      },
+      {
+        "section": "India edition",
+        "title": "AI is already thinning bank payrolls",
+        "category": "Jobs",
+        "tag": "",
+        "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/"
+      },
+      {
+        "section": "India edition",
+        "title": "Indian Railways is 99.6% electrified, but diesel isn’t going away",
+        "category": "Railways",
+        "tag": "",
+        "url": "https://www.indiatoday.in/amp/india/story/indian-railways-996-percent-electrification-diesel-locomotives-use-lng-train-itspc-3008225-2026-10-05"
+      },
+      {
+        "section": "India edition",
+        "title": "Meet the AI assistants at India’s banks",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/"
+      },
+      {
+        "section": "World edition",
+        "title": "Global banks are buying stakes in the AI labs they use",
+        "category": "Finance and AI",
+        "tag": "",
+        "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/"
+      },
+      {
+        "section": "World edition",
+        "title": "A prediction market for the past: bet on ‘disputed facts’",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://www.wired.com/story/a-prediction-market-about-the-past-sure-why-not/"
+      },
+      {
+        "section": "World edition",
+        "title": "Javed Anwer’s satire: lose your job so AI can remake the world",
+        "category": "AI and society",
+        "tag": "Opinion",
+        "url": "https://www.indiatoday.in/technology/talking-points/story/lose-your-job-bear-your-pain-because-ai-must-be-allowed-to-remake-the-world-3009998-2026-10-05"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-06",
+    "title": "KKReckons, Tuesday, 6 October 2026",
+    "slice": "AI writes prescriptions, bonds sell off, and dinosaurs still fetch millions.",
+    "artifact": "https://claude.ai/artifact/YYYYBA5EUFmpQnuzVhVNdi",
+    "readingMinutes": 8,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "AI can now prescribe acne drugs in Utah",
+        "category": "Health and AI",
+        "tag": "",
+        "url": "https://archive.is/2026.10.05-110759/https://www.bloomberg.com/news/articles/2026-10-05/nolla-health-ai-can-now-prescribe-acne-drugs-in-utah-without-doctors"
+      },
+      {
+        "section": "India edition",
+        "title": "Japan Inc sours on China; can India gain?",
+        "category": "Investment",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/india/chinas-loss-could-be-indias-gain-as-japan-inc-sours-on-china/articleshow/134710075.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "Cognizant targets mid-sized firms as AI squeezes big deals",
+        "category": "IT services",
+        "tag": "",
+        "url": "https://www.livemint.com/companies/news/cognizant-targets-mid-sized-firms-as-ai-pressures-big-outsourcing-deals-11791208286115.html"
+      },
+      {
+        "section": "India edition",
+        "title": "NPS Swasthya: a health savings fund plus top-up cover",
+        "category": "Personal finance",
+        "tag": "",
+        "url": "https://www.livemint.com/money/personal-finance/nps-swasthya-how-the-new-healthcare-savings-model-works-11791188252370.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Manu Joseph: the mystery behind Tata’s boardroom ‘coup’",
+        "category": "Corporate governance",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/manu-joseph-tata-boardroom-mystery-of-who-exactly-is-controlling-the-tata-group-chandrasekaran-noel-tata-11790850098202.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Zimbabwe in talks to use India’s UPI tech",
+        "category": "Payments",
+        "tag": "",
+        "url": "https://africa.businessinsider.com/local/markets/zimbabwe-turns-to-indias-payments-giant-to-cut-transfer-costs-and-speed-up-digital/db2mrjb"
+      },
+      {
+        "section": "World edition",
+        "title": "A global bond rout: why it reaches your EMI",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://m.economictimes.com/prime/the-world-is-witnessing-a-bond-rout-why-should-it-matter-to-you/primearticleshow/134714425.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "Investors look for shelter from AI concentration risk",
+        "category": "Investing",
+        "tag": "",
+        "url": "https://www.ft.com/content/3302fd5c-8b92-425b-9523-673b2565bb10?syn-25a6b1a6=1"
+      },
+      {
+        "section": "World edition",
+        "title": "A rare Nanotyrannus heads to auction as the fossil boom roars on",
+        "category": "Collecting",
+        "tag": "",
+        "url": "https://www.ft.com/content/5c3c2a70-cfa1-4146-bff8-ededc6294707?syn-25a6b1a6=1"
+      },
+      {
+        "section": "World edition",
+        "title": "‘FROGS’: France’s slow-burn debt crisis",
+        "category": "Europe’s debt",
+        "tag": "Opinion",
+        "url": "https://www.bloomberg.com/opinion/articles/2026-10-05/france-and-the-euro-frogs-is-the-name-of-the-latest-eu-debt-crisis"
+      },
+      {
+        "section": "World edition",
+        "title": "Who really runs Jane Street?",
+        "category": "Wall Street",
+        "tag": "",
+        "url": "https://www.bloomberg.com/features/2026-jane-street-guide-power-players/"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-05",
+    "title": "The Reddy Reckoner, Monday, 5 October 2026",
+    "slice": "Plague fears in Siberia, AI agents go rogue, and Sebi busts ‘assured’ returns.",
+    "artifact": "https://claude.ai/artifact/SHYtsnXk8e4kJtcPsHJMmk",
+    "readingMinutes": 5,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Suspected plague death at a Siberian lab",
+        "category": "Health security",
+        "tag": "",
+        "url": "https://www.cnbc.com/2026/10/05/suspected-plague-cases-reported-in-russias-irkutsk-region.html"
+      },
+      {
+        "section": "Pick of the day",
+        "title": "OpenAI’s agents hacked dozens; lawsuits follow",
+        "category": "AI and the law",
+        "tag": "",
+        "url": "https://giftarticle.ft.com/giftarticle/actions/redeem/e22bc125-a27c-4ee3-9497-c40f8926faf1"
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Why OpenAI’s safety-report lead quit",
+        "category": "AI safety",
+        "tag": "Opinion",
+        "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/"
+      },
+      {
+        "section": "India edition",
+        "title": "Sebi busts Growpital’s ‘assured’ farm returns",
+        "category": "Investor protection",
+        "tag": "",
+        "url": "https://m.economictimes.com/prime/corporate-governance/how-sebi-busted-growpitals-assured-returns-llps-and-money-trail/primearticleshow/134676943.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "Tata builds a non-China chip supply chain",
+        "category": "Semiconductors",
+        "tag": "",
+        "url": "https://www.livemint.com/companies/news/tata-electronics-assam-semiconductor-chip-plant-11791089738819.html"
+      },
+      {
+        "section": "India edition",
+        "title": "GST Council weighs freeing locked tax credit",
+        "category": "Tax",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/economy/indicators/gst-2-0-set-to-amplify-ease-unlock-tax-credit/articleshow/134679648.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "AI agent pioneers share 3 hard lessons",
+        "category": "Enterprise AI",
+        "tag": "",
+        "url": "https://fortune.com/2026/09/29/how-adobe-salesforce-kyndryl-freeport-use-ai-agents/"
+      },
+      {
+        "section": "World edition",
+        "title": "Dimon’s plan: one big Western trade pact",
+        "category": "Geopolitics",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/jamie-dimon-a-plan-for-the-western-worlds-revival-5fb12cc2?st=zTxXpS&reflink=article_copyURL_share"
+      },
+      {
+        "section": "World edition",
+        "title": "AI data-centre debt is turning up everywhere",
+        "category": "AI and credit",
+        "tag": "",
+        "url": "https://www.theinformation.com/newsletters/the-information-finance/ai-data-center-debt-showing-everywhere"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-04",
+    "title": "The Reddy Reckoner",
+    "slice": "AI borrows on hope; India pays by UPI but rarely invests, and insurance rewards quitting.",
+    "artifact": "https://claude.ai/artifact/WyXHghuh3Lu8uVLzYyJV8U",
+    "readingMinutes": 5,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Is circular financing in AI a problem?",
+        "category": "AI and finance",
+        "tag": "Viewpoint",
+        "url": "https://www.ft.com/content/87875b20-4081-4511-9afe-4ee389409742"
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Trading AI compute like oil",
+        "category": "Markets",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/a1815bc5-b5d5-47ff-bbbc-e1a689929321?accessToken=zwAAAaEFY6aKkdOhgVvFtdVH_9O7vOGmiZKTIQ.MEUCIQCrxb9uYbvgGdCzZlceRzOKV07GnuU8_tPVEB_7g2zvEgIgOnzQOie7T71L192JcnBtNgunxIp1cI6MoQyttYXbIlI&sharetype=gift&token=1b167908-b239-4889-b2ac-d59edd9502bc"
+      },
+      {
+        "section": "India edition",
+        "title": "Spence: a ‘pretty big’ shock is possible",
+        "category": "Economy",
+        "tag": "Interview",
+        "url": "https://m.economictimes.com/news/india/there-could-be-a-pretty-big-global-shock-says-nobel-laureate-economist-michael-spence/articleshow/134664074.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "Insurers pay more for quitting than dying",
+        "category": "Personal finance",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/money/personal-finance/what-life-insurers-actually-pay-for-11790933848565.html"
+      },
+      {
+        "section": "India edition",
+        "title": "550mn use UPI; only 62mn invest in funds",
+        "category": "Investing",
+        "tag": "Report",
+        "url": "https://www.ey.com/en_in/newsroom/2026/09/india-can-add-over-100-million-long-term-investors-by-2035-as-wealth-creation-expands-beyond-metros"
+      },
+      {
+        "section": "World edition",
+        "title": "AI’s $2tn assumption: a boom built on debt",
+        "category": "AI and debt",
+        "tag": "Viewpoint",
+        "url": "https://m.economictimes.com/prime/the-biggest-assumption-from-600-billion-to-2-trillion/primearticleshow/134619364.cms?giftid=jxt9gh9lrv98p1lpnrrx9wzjukoazpyu"
+      },
+      {
+        "section": "World edition",
+        "title": "Denmark taxes most; oil states the least",
+        "category": "Public finance",
+        "tag": "",
+        "url": "https://www.visualcapitalist.com/ranked-the-worlds-most-and-least-taxed-countries/?pnespid=5O6SzNVFv7DJ.auv.Af3puQM4w8conB3xQgvQFE_rleVcLwcVt8chnb_VYGrwCJoOBTb1KDt"
+      },
+      {
+        "section": "World edition",
+        "title": "China shuts a record 670+ banks in a year",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/8a8f5c97-f1d3-4d3d-a3bc-d5a2e5539177?syn-25a6b1a6=1"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-03",
+    "title": "The Reddy Reckoner",
+    "slice": "RBI urges caution, French bonds wobble, and a few sharps cash in on world events.",
+    "artifact": "https://claude.ai/artifact/TGFtRqFkmoHnecYcy3L88Q",
+    "readingMinutes": 6,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Every Cure: using AI to find new uses for drugs already on the shelf",
+        "category": "Health and AI",
+        "tag": "Nonprofit",
+        "url": "https://everycure.org/"
+      },
+      {
+        "section": "India edition",
+        "title": "Noel Tata seeks the video and minutes of the meeting that reappointed Chandrasekaran",
+        "category": "Corporate governance",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/noel-tata-seeks-tata-sons-meeting-video-minutes-questions-legal-opinions-on-chandrasekaran-reappointment/articleshow/134646293.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "India goes FTA shopping at the G20, with Piyush Goyal working the room",
+        "category": "Trade",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/india-trade-deals-india-us-fta-india-eu-fta-piyush-goyal-at-g20-trade-deals-of-india-milwaukee-pm-modi-bilateral-trade-deals-india-signs-trade-deals-bta/articleshow/134632538.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "RBI governor warns against complacency amid external headwinds",
+        "category": "Financial stability",
+        "tag": "",
+        "url": "https://www.livemint.com/news/india/rbi-governor-warns-against-complacency-amid-external-headwinds-11791020910405.html"
+      },
+      {
+        "section": "World edition",
+        "title": "China, America and the new Great Game",
+        "category": "Geopolitics",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/8869caf9-3cd1-4300-aeb3-828a4d9da4f9?syn-25a6b1a6=1"
+      },
+      {
+        "section": "World edition",
+        "title": "How the French bond trade backfired on investors",
+        "category": "Bonds",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/how-the-french-bond-trade-backfired-on-investors-4f2aba71"
+      },
+      {
+        "section": "World edition",
+        "title": "Americans can’t stop watching people pay down their debt",
+        "category": "Personal finance",
+        "tag": "",
+        "url": "https://www.wsj.com/articles/americans-cant-stop-watching-videos-of-people-paying-down-their-debt-acda4b22"
+      },
+      {
+        "section": "World edition",
+        "title": "Spy or dupe? Inside the ex-Fed adviser’s China case",
+        "category": "Espionage",
+        "tag": "",
+        "url": "https://www.cnbc.com/2026/09/30/john-rogers-fed-china-espionage-case.html"
+      },
+      {
+        "section": "World edition",
+        "title": "Every Cure set to get up to $76M from ARPA-H to test its AI picks",
+        "category": "Research funding",
+        "tag": "Press release",
+        "url": "https://everycure.org/phase2/"
+      },
+      {
+        "section": "World edition",
+        "title": "Polymarket’s Alpha traders: the secret chat turning wars and elections into profit",
+        "category": "Prediction markets",
+        "tag": "",
+        "url": "https://www.ft.com/content/ac1f4db2-54fe-4a36-b3db-bb96675231f5"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-02",
+    "title": "The Reddy Reckoner",
+    "slice": "A study coach for teens, an outsider for HDFC and a $2tn AI listing: promise, with caveats.",
+    "artifact": "https://claude.ai/artifact/6CVzHN3jKNreS8bpuDfnGE",
+    "readingMinutes": 6,
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "AI Tool of the Week: this ChatGPT feature helps teens study without doing their homework for them",
+        "category": "For students & parents",
+        "tag": "Viewpoint",
+        "url": "https://www.livemint.com/ai/chatgpt-for-teens-chatgpt-openai-ai-for-students-education-study-mode-parental-controls-11790818104604.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Bagchi’s appointment as HDFC Bank’s MD reflects RBI’s preference for external candidates",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://www.livemint.com/industry/banking/anup-bagchi-hdfc-bank-leadership-kaizad-bharucha-succession-plan-11790914216055.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Dodging ‘SaaSocalypse’: AI’s enterprise moment may belong to IT services",
+        "category": "IT services",
+        "tag": "Opinion",
+        "url": "https://economictimes.indiatimes.com/articleshow/134599990.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "Everyone wants your attention, and media is changing because of it",
+        "category": "Media",
+        "tag": "Opinion",
+        "url": "https://economictimes.indiatimes.com/articleshow/134644694.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "Why does Anthropic’s IPO feel so weird?",
+        "category": "AI & markets",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/69d2d0ec-c0d4-444f-84c5-4ca4f64b7899"
+      },
+      {
+        "section": "World edition",
+        "title": "Anthropic wants Claude to be moral. Is religion really the answer?",
+        "category": "AI & ethics",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html"
+      },
+      {
+        "section": "World edition",
+        "title": "Buffett’s analysis was correct. His temper was not, and the bill ran into billions",
+        "category": "Investing",
+        "tag": "Viewpoint",
+        "url": "https://economictimes.indiatimes.com/intelligent-investing/warren-buffett/warren-buffetts-analysis-was-correct-his-temper-was-not-the-bill-ran-into-billions/articleshow/134622821.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "AI will be a boon for savers, and a strain on banks",
+        "category": "Banking & AI",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/ai-will-be-a-boon-for-savers-abb4d884"
+      },
+      {
+        "section": "World edition",
+        "title": "BRICS isn’t killing the dollar. The world is learning to live without it",
+        "category": "Currencies",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/brics-isnt-killing-the-dollar-the-world-is-learning-to-live-without-it/articleshow/134624627.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "Community banks sue Trump regulators over crypto charters",
+        "category": "Crypto & banks",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/regulation/community-banks-swing-back-at-trump-regulators-over-crypto-charters-7007902f"
+      },
+      {
+        "section": "World edition",
+        "title": "How a 1940s US experiment tried, and failed, to create a ‘super dog’",
+        "category": "Science & history",
+        "tag": "",
+        "url": "https://www.bbc.com/future/article/20261001-the-forgotten-1940s-experiment-that-tried-and-failed-to-create-a-super-dog"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Reddy-Reckoner_2026-09-30",
+    "slice": "US long rates hit a 24-year high, AI fakes outrun the facts, 3,000 jobs land in Hyderabad.",
+    "artifact": "https://claude.ai/artifact/TptrwZg37dQfkjuokvRYCY",
+    "readingMinutes": 3,
+    "stories": [
+      {
+        "section": "India edition",
+        "title": "DoorDash to create 3,000 jobs in Hyderabad",
+        "category": "Jobs",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "India edition",
+        "title": "Fiscal deficit hits 41.9% of FY27 target",
+        "category": "Economy",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "India edition",
+        "title": "Chandra’s family firm lands 2nd TVS deal",
+        "category": "Governance",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "India edition",
+        "title": "Punjab campuses burn on WhatsApp rumours",
+        "category": "Misinformation",
+        "tag": "Opinion",
+        "url": ""
+      },
+      {
+        "section": "World edition",
+        "title": "US 30-year yield hits highest since 2002",
+        "category": "Markets",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "World edition",
+        "title": "KKR warns of AI borrowing risk in credit",
+        "category": "AI finance",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "World edition",
+        "title": "Santa Ana’s ‘viper’ was an AI hoax",
+        "category": "AI misuse",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "World edition",
+        "title": "America.gov: AI chatbots at the front door",
+        "category": "Gov tech",
+        "tag": "Viewpoint",
+        "url": ""
+      },
+      {
+        "section": "World edition",
+        "title": "Americans back populist price caps",
+        "category": "US politics",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "World edition",
+        "title": "Burnham: rejoining the EU is an option",
+        "category": "UK politics",
+        "tag": "",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "date": "2026-09-29",
+    "title": "The Reddy Reckoner",
+    "slice": "Savings forgotten in India, lent to the owner in the US; Gen Z pays £30k to go viral.",
+    "artifact": "https://claude.ai/artifact/UnKZ6FJARwSjEtuq9N2dgu",
+    "readingMinutes": 5,
+    "stories": [
+      {
+        "section": "India edition",
+        "title": "Wood: US 10-year yield may be capped at 5–6%",
+        "category": "Markets and bonds",
+        "tag": "Viewpoint",
+        "url": "https://www.livemint.com/market/stock-market-news/mint-exclusive-how-is-indian-stock-market-bottom-linked-to-the-us-10-year-bond-yield-chris-wood-of-jefferies-explains-11790566134388.html"
+      },
+      {
+        "section": "India edition",
+        "title": "IRDAI takes aim at the commissions behind insurance mis-selling",
+        "category": "Insurance",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/industry/banking/finance/insure/insurance-mis-selling-is-arising-because-upfront-commissions-are-too-high-irdai-chairman-ajay-seth/articleshow/134524622.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "Mid-sized IT firms are turning AI cost cuts into new revenue",
+        "category": "IT services",
+        "tag": "",
+        "url": "https://www.livemint.com/companies/news/mid-sized-it-firms-ai-cost-cuts-ltm-coforge-hexaware-11790522363302.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Nobody’s money? ₹1.1 lakh crore of family savings lies unclaimed",
+        "category": "Personal finance",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/prime/nobodys-money-the-fortune-indian-families-forgot-they-had/primearticleshow/134341397.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "Gold caught in a three-way tug-of-war",
+        "category": "Commodities",
+        "tag": "Viewpoint",
+        "url": "https://economictimes.indiatimes.com/prime/gold-prices-caught-in-a-three-way-tug-of-war/primearticleshow/134400099.cms"
+      },
+      {
+        "section": "World edition",
+        "title": "OpenAI holds back new model over safety",
+        "category": "AI safety",
+        "tag": "",
+        "url": "https://www.ft.com/content/488cb467-3cb7-4d06-9a5f-c0749c729d91?syn-25a6b1a6=1"
+      },
+      {
+        "section": "World edition",
+        "title": "The post-Enron auditor reforms are being rolled back",
+        "category": "Regulation",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/2ef0c2fa-9626-4785-94cd-65fbf5be5741?syn-25a6b1a6=1"
+      },
+      {
+        "section": "World edition",
+        "title": "Jamie Dimon: a plan for the Western world’s revival",
+        "category": "Trade",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/jamie-dimon-a-plan-for-the-western-worlds-revival-5fb12cc2"
+      },
+      {
+        "section": "World edition",
+        "title": "How Mark Walter turned a ho-hum insurer into a risk-taking lender",
+        "category": "Private credit",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/how-mark-walter-turned-a-ho-hum-insurance-company-into-a-risk-taking-lender-e06307a1"
+      },
+      {
+        "section": "World edition",
+        "title": "Unis offer degrees in content creation for £30,000. Are they worth it?",
+        "category": "Education",
+        "tag": "",
+        "url": "https://www.bbc.com/news/articles/c61mvy1emr2zo"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-28",
+    "title": "The Reddy Reckoner",
+    "slice": "India compounds talent and capital; the world audits the AI boom and its debt.",
+    "artifact": "https://claude.ai/artifact/JRt6pwCjGePZ7k2Nevzy94",
+    "readingMinutes": 6,
+    "stories": [
+      {
+        "section": "India edition",
+        "title": "IITM Unicorn Frontier Fund I hits ₹450 cr first close",
+        "category": "Deeptech funding",
+        "tag": "",
+        "url": "https://yourstory.com/2026/09/iitm-unicorn-frontier-fund-i-hits-rs-450-cr-first-close"
+      },
+      {
+        "section": "India edition",
+        "title": "IIT-JEE topper Nitin Gupta now studies mosquito brains at IIT Kanpur",
+        "category": "Science & talent",
+        "tag": "",
+        "url": "https://x.com/therocketmediax/status/2103831201073299529?s=46&t=8b3uxhyUfGCSwTKxXmCk4g"
+      },
+      {
+        "section": "India edition",
+        "title": "Three IITs are building medical schools. The real target is not more doctors",
+        "category": "Medical education",
+        "tag": "",
+        "url": "https://www.indiatoday.in/science/story/iit-medical-schools-mbbs-physician-engineers-kharagpur-iit-madras-kanpur-physician-engineers-kamakoti-3004465-2026-09-28"
+      },
+      {
+        "section": "World edition",
+        "title": "Indian executives are gaining clout in US boardrooms",
+        "category": "US boardrooms",
+        "tag": "",
+        "url": "https://www.moneycontrol.com/europe/?url=https://www.moneycontrol.com/news/business/indian-executives-are-gaining-clout-in-us-corporate-boardrooms-14039494.html&classic=true"
+      },
+      {
+        "section": "World edition",
+        "title": "Big dreams and tiny revenue are the new norm for AI IPOs",
+        "category": "Markets",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/b5707707-730e-40d3-9ff7-8ebfe27d5708?syn-25a6b1a6=1"
+      },
+      {
+        "section": "World edition",
+        "title": "How to Know When the AI Boom Is About to Go Bust",
+        "category": "AI markets",
+        "tag": "Viewpoint",
+        "url": "https://www.wsj.com/finance/stocks/how-to-know-when-the-ai-boom-is-about-to-go-bust-61af3d26?st=k7d1Aa&reflink=desktopwebshare_permalink"
+      },
+      {
+        "section": "World edition",
+        "title": "The Ph.D. Job Crisis Is a Needed Market Correction",
+        "category": "Higher education",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/the-ph-d-job-crisis-is-a-needed-market-correction-cfef32c9"
+      },
+      {
+        "section": "World edition",
+        "title": "AI hyperscalers are transforming debt",
+        "category": "Credit markets",
+        "tag": "",
+        "url": "https://www.ft.com/content/00f94018-e658-4545-b16e-1bc00e19b754?syn-25a6b1a6=1"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-27",
+    "title": "The Reddy Reckoner",
+    "slice": "India bets on cheaper AI and fuel. The world’s lesson: what you show, ship or see can be taken.",
+    "artifact": "https://claude.ai/artifact/UboVjRzKFFZR7b3DsaJCHo",
+    "readingMinutes": 3,
+    "stories": [
+      {
+        "section": "India edition",
+        "title": "Sarvam: India will be AI’s biggest user in five years",
+        "category": "Artificial intelligence",
+        "tag": "",
+        "url": "https://www.moneycontrol.com/news/business/startup/from-ai-models-to-agents-sarvam-s-kumar-emergent-s-jha-map-india-s-next-five-years-14038762.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Govt weighs a ₹20,000 cr fund for frontier AI",
+        "category": "AI policy",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/govt-eyes-rs-20000-crore-fund-to-power-up-frontier-ai-and-compute-ecosystem/articleshow/134466929.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "Gadkari: a pure-ethanol car at ‘₹25 a litre’",
+        "category": "Energy",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/industry/transportation/roadways/nitin-gadkari-says-a-100-ethanol-car-that-doesnt-need-petrol-will-run-as-cheap-as-petrol-priced-at-rs-25-a-litre/articleshow/134497441.cms"
+      },
+      {
+        "section": "India edition",
+        "title": "YouTuber flaunts gold online; burglars strike",
+        "category": "Safety",
+        "tag": "Caution",
+        "url": "https://www.indiatoday.in/amp/trending-news/story/tamil-nadu-youtuber-flaunts-gold-and-cash-online-burglars-steal-valuables-from-home-3003333-2026-09-26"
+      },
+      {
+        "section": "India edition",
+        "title": "The ‘India shock’: exporting workers, not goods",
+        "category": "Economy",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/afb910e4-5425-4d3e-b0ef-c1d260f29945"
+      },
+      {
+        "section": "World edition",
+        "title": "Iran’s secret weapon against America: China",
+        "category": "Geopolitics",
+        "tag": "",
+        "url": "https://www.livemint.com/global/iran-has-a-secret-weapon-in-its-war-with-america-help-from-china-11790214285262.html"
+      },
+      {
+        "section": "World edition",
+        "title": "F-35 parts bound for US repair end up in Hong Kong",
+        "category": "Defence",
+        "tag": "",
+        "url": "https://www.theguardian.com/world/2026/sep/22/australia-investigating-how-f-35-fighter-jet-parts-bound-for-us-went-missing-in-hong-kong"
+      },
+      {
+        "section": "World edition",
+        "title": "Meta doubles down despite the ‘pervert glasses’ jibe",
+        "category": "Tech",
+        "tag": "",
+        "url": "https://www.economist.com/business/2026/09/24/how-tech-firms-hope-to-beat-the-backlash-against-pervert-glasses"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-26",
+    "title": "The Reddy Reckoner",
+    "slice": "Two worlds, one trade-off: in India and America alike, companies are trading payroll for AI chips and data centres.",
+    "artifact": "https://claude.ai/artifact/4HWYZXDFaeQbdFGam34SvA",
+    "readingMinutes": 3,
+    "stories": [
+      {
+        "section": "India edition",
+        "title": "India’s GCCs: fewer seats, bigger say",
+        "category": "Jobs and GCCs",
+        "tag": "",
+        "url": "https://www.moneycontrol.com/technology/gccs-cut-thousands-of-jobs-even-as-india-takes-on-bigger-global-mandates-article-14038260.html"
+      },
+      {
+        "section": "India edition",
+        "title": "Tata Sons reappoints Chandrasekaran",
+        "category": "Business",
+        "tag": "",
+        "url": "https://www.outlookbusiness.com/corporate/tata-sons-vs-noel-tata-voting-math-behind-boardroom-battle-explained"
+      },
+      {
+        "section": "India edition",
+        "title": "RBI vets Bagchi for HDFC Bank’s top job",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://www.kotakneo.com/news/stocks/hdfc-bank-shares-advance-as-rbi-seeks-feedback-on-anup-bagchi-for-md-ceo/"
+      },
+      {
+        "section": "World edition",
+        "title": "Oracle cuts cloud staff to fund AI",
+        "category": "Tech layoffs",
+        "tag": "",
+        "url": "https://www.businessinsider.com/oracle-cloud-layoffs-america-roles-hit-hardest-leaked-doc-2026-9"
+      },
+      {
+        "section": "World edition",
+        "title": "Google readies its first AI chips for orbit",
+        "category": "AI and science",
+        "tag": "",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/"
+      },
+      {
+        "section": "World edition",
+        "title": "What higher yields mean for your money",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://www.cbsnews.com/news/bond-market-treasury-yields-inflation-fed/"
+      },
+      {
+        "section": "World edition",
+        "title": "AI is reading your online past",
+        "category": "Workplace",
+        "tag": "",
+        "url": "https://www.msn.com/en-us/money/other/ai-knows-what-you-did-online-now-your-employer-does-too/ar-AA280ov9"
+      },
+      {
+        "section": "World edition",
+        "title": "California’s benefits for undocumented immigrants",
+        "category": "Policy",
+        "tag": "Viewpoint",
+        "url": "https://www.city-journal.org/article/california-illegal-immigrants-shadow-welfare"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-25",
+    "title": "The Daily Briefing — September 25, 2026 — KK Reddy",
+    "slice": "Four stories: markets, boardrooms, banks and orbit.",
+    "artifact": "https://claude.ai/artifact/UHW7xwwBX9FMWubycDaJvm",
+    "readingMinutes": 5,
+    "stories": [
+      {
+        "section": "Top stories",
+        "title": "US 10-year Treasury yield at 5.183%, up 1.046 points over the past year",
+        "category": "Markets & Economy",
+        "tag": "",
+        "url": ""
+      },
+      {
+        "section": "Top stories",
+        "title": "Oracle on the hook to pay Project Jupiter investors even if the New Mexico site has no power",
+        "category": "Business, Banks & Infrastructure",
+        "tag": "",
+        "url": "https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016?syn-25a6b1a6=1"
+      },
+      {
+        "section": "Top stories",
+        "title": "Leaked document shows which Oracle cloud roles were cut",
+        "category": "AI, Technology & Jobs",
+        "tag": "",
+        "url": "https://www.businessinsider.com/oracle-cloud-layoffs-america-roles-hit-hardest-leaked-doc-2026-9"
+      },
+      {
+        "section": "Top stories",
+        "title": "Google's Project Suncatcher readies its first test of AI chips in orbit",
+        "category": "Science & Space",
+        "tag": "",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/"
+      }
+    ]
+  }
+]
