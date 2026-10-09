@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Masthead from "@/components/Masthead";
+import { CakeIcon, CharminarIcon, MoonIcon, NoodlesIcon, PalmIcon, SunIcon, TastingMenuIcon } from "@/components/AboutIcons";
 import { editions, latest, slugFor, totalStories } from "@/lib/editions";
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
@@ -111,11 +112,15 @@ export default function About() {
         <div className="ab-founder-text">
           <h2 id="founder-title">Hi, I’m KK.</h2>
           <p className="ab-route">
-            <span>🇮🇳 South India</span>
+            <span>
+              <CharminarIcon className="ab-chip-ic" /> South India
+            </span>
             <span className="ab-route-arrow" aria-hidden>
               ⇄
             </span>
-            <span>🇺🇸 Southern California</span>
+            <span>
+              <PalmIcon className="ab-chip-ic" /> Southern California
+            </span>
           </p>
           <p className="ab-founder-lede">
             One foot in each world, and a news tab open in both. One of them is always awake.
@@ -123,13 +128,13 @@ export default function About() {
         </div>
         <ul className="ab-daynight">
           <li>
-            <span aria-hidden>☀️</span>
+            <SunIcon className="ab-dn-ic" />
             <p>
               <b>By day</b> Capital markets, meet technology.
             </p>
           </li>
           <li>
-            <span aria-hidden>🌙</span>
+            <MoonIcon className="ab-dn-ic" />
             <p>
               <b>By night</b> Way too much news, so you don’t have to.
             </p>
@@ -141,23 +146,17 @@ export default function About() {
         <h2 id="menu-title">The internet serves news two ways.</h2>
         <ul className="ab-options">
           <li className="ab-opt">
-            <span className="ab-emoji" aria-hidden>
-              🍜
-            </span>
+            <NoodlesIcon className="ab-emoji" />
             <b>Instant noodles</b>
             <span>Fast, salty, gone in a minute.</span>
           </li>
           <li className="ab-opt">
-            <span className="ab-emoji" aria-hidden>
-              🍽️
-            </span>
+            <TastingMenuIcon className="ab-emoji" />
             <b>A 40-page tasting menu</b>
             <span>Impressive. Nobody has the time.</span>
           </li>
           <li className="ab-opt ab-pick">
-            <span className="ab-emoji" aria-hidden>
-              🍰
-            </span>
+            <CakeIcon className="ab-emoji" />
             <b>The third option</b>
             <span>One slice. Cooked right. Served daily.</span>
           </li>
