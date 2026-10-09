@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import EditionFrame from "@/components/EditionFrame";
+import SubscribeBox from "@/components/SubscribeBox";
 import { editions, getEdition, longDate, sectionsOf, shortDate, slugFor } from "@/lib/editions";
 
 export const dynamicParams = false;
@@ -84,6 +85,8 @@ export default async function EditionPage({ params }: Props) {
           <EditionFrame src={`/editions/${edition.date}.html`} title={`KKReckons, ${longDate(edition.date)}`} />
         </div>
       </div>
+
+      <SubscribeBox />
 
       <nav className="pager">
         {older ? (

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import EditionCard from "@/components/EditionCard";
+import SubscribeBox from "@/components/SubscribeBox";
 import { THEMES, editions, latest, longDate, sectionsOf, slugFor, totalStories } from "@/lib/editions";
 
 export default function Home() {
@@ -96,6 +97,8 @@ export default function Home() {
             </Link>
           ))}
         </div>
+
+        <SubscribeBox />
 
         <section className="promise">
           <div>

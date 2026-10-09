@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { latest, slugFor } from "@/lib/editions";
+import { SUBSCRIBE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   title: { default: "KKReckons — Read deep. Think clearly. Leave in five.", template: "%s · KKReckons" },
   description:
     "Visual daily briefings on AI, markets, business, India and the world. Curated by KK Reddy.",
+  alternates: { types: { "application/rss+xml": [{ url: "/feed.xml", title: "KKReckons" }] } },
   openGraph: {
     siteName: "KKReckons",
     type: "website",
@@ -27,6 +29,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href={`/daily/${slugFor(latest.date)}`}>Today</Link>
             <Link href="/daily/">Archive</Link>
             <Link href="/about">About</Link>
+            <a className="nav-sub" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+              Subscribe
+            </a>
           </nav>
         </header>
         {children}
