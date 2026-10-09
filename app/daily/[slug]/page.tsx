@@ -33,7 +33,7 @@ export default async function EditionPage({ params }: Props) {
   return (
     <main className="ev-wrap ev-page">
       <nav className="crumbs">
-        <Link href="/daily/">Archive</Link> <span>/</span> {longDate(edition.date)}
+        <Link href="/daily/">Catch up</Link> <span>/</span> {longDate(edition.date)}
       </nav>
 
       <EditionView e={content} />

@@ -6,10 +6,10 @@ export default function NotFound() {
       <section className="hero">
         <div className="eyebrow">404</div>
         <h1>That page isn’t here.</h1>
-        <p>The edition may have moved. Every briefing is listed in the archive.</p>
+        <p>The edition may have moved. Every briefing is waiting in Catch up.</p>
         <div className="cta-row">
           <Link className="button" href="/daily/">
-            Go to the archive
+            Catch up on every edition
           </Link>
         </div>
       </section>
