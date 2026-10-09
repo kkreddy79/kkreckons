@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { latest, slugFor } from "@/lib/editions";
-import { SUBSCRIBE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,9 +28,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href={`/daily/${slugFor(latest.date)}`}>Today</Link>
             <Link href="/daily/">Archive</Link>
             <Link href="/about">About</Link>
-            <a className="nav-sub" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-              Subscribe
-            </a>
           </nav>
         </header>
         {children}
