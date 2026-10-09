@@ -44,26 +44,32 @@ export default function ArchiveBrowser({ editions, details }: { editions: Editio
     [editions, details]
   );
 
-  /** Publishers by number of stories, most first. */
-  const publishers = useMemo(() => {
-    const n = new Map<string, number>();
-    for (const a of all) for (const p of new Set(a.pubs)) n.set(p, (n.get(p) ?? 0) + 1);
-    return [...n].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  }, [all]);
-  const freeCount = all.filter((a) => !a.paid).length;
-
+  /** Stories matching the theme and search, before the source filter, so source counts follow them. */
   const q = query.trim().toLowerCase();
-  const matches = useMemo(
+  const base = useMemo(
     () =>
       all
         .filter((a) => !theme || themesOf(a.story).includes(theme))
-        .filter((a) => !source || (source === "free" ? !a.paid : a.pubs.includes(source)))
         .filter(
           (a) =>
             !q ||
             `${a.story.title} ${a.story.category} ${a.story.section} ${a.pubs.join(" ")}`.toLowerCase().includes(q)
         ),
-    [all, q, theme, source]
+    [all, q, theme]
+  );
+
+  /** Publishers by number of matching stories, most first; the selected one stays listed even at zero. */
+  const publishers = useMemo(() => {
+    const n = new Map<string, number>();
+    for (const a of base) for (const p of new Set(a.pubs)) n.set(p, (n.get(p) ?? 0) + 1);
+    if (source && source !== "free" && !n.has(source)) n.set(source, 0);
+    return [...n].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  }, [base, source]);
+  const freeCount = base.filter((a) => !a.paid).length;
+
+  const matches = useMemo(
+    () => base.filter((a) => !source || (source === "free" ? !a.paid : a.pubs.includes(source))),
+    [base, source]
   );
 
   const months = useMemo(() => {
@@ -114,7 +120,7 @@ export default function ArchiveBrowser({ editions, details }: { editions: Editio
       <div className="src-filter">
         <label htmlFor="src-select">Source</label>
         <select id="src-select" value={source} onChange={(ev) => setParam("source", ev.target.value)}>
-          <option value="">All sources ({all.length})</option>
+          <option value="">All sources ({base.length})</option>
           <option value="free">Free to read only ({freeCount})</option>
           <optgroup label="Publisher">
             {publishers.map(([name, count]) => (
