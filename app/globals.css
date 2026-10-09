@@ -74,7 +74,7 @@ button { font: inherit; cursor: pointer; }
   border-bottom: 1px solid var(--line);
 }
 .hero-grid { display: grid; grid-template-columns: 1fr 1.08fr; gap: 48px; align-items: center; padding-top: 56px; padding-bottom: 64px; }
-.hero-copy h1 { font-family: var(--serif); font-size: clamp(48px, 7vw, 88px); line-height: 0.95; margin: 14px 0 18px; letter-spacing: -2px; }
+.hero-copy h1 { font-family: var(--serif); font-size: clamp(44px, 6.2vw, 80px); line-height: 0.95; margin: 14px 0 18px; letter-spacing: -2px; }
 .hero-copy h1 em { color: var(--purple); }
 .hero-copy p { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 520px; }
 .stats { display: flex; gap: 34px; margin: 34px 0 0; }
@@ -201,6 +201,7 @@ button { font: inherit; cursor: pointer; }
 .prose h2 { font-family: var(--serif); font-size: 28px; margin: 34px 0 10px; }
 .prose ul { padding-left: 20px; }
 .prose li { margin: 8px 0; }
+.signoff { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--purple); margin-top: 28px; }
 
 /* ---------- Admin ---------- */
 .admin { max-width: 760px; margin: auto; }

@@ -16,6 +16,8 @@ export default function Home() {
               Read deep.
               <br />
               <em>Think clearly.</em>
+              <br />
+              Leave in five.
             </h1>
             <p>
               Each morning, KK Reddy picks the stories that matter across AI, markets, business, India and the
