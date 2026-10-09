@@ -226,12 +226,31 @@ button { font: inherit; cursor: pointer; }
 .ab-lede { font-size: 19px; line-height: 1.55; color: #3d3c45; margin: 0; }
 .ab-identity { margin: 14px 0 0; font-size: 14px; font-weight: 700; color: var(--purple); letter-spacing: 0.2px; }
 
-.ab-founder { display: grid; grid-template-columns: 240px 1fr; gap: 40px; margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
-.ab-founder h2 { font-family: var(--serif); font-size: 40px; line-height: 1; margin: 0 0 12px; letter-spacing: -0.5px; }
-.ab-route { margin: 0; font-size: 13px; font-weight: 700; color: var(--muted); }
-.ab-route span { color: var(--orange); margin: 0 4px; }
-.ab-founder-body p { margin: 0 0 16px; font-size: 18px; line-height: 1.65; color: #2c2b33; max-width: 600px; }
-.ab-founder-body p:last-child { margin-bottom: 0; }
+
+.ab-founder { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
+.ab-founder h2 { font-family: var(--serif); font-size: 44px; line-height: 1; margin: 0; letter-spacing: -0.5px; }
+.ab-route { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0; }
+.ab-route span:not(.ab-route-arrow) { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 700; }
+.ab-route-arrow { color: var(--orange); font-size: 18px; font-weight: 800; }
+.ab-founder-lede { margin: 0; font-size: 19px; line-height: 1.5; color: #2c2b33; }
+.ab-daynight { list-style: none; margin: 0; padding: 4px 20px; background: #fff; border: 1px solid var(--line); border-radius: 18px; }
+.ab-daynight li { display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: center; padding: 14px 0; }
+.ab-daynight li + li { border-top: 1px solid var(--line); }
+.ab-daynight li > span { font-size: 24px; }
+.ab-daynight p { margin: 0; font-size: 16px; line-height: 1.45; }
+.ab-daynight b { display: block; color: var(--purple); font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; }
+
+.ab-menu { margin-top: 56px; }
+.ab-menu h2 { font-family: var(--serif); font-size: clamp(24px, 3vw, 30px); margin: 0 0 14px; letter-spacing: -0.3px; }
+.ab-options { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 12px; }
+.ab-opt { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 18px; display: grid; gap: 4px; align-content: start; }
+.ab-opt b { font-size: 16px; }
+.ab-opt span:last-child { color: var(--muted); font-size: 14.5px; line-height: 1.4; }
+.ab-emoji { font-size: 30px; line-height: 1; margin-bottom: 8px; }
+.ab-opt:not(.ab-pick) b { text-decoration: line-through; text-decoration-color: rgba(217, 84, 31, 0.7); text-decoration-thickness: 2px; }
+.ab-pick { background: var(--purple); border-color: var(--purple); color: #fff; box-shadow: 0 14px 30px rgba(53, 32, 95, 0.25); transform: rotate(-1deg); }
+.ab-pick b { color: #ffd5a5; font-size: 18px; }
+.ab-pick span:last-child { color: #ece6f8; }
 
 .ab-section { margin-top: 72px; }
 .ab-section h2, .ab-close h2 { font-family: var(--serif); font-size: clamp(28px, 3.6vw, 38px); line-height: 1.1; letter-spacing: -0.5px; margin: 0 0 12px; }
@@ -331,9 +350,14 @@ button { font: inherit; cursor: pointer; }
   .ab-hero { padding-top: 20px; }
   .ab-hero h1 { letter-spacing: -0.5px; }
   .ab-lede { font-size: 17px; }
-  .ab-founder { grid-template-columns: 1fr; gap: 14px; margin-top: 48px; padding-top: 32px; }
-  .ab-founder h2 { font-size: 32px; }
-  .ab-founder-body p { font-size: 16.5px; }
+  .ab-founder { grid-template-columns: 1fr; gap: 18px; margin-top: 44px; padding-top: 30px; }
+  .ab-founder h2 { font-size: 34px; }
+  .ab-founder-lede { font-size: 17px; }
+  .ab-menu { margin-top: 44px; }
+  .ab-options { grid-template-columns: 1fr; gap: 8px; }
+  .ab-opt { grid-template-columns: 38px 1fr; column-gap: 12px; padding: 13px 15px; }
+  .ab-opt .ab-emoji { grid-row: span 2; margin: 0; font-size: 26px; align-self: center; }
+  .ab-pick { transform: none; }
   .ab-section, .ab-close { margin-top: 52px; }
   .ab-intro { font-size: 16px; }
   .ab-pillars, .ab-rules, .ab-ex-grid { grid-template-columns: 1fr; }
