@@ -52,30 +52,6 @@ const RULES = [
   },
 ];
 
-// A real story from the 3 October 2026 edition, reproduced as published.
-const EXAMPLE = {
-  date: "2026-10-03",
-  category: "Corporate governance",
-  headline: "Noel Tata seeks the video and minutes of the meeting that reappointed Chandrasekaran",
-  source: {
-    name: "The Economic Times",
-    url: "https://economictimes.indiatimes.com/news/company/corporate-trends/noel-tata-seeks-tata-sons-meeting-video-minutes-questions-legal-opinions-on-chandrasekaran-reappointment/articleshow/134646293.cms",
-  },
-  reported: [
-    "In a September 30 letter, the Tata Trusts chairman asked the Tata Sons board for the recording and minutes of its September 17 meeting, executives said.",
-    "He says he wasn’t given enough time to present former CJI DY Chandrachud’s view that the chairman’s casting vote can’t override the trust nominees’ affirmative rights.",
-    "He also questions why the board obtained two more opinions after the vote, from former CJI UU Lalit and retired Justice BN Srikrishna; both upheld it.",
-  ],
-  numbers: [
-    ["4–1", "board vote, Sept 17"],
-    ["5 years", "new chairman term"],
-    ["2", "opinions after vote"],
-  ],
-  why: "The fight over Tata’s top job has moved from boardroom to lawyers.",
-  other:
-    "Three legal opinions back the vote, and an independent lawyer says a director has no unfettered right to a board video. Is this governance, or a lost vote relitigated?",
-};
-
 function Ctas() {
   return (
     <div className="cta-row">
@@ -184,54 +160,6 @@ export default function About() {
             {editions.length} editions and {totalStories} stories published so far.
           </span>
         </p>
-      </section>
-
-      <section className="ab-section" aria-labelledby="method-title">
-        <h2 id="method-title">Not just what happened. Why it matters.</h2>
-        <p className="ab-intro">
-          Headlines tell you what happened. Good analysis helps you understand why it happened, what the evidence
-          supports, what remains uncertain, and why the outcome matters. Here’s one story as it ran.
-        </p>
-        <article className="ab-example" aria-labelledby="example-title">
-          <p className="ab-ex-meta">
-            From the <Link href={`/daily/${slugFor(EXAMPLE.date)}`}>3 October 2026 edition</Link> · {EXAMPLE.category}
-          </p>
-          <h3 id="example-title">{EXAMPLE.headline}</h3>
-          <div className="ab-ex-grid">
-            <div className="ab-ex-reported">
-              <p className="ab-ex-label">
-                What the reporting says <span>· summarised from {EXAMPLE.source.name}</span>
-              </p>
-              <ul>
-                {EXAMPLE.reported.map((r) => (
-                  <li key={r}>{r}</li>
-                ))}
-              </ul>
-              <dl className="ab-ex-numbers">
-                {EXAMPLE.numbers.map(([n, label]) => (
-                  <div key={label}>
-                    <dt>{n}</dt>
-                    <dd>{label}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-            <div className="ab-ex-take">
-              <p className="ab-ex-label">
-                The KKReckons take <span>· commentary</span>
-              </p>
-              <p>
-                <b>Why it matters:</b> {EXAMPLE.why}
-              </p>
-              <p>
-                <b>Other side:</b> {EXAMPLE.other}
-              </p>
-            </div>
-          </div>
-          <a className="ab-ex-source" href={EXAMPLE.source.url} target="_blank" rel="noreferrer">
-            Read the original report in {EXAMPLE.source.name} ↗
-          </a>
-        </article>
       </section>
 
       <section className="ab-section" aria-labelledby="rules-title">

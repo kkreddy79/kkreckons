@@ -265,25 +265,6 @@ button { font: inherit; cursor: pointer; }
 .ab-stats { margin: 16px 0 0; font-size: 14.5px; color: var(--muted); }
 .ab-stats b { color: var(--ink); }
 
-.ab-example { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
-.ab-ex-meta { margin: 0; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0a716b; }
-.ab-ex-meta a { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }
-.ab-example h3 { font-family: var(--serif); font-size: 24px; line-height: 1.2; margin: 8px 0 18px; }
-.ab-ex-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 20px; }
-.ab-ex-label { margin: 0 0 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--ink); }
-.ab-ex-label span { font-weight: 600; color: var(--muted); text-transform: none; letter-spacing: 0; }
-.ab-ex-reported ul { margin: 0; padding-left: 18px; }
-.ab-ex-reported li { font-size: 15px; line-height: 1.55; margin-bottom: 8px; color: #2c2b33; }
-.ab-ex-numbers { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 14px 0 0; }
-.ab-ex-numbers div { display: grid; }
-.ab-ex-numbers dt { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--purple); }
-.ab-ex-numbers dd { margin: 0; font-size: 12.5px; color: var(--muted); }
-.ab-ex-take { background: var(--purple-soft); border-radius: 14px; padding: 16px 18px; }
-.ab-ex-take p { margin: 0 0 10px; font-size: 15px; line-height: 1.55; }
-.ab-ex-take p:last-child { margin-bottom: 0; }
-.ab-ex-take .ab-ex-label { color: var(--purple); }
-.ab-ex-source { display: inline-block; margin-top: 18px; font-weight: 800; font-size: 14px; color: #0a716b; }
-.ab-ex-source:hover { text-decoration: underline; }
 
 .ab-rules { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .ab-rules li { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--c); border-radius: 16px; padding: 18px 20px; }
@@ -362,9 +343,7 @@ button { font: inherit; cursor: pointer; }
   .ab-pick { transform: none; }
   .ab-section, .ab-close { margin-top: 52px; }
   .ab-intro { font-size: 16px; }
-  .ab-pillars, .ab-rules, .ab-ex-grid { grid-template-columns: 1fr; }
-  .ab-example { padding: 18px; }
-  .ab-example h3 { font-size: 20px; }
+  .ab-pillars, .ab-rules { grid-template-columns: 1fr; }
   .ab-close { padding: 26px 20px; border-radius: 18px; }
 }
 
