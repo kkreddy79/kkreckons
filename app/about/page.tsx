@@ -108,26 +108,60 @@ export default function About() {
       </section>
 
       <section className="ab-founder" aria-labelledby="founder-title">
-        <div className="ab-founder-head">
+        <div className="ab-founder-text">
           <h2 id="founder-title">Hi, I’m KK.</h2>
           <p className="ab-route">
-            Southern India <span aria-hidden>→</span> Southern California
+            <span>🇮🇳 South India</span>
+            <span className="ab-route-arrow" aria-hidden>
+              ⇄
+            </span>
+            <span>🇺🇸 Southern California</span>
+          </p>
+          <p className="ab-founder-lede">
+            One foot in each world, and a news tab open in both. One of them is always awake.
           </p>
         </div>
-        <div className="ab-founder-body">
-          <p>
-            Born and raised in Southern India, now in Southern California. One foot in each world, and a news tab open
-            in both. One of them is usually still awake.
-          </p>
-          <p>
-            By day, I work at the intersection of capital markets and technology. By night, I read far more news than
-            is probably healthy, then curate the stories worth your attention.
-          </p>
-          <p>
-            KKReckons is my attempt at a third option between instant noodles and a 40-page tasting menu: enough depth
-            to understand the story, without needing an entire evening to get through it.
-          </p>
-        </div>
+        <ul className="ab-daynight">
+          <li>
+            <span aria-hidden>☀️</span>
+            <p>
+              <b>By day</b> Capital markets, meet technology.
+            </p>
+          </li>
+          <li>
+            <span aria-hidden>🌙</span>
+            <p>
+              <b>By night</b> Way too much news, so you don’t have to.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section className="ab-menu" aria-labelledby="menu-title">
+        <h2 id="menu-title">The internet serves news two ways.</h2>
+        <ul className="ab-options">
+          <li className="ab-opt">
+            <span className="ab-emoji" aria-hidden>
+              🍜
+            </span>
+            <b>Instant noodles</b>
+            <span>Fast, salty, gone in a minute.</span>
+          </li>
+          <li className="ab-opt">
+            <span className="ab-emoji" aria-hidden>
+              🍽️
+            </span>
+            <b>A 40-page tasting menu</b>
+            <span>Impressive. Nobody has the time.</span>
+          </li>
+          <li className="ab-opt ab-pick">
+            <span className="ab-emoji" aria-hidden>
+              🍰
+            </span>
+            <b>The third option</b>
+            <span>One slice. Cooked right. Served daily.</span>
+          </li>
+        </ul>
       </section>
 
       <section className="ab-section" aria-labelledby="product-title">
