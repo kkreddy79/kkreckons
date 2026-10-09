@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "editions": "node scripts/build-editions.mjs"
   },
   "dependencies": {
     "next": "16.3.1",
@@ -14,9 +15,10 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
     "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0"
+    "@types/react-dom": "^19.0.0",
+    "playwright": "^1.56.1",
+    "typescript": "^5.0.0"
   }
 }

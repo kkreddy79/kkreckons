@@ -1,27 +1,52 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Link from "next/link";
+import { latest, slugFor } from "@/lib/editions";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "KKReckons — Read deep. Think clearly.",
-  description: "Visual daily briefings on AI, markets, business, India and the world. Curated by KK Reddy.",
+  metadataBase: new URL("https://www.kkreckons.com"),
+  title: { default: "KKReckons — Read deep. Think clearly.", template: "%s · KKReckons" },
+  description:
+    "Visual daily briefings on AI, markets, business, India and the world. Curated by KK Reddy.",
+  openGraph: {
+    siteName: "KKReckons",
+    type: "website",
+    images: [`/covers/${latest.date}.jpg`],
+  },
 };
+
+export const viewport: Viewport = { themeColor: "#fbf8f1" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
         <header className="site-header">
-          <a className="brand" href="/">KK<span>RECKONS</span></a>
+          <Link className="brand" href="/">
+            KK<span>RECKONS</span>
+          </Link>
           <nav>
-            <a href="/daily/">Daily</a>
-            <a href="/daily/september-30-2026">Latest</a>
-            <a href="/about">About</a>
+            <Link href={`/daily/${slugFor(latest.date)}`}>Today</Link>
+            <Link href="/daily/">Archive</Link>
+            <Link href="/about">About</Link>
           </nav>
         </header>
         {children}
         <footer className="site-footer">
-          <div><strong>KKRECKONS</strong><br/>Read deep. Think clearly.</div>
-          <div>Curated by KK Reddy</div>
+          <div>
+            <strong>KKRECKONS</strong>
+            <br />
+            Read deep. Think clearly.
+          </div>
+          <div className="foot-links">
+            <Link href="/daily/">All editions</Link>
+            <Link href="/about">About</Link>
+          </div>
+          <div>
+            Curated by KK Reddy
+            <br />
+            <span className="fine">For information only. Not financial, legal or career advice.</span>
+          </div>
         </footer>
       </body>
     </html>
