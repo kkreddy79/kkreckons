@@ -4,44 +4,52 @@ import { latest, slugFor } from "@/lib/editions";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About KKReckons, the daily India + World briefing curated by KK Reddy.",
+  description:
+    "KKReckons is one visual daily briefing on India and the world: AI, markets, business and the story behind the headline, in five minutes.",
 };
 
 export default function About() {
   return (
     <main className="container narrow">
       <section className="hero">
-        <div className="eyebrow">About</div>
-        <h1>Baked in India, served from America.</h1>
+        <div className="eyebrow">About KKReckons</div>
+        <h1>Hi, I’m KK.</h1>
         <p>
-          KKReckons is a visual daily briefing curated by KK Reddy. Each edition pulls together the stories worth
-          your time across AI, markets, business, India and the world.
+          I grew up in South India and now live in Southern California, so there’s always a news tab open on both
+          sides of the planet. One of them is usually still awake.
         </p>
       </section>
       <div className="prose">
-        <h2>How each edition works</h2>
+        <p>
+          By day I work where capital markets meet technology. By night I read far more news than is healthy, so
+          you don’t have to.
+        </p>
+        <p>
+          The internet serves news two ways: instant noodles (fast, salty, gone in a minute) or a 40-page tasting
+          menu nobody has time for. KKReckons is the third option: one plate, cooked properly, served daily.
+        </p>
+        <p>
+          Each morning you get one visual briefing on India and the world. It covers AI, markets, business and the
+          story behind the headline, with just enough spice to keep you awake.
+        </p>
+
+        <h2>House rules</h2>
         <ul>
           <li>
-            <b>Pick of the day.</b> One story worth slowing down for.
+            <b>Every story links to its source.</b> Trust, then verify.
           </li>
           <li>
-            <b>India edition and World edition.</b> The day’s signals, side by side.
+            <b>Every story has an “other side.”</b> A headline is the trailer, not the movie.
           </li>
           <li>
-            <b>By the numbers.</b> The figures that carry each story.
-          </li>
-          <li>
-            <b>Why it matters, and the other side.</b> The stakes, and the best case against.
-          </li>
-          <li>
-            <b>Further reading and Today’s slice.</b> Where to go next, and the day in one line.
+            <b>News and opinion stay in separate bowls.</b> When I’m reckoning, I’ll tell you.
           </li>
         </ul>
-        <h2>Our standards</h2>
+
         <p>
-          Reported facts are kept apart from opinion, and opinion pieces are labelled. Every story links to its
-          source, so you can check the numbers yourself before acting on them.
+          Five minutes. No doomscroll hangover. I’d rather have you back tomorrow than keep you scrolling today.
         </p>
+        <p className="signoff">Read deep. Think clearly. Leave in five.</p>
         <p className="fine">For information only. Not financial, legal or career advice.</p>
         <p>
           <Link className="button" href={`/daily/${slugFor(latest.date)}`}>

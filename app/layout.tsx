@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kkreckons.com"),
-  title: { default: "KKReckons — Read deep. Think clearly.", template: "%s · KKReckons" },
+  title: { default: "KKReckons — Read deep. Think clearly. Leave in five.", template: "%s · KKReckons" },
   description:
     "Visual daily briefings on AI, markets, business, India and the world. Curated by KK Reddy.",
   openGraph: {
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div>
             <strong>KKRECKONS</strong>
             <br />
-            Read deep. Think clearly.
+            Read deep. Think clearly. Leave in five.
           </div>
           <div className="foot-links">
             <Link href="/daily/">All editions</Link>
