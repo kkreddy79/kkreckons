@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kkreckons.com"),
-  title: { default: "KKReckons — Read deep. Think clearly. Leave in five.", template: "%s · KKReckons" },
+  title: { default: "KKReckons — Read deep. Think clearly. Stay curious.", template: "%s · KKReckons" },
   description:
     "Visual daily briefings on AI, markets, business, India and the world. Curated by Krishnakanth Reddy.",
   openGraph: {

@@ -17,7 +17,7 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
       <div className="ab-join-text">
         <p className="ab-join-kicker">{home ? "Never miss an edition" : "Today’s edition is ready"}</p>
         <h2 id="join-title">
-          {home ? "Get tomorrow’s briefing in your inbox." : "Read deep. Think clearly. Leave in five."}
+          {home ? "Get tomorrow’s briefing in your inbox." : "Read deep. Think clearly. Stay curious."}
         </h2>
         <p>
           {home
