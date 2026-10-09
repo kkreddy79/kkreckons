@@ -1,8 +1,22 @@
+import "@fontsource/playfair-display/latin-700.css";
+import "@fontsource/playfair-display/latin-800.css";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Masthead from "@/components/Masthead";
-import { CakeIcon, CharminarIcon, MoonIcon, NoodlesIcon, PalmIcon, SunIcon, TastingMenuIcon } from "@/components/AboutIcons";
-import { editions, latest, slugFor, totalStories } from "@/lib/editions";
+import {
+  BuildingIcon,
+  BulbIcon,
+  ChartIcon,
+  ChipIcon,
+  DocIcon,
+  GlobeIcon,
+  LinkIcon,
+  MailIcon,
+  MoonIcon,
+  PeopleIcon,
+  ScalesIcon,
+  SunIcon,
+} from "@/components/AboutIcons";
+import { latest, slugFor } from "@/lib/editions";
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
 const DESCRIPTION =
@@ -16,173 +30,175 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: "/about",
-    images: [{ url: "/about/two-worlds.jpg", width: 2000, height: 816, alt: "KKReckons: Signal & Spice from Two Worlds" }],
+    images: [{ url: "/about/two-worlds.jpg", width: 2000, height: 816, alt: "KKReckons: India and Southern California at sunset" }],
   },
 };
 
-const PILLARS = [
-  { title: "The Signal", body: "Find the developments worth your attention amid the daily flood of headlines." },
-  { title: "The Context", body: "Understand the numbers, incentives, background and forces driving the story." },
-  {
-    title: "The Other Side",
-    body: "Where it matters, weigh credible counterarguments, open questions and what the evidence does, and doesn’t, establish.",
-  },
+const BEATS = [
+  { Icon: ChipIcon, title: "AI & Technology", body: "Breakthroughs, business and real-world impact." },
+  { Icon: ChartIcon, title: "Markets & Economy", body: "Trends, data and what they mean." },
+  { Icon: BuildingIcon, title: "Business & Companies", body: "Strategy, earnings and big moves." },
+  { Icon: GlobeIcon, title: "U.S. & Global Affairs", body: "Key developments and their connections." },
+  { Icon: BulbIcon, title: "Science & More", body: "Ideas and innovations shaping what’s next." },
 ];
 
 const RULES = [
-  {
-    title: "Follow the source",
-    body: "Stories link to their original sources wherever available, so you can examine the evidence yourself.",
-    color: "#b84a17",
-  },
-  {
-    title: "Consider the other side",
-    body: "Explore credible counterarguments, competing interpretations and important uncertainties. Fair scrutiny matters more than artificial balance.",
-    color: "#0a716b",
-  },
-  {
-    title: "Separate reporting from opinion",
-    body: "Make it clear what the sources report, what the analysis infers, and where KKReckons offers its own view.",
-    color: "#6a3fb8",
-  },
-  {
-    title: "Respect the reader’s intelligence",
-    body: "Explain complex developments in clear language, put important numbers in context, and keep the nuance that makes a story meaningful.",
-    color: "#c8173f",
-  },
+  { Icon: LinkIcon, text: "Every story links to its source." },
+  { Icon: ScalesIcon, text: "Every story has an “other side.”" },
+  { Icon: DocIcon, text: "Reporting and opinion stay separate." },
+  { Icon: PeopleIcon, text: "I respect your intelligence." },
 ];
 
-function Ctas() {
+function Pic({ name, alt, w, h, png }: { name: string; alt: string; w: number; h: number; png?: boolean }) {
   return (
-    <div className="cta-row">
-      <Link className="button" href={`/daily/${slugFor(latest.date)}`}>
-        Read Today’s Edition →
-      </Link>
-      <Link className="button alt" href="/daily/">
-        Explore the Archive
-      </Link>
-    </div>
+    <picture>
+      <source srcSet={`/about/${name}.webp`} type="image/webp" />
+      <img src={`/about/${name}.${png ? "png" : "jpg"}`} width={w} height={h} alt={alt} loading="lazy" />
+    </picture>
   );
 }
 
 export default function About() {
-  const avgStories = Math.round(totalStories / editions.length);
-  const avgMinutes = Math.round(editions.reduce((n, e) => n + e.readingMinutes, 0) / editions.length);
+  const today = `/daily/${slugFor(latest.date)}`;
 
   return (
-    <main className="container about">
-      <Masthead />
-
-      <section className="ab-hero" aria-labelledby="about-title">
-        <p className="eyebrow">About</p>
-        <h1 id="about-title">The world is complicated. Your briefing shouldn’t be.</h1>
-        <p className="ab-lede">
-          Independent perspectives on AI, markets, business and global affairs, with the context, evidence and
-          opposing views behind the headline.
-        </p>
-        <p className="ab-identity">India-rooted. Globally minded. Curated by KK Reddy.</p>
-        <Ctas />
-      </section>
-
-      <section className="ab-founder" aria-labelledby="founder-title">
-        <div className="ab-founder-text">
-          <h2 id="founder-title">Hi, I’m KK.</h2>
-          <p className="ab-route">
-            <span>
-              <CharminarIcon className="ab-chip-ic" /> South India
-            </span>
-            <span className="ab-route-arrow" aria-hidden>
-              ⇄
-            </span>
-            <span>
-              <PalmIcon className="ab-chip-ic" /> Southern California
-            </span>
+    <main className="about">
+      <header className="ab-top">
+        <picture className="ab-top-img">
+          <source srcSet="/about/two-worlds.webp" type="image/webp" />
+          <img
+            src="/about/two-worlds.jpg"
+            width={2000}
+            height={816}
+            alt="Sunset panorama: South Indian temples and forts on one side, the Los Angeles skyline and Santa Monica pier on the other"
+          />
+        </picture>
+        <div className="ab-brand">
+          <p className="ab-wordmark">
+            KK<span>Reckons</span>
           </p>
-          <p className="ab-founder-lede">
-            One foot in each world, and a news tab open in both. One of them is always awake.
-          </p>
+          <p className="ab-strap">A clearer slice of a complex world</p>
         </div>
-        <ul className="ab-daynight">
-          <li>
-            <SunIcon className="ab-dn-ic" />
-            <p>
-              <b>By day</b> Capital markets, meet technology.
-            </p>
-          </li>
-          <li>
-            <MoonIcon className="ab-dn-ic" />
-            <p>
-              <b>By night</b> Way too much news, so you don’t have to.
-            </p>
-          </li>
-        </ul>
-      </section>
+      </header>
 
-      <section className="ab-menu" aria-labelledby="menu-title">
-        <h2 id="menu-title">The internet serves news two ways.</h2>
-        <ul className="ab-options">
-          <li className="ab-opt">
-            <NoodlesIcon className="ab-emoji" />
-            <b>Instant noodles</b>
-            <span>Fast, salty, gone in a minute.</span>
-          </li>
-          <li className="ab-opt">
-            <TastingMenuIcon className="ab-emoji" />
-            <b>A 40-page tasting menu</b>
-            <span>Impressive. Nobody has the time.</span>
-          </li>
-          <li className="ab-opt ab-pick">
-            <CakeIcon className="ab-emoji" />
-            <b>The third option</b>
-            <span>One slice. Cooked right. Served daily.</span>
-          </li>
-        </ul>
-      </section>
+      <div className="ab-wrap">
+        <section className="ab-hero" aria-labelledby="about-title">
+          <p className="ab-kicker">About KKReckons</p>
+          <h1 id="about-title">
+            One foot in each world, <br className="ab-br" />
+            and a news tab open in both.
+          </h1>
+          <p className="ab-lede">
+            Born and raised in Southern India, now in Southern California. One of them is usually still awake.
+          </p>
+        </section>
 
-      <section className="ab-section" aria-labelledby="product-title">
-        <h2 id="product-title">Less noise. More understanding.</h2>
-        <p className="ab-intro">
-          Every edition brings together a curated selection of stories across technology, markets, business and global
-          affairs. The goal isn’t to tell you everything that happened. It’s to help you understand the developments
-          that matter, the forces behind them, and the implications worth considering.
-        </p>
-        <ul className="ab-pillars">
-          {PILLARS.map((p) => (
-            <li key={p.title}>
-              <h3>{p.title}</h3>
-              <p>{p.body}</p>
-            </li>
-          ))}
-        </ul>
-        <p className="ab-stats">
-          A typical edition: about <b>{avgStories} stories</b> and <b>{avgMinutes} minutes</b> of reading.{" "}
-          <span>
-            {editions.length} editions and {totalStories} stories published so far.
+        <section className="ab-dn" aria-label="By day and by night">
+          <article className="ab-dn-card">
+            <Pic name="day" w={880} h={372} alt="A laptop with a market chart on a desk by a window overlooking a city" />
+            <div className="ab-dn-body">
+              <SunIcon className="ab-dn-ic ab-sun" />
+              <div>
+                <p className="ab-label ab-orange">By day</p>
+                <h2>Capital markets meet technology.</h2>
+                <p>Where markets, companies and innovation converge.</p>
+              </div>
+            </div>
+          </article>
+          <article className="ab-dn-card">
+            <Pic name="night" w={880} h={370} alt="A stack of newspapers and a mug under a desk lamp, city lights beyond" />
+            <div className="ab-dn-body">
+              <MoonIcon className="ab-dn-ic ab-moon" />
+              <div>
+                <p className="ab-label ab-purple">By night</p>
+                <h2>Way too much news, so you don’t have to.</h2>
+                <p>I cut through the noise and keep what matters.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section className="ab-ways" aria-labelledby="ways-title">
+          <div className="ab-ways-two">
+            <p className="ab-kicker" id="ways-title">
+              The internet serves news two ways
+            </p>
+            <div className="ab-ways-grid">
+              <div className="ab-way">
+                <Pic name="noodles" png w={388} h={260} alt="" />
+                <h3>Instant noodles.</h3>
+                <p>Fast, salty, forgotten by tomorrow.</p>
+              </div>
+              <div className="ab-way">
+                <Pic name="books" png w={340} h={260} alt="" />
+                <h3>A 40-page tasting menu.</h3>
+                <p>Impressive. Nobody has the time.</p>
+              </div>
+            </div>
+          </div>
+          <div className="ab-third">
+            <Pic name="cake" png w={496} h={260} alt="" />
+            <h3>The third option.</h3>
+            <p>
+              The right slice of the world.
+              <br />
+              Served daily.
+            </p>
+          </div>
+        </section>
+
+        <section className="ab-beats" aria-labelledby="beats-title">
+          <p className="ab-kicker" id="beats-title">
+            What you’ll find in each edition
+          </p>
+          <ul>
+            {BEATS.map(({ Icon, title, body }) => (
+              <li key={title}>
+                <span className="ab-ic-circle">
+                  <Icon className="ab-ic" />
+                </span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="ab-rules" aria-labelledby="rules-title">
+          <p className="ab-kicker" id="rules-title">
+            House rules
+          </p>
+          <ul>
+            {RULES.map(({ Icon, text }) => (
+              <li key={text}>
+                <span className="ab-ic-circle">
+                  <Icon className="ab-ic" />
+                </span>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="ab-join" aria-labelledby="join-title">
+          <span className="ab-join-ic" aria-hidden>
+            <MailIcon className="ab-ic" />
           </span>
-        </p>
-      </section>
-
-      <section className="ab-section" aria-labelledby="rules-title">
-        <h2 id="rules-title">Four rules. No shortcuts.</h2>
-        <p className="ab-intro">The standards every edition aims for.</p>
-        <ol className="ab-rules">
-          {RULES.map((r, i) => (
-            <li key={r.title} style={{ "--c": r.color } as React.CSSProperties}>
-              <span className="ab-rule-num" aria-hidden>
-                0{i + 1}
-              </span>
-              <h3>{r.title}</h3>
-              <p>{r.body}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="ab-close" aria-labelledby="close-title">
-        <h2 id="close-title">Read deep. Think clearly. Leave in five.</h2>
-        <p>A little more context. A little less noise. A better understanding of the world.</p>
-        <Ctas />
-      </section>
+          <div className="ab-join-text">
+            <p className="ab-join-kicker">Join KKReckons</p>
+            <h2 id="join-title">Read deep. Think clearly. Leave in five.</h2>
+            <p>A daily visual briefing on the stories that matter: India, the world, and what’s next.</p>
+          </div>
+          <div className="ab-join-cta">
+            <Link className="ab-btn" href={today}>
+              Read Today’s Edition →
+            </Link>
+            <Link className="ab-btn-ghost" href="/daily/">
+              Explore the Archive
+            </Link>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
