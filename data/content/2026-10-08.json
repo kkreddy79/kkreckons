@@ -1,0 +1,283 @@
+{
+  "date": "2026-10-08",
+  "slice": "Gen Z says the deal is broken. AI could test it everywhere.",
+  "artifact": "https://claude.ai/artifact/R6WYgbLC6GGuqQJKt7D9f8",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "$500bn",
+      "text": "of US bank value at risk if AI agents win savers market-like rates on their deposits.",
+      "url": "https://www.ft.com/content/a21ec190-edcd-454e-886a-302b0a16ea82"
+    },
+    {
+      "num": "~5%",
+      "text": "of human work replaced by AI within 10 years, estimates Nobel economist Daron Acemoglu.",
+      "url": "https://humanistreview.ai/issue-1/acemoglu-ai-replace-workers/"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Youth and connection",
+          "tag": "",
+          "title": "Gen Z’s squeeze needs new words, and a lot more talk",
+          "url": "https://m.economictimes.com/news/international/world-news/europe-gen-z-youth-protests-france-belgium-ireland-spain-student-protests-housing-crisis-cost-of-living-education-crisis/articleshow/134741772.cms",
+          "url2": "",
+          "points": [
+            "From France and Belgium to Ireland and Spain, young Europeans are protesting over failing schools, college costs and rents; nearly 590 French high schools were affected, and over half of young Spanish adults still live with their parents.",
+            "A Mumbai psychotherapist sees conversation fading at home and work; a 2026 study finds daily spoken words fell by about 338 a year, from around 16,000 in 2005 to 12,700 by 2019.",
+            "Humanities professor David Lloyd Dusenbury notes that young, highly educated Gen Zers widely blame ‘capitalism’, a 19th-century word, for their dimmer prospects, and says new terms are overdue."
+          ],
+          "numbers": [
+            [
+              "~590",
+              "French schools"
+            ],
+            [
+              "−338",
+              "words/day, yearly"
+            ],
+            [
+              "19th c.",
+              "our labels’ era"
+            ]
+          ],
+          "why": "Elders should guide Gen Z at work and at home, by talking, not just texting. With AI reshaping jobs, that guidance matters more than ever.",
+          "other": "The protests are about rent, fees and underfunded schools, and governments face real budget limits. Gen Z may want policy fixes, not advice from elders.",
+          "also": [
+            {
+              "title": "Why small talk matters more than we think",
+              "url": "https://www.livemint.com/mint-lounge/art-and-culture/new-books-india-october-2026-11790876396071.html"
+            },
+            {
+              "title": "Our political labels are out of date",
+              "url": "https://www.wsj.com/opinion/free-expression/our-political-labels-are-out-of-date-52dd12a3"
+            }
+          ],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Jobs abroad",
+          "tag": "",
+          "title": "How BorderPlus is turning India’s talent surplus into a global workforce",
+          "url": "https://inc42.com/startups/can-borderplus-is-turning-indias-talent-surplus-into-a-global-workforce/",
+          "url2": "",
+          "points": [
+            "Founded in 2025 by upGrad co-founder Mayank Kumar and Ayush Mathur, it trains nurses, matches them with overseas employers and handles visas, documentation and relocation.",
+            "Germany is 90–95% of the business today; it is expanding into Japan and the Gulf, then plans English-speaking markets such as the US, UK, Australia and Canada.",
+            "Employers pay about €8,000–12,000 per placement; candidates pay ₹10,000 for the first month and ₹1.9 lakh after screening. It raised $7 Mn last year."
+          ],
+          "numbers": [
+            [
+              "~1,000",
+              "placements, FY27"
+            ],
+            [
+              "€8–12K",
+              "fee per placement"
+            ],
+            [
+              "70%",
+              "Indian candidates"
+            ]
+          ],
+          "why": "Ageing nations need workers and India has them. Done well, a talent surplus becomes careers abroad.",
+          "other": "Germany is 90–95% of the business, hiring cycles can run 15 months, and visa rules and attitudes to migrant workers can shift. A global platform, or a German nursing pipeline?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Trade and economy",
+          "tag": "",
+          "title": "RBI chief: a failed India–US trade deal would do ‘some’ damage",
+          "url": "https://m.economictimes.com/news/economy/policy/what-will-happen-to-economy-if-india-us-fta-doesnt-happen-rbi-governor-reveals/articleshow/134773660.cms",
+          "url2": "",
+          "points": [
+            "Sanjay Malhotra says the impact depends on how far tariffs go, so it is ‘premature’ to put a number on it.",
+            "Deals with the UK and New Zealand are signed; around 10 more are under discussion, including Peru, Chile, Israel, Canada and the Eurasian Economic Union.",
+            "USTR Jamieson Greer said on 1 Oct a deal was not imminent; on 5 Oct Nirmala Sitharaman said talks had ‘reached a plateau’."
+          ],
+          "numbers": [
+            [
+              "~10",
+              "trade deals in talks"
+            ],
+            [
+              "Plateau",
+              "FM on US talks"
+            ],
+            [
+              "2",
+              "deals signed: UK, NZ"
+            ]
+          ],
+          "why": "Spreading trade bets beyond the US is India’s hedge.",
+          "other": "Can a string of smaller deals really make up for the US market?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI and jobs",
+          "tag": "Opinion",
+          "title": "Acemoglu: AI will replace only about 5% of human work in 10 years",
+          "url": "https://humanistreview.ai/issue-1/acemoglu-ai-replace-workers/",
+          "url2": "",
+          "points": [
+            "The Nobel economist says AI should be built to make workers better at their jobs, not to replace them, and that such ‘pro-worker AI’ is within reach of today’s models.",
+            "He expects only about 5% of what humans do to be replaced within 10 years and roughly 1.5% added to GDP, likening AI to electricity, which took decades to spread.",
+            "The US taxes labour at over 25% and capital near zero, which he says subsidises automation; the seven largest tech firms make up 60% of the NASDAQ."
+          ],
+          "numbers": [
+            [
+              "~5%",
+              "of work, next 10 yrs"
+            ],
+            [
+              "~1.5%",
+              "GDP gain, 10 years"
+            ],
+            [
+              "60%",
+              "NASDAQ, top 7 firms"
+            ]
+          ],
+          "why": "It tempers both job panic and AI hype, and says the direction AI takes is still a choice.",
+          "other": "He calls the 5% a guesstimate made two years ago, and admits models have advanced faster than he expected. Will the forecast hold?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Materials science",
+          "tag": "",
+          "title": "AI agents find two room-temperature magnet candidates for future memory",
+          "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
+          "url2": "",
+          "points": [
+            "A team of AI agents designed a new compound and spotted a 1999 one as magnets with zero net magnetism that still sort electrons by spin.",
+            "The 1999 compound, KV[Cr(CN)₆], stayed magnetically ordered up to 376 K (103 °C); the new design may be hard to make in its useful form.",
+            "Band gaps and spin sorting are predicted by simulation, not yet measured; the code and calculations are public."
+          ],
+          "numbers": [
+            [
+              "376 K",
+              "Stays magnetic up to 103°C"
+            ],
+            [
+              "2",
+              "materials flagged by AI team"
+            ]
+          ],
+          "why": "It points to denser, faster computer memory, found partly by AI.",
+          "other": "Spin sorting is predicted, not yet measured; the real test is remaking the material in a lab.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Banking and AI",
+          "tag": "Opinion",
+          "title": "AI agents could cost US banks $500bn by winning savers better rates",
+          "url": "https://www.ft.com/content/a21ec190-edcd-454e-886a-302b0a16ea82",
+          "url2": "",
+          "points": [
+            "AI assistants could flag better deals or sweep idle cash into money-market funds paying more than near-zero instant-access rates.",
+            "JPMorgan, Bank of America and Wells Fargo hold $1.6tn of non-interest-bearing deposits; paying 3% on them would cost $47bn a year, almost half their annual earnings.",
+            "Banks gain too: Bank of America says $400mn spent on AI brought $800mn of benefits."
+          ],
+          "numbers": [
+            [
+              "$500bn",
+              "about 1/10 of US bank value"
+            ],
+            [
+              "$1.6tn",
+              "zero-rate deposits, top 3"
+            ]
+          ],
+          "why": "Your idle balance is your bank’s profit; an AI agent could change who keeps it.",
+          "other": "Will savers hand their money to a bot, and who is liable if it sends funds to the wrong place?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI and thinking",
+          "tag": "Opinion",
+          "title": "Tim Harford: how AI tempts the lazy mind",
+          "url": "https://www.ft.com/content/f5d01c83-6133-4a01-a9c7-f8a2067b7c32",
+          "url2": "",
+          "points": [
+            "The real risk, he argues, is not that we trust AI completely, but that we stop caring enough to check its answers.",
+            "Anthropic co-founder Jack Clark misremembered CS Lewis on stage, and Google’s AI misattributed a Lewis quote too.",
+            "Like the telephone, AI cuts both ways: it can spark deeper research or replace it."
+          ],
+          "numbers": [
+            [
+              "100,000+",
+              "phone lines cut, 1975 fire"
+            ],
+            [
+              "2/3",
+              "felt isolated or uneasy"
+            ]
+          ],
+          "why": "Having an answer isn’t the same as finding the truth.",
+          "other": "Shortcuts also free time for deeper thinking; the choice of how to use them is ours.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Environment",
+          "tag": "Opinion",
+          "title": "Bjorn Lomborg: most recycling is a waste",
+          "url": "https://www.wsj.com/opinion/most-recycling-is-a-waste-091924e1",
+          "url2": "",
+          "points": [
+            "Metals and some plastics are worth separating; much paper, glass and plastic costs more to collect and process than it is worth.",
+            "A Danish plan would cost nearly €4,000 per ton of CO₂ avoided, almost 50 times the European carbon price.",
+            "Japanese data put the socially optimal recycling rate around 10%; sorting takes households 26–29 minutes a week per person."
+          ],
+          "numbers": [
+            [
+              "26–29 min",
+              "weekly sorting, per person"
+            ],
+            [
+              "$250bn+",
+              "yearly global waste spend"
+            ]
+          ],
+          "why": "Good intentions still need a cost check.",
+          "other": "Cost tallies can undervalue harm from landfill and litter. Do his sums count it fully?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Mustafa Suleyman: AI won’t take your job anytime soon",
+      "url": "https://x.com/mustafasuleyman/status/2107475087075197239",
+      "note": ""
+    }
+  ]
+}

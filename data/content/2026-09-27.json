@@ -1,0 +1,253 @@
+{
+  "date": "2026-09-27",
+  "slice": "India bets on cheaper AI and fuel. The world’s lesson: what you show, ship or see can be taken.",
+  "artifact": "https://claude.ai/artifact/UboVjRzKFFZR7b3DsaJCHo",
+  "readingMinutes": 3,
+  "callouts": [
+    {
+      "num": "4 crore",
+      "text": "LIC forms being digitised with custom AI models, says Sarvam’s Pratyush Kumar.",
+      "url": "https://www.moneycontrol.com/news/business/startup/from-ai-models-to-agents-sarvam-s-kumar-emergent-s-jha-map-india-s-next-five-years-14038762.html"
+    },
+    {
+      "num": "~1,300",
+      "text": "China-to-Iran shipments with dual-use parts for Iran’s defence ministry, January to June.",
+      "url": "https://www.livemint.com/global/iran-has-a-secret-weapon-in-its-war-with-america-help-from-china-11790214285262.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Artificial intelligence",
+          "tag": "",
+          "title": "Sarvam: India will be AI’s biggest user in five years",
+          "url": "https://www.moneycontrol.com/news/business/startup/from-ai-models-to-agents-sarvam-s-kumar-emergent-s-jha-map-india-s-next-five-years-14038762.html",
+          "url2": "",
+          "points": [
+            "Co-founder Pratyush Kumar calls this “year one for India AI”.",
+            "He says India should speed up how it builds and adopts AI.",
+            "The catch: the cost of using AI has to keep falling."
+          ],
+          "numbers": [
+            [
+              "30B + 105B",
+              "open-source models, March"
+            ],
+            [
+              "Scratch",
+              "both trained in India"
+            ]
+          ],
+          "why": "Scale is India’s edge; price sets the pace.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI policy",
+          "tag": "",
+          "title": "Govt weighs a ₹20,000 cr fund for frontier AI",
+          "url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/govt-eyes-rs-20000-crore-fund-to-power-up-frontier-ai-and-compute-ecosystem/articleshow/134466929.cms",
+          "url2": "",
+          "points": [
+            "Proposed ₹15,000–20,000 cr anchor under the IndiaAI Mission.",
+            "Would back AI startups, GPU clusters and data centres.",
+            "Could be set up as a SEBI-regulated Category I AIF."
+          ],
+          "numbers": [
+            [
+              "₹10,372 cr",
+              "current IndiaAI outlay"
+            ],
+            [
+              "Draft",
+              "size and structure not final"
+            ]
+          ],
+          "why": "The state wants to be AI’s anchor investor.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Energy",
+          "tag": "",
+          "title": "Gadkari: a pure-ethanol car at ‘₹25 a litre’",
+          "url": "https://economictimes.indiatimes.com/industry/transportation/roadways/nitin-gadkari-says-a-100-ethanol-car-that-doesnt-need-petrol-will-run-as-cheap-as-petrol-priced-at-rs-25-a-litre/articleshow/134497441.cms",
+          "url2": "",
+          "points": [
+            "Toyota’s 100% ethanol Innova launches in October, he says.",
+            "Claims running cost equals petrol at about ₹25 a litre.",
+            "No complaints so far on ethanol-blended fuel, he adds."
+          ],
+          "numbers": [
+            [
+              "October",
+              "Innova flex-fuel launch"
+            ],
+            [
+              "₹25/litre",
+              "claimed petrol-equivalent"
+            ]
+          ],
+          "why": "A minister’s claim; the proof is at the pump.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Safety",
+          "tag": "Caution",
+          "title": "YouTuber flaunts gold online; burglars strike",
+          "url": "https://www.indiatoday.in/amp/trending-news/story/tamil-nadu-youtuber-flaunts-gold-and-cash-online-burglars-steal-valuables-from-home-3003333-2026-09-26",
+          "url2": "",
+          "points": [
+            "Nagercoil home broken into while the family was out, Sept 24.",
+            "Thieves forced the back door and took gold kept in a bureau.",
+            "Police are checking the videos; no link confirmed yet."
+          ],
+          "numbers": [
+            [
+              "118",
+              "sovereigns of gold, ~944 g"
+            ],
+            [
+              "~₹1 cr",
+              "estimated loss"
+            ]
+          ],
+          "why": "Your reel can be a burglar’s recce.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Economy",
+          "tag": "Opinion",
+          "title": "The ‘India shock’: exporting workers, not goods",
+          "url": "https://www.ft.com/content/afb910e4-5425-4d3e-b0ef-c1d260f29945",
+          "url2": "",
+          "points": [
+            "About 1mn join the workforce each month; too few good jobs, so talent heads abroad.",
+            "Backlash abroad is rising, and brain drain may cost $35–50bn a year."
+          ],
+          "numbers": [
+            [
+              "$150bn",
+              "remittances, ~3% of GDP"
+            ],
+            [
+              "18.5mn",
+              "Indians abroad, 2024"
+            ],
+            [
+              "~70%",
+              "of US H-1B approvals"
+            ]
+          ],
+          "why": "Remittances ease the strain; only jobs at home solve it.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Geopolitics",
+          "tag": "",
+          "title": "Iran’s secret weapon against America: China",
+          "url": "https://www.livemint.com/global/iran-has-a-secret-weapon-in-its-war-with-america-help-from-china-11790214285262.html",
+          "url2": "",
+          "points": [
+            "As Beijing hailed its role in a US–Iran truce, a Chinese plane landed in Tehran.",
+            "China is now the only major buyer of Iranian oil.",
+            "Chinese front companies and banks help move the money."
+          ],
+          "numbers": [
+            [
+              "$6M+",
+              "drone-usable parts in 12+ shipments"
+            ],
+            [
+              "Only",
+              "major buyer of Iran’s oil"
+            ],
+            [
+              "Jan–Jun",
+              "customs data window"
+            ]
+          ],
+          "why": "Peacemaker in public, supplier in private.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Defence",
+          "tag": "",
+          "title": "F-35 parts bound for US repair end up in Hong Kong",
+          "url": "https://www.theguardian.com/world/2026/sep/22/australia-investigating-how-f-35-fighter-jet-parts-bound-for-us-went-missing-in-hong-kong",
+          "url2": "",
+          "points": [
+            "Sent from Australia for US repairs, it went to Hong Kong.",
+            "Australia is investigating how the parts went missing."
+          ],
+          "numbers": [
+            [
+              "Hong Kong",
+              "diverted there"
+            ],
+            [
+              "Canopy",
+              "among the parts"
+            ]
+          ],
+          "why": "A stealth jet is only as secure as its courier.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Tech",
+          "tag": "",
+          "title": "Meta doubles down despite the ‘pervert glasses’ jibe",
+          "url": "https://www.economist.com/business/2026/09/24/how-tech-firms-hope-to-beat-the-backlash-against-pervert-glasses",
+          "url2": "",
+          "points": [
+            "Videos of men secretly filming women sparked the backlash.",
+            "Meta now disables the camera if the LED is tampered with.",
+            "Snap, Google and Samsung are pushing their own AI glasses."
+          ],
+          "numbers": [
+            [
+              "4.2m",
+              "AI glasses shipped, H1"
+            ],
+            [
+              "2×+",
+              "year-on-year growth"
+            ]
+          ],
+          "why": "Stigma hasn’t stopped sales; trust is next.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": []
+}

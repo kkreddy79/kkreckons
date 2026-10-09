@@ -1,0 +1,155 @@
+{
+  "date": "2026-09-25",
+  "slice": "Four stories: markets, boardrooms, banks and orbit.",
+  "artifact": "https://claude.ai/artifact/UHW7xwwBX9FMWubycDaJvm",
+  "readingMinutes": 4,
+  "callouts": [],
+  "sections": [
+    {
+      "name": "Top stories",
+      "stories": [
+        {
+          "category": "Markets & Economy",
+          "tag": "",
+          "title": "US 10-year Treasury yield at 5.183%, up 1.046 points over the past year",
+          "url": "",
+          "url2": "",
+          "points": [
+            "A TradingView snapshot of the United States 10-year government bond yield (US10Y · TVC) shows 5.183%, up 1.046, or 25.28%, over the past year. The one-year line trends upward and finishes at its high point on the chart."
+          ],
+          "numbers": [
+            [
+              "5.183%",
+              "US 10-year government bond yield (US10Y)"
+            ],
+            [
+              "+1.046",
+              "Change over the past year, which the chart labels +25.28%"
+            ]
+          ],
+          "why": "The source is a price snapshot only and gives no explanation or forecast. It sits alongside today's other stories, which are about debt-funded AI build-outs: the FT reports $18bn of construction debt on Oracle's Project Jupiter, and Business Insider says Oracle has racked up tens of billions of dollars in debt.",
+          "other": "What to watch: Whether the yield holds above the 5 line marked on the chart. The source makes no prediction.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Business, Banks & Infrastructure",
+          "tag": "",
+          "title": "Oracle on the hook to pay Project Jupiter investors even if the New Mexico site has no power",
+          "url": "https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "According to people familiar with the matter cited by the FT, Oracle has issued a force majeure notice on power supply to the project developer, a unit of Blue Owl Capital, after the site hit permitting delays amid rising local opposition. Under the contract, Oracle is still liable to pay a carry cost in lieu of rent for up to three years if the project misses its first-phase deadline. Construction is under way on the 1,400-acre campus in Doña Ana County. The FT says Bloomberg first reported the notice on Thursday."
+          ],
+          "numbers": [
+            [
+              "$300bn",
+              "Oracle's contract to provide computing power to OpenAI; Jupiter is at its centre"
+            ],
+            [
+              "$18bn",
+              "Construction debt from a consortium of more than 20 banks"
+            ],
+            [
+              "Up to 3 yrs",
+              "Oracle's liability for a \"carry cost\" in lieu of rent if the site isn't ready"
+            ],
+            [
+              "H1 2027",
+              "Deadline for the first phase to start operating"
+            ]
+          ],
+          "why": "Jupiter is the keystone of Oracle's plan to become an AI data centre player. The fee Oracle must pay would cover debt holders' interest in full plus a certain equity return for Blue Owl funds. The banks — led by BNP Paribas, Goldman Sachs, MUFG and SMBC — saw efforts to offload the debt to a broader group of institutional investors stall amid concerns over Oracle's creditworthiness, and the loans have been quoted at under 90 cents on the dollar. The four-year debt is priced at 2.5 percentage points over SOFR, with an optional two-year extension.",
+          "other": "What to watch: A second person told the FT there is disagreement over whether force majeure can be triggered before a scheduled completion date. Oracle said the notices do not establish a delay and that Project Jupiter \"remains on our planned schedule.\" A Blue Owl spokesperson said the notice does not change the financial commitments.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI, Technology & Jobs",
+          "tag": "",
+          "title": "Leaked document shows which Oracle cloud roles were cut",
+          "url": "https://www.businessinsider.com/oracle-cloud-layoffs-america-roles-hit-hardest-leaked-doc-2026-9",
+          "url2": "",
+          "points": [
+            "Business Insider obtained a document listing the job titles and ages of 546 employees laid off from Oracle's America Cloud Infrastructure organization. After software developer III came program manager IV and principal core infrastructure engineer. Software developers made up around 17% of cuts; 41 came from data center support services, including that division's vice president and two senior directors. Oracle said the document was provided to comply with federal age discrimination laws."
+          ],
+          "numbers": [
+            [
+              "57",
+              "Software developer III, the hardest-hit title"
+            ],
+            [
+              "128",
+              "Roles containing \"manager\", around 23% of cuts"
+            ],
+            [
+              "~16%",
+              "Of those affected were 60 or over; most were over 40"
+            ],
+            [
+              "~$2.8bn",
+              "2026 Restructuring Plan after a ~$700M top-up (Final Round AI)"
+            ]
+          ],
+          "why": "The cuts land in the unit whose quarterly revenue Oracle reported up 121% year over year, as the company expects to spend $90–$95 billion this year on new data centers (Business Insider). Final Round AI reports that Oracle's September 11 SEC filing raised its restructuring plan by about $700 million to roughly $2.8 billion, primarily employee severance, and names adoption of AI technologies among the plan's aims. Both sources say Oracle's workforce fell by 21,000, or 13%, in fiscal 2026, to about 141,000.",
+          "other": "What to watch: Oracle has not said how many people it laid off in total, and Business Insider could not determine whether the document lists everyone. Final Round AI reports WARN filings covering 359 Washington and 441 California roles, effective November 13, 2026, and cites a TD Cowen estimate of a further 20,000–30,000 cuts that Oracle has not confirmed.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Science & Space",
+          "tag": "",
+          "title": "Google's Project Suncatcher readies its first test of AI chips in orbit",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
+          "url2": "",
+          "points": [
+            "In a September 24 post, Google says Project Suncatcher is scheduled for its first orbital test: a prototype satellite, built with partner Planet and flying on SpaceX's Transporter-18 rideshare, to evaluate how Google's Tensor Processing Units perform in space. The post says the first TPUs go into orbit next week."
+          ],
+          "numbers": [
+            [
+              "Up to 8×",
+              "More solar power in low Earth orbit than on Earth, per Google"
+            ],
+            [
+              "2027",
+              "Next milestone: two satellites to test laser links"
+            ],
+            [
+              "Up to 10 g",
+              "Launch loads; individual chips can see 50–100 g"
+            ],
+            [
+              "5 years",
+              "Trillium TPUs survived a radiation dose greater than a five-year mission's (initial results)"
+            ]
+          ],
+          "why": "Suncatcher is a long-term research moonshot exploring whether space could one day host scalable machine-learning infrastructure. Ground tests included shaking the satellite on three axes and running AI workloads in a proton beam at UC Davis's Crocker Nuclear Laboratory. Cooling is a key open problem: in a vacuum there is no airflow, so heat can only be shed through radiators.",
+          "other": "What to watch: How the new TPU cooling system performs in orbit, and the 2027 test of high-bandwidth, short-range laser links between two satellites.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Canada has prepared for the unthinkable: A military attack by the US",
+      "url": "https://economictimes.indiatimes.com/news/international/global-trends/canada-has-prepared-for-the-unthinkable-a-military-attack-by-the-us/articleshow/134465647.cms",
+      "note": "The Economic Times"
+    },
+    {
+      "title": "Oracle data center force majeure",
+      "url": "https://www.cnbc.com/2026/09/24/oracle-data-center-force-majeure.html",
+      "note": "CNBC"
+    },
+    {
+      "title": "Oracle Layoffs 2026: $700M Added to the Cut Budget",
+      "url": "https://www.finalroundai.com/blog/oracle-layoffs-restructuring-plan",
+      "note": "Final Round AI"
+    }
+  ]
+}

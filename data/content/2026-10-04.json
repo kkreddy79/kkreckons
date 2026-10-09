@@ -1,0 +1,302 @@
+{
+  "date": "2026-10-04",
+  "slice": "AI borrows on hope; India pays by UPI but rarely invests, and insurance rewards quitting.",
+  "artifact": "https://claude.ai/artifact/WyXHghuh3Lu8uVLzYyJV8U",
+  "readingMinutes": 4,
+  "callouts": [
+    {
+      "num": "55.2%",
+      "text": "of money invested in AI firms in 2021–25 came from other AI firms, central-bank researchers found.",
+      "url": "https://www.bis.org/publications/bulletin-137-circular-relationships-among-ai-firms.pdf"
+    },
+    {
+      "num": "7%",
+      "text": "of Indian life-insurance payouts in FY25 went to death claims; surrenders took 37%.",
+      "url": "https://www.livemint.com/money/personal-finance/what-life-insurers-actually-pay-for-11790933848565.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI and finance",
+          "tag": "Viewpoint",
+          "title": "Is circular financing in AI a problem?",
+          "url": "https://www.ft.com/content/87875b20-4081-4511-9afe-4ee389409742",
+          "url2": "",
+          "points": [
+            "Over half the money invested in AI firms in 2021–25 came from other AI firms, central-bank researchers found.",
+            "Lucent and Nortel lent to their own customers in the 1990s telecom boom, then lost both loans and sales.",
+            "OpenAI is backing Oracle’s data-centre build with $300bn of business it hasn’t yet raised."
+          ],
+          "numbers": [
+            [
+              "55.2%",
+              "funding from AI firms"
+            ],
+            [
+              "46.4%",
+              "AI-to-AI value circular"
+            ],
+            [
+              "1,246",
+              "AI firms studied"
+            ]
+          ],
+          "why": "Part of AI’s booming sales is the industry funding its own demand.",
+          "other": "The researchers also see sound reasons: suppliers know their customers best, and buyers lock in scarce chips. Warning sign, or sensible financing?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Markets",
+          "tag": "Opinion",
+          "title": "Trading AI compute like oil",
+          "url": "https://www.ft.com/content/a1815bc5-b5d5-47ff-bbbc-e1a689929321?accessToken=zwAAAaEFY6aKkdOhgVvFtdVH_9O7vOGmiZKTIQ.MEUCIQCrxb9uYbvgGdCzZlceRzOKV07GnuU8_tPVEB_7g2zvEgIgOnzQOie7T71L192JcnBtNgunxIp1cI6MoQyttYXbIlI&sharetype=gift&token=1b167908-b239-4889-b2ac-d59edd9502bc",
+          "url2": "",
+          "points": [
+            "CME Group plans futures on rental rates for Nvidia’s H100 and B200 chips, out to 36 months.",
+            "H100 rents hit $8 an hour in early 2024, then fell below $2 in late 2025.",
+            "Yet most new futures never draw lasting volume, writes Marc Rubinstein."
+          ],
+          "numbers": [
+            [
+              "$2.3tn",
+              "2030 market est."
+            ],
+            [
+              "$5.86",
+              "B200 per GPU-hour"
+            ],
+            [
+              "$2.77",
+              "H100 per GPU-hour"
+            ]
+          ],
+          "why": "A traded price for compute would show whether the AI boom is paying off.",
+          "other": "A GPU-hour isn’t standard: chips age fast and rival indexes disagree. Can a market run by a few giants ever be deep?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Economy",
+          "tag": "Interview",
+          "title": "Spence: a ‘pretty big’ shock is possible",
+          "url": "https://m.economictimes.com/news/india/there-could-be-a-pretty-big-global-shock-says-nobel-laureate-economist-michael-spence/articleshow/134664074.cms",
+          "url2": "",
+          "points": [
+            "He says India has by far the highest potential growth of major economies, and the best digital finance.",
+            "His worry: AI built on debt, high valuations and concentrated indices; a sentiment shift could tip the US into recession.",
+            "Rising US rates lift the dollar, he adds, forcing other countries to raise rates defensively."
+          ],
+          "numbers": [
+            [
+              "$10,000+",
+              "India per capita in 10 yrs"
+            ],
+            [
+              "10–15 yrs",
+              "China’s lead over India"
+            ]
+          ],
+          "why": "India’s growth story still rides on global calm.",
+          "other": "He rules out a catastrophic collapse; a shock is a risk, not a forecast.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Personal finance",
+          "tag": "Opinion",
+          "title": "Insurers pay more for quitting than dying",
+          "url": "https://www.livemint.com/money/personal-finance/what-life-insurers-actually-pay-for-11790933848565.html",
+          "url2": "",
+          "points": [
+            "Of ₹6.3 trillion paid in FY25, death claims were just 7%; surrenders took 37% and maturities 35%.",
+            "Only 48% of policies last five years, but 71% of those bought online do, writes Dhirendra Kumar.",
+            "First-year commissions on savings-linked policies average 25–37% of premium; renewals just 0–5%."
+          ],
+          "numbers": [
+            [
+              "7%",
+              "of payouts: death claims"
+            ],
+            [
+              "5×",
+              "surrenders vs death claims"
+            ]
+          ],
+          "why": "For pure protection, the writer backs plain term cover.",
+          "other": "Insurers say these are savings products, bought for the maturity payout rather than the death benefit.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Investing",
+          "tag": "Report",
+          "title": "550mn use UPI; only 62mn invest in funds",
+          "url": "https://www.ey.com/en_in/newsroom/2026/09/india-can-add-over-100-million-long-term-investors-by-2035-as-wealth-creation-expands-beyond-metros",
+          "url2": "",
+          "points": [
+            "EY counts over 550 million active UPI users, but only about 62 million mutual fund investors and about 50 million active equity participants.",
+            "Many households find investment products complex, volatile or hard to judge, so access alone won’t create lasting investors, EY says.",
+            "It proposes a five-layer ‘Wealth Stack’ (access, data, intelligence, advice, trust) and sees 100 million+ new long-term investors by 2035."
+          ],
+          "numbers": [
+            [
+              "550mn+",
+              "active UPI users"
+            ],
+            [
+              "~62mn",
+              "mutual fund investors"
+            ],
+            [
+              "38%",
+              "investors under 30"
+            ]
+          ],
+          "why": "India built the payment rails; investing needs advice, not just apps.",
+          "other": "100 million is EY’s ambition, not a forecast. Could more ‘guidance’ mean more mis-selling?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI and debt",
+          "tag": "Viewpoint",
+          "title": "AI’s $2tn assumption: a boom built on debt",
+          "url": "https://m.economictimes.com/prime/the-biggest-assumption-from-600-billion-to-2-trillion/primearticleshow/134619364.cms?giftid=jxt9gh9lrv98p1lpnrrx9wzjukoazpyu",
+          "url2": "",
+          "points": [
+            "Apollo’s Torsten Sløk says hyperscaler credit rests on operating cash flow rising from $600bn in 2025 to $2tn in 2030, about 27% a year.",
+            "Alphabet’s free cash flow turned negative in April–June; it sold over $50bn of bonds in the first half, including a 100-year bond.",
+            "Some debt sits off the books, like Meta’s ~$27bn Hyperion campus, funded through a venture mostly owned by Blue Owl funds."
+          ],
+          "numbers": [
+            [
+              "~27%",
+              "yearly growth needed"
+            ],
+            [
+              "$50bn+",
+              "Alphabet bonds, H1"
+            ],
+            [
+              "$1tn+",
+              "capex need by 2028"
+            ]
+          ],
+          "why": "Shares, bonds, private loans and pensions now ride the same AI bet.",
+          "other": "Unlike 2008’s low-income households, today’s borrowers are among the richest, highest-rated firms ever. Bubble, or big build?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Public finance",
+          "tag": "",
+          "title": "Denmark taxes most; oil states the least",
+          "url": "https://www.visualcapitalist.com/ranked-the-worlds-most-and-least-taxed-countries/?pnespid=5O6SzNVFv7DJ.auv.Af3puQM4w8conB3xQgvQFE_rleVcLwcVt8chnb_VYGrwCJoOBTb1KDt",
+          "url2": "",
+          "points": [
+            "Denmark collects 45.3% of GDP in tax, over twice the US’s 19.5%; India 18.1%.",
+            "Seven of the top 10 are in Europe; oil-rich Libya (1.2%) and Kuwait (1.4%) are lowest.",
+            "US federal spending is projected at 23.3% of GDP in 2026, against revenue of 17.5%."
+          ],
+          "numbers": [
+            [
+              "45.3%",
+              "Denmark, highest"
+            ],
+            [
+              "19.5%",
+              "United States"
+            ],
+            [
+              "18.1%",
+              "India"
+            ]
+          ],
+          "why": "A low tax take can mean bigger private bills, or bigger deficits.",
+          "other": "Tax share isn’t a quality score: oil wealth and weak collection both look ‘low’. What do citizens get for what they pay?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Banking",
+          "tag": "",
+          "title": "China shuts a record 670+ banks in a year",
+          "url": "https://www.ft.com/content/8a8f5c97-f1d3-4d3d-a3bc-d5a2e5539177?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Banking entities fell 23% in four years to 3,139 by 2025; almost all closures were rural lenders.",
+            "Fitch calls small rural and city banks the system’s weakest part: poor assets, thin capital, weak governance.",
+            "Wuhan took over Z-Bank in July, the first such takeover since 2019."
+          ],
+          "numbers": [
+            [
+              "670+",
+              "closures last year"
+            ],
+            [
+              "3,139",
+              "banking entities left"
+            ],
+            [
+              "$64tn",
+              "banking-system assets"
+            ]
+          ],
+          "why": "Beijing is pruning weak banks before they turn into bank runs.",
+          "other": "One researcher notes the worst banks were often left out of mergers. Is this a cleanup, or just a reshuffle?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Circular relationships among AI firms",
+      "url": "https://www.bis.org/publications/bulletin-137-circular-relationships-among-ai-firms.pdf",
+      "note": "BIS Bulletin No 137, 1 Oct 2026; the research behind today’s pick"
+    },
+    {
+      "title": "OpenAI safety leader quits, warning the AI company’s culture is broken",
+      "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
+      "note": "headline from the link; not verified"
+    },
+    {
+      "title": "The coming futures market in AI compute",
+      "url": "https://giftarticle.ft.com/giftarticle/actions/redeem/1b167908-b239-4889-b2ac-d59edd9502bc",
+      "note": "free-to-read link to today’s second pick"
+    },
+    {
+      "title": "Free-to-read gift link (2)",
+      "url": "https://giftarticle.ft.com/giftarticle/actions/redeem/2197aa47-f135-4e55-98ae-f56522e88cfd",
+      "note": "not verified; link could not be opened"
+    },
+    {
+      "title": "Over 550 mn UPI users, 69 mn MF investors and 50 mn stock buyers: why are millions still not investing?",
+      "url": "https://www.livemint.com/money/over-550-mn-upi-users-69-mn-mf-investors-and-50-mn-stock-buyers-why-are-millions-still-not-investing-report-decodes-11791018086933.html",
+      "note": "not verified (site blocked); its 69 mn figure differs from EY’s ~62 mn"
+    }
+  ]
+}

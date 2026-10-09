@@ -1,0 +1,345 @@
+{
+  "date": "2026-10-06",
+  "slice": "AI writes prescriptions, bonds sell off, and dinosaurs still fetch millions.",
+  "artifact": "https://claude.ai/artifact/YYYYBA5EUFmpQnuzVhVNdi",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$50.1mn",
+      "text": "record paid for T. rex ‘Gus’ this year; a rare Nanotyrannus goes up for sale this month.",
+      "url": "https://www.ft.com/content/5c3c2a70-cfa1-4146-bff8-ededc6294707?syn-25a6b1a6=1"
+    },
+    {
+      "num": "~16%",
+      "text": "of US high-grade bonds now sit with Big Tech hyperscalers and AI winners, its biggest group.",
+      "url": "https://www.ft.com/content/3302fd5c-8b92-425b-9523-673b2565bb10?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Health and AI",
+          "tag": "",
+          "title": "AI can now prescribe acne drugs in Utah",
+          "url": "https://archive.is/2026.10.05-110759/https://www.bloomberg.com/news/articles/2026-10-05/nolla-health-ai-can-now-prescribe-acne-drugs-in-utah-without-doctors",
+          "url2": "",
+          "points": [
+            "From Monday, Nolla Health’s app can send acne prescriptions straight to pharmacies in Utah, the first time a state has let AI stand in for the doctor, under a ‘narrow exception’ from Utah’s Office of Artificial Intelligence Policy.",
+            "Patients scan their face and enter their medical history; the AI scores acne severity and picks from eight approved topical treatments, with no pills or hormone therapies.",
+            "Oversight tapers: a physician checks the first 100 patients before anything is sent, the next 400 weekly after the fact, and then at least 10% of prescriptions each month. The pilot runs a year, renewable for two more."
+          ],
+          "numbers": [
+            [
+              "8",
+              "topical drugs only"
+            ],
+            [
+              "~$5/mo",
+              "app; visits $150–300"
+            ],
+            [
+              "10%+",
+              "later doctor checks"
+            ]
+          ],
+          "why": "A tightly fenced test of whether software can do a doctor’s routine job.",
+          "other": "Scripts still carry a clinician’s name and doctors review a share of them. The AMA’s John Whyte doubts AI can meet the standard humans are held to. A safe shortcut, or a precedent for riskier drugs?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Investment",
+          "tag": "",
+          "title": "Japan Inc sours on China; can India gain?",
+          "url": "https://m.economictimes.com/news/india/chinas-loss-could-be-indias-gain-as-japan-inc-sours-on-china/articleshow/134710075.cms",
+          "url2": "",
+          "points": [
+            "Japanese firms with a presence in China fell to 10,118 in June, the lowest since the survey began in 2010: down 22% in two years and almost 30% from the 2012 peak of 14,394.",
+            "Reasons cited include China’s property slump, rare-earth export curbs, overcapacity, state-backed rivals, worsening relations and detentions of Japanese nationals.",
+            "Japanese money is moving into India’s finance, not just factories: SMBC bought 20% of YES Bank (~$1.6bn), MUFG 20% of Shriram Finance (~$4.45bn), and Mizuho’s securities arm a majority of Avendus."
+          ],
+          "numbers": [
+            [
+              "10,118",
+              "Japan firms in China, June"
+            ],
+            [
+              "~1,400",
+              "Japanese firms in India"
+            ]
+          ],
+          "why": "Japan is buying into India’s banks, not just building factories.",
+          "other": "China is too big to abandon, and the US, Vietnam, Indonesia and Thailand compete for the same capital. Skill shortages and reliance on Chinese inputs could cap India’s gains.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "IT services",
+          "tag": "",
+          "title": "Cognizant targets mid-sized firms as AI squeezes big deals",
+          "url": "https://www.livemint.com/companies/news/cognizant-targets-mid-sized-firms-as-ai-pressures-big-outsourcing-deals-11791208286115.html",
+          "url2": "",
+          "points": [
+            "Cognizant launched Cognizant Activate on Monday, a unit for companies with $1–5 billion in revenue, as AI puts pressure on the big outsourcing contracts the industry was built on.",
+            "It is the third big IT firm in six months to do this, after Accenture Edge ($300M–$3B clients) and HCLTech Pulse ($500M–$5B), and it puts Cognizant up against Coforge, Mphasis and Persistent.",
+            "It will sell pre-configured bundles in data and AI, cybersecurity, cloud and managed services, starting with financial services, healthcare, manufacturing, retail and consumer goods."
+          ],
+          "numbers": [
+            [
+              "$1–5B",
+              "client revenue band"
+            ],
+            [
+              "3rd",
+              "big IT firm in 6 months"
+            ]
+          ],
+          "why": "Mid-tier IT firms now face the giants on their home turf.",
+          "other": "Mid-sized clients rarely award the $500 million multi-year deals tier-1 firms grew on, though analysts say there are thousands more of them and margins can be better. Can giants move small and fast?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Personal finance",
+          "tag": "",
+          "title": "NPS Swasthya: a health savings fund plus top-up cover",
+          "url": "https://www.livemint.com/money/personal-finance/nps-swasthya-how-the-new-healthcare-savings-model-works-11791188252370.html",
+          "url2": "",
+          "points": [
+            "The pension regulator PFRDA launched NPS Swasthya on 1 October: a healthcare investment account bundled with a mandatory super top-up group health policy.",
+            "Cover can be bought from 18 to 70 and renewed to 85, with no medical tests; a ₹30 lakh cover with a ₹3 lakh deductible costs ₹1,732 a year at 18–40 and ₹4,953 at 61–70.",
+            "Joining needs ₹1,000, a ₹200 yearly administrator fee and the first premium; the corpus can pay the deductible or network outpatient bills, but withdrawals are capped at 25% of contributions."
+          ],
+          "numbers": [
+            [
+              "₹1,732",
+              "₹30L cover/yr, age 18–40"
+            ],
+            [
+              "Up to 70",
+              "entry age for cover"
+            ]
+          ],
+          "why": "Entry up to 70 without medical tests could help older buyers who struggle to get cover.",
+          "other": "Pre-existing diseases wait a year, about 15 serious illnesses may be excluded or cost extra, and like-for-like price comparisons are hard. The real test is how claims are handled.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Corporate governance",
+          "tag": "Opinion",
+          "title": "Manu Joseph: the mystery behind Tata’s boardroom ‘coup’",
+          "url": "https://www.livemint.com/opinion/online-views/manu-joseph-tata-boardroom-mystery-of-who-exactly-is-controlling-the-tata-group-chandrasekaran-noel-tata-11790850098202.html",
+          "url2": "",
+          "points": [
+            "On 17 September every Tata Sons director except Noel Tata asked N. Chandrasekaran to stay on, after he had decided to leave when his term ends in February 2027.",
+            "Joseph says Noel Tata, chairman of the Trusts that own 66% of Tata Sons, has been isolated, the Trusts are divided, and there are whispers of political influence.",
+            "On listing, he argues the Trusts wouldn’t lose control if a quarter of Tata Sons floated, yet Noel Tata opposes it; the RBI wants it listed."
+          ],
+          "numbers": [
+            [
+              "66%",
+              "Trusts’ stake in Tata Sons"
+            ],
+            [
+              "17 Sep",
+              "board backs Chandrasekaran"
+            ]
+          ],
+          "why": "Who steers India’s largest business group is now openly contested.",
+          "other": "The political angle rests on whispers and perception, not proof; both sides claim principle, and with 66% the Trusts’ grip can’t easily shift.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Payments",
+          "tag": "",
+          "title": "Zimbabwe in talks to use India’s UPI tech",
+          "url": "https://africa.businessinsider.com/local/markets/zimbabwe-turns-to-indias-payments-giant-to-cut-transfer-costs-and-speed-up-digital/db2mrjb",
+          "url2": "",
+          "points": [
+            "Zimbabwe is negotiating with NPCI International Payments, the overseas arm of the body that runs UPI, to use its technology as shared rails linking banks, mobile-money operators and fintechs in real time.",
+            "Central bank governor John Mushayavanhu says talks could conclude by 31 October; that is a deadline for the talks, not a launch date.",
+            "It follows NPCI International’s May 2024 deal to help Namibia build a UPI-like instant-payment system, and fits Zimbabwe’s own March push for QR codes that work across providers."
+          ],
+          "numbers": [
+            [
+              "Oct 31",
+              "talks may conclude"
+            ],
+            [
+              "May ’24",
+              "Namibia deal"
+            ],
+            [
+              "Mar 2",
+              "Zimbabwe QR rules"
+            ]
+          ],
+          "why": "India is exporting the payment rails, not just letting tourists pay abroad.",
+          "other": "Savings, fees, budget and a timetable are all undisclosed, and prices will depend on how banks and payment firms join in. Does better plumbing cut costs on its own?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Markets",
+          "tag": "",
+          "title": "A global bond rout: why it reaches your EMI",
+          "url": "https://m.economictimes.com/prime/the-world-is-witnessing-a-bond-rout-why-should-it-matter-to-you/primearticleshow/134714425.cms",
+          "url2": "",
+          "points": [
+            "The US 10-year yield closed at 5.29% on 30 September, the highest since 2002; Britain’s 30-year topped 6% for the first time since 1998, and France’s 10-year hit a near 25-year high.",
+            "Three causes at once: costly oil reviving inflation fears, the US Fed raising rates again on 16 September, and governments borrowing more than lenders like.",
+            "India’s 10-year is about 7.2%, near a two-year high; a one-point rise on a ₹50 lakh, 20-year home loan adds about ₹3,100 a month."
+          ],
+          "numbers": [
+            [
+              "5.29%",
+              "US 10-yr, 2002 high"
+            ],
+            [
+              "6%+",
+              "UK 30-yr, since 1998"
+            ],
+            [
+              "~7.2%",
+              "India, ~2-yr high"
+            ]
+          ],
+          "why": "Government yields set the floor for every loan, so borrowing costs rise without any central bank acting.",
+          "other": "Savers get better rates on new deposits and bonds, and emerging markets, India included, have held up better so far. A crisis, or a reset to normal rates?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Investing",
+          "tag": "",
+          "title": "Investors look for shelter from AI concentration risk",
+          "url": "https://www.ft.com/content/3302fd5c-8b92-425b-9523-673b2565bb10?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "More than two-thirds of the Russell 1000 is linked to AI, per Citigroup research, and Big Tech hyperscalers and AI beneficiaries are about 16% of the US high-grade bond market, its biggest group.",
+            "Fund managers at Amundi, BlackRock and Franklin Templeton say clients want returns that don’t move with AI: global macro and long-short hedge funds, systematic strategies, mining and renewables.",
+            "Amundi’s Vincent Mortier says clients are looking more at emerging markets, including local stocks and bonds in India, China and Latin America; a turn in AI is ‘not imminent’, he says, ‘but I think it will come’."
+          ],
+          "numbers": [
+            [
+              "2/3+",
+              "large US firms tied to AI"
+            ],
+            [
+              "~$1tn",
+              "AI build-out by a few firms"
+            ]
+          ],
+          "why": "When one theme dominates both US stocks and bonds, spreading risk gets hard.",
+          "other": "The same managers say no sell-off is imminent, and the right hedge funds are hard to find and often closed. Prudence, or trying to time the market?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Collecting",
+          "tag": "",
+          "title": "A rare Nanotyrannus heads to auction as the fossil boom roars on",
+          "url": "https://www.ft.com/content/5c3c2a70-cfa1-4146-bff8-ededc6294707?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Sotheby’s will sell ‘Jodi’, a Nanotyrannus found in Montana in 2019, in New York at the end of October, estimating $6–9 million; it is one of three specimens known to science.",
+            "It follows a record $50.1 million for the T. rex ‘Gus’ this year, after a 10-minute bidding battle, and Ken Griffin’s $44.6 million Stegosaurus in 2024.",
+            "A paper last year by Lindsay Zanno and James Napoli settled an 80-year debate: Nanotyrannus was its own genus, not a young T. rex. Jodi is the first to sell since."
+          ],
+          "numbers": [
+            [
+              "$6–9mn",
+              "auction estimate"
+            ],
+            [
+              "3",
+              "known specimens"
+            ]
+          ],
+          "why": "Fossils have become a trophy asset for the very rich.",
+          "other": "Griffin’s Stegosaurus is on museum display, but where ‘Gus’ went isn’t public. Should rare finds that settle science debates go to private buyers?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Europe’s debt",
+          "tag": "Opinion",
+          "title": "‘FROGS’: France’s slow-burn debt crisis",
+          "url": "https://www.bloomberg.com/opinion/articles/2026-10-05/france-and-the-euro-frogs-is-the-name-of-the-latest-eu-debt-crisis",
+          "url2": "",
+          "points": [
+            "Columnist Lionel Laurent says France’s bond risk premium is at a decade-plus high, with a deficit above 5% of GDP, debt near 120% and the gap over German bonds at new highs.",
+            "FROGS, coined by research firm Rexecode, stands for French Oversized Government and Social Security; he expects a slow squeeze rather than a sudden, Truss-style shock.",
+            "Debt sharing with northern Europe is off the table, and any ECB rescue risks a populist backlash, with next year’s presidential election looming."
+          ],
+          "numbers": [
+            [
+              ">5%",
+              "budget deficit, of GDP"
+            ],
+            [
+              "~120%",
+              "debt to GDP"
+            ]
+          ],
+          "why": "Bond markets, not voters, may now set France’s budget.",
+          "other": "He concedes France is no Greece: its economy is large and diversified and its banks well capitalised, ‘too big to bail’, as one economist puts it. Squeeze, or scare?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Wall Street",
+          "tag": "",
+          "title": "Who really runs Jane Street?",
+          "url": "https://www.bloomberg.com/features/2026-jane-street-guide-power-players/",
+          "url2": "",
+          "points": [
+            "Wall Street’s biggest trading house overtook JPMorgan last year, with almost $40 billion of trading revenue, yet has no named CEO and, on purpose, no partners list.",
+            "Regulatory records show a management committee that meets monthly and decides on risk across the firm; a few dozen people, many of them company lifers, steer it.",
+            "Co-founder Rob Granieri, the last of the four founders still there, has had no official title or headshot in the staff directory."
+          ],
+          "numbers": [
+            [
+              "None",
+              "named CEO"
+            ],
+            [
+              "Monthly",
+              "risk committee meets"
+            ]
+          ],
+          "why": "If you own an ETF, it was likely traded by a firm few can map.",
+          "other": "The firm says a conventional org chart misses leaders spread across a flat, collaborative structure. Is opacity a risk, or its edge?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": []
+}

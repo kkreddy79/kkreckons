@@ -5,15 +5,16 @@ export default function EditionCard({ edition, headlines = 3 }: { edition: Editi
   const href = `/daily/${slugFor(edition.date)}`;
   return (
     <article className="ed-card">
-      <Link href={href} className="ed-cover" aria-label={`Read the ${shortDate(edition.date)} edition`}>
-        <img src={`/covers/${edition.date}.jpg`} alt="" loading="lazy" />
-        <span className="ed-date">
-          <b>{shortDate(edition.date)}</b>
-          {weekday(edition.date)}
-        </span>
+      <Link href={href} className="ed-date-band" aria-label={`Read the ${shortDate(edition.date)} edition`}>
+        <b>{shortDate(edition.date)}</b>
+        <span>{weekday(edition.date)}</span>
       </Link>
       <div className="ed-body">
-        {edition.slice && <p className="ed-slice">{edition.slice}</p>}
+        {edition.slice && (
+          <p className="ed-slice">
+            <Link href={href}>{edition.slice}</Link>
+          </p>
+        )}
         <ul className="ed-heads">
           {edition.stories.slice(0, headlines).map((s) => (
             <li key={s.title}>

@@ -1,7 +1,6 @@
-import "@fontsource/playfair-display/latin-700.css";
-import "@fontsource/playfair-display/latin-800.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Banner from "@/components/Banner";
 import {
   BuildingIcon,
   BulbIcon,
@@ -15,7 +14,6 @@ import {
   ScalesIcon,
   SunIcon,
 } from "@/components/AboutIcons";
-import { latest, slugFor } from "@/lib/editions";
 import { SUBSCRIBE_URL } from "@/lib/site";
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
@@ -59,29 +57,11 @@ function Pic({ name, alt, w, h, png }: { name: string; alt: string; w: number; h
 }
 
 export default function About() {
-  const today = `/daily/${slugFor(latest.date)}`;
+  const today = "/";
 
   return (
     <main className="about">
-      <header className="ab-top">
-        <picture className="ab-top-img">
-          <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.webp" type="image/webp" />
-          <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.jpg" />
-          <source srcSet="/about/two-worlds.webp" type="image/webp" />
-          <img
-            src="/about/two-worlds.jpg"
-            width={2000}
-            height={816}
-            alt="Sunset panorama: South Indian temples and forts on one side, the Los Angeles skyline and Santa Monica pier on the other"
-          />
-        </picture>
-        <div className="ab-brand">
-          <p className="ab-wordmark">
-            KK<span>Reckons</span>
-          </p>
-          <p className="ab-strap">A clearer slice of a complex world</p>
-        </div>
-      </header>
+      <Banner />
 
       <div className="ab-wrap">
         <section className="ab-hero" aria-labelledby="about-title">
