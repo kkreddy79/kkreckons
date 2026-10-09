@@ -1,0 +1,351 @@
+{
+  "date": "2026-10-03",
+  "slice": "RBI urges caution, French bonds wobble, and a few sharps cash in on world events.",
+  "artifact": "https://claude.ai/artifact/TGFtRqFkmoHnecYcy3L88Q",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "20–30%",
+      "text": "of India’s eligible exports use FTA perks, against 60–70% for partners selling into India.",
+      "url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/india-trade-deals-india-us-fta-india-eu-fta-piyush-goyal-at-g20-trade-deals-of-india-milwaukee-pm-modi-bilateral-trade-deals-india-signs-trade-deals-bta/articleshow/134632538.cms"
+    },
+    {
+      "num": "~18,000",
+      "text": "known diseases; only about 4,000 have an approved treatment.",
+      "url": "https://everycure.org/"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Health and AI",
+          "tag": "Nonprofit",
+          "title": "Every Cure: using AI to find new uses for drugs already on the shelf",
+          "url": "https://everycure.org/",
+          "url2": "",
+          "points": [
+            "A nonprofit co-founded by Dr David Fajgenbaum, in remission for over 11 years thanks to a repurposed drug.",
+            "Its AI analyses the world’s knowledge of drugs and diseases to rank the most promising repurposing ideas.",
+            "Anyone can suggest repurposing ideas, volunteer as an expert, or donate."
+          ],
+          "numbers": [
+            [
+              "300M+",
+              "no FDA-approved drug"
+            ],
+            [
+              "11+ yrs",
+              "founder in remission"
+            ],
+            [
+              "14",
+              "drugs he’s advanced"
+            ]
+          ],
+          "why": "The fastest new treatment may already be sitting in a pharmacy.",
+          "other": "Old, cheap drugs earn little for anyone. Who pays for the costly trials needed to prove each new use?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Corporate governance",
+          "tag": "",
+          "title": "Noel Tata seeks the video and minutes of the meeting that reappointed Chandrasekaran",
+          "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/noel-tata-seeks-tata-sons-meeting-video-minutes-questions-legal-opinions-on-chandrasekaran-reappointment/articleshow/134646293.cms",
+          "url2": "",
+          "points": [
+            "In a September 30 letter, the Tata Trusts chairman asked the Tata Sons board for the recording and minutes of its September 17 meeting, executives said.",
+            "He says he wasn’t given enough time to present former CJI DY Chandrachud’s view that the chairman’s casting vote can’t override the trust nominees’ affirmative rights.",
+            "He also questions why the board obtained two more opinions after the vote, from former CJI UU Lalit and retired Justice BN Srikrishna; both upheld it."
+          ],
+          "numbers": [
+            [
+              "4–1",
+              "board vote, Sept 17"
+            ],
+            [
+              "5 years",
+              "new chairman term"
+            ],
+            [
+              "2",
+              "opinions after vote"
+            ]
+          ],
+          "why": "The fight over Tata’s top job has moved from boardroom to lawyers.",
+          "other": "Three legal opinions back the vote, and an independent lawyer says a director has no unfettered right to a board video. Is this governance, or a lost vote relitigated?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Trade",
+          "tag": "",
+          "title": "India goes FTA shopping at the G20, with Piyush Goyal working the room",
+          "url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/india-trade-deals-india-us-fta-india-eu-fta-piyush-goyal-at-g20-trade-deals-of-india-milwaukee-pm-modi-bilateral-trade-deals-india-signs-trade-deals-bta/articleshow/134632538.cms",
+          "url2": "",
+          "points": [
+            "In Milwaukee, Goyal met ministers from 10 countries and the EU on deals at every stage, from talks to pacts already in force.",
+            "USTR Jamieson Greer says the India-US interim deal is in the “short strokes”, but an announcement isn’t imminent.",
+            "The India-EU FTA awaits signature, the India-Canada CEPA targets year-end, and the India-New Zealand FTA takes effect on October 20."
+          ],
+          "numbers": [
+            [
+              "10 + EU",
+              "ministers met"
+            ],
+            [
+              "$863bn",
+              "record exports, FY26"
+            ],
+            [
+              "97%",
+              "of EU lines to open"
+            ]
+          ],
+          "why": "Signing is the easy part; exporters still have to use these deals.",
+          "other": "More deals also mean more imports and tougher rivals at home. Do Indian firms gain more access than they give up?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Financial stability",
+          "tag": "",
+          "title": "RBI governor warns against complacency amid external headwinds",
+          "url": "https://www.livemint.com/news/india/rbi-governor-warns-against-complacency-amid-external-headwinds-11791020910405.html",
+          "url2": "",
+          "points": [
+            "Sanjay Malhotra called India’s financial system “very resilient”, but said long spells of stability encourage risk-taking and leverage.",
+            "He flagged high global debt, stretched AI valuations, leverage outside banks and private credit, with AI-driven cyber risk the most immediate.",
+            "The US 10-year Treasury touched a 24-year high of 5.34% on Thursday; India’s bond yields have risen more slowly than peers’."
+          ],
+          "numbers": [
+            [
+              "5.34%",
+              "US 10-yr, 24-yr high"
+            ],
+            [
+              "5",
+              "global risks flagged"
+            ],
+            [
+              "4",
+              "priorities set out"
+            ]
+          ],
+          "why": "Calm periods are when banks take the risks that hurt later.",
+          "other": "He sees no imminent stress, and says an AI-valuation correction abroad could even send capital to India. Warning, or routine caution?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Geopolitics",
+          "tag": "Opinion",
+          "title": "China, America and the new Great Game",
+          "url": "https://www.ft.com/content/8869caf9-3cd1-4300-aeb3-828a4d9da4f9?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Rana Foroohar likens the US-China rivalry to the 19th-century Britain-Russia Great Game: decades of moves, not one war.",
+            "China owns 60% of Peru’s Chancay megaport, and almost half the leading container ports outside China have some Chinese ownership or operations.",
+            "Her verdict: outside nations such as India, Japan, Canada, the Gulf states and the EU may decide the outcome."
+          ],
+          "numbers": [
+            [
+              "~Half",
+              "top ports with Chinese stake"
+            ],
+            [
+              "60%",
+              "China’s stake, Chancay port"
+            ]
+          ],
+          "why": "India is a swing player in this contest, not a bystander.",
+          "other": "She concedes the US still has the reserve currency, the richest tech firms and free sea lanes; there may be no single winner.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Bonds",
+          "tag": "",
+          "title": "How the French bond trade backfired on investors",
+          "url": "https://www.wsj.com/finance/investing/how-the-french-bond-trade-backfired-on-investors-4f2aba71",
+          "url2": "",
+          "points": [
+            "Hedge funds piled into leveraged bets on French debt over the summer, figuring French politics wouldn’t get much rockier.",
+            "A widening poll lead for Marine Le Pen and a poorly received budget plan sparked selling; short-term yields swung up to 0.40 points over two days.",
+            "France’s €3.5tn government bond market is Europe’s largest, and foreigners own more than half of it."
+          ],
+          "numbers": [
+            [
+              "1.55 pts",
+              "France–Germany 10-yr gap"
+            ],
+            [
+              "1.81 pts",
+              "record gap, Nov 2011"
+            ]
+          ],
+          "why": "Crowded trades exit through a narrow door.",
+          "other": "PGIM’s Robert Tipp says forced selling, not a change in France’s creditworthiness, drove the rout, and the ECB ultimately backstops eurozone bonds.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Personal finance",
+          "tag": "",
+          "title": "Americans can’t stop watching people pay down their debt",
+          "url": "https://www.wsj.com/articles/americans-cant-stop-watching-videos-of-people-paying-down-their-debt-acda4b22",
+          "url2": "",
+          "points": [
+            "On TikTok, users share the exact amount they owe and post updates as it goes up or down.",
+            "Flight attendant Rodney Morgan’s $40,058 debt video drew 1.5M views, against about 100,000 for his best earlier posts.",
+            "Views can pay bills: influencer Kayla Rose cleared more than $25,000 of card debt with video income."
+          ],
+          "numbers": [
+            [
+              "28,000+",
+              "debt videos, 12 months"
+            ],
+            [
+              "1.5M",
+              "views for one $40K tally"
+            ]
+          ],
+          "why": "Money shame is turning into accountability, and income.",
+          "other": "When debt videos earn money, does the audience reward the habit as much as the payoff?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Espionage",
+          "tag": "",
+          "title": "Spy or dupe? Inside the ex-Fed adviser’s China case",
+          "url": "https://www.cnbc.com/2026/09/30/john-rogers-fed-china-espionage-case.html",
+          "url2": "",
+          "points": [
+            "John Rogers met a man calling himself Hummin Lee in Shanghai; the US says he is a Chinese spy named Jin Chuan.",
+            "Lee helped with travel, a marriage and money while asking about Fed thinking; Rogers passed on some internal papers.",
+            "Acquitted of economic espionage, convicted of lying to investigators, sentenced to 38 months."
+          ],
+          "numbers": [
+            [
+              "38 months",
+              "prison, for false statements"
+            ],
+            [
+              "$55,000",
+              "cash found, source unknown"
+            ]
+          ],
+          "why": "Loneliness can be a bigger leak than hackers.",
+          "other": "A jury rejected the espionage charge, and his lawyers say what he shared had no real value.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Research funding",
+          "tag": "Press release",
+          "title": "Every Cure set to get up to $76M from ARPA-H to test its AI picks",
+          "url": "https://everycure.org/phase2/",
+          "url2": "",
+          "points": [
+            "A three-year phase from 2026 moves AI-picked ideas toward patients.",
+            "It builds on an earlier $48.3M ARPA-H contract that built the MATRIX platform."
+          ],
+          "numbers": [
+            [
+              "20+",
+              "ideas for preclinical tests"
+            ],
+            [
+              "10",
+              "clinical trials enabled"
+            ]
+          ],
+          "why": "US public money is betting on AI-found cures.",
+          "other": "AI predictions still have to survive trials; most drug candidates don’t.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Prediction markets",
+          "tag": "",
+          "title": "Polymarket’s Alpha traders: the secret chat turning wars and elections into profit",
+          "url": "https://www.ft.com/content/ac1f4db2-54fe-4a36-b3db-bb96675231f5",
+          "url2": "",
+          "points": [
+            "About 30 members, mostly Gen Z, pool research in an invitation-only Discord; they’ve made an estimated $40mn on Polymarket since 2024.",
+            "A CEPR study found two-thirds of Polymarket users lost money; 0.1% of profitable traders captured half the profits.",
+            "Polymarket and Kalshi averaged about $1.6bn a day in August, up nearly 2,000% in a year."
+          ],
+          "numbers": [
+            [
+              "$40mn",
+              "Alpha’s est. profit since 2024"
+            ],
+            [
+              "2/3",
+              "of users lost money"
+            ],
+            [
+              "$1.6bn",
+              "daily volume, August"
+            ]
+          ],
+          "why": "A few sharps win; most bettors are the liquidity they feed on.",
+          "other": "Members call it skill, not luck. One, a PhD student now attending gambling-addiction meetings, says the real harm is the story that this is democratised finance.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Old drug pair becomes a preferred treatment for a rare disease",
+      "url": "https://everycure.org/rdd",
+      "note": "Every Cure news, July 2026"
+    },
+    {
+      "title": "Maket: design a home layout by chatting with AI",
+      "url": "https://www.maket.ai/",
+      "note": "AI home-design tool"
+    },
+    {
+      "title": "Captain Smit Machchhar: surname meaning and Gujarati origins of the flydubai hero",
+      "url": "https://www.indiatoday.in/amp/india/story/captain-smit-machchhar-surname-meaning-gujarati-origins-flydubai-hero-3007983-2026-10-02",
+      "note": "not verified; site blocked"
+    },
+    {
+      "title": "Every Cure’s drug repurposing strategy isn’t what you think",
+      "url": "https://www.cnbc.com/2026/03/27/every-cure-drug-repurposing-rare-disease-treatment.html",
+      "note": "related to today’s pick, March 2026"
+    },
+    {
+      "title": "Angels for Change and Every Cure team up on access to repurposed medicines",
+      "url": "https://www.angelsforchange.org/news-updates/a4c-everycure",
+      "note": "related to today’s pick, June 2026"
+    }
+  ]
+}

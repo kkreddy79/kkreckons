@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
-import { latest, slugFor } from "@/lib/editions";
+import "@fontsource/playfair-display/latin-700.css";
+import "@fontsource/playfair-display/latin-800.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "KKReckons",
     type: "website",
-    images: [`/covers/${latest.date}.jpg`],
+    images: ["/about/two-worlds.jpg"],
   },
 };
 
@@ -24,7 +25,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <header className="site-header">
           <nav>
             <Link href="/">Home</Link>
-            <Link href={`/daily/${slugFor(latest.date)}`}>Today</Link>
             <Link href="/daily/">Archive</Link>
             <Link href="/about">About</Link>
           </nav>

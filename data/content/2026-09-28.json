@@ -1,0 +1,255 @@
+{
+  "date": "2026-09-28",
+  "slice": "India compounds talent and capital;<br>the world audits the AI boom and its debt.",
+  "artifact": "https://claude.ai/artifact/JRt6pwCjGePZ7k2Nevzy94",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "₹450 cr",
+      "text": "IITM Unicorn Frontier Fund I reaches first close; ~₹55 cr already deployed.",
+      "url": "https://yourstory.com/2026/09/iitm-unicorn-frontier-fund-i-hits-rs-450-cr-first-close"
+    },
+    {
+      "num": "16",
+      "text": "Indian men joined S&P 500 boards this year, a record.",
+      "url": "https://www.moneycontrol.com/europe/?url=https://www.moneycontrol.com/news/business/indian-executives-are-gaining-clout-in-us-corporate-boardrooms-14039494.html&classic=true"
+    }
+  ],
+  "sections": [
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Deeptech funding",
+          "tag": "",
+          "title": "IITM Unicorn Frontier Fund I hits ₹450 cr first close",
+          "url": "https://yourstory.com/2026/09/iitm-unicorn-frontier-fund-i-hits-rs-450-cr-first-close",
+          "url2": "",
+          "points": [
+            "Nearly ₹55 cr is already deployed across four startups in space, quantum, batteries and carbon capture.",
+            "Plans about 25 IP-led startups, with cheques of ₹15–25 cr, mostly at proof-of-concept stage (TRL 3–4).",
+            "Institutions, corporates and banks are expected to join before the final close in December."
+          ],
+          "numbers": [
+            [
+              "₹450 cr",
+              "first close (₹1,000 cr plan)"
+            ],
+            [
+              "~25",
+              "IP-led startups planned"
+            ]
+          ],
+          "why": "It targets the lab-to-market gap.",
+          "other": "Lab-stage bets are risky, and a first close isn’t a track record: only about ₹55 cr has gone out so far.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Science & talent",
+          "tag": "",
+          "title": "IIT-JEE topper Nitin Gupta now studies mosquito brains at IIT Kanpur",
+          "url": "https://x.com/therocketmediax/status/2103831201073299529?s=46&t=8b3uxhyUfGCSwTKxXmCk4g",
+          "url2": "",
+          "points": [
+            "All India Rank 1 in IIT-JEE 2000; BTech in computer science at IIT Kanpur (2004), a PhD at UC San Diego (2009) and NIH research (2010–14).",
+            "Back at IIT Kanpur since July 2014, his lab studies how insect brains decide to approach or avoid a smell, such as a human body versus a repellent.",
+            "His group built TreadWill, a free automated CBT programme for depression; in a 598-person randomised trial in India, users who finished at least half the modules showed significant drops in depression and anxiety symptoms."
+          ],
+          "numbers": [
+            [
+              "598",
+              "participants, India trial"
+            ],
+            [
+              "12 of 20",
+              "of 2000–19 toppers abroad"
+            ]
+          ],
+          "why": "Talent that stays can serve Indian needs.",
+          "other": "This is one career, and the trial benefit is reported for users who completed at least half the modules; others may not see the same. Twelve of twenty toppers abroad is a small group, not a trend.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Medical education",
+          "tag": "",
+          "title": "Three IITs are building medical schools. The real target is not more doctors",
+          "url": "https://www.indiatoday.in/science/story/iit-medical-schools-mbbs-physician-engineers-kharagpur-iit-madras-kanpur-physician-engineers-kamakoti-3004465-2026-09-28",
+          "url2": "",
+          "points": [
+            "IIT Kharagpur, Madras and Kanpur are building medical schools, but their directors say they want ‘physician-engineers’, not more doctors.",
+            "Kanpur will start with MD, DM and MCh degrees; its 500-bed hospital is due to be inaugurated by the end of this year, with the first patient by March 2027. Madras plans MBBS, MD and PhD; Kharagpur has a hospital and approval for postgraduate courses. None has graduated a doctor yet.",
+            "Imports are about 60% of India’s medical-device consumption: roughly ₹1.37 lakh crore (~$8.8bn) in 2024-25, against exports of ₹42,360 crore."
+          ],
+          "numbers": [
+            [
+              "~60%",
+              "of devices imported"
+            ],
+            [
+              "$8.8bn",
+              "device imports, FY25"
+            ],
+            [
+              "60",
+              "new faculty, Kanpur"
+            ]
+          ],
+          "why": "Hybrid skills aim to cut India’s reliance on imported devices.",
+          "other": "Kharagpur’s director says success is a product made in India, validated, deployed at scale and improving outcomes, not papers, patents or start-ups. A teaching hospital and NMC approval are mandatory and take years, so the model will take a while to judge.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "US boardrooms",
+          "tag": "",
+          "title": "Indian executives are gaining clout in US boardrooms",
+          "url": "https://www.moneycontrol.com/europe/?url=https://www.moneycontrol.com/news/business/indian-executives-are-gaining-clout-in-us-corporate-boardrooms-14039494.html&classic=true",
+          "url2": "",
+          "points": [
+            "A record 16 Indian men joined S&P 500 boards this year, including at Walmart, Southwest Airlines and Western Digital.",
+            "Only White men and women added more seats; the share of Indian men among directors has tripled since 2018.",
+            "Of 184 Indian men on Fortune 500 and S&P 500 boards, 77% have operating (P&L) backgrounds; about two-thirds have been CEOs."
+          ],
+          "numbers": [
+            [
+              "16",
+              "record new S&P 500 seats"
+            ],
+            [
+              "3×",
+              "share since 2018"
+            ]
+          ],
+          "why": "Boards want operators; many have the CV.",
+          "other": "Still a small slice of new seats, and Indian women haven’t kept pace, partly because fewer have been CEOs. A CEO-heavy pipeline can narrow who gets in.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Markets",
+          "tag": "Opinion",
+          "title": "Big dreams and tiny revenue are the new norm for AI IPOs",
+          "url": "https://www.ft.com/content/b5707707-730e-40d3-9ff7-8ebfe27d5708?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Data-centre builders Nscale and SB Energy, both preparing New York IPOs, each made $140mn revenue in the last half year, yet hope for valuations of $35bn and $50bn.",
+            "The biggest US-listed company with annual revenue under $500mn (excluding biotechs and bitcoin treasuries) is AST SpaceMobile, at $27bn.",
+            "Contracts with OpenAI, Anthropic and ByteDance back their pitch, but backlogs depend on data centres being built on time and on budget."
+          ],
+          "numbers": [
+            [
+              "$140mn",
+              "half-year revenue, each"
+            ],
+            [
+              "~90%",
+              "median Spac fall post-merger"
+            ]
+          ],
+          "why": "Valuations are racing far ahead of sales.",
+          "other": "Signed contracts with big tenants may yet turn backlog into revenue; the real test is delivery on time and on budget.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI markets",
+          "tag": "Viewpoint",
+          "title": "How to Know When the AI Boom Is About to Go Bust",
+          "url": "https://www.wsj.com/finance/stocks/how-to-know-when-the-ai-boom-is-about-to-go-bust-61af3d26?st=k7d1Aa&reflink=desktopwebshare_permalink",
+          "url2": "",
+          "points": [
+            "Columnist Jonathan Weil argues booms need a steady flow of fresh capital, and can turn to busts once the window to raise new money closes; he says we are not there yet.",
+            "His signal to watch: the return of the phrase ‘funding gap’, which entered the lexicon with ‘burn rate’ in 2000 as the dot-com bubble began to deflate.",
+            "Early nerves: OpenAI ruled out going public this year, Holtec Nuclear paused its IPO plans and Anthropic pushed its IPO from October to November."
+          ],
+          "numbers": [
+            [
+              "2000",
+              "‘funding gap’ enters lexicon"
+            ],
+            [
+              "Nov",
+              "Anthropic IPO, from Oct"
+            ]
+          ],
+          "why": "Watch the money supply, not the hype.",
+          "other": "The delays may be bumps rather than warnings: the companies still appear able to raise private money, and Holtec is already profitable. Because OpenAI’s and Anthropic’s finances aren’t public, outsiders can’t easily read how close any funding gap really is.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Higher education",
+          "tag": "Opinion",
+          "title": "The Ph.D. Job Crisis Is a Needed Market Correction",
+          "url": "https://www.wsj.com/opinion/the-ph-d-job-crisis-is-a-needed-market-correction-cfef32c9",
+          "url2": "",
+          "points": [
+            "Universities are cutting Ph.D. admissions and freezing hiring under financial strain: Chicago paused more than a dozen programmes amid a $160M deficit, and Brown suspended six.",
+            "Brown’s faculty committee put the cost of supporting a Ph.D. student at $700,000 to $1M; jobless rates for Ph.D. holders aged 25–34 hit 3%, the highest August reading since 2009 outside the pandemic.",
+            "Columnist Allysia Finley argues falling federal subsidies and rising grad-student pay, such as Cornell’s $48,367 stipend for 15-hour weeks, are correcting a glut of doctorates."
+          ],
+          "numbers": [
+            [
+              "$160M",
+              "Chicago deficit"
+            ],
+            [
+              "3%",
+              "Ph.D. jobless, ages 25–34"
+            ]
+          ],
+          "why": "Ph.D. supply is being repriced.",
+          "other": "Universities warn the cuts endanger research, and the jobless data is a short snapshot: in California, Ph.D. unemployment (3.9% in June) is still below that of bachelor’s holders (4.7%). Whether fewer Ph.D.s is a correction or a loss depends on which fields shrink.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Credit markets",
+          "tag": "",
+          "title": "AI hyperscalers are transforming debt",
+          "url": "https://www.ft.com/content/00f94018-e658-4545-b16e-1bc00e19b754?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Meta will tap the European bond market for the first time this autumn, according to investors familiar with its plans, joining a record hunt for funds.",
+            "Investors have provided about $500bn to AI-linked groups this year, per Goldman Sachs; the five hyperscalers account for about $200bn and are expected to issue over $1tn more in the next few years. SoftBank raised over $11bn in the biggest junk bond issue ever, to fund an OpenAI investment.",
+            "Other borrowers are timing bond sales around the tech giants, and highly rated bonds sometimes trade at discounts to lesser-quality ones. Fed chair Kevin Warsh and Treasury secretary Scott Bessent argue hyperscalers compete with the $31tn Treasury market, where 10-year costs hit their highest since 2007 last week."
+          ],
+          "numbers": [
+            [
+              "$745bn",
+              "2026 big-tech capex"
+            ],
+            [
+              "$11bn",
+              "SoftBank junk record"
+            ],
+            [
+              "$1tn+",
+              "new debt expected"
+            ]
+          ],
+          "why": "AI’s cash appetite is starting to shape others’ borrowing.",
+          "other": "Whether hyperscaler debt is lifting government yields is disputed: HSBC’s Adam Bothamley calls it a stretch, and Morgan Stanley’s Matthew Hornbach sees a far smaller effect than rates and deficits. Morgan Stanley also says euro capacity is untapped. The risk is if AI cash flows disappoint: Apollo’s Torsten Sløk notes the credit case rests on operating cash flow tripling from $600bn to $2tn.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": []
+}

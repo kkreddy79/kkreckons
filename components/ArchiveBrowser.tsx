@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { Edition, THEMES, longDate, monthLabel, slugFor, themesOf } from "@/lib/editions";
+import { Edition, THEMES, longDate, monthLabel, slugFor, themesOf, weekday } from "@/lib/editions";
 
 export default function ArchiveBrowser({ editions }: { editions: Edition[] }) {
   const params = useSearchParams();
@@ -85,7 +85,10 @@ export default function ArchiveBrowser({ editions }: { editions: Edition[] }) {
             <div className="timeline">
               {m.items.map((e) => (
                 <Link key={e.date} href={`/daily/${slugFor(e.date)}`} className="tl-item">
-                  <img src={`/covers/${e.date}.jpg`} alt="" loading="lazy" />
+                  <span className="tl-day" aria-hidden>
+                    <b>{e.date.slice(8).replace(/^0/, "")}</b>
+                    {weekday(e.date).slice(0, 3)}
+                  </span>
                   <div>
                     <div className="tl-date">{longDate(e.date)}</div>
                     {e.slice && <p className="tl-slice">{e.slice}</p>}

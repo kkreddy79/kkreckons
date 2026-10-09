@@ -1,0 +1,291 @@
+{
+  "date": "2026-09-30",
+  "slice": "US long rates hit a 24-year high, AI fakes outrun the facts, 3,000 jobs land in Hyderabad.",
+  "artifact": "https://claude.ai/artifact/TptrwZg37dQfkjuokvRYCY",
+  "readingMinutes": 3,
+  "callouts": [
+    {
+      "num": "3,000",
+      "text": "new jobs in India over two years as DoorDash opens a global tech hub in Hyderabad.",
+      "url": ""
+    },
+    {
+      "num": "5.62%",
+      "text": "30-year US Treasury yield on Tuesday, the highest since June 2002.",
+      "url": ""
+    }
+  ],
+  "sections": [
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Jobs",
+          "tag": "",
+          "title": "DoorDash to create 3,000 jobs in Hyderabad",
+          "url": "",
+          "url2": "",
+          "points": [
+            "Opened a Hyderabad tech hub on Wednesday.",
+            "Starts with 500 roles in customer support and admin."
+          ],
+          "numbers": [
+            [
+              "3,000",
+              "jobs over two years"
+            ],
+            [
+              "500",
+              "initial hires"
+            ]
+          ],
+          "why": "AI job fears aside, real hiring lands here.",
+          "other": "Support work automates easily; jobs may move.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Economy",
+          "tag": "",
+          "title": "Fiscal deficit hits 41.9% of FY27 target",
+          "url": "",
+          "url2": "",
+          "points": [
+            "Gap of ₹7.10 lakh crore in April–August; 38.1% a year ago.",
+            "Capex at ₹5.10 lakh crore, 41.7% of the year’s budget."
+          ],
+          "numbers": [
+            [
+              "₹7.10L cr",
+              "deficit, April–August"
+            ],
+            [
+              "41.9%",
+              "of FY27 target used"
+            ]
+          ],
+          "why": "Spending outpaces receipts; 4.3% goal tested.",
+          "other": "Five months is early; much of it is capex.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Governance",
+          "tag": "",
+          "title": "Chandra’s family firm lands 2nd TVS deal",
+          "url": "",
+          "url2": "",
+          "points": [
+            "Hanno One plans a ₹330-cr park in Karnataka for TVS Motor.",
+            "TVS’s Venu Srinivasan backed Chandra; the board wasn’t told."
+          ],
+          "numbers": [
+            [
+              "₹330 cr",
+              "Karnataka park for TVS"
+            ],
+            [
+              "17 Sept",
+              "vote on Chandra’s 3rd term"
+            ]
+          ],
+          "why": "Disclosure is the bedrock of trust at Tata.",
+          "other": "Tata Sons says it didn’t need a board nod.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Misinformation",
+          "tag": "Opinion",
+          "title": "Punjab campuses burn on WhatsApp rumours",
+          "url": "",
+          "url2": "",
+          "points": [
+            "Chitkara: a hostel prank became tales of dead girls, a ghost.",
+            "LPU: NH-44 blocked over unverified claim; FIR, SIT set up."
+          ],
+          "numbers": [
+            [
+              "70%",
+              "study: more shares if false"
+            ],
+            [
+              "~6×",
+              "study: faster reach if false"
+            ]
+          ],
+          "why": "Soon AI will fake the ‘ghost video’ too.",
+          "other": "Distrust, not just rumour, may fuel the anger.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Markets",
+          "tag": "",
+          "title": "US 30-year yield hits highest since 2002",
+          "url": "",
+          "url2": "",
+          "points": [
+            "10-year yield at 5.29%, highest since 2007.",
+            "Oil above $100 and Fed hike bets drive the sell-off."
+          ],
+          "numbers": [
+            [
+              "5.62%",
+              "30-year, top since 2002"
+            ],
+            [
+              "5.29%",
+              "10-year, post-2007 high"
+            ]
+          ],
+          "why": "Long rates set the price of every loan.",
+          "other": "Stocks near highs; cooler oil could ease it.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI finance",
+          "tag": "",
+          "title": "KKR warns of AI borrowing risk in credit",
+          "url": "",
+          "url2": "",
+          "points": [
+            "AI debt is ~$600bn, 6.3% of US high-grade bonds.",
+            "Nearly $8tn of AI build-out is planned by 2030."
+          ],
+          "numbers": [
+            [
+              "$600bn",
+              "AI-linked debt"
+            ],
+            [
+              "6.3%",
+              "of US high-grade bonds"
+            ]
+          ],
+          "why": "AI risk now sits in ‘safe’ bond portfolios.",
+          "other": "Priced in? Spreads may already reflect it.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI misuse",
+          "tag": "",
+          "title": "Santa Ana’s ‘viper’ was an AI hoax",
+          "url": "",
+          "url2": "",
+          "points": [
+            "A resident showed police an AI-made photo of a Gaboon viper.",
+            "Police’s Grok check called it real; no snake was found."
+          ],
+          "numbers": [
+            [
+              "Grok",
+              "called the photo real"
+            ],
+            [
+              "0",
+              "snakes found in search"
+            ]
+          ],
+          "why": "A fake takes one prompt; expect many more.",
+          "other": "Hoaxes predate AI; human checks still work.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Gov tech",
+          "tag": "Viewpoint",
+          "title": "America.gov: AI chatbots at the front door",
+          "url": "",
+          "url2": "",
+          "points": [
+            "Gemini and Grok answer from 29,000 government websites.",
+            "Passports and name changes are listed as coming in 2027."
+          ],
+          "numbers": [
+            [
+              "29,000",
+              "gov sites ingested"
+            ],
+            [
+              "2027",
+              "listed tasks due"
+            ]
+          ],
+          "why": "Rough start, right idea; India has UMANG.",
+          "other": "Chatbot errors on benefits could cost dearly.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "US politics",
+          "tag": "",
+          "title": "Americans back populist price caps",
+          "url": "",
+          "url2": "",
+          "points": [
+            "87% back capping drug prices; 79% a 10% card-rate cap.",
+            "14 of 16 cost-of-living ideas won majority support."
+          ],
+          "numbers": [
+            [
+              "87%",
+              "back capping drug prices"
+            ],
+            [
+              "23%",
+              "back $5,000 checks"
+            ]
+          ],
+          "why": "Affordability now beats left-versus-right.",
+          "other": "Would support hold if costs were spelled out?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "UK politics",
+          "tag": "",
+          "title": "Burnham: rejoining the EU is an option",
+          "url": "",
+          "url2": "",
+          "points": [
+            "Andy Burnham says Brexit has done more harm than good.",
+            "Options: status quo, customs union, single market, rejoin."
+          ],
+          "numbers": [
+            [
+              "4",
+              "options on the table"
+            ],
+            [
+              "2024",
+              "manifesto red lines reopened"
+            ]
+          ],
+          "why": "Ten years on, Brexit is back on the table.",
+          "other": "Critics fear old wounds; EU may not say yes.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": []
+}

@@ -1,0 +1,258 @@
+{
+  "date": "2026-10-09",
+  "slice": "AI props growth. Stories prop stocks. Cheese props diplomacy. None is a guarantee.",
+  "artifact": "https://claude.ai/artifact/Fc9ziFPcPQkUpsgZZqviXB",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "20,000+",
+      "text": "staff moved from captive tech centres to IT services firms in the past 12 months.",
+      "url": "https://economictimes.indiatimes.com/tech/information-tech/20000-plus-people-shift-as-it-firms-buy-gcc-captive-tech-carve-outs/articleshow/134711217.cms"
+    },
+    {
+      "num": "0.4%",
+      "text": "of 4,000+ Indian stocks grew profit every single year for a decade: just 17 companies.",
+      "url": "https://www.livemint.com/opinion/online-views/devina-mehra-art-of-storytelling-can-turn-into-an-investment-pitfall-even-for-veteran-investors-11791285000067.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Global economy",
+          "tag": "Opinion",
+          "title": "Nouriel Roubini: the world is in turmoil, so why is the global economy still chugging along?",
+          "url": "https://www.livemint.com/opinion/online-views/nouriel-roubini-world-is-in-turmoil-but-the-global-economy-has-been-chugging-along-how-come-11791196008961.html",
+          "url2": "",
+          "points": [
+            "After the 2025 ‘Liberation Day’ tariffs and this year’s Iran War, the biggest energy shock since the 1970s, IMF data still show global growth at 3.5% in 2025, the same as 2024, with lower inflation.",
+            "Four props, he argues: markets forced a tariff retreat (from 21.5% in April 2025 to 9.6% now) and a fragile Iran ceasefire; new energy sources and China’s oil reserves cushioned the shock; policy easing, then tightening; and, above all, the AI investment boom.",
+            "Risks: oil back above $100, a constrained Strait of Hormuz, Taiwan and Russia–Ukraine, populist elections, heavy debt and a frothy AI boom. He still sees the positive scenario as more likely."
+          ],
+          "numbers": [
+            [
+              "3.5%",
+              "global growth, 2025"
+            ],
+            [
+              "9.6%",
+              "avg US tariff now"
+            ],
+            [
+              "$100+",
+              "oil a barrel, again"
+            ]
+          ],
+          "why": "Jobs, savings and loan rates on both sides of the world ride on whether this resilience holds, and much of it now hinges on AI.",
+          "other": "If AI spending is the main prop, is the resilience real or borrowed from a boom that could deflate? Growth forecasts made in wartime can also age fast.",
+          "also": [],
+          "image": "/figs/2026-10-09-1.jpg",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Telecom and satellites",
+          "tag": "Explainer",
+          "title": "Mint Explainer: Why is Elon Musk’s Starlink at war with Indian telecom giants?",
+          "url": "https://www.livemint.com/companies/elon-musk-starlink-indian-telecom-giants-11791451260121.html",
+          "url2": "",
+          "points": [
+            "On Wednesday Musk posted that unnamed Indian ‘oligarchs’ were blocking Starlink’s launch to keep a ‘monopolistic chokehold’; on Thursday the government called any suggestion of bias ‘baseless and misconceived’, citing security assessments under way.",
+            "Starlink won its licence in June 2025, after OneWeb and Jio Satellite in 2022; more than four years after the first licence, commercial launches for all players remain stalled over security and data-sovereignty concerns.",
+            "Jio wanted satellite spectrum auctioned; in September 2026 the telecom department chose administrative allocation with a 5% charge on adjusted gross revenue, still awaiting cabinet approval. Ironically, Airtel and Jio have both signed pacts with SpaceX to offer Starlink."
+          ],
+          "numbers": [
+            [
+              "165+",
+              "countries licensed, per Musk"
+            ],
+            [
+              "5%",
+              "spectrum charge on AGR"
+            ],
+            [
+              "4+ yrs",
+              "since India’s first licence"
+            ]
+          ],
+          "why": "Satellite internet can reach places towers and fibre don’t; who gets to sell it, and on what terms, shapes India’s connectivity.",
+          "other": "Is this protectionism, or a fair wait for security checks on foreign-run satellites carrying Indian data? Musk named no one, and his rivals are also his Indian partners.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "IT services",
+          "tag": "",
+          "title": "20,000-plus people shift as IT firms buy GCCs and captive tech carve-outs",
+          "url": "https://economictimes.indiatimes.com/tech/information-tech/20000-plus-people-shift-as-it-firms-buy-gcc-captive-tech-carve-outs/articleshow/134711217.cms",
+          "url2": "",
+          "points": [
+            "More than 20,000 employees moved from GCCs, enterprise IT units and product operations to IT services firms in the past 12 months; analyst Pareekh Jain expects similar numbers in the next 12.",
+            "TCS took over Best Buy’s India GCC; HCLTech bought Guardian Life’s India operations for $10.5 million (nearly 2,000 staff); Wipro paid $386 million for Olam’s Mindsprint (3,200+ staff), tied to an eight-year deal expected to bring over $1 billion.",
+            "HFS’s Achyuta Ghosh says about 10% of mature GCCs could be fully or partly transferred in two to three years, mostly operations-heavy, labour-intensive centres; deals usually involve 500–3,000 staff."
+          ],
+          "numbers": [
+            [
+              "20,000+",
+              "staff moved, 12 mo"
+            ],
+            [
+              "~3,000",
+              "pure GCC moves"
+            ],
+            [
+              "~10%",
+              "GCCs may transfer"
+            ]
+          ],
+          "why": "In a low-growth market, IT firms are buying growth with long contracts attached, and thousands of staff are changing employers.",
+          "other": "Is this a vote of confidence in IT firms, or a sign that many GCCs never reached scale? And how do transferred staff fare once AI-led productivity is priced into the contract?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "India consumer",
+          "tag": "Interview",
+          "title": "India’s aspirational middle class gives it a demographic edge, says Verlinvest CEO Roberto Italia",
+          "url": "https://m.economictimes.com/news/india/et-interview-indias-aspirational-middle-class-gives-it-demographic-edge-says-verlinvest-ceo-roberto-italia/articleshow/134773777.cms",
+          "url2": "",
+          "points": [
+            "Verlinvest plans to invest €1 billion in India over the next five years, with opportunities in health, fitness and digital content.",
+            "CEO Roberto Italia, 60, manages €2 billion for Belgian families who are long-standing AB InBev shareholders; their 31-year-old evergreen capital has backed Vita Coco, Oatly, Chewy, Epigamia, Juicy Chemistry and Wakefit.",
+            "He says a large share of Indians are becoming, or aim to become, middle class and are willing to spend; even amid AI job fears, India’s young population stays a strategic asset. He likens Mumbai to 1990s New York."
+          ],
+          "numbers": [
+            [
+              "€1bn",
+              "India, next 5 yrs"
+            ],
+            [
+              "€2bn",
+              "assets managed"
+            ],
+            [
+              "31 yrs",
+              "evergreen capital"
+            ]
+          ],
+          "why": "Patient global capital is betting on India’s spending power, which feeds the brands, startups and jobs behind it.",
+          "other": "A ‘demographic edge’ is a compelling story, and investors pitch their own bets. Will jobs and incomes keep pace with the aspirations?",
+          "also": [],
+          "image": "/figs/2026-10-09-4.jpg",
+          "imageAlt": ""
+        },
+        {
+          "category": "Diplomacy",
+          "tag": "",
+          "title": "What do you gift the Swiss President? PM Modi chose three Indian cheeses",
+          "url": "https://www.indiatoday.in/lifestyle/food/story/what-do-you-gift-the-swiss-president-pm-modi-chose-3-indian-cheeses-3010285-2026-10-05",
+          "url2": "",
+          "points": [
+            "On Monday, 5 October, in New Delhi, PM Narendra Modi gave Swiss President Guy Parmelin three award-winning Indian cheeses: Gulmarg, Konark and Yeoor.",
+            "Parmelin is in India on a three-day state visit; the gift was presented as a showcase of India’s growing cheesemaking tradition, with a nod to Switzerland’s own fame for cheese."
+          ],
+          "numbers": [
+            [
+              "3",
+              "award winners"
+            ],
+            [
+              "3 days",
+              "state visit"
+            ],
+            [
+              "5 Oct",
+              "gift day, Delhi"
+            ]
+          ],
+          "why": "Soft power on a plate: India offering its own craft to the home of cheese.",
+          "other": "A gift is a gesture, not a market. Will Indian artisan cheese find buyers abroad beyond the diplomatic table?",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Global banking",
+          "tag": "",
+          "title": "‘Switzerland has spoken’: will UBS leave?",
+          "url": "https://www.ft.com/content/2adb9508-6874-400e-adc3-231a7daebfd6?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Three and a half years after its state-orchestrated rescue of Credit Suisse, UBS faces a Swiss proposal, backed last month by parliament’s upper house, to hold an extra $16bn of capital; the lower house still has to vote.",
+            "Its options: stay and pay (analysts put the real shortfall at $6bn–8bn), split off the international arm, sell or shrink the US business, merge with a foreign bank, or leave Switzerland, which Morgan Stanley says could bring an exit tax of up to $10bn.",
+            "Top-10 shareholder Artisan Partners has urged a move; finance minister Karin Keller-Sutter says leaving would be ‘much more expensive and legally very complex’. A senior UBS employee says staying and adapting is most likely."
+          ],
+          "numbers": [
+            [
+              "$16bn",
+              "extra capital"
+            ],
+            [
+              "90%",
+              "foreign units, from ~60%"
+            ],
+            [
+              "$10bn",
+              "possible exit tax"
+            ]
+          ],
+          "why": "After Credit Suisse, Switzerland is choosing safety over its biggest bank’s growth, and banks and investors everywhere are watching.",
+          "other": "Is this overcaution that could push a national champion abroad, or a fair price for a bank whose balance sheet is bigger than the Swiss economy? Rivals, for their part, welcome a competitor forced to hold more capital.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Investing",
+          "tag": "Opinion",
+          "title": "Devina Mehra: the art of storytelling can turn into an investment pitfall, even for veterans",
+          "url": "https://www.livemint.com/opinion/online-views/devina-mehra-art-of-storytelling-can-turn-into-an-investment-pitfall-even-for-veteran-investors-11791285000067.html",
+          "url2": "",
+          "points": [
+            "We respond to stories, not statistics. A fund manager’s tale of great brands and endless growth persuades people, but the market doesn’t care how well a story is told.",
+            "Valuations assume earnings grow forever, yet of 4,000-plus stocks listed in India only 17 have grown profit every year for even a decade: just 0.4%.",
+            "Warren Buffett held his Coca-Cola story too long: from its 1998 high Coke has returned about 4x with dividends, against 6x for Pepsi and 11x for the S&P 500."
+          ],
+          "numbers": [
+            [
+              "0.4%",
+              "steady 10-yr growers"
+            ],
+            [
+              "4x",
+              "Coke since 1998 high"
+            ],
+            [
+              "11x",
+              "S&P 500, same period"
+            ]
+          ],
+          "why": "Before you buy, test the story behind the stock and imagine other endings.",
+          "other": "Conviction also stops investors panic-selling, and long holds of great companies have built fortunes. Where does a sound thesis end and a story begin?",
+          "also": [],
+          "image": "/figs/2026-10-09-7.jpg",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "In Illustrations: What Is Repo Rate? How Does A Hike Affect You?",
+      "url": "https://www.ndtv.com/india-news/in-illustrations-what-is-rbi-repo-rate-how-does-a-hike-affect-you-12149329",
+      "note": ""
+    }
+  ]
+}

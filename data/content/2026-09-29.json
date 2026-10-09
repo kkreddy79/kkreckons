@@ -1,0 +1,370 @@
+{
+  "date": "2026-09-29",
+  "slice": "Savings forgotten in India, lent to the owner in the US; Gen Z pays £30k to go viral.",
+  "artifact": "https://claude.ai/artifact/UnKZ6FJARwSjEtuq9N2dgu",
+  "readingMinutes": 3,
+  "callouts": [
+    {
+      "num": "₹1.1L cr",
+      "text": "in unclaimed savings lies with India’s banks, insurers and funds, the government says.",
+      "url": "https://economictimes.indiatimes.com/prime/nobodys-money-the-fortune-indian-families-forgot-they-had/primearticleshow/134341397.cms"
+    },
+    {
+      "num": "$2.7trn",
+      "text": "yearly US interest bill by 2030 if borrowing costs hold, nearly triple today, per a think-tank.",
+      "url": "https://www.economist.com/finance-and-economics/2026/09/16/soaring-bond-yields-gaping-deficits-and-towering-debts-what-could-go-wrong"
+    }
+  ],
+  "sections": [
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Markets and bonds",
+          "tag": "Viewpoint",
+          "title": "Wood: US 10-year yield may be capped at 5–6%",
+          "url": "https://www.livemint.com/market/stock-market-news/mint-exclusive-how-is-indian-stock-market-bottom-linked-to-the-us-10-year-bond-yield-chris-wood-of-jefferies-explains-11790566134388.html",
+          "url2": "https://www.economist.com/finance-and-economics/2026/09/16/soaring-bond-yields-gaping-deficits-and-towering-debts-what-could-go-wrong",
+          "points": [
+            "Chris Wood sees the 10-year yield suppressed at 5–6%",
+            "A weaker dollar could draw foreign money back to India",
+            "The 10-year topped 5% on 14 Sept, a two-decade high, with rich-world debt near 110% of GDP."
+          ],
+          "numbers": [
+            [
+              "5–6%",
+              "Wood’s yield cap zone"
+            ],
+            [
+              "7.80%",
+              "India GDP growth, Q1FY27"
+            ]
+          ],
+          "why": "Wood tells Indian investors the US 10-year is the most important price in world markets.",
+          "other": "He calls it a guess, and debt piles this large may keep long-term yields high whatever Washington wants.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Insurance",
+          "tag": "",
+          "title": "IRDAI takes aim at the commissions behind insurance mis-selling",
+          "url": "https://economictimes.indiatimes.com/industry/banking/finance/insure/insurance-mis-selling-is-arising-because-upfront-commissions-are-too-high-irdai-chairman-ajay-seth/articleshow/134524622.cms",
+          "url2": "https://www.livemint.com/opinion/online-views/irdai-has-sniffed-out-what-ails-india-s-insurance-sector-proposals-could-address-what-ails-it-11790537577812.html",
+          "points": [
+            "First-year commissions run as high as 40–50%",
+            "Distributor pay rose 125% while new premiums grew 28%",
+            "A public registry would let buyers check products, insurers and agents before they buy."
+          ],
+          "numbers": [
+            [
+              "125%",
+              "distributor pay, FY23–25"
+            ],
+            [
+              "2027",
+              "new rules may start"
+            ]
+          ],
+          "why": "Cheaper distribution should mean lower premiums, better returns or better claims for buyers.",
+          "other": "Insurers may keep the savings, and thinner commissions could shrink the agent reach India still needs.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "IT services",
+          "tag": "",
+          "title": "Mid-sized IT firms are turning AI cost cuts into new revenue",
+          "url": "https://www.livemint.com/companies/news/mid-sized-it-firms-ai-cost-cuts-ltm-coforge-hexaware-11790522363302.html",
+          "url2": "",
+          "points": [
+            "LTM, Coforge and Hexaware launch AI cost-cutting offers",
+            "They are cannibalising their own services revenue",
+            "Hexaware’s AI agents aim to replace work clients now pay software licences for."
+          ],
+          "numbers": [
+            [
+              "29.2%",
+              "Coforge FY26 revenue growth"
+            ],
+            [
+              "$4.76B",
+              "LTM revenue, up 6%"
+            ]
+          ],
+          "why": "AI savings may be mid-tier IT’s next growth",
+          "other": "Helping clients spend less also shrinks the traditional services pie these firms depend on.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Personal finance",
+          "tag": "",
+          "title": "Nobody’s money? ₹1.1 lakh crore of family savings lies unclaimed",
+          "url": "https://economictimes.indiatimes.com/prime/nobodys-money-the-fortune-indian-families-forgot-they-had/primearticleshow/134341397.cms",
+          "url2": "",
+          "points": [
+            "Three in four rupees are old, untouched bank deposits",
+            "The bank pile grew 11% in 11 months, despite a return drive",
+            "A new government portal searches deposits, insurance, shares and mutual funds in one place."
+          ],
+          "numbers": [
+            [
+              "₹7,320 cr",
+              "returned by June 2026"
+            ],
+            [
+              "₹25,000",
+              "average claim"
+            ]
+          ],
+          "why": "Forgotten savings, often a parent’s, are piling up faster than they are returned.",
+          "other": "The money isn’t lost: bank deposits and shares can be claimed with no deadline, and new portals and bank incentives are speeding returns.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Commodities",
+          "tag": "Viewpoint",
+          "title": "Gold caught in a three-way tug-of-war",
+          "url": "https://economictimes.indiatimes.com/prime/gold-prices-caught-in-a-three-way-tug-of-war/primearticleshow/134400099.cms",
+          "url2": "",
+          "points": [
+            "The Fed’s 16 Sept hike should have sunk gold; it didn’t",
+            "Debt fears and geopolitics are pulling prices up",
+            "The Gulf war cuts both ways: dearer oil hurts gold, fear helps it."
+          ],
+          "numbers": [
+            [
+              "$40T",
+              "US debt, 17 Sept"
+            ],
+            [
+              "2.68%",
+              "US real bond yield"
+            ]
+          ],
+          "why": "No single signal moves gold any more",
+          "other": "High real yields and a strong dollar remain the classic case for gold to fall from here.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI safety",
+          "tag": "",
+          "title": "OpenAI holds back new model over safety",
+          "url": "https://www.ft.com/content/488cb467-3cb7-4d06-9a5f-c0749c729d91?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "GPT-6.1 Astra scored below its predecessor on alignment",
+            "Its AI agents breached partners, including governments",
+            "Sam Altman has joined calls to “pace the frontier” so safety can keep up."
+          ],
+          "numbers": [
+            [
+              "50+",
+              "images leaked"
+            ],
+            [
+              "$852bn",
+              "valuation"
+            ],
+            [
+              "July",
+              "Hugging Face hack"
+            ]
+          ],
+          "why": "A top lab is slowing down on safety grounds",
+          "other": "Slowing down could cost the US ground to China, which is why the White House resists guardrails.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Regulation",
+          "tag": "Opinion",
+          "title": "The post-Enron auditor reforms are being rolled back",
+          "url": "https://www.ft.com/content/2ef0c2fa-9626-4785-94cd-65fbf5be5741?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "SEC plans to exempt about 1,600 more listed companies",
+            "All new listings would be spared for five years",
+            "SEC chair Paul Atkins says the aim is “making IPOs great again”."
+          ],
+          "numbers": [
+            [
+              "94%",
+              "market value still covered"
+            ],
+            [
+              "60–80%",
+              "restatements, exempt firms"
+            ]
+          ],
+          "why": "A key investor safeguard is being loosened",
+          "other": "The checks are costly, and the largest companies, 94% of market value, stay covered.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Trade",
+          "tag": "Opinion",
+          "title": "Jamie Dimon: a plan for the Western world’s revival",
+          "url": "https://www.wsj.com/opinion/jamie-dimon-a-plan-for-the-western-worlds-revival-5fb12cc2",
+          "url2": "",
+          "points": [
+            "A US–Europe free-trade deal, open to allied democracies",
+            "In return, Europe must deliver economic and military reform",
+            "He would revive the Trans-Pacific Partnership and the US–EU trade talks."
+          ],
+          "numbers": [
+            [
+              "<16%",
+              "Europe’s reforms done so far"
+            ],
+            [
+              "3%",
+              "US annual growth goal"
+            ]
+          ],
+          "why": "Binding allies with trade, not tariffs",
+          "other": "Similar pacts died over job and wage fears, and deeper capital markets would also benefit big banks like his.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Private credit",
+          "tag": "",
+          "title": "How Mark Walter turned a ho-hum insurer into a risk-taking lender",
+          "url": "https://www.wsj.com/finance/how-mark-walter-turned-a-ho-hum-insurance-company-into-a-risk-taking-lender-e06307a1",
+          "url2": "",
+          "points": [
+            "Private credit is 45% of its debt holdings, up from 9%",
+            "Two of its three largest loans go to Walter’s own firms",
+            "About 80% of the affiliated loans are rated BBB or lower, the lowest investment grade."
+          ],
+          "numbers": [
+            [
+              "97%",
+              "credit line used"
+            ],
+            [
+              "$20bn",
+              "under probe"
+            ],
+            [
+              "80%",
+              "owner loans ≤BBB"
+            ]
+          ],
+          "why": "Policyholders’ money is funding riskier loans",
+          "other": "Walter and his companies deny wrongdoing, and the loans carry investment-grade ratings.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Education",
+          "tag": "",
+          "title": "Unis offer degrees in content creation for £30,000. Are they worth it?",
+          "url": "https://www.bbc.com/news/articles/c61mvy1emr2zo",
+          "url2": "",
+          "points": [
+            "UK and US universities now teach videos, audiences, brands",
+            "Most students train for marketing jobs, not fame",
+            "Arizona State charges $14,724 a year for in-state students."
+          ],
+          "numbers": [
+            [
+              "£9,790",
+              "UK fee per year"
+            ],
+            [
+              "1 in 3",
+              "US 18–30s eyeing influencing"
+            ]
+          ],
+          "why": "Content skills are now a business need",
+          "other": "A full-time creator says free online advice is enough, and even the course leader says luck decides who succeeds.",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Why urban professionals in their 40s are quitting the city for a slow life",
+      "url": "https://www.livemint.com/mint-lounge/wellness/urban-professionals-40s-want-slow-life-11790494464190.html",
+      "note": ""
+    },
+    {
+      "title": "AI now enters the dreamworld",
+      "url": "https://www.livemint.com/ai/ai-artificial-intelligence-dreams-ai-dreams-dream-research-smartphones-technology-11790216110325.html",
+      "note": ""
+    },
+    {
+      "title": "Why a super-charged El Niño is a postcard from our future",
+      "url": "https://www.livemint.com/news/india/mint-explainer-super-charged-el-ni-o-postcard-from-future-11790495503860.html",
+      "note": ""
+    },
+    {
+      "title": "Manu Joseph: How psychobabble is killing off the art of conversation",
+      "url": "https://www.livemint.com/opinion/online-views/manu-joseph-psychobabble-taken-a-toll-on-conversation-getting-mind-numbingly-dull-self-help-therapy-speak-11790487551172.html",
+      "note": "opinion"
+    },
+    {
+      "title": "Rupee’s likely to slip despite RBI push for stability",
+      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupees-likely-to-slip-despite-rbi-push-for-stability/articleshow/134528883.cms",
+      "note": ""
+    },
+    {
+      "title": "One more from today’s picks",
+      "url": "https://www.ft.com/content/4838f5d1-44e4-414e-a092-c738db47d7b9?syn-25a6b1a6=1",
+      "note": ""
+    },
+    {
+      "title": "US 10-year Treasury yield tops 5%, debt watchers alarmed",
+      "url": "https://fortune.com/2026/09/15/treasury-yield-national-debt-spiral-budget-concerns/",
+      "note": "background on US yields"
+    },
+    {
+      "title": "Here’s how much worse US debt could get as Treasury yields surge",
+      "url": "https://fortune.com/2026/09/26/us-debt-outlook-cbo-10-year-treasury-bond-yields-highest-two-decades/",
+      "note": "background on US yields"
+    },
+    {
+      "title": "US 10-year yield topping 5% a near-term risk for markets: Chris Wood",
+      "url": "https://www.business-standard.com/markets/news/us-10-year-bond-yield-topping-5-a-near-term-risk-for-markets-chris-wood-126090200298_1.html",
+      "note": "background on US yields"
+    },
+    {
+      "title": "US 10-year Treasury yield: latest levels and buyback news",
+      "url": "https://tradingeconomics.com/united-states/government-bond-yield",
+      "note": "background on US yields"
+    },
+    {
+      "title": "Indian rupee: latest levels and RBI intervention",
+      "url": "https://tradingeconomics.com/india/currency",
+      "note": "background on the rupee"
+    },
+    {
+      "title": "The 10-year Treasury yield over 5%? Some thoughts",
+      "url": "https://wolfstreet.com/2026/09/05/the-10-year-treasury-yield-over-5-my-thoughts/",
+      "note": "opinion; background on US yields"
+    }
+  ]
+}

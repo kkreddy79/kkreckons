@@ -1,0 +1,246 @@
+{
+  "date": "2026-09-26",
+  "slice": "Two worlds, one trade-off: in India and America alike, companies are trading payroll for AI chips and data centres.",
+  "artifact": "https://claude.ai/artifact/4HWYZXDFaeQbdFGam34SvA",
+  "readingMinutes": 3,
+  "callouts": [
+    {
+      "num": "25–30K",
+      "text": "GCC jobs cut in India this year, per EIIRTrend. 3AI puts it at 4,000–5,000.",
+      "url": "https://www.moneycontrol.com/technology/gccs-cut-thousands-of-jobs-even-as-india-takes-on-bigger-global-mandates-article-14038260.html"
+    },
+    {
+      "num": "5.44%",
+      "text": "30-year Treasury yield, the highest since 2004. The 10-year neared 5.15%.",
+      "url": "https://www.cbsnews.com/news/bond-market-treasury-yields-inflation-fed/"
+    }
+  ],
+  "sections": [
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Jobs and GCCs",
+          "tag": "",
+          "title": "India’s GCCs: fewer seats, bigger say",
+          "url": "https://www.moneycontrol.com/technology/gccs-cut-thousands-of-jobs-even-as-india-takes-on-bigger-global-mandates-article-14038260.html",
+          "url2": "",
+          "points": [
+            "Visa cut ~1,500, PayPal ~600; ServiceNow and others 100+.",
+            "India teams now share global cuts; retail and tech hit hardest."
+          ],
+          "numbers": [
+            [
+              "2.4–2.5M",
+              "people in GCCs"
+            ],
+            [
+              "2,100+",
+              "centres"
+            ],
+            [
+              "55%",
+              "of work AI-exposed"
+            ]
+          ],
+          "why": "India now owns more AI and product decisions.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Business",
+          "tag": "",
+          "title": "Tata Sons reappoints Chandrasekaran",
+          "url": "https://www.outlookbusiness.com/corporate/tata-sons-vs-noel-tata-voting-math-behind-boardroom-battle-explained",
+          "url2": "https://www.livemint.com/companies/news/tata-sons-vs-tata-trusts-chandrasekaran-s-third-term-gets-legal-backing-from-former-sc-judges-11790262856056.html",
+          "points": [
+            "Five-year term passed by majority; Noel Tata voted no.",
+            "Trusts call the vote void; ex-SC judges back Tata Sons."
+          ],
+          "numbers": [
+            [
+              "~66%",
+              "Trusts’ stake in Tata Sons"
+            ],
+            [
+              "5 yrs",
+              "new term"
+            ]
+          ],
+          "why": "Board vs. owner: who steers India’s largest group?",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Banking",
+          "tag": "",
+          "title": "RBI vets Bagchi for HDFC Bank’s top job",
+          "url": "https://www.kotakneo.com/news/stocks/hdfc-bank-shares-advance-as-rbi-seeks-feedback-on-anup-bagchi-for-md-ceo/",
+          "url2": "",
+          "points": [
+            "RBI sought views from IRDAI and ICICI’s Sandeep Bakhshi.",
+            "Deputy MD Kaizad Bharucha is reportedly the other name."
+          ],
+          "numbers": [
+            [
+              "Oct 26",
+              "current CEO’s term ends"
+            ],
+            [
+              "3 yrs",
+              "new CEO’s term"
+            ]
+          ],
+          "why": "Can an insurance chief return to run a mega-bank?",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Tech layoffs",
+          "tag": "",
+          "title": "Oracle cuts cloud staff to fund AI",
+          "url": "https://www.businessinsider.com/oracle-cloud-layoffs-america-roles-hit-hardest-leaked-doc-2026-9",
+          "url2": "https://www.finalroundai.com/blog/oracle-layoffs-restructuring-plan",
+          "points": [
+            "546 of 7,185 US cuts hit cloud; developers and PMs most.",
+            "Sept 11 filing adds $700M, mostly severance; cites AI."
+          ],
+          "numbers": [
+            [
+              "546",
+              "US cloud roles cut"
+            ],
+            [
+              "$2.8B",
+              "total restructuring plan"
+            ],
+            [
+              "21,000",
+              "jobs cut in FY26"
+            ]
+          ],
+          "why": "Payroll is being reallocated to data centres.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "AI and science",
+          "tag": "",
+          "title": "Google readies its first AI chips for orbit",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
+          "url2": "",
+          "points": [
+            "Planet-built prototype flies 4 TPUs on SpaceX Transporter-18.",
+            "Chips passed radiation tests; laser-linked pair due in 2027."
+          ],
+          "numbers": [
+            [
+              "4",
+              "TPUs aboard"
+            ],
+            [
+              "8×",
+              "solar power vs. ground"
+            ]
+          ],
+          "why": "First real data on AI compute beyond Earth’s limits.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Markets",
+          "tag": "",
+          "title": "What higher yields mean for your money",
+          "url": "https://www.cbsnews.com/news/bond-market-treasury-yields-inflation-fed/",
+          "url2": "",
+          "points": [
+            "Fed hiked this month, its first since 2023; more signalled.",
+            "Record $6.53 diesel; some savings accounts now pay 4%+."
+          ],
+          "numbers": [
+            [
+              "7%+",
+              "30-yr mortgage"
+            ],
+            [
+              "3.4%",
+              "August CPI"
+            ],
+            [
+              "70%",
+              "Oct hike odds"
+            ]
+          ],
+          "why": "Loans price off Treasuries; households feel it fast.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Workplace",
+          "tag": "",
+          "title": "AI is reading your online past",
+          "url": "https://www.msn.com/en-us/money/other/ai-knows-what-you-did-online-now-your-employer-does-too/ar-AA280ov9",
+          "url2": "",
+          "points": [
+            "Screeners flag posts once 70% sure who wrote them.",
+            "Face matching can unmask pseudonymous accounts.",
+            "Some employers keep monitoring staff after hiring."
+          ],
+          "numbers": [],
+          "why": "Don’t over-scrub: thin footprints now raise flags too.",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "category": "Policy",
+          "tag": "Viewpoint",
+          "title": "California’s benefits for undocumented immigrants",
+          "url": "https://www.city-journal.org/article/california-illegal-immigrants-shadow-welfare",
+          "url2": "",
+          "points": [
+            "Its authors argue state-funded programs extend benefits regardless of immigration status."
+          ],
+          "numbers": [
+            [
+              "$11B+",
+              "last fiscal year, per the authors"
+            ],
+            [
+              "1.7M",
+              "Medi-Cal enrollees"
+            ],
+            [
+              "~$10B",
+              "yearly Medi-Cal cost"
+            ]
+          ],
+          "why": "",
+          "other": "",
+          "also": [],
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  ],
+  "reading": []
+}

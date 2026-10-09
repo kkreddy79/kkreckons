@@ -10,12 +10,21 @@ export type Story = {
 
 export type Edition = {
   date: string; // YYYY-MM-DD
-  title: string;
   slice: string;
   artifact: string;
   readingMinutes: number;
+  image: string;
   stories: Story[];
 };
+
+/** "www.livemint.com/…" → "livemint.com" */
+export function sourceName(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^(www|m)\./, "");
+  } catch {
+    return "";
+  }
+}
 
 const MONTHS = [
   "january", "february", "march", "april", "may", "june",

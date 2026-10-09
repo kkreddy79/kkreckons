@@ -1,10 +1,10 @@
 [
   {
     "date": "2026-10-09",
-    "title": "KKReckons, Friday, 9 October 2026",
     "slice": "AI props growth. Stories prop stocks. Cheese props diplomacy. None is a guarantee.",
     "artifact": "https://claude.ai/artifact/Fc9ziFPcPQkUpsgZZqviXB",
-    "readingMinutes": 6,
+    "readingMinutes": 5,
+    "image": "/figs/2026-10-09-1.jpg",
     "stories": [
       {
         "section": "Pick of the day",
@@ -59,10 +59,10 @@
   },
   {
     "date": "2026-10-08",
-    "title": "KKReckons, Thursday, 8 October 2026",
     "slice": "Gen Z says the deal is broken. AI could test it everywhere.",
     "artifact": "https://claude.ai/artifact/R6WYgbLC6GGuqQJKt7D9f8",
     "readingMinutes": 5,
+    "image": "",
     "stories": [
       {
         "section": "Pick of the day",
@@ -124,10 +124,10 @@
   },
   {
     "date": "2026-10-07",
-    "title": "KKReckons, Wednesday, 7 October 2026",
     "slice": "Money is in the hospitals and the AI labs. Diesel lingers. Someone still pays.",
     "artifact": "https://claude.ai/artifact/BhMTV1Dd1SfZEi5285nLyS",
     "readingMinutes": 6,
+    "image": "/figs/2026-10-07-5.webp",
     "stories": [
       {
         "section": "Pick of the day",
@@ -196,10 +196,10 @@
   },
   {
     "date": "2026-10-06",
-    "title": "KKReckons, Tuesday, 6 October 2026",
     "slice": "AI writes prescriptions, bonds sell off, and dinosaurs still fetch millions.",
     "artifact": "https://claude.ai/artifact/YYYYBA5EUFmpQnuzVhVNdi",
-    "readingMinutes": 8,
+    "readingMinutes": 7,
+    "image": "",
     "stories": [
       {
         "section": "Pick of the day",
@@ -282,10 +282,10 @@
   },
   {
     "date": "2026-10-05",
-    "title": "The Reddy Reckoner, Monday, 5 October 2026",
     "slice": "Plague fears in Siberia, AI agents go rogue, and Sebi busts ‘assured’ returns.",
     "artifact": "https://claude.ai/artifact/SHYtsnXk8e4kJtcPsHJMmk",
     "readingMinutes": 5,
+    "image": "",
     "stories": [
       {
         "section": "Pick of the day",
@@ -354,10 +354,10 @@
   },
   {
     "date": "2026-10-04",
-    "title": "The Reddy Reckoner",
     "slice": "AI borrows on hope; India pays by UPI but rarely invests, and insurance rewards quitting.",
     "artifact": "https://claude.ai/artifact/WyXHghuh3Lu8uVLzYyJV8U",
-    "readingMinutes": 5,
+    "readingMinutes": 4,
+    "image": "",
     "stories": [
       {
         "section": "Pick of the day",
@@ -419,10 +419,10 @@
   },
   {
     "date": "2026-10-03",
-    "title": "The Reddy Reckoner",
     "slice": "RBI urges caution, French bonds wobble, and a few sharps cash in on world events.",
     "artifact": "https://claude.ai/artifact/TGFtRqFkmoHnecYcy3L88Q",
-    "readingMinutes": 6,
+    "readingMinutes": 5,
+    "image": "",
     "stories": [
       {
         "section": "Pick of the day",
@@ -498,10 +498,10 @@
   },
   {
     "date": "2026-10-02",
-    "title": "The Reddy Reckoner",
     "slice": "A study coach for teens, an outsider for HDFC and a $2tn AI listing: promise, with caveats.",
     "artifact": "https://claude.ai/artifact/6CVzHN3jKNreS8bpuDfnGE",
-    "readingMinutes": 6,
+    "readingMinutes": 5,
+    "image": "",
     "stories": [
       {
         "section": "Pick of the day",
@@ -584,10 +584,10 @@
   },
   {
     "date": "2026-09-30",
-    "title": "Reddy-Reckoner_2026-09-30",
     "slice": "US long rates hit a 24-year high, AI fakes outrun the facts, 3,000 jobs land in Hyderabad.",
     "artifact": "https://claude.ai/artifact/TptrwZg37dQfkjuokvRYCY",
     "readingMinutes": 3,
+    "image": "",
     "stories": [
       {
         "section": "India edition",
@@ -663,10 +663,10 @@
   },
   {
     "date": "2026-09-29",
-    "title": "The Reddy Reckoner",
     "slice": "Savings forgotten in India, lent to the owner in the US; Gen Z pays £30k to go viral.",
     "artifact": "https://claude.ai/artifact/UnKZ6FJARwSjEtuq9N2dgu",
-    "readingMinutes": 5,
+    "readingMinutes": 3,
+    "image": "",
     "stories": [
       {
         "section": "India edition",
@@ -742,10 +742,10 @@
   },
   {
     "date": "2026-09-28",
-    "title": "The Reddy Reckoner",
-    "slice": "India compounds talent and capital; the world audits the AI boom and its debt.",
+    "slice": "India compounds talent and capital;<br>the world audits the AI boom and its debt.",
     "artifact": "https://claude.ai/artifact/JRt6pwCjGePZ7k2Nevzy94",
-    "readingMinutes": 6,
+    "readingMinutes": 5,
+    "image": "",
     "stories": [
       {
         "section": "India edition",
@@ -807,10 +807,10 @@
   },
   {
     "date": "2026-09-27",
-    "title": "The Reddy Reckoner",
     "slice": "India bets on cheaper AI and fuel. The world’s lesson: what you show, ship or see can be taken.",
     "artifact": "https://claude.ai/artifact/UboVjRzKFFZR7b3DsaJCHo",
     "readingMinutes": 3,
+    "image": "",
     "stories": [
       {
         "section": "India edition",
@@ -872,10 +872,10 @@
   },
   {
     "date": "2026-09-26",
-    "title": "The Reddy Reckoner",
     "slice": "Two worlds, one trade-off: in India and America alike, companies are trading payroll for AI chips and data centres.",
     "artifact": "https://claude.ai/artifact/4HWYZXDFaeQbdFGam34SvA",
     "readingMinutes": 3,
+    "image": "",
     "stories": [
       {
         "section": "India edition",
@@ -937,10 +937,10 @@
   },
   {
     "date": "2026-09-25",
-    "title": "The Daily Briefing — September 25, 2026 — KK Reddy",
     "slice": "Four stories: markets, boardrooms, banks and orbit.",
     "artifact": "https://claude.ai/artifact/UHW7xwwBX9FMWubycDaJvm",
-    "readingMinutes": 5,
+    "readingMinutes": 4,
+    "image": "",
     "stories": [
       {
         "section": "Top stories",
