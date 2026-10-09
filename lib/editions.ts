@@ -17,6 +17,50 @@ export type Edition = {
   stories: Story[];
 };
 
+const PUBLISHERS: Record<string, string> = {
+  "ft.com": "Financial Times",
+  "giftarticle.ft.com": "Financial Times",
+  "livemint.com": "Mint",
+  "economictimes.indiatimes.com": "The Economic Times",
+  "economictimes.com": "The Economic Times",
+  "wsj.com": "The Wall Street Journal",
+  "indiatoday.in": "India Today",
+  "inc42.com": "Inc42",
+  "moneycontrol.com": "Moneycontrol",
+  "cnbc.com": "CNBC",
+  "economist.com": "The Economist",
+  "bbc.com": "BBC",
+  "businessinsider.com": "Business Insider",
+  "africa.businessinsider.com": "Business Insider Africa",
+  "blog.google": "Google",
+  "bloomberg.com": "Bloomberg",
+  "ey.com": "EY",
+  "visualcapitalist.com": "Visual Capitalist",
+  "yourstory.com": "YourStory",
+  "x.com": "X",
+  "outlookbusiness.com": "Outlook Business",
+  "kotakneo.com": "Kotak Neo",
+  "cbsnews.com": "CBS News",
+  "msn.com": "MSN",
+  "city-journal.org": "City Journal",
+  "ndtv.com": "NDTV",
+  "theverge.com": "The Verge",
+  "wired.com": "Wired",
+  "theguardian.com": "The Guardian",
+  "nytimes.com": "The New York Times",
+  "theatlantic.com": "The Atlantic",
+  "fortune.com": "Fortune",
+  "theinformation.com": "The Information",
+  "everycure.org": "Every Cure",
+  "archive.is": "archive.is",
+};
+
+/** "https://www.livemint.com/…" → "Mint" (falls back to the domain) */
+export function publisherName(url: string) {
+  const host = sourceName(url);
+  return PUBLISHERS[host] || host;
+}
+
 /** "www.livemint.com/…" → "livemint.com" */
 export function sourceName(url: string) {
   try {
