@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import "@fontsource/playfair-display/latin-700.css";
 import "@fontsource/playfair-display/latin-800.css";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span className="fine">For information only. Not financial, legal or career advice.</span>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );

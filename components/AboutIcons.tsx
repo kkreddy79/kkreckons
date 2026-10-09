@@ -101,3 +101,9 @@ export const PeopleIcon = (p: Props) => (
   </Icon>
 );
 
+export const MailIcon = (p: Props) => (
+  <Icon {...p}>
+    <rect x="3" y="5.5" width="18" height="13" rx="2" />
+    <path d="M3.5 7l8.5 6.5L20.5 7" />
+  </Icon>
+);

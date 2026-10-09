@@ -109,7 +109,15 @@ function StoryCard({ s, n, wide }: { s: FullStory; n: number; wide: boolean }) {
 }
 
 /** An edition in the KKReckons design: slice, key numbers, sections of stories, further reading. */
-export default function EditionView({ e, headingLevel = "h1" }: { e: EditionContent; headingLevel?: "h1" | "h2" }) {
+export default function EditionView({
+  e,
+  headingLevel = "h1",
+  children,
+}: {
+  e: EditionContent;
+  headingLevel?: "h1" | "h2";
+  children?: React.ReactNode;
+}) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
   let n = 0;
@@ -117,9 +125,7 @@ export default function EditionView({ e, headingLevel = "h1" }: { e: EditionCont
   return (
     <div className="ev">
       <section className="ev-head">
-        <p className="ev-kicker">
-          {longDate(e.date)} · Curated by Krishnakanth Reddy
-        </p>
+        <p className="ev-kicker">{longDate(e.date)} · Curated by Krishnakanth Reddy</p>
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
         <p className="ev-sub">
           {count} stories · {e.readingMinutes} min read
@@ -159,7 +165,12 @@ export default function EditionView({ e, headingLevel = "h1" }: { e: EditionCont
       )}
 
       {e.sections.map((sec) => (
-        <section key={sec.name} className="ev-section" id={sectionId(sec.name)} aria-labelledby={`${sectionId(sec.name)}-t`}>
+        <section
+          key={sec.name}
+          className="ev-section"
+          id={sectionId(sec.name)}
+          aria-labelledby={`${sectionId(sec.name)}-t`}
+        >
           <div className="ev-sec-head">
             <h2 id={`${sectionId(sec.name)}-t`}>{sec.name}</h2>
             <p>{SECTION_NOTE[sec.name] || ""}</p>
@@ -173,21 +184,24 @@ export default function EditionView({ e, headingLevel = "h1" }: { e: EditionCont
         </section>
       ))}
 
-      {e.reading.length > 0 && (
-        <section className="ev-reading" id="further-reading" aria-labelledby="fr-t">
-          <h2 id="fr-t">Further reading</h2>
-          <ul>
-            {e.reading.map((r) => (
-              <li key={r.url + r.title}>
-                <a href={r.url} target="_blank" rel="noreferrer">
-                  {r.title} <span aria-hidden>↗</span>
-                </a>
-                {(r.note || sourceName(r.url)) && <small>{r.note || sourceName(r.url)}</small>}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <div className={`ev-end${e.reading.length ? "" : " ev-end-solo"}`}>
+        {e.reading.length > 0 && (
+          <section className="ev-reading" id="further-reading" aria-labelledby="fr-t">
+            <h2 id="fr-t">Further reading</h2>
+            <ul>
+              {e.reading.map((r) => (
+                <li key={r.url + r.title}>
+                  <a href={r.url} target="_blank" rel="noreferrer">
+                    {r.title} <span aria-hidden>↗</span>
+                  </a>
+                  {(r.note || sourceName(r.url)) && <small>{r.note || sourceName(r.url)}</small>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        {children}
+      </div>
     </div>
   );
 }
