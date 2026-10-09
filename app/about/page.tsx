@@ -16,6 +16,7 @@ import {
   SunIcon,
 } from "@/components/AboutIcons";
 import { latest, slugFor } from "@/lib/editions";
+import { SUBSCRIBE_URL } from "@/lib/site";
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
 const DESCRIPTION =
@@ -192,9 +193,9 @@ export default function About() {
             <Link className="ab-btn" href={today}>
               Read Today’s Edition →
             </Link>
-            <Link className="ab-btn-ghost" href="/daily/">
-              Explore the Archive
-            </Link>
+            <a className="ab-btn-ghost" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+              Get it by email ↗
+            </a>
           </div>
         </section>
       </div>
