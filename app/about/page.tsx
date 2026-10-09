@@ -65,6 +65,8 @@ export default function About() {
     <main className="about">
       <header className="ab-top">
         <picture className="ab-top-img">
+          <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.webp" type="image/webp" />
+          <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.jpg" />
           <source srcSet="/about/two-worlds.webp" type="image/webp" />
           <img
             src="/about/two-worlds.jpg"
