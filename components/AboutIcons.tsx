@@ -107,3 +107,10 @@ export const MailIcon = (p: Props) => (
     <path d="M3.5 7l8.5 6.5L20.5 7" />
   </Icon>
 );
+
+export const InfoIcon = (p: Props) => (
+  <Icon {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 11v6M12 7.5v.01" strokeWidth="2.2" />
+  </Icon>
+);

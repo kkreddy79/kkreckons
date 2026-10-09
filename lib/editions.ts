@@ -61,6 +61,25 @@ export function publisherName(url: string) {
   return PUBLISHERS[host] || host;
 }
 
+const PAYWALLED = new Set([
+  "ft.com",
+  "wsj.com",
+  "economist.com",
+  "bloomberg.com",
+  "theinformation.com",
+  "nytimes.com",
+  "theatlantic.com",
+  "businessinsider.com",
+  "fortune.com",
+  "wired.com",
+]);
+
+/** True when the link usually sits behind a paywall (FT gift links and archive copies are free). */
+export function isPaywalled(url: string) {
+  if (/economictimes\.indiatimes\.com\/prime\/|economictimes\.com\/prime\//.test(url)) return true;
+  return PAYWALLED.has(sourceName(url));
+}
+
 /** "www.livemint.com/…" → "livemint.com" */
 export function sourceName(url: string) {
   try {
