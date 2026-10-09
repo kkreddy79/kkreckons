@@ -27,7 +27,7 @@ export function GET() {
   <channel>
     <title>KKReckons</title>
     <link>${SITE_URL}</link>
-    <description>Visual daily briefings on AI, markets, business, India and the world. Curated by KK Reddy.</description>
+    <description>Visual daily briefings on AI, markets, business, India and the world. Curated by Krishnakanth Reddy.</description>
     <language>en</language>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />
 ${items}
