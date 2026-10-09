@@ -1,5 +1,5 @@
 import type { EditionContent, FullStory } from "@/lib/content";
-import { longDate, sourceName } from "@/lib/editions";
+import { longDate, publisherName, sourceName } from "@/lib/editions";
 import { LinkIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
 
 const SECTION_NOTE: Record<string, string> = {
@@ -13,10 +13,26 @@ function sectionId(name: string) {
   return name.toLowerCase().replace(/[^a-z]+/g, "-");
 }
 
-function StoryCard({ s, n, wide }: { s: FullStory; n: number; wide: boolean }) {
+/** Stories that would sit alone in a two-column row: the last of each odd-length run of image-less stories. */
+function loneStories(stories: FullStory[]) {
+  const lone = new Set<number>();
+  let run: number[] = [];
+  const flush = () => {
+    if (run.length % 2 === 1) lone.add(run[run.length - 1]);
+    run = [];
+  };
+  stories.forEach((s, i) => {
+    if (s.image) flush();
+    else run.push(i);
+  });
+  flush();
+  return lone;
+}
+
+function StoryCard({ s, n, wide, full }: { s: FullStory; n: number; wide: boolean; full?: boolean }) {
   const src = sourceName(s.url);
   return (
-    <article className={`ev-story${wide ? " ev-wide" : ""}`}>
+    <article className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
         <span className="ev-num">{n}</span>
         {s.category && <span className="ev-cat">{s.category}</span>}
@@ -38,24 +54,26 @@ function StoryCard({ s, n, wide }: { s: FullStory; n: number; wide: boolean }) {
         </figure>
       )}
 
-      {s.points.length > 0 && (
-        <ul className="ev-points">
-          {s.points.map((p) => (
-            <li key={p}>{p}</li>
-          ))}
-        </ul>
-      )}
+      <div className="ev-body">
+        {s.points.length > 0 && (
+          <ul className="ev-points">
+            {s.points.map((p) => (
+              <li key={p}>{p}</li>
+            ))}
+          </ul>
+        )}
 
-      {s.numbers.length > 0 && (
-        <dl className="ev-nums">
-          {s.numbers.map(([v, l]) => (
-            <div key={v + l}>
-              <dt>{v}</dt>
-              <dd>{l}</dd>
-            </div>
-          ))}
-        </dl>
-      )}
+        {s.numbers.length > 0 && (
+          <dl className="ev-nums">
+            {s.numbers.map(([v, l]) => (
+              <div key={v + l}>
+                <dt>{v}</dt>
+                <dd>{l}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </div>
 
       {s.why && (
         <p className="ev-why">
@@ -92,14 +110,15 @@ function StoryCard({ s, n, wide }: { s: FullStory; n: number; wide: boolean }) {
       {(src || s.url2) && (
         <p className="ev-src">
           <LinkIcon className="ev-ic-sm" />
+          <span className="ev-src-label">Original source:</span>
           {src && (
             <a href={s.url} target="_blank" rel="noreferrer">
-              {src} ↗
+              {publisherName(s.url)} ↗
             </a>
           )}
           {s.url2 && (
             <a href={s.url2} target="_blank" rel="noreferrer">
-              {sourceName(s.url2)} ↗
+              {publisherName(s.url2)} ↗
             </a>
           )}
         </p>
@@ -176,10 +195,13 @@ export default function EditionView({
             <p>{SECTION_NOTE[sec.name] || ""}</p>
           </div>
           <div className={`ev-grid${sec.name === "Pick of the day" ? " ev-grid-pick" : ""}`}>
-            {sec.stories.map((s) => {
-              n += 1;
-              return <StoryCard key={s.title} s={s} n={n} wide={sec.name === "Pick of the day"} />;
-            })}
+            {(() => {
+              const lone = loneStories(sec.stories);
+              return sec.stories.map((s, i) => {
+                n += 1;
+                return <StoryCard key={s.title} s={s} n={n} wide={sec.name === "Pick of the day"} full={lone.has(i)} />;
+              });
+            })()}
           </div>
         </section>
       ))}
@@ -194,7 +216,7 @@ export default function EditionView({
                   <a href={r.url} target="_blank" rel="noreferrer">
                     {r.title} <span aria-hidden>↗</span>
                   </a>
-                  {(r.note || sourceName(r.url)) && <small>{r.note || sourceName(r.url)}</small>}
+                  {(r.note || publisherName(r.url)) && <small>{r.note || publisherName(r.url)}</small>}
                 </li>
               ))}
             </ul>
