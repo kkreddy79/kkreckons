@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Masthead from "@/components/Masthead";
 import { editions, latest, slugFor, totalStories } from "@/lib/editions";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ const RULES = [
 export default function About() {
   return (
     <main className="container about">
+      <Masthead />
       <section className="ab-intro">
         <div className="ab-avatar" aria-hidden>
           KK
@@ -28,13 +30,6 @@ export default function About() {
             I grew up in South India and now live in Southern California, so there’s always a news tab open on both
             sides of the planet. One of them is usually still awake.
           </p>
-          <div className="ab-places">
-            <span>🇮🇳 South India</span>
-            <span className="ab-arrow" aria-hidden>
-              ⇄
-            </span>
-            <span>🇺🇸 Southern California</span>
-          </div>
         </div>
       </section>
 
