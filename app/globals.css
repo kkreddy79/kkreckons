@@ -143,6 +143,7 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Edition (KKReckons design) ---------- */
 .ev-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 8px; }
 .ev-page { padding-top: 26px; }
+.ev-page .crumbs { margin: 0 0 16px; }
 .ev { --ev-ink: #24123f; --ev-orange: #e8622f; --ev-sand: #f3ece2; color: var(--ev-ink); }
 .ev h1, .ev h2, .ev h3 { font-family: "Playfair Display", Georgia, serif; }
 .ev-head { position: relative; padding: 4px 0 6px; }

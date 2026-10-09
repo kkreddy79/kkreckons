@@ -117,10 +117,13 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
 export default function EditionView({
   e,
   headingLevel = "h1",
+  showDate = true,
   children,
 }: {
   e: EditionContent;
   headingLevel?: "h1" | "h2";
+  /** Off where the page already shows the date (edition pages have it in the breadcrumb). */
+  showDate?: boolean;
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
@@ -130,7 +133,7 @@ export default function EditionView({
   return (
     <div className="ev">
       <section className="ev-head">
-        <p className="ev-kicker">{longDate(e.date)} · Curated by Krishnakanth Reddy</p>
+        {showDate && <p className="ev-kicker">{longDate(e.date)}</p>}
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
         <p className="ev-sub">
           {count} stories · {e.readingMinutes} min read
