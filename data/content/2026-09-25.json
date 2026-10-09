@@ -12,10 +12,12 @@
           "category": "Markets & Economy",
           "tag": "",
           "title": "US 10-year Treasury yield at 5.183%, up 1.046 points over the past year",
-          "url": "",
+          "url": "https://www.tradingview.com/symbols/TVC-US10Y/",
           "url2": "",
           "points": [
-            "A TradingView snapshot of the United States 10-year government bond yield (US10Y · TVC) shows 5.183%, up 1.046, or 25.28%, over the past year. The one-year line trends upward and finishes at its high point on the chart."
+            "A TradingView snapshot shows the US 10-year government bond yield (US10Y) at 5.183%.",
+            "That is up 1.046 points, or 25.28%, over the past year.",
+            "The one-year line trends upward and finishes at its high point on the chart."
           ],
           "numbers": [
             [
@@ -40,7 +42,9 @@
           "url": "https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016?syn-25a6b1a6=1",
           "url2": "",
           "points": [
-            "According to people familiar with the matter cited by the FT, Oracle has issued a force majeure notice on power supply to the project developer, a unit of Blue Owl Capital, after the site hit permitting delays amid rising local opposition. Under the contract, Oracle is still liable to pay a carry cost in lieu of rent for up to three years if the project misses its first-phase deadline. Construction is under way on the 1,400-acre campus in Doña Ana County. The FT says Bloomberg first reported the notice on Thursday."
+            "Oracle has issued a force majeure notice on power supply to the project developer, a unit of Blue Owl Capital, after permitting delays amid rising local opposition, according to people cited by the FT.",
+            "Under the contract, Oracle must still pay a carry cost in lieu of rent for up to three years if the project misses its first-phase deadline.",
+            "Construction is under way on the 1,400-acre campus in Doña Ana County; the FT says Bloomberg first reported the notice."
           ],
           "numbers": [
             [
@@ -73,7 +77,9 @@
           "url": "https://www.businessinsider.com/oracle-cloud-layoffs-america-roles-hit-hardest-leaked-doc-2026-9",
           "url2": "",
           "points": [
-            "Business Insider obtained a document listing the job titles and ages of 546 employees laid off from Oracle's America Cloud Infrastructure organization. After software developer III came program manager IV and principal core infrastructure engineer. Software developers made up around 17% of cuts; 41 came from data center support services, including that division's vice president and two senior directors. Oracle said the document was provided to comply with federal age discrimination laws."
+            "Business Insider obtained a document listing the job titles and ages of 546 employees laid off from Oracle's America Cloud Infrastructure organisation.",
+            "Software developer III was the hardest-hit title, followed by program manager IV and principal core infrastructure engineer; developers made up around 17% of cuts.",
+            "41 roles came from data center support services, including that division's vice president; Oracle said the document was provided to comply with federal age discrimination laws."
           ],
           "numbers": [
             [
@@ -106,7 +112,9 @@
           "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
           "url2": "",
           "points": [
-            "In a September 24 post, Google says Project Suncatcher is scheduled for its first orbital test: a prototype satellite, built with partner Planet and flying on SpaceX's Transporter-18 rideshare, to evaluate how Google's Tensor Processing Units perform in space. The post says the first TPUs go into orbit next week."
+            "Google says Project Suncatcher is scheduled for its first orbital test, with the first TPUs going into orbit next week.",
+            "A prototype satellite built with partner Planet will fly on SpaceX's Transporter-18 rideshare.",
+            "The test will evaluate how Google's Tensor Processing Units perform in space."
           ],
           "numbers": [
             [

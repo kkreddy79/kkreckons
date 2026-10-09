@@ -1,10 +1,51 @@
 {
   "2026-09-25": {
     "artifact": "https://claude.ai/artifact/UHW7xwwBX9FMWubycDaJvm",
-    "slice": "Four stories: markets, boardrooms, banks and orbit."
+    "slice": "Four stories: markets, boardrooms, banks and orbit.",
+    "stories": {
+      "US 10-year Treasury yield at 5.183%, up 1.046 points over the past year": {
+        "url": "https://www.tradingview.com/symbols/TVC-US10Y/",
+        "points": [
+          "A TradingView snapshot shows the US 10-year government bond yield (US10Y) at 5.183%.",
+          "That is up 1.046 points, or 25.28%, over the past year.",
+          "The one-year line trends upward and finishes at its high point on the chart."
+        ]
+      },
+      "Oracle on the hook to pay Project Jupiter investors even if the New Mexico site has no power": {
+        "points": [
+          "Oracle has issued a force majeure notice on power supply to the project developer, a unit of Blue Owl Capital, after permitting delays amid rising local opposition, according to people cited by the FT.",
+          "Under the contract, Oracle must still pay a carry cost in lieu of rent for up to three years if the project misses its first-phase deadline.",
+          "Construction is under way on the 1,400-acre campus in Doña Ana County; the FT says Bloomberg first reported the notice."
+        ]
+      },
+      "Leaked document shows which Oracle cloud roles were cut": {
+        "points": [
+          "Business Insider obtained a document listing the job titles and ages of 546 employees laid off from Oracle's America Cloud Infrastructure organisation.",
+          "Software developer III was the hardest-hit title, followed by program manager IV and principal core infrastructure engineer; developers made up around 17% of cuts.",
+          "41 roles came from data center support services, including that division's vice president; Oracle said the document was provided to comply with federal age discrimination laws."
+        ]
+      },
+      "Google's Project Suncatcher readies its first test of AI chips in orbit": {
+        "points": [
+          "Google says Project Suncatcher is scheduled for its first orbital test, with the first TPUs going into orbit next week.",
+          "A prototype satellite built with partner Planet will fly on SpaceX's Transporter-18 rideshare.",
+          "The test will evaluate how Google's Tensor Processing Units perform in space."
+        ]
+      }
+    }
   },
   "2026-09-26": {
-    "artifact": "https://claude.ai/artifact/4HWYZXDFaeQbdFGam34SvA"
+    "artifact": "https://claude.ai/artifact/4HWYZXDFaeQbdFGam34SvA",
+    "stories": {
+      "California’s benefits for undocumented immigrants": {
+        "points": [
+          "Its authors argue state-funded programs extend benefits regardless of immigration status, putting the cost at more than $11 billion last fiscal year.",
+          "About 1.7 million people are enrolled in state-funded full-scope Medi-Cal for undocumented immigrants, at a cost near $10 billion a year.",
+          "They say a mixed-status family can qualify for public services such as CAPI cash aid, health cover and tax credits."
+        ],
+        "why": "California’s budget is under strain, and who qualifies for state-funded benefits is a live political fight. This is an opinion piece, so the figures are the authors’ framing."
+      }
+    }
   },
   "2026-09-27": {
     "artifact": "https://claude.ai/artifact/UboVjRzKFFZR7b3DsaJCHo"
@@ -16,7 +57,41 @@
     "artifact": "https://claude.ai/artifact/UnKZ6FJARwSjEtuq9N2dgu"
   },
   "2026-09-30": {
-    "artifact": "https://claude.ai/artifact/TptrwZg37dQfkjuokvRYCY"
+    "artifact": "https://claude.ai/artifact/TptrwZg37dQfkjuokvRYCY",
+    "stories": {
+      "DoorDash to create 3,000 jobs in Hyderabad": {
+        "url": "https://yourstory.com/2026/09/doordash-first-india-office-hyderabadscale-tech-support-team-3000"
+      },
+      "Fiscal deficit hits 41.9% of FY27 target": {
+        "url": "https://tradingeconomics.com/india/government-budget-value/news/588219"
+      },
+      "Chandra’s family firm lands 2nd TVS deal": {
+        "url": "https://yourstory.com/2026/09/tata-tussle-spotlight-hannos-tvs-deal-filings-reveal-29-year-lease"
+      },
+      "Punjab campuses burn on WhatsApp rumours": {
+        "url": "https://www.outlookindia.com/national/chitkara-university-ghost-rumours-what-triggered-the-night-long-student-protest-in-punjab",
+        "url2": "https://www.outlookindia.com/national/campus-vandalism-highway-blockade-what-we-know-about-the-lpu-protest-and-rape-claim"
+      },
+      "US 30-year yield hits highest since 2002": {
+        "url": "https://view.asiae.co.kr/en/article/2026093005331209938"
+      },
+      "KKR warns of AI borrowing risk in credit": {
+        "url": "https://www.theglobeandmail.com/business/article-kkr-warns-about-the-growing-pile-of-ai-debt/"
+      },
+      "Santa Ana’s ‘viper’ was an AI hoax": {
+        "url": "https://www.nbclosangeles.com/news/local/santa-ana-pd-ai-generated-viper-hoax/3949529/"
+      },
+      "America.gov: AI chatbots at the front door": {
+        "url": "https://thenextweb.com/news/america-gov-ai-chatbot-trump-gemini-grok-minecraft",
+        "url2": "https://www.aljazeera.com/economy/2026/9/29/trump-unveils-new-site-to-simplify-access-to-government-services"
+      },
+      "Americans back populist price caps": {
+        "url": "https://www.benzinga.com/news/politics/26/09/62080869/trumps-5000-check-proposal-draws-limited-support-as-survey-finds-americans-back-cross-party-populist-policies-to-cut-living-costs"
+      },
+      "Burnham: rejoining the EU is an option": {
+        "url": "https://www.businessday.co.za/world/2026-09-30-andy-burnham-says-uk-should-weigh-post-brexit-eu-options-including-rejoining/"
+      }
+    }
   },
   "2026-10-02": {
     "artifact": "https://claude.ai/artifact/6CVzHN3jKNreS8bpuDfnGE"

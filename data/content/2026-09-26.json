@@ -217,7 +217,9 @@
           "url": "https://www.city-journal.org/article/california-illegal-immigrants-shadow-welfare",
           "url2": "",
           "points": [
-            "Its authors argue state-funded programs extend benefits regardless of immigration status."
+            "Its authors argue state-funded programs extend benefits regardless of immigration status, putting the cost at more than $11 billion last fiscal year.",
+            "About 1.7 million people are enrolled in state-funded full-scope Medi-Cal for undocumented immigrants, at a cost near $10 billion a year.",
+            "They say a mixed-status family can qualify for public services such as CAPI cash aid, health cover and tax credits."
           ],
           "numbers": [
             [
@@ -233,7 +235,7 @@
               "yearly Medi-Cal cost"
             ]
           ],
-          "why": "",
+          "why": "California’s budget is under strain, and who qualifies for state-funded benefits is a live political fight. This is an opinion piece, so the figures are the authors’ framing.",
           "other": "",
           "also": [],
           "image": "",
