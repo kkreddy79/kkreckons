@@ -28,8 +28,6 @@ button { font: inherit; cursor: pointer; }
 }
 .site-header nav { display: flex; gap: 26px; font-size: 14px; font-weight: 600; color: var(--muted); }
 .site-header nav a:hover { color: var(--ink); }
-.site-header nav .nav-sub { color: #fff; background: var(--purple); padding: 7px 14px; border-radius: 999px; }
-.site-header nav .nav-sub:hover { color: #fff; background: #4a2d7a; }
 
 .site-footer {
   border-top: 1px solid var(--line); padding: 34px 6vw; margin-top: 40px;
@@ -315,8 +313,7 @@ button { font: inherit; cursor: pointer; }
 }
 @media (max-width: 700px) {
   .site-header { padding: 0 16px; height: 60px; }
-  .site-header nav { gap: 12px; font-size: 13px; }
-  .site-header nav .nav-sub { padding: 6px 11px; }
+  .site-header nav { gap: 16px; }
   .sub-box { flex-direction: column; align-items: flex-start; padding: 18px; }
   .container { padding: 20px 16px 50px; }
   .hero { padding-top: 22px; }
