@@ -217,6 +217,9 @@ for (const file of files) {
 
   const m = meta[date] || {};
   if (m.slice) content.slice = m.slice;
+  // Per-story fixes (missing source links, fuller summaries), keyed by story title.
+  for (const sec of content.sections)
+    for (const s of sec.stories) if (m.stories?.[s.title]) Object.assign(s, m.stories[s.title]);
   const stories = content.sections.flatMap((s) => s.stories);
   const words = JSON.stringify(stories).split(/\s+/).length;
   const record = {

@@ -56,6 +56,16 @@ const PUBLISHERS: Record<string, string> = {
   "finalroundai.com": "Final Round AI",
   "humanistreview.ai": "Humanist Review",
   "vals.ai": "Vals AI",
+  "outlookindia.com": "Outlook",
+  "tradingeconomics.com": "Trading Economics",
+  "view.asiae.co.kr": "The Asia Business Daily",
+  "theglobeandmail.com": "The Globe and Mail",
+  "nbclosangeles.com": "NBC Los Angeles",
+  "thenextweb.com": "TNW",
+  "aljazeera.com": "Al Jazeera",
+  "benzinga.com": "Benzinga",
+  "businessday.co.za": "BusinessDay",
+  "tradingview.com": "TradingView",
 };
 
 /** "https://www.livemint.com/…" → "Mint" (falls back to the domain) */
@@ -75,6 +85,7 @@ const PAYWALLED = new Set([
   "businessinsider.com",
   "fortune.com",
   "wired.com",
+  "theglobeandmail.com",
 ]);
 
 /** True when the link usually sits behind a paywall (FT gift links and archive copies are free). */
