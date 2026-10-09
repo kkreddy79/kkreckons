@@ -213,7 +213,6 @@ button { font: inherit; cursor: pointer; }
 .sub-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
 .sub-btn { display: inline-flex; padding: 12px 20px; border-radius: 999px; background: var(--purple); color: #fff; font-weight: 800; font-size: 14px; }
 .sub-btn:hover { background: #4a2d7a; }
-.sub-rss { font-size: 13px; font-weight: 700; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- About ---------- */
 .about { --ab-ink: #24123f; --ab-orange: #e8622f; --ab-sand: #f3ece2; padding-bottom: 20px; }
