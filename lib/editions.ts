@@ -53,6 +53,9 @@ const PUBLISHERS: Record<string, string> = {
   "theinformation.com": "The Information",
   "everycure.org": "Every Cure",
   "archive.is": "archive.is",
+  "finalroundai.com": "Final Round AI",
+  "humanistreview.ai": "Humanist Review",
+  "vals.ai": "Vals AI",
 };
 
 /** "https://www.livemint.com/…" → "Mint" (falls back to the domain) */
