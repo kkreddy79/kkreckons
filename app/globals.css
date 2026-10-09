@@ -58,20 +58,10 @@ button { font: inherit; cursor: pointer; }
 .section-title h2 { font-family: var(--serif); font-size: 34px; margin: 0; letter-spacing: -0.5px; }
 .section-title > span, .section-title > a { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); font-weight: 700; }
 .section-title > a:hover { color: var(--purple); }
-.ed-more { display: inline-block; margin-top: 14px; font-weight: 800; font-size: 13px; color: var(--purple); }
-.ed-more:hover span { margin-left: 3px; }
 
 /* ---------- Home ---------- */
 
 
-.card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.ed-card {
-  background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
-  display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s;
-}
-.ed-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.ed-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
-.ed-slice { font-family: var(--serif); font-size: 18px; line-height: 1.3; margin: 0 0 12px; }
 
 
 
@@ -223,15 +213,7 @@ a.ev-call:hover { transform: translateY(-2px); }
 
 .ev-permalink { margin: 26px 0 0; font-size: 13px; color: #5b5566; }
 .ev-permalink a { font-weight: 700; color: #3b1d6e; text-decoration: underline; text-underline-offset: 3px; }
-.ev-earlier { margin-top: 56px; }
 
-.ed-heads { list-style: none; margin: 0; padding: 0; flex: 1; }
-.ed-heads li { font-size: 13.5px; line-height: 1.4; padding: 8px 0; border-top: 1px solid var(--line); color: #34333b; }
-.ed-heads .cat { display: block; margin-bottom: 2px; }
-.ed-date-band { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 20px; background: radial-gradient(120% 160% at 0% 0%, #4b2b78, #24123f 75%); color: #fff; }
-.ed-date-band b { font-variant-numeric: lining-nums; font: 800 24px "Playfair Display", Georgia, serif; }
-.ed-date-band span { font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #ffd5a5; }
-.ed-slice a { color: inherit; }
 .tl-day { display: grid; place-items: center; align-content: center; width: 92px; height: 92px; border-radius: 14px; background: radial-gradient(120% 160% at 0% 0%, #4b2b78, #24123f 75%); color: #ffd5a5; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
 .tl-day b { font-variant-numeric: lining-nums; font: 800 34px/1 "Playfair Display", Georgia, serif; color: #fff; letter-spacing: 0; }
 
@@ -323,7 +305,6 @@ a.ev-call:hover { transform: translateY(-2px); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
-  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
   .site-header { padding: 0 16px; height: 60px; }
@@ -331,7 +312,6 @@ a.ev-call:hover { transform: translateY(-2px); }
   .sub-box { flex-direction: column; align-items: flex-start; padding: 18px; }
   .container { padding: 20px 16px 50px; }
   .hero { padding-top: 22px; }
-  .card-grid { grid-template-columns: 1fr; }
   .section-title { margin-top: 42px; }
   .section-title h2 { font-size: 27px; }
   .tl-item { grid-template-columns: 64px 1fr; gap: 14px; padding: 12px; }

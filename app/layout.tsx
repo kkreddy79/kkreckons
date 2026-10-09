@@ -25,7 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <header className="site-header">
           <nav>
             <Link href="/">Home</Link>
-            <Link href="/daily/">Archive</Link>
+            <Link href="/daily/">Catch up</Link>
             <Link href="/about">About</Link>
           </nav>
         </header>
