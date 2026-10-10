@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import ArchiveBrowser from "@/components/ArchiveBrowser";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
@@ -41,9 +40,7 @@ export default function Archive() {
           date. Search across every headline or browse by theme.
         </p>
       </section>
-      <Suspense>
-        <ArchiveBrowser editions={editions} details={storyDetails()} reading={reading} />
-      </Suspense>
+      <ArchiveBrowser editions={editions} details={storyDetails()} reading={reading} />
       <SubscribeBox />
     </main>
   );

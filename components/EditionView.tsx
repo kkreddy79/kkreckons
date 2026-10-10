@@ -1,5 +1,6 @@
 import type { EditionContent, FullStory } from "@/lib/content";
 import { longDate, publisherName } from "@/lib/editions";
+import { CORRECTIONS_EMAIL, correctionsHref } from "@/lib/site";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { storyHover } from "@/components/StorySource";
 
@@ -222,6 +223,12 @@ export default function EditionView({
         )}
         {children}
       </div>
+
+      {CORRECTIONS_EMAIL && (
+        <p className="ev-fix">
+          Spotted an error? <a href={correctionsHref(longDate(e.date))}>Tell us</a> and we’ll correct it.
+        </p>
+      )}
     </div>
   );
 }

@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Edition,
   THEMES,
@@ -35,20 +34,30 @@ export default function ArchiveBrowser({
   details: StoryDetails;
   reading: ReadingLink[];
 }) {
-  const params = useSearchParams();
-  const router = useRouter();
-  const [query, setQuery] = useState(params.get("q") ?? "");
-  const theme = params.get("theme") ?? "";
-  const source = params.get("source") ?? "";
-  const [view, setView] = useState<"editions" | "stories">(
-    params.get("q") || theme || source ? "stories" : "editions"
-  );
+  // Filters live in the URL (?q=, ?theme=, ?source=) but are read after mount, so the page is fully
+  // rendered on the server with the default "By edition" list (visible to crawlers and link previews).
+  const [query, setQuery] = useState("");
+  const [theme, setThemeState] = useState("");
+  const [source, setSource] = useState("");
+  const [view, setView] = useState<"editions" | "stories">("editions");
 
-  const setParam = (key: string, value: string) => {
-    const next = new URLSearchParams(params.toString());
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    const [q, t, s] = [p.get("q") ?? "", p.get("theme") ?? "", p.get("source") ?? ""];
+    if (!q && !t && !s) return;
+    setQuery(q);
+    setThemeState(t);
+    setSource(s);
+    setView("stories");
+  }, []);
+
+  const setParam = (key: "theme" | "source", value: string) => {
+    const next = new URLSearchParams(window.location.search);
     if (value) next.set(key, value);
     else next.delete(key);
-    router.replace(`/daily/${next.size ? `?${next}` : ""}`, { scroll: false });
+    window.history.replaceState(null, "", `/daily/${next.size ? `?${next}` : ""}`);
+    if (key === "theme") setThemeState(value);
+    else setSource(value);
     if (value) setView("stories");
   };
   const setTheme = (t: string) => setParam("theme", t !== theme ? t : "");
