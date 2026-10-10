@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import Link from "next/link";
 import "@fontsource/playfair-display/latin-700.css";
 import "@fontsource/playfair-display/latin-800.css";
 import { Analytics } from "@vercel/analytics/next";
+import NavLinks from "@/components/NavLinks";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,11 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <header className="site-header">
-          <nav>
-            <Link href="/">Home</Link>
-            <Link href="/daily/">Catch up</Link>
-            <Link href="/about">About</Link>
-          </nav>
+          <NavLinks />
         </header>
         {children}
         <footer className="site-footer">
