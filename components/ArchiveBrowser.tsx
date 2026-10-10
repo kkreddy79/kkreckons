@@ -76,9 +76,11 @@ export default function ArchiveBrowser({
           const s = {
             title: story.title,
             url: story.url,
+            src: story.src,
+            pay: story.pay,
             ...(details[`${e.date}|${story.title}`] ?? { url2: "", points: [], why: "" }),
           };
-          const pubs = [s.url, s.url2].filter(Boolean).map(publisherName);
+          const pubs = [s.url ? s.src || publisherName(s.url) : "", s.url2 ? publisherName(s.url2) : ""].filter(Boolean);
           return { edition: e, story, s, pubs, paid: storyPaid(s) };
         })
       ),

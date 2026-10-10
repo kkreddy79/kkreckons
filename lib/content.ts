@@ -15,6 +15,10 @@ export type FullStory = {
   also: { title: string; url: string }[];
   image: string;
   imageAlt: string;
+  /** Optional overrides from the newsletter data: publisher name, paywall flag, theme names. */
+  src?: string;
+  pay?: boolean;
+  themes?: string[];
 };
 
 export type EditionContent = {

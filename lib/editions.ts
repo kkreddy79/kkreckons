@@ -6,6 +6,10 @@ export type Story = {
   category: string;
   tag: string;
   url: string;
+  /** Optional overrides from the newsletter data (see docs/edition-format.md). */
+  src?: string;
+  pay?: boolean;
+  themes?: string[];
 };
 
 export type Edition = {
@@ -187,7 +191,12 @@ export const THEMES: { name: string; match: RegExp }[] = [
   { name: "Health & science", match: /health|plague|drug|science|medical|fossil|magnet|orbit|space/i },
 ];
 
-export function themesOf(s: Pick<Story, "category" | "title">) {
+export function themesOf(s: Pick<Story, "category" | "title" | "themes">) {
+  if (s.themes?.length) {
+    const want = new Set(s.themes.map((t) => t.toLowerCase()));
+    const named = THEMES.filter((t) => want.has(t.name.toLowerCase())).map((t) => t.name);
+    if (named.length) return named;
+  }
   const hay = `${s.category} ${s.title}`;
   return THEMES.filter((t) => t.match.test(hay)).map((t) => t.name);
 }

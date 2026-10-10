@@ -23,7 +23,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: longDate(edition.date),
     alternates: { canonical: `/daily/${slugFor(edition.date)}` },
-    openGraph: { type: "article", publishedTime: edition.date },
+    // Setting openGraph here replaces the site-wide one, so the share image must be repeated.
+    openGraph: {
+      type: "article",
+      publishedTime: edition.date,
+      siteName: "KKReckons",
+      title: `${longDate(edition.date)} · KKReckons`,
+      images: [edition.image || "/about/two-worlds.jpg"],
+    },
+    twitter: { card: "summary_large_image", images: [edition.image || "/about/two-worlds.jpg"] },
     description:
       edition.slice ||
       edition.stories

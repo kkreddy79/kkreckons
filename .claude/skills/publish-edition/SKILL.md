@@ -10,6 +10,7 @@ On late nights the earlier run simply finds nothing new, so later runs (or his r
 
 Krishnakanth writes each edition in his Claude Project and publishes it as a claude.ai artifact titled
 `KKReckons, <Weekday>, <D> <Month> <YYYY>` (for example `KKReckons, Friday, 9 October 2026`).
+The data it must contain is described in `docs/edition-format.md`.
 This skill moves that artifact onto kkreckons.com. **Nothing goes live without his explicit approval.**
 
 ## 1. Find the new edition
