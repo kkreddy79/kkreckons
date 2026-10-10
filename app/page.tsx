@@ -23,7 +23,7 @@ export default function Home() {
       />
       <Banner />
       <div className="ev-wrap">
-        <EditionView e={today} />
+        <EditionView e={today} showCatchUp />
         <SubscribeBox variant="home" />
       </div>
     </main>

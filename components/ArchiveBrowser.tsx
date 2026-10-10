@@ -60,6 +60,12 @@ export default function ArchiveBrowser({
     else setSource(value);
     if (value) setView("stories");
   };
+  const clearAll = () => {
+    setQuery("");
+    setThemeState("");
+    setSource("");
+    window.history.replaceState(null, "", "/daily/");
+  };
   const setTheme = (t: string) => setParam("theme", t !== theme ? t : "");
 
   /** Every story with its source links and summary, ready to filter. */
@@ -226,6 +232,16 @@ export default function ArchiveBrowser({
             {source && <> from <b>{source === "free" ? "free-to-read sources" : source}</b></>}
             {q && <> matching “{query.trim()}”</>}
           </p>
+          {matches.length === 0 && readingMatches.length === 0 && (
+            <div className="sr-empty">
+              <p>
+                <b>No matches.</b> Try a shorter word, a company name or a different theme.
+              </p>
+              <button type="button" className="chip clear" onClick={clearAll}>
+                Clear search and filters ×
+              </button>
+            </div>
+          )}
           <ul>
             {matches.map(({ edition, story, s }, i) => (
               <li key={edition.date + story.title}>

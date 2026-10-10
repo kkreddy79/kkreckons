@@ -110,6 +110,8 @@ button { font: inherit; cursor: pointer; }
 .sr-src { grid-column: 2; }
 .sr-src .ev-src { margin-top: 8px; padding-top: 10px; }
 .story-results > ul:empty { display: none; }
+.sr-empty { display: grid; justify-items: start; gap: 12px; padding: 22px 20px; background: #fff; border: 1px solid var(--line); border-radius: 20px; }
+.sr-empty p { margin: 0; font-size: 15px; color: #3b3546; }
 .sr-reading { margin-top: 28px; }
 .sr-reading h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: #a8430f; }
 .sr-reading h2 span { padding: 2px 9px; border-radius: 999px; background: #f3ece2; color: #24123f; letter-spacing: 0; font-size: 12px; }
@@ -162,6 +164,10 @@ button { font: inherit; cursor: pointer; }
 .ev-kicker::before { content: ""; width: 34px; height: 3px; border-radius: 2px; background: var(--ev-orange); flex: none; }
 .ev-slice { margin: 0 0 12px; max-width: 900px; font-size: clamp(30px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; color: var(--ev-ink); }
 .ev-sub { margin: 0; font-size: 14px; font-weight: 700; color: #5b5566; }
+.ev-sub-sep { margin: 0 2px; }
+.ev-nowrap { white-space: nowrap; }
+.ev-catchup { color: #0a716b; white-space: nowrap; }
+.ev-catchup:hover { text-decoration: underline; }
 .ev-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .ev-jump a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 13px; font-weight: 700; color: var(--ev-ink); }
 .ev-jump a:hover { border-color: var(--ev-orange); }
