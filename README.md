@@ -31,6 +31,10 @@ it finds the newest artifact titled `KKReckons, <Weekday>, <D> <Month> <YYYY>` t
 builds and checks it, opens a pull request with a Vercel preview, and merges only after Krishnakanth replies
 "publish". To run it by hand, ask Claude Code to "publish today's edition".
 
+`npm run qc` (after `npm run editions` and `npm run build`) is the quality-control gate before any edition goes
+live. It checks that no earlier edition's data, newsletter or images changed or went missing, that every page
+shows all of its data, and that the edition Home replaces moves to Catch up.
+
 `npm run check` (or `npm run check -- YYYY-MM-DD`) confirms every story has a source link, at least two
 summary points and a "why it matters".
 
