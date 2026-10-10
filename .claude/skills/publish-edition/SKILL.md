@@ -5,6 +5,9 @@ description: Find the newest KKReckons newsletter artifact that isn't on the web
 
 # Publish the day's KKReckons edition
 
+Runs automatically at 8:53 pm and 11:53 pm Pacific, and whenever he asks to "publish today's edition".
+On late nights the earlier run simply finds nothing new, so later runs (or his request) pick the edition up.
+
 Krishnakanth writes each edition in his Claude Project and publishes it as a claude.ai artifact titled
 `KKReckons, <Weekday>, <D> <Month> <YYYY>` (for example `KKReckons, Friday, 9 October 2026`).
 This skill moves that artifact onto kkreckons.com. **Nothing goes live without his explicit approval.**
@@ -18,9 +21,12 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    (company scorecards, "in about a minute" videos, older "Reddy Reckoner" titles, personal artifacts).
 4. Convert each title's date to `YYYY-MM-DD` and drop dates already in `data/editions.json`.
    If two artifacts share a date, take the most recently updated one.
-5. **Nothing new?** Stop. Report "No new KKReckons edition found" in one line, with the newest date
+5. **Already waiting for approval?** If an open pull request already adds that date (titled
+   `Add edition: …`), don't build it again. Send one short reminder with its preview link, unless
+   you already reminded him about it in this conversation tonight, then stop.
+6. **Nothing new?** Stop. Report "No new KKReckons edition found" in one line, with the newest date
    already on the site. Don't open a pull request.
-6. If more than one date is new, publish each (oldest first) in the same pull request.
+7. If more than one date is new, publish each (oldest first) in the same pull request.
 
 ## 2. Build it
 
