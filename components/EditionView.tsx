@@ -53,8 +53,16 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
 
       {s.image && (
         <figure className="ev-fig">
-          <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
-          {s.imageCredit && <figcaption>{s.imageCredit}</figcaption>}
+          {/* Graphics are tall and detailed: link to the full-size file so phone readers can zoom in. */}
+          <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
+            <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
+          </a>
+          <figcaption>
+            {s.imageCredit && <span>{s.imageCredit}</span>}
+            <a href={s.image} target="_blank" rel="noreferrer">
+              View full size ↗
+            </a>
+          </figcaption>
         </figure>
       )}
 
