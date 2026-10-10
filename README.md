@@ -17,7 +17,7 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `/admin` — publishing dashboard placeholder (not linked from the site)
 
 ## How editions are stored
-- `public/editions/YYYY-MM-DD.html` — the original newsletter HTML (linked as "Original newsletter design")
+- `newsletters/YYYY-MM-DD.html` — the original newsletter HTML, kept as the source only (not served on the site)
 - `data/content/YYYY-MM-DD.json` — each edition's stories, numbers, why it matters, other side, sources and further reading, generated
 - `data/editions.json` — the index used by the archive and home page, generated
 - `public/figs/` — story images pulled out of the newsletters, generated
@@ -39,7 +39,7 @@ shows all of its data, and that the edition Home replaces moves to Catch up.
 summary points and a "why it matters".
 
 Manual steps, if needed:
-1. Save the edition's HTML as `public/editions/YYYY-MM-DD.html`.
+1. Save the edition's HTML as `newsletters/YYYY-MM-DD.html`.
 2. Optionally add its artifact link to `data/edition-meta.json`.
 3. Run `npm install` (first time only), then `npm run editions`. Newsletters that embed their data in a `<script id="data">` tag are read directly; older formats are read from the rendered page in headless Chromium.
    If Playwright's browser isn't installed, run `npx playwright install chromium` once, or point `CHROMIUM_PATH` at an existing Chrome.

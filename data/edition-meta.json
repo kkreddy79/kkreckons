@@ -109,7 +109,13 @@
     "artifact": "https://claude.ai/artifact/YYYYBA5EUFmpQnuzVhVNdi"
   },
   "2026-10-07": {
-    "artifact": "https://claude.ai/artifact/BhMTV1Dd1SfZEi5285nLyS"
+    "artifact": "https://claude.ai/artifact/BhMTV1Dd1SfZEi5285nLyS",
+    "stories": {
+      "Meet the AI assistants at India’s banks": {
+        "image": "",
+        "imageAlt": ""
+      }
+    }
   },
   "2026-10-08": {
     "artifact": "https://claude.ai/artifact/R6WYgbLC6GGuqQJKt7D9f8"
