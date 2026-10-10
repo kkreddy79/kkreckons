@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-10-10",
+    "slice": "Money tightens, the rupee buckles, AI faces a $20bn reality check and even robots stumble.",
+    "artifact": "https://claude.ai/artifact/FqqCTru4yDTiLfSbSgCRBS",
+    "readingMinutes": 6,
+    "image": "/figs/2026-10-10-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Pimco: US 10-year yields could hit 6%, a first since 2000",
+        "category": "US bonds",
+        "tag": "",
+        "url": "https://www.ft.com/content/a752a86c-cf05-4152-b842-2ae6b6bf3fe0?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Gearoid Reidy: the world isn’t ready for a Japan with interest",
+        "category": "Global bonds",
+        "tag": "Opinion",
+        "url": "https://www.bloomberg.com/opinion/articles/2026-10-08/the-world-isn-t-ready-for-a-japan-with-interest",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "RBI moves to support the rupee at 96.78, curbs forex derivatives",
+        "category": "Rupee and RBI",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/economy/indicators/rbi-moves-to-support-rupee-at-96-78-cracks-down-on-forex-derivatives/articleshow/134846784.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Gillian Tett: five ways to tell if market trouble lies ahead",
+        "category": "Markets and credit",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/7acb5862-cde5-49b4-a5f1-5f6e6977a9c7?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Lex: why OpenAI’s fuzzy revenue numbers matter for everyone",
+        "category": "AI and markets",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/58e684a0-b8ed-4d7a-a2d6-6bf739cb2fa2?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Trump’s Russian diesel deal: what it means for fuel prices and the war",
+        "category": "Energy and geopolitics",
+        "tag": "Explainer",
+        "url": "https://www.livemint.com/news/us-news/trump-putin-diesel-deal-what-it-means-for-us-fuel-prices-global-markets-and-the-russia-ukraine-war-explained-11791596929658.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Walmart’s multibillion-dollar struggle to replace humans with robots",
+        "category": "Retail and automation",
+        "tag": "",
+        "url": "https://www.wsj.com/business/logistics/walmart-automation-robots-warehouses-65f016b2",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-09",
     "slice": "AI props growth. Stories prop stocks. Cheese props diplomacy. None is a guarantee.",
     "artifact": "https://claude.ai/artifact/Fc9ziFPcPQkUpsgZZqviXB",
