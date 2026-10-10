@@ -21,8 +21,11 @@ export function storyPaid(s: SourceStory) {
   return [s.url, s.url2].some((u) => u && isPaywalled(u));
 }
 
-/** "Original source: Publisher ↗" line, paywall badge and Quick summary popover. */
-export default function StorySource({ s, id }: { s: SourceStory; id: string }) {
+/**
+ * "Original source: Publisher ↗" line and paywall badge, plus the Quick summary popover where the
+ * page shows only the headline (story cards already show the full points).
+ */
+export default function StorySource({ s, id, summary = true }: { s: SourceStory; id: string; summary?: boolean }) {
   const src = sourceName(s.url);
   if (!src && !s.url2) return null;
   const paid = storyPaid(s);
@@ -44,38 +47,48 @@ export default function StorySource({ s, id }: { s: SourceStory; id: string }) {
           </a>
         )}
         {paid && <span className="ev-paid">May need subscription</span>}
-        <button type="button" className="ev-qs-btn" popoverTarget={id}>
-          <InfoIcon className="ev-ic-sm" /> Quick summary
-        </button>
+        {summary && (
+          <button type="button" className="ev-qs-btn" popoverTarget={id}>
+            <InfoIcon className="ev-ic-sm" /> Quick summary
+          </button>
+        )}
       </p>
 
-      <div id={id} popover="auto" className="ev-qs" role="dialog" aria-label={`Quick summary: ${s.title}`}>
-        <div className="ev-qs-head">
-          <p className="ev-qs-kicker">Quick summary{paid ? " · Source may need a subscription" : ""}</p>
-          <button type="button" className="ev-qs-close" popoverTarget={id} popoverTargetAction="hide" aria-label="Close">
-            ×
-          </button>
-        </div>
-        <p className="ev-qs-title">{s.title}</p>
-        {gist.length > 0 && (
-          <ul>
-            {gist.map((p) => (
-              <li key={p}>{p}</li>
-            ))}
-          </ul>
-        )}
-        {s.why && (
-          <p className="ev-qs-why">
-            <b>Why it matters:</b> {s.why}
+      {summary && (
+        <div id={id} popover="auto" className="ev-qs" role="dialog" aria-label={`Quick summary: ${s.title}`}>
+          <div className="ev-qs-head">
+            <p className="ev-qs-kicker">Quick summary{paid ? " · Source may need a subscription" : ""}</p>
+            <button
+              type="button"
+              className="ev-qs-close"
+              popoverTarget={id}
+              popoverTargetAction="hide"
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </div>
+          <p className="ev-qs-title">{s.title}</p>
+          {gist.length > 0 && (
+            <ul>
+              {gist.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+          )}
+          {s.why && (
+            <p className="ev-qs-why">
+              <b>Why it matters:</b> {s.why}
+            </p>
+          )}
+          <p className="ev-qs-src">
+            Summary based on {publisherName(s.url || s.url2)}.{" "}
+            <a href={s.url || s.url2} target="_blank" rel="noreferrer">
+              Read the full story ↗
+            </a>
           </p>
-        )}
-        <p className="ev-qs-src">
-          Summary based on {publisherName(s.url || s.url2)}.{" "}
-          <a href={s.url || s.url2} target="_blank" rel="noreferrer">
-            Read the full story ↗
-          </a>
-        </p>
-      </div>
+        </div>
+      )}
     </>
   );
 }

@@ -108,7 +108,7 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
         </p>
       )}
 
-      <StorySource s={s} id={id} />
+      <StorySource s={s} id={id} summary={false} />
     </article>
   );
 }
