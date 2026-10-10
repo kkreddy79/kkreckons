@@ -2,7 +2,7 @@
   "date": "2026-10-03",
   "slice": "RBI urges caution, French bonds wobble, and a few sharps cash in on world events.",
   "artifact": "https://claude.ai/artifact/TGFtRqFkmoHnecYcy3L88Q",
-  "readingMinutes": 5,
+  "readingMinutes": 4,
   "callouts": [
     {
       "num": "20–30%",
@@ -230,33 +230,6 @@
           ],
           "why": "Money shame is turning into accountability, and income.",
           "other": "When debt videos earn money, does the audience reward the habit as much as the payoff?",
-          "also": [],
-          "image": "",
-          "imageAlt": ""
-        },
-        {
-          "category": "Espionage",
-          "tag": "",
-          "title": "Spy or dupe? Inside the ex-Fed adviser’s China case",
-          "url": "https://www.cnbc.com/2026/09/30/john-rogers-fed-china-espionage-case.html",
-          "url2": "",
-          "points": [
-            "John Rogers met a man calling himself Hummin Lee in Shanghai; the US says he is a Chinese spy named Jin Chuan.",
-            "Lee helped with travel, a marriage and money while asking about Fed thinking; Rogers passed on some internal papers.",
-            "Acquitted of economic espionage, convicted of lying to investigators, sentenced to 38 months."
-          ],
-          "numbers": [
-            [
-              "38 months",
-              "prison, for false statements"
-            ],
-            [
-              "$55,000",
-              "cash found, source unknown"
-            ]
-          ],
-          "why": "Loneliness can be a bigger leak than hackers.",
-          "other": "A jury rejected the espionage charge, and his lawyers say what he shared had no real value.",
           "also": [],
           "image": "",
           "imageAlt": ""

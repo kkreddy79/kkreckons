@@ -107,62 +107,6 @@
       "name": "World edition",
       "stories": [
         {
-          "category": "Tech layoffs",
-          "tag": "",
-          "title": "Oracle cuts cloud staff to fund AI",
-          "url": "https://www.businessinsider.com/oracle-cloud-layoffs-america-roles-hit-hardest-leaked-doc-2026-9",
-          "url2": "https://www.finalroundai.com/blog/oracle-layoffs-restructuring-plan",
-          "points": [
-            "546 of 7,185 US cuts hit cloud; developers and PMs most.",
-            "Sept 11 filing adds $700M, mostly severance; cites AI."
-          ],
-          "numbers": [
-            [
-              "546",
-              "US cloud roles cut"
-            ],
-            [
-              "$2.8B",
-              "total restructuring plan"
-            ],
-            [
-              "21,000",
-              "jobs cut in FY26"
-            ]
-          ],
-          "why": "Payroll is being reallocated to data centres.",
-          "other": "",
-          "also": [],
-          "image": "",
-          "imageAlt": ""
-        },
-        {
-          "category": "AI and science",
-          "tag": "",
-          "title": "Google readies its first AI chips for orbit",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
-          "url2": "",
-          "points": [
-            "Planet-built prototype flies 4 TPUs on SpaceX Transporter-18.",
-            "Chips passed radiation tests; laser-linked pair due in 2027."
-          ],
-          "numbers": [
-            [
-              "4",
-              "TPUs aboard"
-            ],
-            [
-              "8×",
-              "solar power vs. ground"
-            ]
-          ],
-          "why": "First real data on AI compute beyond Earth’s limits.",
-          "other": "",
-          "also": [],
-          "image": "",
-          "imageAlt": ""
-        },
-        {
           "category": "Markets",
           "tag": "",
           "title": "What higher yields mean for your money",

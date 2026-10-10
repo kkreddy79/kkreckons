@@ -126,7 +126,7 @@
     "date": "2026-10-07",
     "slice": "Money is in the hospitals and the AI labs. Diesel lingers. Someone still pays.",
     "artifact": "https://claude.ai/artifact/BhMTV1Dd1SfZEi5285nLyS",
-    "readingMinutes": 6,
+    "readingMinutes": 4,
     "image": "/figs/2026-10-07-5.webp",
     "stories": [
       {
@@ -152,31 +152,10 @@
       },
       {
         "section": "India edition",
-        "title": "AI is already thinning bank payrolls",
-        "category": "Jobs",
-        "tag": "",
-        "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/"
-      },
-      {
-        "section": "India edition",
         "title": "Indian Railways is 99.6% electrified, but diesel isn’t going away",
         "category": "Railways",
         "tag": "",
         "url": "https://www.indiatoday.in/amp/india/story/indian-railways-996-percent-electrification-diesel-locomotives-use-lng-train-itspc-3008225-2026-10-05"
-      },
-      {
-        "section": "India edition",
-        "title": "Meet the AI assistants at India’s banks",
-        "category": "Banking",
-        "tag": "",
-        "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/"
-      },
-      {
-        "section": "World edition",
-        "title": "Global banks are buying stakes in the AI labs they use",
-        "category": "Finance and AI",
-        "tag": "",
-        "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/"
       },
       {
         "section": "World edition",
@@ -284,7 +263,7 @@
     "date": "2026-10-05",
     "slice": "Plague fears in Siberia, AI agents go rogue, and Sebi busts ‘assured’ returns.",
     "artifact": "https://claude.ai/artifact/SHYtsnXk8e4kJtcPsHJMmk",
-    "readingMinutes": 5,
+    "readingMinutes": 4,
     "image": "",
     "stories": [
       {
@@ -335,13 +314,6 @@
         "category": "Enterprise AI",
         "tag": "",
         "url": "https://fortune.com/2026/09/29/how-adobe-salesforce-kyndryl-freeport-use-ai-agents/"
-      },
-      {
-        "section": "World edition",
-        "title": "Dimon’s plan: one big Western trade pact",
-        "category": "Geopolitics",
-        "tag": "Opinion",
-        "url": "https://www.wsj.com/opinion/jamie-dimon-a-plan-for-the-western-worlds-revival-5fb12cc2?st=zTxXpS&reflink=article_copyURL_share"
       },
       {
         "section": "World edition",
@@ -421,7 +393,7 @@
     "date": "2026-10-03",
     "slice": "RBI urges caution, French bonds wobble, and a few sharps cash in on world events.",
     "artifact": "https://claude.ai/artifact/TGFtRqFkmoHnecYcy3L88Q",
-    "readingMinutes": 5,
+    "readingMinutes": 4,
     "image": "",
     "stories": [
       {
@@ -472,13 +444,6 @@
         "category": "Personal finance",
         "tag": "",
         "url": "https://www.wsj.com/articles/americans-cant-stop-watching-videos-of-people-paying-down-their-debt-acda4b22"
-      },
-      {
-        "section": "World edition",
-        "title": "Spy or dupe? Inside the ex-Fed adviser’s China case",
-        "category": "Espionage",
-        "tag": "",
-        "url": "https://www.cnbc.com/2026/09/30/john-rogers-fed-china-espionage-case.html"
       },
       {
         "section": "World edition",
@@ -897,20 +862,6 @@
         "category": "Banking",
         "tag": "",
         "url": "https://www.kotakneo.com/news/stocks/hdfc-bank-shares-advance-as-rbi-seeks-feedback-on-anup-bagchi-for-md-ceo/"
-      },
-      {
-        "section": "World edition",
-        "title": "Oracle cuts cloud staff to fund AI",
-        "category": "Tech layoffs",
-        "tag": "",
-        "url": "https://www.businessinsider.com/oracle-cloud-layoffs-america-roles-hit-hardest-leaked-doc-2026-9"
-      },
-      {
-        "section": "World edition",
-        "title": "Google readies its first AI chips for orbit",
-        "category": "AI and science",
-        "tag": "",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/"
       },
       {
         "section": "World edition",

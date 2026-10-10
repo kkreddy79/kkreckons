@@ -228,8 +228,12 @@ for (const file of files) {
   const m = meta[date] || {};
   if (m.slice) content.slice = m.slice;
   // Per-story fixes (missing source links, fuller summaries), keyed by story title.
-  for (const sec of content.sections)
+  // `{ "remove": "<reason>" }` drops a story (for example a repeat of an article used before).
+  for (const sec of content.sections) {
     for (const s of sec.stories) if (m.stories?.[s.title]) Object.assign(s, m.stories[s.title]);
+    sec.stories = sec.stories.filter((s) => !s.remove);
+  }
+  content.sections = content.sections.filter((sec) => sec.stories.length);
   const stories = content.sections.flatMap((s) => s.stories);
   const words = JSON.stringify(stories).split(/\s+/).length;
   const record = {

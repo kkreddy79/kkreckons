@@ -44,6 +44,12 @@
           "They say a mixed-status family can qualify for public services such as CAPI cash aid, health cover and tax credits."
         ],
         "why": "California’s budget is under strain, and who qualifies for state-funded benefits is a live political fight. This is an opinion piece, so the figures are the authors’ framing."
+      },
+      "Oracle cuts cloud staff to fund AI": {
+        "remove": "Repeats articles used on 25 Sep (Business Insider story, Final Round AI further reading)"
+      },
+      "Google readies its first AI chips for orbit": {
+        "remove": "Repeats the Google article used on 25 Sep"
       }
     }
   },
@@ -97,13 +103,23 @@
     "artifact": "https://claude.ai/artifact/6CVzHN3jKNreS8bpuDfnGE"
   },
   "2026-10-03": {
-    "artifact": "https://claude.ai/artifact/TGFtRqFkmoHnecYcy3L88Q"
+    "artifact": "https://claude.ai/artifact/TGFtRqFkmoHnecYcy3L88Q",
+    "stories": {
+      "Spy or dupe? Inside the ex-Fed adviser’s China case": {
+        "remove": "Repeats the article in 2 Oct further reading"
+      }
+    }
   },
   "2026-10-04": {
     "artifact": "https://claude.ai/artifact/WyXHghuh3Lu8uVLzYyJV8U"
   },
   "2026-10-05": {
-    "artifact": "https://claude.ai/artifact/SHYtsnXk8e4kJtcPsHJMmk"
+    "artifact": "https://claude.ai/artifact/SHYtsnXk8e4kJtcPsHJMmk",
+    "stories": {
+      "Dimon’s plan: one big Western trade pact": {
+        "remove": "Repeats the article used on 29 Sep"
+      }
+    }
   },
   "2026-10-06": {
     "artifact": "https://claude.ai/artifact/YYYYBA5EUFmpQnuzVhVNdi"
@@ -112,8 +128,13 @@
     "artifact": "https://claude.ai/artifact/BhMTV1Dd1SfZEi5285nLyS",
     "stories": {
       "Meet the AI assistants at India’s banks": {
-        "image": "",
-        "imageAlt": ""
+        "remove": "Repeats the Inc42 article used by the first bank story that day"
+      },
+      "AI is already thinning bank payrolls": {
+        "remove": "Repeats the Inc42 article used by the first bank story that day"
+      },
+      "Global banks are buying stakes in the AI labs they use": {
+        "remove": "Repeats the Inc42 article used by the first bank story that day"
       }
     }
   },
