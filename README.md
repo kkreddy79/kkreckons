@@ -26,6 +26,15 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 Every edition is rendered in the same KKReckons design from its content JSON, whatever the original newsletter looked like.
 
 ## Publishing a new daily edition
+A nightly routine (9 pm Pacific) runs the `publish-edition` skill (`.claude/skills/publish-edition/SKILL.md`):
+it finds the newest artifact titled `KKReckons, <Weekday>, <D> <Month> <YYYY>` that isn't on the site yet,
+builds and checks it, opens a pull request with a Vercel preview, and merges only after Krishnakanth replies
+"publish". To run it by hand, ask Claude Code to "publish today's edition".
+
+`npm run check` (or `npm run check -- YYYY-MM-DD`) confirms every story has a source link, at least two
+summary points and a "why it matters".
+
+Manual steps, if needed:
 1. Save the edition's HTML as `public/editions/YYYY-MM-DD.html`.
 2. Optionally add its artifact link to `data/edition-meta.json`.
 3. Run `npm install` (first time only), then `npm run editions`. Newsletters that embed their data in a `<script id="data">` tag are read directly; older formats are read from the rendered page in headless Chromium.
