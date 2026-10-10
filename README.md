@@ -26,7 +26,7 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 Every edition is rendered in the same KKReckons design from its content JSON, whatever the original newsletter looked like.
 
 ## Publishing a new daily edition
-A nightly routine (9 pm Pacific) runs the `publish-edition` skill (`.claude/skills/publish-edition/SKILL.md`):
+A nightly routine (8:53 pm and 11:53 pm Pacific) runs the `publish-edition` skill (`.claude/skills/publish-edition/SKILL.md`):
 it finds the newest artifact titled `KKReckons, <Weekday>, <D> <Month> <YYYY>` that isn't on the site yet,
 builds and checks it, opens a pull request with a Vercel preview, and merges only after Krishnakanth replies
 "publish". To run it by hand, ask Claude Code to "publish today's edition".
