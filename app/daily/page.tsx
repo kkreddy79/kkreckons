@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ArchiveBrowser from "@/components/ArchiveBrowser";
+import Banner from "@/components/Banner";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
 import { editions, totalStories } from "@/lib/editions";
@@ -31,17 +32,28 @@ export const metadata: Metadata = {
 export default function Archive() {
   const reading = readingLinks();
   return (
-    <main className="container">
-      <section className="hero">
-        <div className="eyebrow">Catch up</div>
-        <h1>Missed a day? Catch up.</h1>
-        <p>
-          {editions.length} daily briefings, {totalStories} stories and {reading.length} further reading links, organised by
-          date. Search across every headline or browse by theme.
-        </p>
-      </section>
-      <ArchiveBrowser editions={editions} details={storyDetails()} reading={reading} />
-      <SubscribeBox />
+    <main className="cu">
+      <Banner />
+      <div className="cu-wrap">
+        <section className="cu-hero" aria-labelledby="cu-title">
+          <p className="ab-kicker">The archive</p>
+          <h1 id="cu-title">Missed a day? It’s all here.</h1>
+          <p className="cu-lede">Search every headline, browse by theme or source, or open any day’s briefing.</p>
+          <ul className="cu-stats" aria-label="In the archive">
+            <li>
+              <b>{editions.length}</b> daily briefings
+            </li>
+            <li>
+              <b>{totalStories}</b> stories
+            </li>
+            <li>
+              <b>{reading.length}</b> further reading links
+            </li>
+          </ul>
+        </section>
+        <ArchiveBrowser editions={editions} details={storyDetails()} reading={reading} />
+        <SubscribeBox />
+      </div>
     </main>
   );
 }
