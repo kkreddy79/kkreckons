@@ -2,7 +2,7 @@
 
 **Read deep. Think clearly. Stay curious.**
 
-Mobile-first editorial site for KK Reddy's visual daily briefings, live at [kkreckons.com](https://www.kkreckons.com).
+Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, live at [kkreckons.com](https://www.kkreckons.com).
 
 ## Stack
 - Next.js 16 (App Router, fully static)

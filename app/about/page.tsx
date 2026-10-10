@@ -19,7 +19,7 @@ import { SUBSCRIBE_URL } from "@/lib/site";
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
 const DESCRIPTION =
-  "Meet KK Reddy and discover KKReckons: thoughtful briefings on AI, markets, business and global affairs, with context, evidence and perspectives beyond the headlines.";
+  "Meet Krishnakanth Reddy and discover KKReckons: thoughtful briefings on AI, markets, business and global affairs, with context, evidence and perspectives beyond the headlines.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
