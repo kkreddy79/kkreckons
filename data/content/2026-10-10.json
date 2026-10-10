@@ -1,0 +1,306 @@
+{
+  "date": "2026-10-10",
+  "slice": "Money tightens, the rupee buckles, AI faces a $20bn reality check and even robots stumble.",
+  "artifact": "https://claude.ai/artifact/FqqCTru4yDTiLfSbSgCRBS",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "96.78",
+      "text": "rupees to the dollar, near May’s record low of 96.95, as the RBI tightens currency-hedging rules.",
+      "url": "https://m.economictimes.com/news/economy/indicators/rbi-moves-to-support-rupee-at-96-78-cracks-down-on-forex-derivatives/articleshow/134846784.cms"
+    },
+    {
+      "num": "$20bn",
+      "text": "gap between OpenAI’s revenue figure for investors and what was widely reported in September.",
+      "url": "https://www.ft.com/content/58e684a0-b8ed-4d7a-a2d6-6bf739cb2fa2?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "US bonds",
+          "tag": "",
+          "title": "Pimco: US 10-year yields could hit 6%, a first since 2000",
+          "url": "https://www.ft.com/content/a752a86c-cf05-4152-b842-2ae6b6bf3fe0?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Pimco investment chief Dan Ivascyn says a further jump in the 10-year Treasury yield, now 5.29%, is ‘feasible’ as hedge funds and other leveraged investors unwind losing bets.",
+            "Investors fear inflation from the Iran war, heavy borrowing by AI companies and America’s towering debt; the 30-year US mortgage rate reached 7.4% on 8 October, its highest since 2023.",
+            "Above 5.5%, he expects ‘decent weakness’ in stocks and credit; the lowest-rated companies already pay 17% to borrow, the most since May 2020."
+          ],
+          "numbers": [
+            [
+              "5.29%",
+              "US 10-year yield now"
+            ],
+            [
+              "6%",
+              "possible, says Pimco"
+            ],
+            [
+              "7.4%",
+              "30-year US mortgage"
+            ]
+          ],
+          "why": "Treasury yields set the price of mortgages, company loans and share valuations worldwide, so a move to 6% would reach far beyond Wall Street.",
+          "other": "Ivascyn also says high yields will lure buyers back into Treasuries, limiting how far they climb, and this week’s 10- and 30-year auctions drew robust demand.",
+          "also": [],
+          "image": "/figs/2026-10-10-1.jpg",
+          "imageAlt": "KKReckons explainer: the three yield levels to watch, what is pushing yields up, the selling loop, and who is already feeling it.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Personal finance"
+          ]
+        },
+        {
+          "category": "Global bonds",
+          "tag": "Opinion",
+          "title": "Gearoid Reidy: the world isn’t ready for a Japan with interest",
+          "url": "https://www.bloomberg.com/opinion/articles/2026-10-08/the-world-isn-t-ready-for-a-japan-with-interest",
+          "url2": "",
+          "points": [
+            "After decades of near-zero rates pushed Japanese savers to lend abroad, higher yields at home are drawing pensions, banks, insurers and households back into Japanese government bonds.",
+            "Japanese investors sold a net ¥4.45tn ($28bn) of US long-term bonds from January to June, their first half-year of net selling since 2022, and pulled back from France and Australia.",
+            "They still bought German, Italian and UK bonds; buying less is enough to lift others’ borrowing costs, and France may be the first casualty."
+          ],
+          "numbers": [
+            [
+              "¥4.45tn",
+              "US bonds sold, Jan–Jun"
+            ],
+            [
+              "¥5.7tn",
+              "state pension fund buying, Q2 (est.)"
+            ],
+            [
+              "¥1tn+",
+              "retail bond bids a month"
+            ]
+          ],
+          "why": "If Japan’s huge savings pool stays home, governments from Paris to Washington may have to pay more to borrow.",
+          "other": "Japanese money isn’t leaving: retail investors still pour yen into foreign stock funds, and Tokyo’s reliance on US security makes a Treasury dump unlikely.",
+          "also": [],
+          "image": "/figs/2026-10-10-2.jpg",
+          "imageAlt": "KKReckons explainer: where Japanese bond money is moving, who is buying at home and why the world should care.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Rupee and RBI",
+          "tag": "",
+          "title": "RBI moves to support the rupee at 96.78, curbs forex derivatives",
+          "url": "https://m.economictimes.com/news/economy/indicators/rbi-moves-to-support-rupee-at-96-78-cracks-down-on-forex-derivatives/articleshow/134846784.cms",
+          "url2": "",
+          "points": [
+            "With the rupee at 96.78 to the dollar, near May’s record low of 96.95, the RBI barred rebooking of cancelled rupee forex derivative contracts and cut the limit for hedging without proof of exposure from $100m to $5m.",
+            "Banks must keep a 20% cash reserve with the RBI on contracts above $2m where users buy foreign currency to hedge current-account payments.",
+            "From 12 October the RBI will meet IOC, BPCL and HPCL’s entire daily dollar needs; reserves fell $12.95bn to $734.6bn in the week to 2 October, a fourth weekly drop."
+          ],
+          "numbers": [
+            [
+              "96.78",
+              "rupees per dollar"
+            ],
+            [
+              "$5m",
+              "no-proof hedging limit, was $100m"
+            ],
+            [
+              "$734.6bn",
+              "forex reserves, 2 Oct"
+            ]
+          ],
+          "why": "A weaker rupee makes fuel and imports dearer for India; the RBI is trying to stop speculation adding to the slide.",
+          "other": "Will tighter rules raise hedging costs for genuine importers? And if pressure persists, how long can falling reserves keep supplying dollars?",
+          "also": [],
+          "image": "/figs/2026-10-10-3.jpg",
+          "imageAlt": "KKReckons explainer: the rupee near its record low, falling reserves, the four new hedging rules and the RBI supplying oil companies’ dollars.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Markets and credit",
+          "tag": "Opinion",
+          "title": "Gillian Tett: five ways to tell if market trouble lies ahead",
+          "url": "https://www.ft.com/content/7acb5862-cde5-49b4-a5f1-5f6e6977a9c7?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "With US stocks at record highs, the cost of insuring AI-linked borrowers against default has risen for Meta, Google and Microsoft, jumped for Oracle and surged for SpaceX after reports of a $40bn funding call.",
+            "Her questions: are tech forecasts credible, who funds the AI build-out, how high will rates go (the US 10-year yield is above 5%, from about 4%), will oil push them higher, and what if AI falters?",
+            "AI-linked trade drove 76% of the rise in global goods trade in the first half of 2026."
+          ],
+          "numbers": [
+            [
+              "5%+",
+              "US 10-year yield, from ~4%"
+            ],
+            [
+              "76%",
+              "of goods-trade growth AI-linked"
+            ],
+            [
+              "$40bn",
+              "SpaceX funding call"
+            ]
+          ],
+          "why": "Credit markets often sense trouble before stocks do, and rates, oil and AI debt are now tied together.",
+          "other": "Default insurance is thinly traded and can send distorted signals, and US company earnings are expected to be up 27% for the third quarter.",
+          "also": [],
+          "image": "/figs/2026-10-10-4.jpg",
+          "imageAlt": "KKReckons explainer: the rising cost of default insurance for AI-linked borrowers and Gillian Tett’s five questions.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "AI"
+          ]
+        },
+        {
+          "category": "AI and markets",
+          "tag": "Opinion",
+          "title": "Lex: why OpenAI’s fuzzy revenue numbers matter for everyone",
+          "url": "https://www.ft.com/content/58e684a0-b8ed-4d7a-a2d6-6bf739cb2fa2?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "OpenAI shared a revenue figure with investors $20bn below what was widely reported in September, and the news unsettled US stocks.",
+            "Annualised run-rate numbers magnify lumps, and the labs count differently: OpenAI reports revenue net of partners such as Microsoft, while Anthropic reports it gross.",
+            "Nvidia, Microsoft, Amazon and Oracle lean partly on the labs’ growth; Lex’s fix is for OpenAI and Anthropic to list soon and publish audited accounts."
+          ],
+          "numbers": [
+            [
+              "$20bn",
+              "gap vs September reports"
+            ],
+            [
+              "$13bn",
+              "OpenAI’s 2025 revenue"
+            ],
+            [
+              "$2tn",
+              "valuation Anthropic’s backers seek"
+            ]
+          ],
+          "why": "AI labs’ sales now feed the valuations of chipmakers, cloud giants and even power firms, so vague numbers ripple through ordinary portfolios.",
+          "other": "For companies growing this fast, last year’s sales mislead too, and insiders can simply ask. Would a listing end the guesswork, or just reprice the hype?",
+          "also": [],
+          "image": "/figs/2026-10-10-5.jpg",
+          "imageAlt": "KKReckons explainer: net versus gross revenue, why run-rate numbers mislead, and who is exposed to the AI labs’ growth.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ]
+        },
+        {
+          "category": "Energy and geopolitics",
+          "tag": "Explainer",
+          "title": "Trump’s Russian diesel deal: what it means for fuel prices and the war",
+          "url": "https://www.livemint.com/news/us-news/trump-putin-diesel-deal-what-it-means-for-us-fuel-prices-global-markets-and-the-russia-ukraine-war-explained-11791596929658.html",
+          "url2": "",
+          "points": [
+            "President Trump says Russia will supply more than 300,000 tonnes of diesel immediately, 500,000 tonnes in November and a million more after that, as the US eases sanctions on Russian fuel until 7 April.",
+            "US diesel, vital for farms, trucking and heating, averaged $6.28 a gallon, up 70% since the Iran war began; futures fell almost 5% on the news.",
+            "Analysts doubt lasting relief, and Ukraine’s Volodymyr Zelenskiy called it a ‘weak decision on the part of strong partners’."
+          ],
+          "numbers": [
+            [
+              "300,000 t",
+              "diesel, immediately"
+            ],
+            [
+              "$6.28",
+              "US diesel, a gallon"
+            ],
+            [
+              "−5%",
+              "diesel futures on the news"
+            ]
+          ],
+          "why": "Diesel moves food, goods and heating costs, and the deal lands weeks before US elections on 3 November.",
+          "other": "Any extra barrels help households now; critics ask whether that relief is worth more revenue for Moscow’s war.",
+          "also": [],
+          "image": "/figs/2026-10-10-6.jpg",
+          "imageAlt": "KKReckons explainer: the promised Russian diesel shipments, why diesel prices hurt, and what analysts and critics say.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ]
+        },
+        {
+          "category": "Retail and automation",
+          "tag": "",
+          "title": "Walmart’s multibillion-dollar struggle to replace humans with robots",
+          "url": "https://www.wsj.com/business/logistics/walmart-automation-robots-warehouses-65f016b2",
+          "url2": "",
+          "points": [
+            "Walmart has spent a decade and billions automating warehouses that rely on more than 140,000 workers, but boxes, breakdowns and odd shapes such as frozen turkeys keep tripping the machines.",
+            "By August it was close to its 2023 goals: over 65% of stores got some automated freight and over 50% of online-order inventory moved through automated systems.",
+            "Peak power bills at automated grocery warehouses can top $800,000 a month, from about $250,000, and rival Kroger took a $2.6bn charge to close three automated centres."
+          ],
+          "numbers": [
+            [
+              "140,000+",
+              "warehouse workers"
+            ],
+            [
+              "65%+",
+              "stores get automated freight"
+            ],
+            [
+              "$800k+",
+              "peak monthly power bill"
+            ]
+          ],
+          "why": "Automation decides how fast your order arrives and what happens to warehouse jobs, and even the biggest US retailer is finding it hard.",
+          "other": "Walmart says high turnover means no layoffs and growth may need as many workers as today, yet it also expects to need fewer warehouse staff eventually.",
+          "also": [
+            {
+              "title": "Free-to-read copy in Mint",
+              "url": "https://www.livemint.com/global/for-walmart-replacing-humans-with-robots-is-a-multibillion-dollar-struggle-11791510280740.html"
+            }
+          ],
+          "image": "/figs/2026-10-10-7.jpg",
+          "imageAlt": "KKReckons explainer: Walmart’s automation targets, what keeps going wrong, the costs and why it keeps going.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": []
+}
