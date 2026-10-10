@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { longDate, publisherName } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref } from "@/lib/site";
@@ -119,12 +120,15 @@ export default function EditionView({
   e,
   headingLevel = "h1",
   showDate = true,
+  showCatchUp = false,
   children,
 }: {
   e: EditionContent;
   headingLevel?: "h1" | "h2";
   /** Off where the page already shows the date (edition pages have it in the breadcrumb). */
   showDate?: boolean;
+  /** Adds a "Catch up on past editions" link to the meta line (Home, where new visitors land). */
+  showCatchUp?: boolean;
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
@@ -137,7 +141,20 @@ export default function EditionView({
         {showDate && <p className="ev-kicker">{longDate(e.date)}</p>}
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
         <p className="ev-sub">
-          {count} stories · {e.readingMinutes} min read
+          <span className="ev-nowrap">
+            {count} stories · {e.readingMinutes} min read
+          </span>
+          {showCatchUp && (
+            <>
+              {" "}
+              <span className="ev-sub-sep" aria-hidden>
+                ·
+              </span>{" "}
+              <Link href="/daily/" className="ev-catchup">
+                Catch up on past editions →
+              </Link>
+            </>
+          )}
         </p>
         {e.sections.length > 1 && (
           <nav className="ev-jump" aria-label="Sections">
