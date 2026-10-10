@@ -76,9 +76,13 @@ for (const d of baseDates) if (!dates.has(d)) fail(`Edition ${d} was live but is
 
 for (const d of baseDates) {
   if (!dates.has(d) || allowed.has(d)) continue;
-  const files = [`data/content/${d}.json`, `public/editions/${d}.html`];
-  for (const f of files) {
-    const before = atBase(f);
+  // Original newsletters moved from public/editions/ to newsletters/ (not served by the site).
+  const files = [
+    [`data/content/${d}.json`, `data/content/${d}.json`],
+    [`newsletters/${d}.html`, `public/editions/${d}.html`],
+  ];
+  for (const [f, old] of files) {
+    const before = atBase(f) || atBase(old);
     if (before && (!fs.existsSync(path.join(root, f)) || !before.equals(read(f)))) fail(`${f} changed (an earlier edition). Use --allow ${d} if this is a deliberate correction.`);
   }
   const was = JSON.stringify(baseIndex.find((e) => e.date === d));
@@ -97,7 +101,7 @@ const changed = git("diff", "--name-only", `${base}...HEAD`).toString().split("\
 const uncommitted = git("status", "--porcelain").toString().split("\n").filter(Boolean).map((l) => l.slice(3));
 const editionFile = (f) => {
   if (["data/editions.json", "data/edition-meta.json", "lib/editions.ts"].includes(f)) return true;
-  const m = /^(?:public\/editions|data\/content|public\/figs)\/(\d{4}-\d{2}-\d{2})/.exec(f);
+  const m = /^(?:newsletters|data\/content|public\/figs)\/(\d{4}-\d{2}-\d{2})/.exec(f);
   return Boolean(m && (added.includes(m[1]) || allowed.has(m[1])));
 };
 for (const f of new Set([...changed, ...uncommitted])) {
@@ -108,7 +112,7 @@ for (const f of fs.readdirSync(path.join(root, "public/figs"))) {
   if (atBase(`public/figs/${f}`) && !allowed.has(d) && !atBase(`public/figs/${f}`).equals(read(`public/figs/${f}`))) fail(`Image public/figs/${f} changed.`);
 }
 for (const f of git("ls-tree", "--name-only", base, "public/figs/").toString().split("\n").filter(Boolean)) {
-  if (!fs.existsSync(path.join(root, f))) fail(`Image ${f} was deleted.`);
+  if (!fs.existsSync(path.join(root, f)) && !allowed.has(path.basename(f).slice(0, 10))) fail(`Image ${f} was deleted.`);
 }
 
 // ---------- 2. Nothing dropped in rendering ----------

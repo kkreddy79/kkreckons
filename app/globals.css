@@ -210,6 +210,7 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-wide h3 { font-size: clamp(24px, 2.8vw, 30px); }
 .ev-story h3 a:hover { text-decoration: underline; text-decoration-color: var(--ev-orange); text-underline-offset: 4px; }
 .ev-fig { margin: 0 0 14px; }
+.ev-fig figcaption { margin-top: 6px; font-size: 12px; color: #5b5566; }
 .ev-fig img { display: block; width: 100%; height: auto; border-radius: 12px; }
 .ev-points { list-style: none; margin: 0 0 14px; padding: 0; }
 .ev-points li { position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 15.5px; line-height: 1.55; color: #2f2840; }

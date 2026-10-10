@@ -1,6 +1,6 @@
 // Builds the edition content used by the site.
 //
-//   1. Drop a newsletter's HTML into public/editions/YYYY-MM-DD.html
+//   1. Drop a newsletter's HTML into newsletters/YYYY-MM-DD.html
 //   2. (Optional) add its artifact link / summary in data/edition-meta.json
 //   3. Run `npm run editions`
 //
@@ -17,7 +17,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const editionsDir = path.join(root, "public", "editions");
+const editionsDir = path.join(root, "newsletters");
 const figsDir = path.join(root, "public", "figs");
 const contentDir = path.join(root, "data", "content");
 const metaPath = path.join(root, "data", "edition-meta.json");
@@ -77,6 +77,7 @@ function fromEmbedded(date, d) {
       image: s.fig ? saveFig(date, n, s.fig) : "",
       imageAlt: clean(s.figalt),
       // Optional editorial overrides; when absent the site works these out from the link.
+      ...(s.fig && clean(s.figcredit) ? { imageCredit: clean(s.figcredit) } : {}),
       ...(clean(s.src) ? { src: clean(s.src) } : {}),
       ...(s.pay !== undefined && s.pay !== null && s.pay !== "" ? { pay: paid(s.pay) } : {}),
       ...(Array.isArray(s.themes) && s.themes.length ? { themes: s.themes.map(clean).filter(Boolean) } : {}),
@@ -267,4 +268,20 @@ for (const file of files) {
 await browser?.close();
 index.sort((a, b) => (a.date < b.date ? 1 : -1));
 fs.writeFileSync(indexPath, JSON.stringify(index, null, 2) + "\n");
+
+// Delete images no edition uses (for example one hidden with an edition-meta override), so a
+// removed image is never left reachable on the site.
+const usedFigs = new Set(
+  fs
+    .readdirSync(contentDir)
+    .filter((f) => f.endsWith(".json"))
+    .flatMap((f) => JSON.parse(fs.readFileSync(path.join(contentDir, f), "utf8")).sections)
+    .flatMap((sec) => sec.stories.map((s) => path.basename(s.image || "")))
+);
+for (const f of fs.readdirSync(figsDir)) {
+  if (!usedFigs.has(f)) {
+    fs.unlinkSync(path.join(figsDir, f));
+    console.log(`Removed unused image public/figs/${f}`);
+  }
+}
 console.log(`Wrote ${index.length} editions`);

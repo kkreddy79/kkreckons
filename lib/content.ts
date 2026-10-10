@@ -15,6 +15,8 @@ export type FullStory = {
   also: { title: string; url: string }[];
   image: string;
   imageAlt: string;
+  /** Where the image comes from, for example "Original graphic: KKReckons" or a Creative Commons credit. */
+  imageCredit?: string;
   /** Optional overrides from the newsletter data: publisher name, paywall flag, theme names. */
   src?: string;
   pay?: boolean;

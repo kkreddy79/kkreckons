@@ -54,6 +54,7 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
       {s.image && (
         <figure className="ev-fig">
           <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
+          {s.imageCredit && <figcaption>{s.imageCredit}</figcaption>}
         </figure>
       )}
 

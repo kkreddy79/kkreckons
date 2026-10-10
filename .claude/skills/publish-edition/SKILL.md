@@ -32,7 +32,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 ## 2. Build it
 
 1. Read the artifact (`Artifact` tool, `action: "read"`, `url`). Copy the saved page to
-   `public/editions/<YYYY-MM-DD>.html`.
+   `newsletters/<YYYY-MM-DD>.html` (source only; it is not served on the site).
    It must be a full HTML document containing `<script id="data">`. If it isn't, stop and say so;
    don't guess at content.
 2. Add `"<YYYY-MM-DD>": { "artifact": "<artifact url>" }` to `data/edition-meta.json`, keeping the
@@ -41,8 +41,16 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    `CHROMIUM_PATH=/opt/pw-browsers/chromium npm run editions`.
    Only the new date's files should change in `data/` besides `data/editions.json`; investigate any
    other diffs before going on.
-4. `npm run check -- <YYYY-MM-DD>`. Every story needs a source link, at least two summary points and a
-   "why it matters".
+4. `npm run check -- <YYYY-MM-DD>`. Every story needs:
+   - a source link, at least two summary points and a "why it matters";
+   - an article not already used in this edition or **any earlier edition** (same link, including
+     further reading). Similar-headline warnings (⚠) must be looked at and mentioned in your message;
+   - a summary of at most 120 words of points, so it doesn't replace reading the original;
+   - no quoted passage over 25 words;
+   - for any image, a declared origin (`figcredit`).
+
+   Problems of these kinds are **editorial**: don't rewrite his text, drop stories or pick a replacement
+   article yourself. Report each one with a suggested fix and let him decide.
    - Publishers listed as "bare domains": add a display name to `PUBLISHERS` in `lib/editions.ts`
      (and to `PAYWALLED` if the site usually needs a subscription).
    - Missing source links or thin summaries: **don't invent anything.** Search for the original article.
@@ -50,8 +58,22 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      (see the 2026-09-30 entry for the shape) and re-run `npm run editions`. List every fix you made
      in the pull request and in your message, so he can check them. Anything you can't fix stays
      listed as an open problem.
-5. `npm run build` must pass.
-6. **Quality control: `npm run qc` must pass** (it compares against `origin/main`). It confirms:
+5. **Rights review** (copyright and paywall rules in `docs/edition-format.md`), done by you, not a script:
+   - **Images:** open every `public/figs/<YYYY-MM-DD>-*` file and look at it. Allowed: his own original
+     graphics and charts, and Creative Commons or licensed images whose `figcredit` names the licence.
+     **Not allowed:** newspaper or agency photos, a publisher's own infographic or chart, anything showing
+     a publisher's logo or watermark, and screenshots of articles. For anything not allowed, hide it with
+     a per-story override `{ "image": "", "imageAlt": "" }` in `data/edition-meta.json` and re-run
+     `npm run editions` (unused images are deleted automatically). List it in your message. Also mention
+     any realistic AI-made likeness of a real person, for his decision.
+   - **Own words:** for each source you can open (not paywalled), compare the points with the article.
+     Flag any sentence copied word for word or with only small word changes.
+   - **Paywalled sources:** the summary must give the gist and his view, not the article's full substance.
+     Flag any story that reads as a replacement for the original, and any quote longer than a short phrase.
+   - **Original value:** every story's "why it matters" (and "other side" when present) must add his own
+     analysis, not restate the points. Flag any that don't.
+6. `npm run build` must pass.
+7. **Quality control: `npm run qc` must pass** (it compares against `origin/main`). It confirms:
    - every edition already live is still listed;
    - every earlier edition's data, original newsletter and images are byte-for-byte unchanged;
    - the pull request only touches edition files;
@@ -70,7 +92,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    `main`. In its body, include:
    - the headline (`slice`)
    - the story count and reading time
-   - the check and QC results (including the "has moved from Home to Catch up" line)
+   - the check, rights review and QC results (including the "has moved from Home to Catch up" line)
    - every fix you made
 2. Vercel builds a preview for the pull request. Get its URL from the pull request's head commit
    status (`https://api.github.com/repos/kkreddy79/kkreckons/commits/<sha>/status`, the `target_url`
@@ -78,7 +100,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 3. Send him one short message (and a push notification if that tool is available) with:
    - the edition date and headline
    - the preview link: `<preview url>/daily/<month>-<day>-<year>`
-   - "All checks and QC passed", or the list of open problems
+   - "All checks, rights review and QC passed", or the list of open problems and flags
    - which edition moves from Home to Catch up
    - "Reply **publish** to put it live, or tell me what to change."
 4. Then stop and wait. **Don't merge on your own.**
