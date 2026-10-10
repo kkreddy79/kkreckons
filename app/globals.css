@@ -248,7 +248,7 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-reading a:hover { color: #a8430f; }
 .ev-fix { margin: 18px 0 0; text-align: center; font-size: 13.5px; color: #5b5566; }
 .ev-fix a, .ab-fix a { color: #0a716b; font-weight: 800; text-decoration: underline; }
-.ab-fix { margin: 16px 0 0; font-size: 14.5px; line-height: 1.5; color: #2f2840; }
+.ab-fix { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid rgba(36, 18, 63, 0.12); font-size: 14.5px; line-height: 1.5; color: #2f2840; }
 .ev-reading small { font-size: 12.5px; color: #5b5566; }
 
 

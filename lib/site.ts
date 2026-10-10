@@ -7,7 +7,7 @@ export const SUBSCRIBE_URL = "https://kkreckons.beehiiv.com/subscribe";
  * Where readers report errors ("Spotted an error?" links and the About page corrections note).
  * Left empty, those links stay hidden.
  */
-export const CORRECTIONS_EMAIL = "";
+export const CORRECTIONS_EMAIL = "kkreckons@gmail.com";
 
 /** mailto: link for reporting an error, with the edition or page in the subject line. */
 export function correctionsHref(subject: string) {
