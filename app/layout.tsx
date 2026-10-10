@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["/about/two-worlds.jpg"],
   },
+  twitter: { card: "summary_large_image", images: ["/about/two-worlds.jpg"] },
 };
 
 export const viewport: Viewport = { themeColor: "#fbf8f1" };

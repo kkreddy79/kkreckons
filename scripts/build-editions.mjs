@@ -32,7 +32,7 @@ const files = fs
   .filter((f) => /^\d{4}-\d{2}-\d{2}\.html$/.test(f))
   .sort();
 
-const clean = (s) => (s || "").replace(/\s+/g, " ").trim();
+const clean = (s) => (s || "").replace(/<br\s*\/?>/gi, " ").replace(/\s+/g, " ").trim();
 
 function normalise(html) {
   // Artifact downloads can arrive wrapped in a preview skeleton that holds
@@ -53,6 +53,11 @@ function saveFig(date, n, dataUrl) {
   return `/figs/${name}`;
 }
 
+/** `pay` may be a boolean or a word such as "paid", "free", "yes" or "no". */
+function paid(v) {
+  return typeof v === "string" ? /^(paid|yes|true|paywall(ed)?|subscription)$/i.test(v.trim()) : Boolean(v);
+}
+
 /** Content from the JSON a newsletter embeds in <script id="data">. */
 function fromEmbedded(date, d) {
   let n = 0;
@@ -71,6 +76,10 @@ function fromEmbedded(date, d) {
       also: (s.also || []).map((a) => ({ title: clean(a.t), url: a.u })),
       image: s.fig ? saveFig(date, n, s.fig) : "",
       imageAlt: clean(s.figalt),
+      // Optional editorial overrides; when absent the site works these out from the link.
+      ...(clean(s.src) ? { src: clean(s.src) } : {}),
+      ...(s.pay !== undefined && s.pay !== null && s.pay !== "" ? { pay: paid(s.pay) } : {}),
+      ...(Array.isArray(s.themes) && s.themes.length ? { themes: s.themes.map(clean).filter(Boolean) } : {}),
     };
   };
   const sections = [
@@ -240,7 +249,16 @@ for (const file of files) {
     readingMinutes: record.readingMinutes,
     image: stories.find((s) => s.image)?.image || "",
     stories: content.sections.flatMap((sec) =>
-      sec.stories.map((s) => ({ section: sec.name, title: s.title, category: s.category, tag: s.tag, url: s.url }))
+      sec.stories.map((s) => ({
+        section: sec.name,
+        title: s.title,
+        category: s.category,
+        tag: s.tag,
+        url: s.url,
+        ...(s.src ? { src: s.src } : {}),
+        ...(s.pay !== undefined ? { pay: s.pay } : {}),
+        ...(s.themes ? { themes: s.themes } : {}),
+      }))
     ),
   });
   console.log(`${date}: ${stories.length} stories in ${content.sections.length} sections${embedded ? "" : " (from page)"}`);

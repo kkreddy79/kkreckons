@@ -8,6 +8,9 @@ export type SourceStory = {
   url2: string;
   points: string[];
   why: string;
+  /** Publisher name and paywall flag set in the newsletter data, when given. */
+  src?: string;
+  pay?: boolean;
 };
 
 /** One-line preview used for link hover text. */
@@ -18,7 +21,7 @@ export function storyHover(s: SourceStory) {
 }
 
 export function storyPaid(s: SourceStory) {
-  return [s.url, s.url2].some((u) => u && isPaywalled(u));
+  return s.pay ?? [s.url, s.url2].some((u) => u && isPaywalled(u));
 }
 
 /**
@@ -38,7 +41,7 @@ export default function StorySource({ s, id, summary = true }: { s: SourceStory;
         <span className="ev-src-label">Original source:</span>
         {src && (
           <a href={s.url} target="_blank" rel="noreferrer" title={hover}>
-            {publisherName(s.url)} ↗
+            {s.src || publisherName(s.url)} ↗
           </a>
         )}
         {s.url2 && (
@@ -82,7 +85,7 @@ export default function StorySource({ s, id, summary = true }: { s: SourceStory;
             </p>
           )}
           <p className="ev-qs-src">
-            Summary based on {publisherName(s.url || s.url2)}.{" "}
+            Summary based on {s.url ? s.src || publisherName(s.url) : publisherName(s.url2)}.{" "}
             <a href={s.url || s.url2} target="_blank" rel="noreferrer">
               Read the full story ↗
             </a>
