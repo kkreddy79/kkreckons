@@ -135,6 +135,10 @@
       },
       "Global banks are buying stakes in the AI labs they use": {
         "remove": "Repeats the Inc42 article used by the first bank story that day"
+      },
+      "Indian Railways is 99.6% electrified, but diesel isn’t going away": {
+        "image": "",
+        "imageAlt": ""
       }
     }
   },
@@ -142,6 +146,19 @@
     "artifact": "https://claude.ai/artifact/R6WYgbLC6GGuqQJKt7D9f8"
   },
   "2026-10-09": {
-    "artifact": "https://claude.ai/artifact/Fc9ziFPcPQkUpsgZZqviXB"
+    "artifact": "https://claude.ai/artifact/Fc9ziFPcPQkUpsgZZqviXB",
+    "stories": {
+      "Nouriel Roubini: the world is in turmoil, so why is the global economy still chugging along?": {
+        "image": "",
+        "imageAlt": ""
+      },
+      "India’s aspirational middle class gives it a demographic edge, says Verlinvest CEO Roberto Italia": {
+        "image": "",
+        "imageAlt": ""
+      },
+      "Devina Mehra: the art of storytelling can turn into an investment pitfall, even for veterans": {
+        "imageCredit": "Original graphic: KKReckons"
+      }
+    }
   }
 }
