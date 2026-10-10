@@ -15,7 +15,7 @@ import {
   ScalesIcon,
   SunIcon,
 } from "@/components/AboutIcons";
-import { SUBSCRIBE_URL } from "@/lib/site";
+import { CORRECTIONS_EMAIL, SUBSCRIBE_URL, correctionsHref } from "@/lib/site";
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
 const DESCRIPTION =
@@ -178,6 +178,12 @@ export default function About() {
               </li>
             ))}
           </ul>
+          {CORRECTIONS_EMAIL && (
+            <p className="ab-fix">
+              Mistakes happen. If you spot one, <a href={correctionsHref("KKReckons")}>email us</a>; we fix it on the
+              site and note material corrections in that edition.
+            </p>
+          )}
         </section>
 
         <SubscribeBox />
