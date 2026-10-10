@@ -2,7 +2,7 @@
   "date": "2026-10-05",
   "slice": "Plague fears in Siberia, AI agents go rogue, and Sebi busts ‘assured’ returns.",
   "artifact": "https://claude.ai/artifact/SHYtsnXk8e4kJtcPsHJMmk",
-  "readingMinutes": 5,
+  "readingMinutes": 4,
   "callouts": [
     {
       "num": "~200",
@@ -234,33 +234,6 @@
           ],
           "why": "Agents pay off only when the workflow is rethought first.",
           "other": "These are top-ranked adopters, and two sell agents themselves. Are their wins typical, or the best case?",
-          "also": [],
-          "image": "",
-          "imageAlt": ""
-        },
-        {
-          "category": "Geopolitics",
-          "tag": "Opinion",
-          "title": "Dimon’s plan: one big Western trade pact",
-          "url": "https://www.wsj.com/opinion/jamie-dimon-a-plan-for-the-western-worlds-revival-5fb12cc2?st=zTxXpS&reflink=article_copyURL_share",
-          "url2": "",
-          "points": [
-            "Jamie Dimon proposes a US–Europe free-trade deal if Europe reforms, extendable to Canada, Mexico, Japan, South Korea, Australia and the Philippines.",
-            "Europe imports nearly 60% of its energy and has adopted fewer than 16% of the Draghi and Letta reform proposals, he notes.",
-            "A reader, Alan Raul, replies that Dimon’s third pillar, renewing American values, matters most, as polls show disillusion with democracy."
-          ],
-          "numbers": [
-            [
-              "3%",
-              "US growth goal"
-            ],
-            [
-              "$20,000",
-              "GDP per head forgone"
-            ]
-          ],
-          "why": "He sees trade, not tariffs, binding allies against China.",
-          "other": "Earlier pacts like TPP and TTIP died over fears of lost jobs. Can promised help for workers change the politics this time?",
           "also": [],
           "image": "",
           "imageAlt": ""

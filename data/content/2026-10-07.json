@@ -2,7 +2,7 @@
   "date": "2026-10-07",
   "slice": "Money is in the hospitals and the AI labs. Diesel lingers. Someone still pays.",
   "artifact": "https://claude.ai/artifact/BhMTV1Dd1SfZEi5285nLyS",
-  "readingMinutes": 6,
+  "readingMinutes": 4,
   "callouts": [
     {
       "num": "~$20tn",
@@ -110,33 +110,6 @@
           "imageAlt": ""
         },
         {
-          "category": "Jobs",
-          "tag": "",
-          "title": "AI is already thinning bank payrolls",
-          "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/",
-          "url2": "",
-          "points": [
-            "Axis Bank’s headcount fell by over 3,100 in FY26, which it put down to technology and productivity investments; HDFC Bank, Kotak and ICICI Bank have seen similar cuts.",
-            "Axis CEO Amitabh Chaudhry told Bloomberg that AI will let the bank grow without a matching rise in staff.",
-            "One small bank’s CEO expects 50–60% of staff to move into sales and relationship roles within two years, with no layoffs."
-          ],
-          "numbers": [
-            [
-              "3,100+",
-              "fewer Axis staff, FY26"
-            ],
-            [
-              "50–60%",
-              "to be repurposed, 1 bank"
-            ]
-          ],
-          "why": "With fewer people running banks, those who remain carry more responsibility.",
-          "other": "Internet banking, mobile banking and digital payments each brought cuts and new roles, as the article notes. Repurposing isn’t layoffs. Redeployment, or slow shrinkage?",
-          "also": [],
-          "image": "",
-          "imageAlt": ""
-        },
-        {
           "category": "Railways",
           "tag": "",
           "title": "Indian Railways is 99.6% electrified, but diesel isn’t going away",
@@ -162,70 +135,12 @@
           "also": [],
           "image": "/figs/2026-10-07-5.webp",
           "imageAlt": "Chart: Indian Railways total electrified route kilometres, 18,927 in 2009-10 to 69,873 in 2025-26"
-        },
-        {
-          "category": "Banking",
-          "tag": "",
-          "title": "Meet the AI assistants at India’s banks",
-          "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/",
-          "url2": "",
-          "points": [
-            "SBI’s SIA offers 24/7 help with queries; HDFC Bank’s EVA handles account, product and bill-payment questions.",
-            "ICICI Bank’s iPal works across channels, and Axis Aha! can carry out transactions as well as answer questions.",
-            "Bank of Baroda’s Aditi is pitched as a multilingual generative-AI relationship manager."
-          ],
-          "numbers": [
-            [
-              "5",
-              "named bank assistants"
-            ],
-            [
-              "24/7",
-              "SIA’s help at SBI"
-            ]
-          ],
-          "why": "Your first conversation with your bank may increasingly be with software.",
-          "other": "Bots suit routine queries; disputes, fraud and complex needs still call for people. Will banks keep a human easy to reach?",
-          "also": [],
-          "image": "",
-          "imageAlt": ""
         }
       ]
     },
     {
       "name": "World edition",
       "stories": [
-        {
-          "category": "Finance and AI",
-          "tag": "",
-          "title": "Global banks are buying stakes in the AI labs they use",
-          "url": "https://inc42.com/features/skin-in-the-game-why-banks-are-taking-stakes-in-ai-labs/",
-          "url2": "",
-          "points": [
-            "Barclays, BNP Paribas, Citi, MUFG and Société Générale invested in Rogo, a US AI startup for financial services, in its $30 million round; nine banks with nearly $20 trillion in assets are now on its cap table.",
-            "Bank investments in AI firms have grown 21% a year since 2023, per an Evident AI study of the 50 biggest banks; Wells Fargo, Citi and Goldman Sachs are the most active US investors.",
-            "Citigroup and Santander have both taken stakes in Tokyo’s Sakana AI, which builds foundation models and custom AI for finance."
-          ],
-          "numbers": [
-            [
-              "$30mn",
-              "Rogo’s round"
-            ],
-            [
-              "21%",
-              "a year since ’23"
-            ],
-            [
-              "50",
-              "banks studied"
-            ]
-          ],
-          "why": "Deep inside regulated, high-stakes work, banks want control and customisation that a licence can’t give.",
-          "other": "A stake can tie a bank to one vendor’s roadmap, and startups without bank backers may struggle for data, distribution and trust. Smart partnership, or a new kind of concentration?",
-          "also": [],
-          "image": "",
-          "imageAlt": ""
-        },
         {
           "category": "Markets",
           "tag": "",
