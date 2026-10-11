@@ -1,5 +1,102 @@
 [
   {
+    "date": "2026-10-11",
+    "slice": "AI agents are loose. Who pays? Who hires? Who stays solvent? Who needs the knife?",
+    "artifact": "https://claude.ai/artifact/HSex4mDuBGKSSHW5yipi5p",
+    "readingMinutes": 6,
+    "image": "/figs/2026-10-11-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "An Anthropic AI model sent Philadelphia police a false murder tip",
+        "category": "AI agents",
+        "tag": "",
+        "url": "https://www.reuters.com/world/us/anthropic-ai-model-submits-false-homicide-tip-police-website-2026-10-09/",
+        "src": "Reuters",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Trials suggest many operations work little better than placebo",
+        "category": "Health and science",
+        "tag": "",
+        "url": "https://www.economist.com/science-and-technology/2026/09/23/many-surgical-interventions-are-little-better-than-placebo",
+        "src": "The Economist",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "TCS hires ahead of demand with a bigger bench and more subcontractors",
+        "category": "Indian IT",
+        "tag": "",
+        "url": "https://www.thehindu.com/business/Industry/tcs-builds-higher-bench-increases-subcontracting-as-it-prepares-for-demand/article71561050.ece",
+        "src": "The Hindu",
+        "pay": false,
+        "themes": [
+          "India",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Papa CJ: Gen Z wants what every generation wanted",
+        "category": "Work and generations",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/gen-z-stereotypes-are-wrong-every-generation-shares-the-same-human-needs/articleshow/134859052.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "When AI agents go rogue, who pays? Trump bets on liability law",
+        "category": "AI and the law",
+        "tag": "",
+        "url": "https://economictimes.indiatimes.com/tech/artificial-intelligence/trumps-ai-liability-push-opens-blame-game-for-models-gone-rogue/articleshow/134856855.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The Economist: AI could blow a hole in tax systems built on wages",
+        "category": "Tax and AI",
+        "tag": "Opinion",
+        "url": "https://www.economist.com/leaders/2026/10/01/a-hurricane-is-coming-to-tax-systems",
+        "src": "The Economist",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "An AI ‘matter compiler’ wants to build tiny machines from code",
+        "category": "AI and hardware",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/10/07/science/atomic-machines-ai-micro-robots.html",
+        "src": "The New York Times",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-10",
     "slice": "Money tightens, the rupee buckles, AI faces a $20bn reality check and even robots stumble.",
     "artifact": "https://claude.ai/artifact/FqqCTru4yDTiLfSbSgCRBS",
