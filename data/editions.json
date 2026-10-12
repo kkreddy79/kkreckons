@@ -1,5 +1,127 @@
 [
   {
+    "date": "2026-10-12",
+    "slice": "Banks hedge AI. Workers hedge Monday. Africa hedges Moody’s. Growth now needs a seatbelt.",
+    "artifact": "https://claude.ai/artifact/CbuiN48id5HuvcmHxVYWCw",
+    "readingMinutes": 8,
+    "image": "/figs/2026-10-12-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Banks try to offload the AI data-centre debt they just underwrote",
+        "category": "AI financing",
+        "tag": "Opinion",
+        "url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/",
+        "src": "Startup Fortune",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "The Sunday scaries are real, and they’re getting worse",
+        "category": "Work and wellbeing",
+        "tag": "",
+        "url": "https://www.wsj.com/lifestyle/careers/the-sunday-scaries-are-realand-theyre-getting-worse-1f27c82e?st=Uva6PJ&reflink=article_copyURL_share",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Workers are ‘loud working’ to hold on to their jobs",
+        "category": "Careers",
+        "tag": "",
+        "url": "https://www.businessinsider.com/loud-working-job-security-layoffs-linkedin-promotions-2026-10",
+        "src": "Business Insider",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Brinjal, buffalo, bacteria: how India makes firms pay for nature",
+        "category": "Biodiversity",
+        "tag": "Explainer",
+        "url": "https://m.economictimes.com/prime/brinjal-buffalo-bacteria-inside-indias-pay-for-nature-system/primearticleshow/134867644.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Africa takes on Moody’s, S&P and Fitch; India knows the grievance",
+        "category": "Credit ratings",
+        "tag": "Opinion",
+        "url": "https://economictimes.indiatimes.com/news/international/world-news/no-fitch-moodys-or-sp-please-the-big-3-face-a-new-challenge/articleshow/134837757.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI firms are planning for the backlash after a catastrophic AI event",
+        "category": "AI safety",
+        "tag": "",
+        "url": "https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack",
+        "src": "Axios",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Video cameras are everywhere, and now they are being hacked for war",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/cybersecurity/video-cameras-webcams-hacked-war-b00b8a24",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Andy Mukherjee: the AI productivity boom is hiding in software",
+        "category": "AI and productivity",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/andy-mukherjee-the-ai-productivity-boom-has-begun-if-you-know-where-to-find-it-11791464874233.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why shares are the new bricks and mortar",
+        "category": "Wealth and housing",
+        "tag": "",
+        "url": "https://www.economist.com/finance-and-economics/2026/10/07/why-shares-are-the-new-bricks-and-mortar",
+        "src": "The Economist",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-11",
     "slice": "AI agents are loose. Who pays? Who hires? Who stays solvent? Who needs the knife?",
     "artifact": "https://claude.ai/artifact/HSex4mDuBGKSSHW5yipi5p",

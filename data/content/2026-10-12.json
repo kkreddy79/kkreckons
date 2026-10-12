@@ -1,0 +1,338 @@
+{
+  "date": "2026-10-12",
+  "slice": "Banks hedge AI. Workers hedge Monday. Africa hedges Moody’s. Growth now needs a seatbelt.",
+  "artifact": "https://claude.ai/artifact/CbuiN48id5HuvcmHxVYWCw",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "$38bn",
+      "text": "of AI data-centre debt that banks have spent six months trying to sell, some now at a discount.",
+      "url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/"
+    },
+    {
+      "num": "$74.5bn",
+      "text": "lost by Africa to excess interest and forgone borrowing tied to its ratings, a UNDP estimate.",
+      "url": "https://economictimes.indiatimes.com/news/international/world-news/no-fitch-moodys-or-sp-please-the-big-3-face-a-new-challenge/articleshow/134837757.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI financing",
+          "tag": "Opinion",
+          "title": "Banks try to offload the AI data-centre debt they just underwrote",
+          "url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/",
+          "url2": "",
+          "points": [
+            "JPMorgan, Morgan Stanley, SMBC and MUFG have explored risk transfers that pass the riskiest slice of AI data-centre loans to outside investors, as they near internal limits on AI exposure.",
+            "A group including JPMorgan and MUFG has spent more than six months trying to place $38bn of construction debt for an Oracle-leased project in Texas and Wisconsin; some lenders will now sell at a discount.",
+            "Oracle’s five-year default insurance reached about 151 basis points in early October, a level last seen in 2009, and order books for AI-linked bonds have shrunk since February."
+          ],
+          "numbers": [
+            [
+              "$38bn",
+              "debt banks struggle to sell"
+            ],
+            [
+              "151bp",
+              "Oracle five-year CDS, early Oct"
+            ],
+            [
+              "5.304%",
+              "US 10-year yield this month"
+            ]
+          ],
+          "why": "When the lenders closest to the AI boom start trimming their own exposure, credit, not chips, may end up setting the pace of the build-out.",
+          "other": "Selling down risk can be routine balance-sheet housekeeping rather than distress, and capital is still flowing to data centres leased by investment-grade giants such as Microsoft and Google.",
+          "also": [],
+          "image": "/figs/2026-10-12-1.jpg",
+          "imageAlt": "KKReckons explainer: banks near their limits on AI lending, the $38bn loan still unsold, and the warning signs in Oracle and AI bond demand.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Startup Fortune",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Banking"
+          ]
+        },
+        {
+          "category": "Work and wellbeing",
+          "tag": "",
+          "title": "The Sunday scaries are real, and they’re getting worse",
+          "url": "https://www.wsj.com/lifestyle/careers/the-sunday-scaries-are-realand-theyre-getting-worse-1f27c82e?st=Uva6PJ&reflink=article_copyURL_share",
+          "url2": "",
+          "points": [
+            "More than half of US workers say they feel pre-Monday dread, a FlexJobs survey finds, with an unfinished to-do list the most common trigger; Merriam-Webster added “Sunday scaries” to its online dictionary last month.",
+            "Workforce analytics data compiled for the WSJ show the share of Sundays spent on work messages and chats nearly doubled from 2023 to last year, as workloads grow and job security fades.",
+            "Coping tactics include capping Sunday work with an hour-long hourglass, finishing more on Friday, setting firm limits, or reframing the dread as “Monday maybe”."
+          ],
+          "numbers": [
+            [
+              "Over 50%",
+              "of US workers feel the dread"
+            ],
+            [
+              "~2×",
+              "Sunday work chats vs 2023"
+            ]
+          ],
+          "why": "Work creeping into Sunday is a symptom: when job security weakens, people trade rest for reassurance, and burnout follows.",
+          "other": "A short, bounded Sunday planning session can ease Monday stress, as a psychiatrist in the piece notes; the problem is open-ended work, not all of it.",
+          "also": [],
+          "image": "/figs/2026-10-12-2.jpg",
+          "imageAlt": "KKReckons explainer: how many workers feel Sunday dread, why it is getting worse and four ways people are taming it.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ]
+        },
+        {
+          "category": "Careers",
+          "tag": "",
+          "title": "Workers are ‘loud working’ to hold on to their jobs",
+          "url": "https://www.businessinsider.com/loud-working-job-security-layoffs-linkedin-promotions-2026-10",
+          "url2": "",
+          "points": [
+            "With job-hopping harder and layoffs a constant worry, some employees are swapping quiet quitting for “loud working”: making sure bosses and colleagues see what they deliver.",
+            "Tactics range from focusing on the two or three problems a manager cares about most to posting daily on LinkedIn or TikTok; one chief-of-staff poster says it helped her land a new role.",
+            "A laid-off Meta employee likened the scramble for visibility to the Hunger Games, and a Monster career expert warns that constant self-promotion can backfire into burnout or credit-grabbing."
+          ],
+          "numbers": [],
+          "why": "Visibility is turning into a form of job insurance, which rewards people who can explain their work well, not only those who do it.",
+          "other": "If everyone gets louder, managers may learn to discount the noise, and quieter high performers or less glamorous team projects could lose out.",
+          "also": [],
+          "image": "/figs/2026-10-12-3.jpg",
+          "imageAlt": "KKReckons explainer: why workers are getting louder about their work, how they do it and where it backfires.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Business Insider",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Biodiversity",
+          "tag": "Explainer",
+          "title": "Brinjal, buffalo, bacteria: how India makes firms pay for nature",
+          "url": "https://m.economictimes.com/prime/brinjal-buffalo-bacteria-inside-indias-pay-for-nature-system/primearticleshow/134867644.cms",
+          "url2": "",
+          "points": [
+            "Under the Biological Diversity Act, companies that commercially use India’s crops, medicinal plants, microbes or livestock genetics can owe a benefit-sharing payment to the National Biodiversity Authority.",
+            "It collected ₹9.68 crore from April to September, mostly from seed and agriculture firms, and about ₹278 crore since 2008, much of it passed on for conservation and to farmers, communities and institutions.",
+            "When seeds came via traders and the original farmers couldn’t be traced, the money was split among states by crop acreage, which funds conservation but not necessarily the growers themselves."
+          ],
+          "numbers": [
+            [
+              "₹9.68cr",
+              "collected, Apr–Sep 2026"
+            ],
+            [
+              "₹278cr",
+              "collected since 2008"
+            ]
+          ],
+          "why": "It is a small but real attempt to reward the people who kept India’s seeds and breeds alive, and a rare case of biodiversity carrying a price at all.",
+          "other": "The sums are tiny next to the industries involved, paying state boards is not the same as paying farmers, and experts say communities still have too little say over access.",
+          "also": [],
+          "image": "/figs/2026-10-12-4.jpg",
+          "imageAlt": "KKReckons explainer: which firms pay India for using its biological resources, how much has been collected and where the money goes.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": true,
+          "themes": [
+            "India"
+          ]
+        },
+        {
+          "category": "Credit ratings",
+          "tag": "Opinion",
+          "title": "Africa takes on Moody’s, S&P and Fitch; India knows the grievance",
+          "url": "https://economictimes.indiatimes.com/news/international/world-news/no-fitch-moodys-or-sp-please-the-big-3-face-a-new-challenge/articleshow/134837757.cms",
+          "url2": "",
+          "points": [
+            "The African Union launched the Africa Credit Rating Agency in Mauritius on 7 October, arguing that Moody’s, S&P and Fitch overlook local strengths and saddle the continent with an unfair risk premium.",
+            "A 2023 UNDP report put the cost at $74.5bn in excess interest and forgone borrowing; Africa had fewer than 4,000 ratings at the end of 2025, against more than two million in the US.",
+            "India has long made a similar case: Japan’s JCR upgraded it to A- last month, but Moody’s and Fitch still rate it at the lowest investment grade."
+          ],
+          "numbers": [
+            [
+              "$74.5bn",
+              "excess interest, UNDP estimate"
+            ],
+            [
+              "<4,000",
+              "ratings in Africa, end-2025"
+            ],
+            [
+              "A-",
+              "India’s rating from Japan’s JCR"
+            ]
+          ],
+          "why": "More ratings could open local bond markets to pension funds and banks, and India has a stake in showing global agencies can be challenged on substance.",
+          "other": "Credibility comes from a track record under stress: Ghana called Moody’s 2022 downgrade biased, then defaulted on much of its external debt soon after.",
+          "also": [],
+          "image": "/figs/2026-10-12-5.jpg",
+          "imageAlt": "KKReckons explainer: why Africa launched its own credit rating agency, what poor ratings cost and the credibility test ahead, with India’s parallel.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI safety",
+          "tag": "",
+          "title": "AI firms are planning for the backlash after a catastrophic AI event",
+          "url": "https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack",
+          "url2": "",
+          "points": [
+            "Executives at Anthropic, OpenAI and other AI companies are privately planning for a public and political revolt after a catastrophic AI event, most likely a cyberattack that knocks out banking, internet, power or water, Axios reports.",
+            "Many insiders told Axios they expect a major incident within six to 12 months. OpenAI said such scenarios are not treated as inevitable; Anthropic declined to comment.",
+            "The planning centres on red-teaming worst cases and briefing members of Congress, so firms can shape the rules that follow; ideas in circulation range from pausing advanced AI to a mandatory kill switch."
+          ],
+          "numbers": [
+            [
+              "6–12 mo",
+              "insiders’ expected window"
+            ]
+          ],
+          "why": "The builders themselves treat a serious AI-enabled attack as likely, and the policy fight after one could decide how fast AI is allowed to move.",
+          "other": "What to watch: whether this preparation turns into real safeguards now, or mainly positions the industry to steer the rules after a disaster.",
+          "also": [],
+          "image": "/figs/2026-10-12-6.jpg",
+          "imageAlt": "KKReckons explainer: the kind of AI incident companies fear, how they are preparing and the policy options on the table.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Axios",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ]
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "Video cameras are everywhere, and now they are being hacked for war",
+          "url": "https://www.wsj.com/tech/cybersecurity/video-cameras-webcams-hacked-war-b00b8a24",
+          "url2": "",
+          "points": [
+            "Hackers on both sides of the Russia–Ukraine and Israel–Iran conflicts are breaking into internet-connected cameras to watch troops, find targets and judge strike damage; in Israel, a hacked farm webcam overlooked army movements near the Lebanon border.",
+            "Many of the world’s estimated 1.2bn connected cameras are weakly secured, often with default passwords, and installed by facilities staff rather than IT teams; AI now makes breaking in and sifting footage far easier.",
+            "Ukraine’s security service says it has secured, reoriented or blocked about 40,000 risky cameras since 2022; some Western countries have banned easy-to-hack Chinese brands."
+          ],
+          "numbers": [
+            [
+              "1.2bn",
+              "connected cameras worldwide"
+            ],
+            [
+              "40,000",
+              "risky cameras Ukraine secured"
+            ]
+          ],
+          "why": "Every doorbell or office camera is now a possible lookout for an enemy, which turns basic device security into a national-security issue.",
+          "other": "Most cameras will never interest a military, and simple steps such as changing default passwords and updating devices remove much of the risk.",
+          "also": [
+            {
+              "title": "Free-to-read copy in Mint",
+              "url": "https://www.livemint.com/global/video-cameras-are-everywhere-and-now-they-are-being-hacked-for-war-11791701471783.html"
+            }
+          ],
+          "image": "/figs/2026-10-12-7.jpg",
+          "imageAlt": "KKReckons explainer: how hacked webcams are used in wars, why cameras are an easy target and what reduces the risk.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Geopolitics"
+          ]
+        },
+        {
+          "category": "AI and productivity",
+          "tag": "Opinion",
+          "title": "Andy Mukherjee: the AI productivity boom is hiding in software",
+          "url": "https://www.livemint.com/opinion/online-views/andy-mukherjee-the-ai-productivity-boom-has-begun-if-you-know-where-to-find-it-11791464874233.html",
+          "url2": "",
+          "points": [
+            "Like computers in Robert Solow’s day, generative AI shows up everywhere except the productivity statistics, even as annual AI investment nears $1tn, argues the Bloomberg Opinion columnist.",
+            "A paper led by Berkeley’s Alex Blumenfeld uses stock returns to estimate that, from November 2022 to December 2025, AI lifted the market’s value of software-engineering productivity by the equivalent of a permanent 32.6%.",
+            "His own rough test on Sony, Coupang and Grab points the same way: firms that lean on software engineers gain first, so the boom may already be under way."
+          ],
+          "numbers": [
+            [
+              "32.6%",
+              "lift in coder productivity (est.)"
+            ],
+            [
+              "~$1tn",
+              "annual AI investment"
+            ]
+          ],
+          "why": "If the gains show up first in coding-heavy firms, investors and job-seekers should watch software hiring, not GDP data, for early signs.",
+          "other": "Stock prices reflect expectations, not measured output, and a three-company test is suggestive at best, as the author himself concedes.",
+          "also": [],
+          "image": "/figs/2026-10-12-8.jpg",
+          "imageAlt": "KKReckons explainer: the productivity puzzle, what the Berkeley-led study found and why software is where AI gains appear first.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Markets"
+          ]
+        },
+        {
+          "category": "Wealth and housing",
+          "tag": "",
+          "title": "Why shares are the new bricks and mortar",
+          "url": "https://www.economist.com/finance-and-economics/2026/10/07/why-shares-are-the-new-bricks-and-mortar",
+          "url2": "",
+          "points": [
+            "Households are now building more wealth from shares than from property: in 2025, 57% of new household wealth came from stocks and 15% from housing, reversing the past 25 years, the McKinsey Global Institute estimates.",
+            "In America stocks recently overtook property as a share of household wealth for the first time since the second world war, Goldman Sachs calculates, and young people priced out of homes are investing instead.",
+            "Slower house-price growth, booming equity markets and governments trimming tax breaks for property are all speeding the shift."
+          ],
+          "numbers": [
+            [
+              "57%",
+              "of 2025’s new wealth from stocks"
+            ],
+            [
+              "15%",
+              "from property"
+            ]
+          ],
+          "why": "For renters, especially the young, investing becomes a real path to wealth rather than a consolation prize for missing the housing ladder.",
+          "other": "Shares can crash faster than houses, and a home also gives shelter and a forced savings habit that a brokerage account doesn’t.",
+          "also": [],
+          "image": "/figs/2026-10-12-9.jpg",
+          "imageAlt": "KKReckons explainer: where new household wealth now comes from, why the shift is happening and what it means for renters.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economist",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": []
+}
