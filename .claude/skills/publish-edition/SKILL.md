@@ -120,6 +120,19 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   If anything is off, say so at once and offer a rollback (Vercel "promote" of the previous production
   deployment, or a revert pull request). Otherwise reply with the live link and the line
   "<yesterday> is now on Catch up".
+
+  **Email draft (beehiiv):** subscribers only get an edition by email if a beehiiv post exists, so his
+  "publish" also covers creating that draft. Once the site is live (the email links to its images and pages):
+  1. `node scripts/beehiiv-email.mjs <YYYY-MM-DD> <scratchpad>/beehiiv.json` builds the title, subtitle,
+     email settings, slug and body from `data/content/<YYYY-MM-DD>.json`.
+  2. Find the KKReckons publication with `list_publications`. Check `list_posts` for a post with the same
+     title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another.
+  3. Otherwise call `save_post` with that file's fields (`html_content` verbatim). This only makes a **draft**;
+     beehiiv requires him to press Send in its UI. Never schedule or send it yourself.
+  4. Re-read it with `get_post` and confirm the title and that the body has every story.
+  5. In your reply, add: "Email draft is ready in beehiiv; open Posts → Drafts, preview, and press Send."
+     If the draft can't be created (tool missing or permission denied), say so plainly, so he knows
+     subscribers won't get this edition until it's made.
 - **Changes** (for example "drop story 4" or "fix the headline"): make small text fixes as overrides in
   `data/edition-meta.json` (`slice`, or `stories` keyed by title). For bigger changes, ask him to update
   the artifact in his Project, then re-read it. Rebuild, re-check, push, and send the new preview link.
@@ -130,3 +143,4 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 - Never change an edition's facts, numbers or wording beyond what he asks for, or a sourced fix you list.
 - Never publish an edition with open problems unless he says to publish anyway.
 - Keep commits and pull requests free of model names.
+- Never send or schedule a beehiiv email; only create drafts for him to send.
