@@ -169,6 +169,8 @@ parts.push(`<p style="text-align: center">${color(C.muted, `Missed one? Every ed
 
 // Per-post theme: KKReckons colours, one body font, quieter links and rules.
 const theme = {
+  padding_left: "24",
+  padding_right: "24",
   background_color: C.page,
   content_background_color: "#FFFFFF",
   paragraph_color: C.text,
@@ -176,6 +178,8 @@ const theme = {
   list_font_color: C.text,
   list_line_height_exact: "1.5",
   list_item_spacing: "6",
+  list_padding_left: "18",
+  list_padding_right: "4",
   list_padding_top: "4",
   list_padding_bottom: "4",
   inline_link_italic: "false",
@@ -199,6 +203,8 @@ const theme = {
   quote_2_padding_left: "14",
   quote_2_padding_top: "4",
   quote_2_padding_bottom: "4",
+  quote_2_margin_left: "0",
+  quote_2_margin_right: "0",
   button_background_color: C.red,
   button_border_color: C.red,
   button_text_color: "#FFFFFF",
