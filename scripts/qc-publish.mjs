@@ -101,7 +101,7 @@ const changed = git("diff", "--name-only", `${base}...HEAD`).toString().split("\
 const uncommitted = git("status", "--porcelain").toString().split("\n").filter(Boolean).map((l) => l.slice(3));
 const editionFile = (f) => {
   if (["data/editions.json", "data/edition-meta.json", "lib/editions.ts"].includes(f)) return true;
-  const m = /^(?:newsletters|data\/content|public\/figs)\/(\d{4}-\d{2}-\d{2})/.exec(f);
+  const m = /^(?:newsletters|data\/content|public\/figs|public\/email)\/(\d{4}-\d{2}-\d{2})/.exec(f);
   return Boolean(m && (added.includes(m[1]) || allowed.has(m[1])));
 };
 for (const f of new Set([...changed, ...uncommitted])) {
