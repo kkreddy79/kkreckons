@@ -124,12 +124,18 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   **Email draft (beehiiv):** subscribers only get an edition by email if a beehiiv post exists, so his
   "publish" also covers creating that draft. Once the site is live (the email links to its images and pages):
   1. `node scripts/beehiiv-email.mjs <YYYY-MM-DD> <scratchpad>/beehiiv.json` builds the title, subtitle,
-     email settings, slug and body from `data/content/<YYYY-MM-DD>.json`.
+     email settings, slug, theme and body from `data/content/<YYYY-MM-DD>.json`. It also writes the story
+     thumbnails to `public/email/<YYYY-MM-DD>-<n>.jpg`. Run it in section 2 right after `npm run editions`
+     and commit those thumbnails with the edition, so they are live on kkreckons.com when the email goes out.
+     The email deliberately shows each story once: thumbnail, points, why it matters, other side and source.
+     Don't add the full explainer graphics or repeat the headline (`slice`) in the body; beehiiv's header
+     already shows it.
   2. Find the KKReckons publication with `list_publications`. Check `list_posts` for a post with the same
      title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another.
-  3. Otherwise call `save_post` with that file's fields (`html_content` verbatim). This only makes a **draft**;
-     beehiiv requires him to press Send in its UI. Never schedule or send it yourself.
-  4. Re-read it with `get_post` and confirm the title and that the body has every story.
+  3. Otherwise call `save_post` with that file's fields (`html_content` verbatim, not `theme`), then
+     `save_post_theme` with its `theme`. This only makes a **draft**; beehiiv requires him to press Send
+     in its UI. Never schedule or send it yourself.
+  4. Re-read it with `get_post_content` and confirm the title and that the body has every story once.
   5. In your reply, add: "Email draft is ready in beehiiv; open Posts → Drafts, preview, and press Send."
      If the draft can't be created (tool missing or permission denied), say so plainly, so he knows
      subscribers won't get this edition until it's made.

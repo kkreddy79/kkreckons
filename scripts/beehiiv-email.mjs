@@ -1,9 +1,17 @@
 // Builds the beehiiv email draft for one edition from data/content/<date>.json.
 // Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json]
-// Prints (or writes) { title, subtitle, email_settings, web_settings, html_content },
-// ready to pass to beehiiv's save_post. Sending stays a human action in beehiiv.
+//
+// Also writes a small illustration thumbnail per story to public/email/<date>-<n>.jpg,
+// cut from the circle at the top right of each KKReckons explainer graphic. The email
+// shows those thumbnails rather than the full graphics: the full graphic repeats the
+// story's points, takeaway and other side, so the email would say everything twice.
+//
+// Prints (or writes) { title, subtitle, email_settings, web_settings, theme, html_content },
+// ready to pass to beehiiv's save_post (and `theme` to save_post_theme).
+// Sending stays a human action in beehiiv.
 import fs from "node:fs";
 import path from "node:path";
+import sharp from "sharp";
 
 const SITE = "https://www.kkreckons.com";
 const MONTHS = [
@@ -11,6 +19,18 @@ const MONTHS = [
   "july", "august", "september", "october", "november", "december",
 ];
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// KKReckons palette, taken from the explainer graphics.
+const C = {
+  navy: "#1F2A3A",
+  red: "#B83A2E",
+  teal: "#2F6F73",
+  cream: "#FAF6ED",
+  page: "#F1ECE2",
+  text: "#374151",
+  muted: "#6B7280",
+  rule: "#E5DED0",
+};
 
 const [date, out] = process.argv.slice(2);
 if (!/^\d{4}-\d{2}-\d{2}$/.test(date || "")) {
@@ -30,6 +50,15 @@ const monthName = MONTHS[m - 1][0].toUpperCase() + MONTHS[m - 1].slice(1);
 const longDate = `${DAYS[when.getUTCDay()]}, ${d} ${monthName} ${y}`;
 const pageUrl = `${SITE}/daily/${MONTHS[m - 1]}-${d}-${y}`;
 
+/** Cut the circle illustration (top right of every explainer graphic) into a 160px square. */
+async function thumbnail(src, dest) {
+  const img = sharp(src);
+  const { width } = await img.metadata();
+  const k = width / 2160; // graphics are laid out on a 2160px-wide canvas
+  const box = { left: Math.round(1463 * k), top: Math.round(87 * k), width: Math.round(617 * k), height: Math.round(617 * k) };
+  await img.extract(box).resize(160, 160).jpeg({ quality: 80 }).toFile(dest);
+}
+
 const esc = (s) =>
   String(s ?? "")
     .replace(/&/g, "&amp;")
@@ -38,50 +67,94 @@ const esc = (s) =>
     .replace(/"/g, "&quot;");
 const link = (href, text) =>
   `<a class="link" href="${esc(href)}" rel="noopener noreferrer nofollow" target="_blank">${esc(text)}</a>`;
-const button = (href, text) =>
-  `<div class="node-button"><a data-type="button" href="${esc(href)}" data-alignment="center" data-size="normal" data-custom-background-color="#0c4a6e" data-custom-text-color="#ffffff">${esc(text)}</a></div>`;
-const rule = `<div data-type="horizontalRule"><hr></div>`;
+const color = (hex, html) => `<span style="color: ${hex}">${html}</span>`;
+const section = (attrs, inner) =>
+  `<div class="node-section" ${Object.entries(attrs)
+    .map(([k, v]) => `data-${k}="${v}"`)
+    .join(" ")}>${inner}</div>`;
+const pad = (t, r = t, b = t, l = r) => ({ "padding-top": t, "padding-right": r, "padding-bottom": b, "padding-left": l });
+const radius = (n) => ({
+  "border-top-left-radius": n, "border-top-right-radius": n,
+  "border-bottom-left-radius": n, "border-bottom-right-radius": n,
+});
 
-const parts = [];
-parts.push(`<p><em>${esc(ed.slice)}</em></p>`);
-parts.push(`<p>${ed.sections.reduce((n, s) => n + s.stories.length, 0)} stories · ${ed.readingMinutes} min read · ${link(pageUrl, "Read on kkreckons.com")}</p>`);
-
-if (ed.callouts?.length) {
-  parts.push(`<h3>By the numbers</h3>`);
-  parts.push(
-    `<ul>${ed.callouts
-      .map((c) => `<li><p><strong>${esc(c.num)}</strong> ${esc(c.text)}</p></li>`)
-      .join("")}</ul>`,
-  );
+/** "What to watch: …" already carries its own label; otherwise label it "The other side". */
+function otherSide(text) {
+  const m = /^([A-Z][A-Za-z ]{2,24}):\s+(.*)$/s.exec(text);
+  return m ? [m[1], m[2]] : ["The other side", text];
 }
 
-for (const section of ed.sections) {
-  parts.push(rule);
-  parts.push(`<h2>${esc(section.name)}</h2>`);
-  for (const s of section.stories) {
-    const kicker = [s.category, s.tag].filter(Boolean).join(" · ");
-    if (kicker) parts.push(`<p><strong>${esc(kicker.toUpperCase())}</strong></p>`);
-    parts.push(`<h3>${esc(s.title)}</h3>`);
-    if (s.image) {
-      parts.push(
-        `<figure data-type="imageBlock" data-src="${esc(SITE + s.image)}" data-alt="${esc(s.imageAlt)}" data-align="center" data-width="100%"><figcaption>${esc(s.imageCredit || "")}</figcaption></figure>`,
+const parts = [];
+const storyCount = ed.sections.reduce((n, s) => n + s.stories.length, 0);
+parts.push(`<p>${color(C.muted, `${storyCount} stories · about ${ed.readingMinutes} minutes`)}</p>`);
+
+fs.mkdirSync(path.join("public", "email"), { recursive: true });
+let n = 0;
+for (const sec of ed.sections) {
+  parts.push(
+    section(
+      { "background-color": C.navy, color: "#FFFFFF", ...pad(6, 16), ...radius(6), "margin-top": 24 },
+      `<p><strong>${esc(sec.name.toUpperCase())}</strong></p>`,
+    ),
+  );
+  for (const s of sec.stories) {
+    n += 1;
+    const kicker = [s.category, s.tag].filter(Boolean).join(" · ").toUpperCase();
+    const head =
+      (kicker ? `<p>${color(C.teal, `<strong>${esc(kicker)}</strong>`)}</p>` : "") + `<h3>${esc(s.title)}</h3>`;
+
+    let top = head;
+    const fig = s.image ? path.join("public", s.image) : "";
+    if (fig && fs.existsSync(fig)) {
+      const thumb = `${date}-${n}.jpg`;
+      await thumbnail(fig, path.join("public", "email", thumb));
+      top =
+        `<div data-type="columns" data-stack-on-mobile="false">` +
+        `<div data-type="column" data-position="0" data-width="24%" data-vertical-align="middle">` +
+        `<figure data-type="imageBlock" data-src="${SITE}/email/${thumb}" data-alt="" data-align="center" data-width="100%" data-url="${esc(pageUrl)}"><figcaption></figcaption></figure>` +
+        `</div>` +
+        `<div data-type="column" data-position="1" data-width="76%" data-vertical-align="middle">${head}</div>` +
+        `</div>`;
+    }
+
+    const body = [];
+    if (s.points?.length) body.push(`<ul>${s.points.map((p) => `<li><p>${esc(p)}</p></li>`).join("")}</ul>`);
+    if (s.why) {
+      body.push(
+        `<figure data-type="blockquoteFigure" data-variant="2"><blockquote>` +
+          `<p>${color(C.red, "<strong>Why it matters</strong>")}</p><p>${esc(s.why)}</p>` +
+          `</blockquote><figcaption data-type="quoteCaption"></figcaption></figure>`,
       );
     }
-    if (s.points?.length) {
-      parts.push(`<ul>${s.points.map((p) => `<li><p>${esc(p)}</p></li>`).join("")}</ul>`);
+    if (s.other) {
+      const [label, text] = otherSide(s.other);
+      body.push(`<p>${color(C.teal, `<strong>${esc(label)}:</strong>`)} ${esc(text)}</p>`);
     }
-    if (s.why) parts.push(`<p><strong>Why it matters:</strong> ${esc(s.why)}</p>`);
-    if (s.other) parts.push(`<p><strong>Other side:</strong> ${esc(s.other)}</p>`);
     if (s.url) {
       const src = s.src || new URL(s.url).hostname.replace(/^www\./, "");
-      parts.push(`<p>Source: ${link(s.url, src)}${s.pay ? " (subscription)" : ""}</p>`);
+      body.push(`<p>${color(C.muted, `Read the original: ${link(s.url, src)}${s.pay ? " (subscription)" : ""}`)}</p>`);
     }
+
+    parts.push(
+      section(
+        {
+          "background-color": C.cream, "border-color": C.rule, "border-style": "solid",
+          "border-width-top": 1, "border-width-right": 1, "border-width-bottom": 1, "border-width-left": 1,
+          ...radius(12), ...pad(8, 20, 8, 20), "margin-top": 16,
+        },
+        top + body.join(""),
+      ),
+    );
   }
 }
 
 if (ed.reading?.length) {
-  parts.push(rule);
-  parts.push(`<h2>Further reading</h2>`);
+  parts.push(
+    section(
+      { "background-color": C.navy, color: "#FFFFFF", ...pad(6, 16), ...radius(6), "margin-top": 24 },
+      `<p><strong>FURTHER READING</strong></p>`,
+    ),
+  );
   parts.push(
     `<ul>${ed.reading
       .map((r) => `<li><p>${link(r.url, r.title)}${r.src ? ` (${esc(r.src)})` : ""}</p></li>`)
@@ -89,9 +162,51 @@ if (ed.reading?.length) {
   );
 }
 
-parts.push(rule);
-parts.push(button(pageUrl, "Read the full edition"));
-parts.push(`<p>Missed an edition? Every one is on ${link(`${SITE}/daily/`, "Catch up")}.</p>`);
+parts.push(
+  `<div class="node-button"><a data-type="button" href="${esc(pageUrl)}" data-alignment="center" data-size="large">Read today’s edition on kkreckons.com</a></div>`,
+);
+parts.push(`<p style="text-align: center">${color(C.muted, `Missed one? Every edition is on ${link(`${SITE}/daily/`, "Catch up")}.`)}</p>`);
+
+// Per-post theme: KKReckons colours, one body font, quieter links and rules.
+const theme = {
+  background_color: C.page,
+  content_background_color: "#FFFFFF",
+  paragraph_color: C.text,
+  list_font_family: "Inter",
+  list_font_color: C.text,
+  list_line_height_exact: "1.5",
+  list_item_spacing: "6",
+  list_padding_top: "4",
+  list_padding_bottom: "4",
+  inline_link_italic: "false",
+  inline_link_color: C.teal,
+  inline_link_underline_color: C.teal,
+  h3_font_size: "20",
+  h3_font_color: C.navy,
+  h3_padding_top: "4",
+  header_title_font_color: C.navy,
+  header_subtitle_font_size: "18",
+  header_subtitle_font_weight: "500",
+  header_subtitle_font_color: C.red,
+  image_padding_top: "8",
+  image_padding_bottom: "8",
+  quote_2_background_color: "#FFFFFF",
+  quote_2_border_color: C.red,
+  quote_2_border_left_width: "3",
+  quote_2_font_family: "Inter",
+  quote_2_font_size: "16",
+  quote_2_font_color: C.navy,
+  quote_2_padding_left: "14",
+  quote_2_padding_top: "4",
+  quote_2_padding_bottom: "4",
+  button_background_color: C.red,
+  button_border_color: C.red,
+  button_text_color: "#FFFFFF",
+  button_font_family: "Inter",
+  button_font_weight: "bold",
+  button_border_radius: "24",
+  button_margin_top: "28",
+};
 
 const payload = {
   title: `KKReckons, ${longDate}`,
@@ -103,6 +218,7 @@ const payload = {
     display_subtitle_in_email: true,
   },
   web_settings: { slug: `kkreckons-${date}` },
+  theme,
   html_content: parts.join("\n"),
 };
 
