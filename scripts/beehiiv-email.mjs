@@ -1,7 +1,7 @@
 // Builds the beehiiv email draft for one edition from data/content/<date>.json.
 // Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json]
 //
-// Also writes a small illustration thumbnail per story to public/email/<date>-<n>.jpg,
+// Also writes a small illustration thumbnail per story to public/email/<date>-<n>.png,
 // cut from the circle at the top right of each KKReckons explainer graphic. The email
 // shows those thumbnails rather than the full graphics: the full graphic repeats the
 // story's points, takeaway and other side, so the email would say everything twice.
@@ -56,7 +56,14 @@ async function thumbnail(src, dest) {
   const { width } = await img.metadata();
   const k = width / 2160; // graphics are laid out on a 2160px-wide canvas
   const box = { left: Math.round(1463 * k), top: Math.round(87 * k), width: Math.round(617 * k), height: Math.round(617 * k) };
-  await img.extract(box).resize(160, 160).jpeg({ quality: 80 }).toFile(dest);
+  // Round with transparent corners, so it sits cleanly on any card or page colour.
+  const mask = Buffer.from('<svg width="160" height="160"><circle cx="80" cy="80" r="79" fill="#fff"/></svg>');
+  await img
+    .extract(box)
+    .resize(160, 160)
+    .composite([{ input: mask, blend: "dest-in" }])
+    .png({ compressionLevel: 9, palette: true })
+    .toFile(dest);
 }
 
 const esc = (s) =>
@@ -84,6 +91,27 @@ function otherSide(text) {
   return m ? [m[1], m[2]] : ["The other side", text];
 }
 
+/**
+ * Section heading as coloured text over a rule. It reads the same whether or not the
+ * mail app shows background colours (Gmail's print view and some dark modes drop them).
+ */
+const banner = (name) =>
+  section(
+    {
+      "border-color": C.navy, "border-style": "solid",
+      "border-width-top": 0, "border-width-right": 0, "border-width-bottom": 2, "border-width-left": 0,
+      ...pad(0, 0, 0, 0), "margin-top": 28,
+    },
+    `<p>${color(C.red, `<strong>${esc(name.toUpperCase())}</strong>`)}</p>`,
+  );
+
+/** "X" alone says little; a title like "Craig Tindale: …" gives "Craig Tindale on X". */
+function sourceLabel(s) {
+  const src = s.src || new URL(s.url).hostname.replace(/^www\./, "");
+  const who = /^([^:]{3,40}):\s/.exec(s.title || "");
+  return src === "X" && who ? `${who[1]} on X` : src;
+}
+
 const parts = [];
 const storyCount = ed.sections.reduce((n, s) => n + s.stories.length, 0);
 parts.push(`<p>${color(C.muted, `${storyCount} stories · about ${ed.readingMinutes} minutes`)}</p>`);
@@ -91,12 +119,7 @@ parts.push(`<p>${color(C.muted, `${storyCount} stories · about ${ed.readingMinu
 fs.mkdirSync(path.join("public", "email"), { recursive: true });
 let n = 0;
 for (const sec of ed.sections) {
-  parts.push(
-    section(
-      { "background-color": C.navy, color: "#FFFFFF", ...pad(6, 16), ...radius(6), "margin-top": 24 },
-      `<p><strong>${esc(sec.name.toUpperCase())}</strong></p>`,
-    ),
-  );
+  parts.push(banner(sec.name));
   for (const s of sec.stories) {
     n += 1;
     const kicker = [s.category, s.tag].filter(Boolean).join(" · ").toUpperCase();
@@ -106,7 +129,7 @@ for (const sec of ed.sections) {
     let top = head;
     const fig = s.image ? path.join("public", s.image) : "";
     if (fig && fs.existsSync(fig)) {
-      const thumb = `${date}-${n}.jpg`;
+      const thumb = `${date}-${n}.png`;
       await thumbnail(fig, path.join("public", "email", thumb));
       top =
         `<div data-type="columns" data-stack-on-mobile="false">` +
@@ -131,8 +154,7 @@ for (const sec of ed.sections) {
       body.push(`<p>${color(C.teal, `<strong>${esc(label)}:</strong>`)} ${esc(text)}</p>`);
     }
     if (s.url) {
-      const src = s.src || new URL(s.url).hostname.replace(/^www\./, "");
-      body.push(`<p>${color(C.muted, `Read the original: ${link(s.url, src)}${s.pay ? " (subscription)" : ""}`)}</p>`);
+      body.push(`<p>${color(C.muted, `Read the original: ${link(s.url, sourceLabel(s))}${s.pay ? " (subscription)" : ""}`)}</p>`);
     }
 
     parts.push(
@@ -149,12 +171,7 @@ for (const sec of ed.sections) {
 }
 
 if (ed.reading?.length) {
-  parts.push(
-    section(
-      { "background-color": C.navy, color: "#FFFFFF", ...pad(6, 16), ...radius(6), "margin-top": 24 },
-      `<p><strong>FURTHER READING</strong></p>`,
-    ),
-  );
+  parts.push(banner("Further reading"));
   parts.push(
     `<ul>${ed.reading
       .map((r) => `<li><p>${link(r.url, r.title)}${r.src ? ` (${esc(r.src)})` : ""}</p></li>`)
