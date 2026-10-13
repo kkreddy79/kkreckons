@@ -1,5 +1,103 @@
 [
   {
+    "date": "2026-10-13",
+    "slice": "Fridges overheat, diamonds cool, voters fume. Value sits with whoever holds the switch.",
+    "artifact": "https://claude.ai/artifact/JdSVQW4983hwD9HzA8yJ8a",
+    "readingMinutes": 6,
+    "image": "/figs/2026-10-13-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Hackers heat French supermarket fridges, causing fires and food losses",
+        "category": "Cyberattack",
+        "tag": "",
+        "url": "https://www.reuters.com/business/retail-consumer/french-supermarket-chain-intermarche-hit-by-cyberattack-150-stories-targeted-2026-10-12/",
+        "src": "Reuters",
+        "pay": false,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Craig Tindale: India is rich in dollars but short of key materials",
+        "category": "Critical minerals",
+        "tag": "Opinion",
+        "url": "https://x.com/ctindale/status/2109474636299903295",
+        "src": "X",
+        "pay": false,
+        "themes": [
+          "India",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Craig Tindale: RBI rules starve India’s factories of affordable credit",
+        "category": "Monetary policy",
+        "tag": "Opinion",
+        "url": "https://x.com/ctindale/status/2109798280372863133",
+        "src": "X",
+        "pay": false,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Andy Kessler: how the AI data-centre boom ends",
+        "category": "AI economics",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/how-the-ai-boom-ends-0d9d47e7",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI personal assistants are here, and the fight is over trust",
+        "category": "AI assistants",
+        "tag": "Opinion",
+        "url": "https://economictimes.indiatimes.com/news/international/world-news/the-rise-of-ai-personal-assistants-and-the-battle-for-users-trust/articleshow/134865636.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Gerard Baker: voters think the US economy is worse than it is",
+        "category": "US politics",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/its-the-economy-stupidbut-how-stupid-f1ef0b98",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Diamonds may not be forever, at least in value",
+        "category": "Alternative assets",
+        "tag": "",
+        "url": "https://www.investmentnews.com/alternatives/diamonds-may-not-be-forever-at-least-in-value-terms/268370",
+        "src": "InvestmentNews",
+        "pay": false,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-12",
     "slice": "Banks hedge AI. Workers hedge Monday. Africa hedges Moody’s. Growth now needs a seatbelt.",
     "artifact": "https://claude.ai/artifact/CbuiN48id5HuvcmHxVYWCw",
