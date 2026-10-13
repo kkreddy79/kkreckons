@@ -83,6 +83,7 @@ const PUBLISHERS: Record<string, string> = {
   "wolfstreet.com": "Wolf Street",
   "reuters.com": "Reuters",
   "thehindu.com": "The Hindu",
+  "investmentnews.com": "InvestmentNews",
 };
 
 /** "https://www.livemint.com/…" → "Mint" (falls back to the domain) */

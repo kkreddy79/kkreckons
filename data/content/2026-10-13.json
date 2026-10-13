@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-13",
+  "slice": "Fridges overheat, diamonds cool, voters fume. Value sits with whoever holds the switch.",
+  "artifact": "https://claude.ai/artifact/JdSVQW4983hwD9HzA8yJ8a",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "50°C",
+      "text": "fridge temperatures hackers forced in French supermarkets, sparking fires and food losses.",
+      "url": "https://www.reuters.com/business/retail-consumer/french-supermarket-chain-intermarche-hit-by-cyberattack-150-stories-targeted-2026-10-12/"
+    },
+    {
+      "num": "$734.6bn",
+      "text": "in India’s forex reserves can’t buy a magnet China won’t license, argues Craig Tindale.",
+      "url": "https://x.com/ctindale/status/2109474636299903295"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Cyberattack",
+          "tag": "",
+          "title": "Hackers heat French supermarket fridges, causing fires and food losses",
+          "url": "https://www.reuters.com/business/retail-consumer/french-supermarket-chain-intermarche-hit-by-cyberattack-150-stories-targeted-2026-10-12/",
+          "url2": "https://www.theguardian.com/world/2026/oct/12/cyber-attack-defrosts-refrigerators-france-supermarket-chains-intermarche-cooperative-u",
+          "points": [
+            "Hackers pushed connected fridges in French supermarkets up to 50°C overnight, causing fires and food losses at several hundred stores. The Paris prosecutor is investigating, and the prime minister has asked cyber agency ANSSI to look into it.",
+            "About 150 Intermarché stores and 80 Carrefour supermarkets were hit, and Coopérative U was affected too; Intermarché’s owner threw all the food away. ANSSI traced the weak point to Danfoss refrigeration software, which Danfoss says was running outdated firmware.",
+            "Separately, Ahold Delhaize took systems offline over a “security issue”, and websites of its US chains, including Stop & Shop and Giant, went down; any link is unclear."
+          ],
+          "numbers": [
+            [
+              "50°C",
+              "fridge temperature reached"
+            ],
+            [
+              "~150",
+              "Intermarché stores hit"
+            ],
+            [
+              "80",
+              "Carrefour stores hit"
+            ]
+          ],
+          "why": "The food supply now runs on connected equipment that few people think to patch, and one old firmware version turned shop fridges into a national-security problem overnight.",
+          "other": "What to watch: whether investigators confirm the fridges ran firmware Danfoss had long urged customers to update; if so, this is a maintenance failure more than a new kind of attack.",
+          "also": [],
+          "image": "/figs/2026-10-13-1.jpg",
+          "imageAlt": "KKReckons explainer: how hackers overheated French supermarket fridges, how many stores were hit and how the attackers got in.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Reuters",
+          "pay": false,
+          "themes": [
+            "Geopolitics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Critical minerals",
+          "tag": "Opinion",
+          "title": "Craig Tindale: India is rich in dollars but short of key materials",
+          "url": "https://x.com/ctindale/status/2109474636299903295",
+          "url2": "",
+          "points": [
+            "Tindale argues that seven inputs behind India’s factory push, from rare-earth magnets and battery cells to graphite, solar polysilicon, magnesium, antimony and gallium, all lead back to China through ore, ownership or licences.",
+            "His evidence: after Beijing put export licences on rare-earth magnets in April 2025, Bajaj built 47% fewer Chetak e-scooters that July than a year earlier. China supplied about 83% of India’s imported permanent magnets in 2024.",
+            "India holds $734.6bn in forex reserves but no published stockpile of these minerals, he notes, and China’s pause on wider export controls ends on 10 November."
+          ],
+          "numbers": [
+            [
+              "$734.6bn",
+              "India’s forex reserves"
+            ],
+            [
+              "83%",
+              "of imported magnets from China"
+            ]
+          ],
+          "why": "It reframes self-reliance: a country can be rich in reserves and still sit one licence delay away from idle factory lines.",
+          "other": "The Bajaj episode also shows adaptation: within weeks it switched to a different type of magnet and found fresh supply, so dependence may bend before it breaks.",
+          "also": [],
+          "image": "/figs/2026-10-13-2.jpg",
+          "imageAlt": "KKReckons explainer: the seven materials India's factories rely on, how a magnet licence slowed scooter output and why reserves cannot fix it.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "X",
+          "pay": false,
+          "themes": [
+            "India",
+            "Geopolitics"
+          ]
+        },
+        {
+          "category": "Monetary policy",
+          "tag": "Opinion",
+          "title": "Craig Tindale: RBI rules starve India’s factories of affordable credit",
+          "url": "https://x.com/ctindale/status/2109798280372863133",
+          "url2": "",
+          "points": [
+            "In part two, Tindale blames India’s banking rulebook: a 4% inflation target driven by food prices keeps rates high, so in December 2025 Indian borrowers paid about 7% in real terms, against about 2.3% in China.",
+            "Capital rules make an unrated factory loan far costlier for a bank to hold than a home loan or a government bond, so for every rupee of new credit to industry, about two and a half went to consumption and housing.",
+            "India’s 19.7 million small manufacturers cannot raise equity and bear the brunt; manufacturing has slipped from 17.3% of GDP in 2006 to 13.1%."
+          ],
+          "numbers": [
+            [
+              "~7%",
+              "real borrowing cost, India"
+            ],
+            [
+              "~2.3%",
+              "real borrowing cost, China"
+            ]
+          ],
+          "why": "If he is right, the real bottleneck for Make in India is the price of credit, which no factory subsidy fully offsets.",
+          "other": "Would cheaper, state-directed credit build factories or repeat India’s own bad-loan cycle? Tight money also shields savers and the poor from inflation.",
+          "also": [],
+          "image": "/figs/2026-10-13-3.jpg",
+          "imageAlt": "KKReckons explainer: why Indian factories pay more to borrow than Chinese ones and where bank credit goes instead.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "X",
+          "pay": false,
+          "themes": [
+            "India",
+            "Banking"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI economics",
+          "tag": "Opinion",
+          "title": "Andy Kessler: how the AI data-centre boom ends",
+          "url": "https://www.wsj.com/opinion/how-the-ai-boom-ends-0d9d47e7",
+          "url2": "",
+          "points": [
+            "The WSJ columnist argues that today’s brute-force AI, giant models on costly chips in power-hungry data centres, will go the way of mainframes: still sold, but no longer where the growth is.",
+            "He says the “factor of 10” shift has begun: comparable Chinese open-weight models charge about 90% less per token than leading US labs, and compressed models now run on PCs and phones with no token costs.",
+            "If prices fall 90%, demand must rise 900% just to stand still, so he warns of data-centre halts and debt defaults, and asks whether 2027 is peak data centre."
+          ],
+          "numbers": [
+            [
+              "~90%",
+              "cheaper tokens, Chinese models"
+            ],
+            [
+              "900%",
+              "demand rise needed to stay flat"
+            ]
+          ],
+          "why": "Data-centre spending is financed on today’s token prices; if prices collapse faster than demand grows, lenders feel it before chipmakers do.",
+          "other": "Cheaper tokens can unlock new uses, and Kessler himself says training, science and agents still need big chips, so the build-out could slow without collapsing.",
+          "also": [],
+          "image": "/figs/2026-10-13-4.jpg",
+          "imageAlt": "KKReckons explainer: why AI token prices are falling, where AI is moving and what that could mean for data-centre spending.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ]
+        },
+        {
+          "category": "AI assistants",
+          "tag": "Opinion",
+          "title": "AI personal assistants are here, and the fight is over trust",
+          "url": "https://economictimes.indiatimes.com/news/international/world-news/the-rise-of-ai-personal-assistants-and-the-battle-for-users-trust/articleshow/134865636.cms",
+          "url2": "",
+          "points": [
+            "After chatbots and voice assistants, AI is turning into a true personal assistant that acts for you, the column argues. Meta’s Muse books appointments, fills in forms and shops, and now has a keychain device, Muse Charm.",
+            "Start-up Instinct, reachable by text, WhatsApp or phone, raised $250m at a $2.5bn valuation in August and was valued at $10bn a month later; Apple, Google and Amazon are building rivals.",
+            "Being useful means reading your email, calendar and even bank details, so trust is the battleground; Amazon has already blocked Muse from shopping on its site."
+          ],
+          "numbers": [
+            [
+              "$10bn",
+              "Instinct’s value, a month on"
+            ],
+            [
+              "$250m",
+              "Instinct’s August raise"
+            ]
+          ],
+          "why": "The next platform war is over who acts on your behalf, and with Muse due in India soon, the privacy question is about to get practical for Indian users.",
+          "other": "Siri, Alexa and Google Assistant also promised a helper and ended up setting timers; platforms such as Amazon can simply refuse to let agents in.",
+          "also": [],
+          "image": "/figs/2026-10-13-5.jpg",
+          "imageAlt": "KKReckons explainer: what AI personal assistants can do, who is building them and why trust decides who wins.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "AI"
+          ]
+        },
+        {
+          "category": "US politics",
+          "tag": "Opinion",
+          "title": "Gerard Baker: voters think the US economy is worse than it is",
+          "url": "https://www.wsj.com/opinion/its-the-economy-stupidbut-how-stupid-f1ef0b98",
+          "url2": "",
+          "points": [
+            "The WSJ’s editor at large argues that, as in 1992, perceptions rather than data are driving voters ahead of next month’s midterms, which Republicans expect to lose badly.",
+            "A Quinnipiac poll gives Trump 31% approval on the economy, lower than Biden scored in June 2022, when inflation was at a 40-year high and output was shrinking, even though inflation and unemployment are lower today.",
+            "He grants that prices remain far above 2020 levels and that tariffs and a war-driven rise in energy prices feed bills, but says AI investment may be starting a long boom."
+          ],
+          "numbers": [
+            [
+              "31%",
+              "Trump’s approval on the economy"
+            ]
+          ],
+          "why": "Midterms may turn on how prices feel at the checkout, not on GDP; the gap between data and mood is the real political variable.",
+          "other": "After years of increases, households judge price levels, not the inflation rate, and fuel costs have climbed again, so the ‘misperception’ may be a fair reading of stretched budgets.",
+          "also": [],
+          "image": "/figs/2026-10-13-6.jpg",
+          "imageAlt": "KKReckons explainer: why voters rate the US economy poorly despite stronger data, and the case on each side.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ]
+        },
+        {
+          "category": "Alternative assets",
+          "tag": "",
+          "title": "Diamonds may not be forever, at least in value",
+          "url": "https://www.investmentnews.com/alternatives/diamonds-may-not-be-forever-at-least-in-value-terms/268370",
+          "url2": "",
+          "points": [
+            "A standard one-carat natural diamond averaged about $3,898 in September 2026, down 51% from $8,007 in September 2021, according to Rapaport data.",
+            "Lab-grown stones, chemically identical, were in 61% of engagement rings sold in 2025, The Knot’s study finds; a comparable lab stone costs about $450, against $2,800 to $3,200 for a natural one.",
+            "The market is splitting: mid-range natural stones are most exposed, larger and rarer gems are holding up, and De Beers is halting its Venetia mine for more than two years to curb supply."
+          ],
+          "numbers": [
+            [
+              "−51%",
+              "one-carat price since 2021"
+            ],
+            [
+              "61%",
+              "engagement rings with lab stones"
+            ]
+          ],
+          "why": "For anyone holding jewellery as savings, ordinary diamonds now behave like consumer goods; only rare, large stones still act like assets.",
+          "other": "What to watch: Rapaport’s one-carat index was flat in August after 13 months of falls, and De Beers’ supply cut could put a floor under prices.",
+          "also": [],
+          "image": "/figs/2026-10-13-7.jpg",
+          "imageAlt": "KKReckons explainer: how far diamond prices have fallen, why lab-grown stones are winning and which gems still hold value.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "InvestmentNews",
+          "pay": false,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": []
+}
