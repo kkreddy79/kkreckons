@@ -180,7 +180,7 @@ if (ed.reading?.length) {
 }
 
 parts.push(
-  `<div class="node-button"><a data-type="button" href="${esc(pageUrl)}" data-alignment="center" data-size="large">Read today’s edition on kkreckons.com</a></div>`,
+  `<div class="node-button"><a data-type="button" href="${esc(pageUrl)}" data-alignment="center" data-size="large" data-custom-background-color="${C.red}" data-custom-text-color="#FFFFFF">Read today’s edition on kkreckons.com</a></div>`,
 );
 parts.push(`<p style="text-align: center">${color(C.muted, `Missed one? Every edition is on ${link(`${SITE}/daily/`, "Catch up")}.`)}</p>`);
 
