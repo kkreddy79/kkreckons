@@ -1,0 +1,265 @@
+{
+  "date": "2026-10-14",
+  "slice": "Banks pay fines, importers pay hedges, Gen Z pays in waiting. Change sends no invoice.",
+  "artifact": "https://claude.ai/artifact/2pSDtwdaNH52uus9YKfeke",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "$1.2bn",
+      "text": "BofA penalty for weak money-laundering controls, with $5bn+ of suspicious activity unreported.",
+      "url": "https://www.wsj.com/finance/regulation/bank-of-america-to-pay-1-21-billion-to-settle-violations-of-money-laundering-sanctions-laws-203b5fdf"
+    },
+    {
+      "num": "95.28",
+      "text": "rupees per dollar after the RBI’s curbs lifted it about 150 paise in two days.",
+      "url": "https://m.economictimes.com/markets/forex/forex-news/rbis-rupee-defence-curbs-speculation-raises-hedging-costs/articleshow/134929407.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Leadership and change",
+          "tag": "Explainer",
+          "title": "Why keeping up with change feels harder than ever",
+          "url": "https://hbr.org/2026/01/why-keeping-up-with-change-feels-harder-than-ever",
+          "url2": "",
+          "points": [
+            "Authors from Gartner’s HR practice say leading through change is harder because four things now arrive together: more change stacked on top of other change, faster and continuous change, bigger and interdependent change, and shocks driven from outside by technology and geopolitics.",
+            "They call the result “ungovernable change”, with no clear start or end date to manage.",
+            "Their advice: stop coaching staff through each change one by one, and run change as a routine, everyday business process."
+          ],
+          "numbers": [
+            [
+              "4",
+              "forces that make change harder"
+            ]
+          ],
+          "why": "Leaders who run each change as a separate project will wear out their people. The practical shift is a standing capacity to absorb change, with clear priorities and routine adjustment.",
+          "other": "Treating change as routine can become an excuse for endless churn. People may still need honest limits, rest and clarity about what will not change.",
+          "also": [],
+          "image": "/figs/2026-10-14-1.jpg",
+          "imageAlt": "KKReckons explainer: the four forces that make change feel ungovernable for leaders and the advice to treat change as routine.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Harvard Business Review",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ]
+        },
+        {
+          "category": "China jobs",
+          "tag": "",
+          "title": "China’s weak economy is creating a lost generation",
+          "url": "https://www.wsj.com/world/china-economy-gen-z-f9058941",
+          "url2": "",
+          "points": [
+            "WSJ reports that China’s Gen Z, raised to believe hard work guarantees a better life, now faces a shrinking job market, burnout and delayed marriage, with some living off savings or their parents.",
+            "AI adds to the squeeze: big employers are quietly trimming staff, managers are less willing to hire inexperienced people, and officials have warned firms not to cut jobs as they adopt AI.",
+            "Urban youth joblessness is near 19%, far above the US rate, and some economists think the true picture is worse than official data."
+          ],
+          "numbers": [
+            [
+              "~19%",
+              "urban jobless rate, ages 16 to 24"
+            ]
+          ],
+          "why": "Weak youth hiring is a slow-burning social and consumer problem: delayed marriages and cautious spending can drag on growth for years, and it is an early test of AI’s effect on entry-level work everywhere.",
+          "other": "Past technology shifts have created new work, and China’s shrinking population may eventually need automation, so the pain may be about timing rather than permanent.",
+          "also": [],
+          "image": "/figs/2026-10-14-2.jpg",
+          "imageAlt": "KKReckons explainer: why China’s young workers struggle to find stable jobs and how AI adds pressure.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "Geopolitics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "India and capital",
+          "tag": "Interview",
+          "title": "Blackstone’s Jon Gray: India is the second-easiest place to list",
+          "url": "https://m.economictimes.com/news/india/blackstones-coo-highlights-indias-growth-potential-and-investment-opportunities-in-new-interview/articleshow/134926172.cms",
+          "url2": "",
+          "points": [
+            "Blackstone’s chief operating officer says India is the firm’s best-performing market and it wants to double its investment there to $100bn in five years, from about $50bn now.",
+            "Gray concedes that wars, energy costs, rising rates and heavy AI spending may squeeze asset multiples, but calls India’s pullback a better entry point for a patient investor, citing growth above 7% and a young population.",
+            "He points to liquid markets, including a $1bn-plus share sale in August, and says Indian IT firms are turning into AI deployment partners."
+          ],
+          "numbers": [
+            [
+              "$100bn",
+              "five-year target in India"
+            ],
+            [
+              "$50bn",
+              "deployed today"
+            ]
+          ],
+          "why": "A heavyweight global investor still treats India as a long-term allocation and sees the dip as a buying chance, which matters while foreign portfolio investors have been pulling money out this year.",
+          "other": "A big investor talks its own book: Blackstone gains if Indian valuations and listings stay strong. Public-market money moves faster, and Gray concedes it can be fickle.",
+          "also": [],
+          "image": "/figs/2026-10-14-3.jpg",
+          "imageAlt": "KKReckons explainer: why Blackstone is bullish on India, what worries it and its $100bn target.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ]
+        },
+        {
+          "category": "Rupee defence",
+          "tag": "Explainer",
+          "title": "How the RBI’s six forex measures aim to steady the rupee",
+          "url": "https://m.economictimes.com/markets/forex/forex-news/rbis-rupee-defence-curbs-speculation-raises-hedging-costs/articleshow/134929407.cms",
+          "url2": "",
+          "points": [
+            "Since Saturday the RBI has taken six steps to lift the rupee to what Governor Sanjay Malhotra calls its “correct” value; the currency has recovered about 150 paise in two days to 95.28 a dollar.",
+            "Banks must now hold a 20% cash reserve against forex derivative contracts above $2m, trading limits drop to $5m from $100m, and cancelled contracts cannot be rebooked. Importers’ hedging costs rise by at least 150 basis points.",
+            "The RBI will also supply dollars directly to three state-run fuel retailers for now. Economists call this tactical, and say defending the rupee is costly without wider reform."
+          ],
+          "numbers": [
+            [
+              "95.28",
+              "rupees per dollar now"
+            ],
+            [
+              "20%",
+              "reserve on hedges above $2m"
+            ]
+          ],
+          "why": "Importers feel this first: hedging gets dearer and speculation harder, while the RBI spends its dollars to buy time for the rupee.",
+          "other": "What to watch: whether the rupee holds its gains once the temporary oil-retailer dollar window closes, and whether economists’ calls for broader reform and more flexible rates gain ground.",
+          "also": [],
+          "image": "/figs/2026-10-14-4.jpg",
+          "imageAlt": "KKReckons explainer: the RBI’s curbs on forex hedging and dollar supply, and what they mean for the rupee.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Banking"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Banking compliance",
+          "tag": "",
+          "title": "Bank of America pays $1.2bn over weak money-laundering controls",
+          "url": "https://www.wsj.com/finance/regulation/bank-of-america-to-pay-1-21-billion-to-settle-violations-of-money-laundering-sanctions-laws-203b5fdf",
+          "url2": "",
+          "points": [
+            "US regulators fined Bank of America about $1.2bn after finding weak systems for spotting and reporting financial crime, including money laundering by Chinese underground bankers and suspicious activity near the southwest border.",
+            "Officials say the bank failed to report more than $5bn of suspicious activity, and that tests ordered after a 2024 Treasury order exposed further gaps.",
+            "The bank says it has spent billions on compliance and will book a $1.2bn non-deductible charge in Wednesday’s third-quarter results; shares slipped in after-hours trading."
+          ],
+          "numbers": [
+            [
+              "$1.2bn",
+              "penalty on the bank"
+            ],
+            [
+              "$5bn+",
+              "suspicious activity unreported"
+            ]
+          ],
+          "why": "A compliance failure now costs enough to dent quarterly earnings, so expect banks to keep spending on screening and surveillance, and to be pickier about risky clients.",
+          "other": "The bank says it has worked with regulators for years and spent billions on controls, and criminal networks adapt faster than supervisors, so some failures may reflect an arms race rather than neglect.",
+          "also": [],
+          "image": "/figs/2026-10-14-5.jpg",
+          "imageAlt": "KKReckons explainer: what went wrong at Bank of America and what the $1.2bn settlement requires.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "Markets"
+          ]
+        },
+        {
+          "category": "UK public finances",
+          "tag": "",
+          "title": "Rising sickness and disability claims strain Britain’s budget",
+          "url": "https://www.wsj.com/world/uk/united-kingdom-welfare-disability-payouts-737d77a0",
+          "url2": "",
+          "points": [
+            "WSJ says Britain has seen an unusual surge in sickness and disability claims: about seven million people now claim, many for mental-health conditions that are hard to verify.",
+            "The yearly bill, excluding healthcare, tops £100bn and keeps rising, while Britain’s borrowing costs are the highest in the G7 and investors punish any sign of weak fiscal discipline.",
+            "An earlier attempt to tighten eligibility was dropped after a backlash and a bond sell-off; the new Labour leadership promises reform without “crude cuts”, with a budget due later this month."
+          ],
+          "numbers": [
+            [
+              "7m",
+              "claim sickness or disability aid"
+            ],
+            [
+              "£100bn+",
+              "yearly benefit bill"
+            ]
+          ],
+          "why": "It shows why bond investors watch welfare: when spending is politically hard to cut, borrowing costs rise and taxes follow, a squeeze other ageing democracies will recognise.",
+          "other": "Some of the rise may reflect genuine need and better recognition of mental-health conditions, and hard cuts could push vulnerable people into hardship rather than into work.",
+          "also": [],
+          "image": "/figs/2026-10-14-6.jpg",
+          "imageAlt": "KKReckons explainer: what drives Britain’s sickness-benefit surge and why bond markets care.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ]
+        },
+        {
+          "category": "Creator economy",
+          "tag": "",
+          "title": "Brands, not platforms, fund the creator economy",
+          "url": "https://www.ft.com/content/dbef1d8b-6bf7-4cc2-b2b7-e000eb101057?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The FT finds that platform payouts are only part of the creator economy; the big money comes from brands that sponsor or commission content, and agencies and talent managers are racing to broker it.",
+            "For many creators, brand deals make up about 80% of earnings. Rates climb once an account passes roughly 100,000 followers and gets an agent, and average video views now matter more than follower counts.",
+            "YouTube pays most clearly, having shared $100bn with partners from 2022 to 2025, while TikTok, Instagram and X pay less but offer reach. Brands also fear creator misbehaviour and unclear expectations."
+          ],
+          "numbers": [
+            [
+              "~80%",
+              "creator earnings from brands"
+            ],
+            [
+              "$100bn",
+              "YouTube payouts, 2022-25"
+            ]
+          ],
+          "why": "For marketers and media investors, creators are now a distribution channel with agency middlemen, so measuring reach and return is the next battleground.",
+          "other": "The money is uneven and platform payouts are patchy, and campaigns that look good on paper may not convert, as marketers themselves warn.",
+          "also": [],
+          "image": "/figs/2026-10-14-7.jpg",
+          "imageAlt": "KKReckons explainer: how brand money flows to creators and what can go wrong.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "Markets"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": []
+}

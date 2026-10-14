@@ -23,6 +23,7 @@ export type Edition = {
 
 const PUBLISHERS: Record<string, string> = {
   "ft.com": "Financial Times",
+  "hbr.org": "Harvard Business Review",
   "giftarticle.ft.com": "Financial Times",
   "livemint.com": "Mint",
   "economictimes.indiatimes.com": "The Economic Times",

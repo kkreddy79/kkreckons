@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-10-14",
+    "slice": "Banks pay fines, importers pay hedges, Gen Z pays in waiting. Change sends no invoice.",
+    "artifact": "https://claude.ai/artifact/2pSDtwdaNH52uus9YKfeke",
+    "readingMinutes": 6,
+    "image": "/figs/2026-10-14-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Why keeping up with change feels harder than ever",
+        "category": "Leadership and change",
+        "tag": "Explainer",
+        "url": "https://hbr.org/2026/01/why-keeping-up-with-change-feels-harder-than-ever",
+        "src": "Harvard Business Review",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "China’s weak economy is creating a lost generation",
+        "category": "China jobs",
+        "tag": "",
+        "url": "https://www.wsj.com/world/china-economy-gen-z-f9058941",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Blackstone’s Jon Gray: India is the second-easiest place to list",
+        "category": "India and capital",
+        "tag": "Interview",
+        "url": "https://m.economictimes.com/news/india/blackstones-coo-highlights-indias-growth-potential-and-investment-opportunities-in-new-interview/articleshow/134926172.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "How the RBI’s six forex measures aim to steady the rupee",
+        "category": "Rupee defence",
+        "tag": "Explainer",
+        "url": "https://m.economictimes.com/markets/forex/forex-news/rbis-rupee-defence-curbs-speculation-raises-hedging-costs/articleshow/134929407.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Bank of America pays $1.2bn over weak money-laundering controls",
+        "category": "Banking compliance",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/regulation/bank-of-america-to-pay-1-21-billion-to-settle-violations-of-money-laundering-sanctions-laws-203b5fdf",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Rising sickness and disability claims strain Britain’s budget",
+        "category": "UK public finances",
+        "tag": "",
+        "url": "https://www.wsj.com/world/uk/united-kingdom-welfare-disability-payouts-737d77a0",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Brands, not platforms, fund the creator economy",
+        "category": "Creator economy",
+        "tag": "",
+        "url": "https://www.ft.com/content/dbef1d8b-6bf7-4cc2-b2b7-e000eb101057?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-13",
     "slice": "Fridges overheat, diamonds cool, voters fume. Value sits with whoever holds the switch.",
     "artifact": "https://claude.ai/artifact/JdSVQW4983hwD9HzA8yJ8a",
