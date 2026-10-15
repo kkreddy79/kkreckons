@@ -46,6 +46,7 @@ const PUBLISHERS: Record<string, string> = {
   "outlookbusiness.com": "Outlook Business",
   "startupfortune.com": "Startup Fortune",
   "axios.com": "Axios",
+  "imf.org": "International Monetary Fund",
   "kotakneo.com": "Kotak Neo",
   "cbsnews.com": "CBS News",
   "msn.com": "MSN",

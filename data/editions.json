@@ -1,5 +1,92 @@
 [
   {
+    "date": "2026-10-15",
+    "slice": "Rates rise, IPOs pause, hedges lock in. Calm is now a luxury.",
+    "artifact": "https://claude.ai/artifact/T62g96Af6DjSXvGz5Pq82g",
+    "readingMinutes": 5,
+    "image": "/figs/2026-10-15-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "IMF: three risks keep global finance on edge",
+        "category": "Financial stability",
+        "tag": "Explainer",
+        "url": "https://www.imf.org/-/media/files/publications/gfsr/2026/october/english/text.pdf",
+        "src": "International Monetary Fund",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "IDBI sale would be India’s 13th strategic disinvestment",
+        "category": "Disinvestment",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/india/modi-governments-major-privatization-moves-13-strategic-disinvestments-in-just-10-years/articleshow/134945883.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "RBI rules turn rupee hedging from a trade into a commitment",
+        "category": "Rupee hedging",
+        "tag": "Explainer",
+        "url": "https://m.economictimes.com/prime/curbing-rupee-bets-what-the-rbis-new-rules-mean-for-the-hedge-now-or-wait-question/primearticleshow/134900224.cms",
+        "src": "The Economic Times (ET Prime)",
+        "pay": true,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Boden: AI agents will bypass banking apps, so banks must engage",
+        "category": "AI and banking",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/8c6a7595-9403-44f3-81ac-a2e5ceb37459?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "JPMorgan blocks unvetted AI agents from customer accounts",
+        "category": "AI agents and banks",
+        "tag": "",
+        "url": "https://www.cnbc.com/2026/10/13/jpmorgan-ai-agents-account-access.html",
+        "src": "CNBC",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Australia’s biggest IPO in 30 years is cancelled amid AI jitters",
+        "category": "AI and IPOs",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/firmus-ipo-ai-trade-f490c240?st=i9vXjr&reflink=article_copyURL_share",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-14",
     "slice": "Banks pay fines, importers pay hedges, Gen Z pays in waiting. Change sends no invoice.",
     "artifact": "https://claude.ai/artifact/2pSDtwdaNH52uus9YKfeke",
