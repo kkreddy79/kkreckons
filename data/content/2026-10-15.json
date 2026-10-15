@@ -1,0 +1,223 @@
+{
+  "date": "2026-10-15",
+  "slice": "Rates rise, IPOs pause, hedges lock in. Calm is now a luxury.",
+  "artifact": "https://claude.ai/artifact/T62g96Af6DjSXvGz5Pq82g",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "14 of 33",
+      "text": "major central banks have raised rates since Q2, up from 2 in Q1, the IMF reports.",
+      "url": "https://www.imf.org/-/media/files/publications/gfsr/2026/october/english/text.pdf"
+    },
+    {
+      "num": "13th",
+      "text": "strategic sale in a decade: IDBI Bank would be India’s biggest at ₹52,878 crore.",
+      "url": "https://m.economictimes.com/news/india/modi-governments-major-privatization-moves-13-strategic-disinvestments-in-just-10-years/articleshow/134945883.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Financial stability",
+          "tag": "Explainer",
+          "title": "IMF: three risks keep global finance on edge",
+          "url": "https://www.imf.org/-/media/files/publications/gfsr/2026/october/english/text.pdf",
+          "url2": "",
+          "points": [
+            "The IMF says markets have stayed resilient since April, but risks to financial stability are still elevated. It names three: a sharp correction in AI-linked stocks, a sudden rise in government bond yields, and cyber attacks.",
+            "Policy is turning: 14 of 33 major central banks have raised rates since the second quarter, against 2 in the first. In its stress test, bank capital would fall about 1.5 points, yet weak banks now hold 22% of global bank assets.",
+            "Its advice is to curb leverage behind the AI boom, steady public debt, and strengthen cyber defences."
+          ],
+          "numbers": [
+            [
+              "14/33",
+              "major central banks hiked since Q2"
+            ],
+            [
+              "22%",
+              "of bank assets held by weak banks"
+            ]
+          ],
+          "why": "Calm prices can hide thin cushions. If AI valuations fall just as yields jump, borrowers, banks and funds all feel it together.",
+          "other": "Banks overall pass the stress test, and the IMF rates the AI risk as unchanged since April, so this is a warning about weak spots rather than a forecast of a crash.",
+          "also": [],
+          "image": "/figs/2026-10-15-1.jpg",
+          "imageAlt": "KKReckons explainer: the IMF’s three risks (AI correction, bond yield spike, cyber attack), the rise in central bank rate hikes and what it urges.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "International Monetary Fund",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "AI"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Disinvestment",
+          "tag": "",
+          "title": "IDBI sale would be India’s 13th strategic disinvestment",
+          "url": "https://m.economictimes.com/news/india/modi-governments-major-privatization-moves-13-strategic-disinvestments-in-just-10-years/articleshow/134945883.cms",
+          "url2": "",
+          "points": [
+            "The proposed ₹52,878 crore sale of a 60.72% stake in IDBI Bank to Canada’s Fairfax would be the government’s 13th strategic disinvestment in a decade, and its largest, ahead of HPCL (₹36,915 crore) and Air India.",
+            "Not every deal brought in cash. Some were transfers between state-owned firms, one raised no exchequer proceeds, and of Air India’s ₹18,000 crore price the Tatas paid ₹2,700 crore in cash and took over ₹15,300 crore of debt."
+          ],
+          "numbers": [
+            [
+              "13th",
+              "strategic sale in a decade"
+            ],
+            [
+              "₹52,878cr",
+              "IDBI Bank stake price"
+            ]
+          ],
+          "why": "Headline sale values can overstate what reaches the government, so watch the cash component and what the buyer takes on.",
+          "other": "What to watch: whether the Fairfax deal closes and how much of the price is cash. Private owners may also run weak state firms better, which is part of the policy case.",
+          "also": [],
+          "image": "/figs/2026-10-15-2.jpg",
+          "imageAlt": "KKReckons explainer: why IDBI Bank would be India’s 13th and largest strategic sale, and why headline values flatter the cash received.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ]
+        },
+        {
+          "category": "Rupee hedging",
+          "tag": "Explainer",
+          "title": "RBI rules turn rupee hedging from a trade into a commitment",
+          "url": "https://m.economictimes.com/prime/curbing-rupee-bets-what-the-rbis-new-rules-mean-for-the-hedge-now-or-wait-question/primearticleshow/134900224.cms",
+          "url2": "",
+          "points": [
+            "ET Prime explains what the RBI’s 10 October rules mean for company treasurers. A cancelled forward hedge can no longer be rebooked, so hedging is now a commitment, not a running trade.",
+            "For importers, large hedges cost more because banks must park a 20% cash reserve with the RBI. Bigger hedges also need more paperwork.",
+            "The piece argues waiting is not free either: companies that delayed hedging last month already paid for it."
+          ],
+          "numbers": [
+            [
+              "20%",
+              "cash reserve on large importer hedges"
+            ]
+          ],
+          "why": "Finance heads must now decide once, and live with it. Policies built on cancelling and rebooking hedges need rewriting.",
+          "other": "Rolling over a contract is still allowed, and the rules aim at speculation rather than ordinary hedging. The cost may ease if the rupee steadies.",
+          "also": [],
+          "image": "/figs/2026-10-15-3.jpg",
+          "imageAlt": "KKReckons explainer: how the RBI’s new rules make rupee hedging a commitment and what it means for the hedge-or-wait decision.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times (ET Prime)",
+          "pay": true,
+          "themes": [
+            "India",
+            "Banking"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI and banking",
+          "tag": "Opinion",
+          "title": "Boden: AI agents will bypass banking apps, so banks must engage",
+          "url": "https://www.ft.com/content/8c6a7595-9403-44f3-81ac-a2e5ceb37459?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Starling’s founder and former chief executive argues that the next phase of banking will not be a better app but an AI agent acting between banks and customers.",
+            "Banks have spent years building defences that insist on a human, and fraud systems tuned to human behaviour would flag an agent working around the clock. Meta’s Muse agent drew 6.6mn downloads in two weeks.",
+            "She calls for banks, regulators and AI firms to meet, welcoming authorised agents while keeping rogue ones out."
+          ],
+          "numbers": [
+            [
+              "6.6mn",
+              "Muse downloads in two weeks"
+            ]
+          ],
+          "why": "If customers hand routine money tasks to agents, the bank that controls how agents connect keeps the relationship, and others become plumbing.",
+          "other": "This is one founder’s view. Banks have real fraud and liability reasons to move slowly, as the JPMorgan story below shows.",
+          "also": [],
+          "image": "/figs/2026-10-15-4.jpg",
+          "imageAlt": "KKReckons explainer: Anne Boden’s case that AI agents will replace banking apps and what banks must change.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Banking"
+          ]
+        },
+        {
+          "category": "AI agents and banks",
+          "tag": "",
+          "title": "JPMorgan blocks unvetted AI agents from customer accounts",
+          "url": "https://www.cnbc.com/2026/10/13/jpmorgan-ai-agents-account-access.html",
+          "url2": "",
+          "points": [
+            "JPMorgan will not let unvetted outside AI agents log in to or operate customer accounts, a spokeswoman confirmed. Agents can see balances read-only through approved connectors such as Plaid, but cannot use customer credentials, move money or pay bills.",
+            "On the earnings call Jamie Dimon said: “You don’t want rogue agents, and there could be thousands of them.” He framed it as a question of who bears the losses.",
+            "No timeline was given for any change."
+          ],
+          "numbers": [
+            [
+              "Read-only",
+              "access for outside AI agents"
+            ]
+          ],
+          "why": "This is the other side of the Boden argument: the biggest US bank wants agents to arrive on its terms, with liability settled first.",
+          "other": "What to watch: whether customer demand for agents pushes the bank to open up, and whether rivals take a looser line.",
+          "also": [],
+          "image": "/figs/2026-10-15-5.jpg",
+          "imageAlt": "KKReckons explainer: what outside AI agents can and cannot do on JPMorgan customer accounts.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "CNBC",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Banking"
+          ]
+        },
+        {
+          "category": "AI and IPOs",
+          "tag": "",
+          "title": "Australia’s biggest IPO in 30 years is cancelled amid AI jitters",
+          "url": "https://www.wsj.com/finance/firmus-ipo-ai-trade-f490c240?st=i9vXjr&reflink=article_copyURL_share",
+          "url2": "",
+          "points": [
+            "Data-centre firm Firmus cancelled a planned raise of almost $5bn, which would have been Australia’s largest IPO in 30 years, citing market volatility. It plans a private raise and a US listing next year.",
+            "Airtrunk and SoftBank’s SB Energy have also delayed, and timing for the Anthropic and OpenAI listings is uncertain. Rising rates, jumpy markets and local backlash to data centres are blamed.",
+            "Nscale still hopes to list within weeks."
+          ],
+          "numbers": [
+            [
+              "$5bn",
+              "Firmus raise cancelled"
+            ]
+          ],
+          "why": "AI infrastructure needs cheap, plentiful capital. If listings stall, unproven builders feel it first, and that links back to the IMF’s warning about leverage behind the boom.",
+          "other": "What to watch: whether Nscale lists on schedule, and whether Anthropic’s investor day restores confidence.",
+          "also": [],
+          "image": "/figs/2026-10-15-6.jpg",
+          "imageAlt": "KKReckons explainer: why Firmus cancelled its IPO and which AI infrastructure listings are waiting.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": []
+}
