@@ -41,6 +41,10 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    `CHROMIUM_PATH=/opt/pw-browsers/chromium npm run editions`.
    Only the new date's files should change in `data/` besides `data/editions.json`; investigate any
    other diffs before going on.
+   Then `node scripts/beehiiv-email.mjs <YYYY-MM-DD> <scratchpad>/beehiiv-<YYYY-MM-DD>.json`. It writes the
+   email's story thumbnails to `public/email/<YYYY-MM-DD>-<n>.png` (commit them with the edition, so they
+   are live before the email is drafted) and the email itself to the JSON file, used in section 4.
+   `npm run qc` fails if a new edition's thumbnails are missing.
 4. `npm run check -- <YYYY-MM-DD>`. Every story needs:
    - a source link, at least two summary points and a "why it matters";
    - an article not already used in this edition or **any earlier edition** (same link, including
@@ -118,25 +122,31 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   - Catch up (`/daily/`) lists both.
 
   If anything is off, say so at once and offer a rollback (Vercel "promote" of the previous production
-  deployment, or a revert pull request). Otherwise reply with the live link and the line
-  "<yesterday> is now on Catch up".
+  deployment, or a revert pull request), and don't draft the email.
 
-  **Email draft (beehiiv):** subscribers only get an edition by email if a beehiiv post exists, so his
-  "publish" also covers creating that draft. Once the site is live (the email links to its images and pages):
-  1. `node scripts/beehiiv-email.mjs <YYYY-MM-DD> <scratchpad>/beehiiv.json` builds the title, subtitle,
-     email settings, slug, theme and body from `data/content/<YYYY-MM-DD>.json`. It also writes the story
-     thumbnails to `public/email/<YYYY-MM-DD>-<n>.jpg`. Run it in section 2 right after `npm run editions`
-     and commit those thumbnails with the edition, so they are live on kkreckons.com when the email goes out.
-     The email deliberately shows each story once: thumbnail, points, why it matters, other side and source.
-     Don't add the full explainer graphics or repeat the headline (`slice`) in the body; beehiiv's header
+  **Email draft (beehiiv, free plan):** every "publish" to the website also prepares the subscriber email,
+  in the same run, without being asked. The beehiiv account is on the free (Launch) plan, which has no
+  automatic sending (no RSS to Send, recurring series, automations or Send API), so the flow is: the
+  draft is made here, and he presses Send or Schedule in beehiiv. Once the live check passes (the email
+  links to the site's pages and thumbnails):
+  1. Use the JSON from section 2 (re-run `node scripts/beehiiv-email.mjs` if it's missing). It has the
+     title, subtitle, email settings, slug, theme and body built from `data/content/<YYYY-MM-DD>.json`.
+     The email shows each story once: thumbnail, points, why it matters, other side and source. Don't
+     add the full explainer graphics or repeat the headline (`slice`) in the body; beehiiv's header
      already shows it.
-  2. Find the KKReckons publication with `list_publications`. Check `list_posts` for a post with the same
-     title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another.
-  3. Otherwise call `save_post` with that file's fields (`html_content` verbatim, not `theme`), then
-     `save_post_theme` with its `theme`. This only makes a **draft**; beehiiv requires him to press Send
-     in its UI. Never schedule or send it yourself.
+  2. Use the KKReckons publication (`list_publications`). Check `list_posts` for a post with the same
+     title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another, just link it.
+  3. Otherwise call `save_post` with the JSON's fields (`html_content` verbatim, not `theme`), then
+     `save_post_theme` with its `theme`. This makes a **draft** only.
   4. Re-read it with `get_post_content` and confirm the title and that the body has every story once.
-  5. In your reply, add: "Email draft is ready in beehiiv; open Posts → Drafts, preview, and press Send."
+  5. Also check `list_posts` for an older KKReckons post still in `draft`; mention it in one line so an
+     unsent edition doesn't go unnoticed.
+  6. Reply in this shape (and send a push notification if that tool is available):
+
+     > **<Weekday, D Month YYYY> is live:** <live link>. <yesterday> is now on Catch up.
+     > **Email to subscribers:** draft ready, tap **Send** (or **Schedule**, e.g. for 6am IST):
+     > <editor_url from save_post>
+
      If the draft can't be created (tool missing or permission denied), say so plainly, so he knows
      subscribers won't get this edition until it's made.
 - **Changes** (for example "drop story 4" or "fix the headline"): make small text fixes as overrides in
@@ -144,9 +154,15 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   the artifact in his Project, then re-read it. Rebuild, re-check, push, and send the new preview link.
 - **"skip"**: close the pull request without merging.
 
+**"Publish" with no pull request waiting** (for example "Publish Friday edition"): that is his approval
+in advance. Run sections 1 and 2 for that edition. If the checks, rights review and QC raise nothing that
+needs his decision, commit, open the pull request, merge it and carry on with section 4 (live check, then
+the email draft). If something does need his decision, stop at section 3 and ask.
+
 ## Rules
 
 - Never change an edition's facts, numbers or wording beyond what he asks for, or a sourced fix you list.
 - Never publish an edition with open problems unless he says to publish anyway.
 - Keep commits and pull requests free of model names.
-- Never send or schedule a beehiiv email; only create drafts for him to send.
+- Never send or schedule a beehiiv email; only create drafts for him to send. (On the free plan the
+  tools can't send anyway; if the account is ever upgraded, ask him before automating sends.)
