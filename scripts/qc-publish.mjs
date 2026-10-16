@@ -6,7 +6,7 @@
 //
 // 1. Nothing lost: every edition already live is still listed, and its data, original newsletter
 //    and images are byte-for-byte unchanged (unless --allow'd). The pull request touches only
-//    edition files.
+//    edition files. A new edition ships with its email thumbnails.
 // 2. Nothing dropped in rendering: every edition page shows every story, number, section, image
 //    and further reading item from its data; Home shows the newest edition; Catch up lists every
 //    edition, including the one Home just replaced; the sitemap lists them all.
@@ -113,6 +113,14 @@ for (const f of fs.readdirSync(path.join(root, "public/figs"))) {
 }
 for (const f of git("ls-tree", "--name-only", base, "public/figs/").toString().split("\n").filter(Boolean)) {
   if (!fs.existsSync(path.join(root, f)) && !allowed.has(path.basename(f).slice(0, 10))) fail(`Image ${f} was deleted.`);
+}
+
+// The beehiiv email links to one thumbnail per illustrated story (scripts/beehiiv-email.mjs),
+// numbered by story position, so they must ship with the edition.
+for (const d of added) {
+  const stories = JSON.parse(read(`data/content/${d}.json`)).sections.flatMap((s) => s.stories);
+  const missing = stories.map((s, i) => (s.image ? `public/email/${d}-${i + 1}.png` : null)).filter((f) => f && !fs.existsSync(path.join(root, f)));
+  if (missing.length) fail(`${d}: email thumbnails missing (${missing.join(", ")}). Run "node scripts/beehiiv-email.mjs ${d} <out.json>".`);
 }
 
 // ---------- 2. Nothing dropped in rendering ----------
