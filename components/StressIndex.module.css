@@ -23,6 +23,7 @@
 .meterBar i { position: absolute; top: -5px; width: 4px; height: 22px; margin-left: -2px; background: #1E293B; border-radius: 2px; box-shadow: 0 0 0 2px #fff; }
 .meterLabels { display: grid; grid-template-columns: repeat(4, 1fr); font-size: 11px; color: var(--muted); font-weight: 700; margin-top: 6px; }
 .meterLabels span { text-align: center; }
+.meterLabels small { display: block; font-weight: 500; font-size: 10px; }
 .prev { font-size: 13.5px; color: #3f3f46; margin: 10px 0 0; font-variant-numeric: tabular-nums; }
 .interp { font-size: 16px; line-height: 1.45; color: #1E293B; margin: 10px 0 0; font-weight: 600; }
 .alert { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
@@ -40,6 +41,7 @@
 .h2 { font-family: var(--serif); font-size: 26px; margin: 34px 0 12px; color: #1E293B; }
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .pillar { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.sublabel { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
 .pillarVal { font-family: var(--serif); font-size: 34px; font-weight: 700; color: #1E293B; margin: 4px 0 8px; font-variant-numeric: tabular-nums; }
 .pillarVal small { font-family: var(--sans); font-size: 14px; color: var(--muted); font-weight: 600; margin-left: 2px; }
 .pillarVal span { font-family: var(--sans); font-size: 14px; font-weight: 800; margin-left: 8px; }
@@ -112,3 +114,14 @@
   .gDir { grid-column: 2; grid-row: 2; font-size: 11.5px; }
   .gDirTxt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
+
+.legendLine { font-size: 12.5px; color: var(--muted); margin: 14px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.swatches { display: inline-flex; gap: 2px; margin-right: 4px; }
+.swatches i { display: inline-block; width: 14px; height: 8px; border-radius: 2px; }
+.readout { min-height: 22px; font-size: 13px; color: #1E293B; text-align: center; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.compare { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0 0; border-top: 1px solid var(--line); padding-top: 12px; }
+.compare dt { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 800; }
+.compare dd { margin: 2px 0 0; font-family: var(--serif); font-size: 26px; font-weight: 700; color: #1E293B; }
+.compare dd small { display: block; font-family: var(--sans); font-size: 11.5px; font-weight: 500; color: var(--muted); }
+.compareNote { grid-column: 1 / -1; margin: 4px 0 0; font-size: 14px; color: #3f3f46; }
+@media (max-width: 560px) { .compare { grid-template-columns: 1fr 1fr; } }
