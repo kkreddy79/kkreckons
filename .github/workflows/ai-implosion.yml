@@ -43,8 +43,14 @@ jobs:
         run: |
           git config user.name "kkreckons-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ai-implosion.json data/ai-implosion-hy.json public/ai-implosion/AI_Implosion_Dashboard.xlsx
+          git add data/ai-implosion.json public/ai-implosion/AI_Implosion_Dashboard.xlsx
+          [ -f data/ai-implosion-hy.json ] && git add data/ai-implosion-hy.json
           if git diff --cached --quiet; then echo "No change"; exit 0; fi
           git commit -m "AI Implosion data: $(date -u +%F)"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          for i in 1 2 3; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}" 2>push.log; then exit 0; fi
+            git fetch --depth=50 origin "${GITHUB_REF_NAME}" && git rebase "origin/${GITHUB_REF_NAME}" || true
+            sleep 5
+          done
+          echo "::error title=Could not push data::$(tail -n 4 push.log | tr '\n' ' ')"
+          exit 1
