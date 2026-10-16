@@ -99,7 +99,11 @@ function Meter({ score }: { score: number | null }) {
         <span style={{ background: "#BBF7D0" }} /><span style={{ background: "#FDE68A" }} /><span style={{ background: "#FDBA74" }} /><span style={{ background: "#FCA5A5" }} />
         <i style={{ left: `${v}%` }} />
       </div>
-      <div className={s.meterLabels}><span>Normal<small>0–24</small></span><span>Elevated<small>25–49</small></span><span>Severe<small>50–74</small></span><span>Critical<small>75–100</small></span></div>
+      <div className={s.meterLabels}>
+        {[["Normal", "0–24"], ["Elevated", "25–49"], ["Severe", "50–74"], ["Critical", "75–100"]].map(([n, r]) => (
+          <span key={n} className={score != null && band(score) === n ? s.meterOn : undefined}>{n}<small>{r}</small></span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -349,6 +353,33 @@ function BacktestSummary({ b }: { b: Backtest }) {
   );
 }
 
+/* ---------- Banner (renders before the data arrives) ---------- */
+function Banner() {
+  return (
+    <section className={s.banner}>
+      <div className={s.bannerArt} aria-hidden="true">
+        <img src="/ai-stress-index/hero-1400.webp" srcSet="/ai-stress-index/hero-800.webp 800w, /ai-stress-index/hero-1400.webp 1400w"
+          sizes="(max-width: 860px) 100vw, 62vw" width={1400} height={1200} alt="" fetchPriority="high" />
+      </div>
+      <div className={s.bannerInner}>
+        <div className={s.bannerText}>
+          <div className={s.kicker}>KKReckons · Markets</div>
+          <h1>AI Market<br />Stress Index</h1>
+          <div className={s.stripe} aria-hidden="true"><i /><i /><i /><i /></div>
+          <p className={s.question}>Is the AI boom under pressure?<br />Could the bubble pop?</p>
+          <p className={s.daily}>We check the gauges daily.</p>
+          <p className={s.meta}>A daily market-stress monitor for AI-related stocks, AI financing proxies and wider credit conditions. Updated every weekday after the US close.</p>
+          <div className={s.ctas}>
+            <a className={s.ctaMain} href="#today">View today’s index <span aria-hidden="true">↓</span></a>
+            <a className={s.ctaAlt} href="#methodology">How it works</a>
+          </div>
+          <p className={s.byline}>By <b>KK Reddy</b> · kkreckons.com</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Page ---------- */
 export default function StressIndex() {
   const [d, setD] = useState<Data | null>(null);
@@ -363,9 +394,17 @@ export default function StressIndex() {
     fetch(`${BACKTEST_URL}?t=${t}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).then(setBt).catch(() => setBt(null));
   }, []);
 
-  if (err) return <main className="container"><p className={s.err}>The latest index data couldn’t be loaded ({err}). Please try again shortly.</p></main>;
-  if (!d) return <main className="container"><p className={s.loading}>Loading today’s index…</p></main>;
+  return (
+    <main className={s.main}>
+      <Banner />
+      {err ? <div className={`container ${s.page}`}><p className={s.err}>The latest index data couldn’t be loaded ({err}). Please try again shortly.</p></div>
+        : !d ? <div className={`container ${s.page}`}><p className={s.loading}>Loading today’s index…</p></div>
+        : <Report d={d} bt={bt} />}
+    </main>
+  );
+}
 
+function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
   const h = hook(d);
   const sorted = [...d.factors].sort((a, b) => b.stress - a.stress);
   const signal = sorted[0] && sorted[0].stress >= 0.5 ? sorted[0] : null;
@@ -388,17 +427,9 @@ export default function StressIndex() {
   const LIMITED = 0.25; // above this share of the index weight on stale inputs, no stress band is shown
 
   return (
-    <main className={`container ${s.page}`}>
+    <div className={`container ${s.page}`}>
       {/* Layer 1: the daily snapshot */}
-      <header className={s.top}>
-        <div className="eyebrow">KKReckons · Markets</div>
-        <h1>AI Market Stress Index</h1>
-        <p className={s.question}>Is the AI boom showing cracks beneath the surface?</p>
-        <p className={s.meta}>A daily stress monitor for AI stocks, AI financing and credit markets.</p>
-        {(d.notes ?? []).map((n) => <p key={n} className={s.note}>{n}</p>)}
-      </header>
-
-      <section className={s.hero}>
+      <section className={s.hero} id="today">
         <div className={s.scoreCard}>
           <div className={s.label}>Overall stress</div>
           <div className={s.scoreRow}>
@@ -439,6 +470,7 @@ export default function StressIndex() {
           </div>
         </div>
       </section>
+      {(d.notes ?? []).map((n) => <p key={n} className={s.note}>{n}</p>)}
       <p className={s.disclaim}>Stress bands describe today’s reading. Formal alerts need extra conditions held for 5 straight trading days, so the index can be Elevated (25+) before the first alert, Stress Watch, triggers at 50. Gauge scores are normalised 0–100 readings, not probabilities. A Normal reading is not a prediction that markets are safe or will rise.</p>
 
       <h2 className={s.h2}>Where is the pressure?</h2>
@@ -452,7 +484,9 @@ export default function StressIndex() {
               <div className={s.label}>{PILLAR[p]}</div>
               <div className={s.sublabel}>Component stress score · {pct(pw[p] ?? 0)} of the index</div>
               <div className={s.pillarVal}>{v == null ? "—" : v.toFixed(0)}<small>/100</small>
-                {dv != null && Math.abs(dv) >= 0.5 && <span className={dv > 0 ? s.worse : s.better}> {dv > 0 ? "▲" : "▼"} {Math.abs(dv).toFixed(0)} {dv > 0 ? "rising" : "easing"}</span>}
+                {dv != null && (Math.abs(dv) >= 0.5
+                  ? <span className={dv > 0 ? s.worse : s.better} title="Change in this component’s score since the previous close"> {dv > 0 ? "▲" : "▼"} {Math.abs(dv).toFixed(0)} pt{Math.abs(dv) >= 1.5 ? "s" : ""} {dv > 0 ? "higher" : "lower"}</span>
+                  : <span className={s.flat} title="Change in this component’s score since the previous close"> ● unchanged</span>)}
               </div>
               <span className={s.gBar}><span style={{ width: `${Math.min(100, v ?? 0)}%`, background: stressColor((v ?? 0) / 100) }} /></span>
               <ul className={s.members}>
@@ -505,7 +539,7 @@ export default function StressIndex() {
       </details>
 
       {/* Layer 3: the methodology */}
-      <h2 className={s.h2}>Methodology</h2>
+      <h2 className={s.h2} id="methodology">Methodology</h2>
       <details className={s.fold}>
         <summary>How the index works</summary>
         <div className={s.foldBody}>
@@ -563,7 +597,7 @@ export default function StressIndex() {
           </div>
         </details>
       )}
-      <p className={s.fine}>{d.model ? `Model v${d.model.version}. ` : ""}An indicator of market conditions, not a forecast. For information only; not financial advice. Market data as of {longDate(d.asOf)} · refreshed {refreshedTxt}.</p>
-    </main>
+      <p className={s.fine}>{d.model ? `Model v${d.model.version}. ` : ""}Built and curated by KK Reddy. An indicator of market conditions, not a forecast. For information only; not financial advice. Market data as of {longDate(d.asOf)} · refreshed {refreshedTxt}.</p>
+    </div>
   );
 }
