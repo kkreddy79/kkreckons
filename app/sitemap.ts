@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE_URL}/`, lastModified: latest.date, changeFrequency: "daily", priority: 1 },
     { url: `${SITE_URL}/daily/`, lastModified: latest.date, changeFrequency: "daily", priority: 0.8 },
+    { url: `${SITE_URL}/ai-stress-index`, changeFrequency: "daily", priority: 0.7 },
     { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
     ...editions.map((e) => ({
       url: `${SITE_URL}/daily/${slugFor(e.date)}`,
