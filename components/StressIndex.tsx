@@ -208,7 +208,7 @@ function GaugeCard({ f }: { f: Factor }) {
 }
 
 function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) {
-  const [show, setShow] = useState({ equity: false, financing: false, credit: false });
+  const [show, setShow] = useState({ equity: true, financing: true, credit: true });
   const [hover, setHover] = useState<number | null>(null);
   const W = 720, Ht = 240, L = 34, R = 10, T = 10, B = 26;
   const xs = (i: number) => L + (i / Math.max(1, H.length - 1)) * (W - L - R);
@@ -239,20 +239,24 @@ function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) 
     setHover(i >= 0 && i < H.length ? i : null);
   };
   const hp = hover != null ? H[hover] : null;
+  const shown = hp ?? last; // with nothing selected, the readout shows the latest day
   return (
     <figure className={s.panel}>
-      <figcaption className={s.chartHead}>Is AI market stress building?<small>Daily index, last 52 weeks, on its 0–100 scale. Touch or hover for any day; add the components to see where stress comes from.</small></figcaption>
-      <svg viewBox={`0 0 ${W} ${Ht}`} role="img" aria-label="Index over the last 52 weeks" onPointerMove={onMove} onPointerDown={onMove} onPointerLeave={() => setHover(null)} style={{ touchAction: "pan-y" }}>
+      <figcaption className={s.chartHead}>Is AI market stress building?<small>Daily index, last 52 weeks, on its 0–100 scale. Tap, drag or hover to read any day. Coloured lines show where the stress comes from; tap a label to hide or show it.</small></figcaption>
+      <svg viewBox={`0 0 ${W} ${Ht}`} role="img" aria-label="Index over the last 52 weeks" onPointerMove={onMove} onPointerDown={onMove} onPointerLeave={(e) => { if (e.pointerType === "mouse") setHover(null); }} style={{ touchAction: "pan-y" }}>
         {[25, 50, 75].map((b) => <rect key={b} x={L} width={W - L - R} y={ys(b + 25)} height={ys(b) - ys(b + 25)} fill={b === 75 ? "#FEF2F2" : b === 50 ? "#FFF7ED" : "#FFFBEB"} />)}
         {[0, 25, 50, 75, 100].map((g) => <g key={g}><line x1={L} x2={W - R} y1={ys(g)} y2={ys(g)} stroke="#E9E4DC" /><text x={L - 6} y={ys(g) + 4} textAnchor="end" className={s.axis}>{g}</text></g>)}
         {ticks.filter((_, n) => n % 2 === 0).map(({ p, i }) => <text key={p.date} x={xs(i)} y={Ht - 6} textAnchor="middle" className={s.axis}>{MON[Number(p.date.slice(5, 7)) - 1]}</text>)}
         {comps.map((c) => show[c.key] && <path key={c.key} d={path(c.key)} fill="none" stroke={c.color} strokeWidth="1.6" strokeLinejoin="round" />)}
         <path d={path("score")} fill="none" stroke={C.slate} strokeWidth="3" strokeLinejoin="round" />
-        {last && last.score != null && <g><circle cx={xs(H.length - 1)} cy={ys(last.score)} r="5" fill={C.slate} /><text x={xs(H.length - 1) - 8} y={ys(last.score) - 10} textAnchor="end" className={s.lastLabel}>{last.score} · {shortDate(last.date)}</text></g>}
-        {hp && hover != null && <g><line x1={xs(hover)} x2={xs(hover)} y1={T} y2={Ht - B} stroke="#94A3B8" strokeDasharray="3 3" />{hp.score != null && <circle cx={xs(hover)} cy={ys(hp.score)} r="5" fill={C.slate} />}</g>}
+        {!hp && last && last.score != null && <g><circle cx={xs(H.length - 1)} cy={ys(last.score)} r="5" fill={C.slate} /><text x={xs(H.length - 1) - 8} y={ys(last.score) - 10} textAnchor="end" className={s.lastLabel}>{last.score} · {shortDate(last.date)}</text></g>}
+        {hp && hover != null && <g><line x1={xs(hover)} x2={xs(hover)} y1={T} y2={Ht - B} stroke="#94A3B8" strokeDasharray="3 3" />
+          {comps.map((c) => show[c.key] && hp[c.key] != null && <circle key={c.key} cx={xs(hover)} cy={ys(hp[c.key] as number)} r="3.5" fill={c.color} />)}
+          {hp.score != null && <><circle cx={xs(hover)} cy={ys(hp.score)} r="5" fill={C.slate} />
+            <text x={xs(hover) + (hover > H.length * 0.7 ? -8 : 8)} y={Math.max(T + 12, ys(hp.score) - 10)} textAnchor={hover > H.length * 0.7 ? "end" : "start"} className={s.lastLabel}>{hp.score} · {shortDate(hp.date)}</text></>}</g>}
       </svg>
       <div className={s.readout} aria-live="polite">
-        {hp ? <><b>{longDate(hp.date)}</b> · Index {hp.score ?? "—"}{comps.filter((c) => show[c.key]).map((c) => <span key={c.key}> · {c.label} {hp[c.key] == null ? "—" : (hp[c.key] as number).toFixed(0)}</span>)}</> : <span>&nbsp;</span>}
+        {shown ? <><b>{longDate(shown.date)}{hp ? "" : " (latest)"}</b> · <span className={s.roIdx}>Index {shown.score ?? "—"}</span>{comps.filter((c) => show[c.key]).map((c) => <span key={c.key} className={s.roItem}><i style={{ background: c.color }} />{c.label} {shown[c.key] == null ? "—" : (shown[c.key] as number).toFixed(0)}</span>)}</> : <span>&nbsp;</span>}
       </div>
       <div className={s.toggles}>
         <span className={s.toggleOn}><i style={{ background: C.slate }} />Index</span>

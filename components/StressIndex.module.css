@@ -196,3 +196,7 @@
 .caveat { background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 10px; padding: 10px 12px; color: #7C2D12; }
 .proxyBar { display: block; width: 70px; height: 6px; background: #EEF0F6; border-radius: 999px; overflow: hidden; margin-bottom: 3px; }
 .proxyBar span { display: block; height: 100%; background: #D97706; }
+.readout { line-height: 1.7; }
+.roIdx { font-weight: 800; }
+.roItem { display: inline-flex; align-items: center; gap: 4px; margin-left: 10px; white-space: nowrap; }
+.roItem i { display: inline-block; width: 12px; height: 4px; border-radius: 2px; }
