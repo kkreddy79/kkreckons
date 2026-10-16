@@ -363,7 +363,6 @@ function Banner() {
       </div>
       <div className={s.bannerInner}>
         <div className={s.bannerText}>
-          <div className={s.kicker}>KKReckons · Markets</div>
           <h1>AI Market<br />Stress Index</h1>
           <div className={s.stripe} aria-hidden="true"><i /><i /><i /><i /></div>
           <p className={s.question}>Is the AI boom under pressure?<br />Could the bubble pop?</p>
@@ -373,7 +372,6 @@ function Banner() {
             <a className={s.ctaMain} href="#today">View today’s index <span aria-hidden="true">↓</span></a>
             <a className={s.ctaAlt} href="#methodology">How it works</a>
           </div>
-          <p className={s.byline}>By <b>KK Reddy</b> · kkreckons.com</p>
         </div>
       </div>
     </section>
