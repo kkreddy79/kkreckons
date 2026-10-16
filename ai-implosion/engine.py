@@ -62,7 +62,10 @@ def fetch_hy(start):
     except Exception as e:
         err = e
     if not fresh and not cache:
-        raise RuntimeError(f"FRED HY spread unavailable and no cached history: {err}")
+        FETCH_NOTES.append("HY spread unavailable: FRED blocks this server. Add a free FRED_API_KEY secret "
+                           "to the GitHub repo; until then HY counts as 0 stress.")
+        print(f"WARNING: FRED unavailable ({err}); continuing without HY")
+        return {}
     if err or not fresh:
         FETCH_NOTES.append(f"FRED unavailable this run; HY spread carried from {max(cache)}")
     cache.update(fresh)
@@ -218,7 +221,13 @@ def compute(dates, series, cfg):
     factors = []
     for f in F:
         c = f["col"]
-        idx = max(i for i in range(n) if series[c][i] is not None)
+        have = [i for i in range(n) if series[c][i] is not None]
+        if not have:
+            factors.append({"name": f["name"], "col": c, "pillar": f["pillar"], "weight": f["weight"], "type": f["type"],
+                            "ref": None, "current": None, "move": None, "calm": f["calm"], "trigger": f["trigger"],
+                            "triggerPrice": None, "band": None, "stress": 0.0, "status": "NO DATA"})
+            continue
+        idx = max(have)
         cur = series[c][idx]
         window = [series[c][i] for i in range(n) if dates[i] >= maxd - dt.timedelta(days=365) and series[c][i] is not None]
         if f["type"] == "DD":

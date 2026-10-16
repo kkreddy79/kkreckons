@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 type Factor = {
   name: string; col: string; pillar: string; weight: number; type: "DD" | "LVL";
-  ref: number; current: number; move: number; calm: number; trigger: number;
+  ref: number | null; current: number | null; move: number | null; calm: number; trigger: number;
   triggerPrice: number | null; band: string | null; stress: number; status: string;
 };
 type Data = {
@@ -152,6 +152,15 @@ export default function AiImplosion() {
           <tbody>
             {d.factors.map((f) => {
               const dd = f.type === "DD";
+              if (f.current == null || f.ref == null || f.move == null)
+                return (
+                  <tr key={f.col}>
+                    <td className={s.metric}>{f.name}<small>{f.col} · {f.pillar}</small></td>
+                    <td>{pct(f.weight)}</td><td>—</td><td>—</td><td>—</td>
+                    <td>{dd ? pct(f.calm) : f.calm}</td><td>{dd ? pct(f.trigger) : f.trigger}</td><td>—</td><td>—</td>
+                    <td><span className={s.pill}>NO DATA</span></td>
+                  </tr>
+                );
               return (
                 <tr key={f.col}>
                   <td className={s.metric}>{f.name}<small>{f.col} · {f.pillar}</small></td>
