@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/", label: "Home", match: (p: string) => p === "/" },
   // Edition pages live under /daily/, so they count as Catch up too.
   { href: "/daily/", label: "Catch up", match: (p: string) => p.startsWith("/daily") },
+  { href: "/ai-stress-index", label: "AI Stress Index", match: (p: string) => p.startsWith("/ai-stress-index") },
   { href: "/about", label: "About", match: (p: string) => p.startsWith("/about") },
 ];
 
