@@ -1,0 +1,13 @@
+{
+  "factors": [
+    {"name": "Nasdaq-100", "col": "NDX",  "source": "Yahoo ^NDX", "pillar": "Equity",    "weight": 0.18, "calm": -0.05, "trigger": -0.25, "type": "DD"},
+    {"name": "Semis",      "col": "SOX",  "source": "Yahoo ^SOX", "pillar": "Equity",    "weight": 0.18, "calm": -0.10, "trigger": -0.40, "type": "DD"},
+    {"name": "AI ETF",     "col": "AIQ",  "source": "Yahoo AIQ",  "pillar": "Equity",    "weight": 0.09, "calm": -0.05, "trigger": -0.30, "type": "DD"},
+    {"name": "Oracle",     "col": "ORCL", "source": "Yahoo ORCL", "pillar": "Financing", "weight": 0.09, "calm": -0.15, "trigger": -0.50, "type": "DD"},
+    {"name": "CoreWeave",  "col": "CRWV", "source": "Yahoo CRWV", "pillar": "Financing", "weight": 0.09, "calm": -0.30, "trigger": -0.60, "type": "DD"},
+    {"name": "BDC ETF",    "col": "BIZD", "source": "Yahoo BIZD", "pillar": "Credit",    "weight": 0.14, "calm": -0.05, "trigger": -0.25, "type": "DD"},
+    {"name": "Loan ETF",   "col": "BKLN", "source": "Yahoo BKLN", "pillar": "Credit",    "weight": 0.13, "calm": -0.02, "trigger": -0.08, "type": "DD"},
+    {"name": "HY OAS (bp)","col": "HY",   "source": "FRED BAMLH0A0HYM2 x100", "pillar": "Credit", "weight": 0.10, "calm": 400, "trigger": 600, "type": "LVL"}
+  ],
+  "bet": {"KK": "2027-01-31", "SJ": "2027-06-30"}
+}
