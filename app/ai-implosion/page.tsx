@@ -19,7 +19,7 @@ type Factor = {
   triggerPrice: number | null; band: string | null; stress: number; status: string;
 };
 type Data = {
-  asOf: string; generatedAt: string; sample: boolean; score: number | null; band: string; triggers: string;
+  asOf: string; generatedAt: string; sample: boolean; notes?: string[]; score: number | null; band: string; triggers: string;
   currentLevel: string; implosionDate: string | null; winner: string;
   levels: { level: string; name: string; firstDate: string | null; active: boolean }[];
   bet: { who: string; pick: string; daysLeft: number; daysOff: number | null }[];
@@ -130,6 +130,7 @@ export default function AiImplosion() {
         <div className="eyebrow">AI bubble stress tracker</div>
         <h1>AI Implosion Dashboard</h1>
         <p>7 AI-cycle drawdowns + HY spread | Data as of {fmtDate(d.asOf)}</p>
+        {(d.notes ?? []).map((n) => <p key={n} className={s.sample}>{n}</p>)}
         {d.sample && <p className={s.sample}>Sample data — illustrative prices, not real markets. Real data loads on the first automated run.</p>}
       </section>
 

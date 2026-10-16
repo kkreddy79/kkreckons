@@ -31,6 +31,8 @@ jobs:
           python-version: "3.12"
       - run: pip install openpyxl==3.1.5
       - name: Fetch prices and rebuild dashboard data
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
           set -o pipefail
           if ! python ai-implosion/update_dashboard.py 2>&1 | tee run.log; then
@@ -41,7 +43,7 @@ jobs:
         run: |
           git config user.name "kkreckons-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ai-implosion.json public/ai-implosion/AI_Implosion_Dashboard.xlsx
+          git add data/ai-implosion.json data/ai-implosion-hy.json public/ai-implosion/AI_Implosion_Dashboard.xlsx
           if git diff --cached --quiet; then echo "No change"; exit 0; fi
           git commit -m "AI Implosion data: $(date -u +%F)"
           git pull --rebase origin "${GITHUB_REF_NAME}"

@@ -16,16 +16,60 @@ def load_config():
 
 
 # ---------------------------------------------------------------- data
-def _get(url, tries=4):
+BROWSER = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                         "Chrome/130.0 Safari/537.36", "Accept": "text/csv,application/json,text/plain,*/*"}
+HY_CACHE = os.path.join(os.path.dirname(HERE), "data", "ai-implosion-hy.json")
+
+
+def _get(url, tries=4, timeout=60):
     last = None
     for i in range(tries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (KKReckons dashboard)"})
-            return urllib.request.urlopen(req, timeout=30).read().decode()
+            req = urllib.request.Request(url, headers=BROWSER)
+            return urllib.request.urlopen(req, timeout=timeout).read().decode()
         except Exception as e:  # rate limits / transient errors
             last = e
             time.sleep(5 * (i + 1))
     raise RuntimeError(f"Could not fetch {url}: {last}")
+
+
+FETCH_NOTES = []
+
+
+def fetch_hy(start):
+    """HY OAS in bp. FRED API if FRED_API_KEY is set, else the public CSV; merged into a cached
+    history so a FRED outage only means the newest days carry the last value."""
+    try:
+        with open(HY_CACHE) as f:
+            cache = {dt.date.fromisoformat(k): v for k, v in json.load(f).items()}
+    except (OSError, ValueError):
+        cache = {}
+    fresh, err = {}, None
+    key = os.environ.get("FRED_API_KEY", "").strip()
+    try:
+        if key:
+            j = json.loads(_get("https://api.stlouisfed.org/fred/series/observations?series_id=BAMLH0A0HYM2"
+                                f"&api_key={key}&file_type=json&observation_start={start}", tries=3))
+            rows = [(o["date"], o["value"]) for o in j["observations"]]
+        else:
+            rows = list(csv.reader(io.StringIO(_get(
+                f"https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2&cosd={start}", tries=3, timeout=90))))
+        for d_, v in rows:
+            try:
+                fresh[dt.date.fromisoformat(d_)] = round(float(v) * 100)
+            except (ValueError, TypeError):
+                pass  # header row or "." for missing days
+    except Exception as e:
+        err = e
+    if not fresh and not cache:
+        raise RuntimeError(f"FRED HY spread unavailable and no cached history: {err}")
+    if err or not fresh:
+        FETCH_NOTES.append(f"FRED unavailable this run; HY spread carried from {max(cache)}")
+    cache.update(fresh)
+    os.makedirs(os.path.dirname(HY_CACHE), exist_ok=True)
+    with open(HY_CACHE, "w") as f:
+        json.dump({k.isoformat(): cache[k] for k in sorted(cache) if k >= start}, f, indent=0)
+    return cache
 
 
 def fetch_live(cols):
@@ -46,14 +90,8 @@ def fetch_live(cols):
         closes = j["indicators"]["quote"][0]["close"]
         px[c] = {dt.datetime.fromtimestamp(t, dt.timezone.utc).date(): (round(v, 2) if v is not None else None)
                  for t, v in zip(j["timestamp"], closes)}
-    hy = {}
-    for row in csv.reader(io.StringIO(_get("https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2"))):
-        try:
-            hy[dt.date.fromisoformat(row[0])] = round(float(row[1]) * 100)
-        except (ValueError, IndexError):
-            pass  # header row or "." for missing days
-    px["HY"] = hy
     cutoff = max(px["NDX"]) - dt.timedelta(days=730)
+    px["HY"] = fetch_hy(cutoff - dt.timedelta(days=10))
     dates = sorted(d for d, v in px["NDX"].items() if d >= cutoff and v is not None)
     return dates, {c: [px[c].get(d) for d in dates] for c in cols}
 
@@ -234,6 +272,7 @@ def compute(dates, series, cfg):
 def write_json(dates, series, cfg, path, sample=False):
     out = compute(dates, series, cfg)
     out["sample"] = sample
+    out["notes"] = FETCH_NOTES
     out["generatedAt"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w") as f:
