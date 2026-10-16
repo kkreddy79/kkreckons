@@ -1,5 +1,91 @@
 [
   {
+    "date": "2026-10-16",
+    "slice": "Burn, ration, return: AI's three moods. India adds a fourth: rules that hold.",
+    "artifact": "https://claude.ai/artifact/66vSHF6A2Uu18B9vKyW65m",
+    "readingMinutes": 5,
+    "image": "/figs/2026-10-16-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "J.P. Morgan: India is becoming investors’ default non-AI bet",
+        "category": "Markets",
+        "tag": "Opinion",
+        "url": "https://www.jpmorgan.com/insights/global-research/markets/india-stock-market-outlook",
+        "src": "J.P. Morgan",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "India"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Accenture sells AI to clients, rations Claude for its own staff",
+        "category": "Consulting",
+        "tag": "",
+        "url": "https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month/",
+        "src": "404 Media",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Supreme Court: Yes Bank’s ₹8,415 crore AT-1 write-down stays quashed",
+        "category": "Banking and law",
+        "tag": "",
+        "url": "https://api.sci.gov.in/supremecourt/2023/6245/6245_2023_6_1501_75512_Judgement_15-Oct-2026.pdf",
+        "src": "Supreme Court of India",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Fairfax plans a ‘global Indian bank’ from IDBI, keeps its CEO",
+        "category": "Banking",
+        "tag": "Interview",
+        "url": "https://www.moneycontrol.com/news/business/fairfax-plans-global-indian-bank-with-idbi-go-digit-and-iifl-employee-benefits-to-continue-no-change-in-management-prem-watsa-14053391.html",
+        "src": "Moneycontrol",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Character.ai’s bankruptcy filing shows AI’s cost problem",
+        "category": "AI startups",
+        "tag": "",
+        "url": "https://www.404media.co/character-ais-bankruptcy-documents-show-the-economics-of-ai-dont-work/",
+        "src": "404 Media",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Banks find AI pays in the boring bits",
+        "category": "Banking tech",
+        "tag": "",
+        "url": "https://fortune.com/2026/09/29/how-banks-are-using-ai-agents-copilots-roi/",
+        "src": "Fortune",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-15",
     "slice": "Rates rise, IPOs pause, hedges lock in. Calm is now a luxury.",
     "artifact": "https://claude.ai/artifact/T62g96Af6DjSXvGz5Pq82g",

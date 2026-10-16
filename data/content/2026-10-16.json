@@ -1,0 +1,253 @@
+{
+  "date": "2026-10-16",
+  "slice": "Burn, ration, return: AI's three moods. India adds a fourth: rules that hold.",
+  "artifact": "https://claude.ai/artifact/66vSHF6A2Uu18B9vKyW65m",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "17.6%",
+      "text": "foreign ownership of Indian large caps, a decade-plus low; J.P. Morgan sees room to buy.",
+      "url": "https://www.jpmorgan.com/insights/global-research/markets/india-stock-market-outlook"
+    },
+    {
+      "num": "$29",
+      "text": "a month is all Accenture now funds per person for Claude; some staff spent $1,000.",
+      "url": "https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month/"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Markets",
+          "tag": "Opinion",
+          "title": "J.P. Morgan: India is becoming investors’ default non-AI bet",
+          "url": "https://www.jpmorgan.com/insights/global-research/markets/india-stock-market-outlook",
+          "url2": "",
+          "points": [
+            "J.P. Morgan’s Rajiv Batra argues India is increasingly the default pick for investors who want emerging-market exposure without the AI trade. India is about 12% of the MSCI EM index, against about 25% for China.",
+            "Foreign investors bought about $2.5bn in July and $3bn in August, yet own just 17.6% of large caps, a decade-plus low. Domestic institutions have been net buyers for 37 straight months.",
+            "The bank expects FY27 earnings growth of about 10.4–11% and GDP growth of 6.5–7%. The risks it flags: oil well above $90, rising global yields and a stronger El Niño. Published 15 September."
+          ],
+          "numbers": [
+            [
+              "17.6%",
+              "foreign ownership of large caps"
+            ],
+            [
+              "$115bn",
+              "possible inflows if underweights close"
+            ],
+            [
+              "37",
+              "straight months of local buying"
+            ]
+          ],
+          "why": "Crowding in AI stocks is India’s opening: a market without AI giants becomes a diversifier. Foreign owners are light, so there is room to buy, and today’s Yes Bank ruling and Fairfax’s IDBI bet add to the case for confidence.",
+          "other": "Being the non-AI market cuts both ways. If AI stocks keep running, India lags, and a sustained oil spike would test the story fast.",
+          "also": [],
+          "image": "/figs/2026-10-16-1.jpg",
+          "imageAlt": "Explainer: why foreign money may return to India and what could spoil it",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "J.P. Morgan",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "India"
+          ]
+        },
+        {
+          "category": "Consulting",
+          "tag": "",
+          "title": "Accenture sells AI to clients, rations Claude for its own staff",
+          "url": "https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month/",
+          "url2": "https://www.ft.com/content/15ae6a2e-6010-4d78-a752-2eeeca1e1c55",
+          "points": [
+            "From 1 October, Accenture centrally funds just $29 a month per person for Claude Enterprise, 404 Media reports. Heavier users, some spending up to $1,000 a month, must charge the excess to a project; Premium plans include $250 of usage a week.",
+            "The Financial Times says investors cannot decide whether AI threatens the consultancy or boosts it, and its shares have swung sharply in recent months.",
+            "Accenture forecasts organic growth of about 2% this year and is betting clients will pay it to roll out AI, while rivals may reprice labour-heavy work."
+          ],
+          "numbers": [
+            [
+              "$29",
+              "monthly Claude budget per person"
+            ],
+            [
+              "$1,000",
+              "monthly spend of some users"
+            ],
+            [
+              "~2%",
+              "organic growth Accenture forecasts"
+            ]
+          ],
+          "why": "The irony is the signal: even AI’s biggest salesman is counting tokens. Companies are moving from ‘try everything’ to ‘show the return’, good news for disciplined users and bad news for open-ended AI budgets.",
+          "other": "A spending cap is routine cost control, not a verdict on AI; the budget simply moves to the projects that use it most.",
+          "also": [],
+          "image": "/figs/2026-10-16-2.jpg",
+          "imageAlt": "Explainer: Accenture's new Claude budget and investors' AI question",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "404 Media",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Banking and law",
+          "tag": "",
+          "title": "Supreme Court: Yes Bank’s ₹8,415 crore AT-1 write-down stays quashed",
+          "url": "https://api.sci.gov.in/supremecourt/2023/6245/6245_2023_6_1501_75512_Judgement_15-Oct-2026.pdf",
+          "url2": "",
+          "points": [
+            "The Supreme Court dismissed appeals by Yes Bank, the RBI and the Centre, upholding the Bombay High Court’s 2023 ruling that the administrator’s 14 March 2020 write-down of ₹8,415 crore of AT-1 bonds was invalid.",
+            "The final rescue scheme had deliberately dropped the write-down clause, the court held, and the RBI’s Basel III rules required any write-down before the reconstruction took effect, ordered by the RBI, not an administrator.",
+            "It called the handling by the RBI, the administrator and Yes Bank questionable, noted the bank sold these high-risk bonds to individuals, and said coupons must be paid as the bond terms require."
+          ],
+          "numbers": [
+            [
+              "₹8,415 cr",
+              "AT-1 bonds written down in 2020"
+            ],
+            [
+              "0.6%",
+              "Yes Bank’s CET1 ratio, Dec 2019"
+            ]
+          ],
+          "why": "Rules beat rescue convenience. Foreign money now buying into Indian lenders, such as Fairfax at IDBI and CSB, gets a clear signal: bond terms and the RBI’s own rulebook will be enforced, even against the regulator.",
+          "other": "Bail-ins exist so taxpayers don’t pay for bank failures. If write-downs are this easy to overturn, will the next rescue be slower and costlier, and will AT-1 buyers price in that protection as a free option?",
+          "also": [],
+          "image": "/figs/2026-10-16-3.jpg",
+          "imageAlt": "Explainer: why the Yes Bank AT-1 write-down failed and what happens now",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Supreme Court of India",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ]
+        },
+        {
+          "category": "Banking",
+          "tag": "Interview",
+          "title": "Fairfax plans a ‘global Indian bank’ from IDBI, keeps its CEO",
+          "url": "https://www.moneycontrol.com/news/business/fairfax-plans-global-indian-bank-with-idbi-go-digit-and-iifl-employee-benefits-to-continue-no-change-in-management-prem-watsa-14053391.html",
+          "url2": "",
+          "points": [
+            "Prem Watsa says Fairfax will build IDBI Bank into a global Indian bank, linking it with Digit Insurance and IIFL Capital Services for insurance, wealth management and investment banking, while those firms’ parents stay unchanged.",
+            "The ₹52,878 crore purchase of a 60.72% stake, cleared by the government, is Fairfax’s largest ever and should close early next year. Rakesh Sharma stays as CEO; N S Kannan is lined up as chairman, subject to RBI approval.",
+            "Watsa promised no cut in employee benefits. RBI cross-holding rules give Fairfax two years to decide on its 40% stake in CSB Bank."
+          ],
+          "numbers": [
+            [
+              "₹52,878 cr",
+              "for a 60.72% stake"
+            ],
+            [
+              "40%",
+              "CSB stake to decide on within two years"
+            ]
+          ],
+          "why": "Bank, insurer and wealth arm under one owner is the model India’s big private banks already run. If a foreign owner can run IDBI as an Indian bank, it becomes the template for future sales of state-linked lenders.",
+          "other": "What to watch: RBI approvals for the new chair and structure, and whether a long-time state-run workforce adapts to a private owner without the promised calm cracking.",
+          "also": [],
+          "image": "/figs/2026-10-16-4.jpg",
+          "imageAlt": "Explainer: Fairfax's plan for IDBI Bank and what stays the same",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Moneycontrol",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI startups",
+          "tag": "",
+          "title": "Character.ai’s bankruptcy filing shows AI’s cost problem",
+          "url": "https://www.404media.co/character-ais-bankruptcy-documents-show-the-economics-of-ai-dont-work/",
+          "url2": "",
+          "points": [
+            "Character.ai, valued at $1bn in 2023, has filed for Chapter 11. Its CEO’s court declaration says the technology is expensive to run and the company has always struggled to turn a profit.",
+            "It spent $13.8m a month on computing in 2024 and $10m in 2025, while revenue from all sources, ads included, peaked at $5.3m a month. By August 2026 it was still losing about $8–9m a month.",
+            "Cheaper models, layoffs, ads and in-app purchases did not close the gap, and lawsuits over harm to users added heavy legal bills. The service stays online during the bankruptcy."
+          ],
+          "numbers": [
+            [
+              "$10m",
+              "monthly compute bill, 2025"
+            ],
+            [
+              "$5.3m",
+              "best month of revenue"
+            ]
+          ],
+          "why": "Scale needs a subsidy. The giants fund AI from ad empires or fresh capital; second-tier players have neither. Expect consolidation, and more cluttered, pricier AI apps as survivors chase break-even.",
+          "other": "Is this AI’s economics or one firm’s niche? Heavy lawsuit costs and a crowded companion-app market may explain much of the collapse.",
+          "also": [],
+          "image": "/figs/2026-10-16-5.jpg",
+          "imageAlt": "Explainer: Character.ai's computing costs against its revenue",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "404 Media",
+          "pay": false,
+          "themes": [
+            "AI"
+          ]
+        },
+        {
+          "category": "Banking tech",
+          "tag": "",
+          "title": "Banks find AI pays in the boring bits",
+          "url": "https://fortune.com/2026/09/29/how-banks-are-using-ai-agents-copilots-roi/",
+          "url2": "",
+          "points": [
+            "Finance placed a dozen firms on Fortune’s AIQ 75 list, second only to tech, with JPMorgan Chase first overall. BCG says financial firms were set to invest 2% of revenue in AI this year.",
+            "Bank of America says its EricaAssist agent cut average call times by nearly a minute; Wells Fargo saw a 31% rise in product sales when branch bankers used AI; 87% of Citi staff use its Stylus tool.",
+            "BNY now has nearly 400 AI initiatives in production, while Bank of America stays cautious on fully autonomous agents."
+          ],
+          "numbers": [
+            [
+              "31%",
+              "Wells Fargo branch sales lift with AI"
+            ],
+            [
+              "~400",
+              "BNY AI initiatives in production"
+            ]
+          ],
+          "why": "Returns come from narrow, measurable jobs: shorter calls, faster documents, better-prepared bankers. That is the opposite of Character.ai’s story, and it is where IT vendors serving banks should aim.",
+          "other": "These figures come from the banks’ own executives. Proof of profit, not just activity, is still thin.",
+          "also": [],
+          "image": "/figs/2026-10-16-6.jpg",
+          "imageAlt": "Explainer: where banks are finding a return on AI",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Fortune",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "AI"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Post by @arpitrage on X",
+      "url": "https://x.com/arpitrage/status/2110473485030129919",
+      "note": "post"
+    }
+  ]
+}
