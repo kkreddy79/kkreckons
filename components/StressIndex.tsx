@@ -369,7 +369,6 @@ function Banner() {
           <p className={s.daily}>We check the gauges daily.</p>
           <p className={s.meta}>A daily market-stress monitor for AI-related stocks, AI financing proxies and wider credit conditions. Updated every weekday after the US close.</p>
           <div className={s.ctas}>
-            <a className={s.ctaMain} href="#today">View today’s index <span aria-hidden="true">↓</span></a>
             <a className={s.ctaAlt} href="#methodology">How it works</a>
           </div>
         </div>
