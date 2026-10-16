@@ -27,6 +27,7 @@ type Data = {
   history: { date: string; equity: number | null; financing: number | null; credit: number | null; score: number | null }[];
   weekly: { weekEnding: string; high: number | null }[];
   notes?: string[]; editorNote?: string;
+  model?: { version: string; changed: string; note?: string; changelog: { version: string; date: string; note: string }[] };
 };
 type Backtest = {
   dataStart: string; dataEnd: string; firstScored: string; scoredDays: number;
@@ -34,6 +35,10 @@ type Backtest = {
     levels: { level: string; date: string | null; daysFromPeak: number | null }[]; dataQuality?: string; standInShare?: number }[];
   outsideEpisodes: { level: string; date: string; days: number; score: number }[];
   comparison?: { name: string; outsideByLevel: number[]; episodes: { name: string; levels: { date: string | null }[] }[] }[];
+  alertOutcomes?: { level: string; date: string; fwdWorst: number; kind: "during" | "followed" | "false"; complete: boolean }[];
+  nasdaqDeclines?: { from: string; to: string; worst: number; alerted: boolean; firstAlert: string | null }[];
+  outcomeRule?: { horizonDays: number; fall: number };
+  sensitivity?: { name: string; latestScore: number | null; l4Episodes: string[]; outsideByLevel: number[] }[];
 };
 
 // Formal alert names. L1 is "Stress Watch" so it is not confused with the "Elevated" stress band.
@@ -61,7 +66,15 @@ const band = (v: number | null) => (v == null ? "—" : v >= 75 ? "Critical" : v
 // One colour scale for every reading: the index and each gauge's 0–100 stress score.
 const bandColor = (v: number | null) => (v == null ? C.slate : v >= 75 ? C.red : v >= 50 ? C.orangeRed : v >= 25 ? C.amber : C.green);
 const stressColor = (x: number) => bandColor(x * 100);
-const gaugeWord = (x: number) => (x >= 0.75 ? "Very high stress" : x >= 0.5 ? "High stress" : x >= 0.25 ? "Moderate stress" : "Low stress");
+// The same bands label the index and every gauge score.
+const gaugeWord = (x: number) => band(s100(x));
+const an = (n: number) => (/^(8|11|18)/.test(String(n)) ? "an" : "a");
+const sourceLink = (src?: string) => {
+  if (!src) return null;
+  const [kind, id] = src.split(" ");
+  if (kind === "FRED") return { label: `FRED ${id}`, url: `https://fred.stlouisfed.org/series/${id}` };
+  return { label: `Yahoo Finance ${id}`, url: `https://finance.yahoo.com/quote/${encodeURIComponent(id)}` };
+};
 const area = (col: string) => (["NDX", "SOX", "AIQ"].includes(col) ? "AI stocks" : col === "DTCR" ? "AI infrastructure" : "credit");
 const weekdaysBetween = (a: string, b: string) => {
   let n = 0; const d = new Date(`${a}T00:00:00Z`); const end = new Date(`${b}T00:00:00Z`);
@@ -120,27 +133,13 @@ function todaysRead(d: Data) {
   const movers = d.factors.filter((f) => f.prevStress != null).map((f) => ({ f, dlt: f.stress - (f.prevStress ?? 0) }))
     .filter((m) => Math.abs(m.dlt) >= 0.01 && m.f.col !== top?.col).sort((a, b) => Math.abs(b.dlt) - Math.abs(a.dlt));
   const sc = d.score, ch = d.prevScore != null && sc != null ? sc - d.prevScore : null;
-  const parts: string[] = [];
-  const concentrated = top && top.stress >= 0.75 && (sc ?? 0) < 50;
-  if (ch != null && sc != null) {
-    if (ch < 0) parts.push(`The index eased to ${sc}${concentrated ? ", but the relief is uneven." : "."}`);
-    else if (ch > 0) parts.push(`The index rose to ${sc}${concentrated ? ", led by a single pocket of stress." : "."}`);
-    else parts.push(`The index held at ${sc}.`);
-  }
   const m = movers[0];
-  const moveTxt = m ? `${SHORT[m.f.col]} stress ${m.dlt > 0 ? "rose" : "fell"} ${Math.abs(s100(m.dlt))} points` : "";
-  if (concentrated && top) {
-    const still = `${SHORT[top.col]} remain at ${s100(top.stress)}/100`;
-    parts.push(m ? `${moveTxt} while ${still}.` : `${still}.`);
-    parts.push(CONTRAST[top.col] ?? "");
-  } else if ((sc ?? 0) >= 50) {
-    parts.push(`${d.factors.filter((f) => f.stress >= 0.5).length} of ${d.factorCount} gauges score 50 or more${m ? `; ${moveTxt.charAt(0).toLowerCase()}${moveTxt.slice(1)}` : ""}.`);
-    parts.push("Stress is no longer confined to one corner of the market.");
-  } else if (m) {
-    parts.push(`${moveTxt}.`);
-    parts.push("No single gauge is flashing a warning.");
-  }
-  return parts.filter(Boolean).join(" ");
+  const verb = ch == null ? `The index is at ${sc}` : ch < 0 ? `The index eased to ${sc}` : ch > 0 ? `The index rose to ${sc}` : `The index held at ${sc}`;
+  const why = m ? ` as ${SHORT[m.f.col]} stress ${m.dlt > 0 ? "rose" : "fell"} ${Math.abs(s100(m.dlt))} points` : "";
+  const concentrated = top && top.stress >= 0.75 && (sc ?? 0) < 50;
+  if (concentrated && top) return `${verb}${why}, but ${SHORT[top.col]} remain at ${s100(top.stress)}/100. ${CONTRAST[top.col] ?? ""}`;
+  if ((sc ?? 0) >= 50) return `${verb}${why}. Stress is no longer confined to one corner of the market.`;
+  return `${verb}${why}. No single gauge is flashing a warning.`;
 }
 
 /* ---------- Layer 2 ---------- */
@@ -160,9 +159,10 @@ function Sparkline({ data }: { data: Spark[] }) {
 function plus10(f: Factor) {
   const p = f.plus10;
   const room = f.maxPoints - f.points;
-  if (!p) return room < 0.05 ? "Already at its maximum contribution." : `On its own it can add at most ${room.toFixed(1)} more points to today’s index.`;
-  if (p.kind === "price") return `On its own, it would add 10 more points to today’s index if it fell to ${pct(p.drawdown, 1)} from its 2-year high (about ${num(p.price)}).`;
-  return `On its own, it would add 10 more points to today’s index if the spread reached ${num(p.bp, 0)} bp.`;
+  const now = `${f.points.toFixed(1)} today`;
+  if (!p) return room < 0.05 ? `Already contributes its maximum of ${f.maxPoints.toFixed(0)} points.` : `Contributes ${now}; at most ${f.maxPoints.toFixed(0)} points, so it can add no more than ${room.toFixed(1)}.`;
+  const at = p.kind === "price" ? `at about ${pct(p.drawdown, 1)} from its 2-year high (about ${num(p.price)})` : `if the spread reached ${num(p.bp, 0)} bp`;
+  return `This gauge would contribute ${(f.points + 10).toFixed(1)} points ${at}, up from ${now}. With every other gauge unchanged, the index would rise by those same 10 points.`;
 }
 
 function GaugeCard({ f }: { f: Factor }) {
@@ -171,7 +171,8 @@ function GaugeCard({ f }: { f: Factor }) {
   return (
     <details className={s.gaugeRow}>
       <summary>
-        <span className={s.gName}>{SHORT[f.col] ?? f.name}{f.stale && <em className={s.staleTag}>stale</em>}<small>{f.descriptor}</small></span>
+        <span className={s.gName}>{SHORT[f.col] ?? f.name}{f.stale && <em className={s.staleTag}>stale</em>}<small>{f.descriptor}</small>
+          <small className={s.gQuick}>{f.current == null ? "No data" : dd ? num(f.current) : `${num(f.current, 0)} bp`} · contributes {f.points.toFixed(1)} pts</small></span>
         <span className={s.gBar}><span style={{ width: pct(f.stress, 1), background: stressColor(f.stress) }} /></span>
         <span className={s.gPct}>{s100(f.stress)}<small>/100</small></span>
         <span className={`${s.gDir} ${dir.cls}`} title={dir.label}><b aria-hidden="true">{dir.arrow}</b> <span className={s.gDirTxt}>{dir.label}</span></span>
@@ -195,7 +196,7 @@ function GaugeCard({ f }: { f: Factor }) {
           </dl>
           {f.spark && f.spark.length > 2 && <><div className={s.sparkLabel}>Stress score, last 52 weeks <small>(dashed line = 50)</small></div><Sparkline data={f.spark} /></>}
           <p className={s.small}>{plus10(f)}</p>
-          <p className={s.small}>Source: {f.source ?? "—"}. {dd ? "Score = (drawdown − calm) ÷ (trigger − calm), limited to 0–100." : "Score = the higher of (spread − calm) ÷ (trigger − calm) and (rise above 52-week low − widening calm) ÷ (widening trigger − widening calm), limited to 0–100."}</p>
+          <p className={s.small}>Source: {(() => { const l = sourceLink(f.source); return l ? <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a> : "—"; })()}, observation {longDate(f.lastDate)}. {dd ? "Score = (drawdown − calm) ÷ (trigger − calm), limited to 0–100." : "Score = the higher of (spread − calm) ÷ (trigger − calm) and (rise above 52-week low − widening calm) ÷ (widening trigger − widening calm), limited to 0–100."}</p>
         </details>
       </div>
     </details>
@@ -224,6 +225,7 @@ function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) 
   const lo = scored.reduce<(typeof scored)[number] | null>((m, p) => (!m || p.score < m.score ? p : m), null);
   const avg = scored.length ? scored.reduce((t, p) => t + p.score, 0) / scored.length : null;
   const nBelow = score != null ? scored.filter((p) => p.score < score).length : 0;
+  const nEqual = score != null ? scored.filter((p) => p.score === score).length : 0;
   const below = score != null && scored.length ? Math.round((100 * nBelow) / scored.length) : null;
   const last = H[H.length - 1];
   const onMove = (e: ReactPointerEvent<SVGSVGElement>) => {
@@ -262,7 +264,7 @@ function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) 
           <div><dt>52-week high</dt><dd>{hi.score}<small>{longDate(hi.date)}</small></dd></div>
           <div><dt>52-week low</dt><dd>{lo.score}<small>{longDate(lo.date)}</small></dd></div>
           <div><dt>52-week average</dt><dd>{avg.toFixed(0)}</dd></div>
-          {below != null && <p className={s.compareNote}>Today’s score is higher than {nBelow} of the {scored.length} daily readings over the past 52 weeks: about the {below}th percentile{score < 25 ? ", even though it is still in the Normal band" : ""}. Each trading day counts once, using the latest data available that day.</p>}
+          {below != null && <p className={s.compareNote}>Today’s score is higher than {nBelow} of the {scored.length} daily readings over the past 52 weeks{nEqual > 1 ? ` (and equal to ${nEqual - 1} others)` : ""}: about the {below}th percentile{score < 25 ? ", even though it is still in the Normal band" : ""}. Each trading day counts once using that day’s latest data; ties are not counted as lower. Range over the year: {lo.score} to {hi.score}.</p>}
         </dl>
       )}
     </figure>
@@ -289,21 +291,26 @@ function WeeklyChart({ Wk }: { Wk: Data["weekly"] }) {
 function BacktestSummary({ b }: { b: Backtest }) {
   const highest = (e: Backtest["episodes"][number]) => {
     const hit = [...e.levels].reverse().find((l) => l.date);
-    return hit ? { name: `${hit.level} ${ALERTS[hit.level]}`, date: hit.date, days: hit.daysFromPeak } : null;
+    return hit ? { name: `${hit.level} ${ALERTS[hit.level]}`, date: hit.date } : null;
   };
   const first = (e: Backtest["episodes"][number]) => e.levels.find((l) => l.date);
   const outside = [0, 1, 2, 3].map((k) => b.outsideEpisodes.filter((x) => x.level === `L${k + 1}`).length);
+  const oc = b.alertOutcomes ?? [];
+  const cnt = (k: string) => oc.filter((o) => o.kind === k).length;
+  const rule = b.outcomeRule;
+  const missed = (b.nasdaqDeclines ?? []).filter((x) => !x.alerted);
   const cur = b.comparison?.[0], alt = b.comparison?.[1];
   const altExtra = cur && alt ? alt.outsideByLevel.reduce((t, x) => t + x, 0) - cur.outsideByLevel.reduce((t, x) => t + x, 0) : null;
   return (
     <div className={s.foldBody}>
-      <p>The same rules were replayed day by day on market data from {longDate(b.dataStart)} to {longDate(b.dataEnd)}, scoring from {longDate(b.firstScored)} ({b.scoredDays.toLocaleString()} trading days), with no look-ahead. This shows <b>when formal alerts would have fired</b> in past sell-offs; it is not a test of predictive accuracy.</p>
+      <p className={s.caveat}><b>Read with care:</b> historical results before late 2023 are indicative. Several gauges use substitute series because today’s instruments or comparable data did not exist, so historical alert dates and severity may differ from results with fully comparable data. This replay shows when formal alerts would have fired; it is not a test of predictive accuracy.</p>
+      <p>The replay starts on {longDate(b.dataStart)} but scoring begins on {longDate(b.firstScored)}: each price gauge needs 2 years of history before its 2-year high exists. It runs day by day to {longDate(b.dataEnd)} ({b.scoredDays.toLocaleString()} scored trading days) with no look-ahead.</p>
       <div className={s.btWrap}>
         <table className={s.bt}>
-          <thead><tr><th>Sell-off</th><th>Nasdaq-100 fall</th><th>Peak index</th><th>First alert</th><th>Highest alert</th><th>Data</th></tr></thead>
+          <thead><tr><th>Selected sell-off</th><th>Nasdaq-100 fall</th><th>Peak index</th><th>First alert</th><th>Highest alert</th><th>Share of weight on stand-ins</th></tr></thead>
           <tbody>
             {b.episodes.map((e) => {
-              const f = first(e), h = highest(e);
+              const f = first(e), h = highest(e), sh = e.standInShare ?? 0;
               return (
                 <tr key={e.name}>
                   <td>{e.name}</td>
@@ -311,16 +318,33 @@ function BacktestSummary({ b }: { b: Backtest }) {
                   <td>{e.maxScore ?? "—"}</td>
                   <td>{f && f.date ? <>{longDate(f.date)}<small>{f.daysFromPeak != null && f.daysFromPeak >= 0 ? `${f.daysFromPeak} days after the Nasdaq peak` : f.daysFromPeak != null ? `${-f.daysFromPeak} days before the peak` : ""}</small></> : "None"}</td>
                   <td>{h ? <>{h.name}<small>{longDate(h.date)}</small></> : "None"}</td>
-                  <td>{e.dataQuality ?? "—"}{e.standInShare ? <small>{pct(e.standInShare)} of weight on stand-ins</small> : null}</td>
+                  <td><span className={s.proxyBar}><span style={{ width: pct(sh, 1) }} /></span>{pct(sh)}<small>{e.dataQuality}</small></td>
                 </tr>
               );
             })}
           </tbody>
         </table>
       </div>
-      <p><b>False alarms</b> are defined here as formal alerts that started outside the listed sell-off windows. Count since {b.firstScored.slice(0, 4)}: Stress Watch {outside[0]} · Financing Strain {outside[1]} · Broad Correction {outside[2]} · Systemic Dislocation {outside[3]}. Several fall in real stress periods not listed above, such as the 2010 euro crisis and the March 2023 bank failures.</p>
-      {altExtra != null && <p><b>Weighting check:</b> a lower-redundancy weighting (less weight on gauges that move together) caught the same Systemic Dislocation episodes but produced {altExtra} more false alarm{altExtra === 1 ? "" : "s"}, so the current weights were kept.</p>}
-      <p><b>Proxies:</b> ETFs that did not exist yet are back-filled with labelled stand-ins (for example QQQ for the AI ETF before 2018, the IYR real-estate ETF for the data-center ETF before 2020, Ares Capital for BDCs before 2013). FRED publishes only about three years of the ICE credit spreads, so older spread history uses Moody’s Baa spread (BAA10Y), scaled to join each series. Results before late 2023 are indicative.</p>
+      <p><b>Alerts outside the selected sell-off windows</b> (since {b.firstScored.slice(0, 4)}): Stress Watch {outside[0]} · Financing Strain {outside[1]} · Broad Correction {outside[2]} · Systemic Dislocation {outside[3]}. An alert outside these windows is not automatically a false alarm; some match real stress periods the list leaves out, such as the 2010 euro crisis and the March 2023 bank failures.</p>
+      {rule && oc.length > 0 && (
+        <p><b>What followed each alert</b> ({oc.length} alert starts at any level): {cnt("during")} began during a selected sell-off; {cnt("followed")} were followed by a Nasdaq-100 fall of {pct(-rule.fall)} or more within about 6 months ({rule.horizonDays} trading days); {cnt("false")} were not. Those last {cnt("false")} are the closest thing to false alarms under this rule.</p>
+      )}
+      {b.nasdaqDeclines && (
+        <p><b>Missed declines:</b> of {b.nasdaqDeclines.length} periods when the Nasdaq-100 fell 20% or more below its 2-year high, {b.nasdaqDeclines.length - missed.length} had a formal alert by the time they ended. {missed.length ? `No alert fired in: ${missed.map((x) => `${longDate(x.from)} (${pct(x.worst)})`).join("; ")}.` : ""}</p>
+      )}
+      {b.sensitivity && (
+        <>
+          <p><b>Threshold sensitivity:</b> the same replay with every calm and trigger threshold moved 20% tighter or looser.</p>
+          <div className={s.btWrap}>
+            <table className={s.bt}>
+              <thead><tr><th>Thresholds</th><th>Index today</th><th>Systemic Dislocation fired in</th><th>Alerts outside windows (L1 · L2 · L3 · L4)</th></tr></thead>
+              <tbody>{b.sensitivity.map((v) => <tr key={v.name}><td>{v.name}</td><td>{v.latestScore ?? "—"}</td><td>{v.l4Episodes.length ? v.l4Episodes.join(", ") : "None"}</td><td>{v.outsideByLevel.join(" · ")}</td></tr>)}</tbody>
+            </table>
+          </div>
+        </>
+      )}
+      {altExtra != null && <p><b>Weighting check:</b> a lower-redundancy weighting (less weight on gauges that move together) caught the same Systemic Dislocation episodes but produced {altExtra} more alert{altExtra === 1 ? "" : "s"} outside the selected windows, so the current weights were kept.</p>}
+      <p><b>Stand-ins:</b> QQQ, then the Nasdaq-100 itself, for the AI ETF before 2018; the IYR real-estate ETF for the data-center ETF before 2020; Ares Capital for BDCs before 2013; a senior-loan fund (VVR) for leveraged loans before 2011. FRED publishes only about three years of the ICE credit spreads, so older spread history uses Moody’s Baa spread (BAA10Y), scaled to join each series.</p>
     </div>
   );
 }
@@ -360,6 +384,8 @@ export default function StressIndex() {
   const priceDate = priceDates[0] ?? d.asOf, spreadDate = spreadDates[0] ?? null;
   const spreadLag = spreadDate ? weekdaysBetween(spreadDate, d.asOf) : 0;
   const stale = d.factors.filter((f) => f.stale);
+  const staleW = stale.reduce((t, f) => t + f.weight, 0) / d.factors.reduce((t, f) => t + f.weight, 0);
+  const LIMITED = 0.25; // above this share of the index weight on stale inputs, no stress band is shown
 
   return (
     <main className={`container ${s.page}`}>
@@ -368,7 +394,7 @@ export default function StressIndex() {
         <div className="eyebrow">KKReckons · Markets</div>
         <h1>AI Market Stress Index</h1>
         <p className={s.question}>Is the AI boom showing cracks beneath the surface?</p>
-        <p className={s.meta}>A daily market-stress monitor for AI-related stocks, AI financing proxies and wider credit conditions. Updated every weekday after the US close.</p>
+        <p className={s.meta}>A daily stress monitor for AI stocks, AI financing and credit markets.</p>
         {(d.notes ?? []).map((n) => <p key={n} className={s.note}>{n}</p>)}
       </header>
 
@@ -379,10 +405,13 @@ export default function StressIndex() {
             <span className={s.score} style={{ color: bandColor(d.score) }}>{d.score ?? "—"}</span>
             <span className={s.outOf}>/ 100</span>
             <span className={s.bandTxt}>
-              <span className={s.badge} style={{ background: bandColor(d.score) }}>{band(d.score).toUpperCase()}</span>
+              <span className={s.badge} style={{ background: staleW > LIMITED ? "#71717A" : bandColor(d.score) }}>{staleW > LIMITED ? "LIMITED DATA" : band(d.score).toUpperCase()}</span>
               {change != null && <small>{change === 0 ? "Unchanged" : `${change > 0 ? "Up" : "Down"} ${Math.abs(change)} point${Math.abs(change) === 1 ? "" : "s"}`} vs previous close ({d.prevScore})</small>}
             </span>
           </div>
+          {stale.length > 0 && (
+            <p className={s.staleWarn}>⚠ {stale.length} input{stale.length > 1 ? "s are" : " is"} stale ({pct(staleW)} of the index weight): the score includes carried-forward data.{staleW > LIMITED ? " Above 25% stale, no stress band is shown." : ""}</p>
+          )}
           <Meter score={d.score} />
           <p className={s.interp}>{h.line}</p>
           <p className={s.alert}>Stress band: <b>{band(d.score)}</b> · Formal alert: <b>{active ? `${active.level} ${ALERTS[active.level]}` : "None"}</b></p>
@@ -400,7 +429,7 @@ export default function StressIndex() {
             <div className={s.signal} style={{ borderColor: stressColor(signal.stress) }}>
               <div className={s.label}>The signal to watch</div>
               <div className={s.signalRow}><span className={s.signalName}>{SHORT[signal.col]}<small>{signal.descriptor}</small></span><span className={s.signalPct} style={{ color: stressColor(signal.stress) }}>{s100(signal.stress)}<small>/100</small></span></div>
-              <p>{gaugeWord(signal.stress)} on this index’s 0–100 scale, while overall stress is {band(d.score).toLowerCase()}. This signals pressure in {area(signal.col) === "credit" ? "riskier corporate borrowing" : area(signal.col)}, not a {s100(signal.stress)}% probability of a {area(signal.col) === "credit" ? "credit event" : "crash"}.</p>
+              <p>{gaugeWord(signal.stress)} on this index’s 0–100 scale, while overall stress is {band(d.score).toLowerCase()}. This signals pressure in {area(signal.col) === "credit" ? "riskier corporate borrowing" : area(signal.col)}, not {an(s100(signal.stress))} {s100(signal.stress)}% probability of a {area(signal.col) === "credit" ? "credit event" : "crash"}.</p>
             </div>
           )}
           <div className={s.read}>
@@ -427,16 +456,24 @@ export default function StressIndex() {
               </div>
               <span className={s.gBar}><span style={{ width: `${Math.min(100, v ?? 0)}%`, background: stressColor((v ?? 0) / 100) }} /></span>
               <ul className={s.members}>
-                {members.map((f) => <li key={f.col}><span>{SHORT[f.col]} <small>{pct(f.weight)}</small></span><b style={{ color: stressColor(f.stress) }}>{s100(f.stress)}</b></li>)}
+                {members.map((f) => (
+                  <li key={f.col}>
+                    <span className={s.mName}>{SHORT[f.col]} <small>{pct(f.weight)}</small></span>
+                    <span className={s.mBar}><span style={{ width: pct(f.stress, 1), background: stressColor(f.stress) }} /></span>
+                    <b>{s100(f.stress)}</b>
+                    <small className={s.mPts}>+{f.points.toFixed(1)}</small>
+                  </li>
+                ))}
               </ul>
+              <p className={s.mNote}>Bar = gauge score (0–100) · +pts = contribution to the index</p>
             </div>
           );
         })}
       </section>
       {d.pillars && d.pillars.Equity != null && d.pillars.Financing != null && d.pillars.Credit != null && (
-        <p className={s.small}>Each component weight is the sum of its gauges’ weights, and its score is their weighted average. The index combines the components: {PILLAR_KEYS.map((p) => `${pct(pw[p] ?? 0)} × ${(d.pillars?.[p] ?? 0).toFixed(1)}`).join(" + ")} = {PILLAR_KEYS.reduce((t, p) => t + (pw[p] ?? 0) * (d.pillars?.[p] ?? 0), 0).toFixed(1)}, rounded to {d.score}.</p>
+        <p className={s.small}>Each component weight is the sum of its gauges’ weights, and its score is their weighted average. Contributions may not sum exactly because of rounding; all calculations use unrounded values. The index combines the components: {PILLAR_KEYS.map((p) => `${pct(pw[p] ?? 0)} × ${(d.pillars?.[p] ?? 0).toFixed(1)}`).join(" + ")} = {PILLAR_KEYS.reduce((t, p) => t + (pw[p] ?? 0) * (d.pillars?.[p] ?? 0), 0).toFixed(1)}, rounded to {d.score}.</p>
       )}
-      <p className={s.legendLine}><span className={s.swatches}><i style={{ background: C.green }} /><i style={{ background: C.amber }} /><i style={{ background: C.orangeRed }} /><i style={{ background: C.red }} /></span>Colour shows how high stress is (green low → red very high). Arrows show direction: <span className={s.worse}>▲ stress rising</span> · <span className={s.better}>▼ stress easing</span>.</p>
+      <p className={s.legendLine}><span className={s.swatches}><i style={{ background: C.green }} /><i style={{ background: C.amber }} /><i style={{ background: C.orangeRed }} /><i style={{ background: C.red }} /></span>One set of bands labels the index and every gauge: Normal 0–24 (green) · Elevated 25–49 (amber) · Severe 50–74 (orange) · Critical 75–100 (red). Arrows show direction: <span className={s.worse}>▲ stress rising</span> · <span className={s.better}>▼ stress easing</span>.</p>
 
       {/* Layer 2: the evidence */}
       <h2 className={s.h2} id="evidence">What changed since {d.prevDate ? longDate(d.prevDate) : "the previous session"}</h2>
@@ -507,7 +544,7 @@ export default function StressIndex() {
           <p><b>Credit spreads</b> (BBB, CCC, high yield, in bp): score = the higher of the level test, (spread − calm) ÷ (trigger − calm), and the widening test, (spread − 52-week low − widening calm) ÷ (widening trigger − widening calm), each limited to 0–100. The 52-week window catches fast blow-outs.</p>
           <p><b>Index</b> = Σ(weight × score) ÷ Σ weights, rounded. A gauge’s contribution = its weight share × its score. Blank days carry the last value; a gauge not updated for more than 3 trading days is flagged stale and keeps its last value in the index. History needs 2 years of data before the first score.</p>
           <p><b>Formal alerts</b> (5 straight trading days): L1 Stress Watch: index ≥ 50 · L2 Financing Strain: index ≥ 60 and (BDCs ≥ 80 with loans ≥ 50, or CCC ≥ 80) · L3 Broad Correction: index ≥ 70, semiconductors ≥ 83, AI ETF ≥ 80 · L4 Systemic Dislocation: index ≥ 75, Nasdaq-100 at 100, and high-yield ≥ 500 bp or BDCs at 100.</p>
-          <p><b>Sources:</b> Yahoo Finance dividend-adjusted daily closes (^NDX, ^SOX, AIQ, DTCR, BIZD, BKLN); ICE BofA option-adjusted spreads via FRED (BAMLC0A4CBBB, BAMLH0A3HYC, BAMLH0A0HYM2), which publish a day after the market date.</p>
+          <p><b>Sources</b> (retrieved {refreshedTxt}): Yahoo Finance dividend-adjusted daily closes, and ICE BofA option-adjusted spreads via FRED, which publish a day after the market date. {d.factors.map((f) => { const l = sourceLink(f.source); return l ? <span key={f.col}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a> ({longDate(f.lastDate)}) · </span> : null; })}</p>
         </div>
       </details>
       {bt && (
@@ -517,7 +554,16 @@ export default function StressIndex() {
         </details>
       )}
 
-      <p className={s.fine}>An indicator of market conditions, not a forecast. For information only; not financial advice. Market data as of {longDate(d.asOf)} · refreshed {refreshedTxt}.</p>
+      {d.model && (
+        <details className={s.fold}>
+          <summary>Model version and changes</summary>
+          <div className={s.foldBody}>
+            <p>Model v{d.model.version} · methodology last changed {longDate(d.model.changed)}. {d.model.note}</p>
+            <ul className={s.levelList}>{[...d.model.changelog].reverse().map((c) => <li key={c.version}><b>v{c.version}</b><span>{c.note}</span></li>)}</ul>
+          </div>
+        </details>
+      )}
+      <p className={s.fine}>{d.model ? `Model v${d.model.version}. ` : ""}An indicator of market conditions, not a forecast. For information only; not financial advice. Market data as of {longDate(d.asOf)} · refreshed {refreshedTxt}.</p>
     </main>
   );
 }
