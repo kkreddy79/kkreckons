@@ -22,7 +22,10 @@ type Pillars = { Equity: number | null; Financing: number | null; Credit: number
 type Data = {
   asOf: string; generatedAt: string; score: number | null; factorCount: number;
   prevDate?: string | null; prevScore?: number | null; pillars?: Pillars; prevPillars?: Pillars | null;
-  levels: { level: string; firstDate: string | null; active: boolean }[];
+  levels: { level: string; firstDate: string | null; active: boolean; paused?: boolean; streakStart?: string | null }[];
+  shock?: { active: boolean; threshold: number; lastDate: string | null; daysLastYear: number };
+  scoreRange?: { tight: number | null; loose: number | null; pct: number };
+  exitRule?: { rebound: number; recoveryMode?: boolean; currentRebound?: number };
   factors: Factor[];
   history: { date: string; equity: number | null; financing: number | null; credit: number | null; score: number | null }[];
   weekly: { weekEnding: string; high: number | null }[];
@@ -31,15 +34,28 @@ type Data = {
 };
 type Backtest = {
   dataStart: string; dataEnd: string; firstScored: string; scoredDays: number;
-  episodes: { name: string; description: string; ndxPeak: string; ndxTrough: string; ndxDrawdown: number; maxScore: number | null;
-    levels: { level: string; date: string | null; daysFromPeak: number | null }[]; dataQuality?: string; standInShare?: number }[];
+  episodes: { name: string; description: string; from?: string; to?: string; ndxPeak: string; ndxTrough: string; ndxDrawdown: number; maxScore: number | null;
+    levels: { level: string; date: string | null; daysFromPeak: number | null }[]; dataQuality?: string; standInShare?: number; shockDate?: string | null }[];
   outsideEpisodes: { level: string; date: string; days: number; score: number }[];
   comparison?: { name: string; outsideByLevel: number[]; episodes: { name: string; levels: { date: string | null }[] }[] }[];
   alertOutcomes?: { level: string; date: string; fwdWorst: number; kind: "during" | "followed" | "false"; complete: boolean }[];
-  nasdaqDeclines?: { from: string; to: string; worst: number; alerted: boolean; firstAlert: string | null }[];
+  nasdaqDeclines?: { from: string; to: string; worst: number; alerted: boolean; firstAlert: string | null; firstShock?: string | null }[];
+  alertEpisodes?: AlertEp[];
+  shockEpisodes?: AlertEp[];
+  episodeRule?: { mergeDays: number; horizonDays: number; fall: number; bear: number; exitRebound: number; shockScore: number };
+  ladderBreaks?: { episode: string; kind: "order" | "skipped"; fired: string; before?: string; missing?: string; firedDate?: string; laterDate?: string }[];
+  outOfSample?: { from: string | null; alerts: AlertEp[]; shocks: AlertEp[] };
+  spreadStandIn?: { cols: string[]; label: string; until: string | null; weight: number; calibration?: string };
+  spliceStability?: { days: number; moved: { episode: string; level: string; date: string | null; shifted: string | null }[]; latestScore: number | null };
   outcomeRule?: { horizonDays: number; fall: number };
   sensitivity?: { name: string; latestScore: number | null; l4Episodes: string[]; outsideByLevel: number[] }[];
 };
+type AlertEp = {
+  start: string; end: string; tradingDays: number; ndxFromHighAtStart: number; daysFromPeak: number | null;
+  fwdWorst: number; verdict: "early" | "confirm" | "false"; complete: boolean; inWindow: string | null;
+  maxLevel?: number; maxScore?: number;
+};
+const VERDICT: Record<AlertEp["verdict"], string> = { early: "Early warning", confirm: "Late confirmation", false: "False alarm" };
 
 // Formal alert names. L1 is "Stress Watch" so it is not confused with the "Elevated" stress band.
 const ALERTS: Record<string, string> = { L1: "Stress Watch", L2: "Financing Strain", L3: "Broad Correction", L4: "Systemic Dislocation" };
@@ -296,6 +312,65 @@ function WeeklyChart({ Wk }: { Wk: Data["weekly"] }) {
   );
 }
 
+/* "How to read this backtest — honestly": every number comes from backtest.json, so it stays true as the replay is re-run. */
+function honestPoints(b: Backtest): { head: string; body: string }[] {
+  const out: { head: string; body: string }[] = [];
+  const when = (days: number | null) => {
+    if (days == null) return "—";
+    const a = Math.abs(days), t = a < 45 ? `${a} days` : `${Math.round(a / 30.4)} months`;
+    return days < 0 ? `${t} before the peak` : `${t} after it`;
+  };
+  const oos = b.outOfSample;
+  out.push({ head: "The thresholds were tuned on this same history.",
+    body: "They were shaped by these very episodes, not chosen blind and then validated, so this replay shows the rules fit past crises, not that they would have predicted them." +
+      (oos?.from ? ` The real test is what comes next: the out-of-sample record starts ${longDate(oos.from)} and so far holds ${oos.alerts.length} alert${oos.alerts.length === 1 ? "" : "s"} and ${oos.shocks.length} shock flag${oos.shocks.length === 1 ? "" : "s"}.` : "") });
+  (b.nasdaqDeclines ?? []).filter((x) => !x.alerted).forEach((m) => {
+    const ep = b.episodes.find((e) => e.from && e.to && e.from <= m.from && m.from <= e.to);
+    const why = ep?.maxScore != null ? (ep.maxScore >= 50 ? ": the index never held 50+ for 5 straight trading days" : ": the index stayed below the first alert level of 50") : "";
+    out.push({ head: `It missed the ${ep ? ep.name : `${longDate(m.from)} fall`}.`,
+      body: `The Nasdaq-100 fell ${pct(-m.worst, 1)}${ep?.maxScore != null ? ` and the index hit ${ep.maxScore}` : ""}, yet no alert confirmed${why}. This system detects credit-driven stress, not fast equity drawdowns.` +
+        (m.firstShock ? ` The new shock flag (index ≥ ${b.episodeRule?.shockScore ?? 60} before any alert has confirmed; not itself an alert) would have fired on ${longDate(m.firstShock)}.` : "") });
+  });
+  const late = b.episodes.filter((e) => e.levels[2].date || e.levels[3].date).map((e) => {
+    const hi = [e.levels[2], e.levels[3]].filter((l) => l.date).map((l) => l.daysFromPeak ?? 0);
+    return `${e.name}: Stress Watch ${when(e.levels[0].daysFromPeak)}, first Broad Correction or Systemic Dislocation ${when(Math.min(...hi))}`;
+  });
+  if (late.length) out.push({ head: "The loudest alerts are late.", body: `The top two alerts confirm damage already under way; the quieter Stress Watch is the early signal. Timing against the Nasdaq-100 peak: ${late.join("; ")}.` });
+  const lb = b.ladderBreaks ?? [];
+  if (lb.length) out.push({ head: "The alerts don’t escalate.",
+    body: `Each is an independent tripwire, so don’t read them as a staircase. ${lb.map((x) => x.kind === "order"
+      ? `${x.episode}: ${x.fired} ${ALERTS[x.fired]} fired before ${x.before} ${ALERTS[x.before ?? ""]}`
+      : `${x.episode}: ${x.fired} ${ALERTS[x.fired]} fired without ${x.missing} ${ALERTS[x.missing ?? ""]}`).join("; ")}.` });
+  const ae = b.alertEpisodes ?? [];
+  if (ae.length) {
+    const c = (v: AlertEp["verdict"]) => ae.filter((x) => x.verdict === v).length;
+    const falses = ae.filter((x) => x.verdict === "false").map((x) => longDate(x.start));
+    const mostly = b.episodes.filter((e) => (e.standInShare ?? 0) > 0.35).map((e) => `${e.name} ${pct(e.standInShare ?? 0)}`);
+    out.push({ head: "False alarms happen.",
+      body: `Merging back-to-back alerts gives ${ae.length} alert episodes, each judged by the same rule: ${c("early")} gave early warning, ${c("confirm")} only confirmed a bear market already under way, and ${c("false")} led nowhere${falses.length ? ` (${falses.join(", ")})` : ""}.` +
+        (mostly.length ? ` Several headline episodes run mostly on stand-in data (share of the weight: ${mostly.join(", ")}), so treat their precision as illustrative, not proven.` : "") });
+  }
+  const sv = b.sensitivity ?? [];
+  if (sv.length === 3) {
+    const [tight, cur, loose] = sv;
+    const gained = tight.l4Episodes.filter((x) => !cur.l4Episodes.includes(x));
+    const lost = cur.l4Episodes.filter((x) => !loose.l4Episodes.includes(x));
+    out.push({ head: "Thresholds move the story.",
+      body: `Tightening every threshold 20% ${gained.length ? `turns the ${gained.join(" and the ")} into ${gained.length === 1 ? "a Systemic Dislocation episode" : "Systemic Dislocation episodes"} and ` : ""}moves today’s reading from ${cur.latestScore} to ${tight.latestScore}; loosening them 20% ${lost.length ? `drops the ${lost.join(" and the ")} from that list and ` : ""}takes today to ${loose.latestScore}. Small choices, big narrative swings.` });
+  }
+  const ss = b.spreadStandIn;
+  if (ss?.until && ss.cols.length) out.push({ head: `Before ${longDate(ss.until)}, the credit-spread gauges are one signal.`,
+    body: `${ss.cols.map((c) => SHORT[c] ?? c).join(", ")} all use the same stand-in, Moody’s Baa spread, times a fixed ratio${ss.calibration ? ` (${ss.calibration})` : ""}. So ${pct(ss.weight)} of the weight counts one investment-grade measure several times, and the CCC and high-yield conditions in the alerts run on it too. The ratios come from a calm credit period; in crises junk spreads widen proportionally more than Baa, so older spread stress is probably understated.` });
+  const st = b.spliceStability;
+  if (st) out.push({ head: "Stand-in drift check.",
+    body: `Re-running everything as if FRED’s spread window began ${st.days} days later ${st.moved.length
+      ? `moves ${st.moved.length} alert date${st.moved.length === 1 ? "" : "s"}: ${st.moved.map((m) => `${m.episode} ${m.level} ${longDate(m.date)} → ${longDate(m.shifted)}`).join("; ")}. Treat those dates as approximate.`
+      : "moves no alert dates, so the stand-in joins are stable."}` });
+  if (b.episodeRule) out.push({ head: "Alerts now stand down in recoveries.",
+    body: `Since model v1.4, alerts pause in recovery mode: while the Nasdaq-100 is ${pct(b.episodeRule.exitRebound)} or more above its lowest close since its 2-year high. Before this rule, the top alert stayed on for months after the 2002 and 2009 bottoms, because the 2-year high it measures from was set long before. First-confirmed dates are unaffected.` });
+  return out;
+}
+
 function BacktestSummary({ b }: { b: Backtest }) {
   const highest = (e: Backtest["episodes"][number]) => {
     const hit = [...e.levels].reverse().find((l) => l.date);
@@ -311,6 +386,12 @@ function BacktestSummary({ b }: { b: Backtest }) {
   const altExtra = cur && alt ? alt.outsideByLevel.reduce((t, x) => t + x, 0) - cur.outsideByLevel.reduce((t, x) => t + x, 0) : null;
   return (
     <div className={s.foldBody}>
+      <div className={s.caveat}>
+        <p style={{ margin: "2px 0 6px" }}><b>How to read this backtest — honestly</b></p>
+        <ul style={{ margin: 0, paddingLeft: 18 }}>
+          {honestPoints(b).map((x) => <li key={x.head} style={{ margin: "6px 0" }}><b>{x.head}</b> {x.body}</li>)}
+        </ul>
+      </div>
       <p className={s.caveat}><b>Read with care:</b> historical results before late 2023 are indicative. Several gauges use substitute series because today’s instruments or comparable data did not exist, so historical alert dates and severity may differ from results with fully comparable data. This replay shows when formal alerts would have fired; it is not a test of predictive accuracy.</p>
       <p>The replay starts on {longDate(b.dataStart)} but scoring begins on {longDate(b.firstScored)}: each price gauge needs 2 years of history before its 2-year high exists. It runs day by day to {longDate(b.dataEnd)} ({b.scoredDays.toLocaleString()} scored trading days) with no look-ahead.</p>
       <div className={s.btWrap}>
@@ -334,7 +415,28 @@ function BacktestSummary({ b }: { b: Backtest }) {
         </table>
       </div>
       <p><b>Alerts outside the selected sell-off windows</b> (since {b.firstScored.slice(0, 4)}): Stress Watch {outside[0]} · Financing Strain {outside[1]} · Broad Correction {outside[2]} · Systemic Dislocation {outside[3]}. An alert outside these windows is not automatically a false alarm; some match real stress periods the list leaves out, such as the 2010 euro crisis and the March 2023 bank failures.</p>
-      {rule && oc.length > 0 && (
+      {b.alertEpisodes && b.episodeRule && (
+        <>
+          <p><b>Every alert, judged the same way.</b> Days with any alert active, merged when less than {b.episodeRule.mergeDays} trading days apart. Early warning: the Nasdaq-100 fell a further {pct(-b.episodeRule.fall)} or more within about 6 months. Late confirmation: no further fall, but it began with the Nasdaq-100 already {pct(-b.episodeRule.bear)} or more below its 2-year high. False alarm: neither. The same test applies inside and outside the selected sell-off windows.</p>
+          <div className={s.btWrap}>
+            <table className={s.bt}>
+              <thead><tr><th>Alert period</th><th>Highest alert</th><th>Nasdaq-100 vs 2-year high at start</th><th>Worst over next 6 months</th><th>Verdict</th></tr></thead>
+              <tbody>{b.alertEpisodes.map((x) => (
+                <tr key={x.start}><td>{longDate(x.start)} → {longDate(x.end)}<small>{x.inWindow ?? "outside the selected windows"}</small></td>
+                  <td>{x.maxLevel ? `L${x.maxLevel} ${ALERTS[`L${x.maxLevel}`]}` : "—"}</td><td>{pct(x.ndxFromHighAtStart)}</td>
+                  <td>{pct(x.fwdWorst)}{!x.complete && <small>still being judged</small>}</td><td><b>{VERDICT[x.verdict]}</b></td></tr>
+              ))}</tbody>
+            </table>
+          </div>
+        </>
+      )}
+      {b.outOfSample?.from && (
+        <p><b>Out-of-sample record</b> (alert rules frozen from {longDate(b.outOfSample.from)}): {b.outOfSample.alerts.length || b.outOfSample.shocks.length
+          ? [...b.outOfSample.alerts.map((x) => `${longDate(x.start)} L${x.maxLevel} ${ALERTS[`L${x.maxLevel}`]}, ${VERDICT[x.verdict].toLowerCase()}${x.complete ? "" : " (still being judged)"}`),
+             ...b.outOfSample.shocks.map((x) => `${longDate(x.start)} shock flag, index ${x.maxScore}`)].join("; ")
+          : "no alerts or shock flags yet."} Everything else on this page is in-sample.</p>
+      )}
+      {rule && oc.length > 0 && !b.alertEpisodes && (
         <p><b>What followed each alert</b> ({oc.length} alert starts at any level): {cnt("during")} began during a selected sell-off; {cnt("followed")} were followed by a Nasdaq-100 fall of {pct(-rule.fall)} or more within about 6 months ({rule.horizonDays} trading days); {cnt("false")} were not. Those last {cnt("false")} are the closest thing to false alarms under this rule.</p>
       )}
       {b.nasdaqDeclines && (
@@ -352,7 +454,7 @@ function BacktestSummary({ b }: { b: Backtest }) {
         </>
       )}
       {altExtra != null && <p><b>Weighting check:</b> a lower-redundancy weighting (less weight on gauges that move together) caught the same Systemic Dislocation episodes but produced {altExtra} more alert{altExtra === 1 ? "" : "s"} outside the selected windows, so the current weights were kept.</p>}
-      <p><b>Stand-ins:</b> QQQ, then the Nasdaq-100 itself, for the AI ETF before 2018; the IYR real-estate ETF for the data-center ETF before 2020; Ares Capital for BDCs before 2013; a senior-loan fund (VVR) for leveraged loans before 2011. FRED publishes only about three years of the ICE credit spreads, so older spread history uses Moody’s Baa spread (BAA10Y), scaled to join each series.</p>
+      <p><b>Stand-ins:</b> QQQ, then the Nasdaq-100 itself, for the AI ETF before 2018; the IYR real-estate ETF for the data-center ETF before 2020; Ares Capital for BDCs before 2013; a senior-loan fund (VVR) for leveraged loans before 2011. FRED publishes only about three years of the ICE credit spreads, so older spread history uses Moody’s Baa spread (BAA10Y) times a fixed ratio to each series, frozen so the replay doesn’t drift as FRED’s window rolls.</p>
     </div>
   );
 }
@@ -439,6 +541,9 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
             <span className={s.bandTxt}>
               <span className={s.badge} style={{ background: staleW > LIMITED ? "#71717A" : bandColor(d.score) }}>{staleW > LIMITED ? "LIMITED DATA" : band(d.score).toUpperCase()}</span>
               {change != null && <small>{change === 0 ? "Unchanged" : `${change > 0 ? "Up" : "Down"} ${Math.abs(change)} point${Math.abs(change) === 1 ? "" : "s"}`} vs previous close ({d.prevScore})</small>}
+              {d.scoreRange && d.scoreRange.tight != null && d.scoreRange.loose != null && (
+                <small title={`Today’s index recomputed with every threshold ${pct(d.scoreRange.pct)} tighter or looser`}>Range {d.scoreRange.loose}–{d.scoreRange.tight} if thresholds move ±{pct(d.scoreRange.pct)}</small>
+              )}
             </span>
           </div>
           {stale.length > 0 && (
@@ -446,7 +551,8 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           )}
           <Meter score={d.score} />
           <p className={s.interp}>{h.line}</p>
-          <p className={s.alert}>Stress band: <b>{band(d.score)}</b> · Formal alert: <b>{active ? `${active.level} ${ALERTS[active.level]}` : "None"}</b></p>
+          <p className={s.alert}>Stress band: <b>{band(d.score)}</b> · Formal alert: <b>{active ? `${active.level} ${ALERTS[active.level]}` : "None"}</b>{d.shock && <> · Shock flag: <b style={d.shock.active ? { color: C.red } : undefined}>{d.shock.active ? "On" : "Off"}</b></>}</p>
+          {d.shock?.active && <p className={s.staleWarn}>Shock flag: the index is {d.score}, at or above {d.shock.threshold}, but no formal alert has confirmed. Fast sell-offs can do this without holding long enough for an alert. It is a heads-up, not an alert.</p>}
           <div className={s.fresh}>
             <div><span>Stock &amp; ETF data</span><b>{longDate(priceDate)} · US close</b><em className={s.ok}>Current</em></div>
             <div><span>Credit spread data</span><b>{longDate(spreadDate)} · latest available</b>
@@ -533,9 +639,9 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           <WeeklyChart Wk={d.weekly} />
           <div className={s.label} style={{ marginTop: 16 }}>Formal alerts</div>
           <ul className={s.levelList}>
-            {d.levels.map((l) => <li key={l.level}><b>{l.level} {ALERTS[l.level]}</b><span>{l.active ? "Active now" : l.firstDate ? `First confirmed ${longDate(l.firstDate)}` : "Not triggered"}</span></li>)}
+            {d.levels.map((l) => <li key={l.level}><b>{l.level} {ALERTS[l.level]}</b><span>{l.active ? "Active now" : l.paused ? "Paused: recovery mode" : l.firstDate ? `First confirmed ${longDate(l.firstDate)}` : "Not triggered"}</span></li>)}
           </ul>
-          <p className={s.small}>Each alert needs the index and specific gauges to stay high for 5 trading days in a row.</p>
+          <p className={s.small}>Each alert needs the index and specific gauges to stay high for 5 trading days in a row. The four alerts are independent tripwires, not a staircase: Systemic Dislocation can fire before Broad Correction, and Financing Strain can be skipped. Stress Watch and Financing Strain are the early warnings; the other two confirm damage already under way.</p>
         </div>
       </details>
 
@@ -561,7 +667,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           <p><b>It does not measure</b> AI business fundamentals, valuations, returns on AI spending or future profits. A low score is not proof that the AI boom is healthy.</p>
           <p><b>The nine gauges are not nine independent signals.</b> The Nasdaq-100, semiconductors, the AI ETF and the data-center ETF often move together, as do the credit spreads, so one market move can lift several gauges at once. Weights are set with this in mind, but the score is a combination of related proxies, not a count of separate risks.</p>
           <p><b>Proxies:</b> listed BDCs stand in for private credit and the data-center ETF for the AI build-out. Their share prices also reflect broader stock-market moves. The CCC spread covers all CCC-rated borrowers, not only technology companies.</p>
-          <p><b>Thresholds</b> are fixed, judgement-based settings informed by past market episodes, not statistically optimised or universal market levels.</p>
+          <p><b>Thresholds</b> are fixed, judgement-based settings informed by past market episodes, not statistically optimised or universal market levels. Because they were shaped by the same history the backtest replays, the backtest shows fit, not forecasting power.</p>
         </div>
       </details>
       <details className={s.fold}>
@@ -578,7 +684,9 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           <p><b>Prices</b> (Nasdaq-100, semiconductors, AI, data-center, BDC and loan ETFs): drawdown = dividend-adjusted close ÷ highest close of the last 2 years − 1; score = (drawdown − calm) ÷ (trigger − calm), limited to 0–100. The 2-year high reflects the AI-cycle peak without old pre-AI highs.</p>
           <p><b>Credit spreads</b> (BBB, CCC, high yield, in bp): score = the higher of the level test, (spread − calm) ÷ (trigger − calm), and the widening test, (spread − 52-week low − widening calm) ÷ (widening trigger − widening calm), each limited to 0–100. The 52-week window catches fast blow-outs.</p>
           <p><b>Index</b> = Σ(weight × score) ÷ Σ weights, rounded. A gauge’s contribution = its weight share × its score. Blank days carry the last value; a gauge not updated for more than 3 trading days is flagged stale and keeps its last value in the index. History needs 2 years of data before the first score.</p>
-          <p><b>Formal alerts</b> (5 straight trading days): L1 Stress Watch: index ≥ 50 · L2 Financing Strain: index ≥ 60 and (BDCs ≥ 80 with loans ≥ 50, or CCC ≥ 80) · L3 Broad Correction: index ≥ 70, semiconductors ≥ 83, AI ETF ≥ 80 · L4 Systemic Dislocation: index ≥ 75, Nasdaq-100 at 100, and high-yield ≥ 500 bp or BDCs at 100.</p>
+          <p><b>Formal alerts</b> (5 straight trading days): L1 Stress Watch: index ≥ 50 · L2 Financing Strain: index ≥ 60 and (BDCs ≥ 80 with loans ≥ 50, or CCC ≥ 80) · L3 Broad Correction: index ≥ 70, semiconductors ≥ 83, AI ETF ≥ 80 · L4 Systemic Dislocation: index ≥ 75, Nasdaq-100 at 100, and high-yield ≥ 500 bp or BDCs at 100. Each alert is an independent tripwire.</p>
+          <p><b>Exit rule (recovery mode):</b> while the Nasdaq-100 is {pct(d.exitRule?.rebound ?? 0.2)} or more above its lowest close since its 2-year high, alerts whose conditions still hold show as paused, so they don’t stay lit deep into a recovery. First-confirmed dates never move.{d.exitRule?.currentRebound != null && <> Today the Nasdaq-100 is {pct(d.exitRule.currentRebound, 1)} above that low{d.exitRule.recoveryMode ? " (recovery mode on)" : ""}.</>} <b>Shock flag</b> (not an alert): index ≥ {d.shock?.threshold ?? 60} on a day when no alert has confirmed.</p>
+          <p><b>Threshold sensitivity:</b> the range shown beside the index is today’s reading recomputed with every threshold moved {pct(d.scoreRange?.pct ?? 0.2)} tighter or looser.</p>
           <p><b>Sources</b> (retrieved {refreshedTxt}): Yahoo Finance dividend-adjusted daily closes, and ICE BofA option-adjusted spreads via FRED, which publish a day after the market date. {d.factors.map((f) => { const l = sourceLink(f.source); return l ? <span key={f.col}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a> ({longDate(f.lastDate)}) · </span> : null; })}</p>
         </div>
       </details>
