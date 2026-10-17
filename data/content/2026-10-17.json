@@ -1,0 +1,306 @@
+{
+  "date": "2026-10-17",
+  "slice": "Everyone wants a cut: AI, robots, fund managers. Old friends just want a text.",
+  "artifact": "https://claude.ai/artifact/R8gefKkKbG35nfzRfqys8x",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "€260bn",
+      "text": "a year paid by European firms to US cloud and software providers, says Mistral's CEO.",
+      "url": "https://x.com/arthurmensch/status/2110990492930314712"
+    },
+    {
+      "num": "4-5x",
+      "text": "jump in server prices in a year, says Zoho's Sridhar Vembu, as AI lifts software costs.",
+      "url": "https://inc42.com/features/rising-ais-costs-put-saas-companies-between-a-rock-and-a-hard-place/"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Transport",
+          "tag": "",
+          "title": "Driverless 18-wheelers are already rolling on Texas highways",
+          "url": "https://www.wsj.com/business/driverless-trucks-18-wheeler-aurora-35b89c45",
+          "url2": "",
+          "points": [
+            "Aurora, Kodiak, Waabi and others now run self-driving trucks on routes such as the Dallas-Houston stretch of I-45, mostly depot to depot, with humans handling loading, docking and the final mile.",
+            "Aurora expects 200 trucks on the road in Texas and nearby states by year-end and estimates 30,000 nationwide by 2030. Backers cite driver shortages, rest rules robots don't face and smoother, fuel-saving driving.",
+            "About two dozen states allow them under conditions. The Teamsters are suing California over rules that open the door to heavy driverless trucks, and owner-operators oppose a federal safety exemption."
+          ],
+          "numbers": [
+            [
+              "200",
+              "Aurora trucks by year-end"
+            ],
+            [
+              "30,000",
+              "possible US fleet by 2030"
+            ]
+          ],
+          "why": "Freight is where autonomy pays first: repeat routes, long hours, costly drivers. Long-haul shifts change first, while the first and last mile stay human for now.",
+          "other": "The trucks can't yet reverse or dock on their own, there is no federal safety standard written for them, and one bad crash could stall public trust.",
+          "also": [],
+          "image": "/figs/2026-10-17-1.jpg",
+          "imageAlt": "Explainer: how driverless trucks run today and who objects",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ]
+        },
+        {
+          "category": "Autos",
+          "tag": "",
+          "title": "Tesla's flying Roadster dazzles, but key details are missing",
+          "url": "https://www.wsj.com/business/autos/tesla-roadster-musk-five-questions-853c158b",
+          "url2": "",
+          "points": [
+            "At a SpaceX test site in Texas, Tesla showed a Roadster that can lift off, using cold-gas thrusters said to be derived from SpaceX technology. Its price, and where it could legally fly, were not announced.",
+            "The flight-capable version is invite-only and not approved for public roads; a two-seat version is described as road-ready. Tesla promises record-setting acceleration.",
+            "Elon Musk says production starts in 2028, after a 2020 target slipped. Some buyers who paid deposits of up to $250,000 are still waiting; analysts see a brand halo more than a revenue driver."
+          ],
+          "numbers": [
+            [
+              "2028",
+              "promised production start"
+            ],
+            [
+              "$250k",
+              "deposits some buyers paid"
+            ]
+          ],
+          "why": "This is marketing as much as engineering: a halo car keeps Tesla exciting as it leans into autonomy and robots. Judge it by delivery dates, not demos.",
+          "other": "What to watch: whether a production car ships in 2028. Even at tiny volumes, a halo product can lift a brand and pull buyers into cheaper models.",
+          "also": [],
+          "image": "/figs/2026-10-17-2.jpg",
+          "imageAlt": "Explainer: what Tesla showed with the flying Roadster and what is unclear",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Software",
+          "tag": "",
+          "title": "Rising AI costs squeeze Indian SaaS firms from both sides",
+          "url": "https://inc42.com/features/rising-ais-costs-put-saas-companies-between-a-rock-and-a-hard-place/",
+          "url2": "",
+          "points": [
+            "Zoho cofounder Sridhar Vembu says server prices have jumped four to five times in a year and AI usage is lifting costs, so Zoho is cutting marketing, freezing hiring and pausing its usual pay rises.",
+            "AI products run at gross margins well below classic SaaS, per ICONIQ data cited by Inc42, while AI coding tools undercut per-seat pricing. Groww says AI compute inflation raised its serving costs.",
+            "Firms are adapting: Perfios fine-tunes smaller models to cut GPU bills, Freshworks is buying Torii to track AI spending, and LeadSquared says the moat is running business processes reliably, not the app itself."
+          ],
+          "numbers": [
+            [
+              "4-5x",
+              "rise in server prices, per Zoho"
+            ],
+            [
+              "52%",
+              "typical AI product gross margin"
+            ]
+          ],
+          "why": "India's SaaS playbook was high margins on cheap engineering. AI changes the maths: compute is a cost that grows with every customer, so pricing power and efficient models will pick the winners.",
+          "other": "Computing has kept getting cheaper over time; if supply catches up, today's squeeze may ease, and AI also cuts the cost of building software in the first place.",
+          "also": [],
+          "image": "/figs/2026-10-17-3.jpg",
+          "imageAlt": "Explainer: how AI costs squeeze software margins and how firms respond",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Inc42",
+          "pay": true,
+          "themes": [
+            "AI",
+            "India"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Global economy",
+          "tag": "",
+          "title": "IMF: an AI bust would hit growth in rich and poor countries alike",
+          "url": "https://www.wsj.com/economy/global/ai-boom-or-bust-scenarios-loom-large-at-world-financial-summit-00edaeff",
+          "url2": "",
+          "points": [
+            "AI dominated the IMF and World Bank meetings in Bangkok. Data-centre investment is powering US growth, and Asian exports of chips and servers are booming, masking weak consumer spending.",
+            "The IMF ran scenarios without picking one: an AI productivity boom, a boom slowed by supply bottlenecks, and a bust in which investors sour, US investment falls, stocks drop and the dollar weakens. The bust could cut global growth by up to 1.3 percentage points in 2028.",
+            "It also flagged AI-assisted cyberattacks on banks as a new risk to stability. IMF chief Kristalina Georgieva expects some disappointment, because new technology takes time to spread."
+          ],
+          "numbers": [
+            [
+              "1.3 pts",
+              "world growth lost in a 2028 bust"
+            ],
+            [
+              "$10tn",
+              "US data-centre spend through 2032"
+            ]
+          ],
+          "why": "AI is no longer just a tech-stock story; it is a macro bet. When exports, investment and growth in many countries lean on one theme, a stumble travels far beyond stock markets.",
+          "other": "The IMF stresses these are scenarios, not forecasts, and it also sketched an upside case. Fed chair Kevin Warsh sees AI as a long-run boost to supply that need not stoke inflation.",
+          "also": [],
+          "image": "/figs/2026-10-17-4.jpg",
+          "imageAlt": "Explainer: the IMF's three AI scenarios and what a bust would cost",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ]
+        },
+        {
+          "category": "AI finance",
+          "tag": "",
+          "title": "CoreWeave shows the AI trade's weak spot: the borrowers",
+          "url": "https://www.wsj.com/finance/stocks/the-riskiest-corner-of-the-ai-trade-is-crashing-into-higher-rates-fcdaad37",
+          "url2": "",
+          "points": [
+            "Rising Treasury yields and fresh doubts about AI profits hit CoreWeave hard this week: its shares were down as much as 28% at one point, and some of its bonds traded at levels investors treat as distressed.",
+            "The Nvidia-backed chip renter relies on borrowing to grow, carries at least $35 billion of debt and has a speculative-grade rating, unlike cash-rich Microsoft and Alphabet, which barely moved.",
+            "Shares rebounded after Nvidia's Jensen Huang said CoreWeave was getting stronger. Analysts say it can still raise money through loans secured on customer contracts and through equity."
+          ],
+          "numbers": [
+            [
+              "$35bn+",
+              "debt on CoreWeave's books"
+            ],
+            [
+              "28%",
+              "share fall at its worst"
+            ]
+          ],
+          "why": "Higher-for-longer rates act like a tax on anyone in AI who isn't a cash-rich giant. Watch the borrowers: they crack first if the boom cools.",
+          "other": "Demand for AI computing is still surging, Bank of America just raised its revenue forecasts, and long customer contracts can carry a borrower through a rough patch.",
+          "also": [],
+          "image": "/figs/2026-10-17-5.jpg",
+          "imageAlt": "Explainer: why higher rates hit CoreWeave but not the tech giants",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ]
+        },
+        {
+          "category": "Investing",
+          "tag": "Explainer",
+          "title": "Buffett's hedge-fund bet: fees, not skill, decide the race",
+          "url": "https://economictimes.indiatimes.com/intelligent-investing/warren-buffett/warren-buffett-on-5-habits-that-feel-like-good-investing-but-make-you-poorer/articleshow/134971377.cms",
+          "url2": "",
+          "points": [
+            "ET Prime's series on Buffett's shareholder letters reaches 2016, when he publicly offered to bet that a cheap S&P 500 index fund would beat any five hedge funds over ten years. Only Ted Seides of Protégé Partners took him on.",
+            "Nine years in, the index fund had compounded at 7.1% a year against 2.2% for Seides's five funds-of-funds. Buffett reckoned roughly 60% of what those funds did earn went to the two layers of managers.",
+            "The letter's other lessons: a buyback helps the owners who stay only if shares are bought below their worth, paying for deals in stock can cost far more than cash, and investors should hold cash for rare panics."
+          ],
+          "numbers": [
+            [
+              "60%",
+              "of the funds' gains taken by managers"
+            ],
+            [
+              "7.1%",
+              "index fund's yearly return"
+            ]
+          ],
+          "why": "Fees compound as surely as returns. For savers in India and the US alike, a low-cost index fund is the default to beat, and the burden of proof sits with anyone charging more.",
+          "other": "Some managers do beat the market for decades, as Buffett himself concedes, and an index fund rides every bubble the market does.",
+          "also": [],
+          "image": "/figs/2026-10-17-6.jpg",
+          "imageAlt": "Explainer: what Buffett's index-fund bet shows about fees",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times (ET Prime)",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ]
+        },
+        {
+          "category": "AI policy",
+          "tag": "Opinion",
+          "title": "Mistral's Mensch: Europe must build frontier AI or surrender",
+          "url": "https://x.com/arthurmensch/status/2110990492930314712",
+          "url2": "",
+          "points": [
+            "Mistral AI cofounder and CEO Arthur Mensch rejects a growing European view that frontier models should be left to the US and China, with Europe building applications on others' models.",
+            "Europe tried that with the internet, he says, and now pays more than €260 billion a year to American cloud and software firms. Whoever owns a model sets its price, uses and versions; last June an American lab suspended access to its top models, a call made outside Europe.",
+            "He argues states need models they can audit, adapt and count on for cyber defence. Mistral plans to raise capital and expand its compute sixfold over the coming year."
+          ],
+          "numbers": [
+            [
+              "€260bn",
+              "paid a year to US cloud and software"
+            ],
+            [
+              "6x",
+              "Mistral's planned compute growth"
+            ]
+          ],
+          "why": "Sovereign AI is becoming like sovereign energy. Every country without its own frontier lab, India included, faces the same build-or-rent question.",
+          "other": "Mensch runs a company that needs capital, so his case is also a pitch. Open models keep improving, and renting may cost far less than chasing rivals with deeper pockets.",
+          "also": [],
+          "image": "/figs/2026-10-17-7.jpg",
+          "imageAlt": "Explainer: Mistral's case for European frontier AI",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "X",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ]
+        },
+        {
+          "category": "Psychology",
+          "tag": "Explainer",
+          "title": "Text that old friend: they'll value it more than you think",
+          "url": "https://m.economictimes.com/science/a-study-says-hesitating-to-message-an-old-friend-is-normal-and-may-be-linked-to-the-liking-gap/articleshow/134945449.cms",
+          "url2": "",
+          "points": [
+            "A 2022 study by Peggy Liu and colleagues found that people who messaged a friend they had not contacted recently underestimated how much it was appreciated, more so when the contact came as a surprise.",
+            "A related 'liking gap' study from 2018 found people judge their conversation partners' enjoyment less positively than those partners report.",
+            "Lara Aknin and Gillian Sandstrom found reluctance grows when old friends feel like strangers. In one experiment, 53% of people who first messaged current friends then contacted an old friend, against 31% of those who browsed social media."
+          ],
+          "numbers": [
+            [
+              "53%",
+              "contacted an old friend after a warm-up text"
+            ],
+            [
+              "31%",
+              "did so after browsing social media"
+            ]
+          ],
+          "why": "For readers spread across India and the US, friendships fade with time zones more than intent. The research says a short, imperfect message lands better than you fear.",
+          "other": "The studies cover everyday attempts to reconnect, not every lapsed friendship, and the warm-up helped some people, not all. Some silences have reasons.",
+          "also": [],
+          "image": "/figs/2026-10-17-8.jpg",
+          "imageAlt": "Explainer: why reaching out to an old friend lands better than you expect",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Health & science"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": []
+}
