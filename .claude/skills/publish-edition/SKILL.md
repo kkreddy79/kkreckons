@@ -128,7 +128,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   links to the site's pages and thumbnails):
   1. Use `.publish/beehiiv-<YYYY-MM-DD>.json` from section 2 (re-run the publish command if it's missing). It has the
      title, subtitle, email settings, slug, theme and body built from `data/content/<YYYY-MM-DD>.json`.
-     The email is one compact table (an HTML snippet): the headline once (beehiiv's own title, subtitle,
+     The email is one compact table (an HTML snippet): KK's takeaway at the top, the headline once near the end (beehiiv's own title, subtitle,
      byline and "Read online" are hidden; the subject line has the name and date), one tight row per story
      (thumbnail, kicker, short headline, one-line teaser), the numbers of the day, KK's takeaway, further
      reading titles and a "Read the full edition" button. Colour sits in text and borders, not backgrounds,
