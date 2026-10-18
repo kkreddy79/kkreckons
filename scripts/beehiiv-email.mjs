@@ -1,9 +1,9 @@
 // Builds the beehiiv email draft for one edition from data/content/<date>.json.
 // Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json] [--copy copy.json]
 //
-// The email is a compact teaser for the website edition: the headline once, a numbered list of
-// stories (thumbnail, kicker, short headline, one-line teaser), the day's numbers, KK's takeaway,
-// further reading titles and a button to the full edition.
+// The email is a compact teaser for the website edition: KK's takeaway at the top, a numbered list
+// of stories (thumbnail, kicker, short headline, one-line teaser), the day's numbers, further
+// reading titles, then the day's headline and a button to the full edition.
 //
 // Also writes a small illustration thumbnail per story to public/email/<date>-<n>.png,
 // cut from the circle at the top right of each KKReckons explainer graphic.
@@ -103,18 +103,31 @@ const label = (text, top = 18) =>
   `<tr><td colspan="2" style="padding:${top}px 0 4px;border-bottom:1px solid ${E.ink};font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.ink};"><span style="color:${E.coral};">■</span>&nbsp; ${esc(text)}</td></tr>`;
 const rows = [];
 
-// 1. Masthead: a thin four-colour strip (borders, so it survives dropped backgrounds), then the
-// day's headline, once (beehiiv's title, subtitle and byline are hidden).
+// 1. Top: a thin four-colour strip (borders, so it survives dropped backgrounds), then KK's
+// takeaway. The day's headline (slice) closes the email instead, above the button; without a
+// takeaway it stays at the top. beehiiv's own title, subtitle and byline are hidden.
 const ACCENTS = [E.coral, "#F76707", "#E64980", "#7048E8"];
+const tk = copy.takeaway || ed.takeaway || {};
+const hasTakeaway = Boolean(tk.a || tk.line);
 rows.push(
-  `<tr><td colspan="2" style="padding:0 0 12px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
+  `<tr><td colspan="2" style="padding:0 0 10px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
     ACCENTS.map((c) => `<td width="25%" style="border-top:4px solid ${c};font-size:0;line-height:0;">&nbsp;</td>`).join("") +
     `</tr></table></td></tr>`,
 );
 rows.push(
-  `<tr><td colspan="2" style="padding:0 0 2px 12px;border-left:4px solid ${E.coral};">` +
-    `<div style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.coral};">KKRECKONS · ${stories.length} STORIES · ${ed.readingMinutes} MIN</div>` +
-    `<div style="margin-top:2px;font-family:${SERIF};font-size:21px;line-height:1.25;font-weight:700;color:${E.ink};">${esc(ed.slice)}</div></td></tr>`,
+  `<tr><td colspan="2" style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.coral};">KKRECKONS · ${stories.length} STORIES · ${ed.readingMinutes} MIN</td></tr>`,
+);
+rows.push(
+  hasTakeaway
+    ? `<tr><td colspan="2" align="center" style="padding:8px 0 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
+        `<td align="center" style="padding:10px 12px;border-top:2px solid #E64980;border-bottom:2px solid #E64980;font-family:${SANS};">` +
+        `<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:#D6336C;">✦ KK’S TAKEAWAY ✦</div>` +
+        (tk.a
+          ? `<div style="margin-top:2px;font-family:${SERIF};font-size:22px;line-height:1.25;font-weight:700;"><span style="color:#7048E8;">${esc(tk.a)}</span>&nbsp; <span style="color:#F76707;">${esc(tk.b || "")}</span></div>`
+          : "") +
+        (tk.line ? `<div style="margin-top:2px;font-size:13px;line-height:1.35;font-style:italic;font-weight:700;color:#C2255C;">${esc(tk.line)}</div>` : "") +
+        `</td></tr></table></td></tr>`
+    : `<tr><td colspan="2" style="padding:4px 0 2px 12px;border-left:4px solid ${E.coral};font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;color:${E.ink};">${esc(ed.slice)}</td></tr>`,
 );
 
 // 2. Today's stories: thumbnail, kicker, short headline, one-line teaser.
@@ -143,8 +156,7 @@ for (const [i, s] of stories.entries()) {
   );
 }
 
-// 3. By the numbers and KK's takeaway, side by side in one band.
-const tk = copy.takeaway || ed.takeaway || {};
+// 3. By the numbers.
 const nums = (ed.callouts || []).slice(0, 2);
 if (nums.length) {
   rows.push(label("BY THE NUMBERS"));
@@ -159,17 +171,6 @@ if (nums.length) {
     .join("");
   rows.push(`<tr><td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>${cells}</tr></table></td></tr>`);
 }
-rows.push(
-  `<tr><td colspan="2" align="center" style="padding:16px 0 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
-    `<td align="center" style="padding:10px 12px;border-top:2px solid #E64980;border-bottom:2px solid #E64980;font-family:${SANS};">` +
-    `<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:#D6336C;">✦ KK’S TAKEAWAY ✦</div>` +
-    (tk.a
-      ? `<div style="margin-top:2px;font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;"><span style="color:#7048E8;">${esc(tk.a)}</span>&nbsp; <span style="color:#F76707;">${esc(tk.b || "")}</span></div>`
-      : "") +
-    `<div style="margin-top:2px;font-size:13px;line-height:1.35;font-style:italic;font-weight:700;color:#C2255C;">${esc(tk.line || ed.slice)}</div>` +
-    `</td></tr></table></td></tr>`,
-);
-
 // 4. Further reading: titles only.
 if (ed.reading?.length) {
   rows.push(label([0, 6].includes(when.getUTCDay()) ? "WORTH YOUR WEEKEND" : "FURTHER READING"));
@@ -183,6 +184,9 @@ if (ed.reading?.length) {
 // 5. Send readers to the full edition. A bordered button: it reads with or without its fill.
 rows.push(
   `<tr><td colspan="2" align="center" style="padding:20px 0 0;">` +
+    (hasTakeaway && ed.slice
+      ? `<div style="max-width:480px;margin:0 auto 12px;font-family:${SERIF};font-size:16px;line-height:1.3;font-weight:700;color:${E.ink};">${esc(ed.slice)}</div>`
+      : "") +
     `<table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px solid ${E.coral};border-radius:24px;background-color:#FFF7EE;">` +
     a(pageUrl, "Read the full edition →", `display:block;padding:10px 26px;font-family:${SANS};font-size:15px;font-weight:700;color:${E.coral};`) +
     `</td></tr></table>` +
