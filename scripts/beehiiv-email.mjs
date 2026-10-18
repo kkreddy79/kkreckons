@@ -1,9 +1,9 @@
 // Builds the beehiiv email draft for one edition from data/content/<date>.json.
 // Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json] [--copy copy.json]
 //
-// The email is a teaser for the website edition, in the layout of the 17 October email:
-// a numbered list of stories (thumbnail, kicker, short headline, one-line teaser), the
-// day's numbers, KK's takeaway, further reading and a card linking to the full edition.
+// The email is a compact teaser for the website edition: the headline once, a numbered list of
+// stories (thumbnail, kicker, short headline, one-line teaser), the day's numbers, KK's takeaway,
+// further reading titles and a button to the full edition.
 //
 // Also writes a small illustration thumbnail per story to public/email/<date>-<n>.png,
 // cut from the circle at the top right of each KKReckons explainer graphic.
@@ -68,18 +68,6 @@ const esc = (s) =>
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
-const linkHtml = (href, html) =>
-  `<a class="link" href="${esc(href)}" rel="noopener noreferrer nofollow" target="_blank">${html}</a>`;
-const link = (href, text) => linkHtml(href, esc(text));
-const section = (attrs, inner) =>
-  `<div class="node-section" ${Object.entries(attrs)
-    .map(([k, v]) => `data-${k}="${v}"`)
-    .join(" ")}>${inner}</div>`;
-const pad = (t, r = t, b = t, l = r) => ({ "padding-top": t, "padding-right": r, "padding-bottom": b, "padding-left": l });
-const radius = (n) => ({
-  "border-top-left-radius": n, "border-top-right-radius": n,
-  "border-bottom-left-radius": n, "border-bottom-right-radius": n,
-});
 
 // ---------- Email copy ----------
 // The email is a quick, scannable digest that sends readers to the site for the full story.
@@ -101,51 +89,29 @@ const E = {
   coral: "#C4553B",
   rule: "#E6E0D6",
 };
-const fontSize = (rem, html, hex) =>
-  `<span style="${hex ? `color: ${hex}; ` : ""}font-size: ${rem};" data-font-size="${rem}">${html}</span>`;
-const plain = (attrs, inner) =>
-  section(
-    {
-      "border-style": "solid", "border-width-top": 0, "border-width-right": 0,
-      "border-width-bottom": 0, "border-width-left": 0, ...pad(0, 0, 0, 0), ...attrs,
-    },
-    inner,
-  );
-const kicker = (label, top = 16) =>
-  section(
-    {
-      "border-color": E.ink, "border-style": "solid",
-      "border-width-top": 0, "border-width-right": 0, "border-width-bottom": 2, "border-width-left": 0,
-      ...pad(0, 0, 0, 0), "margin-top": top,
-    },
-    `<p>${fontSize("0.75rem", `<strong>${esc(label)}</strong>`, E.ink)}</p>`,
-  );
-/** Raw HTML block (beehiiv "HTML snippet"), used for the cards the editor can't style. */
-const snippet = (html, top = 14) =>
-  plain({ "margin-top": top }, `<pre data-type="htmlSnippet"><code class="language-html">${esc(html)}</code></pre>`);
 const SANS = "'Inter',Helvetica,Arial,sans-serif";
 const SERIF = "'Playfair Display',Georgia,'Times New Roman',serif";
 
 const stories = ed.sections.flatMap((sec) => sec.stories.map((s) => ({ ...s, section: sec.name })));
-const parts = [];
 
-// 1. Today's stories: thumbnail, kicker, short headline, one-line teaser.
-// 0. Masthead: the day's headline, once. beehiiv's own title and subtitle are hidden in the
-// email (see email_settings), since the subject line already carries the name and date.
-// Light colours only, so it still reads where a mail app drops backgrounds.
-parts.push(
-  section(
-    {
-      "background-color": "#FFF7EE", "border-color": E.coral, "border-style": "solid",
-      "border-width-top": 0, "border-width-right": 0, "border-width-bottom": 0, "border-width-left": 4,
-      ...radius(12), ...pad(16, 18, 14, 18), "margin-top": 4,
-    },
-    `<p>${fontSize("0.6875rem", "<strong>KKRECKONS · TODAY’S EDITION</strong>", E.coral)}<br>` +
-      `<span style="color: ${E.ink}; font-family: Georgia, &quot;Times New Roman&quot;, serif; font-size: 1.5rem;" data-font-size="1.5rem"><strong>${esc(ed.slice)}</strong></span><br>` +
-      `${fontSize("0.8125rem", `${stories.length} stories · ${ed.readingMinutes} min read · ${linkHtml(pageUrl, "read on the website")}`, E.muted)}</p>`,
-  ),
+// The whole body is one compact HTML table (a beehiiv "HTML snippet"), so spacing is ours, not
+// the editor's block padding. Colour lives in text and borders, never in backgrounds alone, so
+// it reads the same where a mail app or printer drops backgrounds.
+const a = (href, html, style = "") =>
+  `<a href="${esc(href)}" target="_blank" style="text-decoration:none;${style}">${html}</a>`;
+const label = (text, top = 18) =>
+  `<tr><td colspan="2" style="padding:${top}px 0 4px;border-bottom:1px solid ${E.ink};font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.ink};">${esc(text)}</td></tr>`;
+const rows = [];
+
+// 1. Masthead: the day's headline, once (beehiiv's title, subtitle and byline are hidden).
+rows.push(
+  `<tr><td colspan="2" style="padding:0 0 2px 12px;border-left:4px solid ${E.coral};">` +
+    `<div style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.coral};">KKRECKONS · ${stories.length} STORIES · ${ed.readingMinutes} MIN</div>` +
+    `<div style="margin-top:2px;font-family:${SERIF};font-size:21px;line-height:1.25;font-weight:700;color:${E.ink};">${esc(ed.slice)}</div></td></tr>`,
 );
-parts.push(kicker("TODAY’S STORIES", 20));
+
+// 2. Today's stories: thumbnail, kicker, short headline, one-line teaser.
+rows.push(label("TODAY’S STORIES", 16));
 fs.mkdirSync(path.join("public", "email"), { recursive: true });
 for (const [i, s] of stories.entries()) {
   const n = i + 1;
@@ -153,114 +119,86 @@ for (const [i, s] of stories.entries()) {
   const head = c.head || s.emailHead || s.title;
   const teaser = c.teaser || s.emailTeaser || firstSentence(s.why);
   const where = /pick/i.test(s.section) ? "PICK" : /india/i.test(s.section) ? "INDIA" : "WORLD";
-  const label = `${String(n).padStart(2, "0")} · ${where} · ${String(s.category || "").replace(/^[^:]*:\s*/, "").toUpperCase()}`;
-  const text =
-    `<p>${fontSize("0.625rem", `<strong>${esc(label)}</strong>`, where === "PICK" ? E.coral : E.muted)}<br>` +
-    `${linkHtml(pageUrl, fontSize("1rem", esc(head)))}<br>` +
-    `${fontSize("0.8125rem", esc(teaser), E.body)}</p>`;
-
-  let row = text;
+  const cat = String(s.category || "").replace(/^[^:]*:\s*/, "").toUpperCase();
+  const line = i === stories.length - 1 ? "" : `border-bottom:1px solid ${E.rule};`;
   const fig = s.image ? path.join("public", s.image) : "";
+  let thumb = "";
   if (fig && fs.existsSync(fig)) {
-    const thumb = `${date}-${n}.png`;
-    await thumbnail(fig, path.join("public", "email", thumb));
-    row =
-      `<div data-type="columns" data-stack-on-mobile="false">` +
-      `<div data-type="column" data-position="0" data-width="15%" data-vertical-align="middle">` +
-      `<figure data-type="imageBlock" data-src="${SITE}/email/${thumb}" data-alt="${esc(head)}" data-align="center" data-width="100%" data-url="${esc(pageUrl)}"><figcaption></figcaption></figure>` +
-      `</div><div data-type="column" data-position="1" data-width="85%" data-vertical-align="middle">${text}</div></div>`;
+    await thumbnail(fig, path.join("public", "email", `${date}-${n}.png`));
+    thumb = a(pageUrl, `<img src="${SITE}/email/${date}-${n}.png" width="44" height="44" alt="" style="display:block;width:44px;height:44px;border:0;">`);
   }
-  parts.push(
-    section(
-      {
-        "border-color": E.rule, "border-style": "solid", "border-width-top": 0, "border-width-right": 0,
-        "border-width-bottom": i === stories.length - 1 ? 0 : 1, "border-width-left": 0, ...pad(6, 0, 6, 0),
-      },
-      row,
-    ),
+  rows.push(
+    `<tr><td width="44" valign="top" style="width:44px;padding:9px 12px 9px 0;${line}">${thumb}</td>` +
+      `<td valign="top" style="padding:8px 0;${line}font-family:${SANS};">` +
+      `<div style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:${where === "PICK" ? E.coral : E.muted};">${String(n).padStart(2, "0")} · ${where} · ${esc(cat)}</div>` +
+      `<div style="margin-top:1px;font-size:15px;line-height:1.3;font-weight:700;">${a(pageUrl, esc(head), `color:${E.ink};`)}</div>` +
+      `<div style="margin-top:1px;font-size:13px;line-height:1.35;color:${E.body};">${esc(teaser)}</div></td></tr>`,
   );
 }
 
-// 2. By the numbers: the edition's callouts as big figures, side by side.
-if (ed.callouts?.length) {
-  const cells = ed.callouts
-    .slice(0, 2)
+// 3. By the numbers and KK's takeaway, side by side in one band.
+const tk = copy.takeaway || ed.takeaway || {};
+const nums = (ed.callouts || []).slice(0, 2);
+if (nums.length) {
+  rows.push(label("BY THE NUMBERS"));
+  const cells = nums
     .map(
       (c) =>
-        `<td width="50%" valign="top" style="padding:16px 14px;background-color:#FFF7EE;border:1px solid #F2D9C4;border-radius:16px;">` +
-        `<div style="font-family:${SERIF};font-size:34px;line-height:1.05;font-weight:700;color:${E.coral};">${esc(c.num)}</div>` +
-        `<div style="margin-top:6px;font-family:${SANS};font-size:13px;line-height:1.4;color:${E.body};">${esc(c.text)}</div></td>`,
+        `<td width="${Math.floor(100 / nums.length)}%" valign="top" style="padding:8px 10px 0 0;font-family:${SANS};">` +
+        `<div style="font-family:${SERIF};font-size:26px;line-height:1.1;font-weight:700;color:${E.coral};">${esc(c.num)}</div>` +
+        `<div style="margin-top:2px;font-size:12px;line-height:1.35;color:${E.body};">${esc(c.text)}</div></td>`,
     )
-    .join(`<td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td>`);
-  parts.push(kicker("BY THE NUMBERS", 22));
-  parts.push(
-    snippet(
-      `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:separate;"><tbody><tr>${cells}</tr></tbody></table>`,
-      10,
-    ),
-  );
+    .join("");
+  rows.push(`<tr><td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>${cells}</tr></table></td></tr>`);
 }
-
-// 3. KK's takeaway: the day in two short phrases and one line.
-const tk = copy.takeaway || ed.takeaway || {};
-const takeawayLine = tk.line || ed.slice;
-parts.push(
-  section(
-    {
-      "background-color": "#FFF0F6", "border-color": "#E64980", "border-style": "solid",
-      "border-width-top": 2, "border-width-right": 2, "border-width-bottom": 2, "border-width-left": 2,
-      ...radius(14), ...pad(10, 10, 8, 10), "margin-top": 18,
-    },
-    `<p style="text-align: center">${fontSize("0.6875rem", "<strong>✦ KK’S TAKEAWAY ✦</strong>", "#D6336C")}` +
-      (tk.a
-        ? `<br><span style="color: #7048E8; font-family: Georgia, &quot;Times New Roman&quot;, serif; font-size: 1.4375rem;" data-font-size="1.4375rem"><strong>${esc(tk.a)}</strong></span>` +
-          (tk.b
-            ? ` <span style="color: #F76707; font-family: Georgia, &quot;Times New Roman&quot;, serif; font-size: 1.4375rem;" data-font-size="1.4375rem"><strong>${esc(tk.b)}</strong></span>`
-            : "")
-        : "") +
-      `<br>${fontSize("0.875rem", `<strong><em>${esc(takeawayLine)}</em></strong>`, "#C2255C")}</p>`,
-  ),
+rows.push(
+  `<tr><td colspan="2" align="center" style="padding:16px 0 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
+    `<td align="center" style="padding:10px 12px;border-top:2px solid #E64980;border-bottom:2px solid #E64980;font-family:${SANS};">` +
+    `<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:#D6336C;">✦ KK’S TAKEAWAY ✦</div>` +
+    (tk.a
+      ? `<div style="margin-top:2px;font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;"><span style="color:#7048E8;">${esc(tk.a)}</span> <span style="color:#F76707;">${esc(tk.b || "")}</span></div>`
+      : "") +
+    `<div style="margin-top:2px;font-size:13px;line-height:1.35;font-style:italic;font-weight:700;color:#C2255C;">${esc(tk.line || ed.slice)}</div>` +
+    `</td></tr></table></td></tr>`,
 );
 
-// 4. Further reading, kept short.
+// 4. Further reading: titles only.
 if (ed.reading?.length) {
-  parts.push(kicker([0, 6].includes(when.getUTCDay()) ? "WORTH YOUR WEEKEND" : "FURTHER READING", 20));
-  parts.push(
-    plain(
-      { "margin-top": 4 },
-      ed.reading
-        .map((r) => `<p>${fontSize("0.875rem", `→ ${link(r.url, r.title)}`)}${r.note ? `<br>${fontSize("0.8125rem", esc(r.note), E.muted)}` : ""}</p>`)
-        .join(""),
-    ),
+  rows.push(label([0, 6].includes(when.getUTCDay()) ? "WORTH YOUR WEEKEND" : "FURTHER READING"));
+  rows.push(
+    `<tr><td colspan="2" style="padding:4px 0 0;font-family:${SANS};font-size:14px;line-height:1.45;">` +
+      ed.reading.map((r) => `<div style="padding:3px 0;">→ ${a(r.url, esc(r.title), `color:${E.coral};font-weight:700;`)}</div>`).join("") +
+      `</td></tr>`,
   );
 }
 
-// 5. Send readers to the full edition: beehiiv's own button, which every mail app shows.
-parts.push(
-  plain(
-    { "margin-top": 22 },
-    `<p style="text-align: center">${fontSize("0.875rem", "Every story in full: the graphic, the points, why it matters and the other side.", E.body)}</p>`,
-  ),
+// 5. Send readers to the full edition. A bordered button: it reads with or without its fill.
+rows.push(
+  `<tr><td colspan="2" align="center" style="padding:20px 0 0;">` +
+    `<table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px solid ${E.coral};border-radius:24px;background-color:#FFF7EE;">` +
+    a(pageUrl, "Read the full edition →", `display:block;padding:10px 26px;font-family:${SANS};font-size:15px;font-weight:700;color:${E.coral};`) +
+    `</td></tr></table>` +
+    `<div style="margin-top:8px;font-family:${SANS};font-size:11px;color:${E.muted};">Graphics, points, why it matters and the other side · ${a(`${SITE}/daily/`, "Past editions", `color:${E.coral};font-weight:700;`)}</div>` +
+    `</td></tr>`,
 );
-parts.push(
-  `<div><a data-type="button" data-alignment="center" data-size="large" data-full-width="false" ` +
-    `data-custom-background-color="${E.coral}" data-custom-text-color="#FFFFFF" href="${esc(pageUrl)}">Read today’s edition →</a></div>`,
-);
-parts.push(
-  plain(
-    { "margin-top": 6 },
-    `<p style="text-align: center">${fontSize("0.625rem", `Illustrations: original graphics by KKReckons · Missed one? ${link(`${SITE}/daily/`, "Catch up")}`, E.muted)}</p>`,
-  ),
-);
+
+const parts = [
+  `<pre data-type="htmlSnippet"><code class="language-html">${esc(
+    `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;"><tbody>${rows.join("")}</tbody></table>`,
+  )}</code></pre>`,
+];
 
 // Per-post theme, as on the 17 October email: white page, compact type, coral links.
 const theme = {
-  padding_left: "22",
-  padding_right: "22",
-  padding_top: "20",
-  padding_bottom: "16",
-  margin_top: "16",
-  margin_bottom: "16",
+  padding_left: "16",
+  padding_right: "16",
+  padding_top: "10",
+  padding_bottom: "8",
+  margin_top: "8",
+  margin_bottom: "8",
+  header_padding_bottom: "0",
+  header_byline_show_read_online: "false",
+  header_topline_show_read_online: "false",
   max_width: "620",
   background_color: "#FFFFFF",
   content_background_color: "#FFFFFF",

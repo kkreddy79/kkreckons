@@ -128,15 +128,15 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   links to the site's pages and thumbnails):
   1. Use `.publish/beehiiv-<YYYY-MM-DD>.json` from section 2 (re-run the publish command if it's missing). It has the
      title, subtitle, email settings, slug, theme and body built from `data/content/<YYYY-MM-DD>.json`.
-     The email is a short, visual teaser: a masthead with the headline (shown once; beehiiv's own
-     title, subtitle and byline are hidden in the email because the subject line has the name and date),
-     one row per story (thumbnail, kicker, short headline linking to the edition, one-line teaser), the
-     numbers of the day as cards, KK's takeaway, further reading and a "Read today's edition" button.
-     The full stories stay on the site. Don't add the full explainer graphics or dark-background cards
-     (some mail apps drop backgrounds, leaving light text unreadable).
+     The email is one compact table (an HTML snippet): the headline once (beehiiv's own title, subtitle,
+     byline and "Read online" are hidden; the subject line has the name and date), one tight row per story
+     (thumbnail, kicker, short headline, one-line teaser), the numbers of the day, KK's takeaway, further
+     reading titles and a "Read the full edition" button. Colour sits in text and borders, not backgrounds,
+     so it reads the same where a mail app or printer drops backgrounds. Don't add blocks around it.
   2. Use the KKReckons publication (`list_publications`). Check `list_posts` for a post with the same
      title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another, just link it.
   3. Otherwise call `save_post` with the JSON's fields (`html_content` verbatim, not `theme`), then
+     `edit_post` with its `email_settings` again (`save_post` ignores `display_byline_in_email`), then
      `save_post_theme` with its `theme`. This makes a **draft** only.
   4. Re-read it with `get_post_content` (`format: "text"`; never `html`, which is ~70KB) and confirm the
      title and that every story appears once.
