@@ -100,7 +100,6 @@ const E = {
   muted: "#6B7482",
   coral: "#C4553B",
   rule: "#E6E0D6",
-  plum: "#2A1A52",
 };
 const fontSize = (rem, html, hex) =>
   `<span style="${hex ? `color: ${hex}; ` : ""}font-size: ${rem};" data-font-size="${rem}">${html}</span>`;
@@ -131,7 +130,22 @@ const stories = ed.sections.flatMap((sec) => sec.stories.map((s) => ({ ...s, sec
 const parts = [];
 
 // 1. Today's stories: thumbnail, kicker, short headline, one-line teaser.
-parts.push(kicker(`TODAY’S STORIES · ${stories.length} · ${ed.readingMinutes} MIN READ`));
+// 0. Masthead: the day's headline, once. beehiiv's own title and subtitle are hidden in the
+// email (see email_settings), since the subject line already carries the name and date.
+// Light colours only, so it still reads where a mail app drops backgrounds.
+parts.push(
+  section(
+    {
+      "background-color": "#FFF7EE", "border-color": E.coral, "border-style": "solid",
+      "border-width-top": 0, "border-width-right": 0, "border-width-bottom": 0, "border-width-left": 4,
+      ...radius(12), ...pad(16, 18, 14, 18), "margin-top": 4,
+    },
+    `<p>${fontSize("0.6875rem", "<strong>KKRECKONS · TODAY’S EDITION</strong>", E.coral)}<br>` +
+      `<span style="color: ${E.ink}; font-family: Georgia, &quot;Times New Roman&quot;, serif; font-size: 1.5rem;" data-font-size="1.5rem"><strong>${esc(ed.slice)}</strong></span><br>` +
+      `${fontSize("0.8125rem", `${stories.length} stories · ${ed.readingMinutes} min read · ${linkHtml(pageUrl, "read on the website")}`, E.muted)}</p>`,
+  ),
+);
+parts.push(kicker("TODAY’S STORIES", 20));
 fs.mkdirSync(path.join("public", "email"), { recursive: true });
 for (const [i, s] of stories.entries()) {
   const n = i + 1;
@@ -221,19 +235,16 @@ if (ed.reading?.length) {
   );
 }
 
-// 5. The card that sends readers to the full edition.
+// 5. Send readers to the full edition: beehiiv's own button, which every mail app shows.
 parts.push(
-  snippet(
-    `<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${E.plum}" style="width:100%;background-color:${E.plum};background-image:linear-gradient(135deg,#3A2468 0%,#26174A 45%,#1C1036 100%);border-radius:24px;border-collapse:separate;"><tbody><tr><td style="padding:28px 26px;">` +
-      `<table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td width="62" align="center" valign="middle" style="width:62px;height:62px;border-radius:31px;background-color:#D96B3F;color:#FFFFFF;font-size:40px;line-height:62px;font-weight:700;font-family:Arial,sans-serif;">☼</td></tr></tbody></table>` +
-      `<div style="margin-top:22px;font-family:${SANS};font-size:13px;font-weight:700;letter-spacing:4px;color:#D8CCF4;text-transform:uppercase;">${esc(longDate)}</div>` +
-      `<div style="margin-top:10px;font-family:${SERIF};font-size:29px;line-height:1.18;font-weight:700;color:#FFFFFF;">${esc(ed.slice)}</div>` +
-      `<div style="margin-top:10px;font-family:${SANS};font-size:16px;line-height:1.45;color:#E2DAF5;">Every story in full, with the graphic, the points, why it matters and the other side.</div>` +
-      `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:22px;"><tbody><tr><td align="center" style="background-color:#B85A2E;border-radius:40px;">` +
-      `<a href="${esc(pageUrl)}" style="display:block;padding:17px 10px;font-family:${SANS};font-size:18px;font-weight:700;color:#FFFFFF;text-decoration:none;">Read today’s edition →</a>` +
-      `</td></tr></tbody></table></td></tr></tbody></table>`,
-    22,
+  plain(
+    { "margin-top": 22 },
+    `<p style="text-align: center">${fontSize("0.875rem", "Every story in full: the graphic, the points, why it matters and the other side.", E.body)}</p>`,
   ),
+);
+parts.push(
+  `<div><a data-type="button" data-alignment="center" data-size="large" data-full-width="false" ` +
+    `data-custom-background-color="${E.coral}" data-custom-text-color="#FFFFFF" href="${esc(pageUrl)}">Read today’s edition →</a></div>`,
 );
 parts.push(
   plain(
@@ -281,8 +292,9 @@ const payload = {
   email_settings: {
     email_subject_line: `KKReckons, ${longDate}`,
     email_preview_text: ed.slice,
-    display_title_in_email: true,
-    display_subtitle_in_email: true,
+    display_title_in_email: false,
+    display_subtitle_in_email: false,
+    display_byline_in_email: false,
   },
   web_settings: { slug: `kkreckons-${date}` },
   theme,

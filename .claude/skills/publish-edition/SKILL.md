@@ -128,10 +128,12 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   links to the site's pages and thumbnails):
   1. Use `.publish/beehiiv-<YYYY-MM-DD>.json` from section 2 (re-run the publish command if it's missing). It has the
      title, subtitle, email settings, slug, theme and body built from `data/content/<YYYY-MM-DD>.json`.
-     The email is a short, visual teaser in the Saturday-email style: one row per story (thumbnail,
-     kicker, short headline linking to the edition, one-line teaser), the numbers of the day as cards,
-     KK's takeaway, further reading and a "Read today's edition" card. The full stories stay on the site.
-     Don't add the full explainer graphics.
+     The email is a short, visual teaser: a masthead with the headline (shown once; beehiiv's own
+     title, subtitle and byline are hidden in the email because the subject line has the name and date),
+     one row per story (thumbnail, kicker, short headline linking to the edition, one-line teaser), the
+     numbers of the day as cards, KK's takeaway, further reading and a "Read today's edition" button.
+     The full stories stay on the site. Don't add the full explainer graphics or dark-background cards
+     (some mail apps drop backgrounds, leaving light text unreadable).
   2. Use the KKReckons publication (`list_publications`). Check `list_posts` for a post with the same
      title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another, just link it.
   3. Otherwise call `save_post` with the JSON's fields (`html_content` verbatim, not `theme`), then
