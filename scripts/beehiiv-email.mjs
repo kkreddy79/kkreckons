@@ -100,10 +100,17 @@ const stories = ed.sections.flatMap((sec) => sec.stories.map((s) => ({ ...s, sec
 const a = (href, html, style = "") =>
   `<a href="${esc(href)}" target="_blank" style="text-decoration:none;${style}">${html}</a>`;
 const label = (text, top = 18) =>
-  `<tr><td colspan="2" style="padding:${top}px 0 4px;border-bottom:1px solid ${E.ink};font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.ink};">${esc(text)}</td></tr>`;
+  `<tr><td colspan="2" style="padding:${top}px 0 4px;border-bottom:1px solid ${E.ink};font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.ink};"><span style="color:${E.coral};">■</span>&nbsp; ${esc(text)}</td></tr>`;
 const rows = [];
 
-// 1. Masthead: the day's headline, once (beehiiv's title, subtitle and byline are hidden).
+// 1. Masthead: a thin four-colour strip (borders, so it survives dropped backgrounds), then the
+// day's headline, once (beehiiv's title, subtitle and byline are hidden).
+const ACCENTS = [E.coral, "#F76707", "#E64980", "#7048E8"];
+rows.push(
+  `<tr><td colspan="2" style="padding:0 0 12px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
+    ACCENTS.map((c) => `<td width="25%" style="border-top:4px solid ${c};font-size:0;line-height:0;">&nbsp;</td>`).join("") +
+    `</tr></table></td></tr>`,
+);
 rows.push(
   `<tr><td colspan="2" style="padding:0 0 2px 12px;border-left:4px solid ${E.coral};">` +
     `<div style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.coral};">KKRECKONS · ${stories.length} STORIES · ${ed.readingMinutes} MIN</div>` +
@@ -130,7 +137,7 @@ for (const [i, s] of stories.entries()) {
   rows.push(
     `<tr><td width="44" valign="top" style="width:44px;padding:9px 12px 9px 0;${line}">${thumb}</td>` +
       `<td valign="top" style="padding:8px 0;${line}font-family:${SANS};">` +
-      `<div style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:${where === "PICK" ? E.coral : E.muted};">${String(n).padStart(2, "0")} · ${where} · ${esc(cat)}</div>` +
+      `<div style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:${E.coral};">${String(n).padStart(2, "0")} · ${where} · ${esc(cat)}</div>` +
       `<div style="margin-top:1px;font-size:15px;line-height:1.3;font-weight:700;">${a(pageUrl, esc(head), `color:${E.ink};`)}</div>` +
       `<div style="margin-top:1px;font-size:13px;line-height:1.35;color:${E.body};">${esc(teaser)}</div></td></tr>`,
   );
@@ -143,10 +150,11 @@ if (nums.length) {
   rows.push(label("BY THE NUMBERS"));
   const cells = nums
     .map(
-      (c) =>
-        `<td width="${Math.floor(100 / nums.length)}%" valign="top" style="padding:8px 10px 0 0;font-family:${SANS};">` +
-        `<div style="font-family:${SERIF};font-size:26px;line-height:1.1;font-weight:700;color:${E.coral};">${esc(c.num)}</div>` +
-        `<div style="margin-top:2px;font-size:12px;line-height:1.35;color:${E.body};">${esc(c.text)}</div></td>`,
+      (c, k) =>
+        `<td width="${Math.floor(100 / nums.length)}%" valign="top" style="padding:10px 12px 0 0;font-family:${SANS};">` +
+        `<div style="padding-left:10px;border-left:3px solid ${["#E64980", "#7048E8"][k]};">` +
+        `<div style="font-family:${SERIF};font-size:26px;line-height:1.1;font-weight:700;color:${[E.coral, "#7048E8"][k]};">${esc(c.num)}</div>` +
+        `<div style="margin-top:2px;font-size:12px;line-height:1.35;color:${E.body};">${esc(c.text)}</div></div></td>`,
     )
     .join("");
   rows.push(`<tr><td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>${cells}</tr></table></td></tr>`);
@@ -156,7 +164,7 @@ rows.push(
     `<td align="center" style="padding:10px 12px;border-top:2px solid #E64980;border-bottom:2px solid #E64980;font-family:${SANS};">` +
     `<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:#D6336C;">✦ KK’S TAKEAWAY ✦</div>` +
     (tk.a
-      ? `<div style="margin-top:2px;font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;"><span style="color:#7048E8;">${esc(tk.a)}</span> <span style="color:#F76707;">${esc(tk.b || "")}</span></div>`
+      ? `<div style="margin-top:2px;font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;"><span style="color:#7048E8;">${esc(tk.a)}</span>&nbsp; <span style="color:#F76707;">${esc(tk.b || "")}</span></div>`
       : "") +
     `<div style="margin-top:2px;font-size:13px;line-height:1.35;font-style:italic;font-weight:700;color:#C2255C;">${esc(tk.line || ed.slice)}</div>` +
     `</td></tr></table></td></tr>`,
