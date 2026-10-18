@@ -1,12 +1,11 @@
 ---
 name: publish-edition
-description: Find the newest KKReckons newsletter artifact that isn't on the website yet, turn it into a site edition, check it, and open a preview for Krishnakanth to approve. Publishes only after he replies "publish". Use for the nightly routine, or when asked to "publish today's edition".
+description: Find the newest KKReckons newsletter artifact that isn't on the website yet, turn it into a site edition, check it, and open a preview for Krishnakanth to approve. Publishes only after he replies "publish". Use when asked to "publish" an edition.
 ---
 
 # Publish the day's KKReckons edition
 
-Runs automatically at 8:53 pm and 11:53 pm Pacific, and whenever he asks to "publish today's edition".
-On late nights the earlier run simply finds nothing new, so later runs (or his request) pick the edition up.
+Runs when he asks ("Publish", "Publish Friday edition"). There is no nightly run.
 
 Krishnakanth writes each edition in his Claude Project and publishes it as a claude.ai artifact titled
 `KKReckons, <Weekday>, <D> <Month> <YYYY>` (for example `KKReckons, Friday, 9 October 2026`).
@@ -37,23 +36,19 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    don't guess at content.
 2. Add `"<YYYY-MM-DD>": { "artifact": "<artifact url>" }` to `data/edition-meta.json`, keeping the
    file's existing order (oldest first) and two-space indentation.
-3. `npm ci` (first time in the session), then
-   `CHROMIUM_PATH=/opt/pw-browsers/chromium npm run editions`.
-   Only the new date's files should change in `data/` besides `data/editions.json`; investigate any
-   other diffs before going on.
-   Then write the email's short copy to `<scratchpad>/copy-<YYYY-MM-DD>.json`, in story order:
-   `{"stories": [{"head": "…", "teaser": "…"}, …], "takeaway": {"a": "…", "b": "…", "line": "…"}}`.
-   Base each `head` (about 6 words) and `teaser` (one line, about 10 words) on that story's explainer
-   graphic, its headline and takeaway (look at `public/figs/<YYYY-MM-DD>-*`), in his words and with his
-   numbers; invent nothing. `takeaway` is the day in two short contrasting phrases (`a`, `b`) plus a
-   one-line `line` (see the 2026-10-18 email: "Big bets." / "Few hires." / "Money is pouring into India.
-   Jobs need to keep up."). Then
-   `node scripts/beehiiv-email.mjs <YYYY-MM-DD> <scratchpad>/beehiiv-<YYYY-MM-DD>.json --copy <scratchpad>/copy-<YYYY-MM-DD>.json`.
-   It writes the email's story thumbnails to `public/email/<YYYY-MM-DD>-<n>.png` (commit them with the
-   edition, so they are live before the email is drafted) and the email itself to the JSON file, used in
-   section 4. Without `--copy` it falls back to story titles and the first sentence of "why it matters".
-   `npm run qc` fails if a new edition's thumbnails are missing.
-4. `npm run check -- <YYYY-MM-DD>`. Every story needs:
+3. `npm ci` (first time in the session), then run every mechanical step with one command:
+   `npm run -s publish-edition -- <YYYY-MM-DD>` (add `--allow <date>` only for a correction he asked for).
+   It rebuilds the site data, runs the automatic checks, writes the email thumbnails
+   (`public/email/<YYYY-MM-DD>-<n>.png`, commit them with the edition) and the email JSON
+   (`.publish/beehiiv-<YYYY-MM-DD>.json`, used in section 4), builds the site and runs QC, printing only
+   a summary or the failing step's output. Only the new date's files should change besides
+   `data/editions.json`; investigate any other diffs.
+   **Email copy:** the newsletter normally carries it (`ehead`/`eteaser` per story and a top-level
+   `takeaway`, see `docs/edition-format.md`). If it doesn't, write `.publish/copy-<YYYY-MM-DD>.json`
+   (`{"stories": [{"head": "…", "teaser": "…"}, …], "takeaway": {"a": "…", "b": "…", "line": "…"}}`,
+   story order) from each explainer graphic's headline and takeaway in his words, invent nothing,
+   and re-run with `--copy .publish/copy-<YYYY-MM-DD>.json`. Mention in your message that you wrote it.
+4. Read the check output. Every story needs:
    - a source link, at least two summary points and a "why it matters";
    - an article not already used in this edition or **any earlier edition** (same link, including
      further reading). Similar-headline warnings (⚠) must be looked at and mentioned in your message;
@@ -67,16 +62,17 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      (and to `PAYWALLED` if the site usually needs a subscription).
    - Missing source links or thin summaries: **don't invent anything.** Search for the original article.
      If you find it, add the fix as a per-story override under `stories` in `data/edition-meta.json`
-     (see the 2026-09-30 entry for the shape) and re-run `npm run editions`. List every fix you made
+     (see the 2026-09-30 entry for the shape) and re-run `npm run -s publish-edition -- <YYYY-MM-DD>`. List every fix you made
      in the pull request and in your message, so he can check them. Anything you can't fix stays
      listed as an open problem.
 5. **Rights review** (copyright and paywall rules in `docs/edition-format.md`), done by you, not a script:
-   - **Images:** open every `public/figs/<YYYY-MM-DD>-*` file and look at it. Allowed: his own original
+   - **Images:** look at every `public/figs/<YYYY-MM-DD>-*` file, all at once on one contact sheet
+     (PIL, about 1600px wide) rather than one by one. Allowed: his own original
      graphics and charts, and Creative Commons or licensed images whose `figcredit` names the licence.
      **Not allowed:** newspaper or agency photos, a publisher's own infographic or chart, anything showing
      a publisher's logo or watermark, and screenshots of articles. For anything not allowed, hide it with
      a per-story override `{ "image": "", "imageAlt": "" }` in `data/edition-meta.json` and re-run
-     `npm run editions` (unused images are deleted automatically). List it in your message. Also mention
+     the publish command (unused images are deleted automatically). List it in your message. Also mention
      any realistic AI-made likeness of a real person, for his decision.
    - **Own words:** for each source you can open (not paywalled), compare the points with the article.
      Flag any sentence copied word for word or with only small word changes.
@@ -84,19 +80,12 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      Flag any story that reads as a replacement for the original, and any quote longer than a short phrase.
    - **Original value:** every story's "why it matters" (and "other side" when present) must add his own
      analysis, not restate the points. Flag any that don't.
-6. `npm run build` must pass.
-7. **Quality control: `npm run qc` must pass** (it compares against `origin/main`). It confirms:
-   - every edition already live is still listed;
-   - every earlier edition's data, original newsletter and images are byte-for-byte unchanged;
-   - the pull request only touches edition files;
-   - every edition page shows all its stories, numbers, sections, images, source lines and further reading;
-   - Home shows the new edition;
-   - Catch up lists every edition, including the one Home just replaced (yesterday's);
-   - the sitemap lists them all.
-
-   If it fails, fix the cause and re-run. Never publish over a failing QC. A deliberate correction to an
-   earlier edition (one he asked for) is the only exception: re-run with `--allow <that date>` and say
-   so in the pull request.
+6. **The publish command must end with "All steps passed".** Its QC step compares against `origin/main` and
+   confirms that every edition already live is still listed and unchanged byte for byte, the pull request only
+   touches edition files, every page shows all its data, Home shows the new edition, Catch up lists every
+   edition (including yesterday's) and the sitemap lists them all. If a step fails, fix the cause and re-run.
+   Never publish over a failing QC. A deliberate correction to an earlier edition (one he asked for) is the
+   only exception: re-run with `--allow <that date>` and say so in the pull request.
 
 ## 3. Preview and ask for approval
 
@@ -137,7 +126,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   automatic sending (no RSS to Send, recurring series, automations or Send API), so the flow is: the
   draft is made here, and he presses Send or Schedule in beehiiv. Once the live check passes (the email
   links to the site's pages and thumbnails):
-  1. Use the JSON from section 2 (re-run `node scripts/beehiiv-email.mjs` if it's missing). It has the
+  1. Use `.publish/beehiiv-<YYYY-MM-DD>.json` from section 2 (re-run the publish command if it's missing). It has the
      title, subtitle, email settings, slug, theme and body built from `data/content/<YYYY-MM-DD>.json`.
      The email is a short, visual teaser in the Saturday-email style: one row per story (thumbnail,
      kicker, short headline linking to the edition, one-line teaser), the numbers of the day as cards,
@@ -147,7 +136,8 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another, just link it.
   3. Otherwise call `save_post` with the JSON's fields (`html_content` verbatim, not `theme`), then
      `save_post_theme` with its `theme`. This makes a **draft** only.
-  4. Re-read it with `get_post_content` and confirm the title and that the body has every story once.
+  4. Re-read it with `get_post_content` (`format: "text"`; never `html`, which is ~70KB) and confirm the
+     title and that every story appears once.
   5. Also check `list_posts` for an older KKReckons post still in `draft`; mention it in one line so an
      unsent edition doesn't go unnoticed.
   6. Reply in this shape (and send a push notification if that tool is available):
@@ -167,6 +157,12 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 in advance. Run sections 1 and 2 for that edition. If the checks, rights review and QC raise nothing that
 needs his decision, commit, open the pull request, merge it and carry on with section 4 (live check, then
 the email draft). If something does need his decision, stop at section 3 and ask.
+
+## Keeping it light
+
+- Each "Publish" works best in a fresh session: this skill holds every step, so no earlier history is needed.
+- Don't print whole files or tool payloads to look at them; grep or slice for what you need.
+- Read the artifact once, look at images once (contact sheet), and trust the publish command's summary.
 
 ## Rules
 
