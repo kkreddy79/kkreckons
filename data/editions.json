@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-10-18",
+    "slice": "Dr Doom calls a boom. Banks call India. A PhD's 2,300 calls hit voicemail.",
+    "artifact": "https://claude.ai/artifact/FrfWrTXNA8yHWEnGF4cuow",
+    "readingMinutes": 7,
+    "image": "/figs/2026-10-18-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "A Princeton PhD sent 2,300 job applications and still has no offer",
+        "category": "Gloom: US jobs",
+        "tag": "",
+        "url": "https://www.wsj.com/lifestyle/careers/labor-market-freeze-phd-graduate-f8e17d7c",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "AI"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Dr Doom turns optimist: Roubini says India's moment has arrived",
+        "category": "Boom: India growth",
+        "tag": "Interview",
+        "url": "https://economictimes.indiatimes.com/news/economy/indicators/nouriel-roubini-india-growth-outlook-american-tariffs-trade-agreement-china-manufacturing-investment-employment-artificial-intelligence/articleshow/134989388.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Foreign banks bet ₹1.32 lakh crore (about $13.7bn) on Indian lenders",
+        "category": "Banking deals",
+        "tag": "Explainer",
+        "url": "https://economictimes.indiatimes.com/industry/banking/finance/banking/foreign-investment-indian-banking-sector-fairfax-idbi-bank-deal-mufg-shriram-finance-smbc-yes-bank-emirates-nbd-rbl-bank-rs-1-32-lakh-crore/articleshow/134963219.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Nilesh Shah: Hindustan Zinc shows what IDBI Bank's sale could achieve",
+        "category": "Privatisation",
+        "tag": "Opinion",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nilesh-shah-on-psu-privatisation-how-hindustan-zinc-offers-a-lesson-for-idbi-bank/articleshow/134969215.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI threatens the arbitrage that built India's IT industry",
+        "category": "IT services",
+        "tag": "Opinion",
+        "url": "https://asteriskmag.com/issues/15/what-will-happen-to-indian-it",
+        "src": "Asterisk",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "A record El Niño puts AI weather forecasting to the test",
+        "category": "Climate and AI",
+        "tag": "",
+        "url": "https://www.ft.com/content/60bffbe3-f7aa-4813-b657-a31087e7b116",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "A Holmes documentary asks whether she even knows she lied",
+        "category": "Film",
+        "tag": "Opinion",
+        "url": "https://www.washingtonpost.com/style/2026/10/16/elizabeth-holmes-documentary-will-break-your-brain/",
+        "src": "The Washington Post",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-17",
     "slice": "Everyone wants a cut: AI, robots, fund managers. Old friends just want a text.",
     "artifact": "https://claude.ai/artifact/R8gefKkKbG35nfzRfqys8x",

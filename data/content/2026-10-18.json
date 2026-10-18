@@ -1,0 +1,313 @@
+{
+  "date": "2026-10-18",
+  "slice": "Dr Doom calls a boom. Banks call India. A PhD's 2,300 calls hit voicemail.",
+  "artifact": "https://claude.ai/artifact/FrfWrTXNA8yHWEnGF4cuow",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$13.7bn",
+      "text": "of foreign bets on four Indian lenders, the ₹1.32 lakh crore total in dollars.",
+      "url": "https://economictimes.indiatimes.com/industry/banking/finance/banking/foreign-investment-indian-banking-sector-fairfax-idbi-bank-deal-mufg-shriram-finance-smbc-yes-bank-emirates-nbd-rbl-bank-rs-1-32-lakh-crore/articleshow/134963219.cms"
+    },
+    {
+      "num": "2,300",
+      "text": "applications from a Princeton PhD in two years, and still no job.",
+      "url": "https://www.wsj.com/lifestyle/careers/labor-market-freeze-phd-graduate-f8e17d7c"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Gloom: US jobs",
+          "tag": "",
+          "title": "A Princeton PhD sent 2,300 job applications and still has no offer",
+          "url": "https://www.wsj.com/lifestyle/careers/labor-market-freeze-phd-graduate-f8e17d7c",
+          "url2": "",
+          "points": [
+            "Jack Weis finished a chemical engineering PhD at Princeton in 2024. Two years and more than 2,300 applications later, from lab posts to food-prep jobs, he still lives in his parents' basement without work.",
+            "WSJ's Lindsay Ellis uses his story to show a low-hire, low-fire market: people with jobs stay put, and outsiders are shut out even as unemployment stays low and stocks set records.",
+            "AI sits on both sides: bots screen applications and run one-way video interviews, and a gig training AI on his expertise paid for a while, then dried up."
+          ],
+          "numbers": [
+            [
+              "2,300",
+              "applications since 2024"
+            ],
+            [
+              "2 yrs",
+              "still searching"
+            ]
+          ],
+          "why": "This is the gloom half of today's picks. Degrees used to insure against unemployment; when the best-credentialed are locked out while profits climb, the bottleneck is the hiring machinery, and AI is adding filters faster than openings.",
+          "other": "One story is not the labour market. Unemployment is still low, and a highly specialised PhD can be hard to place in any economy; the real test is whether hiring thaws.",
+          "also": [],
+          "image": "/figs/2026-10-18-1.jpg",
+          "imageAlt": "Explainer: why a Princeton PhD's 2,300 applications have not landed a job",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "AI"
+          ]
+        },
+        {
+          "category": "Boom: India growth",
+          "tag": "Interview",
+          "title": "Dr Doom turns optimist: Roubini says India's moment has arrived",
+          "url": "https://economictimes.indiatimes.com/news/economy/indicators/nouriel-roubini-india-growth-outlook-american-tariffs-trade-agreement-china-manufacturing-investment-employment-artificial-intelligence/articleshow/134989388.cms",
+          "url2": "",
+          "points": [
+            "Nouriel Roubini, who warned of the 2008 crash at the IMF in 2006, told ET that India is a \"major success story\" and that the coming decades could be as much about India as past ones were about China.",
+            "He expects market pressure and US worries about inflation and affordability to push tariffs lower and Washington towards a more constructive stance on India. The first phase of a trade deal is in legal drafting.",
+            "His catch: 7% growth is not enough. India must get closer to 9% to give young people good jobs as AI reshapes work, and friendshoring away from China is the opening."
+          ],
+          "numbers": [
+            [
+              "9%",
+              "growth India needs for jobs"
+            ],
+            [
+              "8%+",
+              "potential growth with reforms"
+            ],
+            [
+              "$42.8bn",
+              "exports to US, April-August"
+            ]
+          ],
+          "why": "This is the boom half. A famous bear calling India the next big story is a confidence signal, but his own number is the real headline: growth has to create jobs faster than AI removes them, the very trap the US PhD is stuck in.",
+          "other": "What to watch: whether the US trade deal is signed and tariffs fall. \"Next China\" forecasts have come before, and moving from 7% to 9% needs reforms that have often stalled.",
+          "also": [],
+          "image": "/figs/2026-10-18-2.jpg",
+          "imageAlt": "Explainer: Roubini's case for India's growth and the 9% jobs test",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Geopolitics"
+          ]
+        },
+        {
+          "category": "Banking deals",
+          "tag": "Explainer",
+          "title": "Foreign banks bet ₹1.32 lakh crore (about $13.7bn) on Indian lenders",
+          "url": "https://economictimes.indiatimes.com/industry/banking/finance/banking/foreign-investment-indian-banking-sector-fairfax-idbi-bank-deal-mufg-shriram-finance-smbc-yes-bank-emirates-nbd-rbl-bank-rs-1-32-lakh-crore/articleshow/134963219.cms",
+          "url2": "",
+          "points": [
+            "Four deals from Canada, Japan and the UAE total about ₹1.32 lakh crore, roughly $13.7 billion at the rate implied by ET's $5.5 billion for IDBI: Fairfax buying 60.72% of IDBI Bank, MUFG 20% of Shriram Finance, Emirates NBD 60% of RBL Bank and SMBC an initial 20% of Yes Bank.",
+            "The total is deal value, not all fresh money: MUFG and Emirates NBD put in new capital, while SMBC mainly bought existing shares.",
+            "Three of the buyers paid about 1.3 to 1.6 times book value for cleaned-up lenders. Fairfax also owns CSB Bank, a two-bank question for the RBI."
+          ],
+          "numbers": [
+            [
+              "₹1.32 lakh cr",
+              "four deals combined"
+            ],
+            [
+              "$13.7bn",
+              "same total in dollars"
+            ],
+            [
+              "60.72%",
+              "IDBI stake to Fairfax"
+            ]
+          ],
+          "why": "Foreign owners are buying ready-made franchises (licences, branches, deposits) rather than building them. That brings capital and discipline, and tougher competition for Indian incumbents.",
+          "other": "What to watch: RBI approval. It will weigh control, governance and Fairfax's overlap with CSB Bank, and foreign control of big lenders raises the question of who answers if things go wrong.",
+          "also": [],
+          "image": "/figs/2026-10-18-3.jpg",
+          "imageAlt": "Explainer: the four foreign deals in Indian banking and why buyers are paying up",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ]
+        },
+        {
+          "category": "Privatisation",
+          "tag": "Opinion",
+          "title": "Nilesh Shah: Hindustan Zinc shows what IDBI Bank's sale could achieve",
+          "url": "https://economictimes.indiatimes.com/markets/stocks/news/nilesh-shah-on-psu-privatisation-how-hindustan-zinc-offers-a-lesson-for-idbi-bank/articleshow/134969215.cms",
+          "url2": "",
+          "points": [
+            "Kotak AMC's Nilesh Shah says the government sold about 45% of loss-making Hindustan Zinc, with control, to Vedanta two decades ago for around ₹769 crore, and kept roughly 29%.",
+            "Dividends on the stake it kept have exceeded the sale price, he says, and that stake is now worth over ₹62,000 crore, while the company became the world's largest integrated zinc producer.",
+            "He contrasts IDBI, which stayed public, needed repeated capital top-ups and is valued at ₹90,000 crore, with ICICI, which went private and is worth ₹9.88 lakh crore."
+          ],
+          "numbers": [
+            [
+              "₹769 cr",
+              "Zinc stake sale, 20 years ago"
+            ],
+            [
+              "₹62,000 cr+",
+              "value of the stake kept"
+            ],
+            [
+              "₹9.88 lakh cr",
+              "ICICI's value today"
+            ]
+          ],
+          "why": "The \"family jewels\" argument says selling PSUs loses national wealth. Shah's answer is that keeping a minority stake lets the state share the upside of better management, which is exactly how the IDBI sale is built.",
+          "other": "One success picked with hindsight proves little: how much of Zinc's gain came from new owners and how much from its market? A bank holds public deposits, so its risks are different.",
+          "also": [],
+          "image": "/figs/2026-10-18-4.jpg",
+          "imageAlt": "Explainer: the Hindustan Zinc sale and the lesson Nilesh Shah draws for IDBI Bank",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "IT services",
+          "tag": "Opinion",
+          "title": "AI threatens the arbitrage that built India's IT industry",
+          "url": "https://asteriskmag.com/issues/15/what-will-happen-to-indian-it",
+          "url2": "",
+          "points": [
+            "David Oks traces how IBM's 1978 exit, undersea cables, the 1991 reforms and Y2K made India \"the world's back office\". IT is about 7% of GDP and a quarter of exports, and services earn a surplus of about $190 billion.",
+            "Revenue has not collapsed: margins are up and TCS reports $2.3 billion of AI revenue. But hiring has fallen hard, and TCS, Infosys and Cognizant have each lost about 30% of market value in 2026.",
+            "His worry: if AI does the work of fifty engineers with ten, exports shrink while India imports AI, and the spending that IT salaries support weakens."
+          ],
+          "numbers": [
+            [
+              "~7%",
+              "of India's GDP from IT"
+            ],
+            [
+              "$190bn",
+              "services trade surplus, FY25"
+            ],
+            [
+              "~30%",
+              "value lost by TCS and peers in 2026"
+            ]
+          ],
+          "why": "IT employs few but matters hugely: it pays for India's goods deficit and supports a wide web of spending. Roubini's 9% assumes services keep pulling; this essay asks what happens if they stop.",
+          "other": "The firms are being hired to put AI into clients' systems, and margins are rising. If they move up to higher-value work, the labour model can shrink without the industry shrinking.",
+          "also": [],
+          "image": "/figs/2026-10-18-5.jpg",
+          "imageAlt": "Explainer: how India's IT industry was built and how AI threatens its labour model",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Asterisk",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Climate and AI",
+          "tag": "",
+          "title": "A record El Niño puts AI weather forecasting to the test",
+          "url": "https://www.ft.com/content/60bffbe3-f7aa-4813-b657-a31087e7b116",
+          "url2": "",
+          "points": [
+            "This year's El Niño is already the strongest on record and is expected to peak in December. The World Food Programme projects 274mn more people facing acute food insecurity by the end of 2027.",
+            "AI makes forecasting faster and cheaper. UN agencies and the Red Cross use it to plan, a non-profit texts AI-based advice to farmers in Kenya, and hedge funds used it to bet early on sugar.",
+            "Sceptics say the models learn from a cooler past. In a Met Office study, AI missed an extreme European winter that a physics-based model caught."
+          ],
+          "numbers": [
+            [
+              "274mn",
+              "more people facing food insecurity by 2027"
+            ],
+            [
+              "3.7°C",
+              "forecast December sea-heat anomaly"
+            ]
+          ],
+          "why": "Weather is now a market and policy variable: food prices, shipping and harvests hang on it. AI makes forecasts cheap enough to reach a smallholder's phone, which may matter more than any gain in accuracy.",
+          "other": "What to watch: how AI forecasts score this winter. Models trained on the past can miss the extremes a warmer world produces, and a confident wrong forecast can do more harm than none.",
+          "also": [],
+          "image": "/figs/2026-10-18-6.jpg",
+          "imageAlt": "Explainer: how AI is being used to forecast this year's record El Niño, and where it may fail",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Health & science"
+          ]
+        },
+        {
+          "category": "Film",
+          "tag": "Opinion",
+          "title": "A Holmes documentary asks whether she even knows she lied",
+          "url": "https://www.washingtonpost.com/style/2026/10/16/elizabeth-holmes-documentary-will-break-your-brain/",
+          "url2": "https://www.npr.org/2026/10/16/nx-s1-6001834/elizabeth-holmes-nathan-fielder-you-can-see-everything",
+          "points": [
+            "In \"You Can See Everything\", Nathan Fielder and Lance Oppenheim film Elizabeth Holmes at home with her partner and two young children in her last weeks before prison. Asked if she did anything wrong, she says no.",
+            "Critics split on what it shows. The Post's Monica Hesse sees either a damning portrait or a near-exoneration, and thinks Holmes is guilty; on NPR, Ronald Young Jr. says it turns on whether she understands what lying is.",
+            "The backstory: in 2022 a jury convicted her on four counts of defrauding investors over a finger-prick blood test that didn't work as promised."
+          ],
+          "numbers": [
+            [
+              "4",
+              "fraud counts in the 2022 verdict"
+            ],
+            [
+              "11 yrs",
+              "prison sentence"
+            ],
+            [
+              "$140m",
+              "Walgreens' reported Theranos deal"
+            ]
+          ],
+          "why": "Theranos sold a story before it sold blood tests, and big backers lent it credibility. A film about how far conviction can drift from reality lands well in a week of big forecasts and bigger bets.",
+          "other": "Giving a convicted fraudster this much screen time risks softening her story. A jury has already weighed her claim that she didn't know, and NPR's critic says he left understanding Fielder better than Holmes.",
+          "also": [
+            {
+              "title": "NPR (2022): Elizabeth Holmes, convicted of fraud, is our latest seller of false hope",
+              "url": "https://www.npr.org/2022/01/06/1070525046/elizabeth-holmes-theranos-trial-fraud"
+            },
+            {
+              "title": "The Guardian: why we still care about Elizabeth Holmes",
+              "url": "https://www.theguardian.com/film/2026/oct/17/elizabeth-holmes-documentary-why-we-care"
+            }
+          ],
+          "image": "/figs/2026-10-18-7.jpg",
+          "imageAlt": "Explainer: what the Elizabeth Holmes documentary shows and what the critic concludes",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Washington Post",
+          "pay": true,
+          "themes": [
+            "Health & science"
+          ]
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "AI boom or doom? Your questions answered",
+      "url": "https://www.capitalgroup.com/advisor/insights/articles/ai-boom-doom-your-questions-answered.html",
+      "note": "Five Capital Group fund managers and an economist argue AI is a real boom rather than a dot-com rerun, pointing to cheaper valuations and a bigger digital economy. They flag the risks: local pushback against data centres, pricier AI debt as yields rise, and rogue AI agents."
+    },
+    {
+      "title": "The Last Time We Tried to Put Common Sense Into a Computer",
+      "url": "https://medium.com/@vishalmisra/the-last-time-we-tried-to-put-common-sense-into-a-computer-04a19d3e041a",
+      "note": "Vishal Misra on the Cyc project, and why proposing an AI improvement isn't the same as verifying it"
+    }
+  ]
+}
