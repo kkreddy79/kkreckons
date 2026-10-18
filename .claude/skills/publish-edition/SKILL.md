@@ -41,9 +41,17 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    `CHROMIUM_PATH=/opt/pw-browsers/chromium npm run editions`.
    Only the new date's files should change in `data/` besides `data/editions.json`; investigate any
    other diffs before going on.
-   Then `node scripts/beehiiv-email.mjs <YYYY-MM-DD> <scratchpad>/beehiiv-<YYYY-MM-DD>.json`. It writes the
-   email's story thumbnails to `public/email/<YYYY-MM-DD>-<n>.png` (commit them with the edition, so they
-   are live before the email is drafted) and the email itself to the JSON file, used in section 4.
+   Then write the email's short copy to `<scratchpad>/copy-<YYYY-MM-DD>.json`, in story order:
+   `{"stories": [{"head": "…", "teaser": "…"}, …], "takeaway": {"a": "…", "b": "…", "line": "…"}}`.
+   Base each `head` (about 6 words) and `teaser` (one line, about 10 words) on that story's explainer
+   graphic, its headline and takeaway (look at `public/figs/<YYYY-MM-DD>-*`), in his words and with his
+   numbers; invent nothing. `takeaway` is the day in two short contrasting phrases (`a`, `b`) plus a
+   one-line `line` (see the 2026-10-18 email: "Big bets." / "Few hires." / "Money is pouring into India.
+   Jobs need to keep up."). Then
+   `node scripts/beehiiv-email.mjs <YYYY-MM-DD> <scratchpad>/beehiiv-<YYYY-MM-DD>.json --copy <scratchpad>/copy-<YYYY-MM-DD>.json`.
+   It writes the email's story thumbnails to `public/email/<YYYY-MM-DD>-<n>.png` (commit them with the
+   edition, so they are live before the email is drafted) and the email itself to the JSON file, used in
+   section 4. Without `--copy` it falls back to story titles and the first sentence of "why it matters".
    `npm run qc` fails if a new edition's thumbnails are missing.
 4. `npm run check -- <YYYY-MM-DD>`. Every story needs:
    - a source link, at least two summary points and a "why it matters";
@@ -131,9 +139,10 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   links to the site's pages and thumbnails):
   1. Use the JSON from section 2 (re-run `node scripts/beehiiv-email.mjs` if it's missing). It has the
      title, subtitle, email settings, slug, theme and body built from `data/content/<YYYY-MM-DD>.json`.
-     The email shows each story once: thumbnail, points, why it matters, other side and source. Don't
-     add the full explainer graphics or repeat the headline (`slice`) in the body; beehiiv's header
-     already shows it.
+     The email is a short, visual teaser in the Saturday-email style: one row per story (thumbnail,
+     kicker, short headline linking to the edition, one-line teaser), the numbers of the day as cards,
+     KK's takeaway, further reading and a "Read today's edition" card. The full stories stay on the site.
+     Don't add the full explainer graphics.
   2. Use the KKReckons publication (`list_publications`). Check `list_posts` for a post with the same
      title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another, just link it.
   3. Otherwise call `save_post` with the JSON's fields (`html_content` verbatim, not `theme`), then

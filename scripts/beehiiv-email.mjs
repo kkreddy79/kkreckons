@@ -1,10 +1,12 @@
 // Builds the beehiiv email draft for one edition from data/content/<date>.json.
-// Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json]
+// Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json] [--copy copy.json]
+//
+// The email is a teaser for the website edition, in the layout of the 17 October email:
+// a numbered list of stories (thumbnail, kicker, short headline, one-line teaser), the
+// day's numbers, KK's takeaway, further reading and a card linking to the full edition.
 //
 // Also writes a small illustration thumbnail per story to public/email/<date>-<n>.png,
-// cut from the circle at the top right of each KKReckons explainer graphic. The email
-// shows those thumbnails rather than the full graphics: the full graphic repeats the
-// story's points, takeaway and other side, so the email would say everything twice.
+// cut from the circle at the top right of each KKReckons explainer graphic.
 //
 // Prints (or writes) { title, subtitle, email_settings, web_settings, theme, html_content },
 // ready to pass to beehiiv's save_post (and `theme` to save_post_theme).
@@ -20,21 +22,15 @@ const MONTHS = [
 ];
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-// KKReckons palette, taken from the explainer graphics.
-const C = {
-  navy: "#1F2A3A",
-  red: "#B83A2E",
-  teal: "#2F6F73",
-  cream: "#FAF6ED",
-  page: "#F1ECE2",
-  text: "#374151",
-  muted: "#6B7280",
-  rule: "#E5DED0",
-};
 
-const [date, out] = process.argv.slice(2);
+const argv = process.argv.slice(2);
+const opt = (name) => {
+  const i = argv.indexOf(name);
+  return i >= 0 ? argv[i + 1] : undefined;
+};
+const [date, out] = argv.filter((a, i) => !a.startsWith("--") && !argv[i - 1]?.startsWith("--"));
 if (!/^\d{4}-\d{2}-\d{2}$/.test(date || "")) {
-  console.error("Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json]");
+  console.error("Usage: node scripts/beehiiv-email.mjs <YYYY-MM-DD> [out.json] [--copy copy.json]");
   process.exit(1);
 }
 const file = path.join("data", "content", `${date}.json`);
@@ -72,9 +68,9 @@ const esc = (s) =>
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
-const link = (href, text) =>
-  `<a class="link" href="${esc(href)}" rel="noopener noreferrer nofollow" target="_blank">${esc(text)}</a>`;
-const color = (hex, html) => `<span style="color: ${hex}">${html}</span>`;
+const linkHtml = (href, html) =>
+  `<a class="link" href="${esc(href)}" rel="noopener noreferrer nofollow" target="_blank">${html}</a>`;
+const link = (href, text) => linkHtml(href, esc(text));
 const section = (attrs, inner) =>
   `<div class="node-section" ${Object.entries(attrs)
     .map(([k, v]) => `data-${k}="${v}"`)
@@ -85,150 +81,197 @@ const radius = (n) => ({
   "border-bottom-left-radius": n, "border-bottom-right-radius": n,
 });
 
-/** "What to watch: …" already carries its own label; otherwise label it "The other side". */
-function otherSide(text) {
-  const m = /^([A-Z][A-Za-z ]{2,24}):\s+(.*)$/s.exec(text);
-  return m ? [m[1], m[2]] : ["The other side", text];
-}
+// ---------- Email copy ----------
+// The email is a quick, scannable digest that sends readers to the site for the full story.
+// Its short headlines, teasers and takeaway are written per edition (usually from each
+// explainer graphic's own headline and takeaway) and passed in with --copy:
+//   { "stories": [{ "head": "...", "teaser": "..." }, ...],   // one per story, in order
+//     "takeaway": { "a": "Big bets.", "b": "Few hires.", "line": "..." } }
+// Without it, the story title and the first sentence of "why it matters" stand in.
+const copyFile = opt("--copy");
+const copy = copyFile ? JSON.parse(fs.readFileSync(copyFile, "utf8")) : {};
+const firstSentence = (t) => (String(t || "").match(/^.*?[.!?](\s|$)/) || [String(t || "")])[0].trim();
 
-/**
- * Section heading as coloured text over a rule. It reads the same whether or not the
- * mail app shows background colours (Gmail's print view and some dark modes drop them).
- */
-const banner = (name) =>
+// KKReckons email palette (as in the 17 October email).
+const E = {
+  ink: "#1B2636",
+  body: "#3B4452",
+  muted: "#6B7482",
+  coral: "#C4553B",
+  rule: "#E6E0D6",
+  plum: "#2A1A52",
+};
+const fontSize = (rem, html, hex) =>
+  `<span style="${hex ? `color: ${hex}; ` : ""}font-size: ${rem};" data-font-size="${rem}">${html}</span>`;
+const plain = (attrs, inner) =>
   section(
     {
-      "border-color": C.navy, "border-style": "solid",
-      "border-width-top": 0, "border-width-right": 0, "border-width-bottom": 2, "border-width-left": 0,
-      ...pad(0, 0, 0, 0), "margin-top": 28,
+      "border-style": "solid", "border-width-top": 0, "border-width-right": 0,
+      "border-width-bottom": 0, "border-width-left": 0, ...pad(0, 0, 0, 0), ...attrs,
     },
-    `<p>${color(C.red, `<strong>${esc(name.toUpperCase())}</strong>`)}</p>`,
+    inner,
   );
+const kicker = (label, top = 16) =>
+  section(
+    {
+      "border-color": E.ink, "border-style": "solid",
+      "border-width-top": 0, "border-width-right": 0, "border-width-bottom": 2, "border-width-left": 0,
+      ...pad(0, 0, 0, 0), "margin-top": top,
+    },
+    `<p>${fontSize("0.75rem", `<strong>${esc(label)}</strong>`, E.ink)}</p>`,
+  );
+/** Raw HTML block (beehiiv "HTML snippet"), used for the cards the editor can't style. */
+const snippet = (html, top = 14) =>
+  plain({ "margin-top": top }, `<pre data-type="htmlSnippet"><code class="language-html">${esc(html)}</code></pre>`);
+const SANS = "'Inter',Helvetica,Arial,sans-serif";
+const SERIF = "'Playfair Display',Georgia,'Times New Roman',serif";
 
-/** "X" alone says little; a title like "Craig Tindale: …" gives "Craig Tindale on X". */
-function sourceLabel(s) {
-  const src = s.src || new URL(s.url).hostname.replace(/^www\./, "");
-  const who = /^([^:]{3,40}):\s/.exec(s.title || "");
-  return src === "X" && who ? `${who[1]} on X` : src;
-}
-
+const stories = ed.sections.flatMap((sec) => sec.stories.map((s) => ({ ...s, section: sec.name })));
 const parts = [];
-const storyCount = ed.sections.reduce((n, s) => n + s.stories.length, 0);
-parts.push(`<p>${color(C.muted, `${storyCount} stories · about ${ed.readingMinutes} minutes`)}</p>`);
 
+// 1. Today's stories: thumbnail, kicker, short headline, one-line teaser.
+parts.push(kicker(`TODAY’S STORIES · ${stories.length} · ${ed.readingMinutes} MIN READ`));
 fs.mkdirSync(path.join("public", "email"), { recursive: true });
-let n = 0;
-for (const sec of ed.sections) {
-  parts.push(banner(sec.name));
-  for (const s of sec.stories) {
-    n += 1;
-    const kicker = [s.category, s.tag].filter(Boolean).join(" · ").toUpperCase();
-    const head =
-      (kicker ? `<p>${color(C.teal, `<strong>${esc(kicker)}</strong>`)}</p>` : "") + `<h3>${esc(s.title)}</h3>`;
+for (const [i, s] of stories.entries()) {
+  const n = i + 1;
+  const c = copy.stories?.[i] || {};
+  const head = c.head || s.title;
+  const teaser = c.teaser || firstSentence(s.why);
+  const where = /pick/i.test(s.section) ? "PICK" : /india/i.test(s.section) ? "INDIA" : "WORLD";
+  const label = `${String(n).padStart(2, "0")} · ${where} · ${String(s.category || "").replace(/^[^:]*:\s*/, "").toUpperCase()}`;
+  const text =
+    `<p>${fontSize("0.625rem", `<strong>${esc(label)}</strong>`, where === "PICK" ? E.coral : E.muted)}<br>` +
+    `${linkHtml(pageUrl, fontSize("1rem", esc(head)))}<br>` +
+    `${fontSize("0.8125rem", esc(teaser), E.body)}</p>`;
 
-    let top = head;
-    const fig = s.image ? path.join("public", s.image) : "";
-    if (fig && fs.existsSync(fig)) {
-      const thumb = `${date}-${n}.png`;
-      await thumbnail(fig, path.join("public", "email", thumb));
-      top =
-        `<div data-type="columns" data-stack-on-mobile="false">` +
-        `<div data-type="column" data-position="0" data-width="24%" data-vertical-align="middle">` +
-        `<figure data-type="imageBlock" data-src="${SITE}/email/${thumb}" data-alt="" data-align="center" data-width="100%" data-url="${esc(pageUrl)}"><figcaption></figcaption></figure>` +
-        `</div>` +
-        `<div data-type="column" data-position="1" data-width="76%" data-vertical-align="middle">${head}</div>` +
-        `</div>`;
-    }
-
-    const body = [];
-    if (s.points?.length) body.push(`<ul>${s.points.map((p) => `<li><p>${esc(p)}</p></li>`).join("")}</ul>`);
-    if (s.why) {
-      body.push(
-        `<figure data-type="blockquoteFigure" data-variant="2"><blockquote>` +
-          `<p>${color(C.red, "<strong>Why it matters</strong>")}</p><p>${esc(s.why)}</p>` +
-          `</blockquote><figcaption data-type="quoteCaption"></figcaption></figure>`,
-      );
-    }
-    if (s.other) {
-      const [label, text] = otherSide(s.other);
-      body.push(`<p>${color(C.teal, `<strong>${esc(label)}:</strong>`)} ${esc(text)}</p>`);
-    }
-    if (s.url) {
-      body.push(`<p>${color(C.muted, `Read the original: ${link(s.url, sourceLabel(s))}${s.pay ? " (subscription)" : ""}`)}</p>`);
-    }
-
-    parts.push(
-      section(
-        {
-          "background-color": C.cream, "border-color": C.rule, "border-style": "solid",
-          "border-width-top": 1, "border-width-right": 1, "border-width-bottom": 1, "border-width-left": 1,
-          ...radius(12), ...pad(8, 20, 8, 20), "margin-top": 16,
-        },
-        top + body.join(""),
-      ),
-    );
+  let row = text;
+  const fig = s.image ? path.join("public", s.image) : "";
+  if (fig && fs.existsSync(fig)) {
+    const thumb = `${date}-${n}.png`;
+    await thumbnail(fig, path.join("public", "email", thumb));
+    row =
+      `<div data-type="columns" data-stack-on-mobile="false">` +
+      `<div data-type="column" data-position="0" data-width="15%" data-vertical-align="middle">` +
+      `<figure data-type="imageBlock" data-src="${SITE}/email/${thumb}" data-alt="${esc(head)}" data-align="center" data-width="100%" data-url="${esc(pageUrl)}"><figcaption></figcaption></figure>` +
+      `</div><div data-type="column" data-position="1" data-width="85%" data-vertical-align="middle">${text}</div></div>`;
   }
-}
-
-if (ed.reading?.length) {
-  parts.push(banner("Further reading"));
   parts.push(
-    `<ul>${ed.reading
-      .map((r) => `<li><p>${link(r.url, r.title)}${r.src ? ` (${esc(r.src)})` : ""}</p></li>`)
-      .join("")}</ul>`,
+    section(
+      {
+        "border-color": E.rule, "border-style": "solid", "border-width-top": 0, "border-width-right": 0,
+        "border-width-bottom": i === stories.length - 1 ? 0 : 1, "border-width-left": 0, ...pad(6, 0, 6, 0),
+      },
+      row,
+    ),
   );
 }
 
-parts.push(
-  `<div class="node-button"><a data-type="button" href="${esc(pageUrl)}" data-alignment="center" data-size="large" data-custom-background-color="${C.red}" data-custom-text-color="#FFFFFF">Read today’s edition on kkreckons.com</a></div>`,
-);
-parts.push(`<p style="text-align: center">${color(C.muted, `Missed one? Every edition is on ${link(`${SITE}/daily/`, "Catch up")}.`)}</p>`);
+// 2. By the numbers: the edition's callouts as big figures, side by side.
+if (ed.callouts?.length) {
+  const cells = ed.callouts
+    .slice(0, 2)
+    .map(
+      (c) =>
+        `<td width="50%" valign="top" style="padding:16px 14px;background-color:#FFF7EE;border:1px solid #F2D9C4;border-radius:16px;">` +
+        `<div style="font-family:${SERIF};font-size:34px;line-height:1.05;font-weight:700;color:${E.coral};">${esc(c.num)}</div>` +
+        `<div style="margin-top:6px;font-family:${SANS};font-size:13px;line-height:1.4;color:${E.body};">${esc(c.text)}</div></td>`,
+    )
+    .join(`<td width="12" style="width:12px;font-size:0;line-height:0;">&nbsp;</td>`);
+  parts.push(kicker("BY THE NUMBERS", 22));
+  parts.push(
+    snippet(
+      `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:separate;"><tbody><tr>${cells}</tr></tbody></table>`,
+      10,
+    ),
+  );
+}
 
-// Per-post theme: KKReckons colours, one body font, quieter links and rules.
+// 3. KK's takeaway: the day in two short phrases and one line.
+const tk = copy.takeaway || {};
+const takeawayLine = tk.line || ed.slice;
+parts.push(
+  section(
+    {
+      "background-color": "#FFF0F6", "border-color": "#E64980", "border-style": "solid",
+      "border-width-top": 2, "border-width-right": 2, "border-width-bottom": 2, "border-width-left": 2,
+      ...radius(14), ...pad(10, 10, 8, 10), "margin-top": 18,
+    },
+    `<p style="text-align: center">${fontSize("0.6875rem", "<strong>✦ KK’S TAKEAWAY ✦</strong>", "#D6336C")}` +
+      (tk.a
+        ? `<br><span style="color: #7048E8; font-family: Georgia, &quot;Times New Roman&quot;, serif; font-size: 1.4375rem;" data-font-size="1.4375rem"><strong>${esc(tk.a)}</strong></span>` +
+          (tk.b
+            ? ` <span style="color: #F76707; font-family: Georgia, &quot;Times New Roman&quot;, serif; font-size: 1.4375rem;" data-font-size="1.4375rem"><strong>${esc(tk.b)}</strong></span>`
+            : "")
+        : "") +
+      `<br>${fontSize("0.875rem", `<strong><em>${esc(takeawayLine)}</em></strong>`, "#C2255C")}</p>`,
+  ),
+);
+
+// 4. Further reading, kept short.
+if (ed.reading?.length) {
+  parts.push(kicker([0, 6].includes(when.getUTCDay()) ? "WORTH YOUR WEEKEND" : "FURTHER READING", 20));
+  parts.push(
+    plain(
+      { "margin-top": 4 },
+      ed.reading
+        .map((r) => `<p>${fontSize("0.875rem", `→ ${link(r.url, r.title)}`)}${r.note ? `<br>${fontSize("0.8125rem", esc(r.note), E.muted)}` : ""}</p>`)
+        .join(""),
+    ),
+  );
+}
+
+// 5. The card that sends readers to the full edition.
+parts.push(
+  snippet(
+    `<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${E.plum}" style="width:100%;background-color:${E.plum};background-image:linear-gradient(135deg,#3A2468 0%,#26174A 45%,#1C1036 100%);border-radius:24px;border-collapse:separate;"><tbody><tr><td style="padding:28px 26px;">` +
+      `<table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td width="62" align="center" valign="middle" style="width:62px;height:62px;border-radius:31px;background-color:#D96B3F;color:#FFFFFF;font-size:40px;line-height:62px;font-weight:700;font-family:Arial,sans-serif;">☼</td></tr></tbody></table>` +
+      `<div style="margin-top:22px;font-family:${SANS};font-size:13px;font-weight:700;letter-spacing:4px;color:#D8CCF4;text-transform:uppercase;">${esc(longDate)}</div>` +
+      `<div style="margin-top:10px;font-family:${SERIF};font-size:29px;line-height:1.18;font-weight:700;color:#FFFFFF;">${esc(ed.slice)}</div>` +
+      `<div style="margin-top:10px;font-family:${SANS};font-size:16px;line-height:1.45;color:#E2DAF5;">Every story in full, with the graphic, the points, why it matters and the other side.</div>` +
+      `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:22px;"><tbody><tr><td align="center" style="background-color:#B85A2E;border-radius:40px;">` +
+      `<a href="${esc(pageUrl)}" style="display:block;padding:17px 10px;font-family:${SANS};font-size:18px;font-weight:700;color:#FFFFFF;text-decoration:none;">Read today’s edition →</a>` +
+      `</td></tr></tbody></table></td></tr></tbody></table>`,
+    22,
+  ),
+);
+parts.push(
+  plain(
+    { "margin-top": 6 },
+    `<p style="text-align: center">${fontSize("0.625rem", `Illustrations: original graphics by KKReckons · Missed one? ${link(`${SITE}/daily/`, "Catch up")}`, E.muted)}</p>`,
+  ),
+);
+
+// Per-post theme, as on the 17 October email: white page, compact type, coral links.
 const theme = {
-  padding_left: "24",
-  padding_right: "24",
-  background_color: C.page,
+  padding_left: "22",
+  padding_right: "22",
+  padding_top: "20",
+  padding_bottom: "16",
+  margin_top: "16",
+  margin_bottom: "16",
+  max_width: "620",
+  background_color: "#FFFFFF",
   content_background_color: "#FFFFFF",
-  paragraph_color: C.text,
-  list_font_family: "Inter",
-  list_font_color: C.text,
-  list_line_height_exact: "1.5",
-  list_item_spacing: "6",
-  list_padding_left: "18",
-  list_padding_right: "4",
-  list_padding_top: "4",
-  list_padding_bottom: "4",
+  paragraph_color: E.body,
+  paragraph_padding_top: "3",
+  paragraph_padding_bottom: "3",
+  paragraph_line_height_exact: "1.45",
+  inline_link_color: E.coral,
+  inline_link_bold: "true",
+  inline_link_underline: "false",
   inline_link_italic: "false",
-  inline_link_color: C.teal,
-  inline_link_underline_color: C.teal,
-  h3_font_size: "20",
-  h3_font_color: C.navy,
-  h3_padding_top: "4",
-  header_title_font_color: C.navy,
+  h3_font_size: "17",
+  h3_font_color: E.ink,
+  header_title_font_color: E.ink,
   header_subtitle_font_size: "18",
-  header_subtitle_font_weight: "500",
-  header_subtitle_font_color: C.red,
-  image_padding_top: "8",
-  image_padding_bottom: "8",
-  quote_2_background_color: "#FFFFFF",
-  quote_2_border_color: C.red,
-  quote_2_border_left_width: "3",
-  quote_2_font_family: "Inter",
-  quote_2_font_size: "16",
-  quote_2_font_color: C.navy,
-  quote_2_padding_left: "14",
-  quote_2_padding_top: "4",
-  quote_2_padding_bottom: "4",
-  quote_2_margin_left: "0",
-  quote_2_margin_right: "0",
-  button_background_color: C.red,
-  button_border_color: C.red,
+  header_subtitle_font_weight: "600",
+  header_subtitle_font_color: E.coral,
+  image_padding_top: "0",
+  image_padding_bottom: "0",
+  button_background_color: E.coral,
+  button_border_color: E.coral,
   button_text_color: "#FFFFFF",
-  button_font_family: "Inter",
-  button_font_weight: "bold",
   button_border_radius: "24",
-  button_margin_top: "28",
 };
 
 const payload = {
