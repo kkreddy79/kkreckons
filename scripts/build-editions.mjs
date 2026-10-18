@@ -81,6 +81,9 @@ function fromEmbedded(date, d) {
       ...(clean(s.src) ? { src: clean(s.src) } : {}),
       ...(s.pay !== undefined && s.pay !== null && s.pay !== "" ? { pay: paid(s.pay) } : {}),
       ...(Array.isArray(s.themes) && s.themes.length ? { themes: s.themes.map(clean).filter(Boolean) } : {}),
+      // Short copy for the subscriber email (scripts/beehiiv-email.mjs).
+      ...(clean(s.ehead) ? { emailHead: clean(s.ehead) } : {}),
+      ...(clean(s.eteaser) ? { emailTeaser: clean(s.eteaser) } : {}),
     };
   };
   const sections = [
@@ -95,6 +98,9 @@ function fromEmbedded(date, d) {
     callouts: (d.callout || []).map((c) => ({ num: clean(c.num), text: clean(`${c.lead || ""}${c.rest || ""}`), url: c.url || "" })),
     sections,
     reading: (d.reading || []).map((r) => ({ title: clean(r.title), url: r.url || "", note: clean(r.note || r.src || "") })),
+    ...(d.takeaway && clean(d.takeaway.line)
+      ? { takeaway: { a: clean(d.takeaway.a), b: clean(d.takeaway.b), line: clean(d.takeaway.line) } }
+      : {}),
   };
 }
 
@@ -244,6 +250,7 @@ for (const file of files) {
     callouts: content.callouts,
     sections: content.sections,
     reading: content.reading,
+    ...(content.takeaway ? { takeaway: content.takeaway } : {}),
   };
   fs.writeFileSync(path.join(contentDir, `${date}.json`), JSON.stringify(record, null, 2) + "\n");
 

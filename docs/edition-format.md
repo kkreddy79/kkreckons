@@ -21,6 +21,7 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `world` | – | World edition stories. |
 | `callout` | – | Numbers of the day: `{ "num": "20,000+", "lead": "staff moved…", "rest": "…", "url": "…" }`. |
 | `reading` | – | Further reading: `{ "title": "…", "url": "…", "note": "…" }` (`src` is accepted in place of `note`). |
+| `takeaway` | – | For the subscriber email: the day in two short contrasting phrases plus one line, `{ "a": "Big bets.", "b": "Few hires.", "line": "Money is pouring into India. Jobs need to keep up." }`. |
 
 ## Each story
 
@@ -40,6 +41,8 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `figcredit` | with `fig` | Where the image comes from, shown under it. For example `Original graphic: KKReckons`, `Photo: Jane Doe / Unsplash` or `Wikimedia Commons, CC BY-SA 4.0`. An image without one fails the checks. |
 | `src` | – | Publisher name to show, for example `Mint`. If left out, the site names it from the link. |
 | `pay` | – | `true`/`"paid"` or `false`/`"free"`. If left out, the site decides from the link's domain. |
+| `ehead` | – | For the subscriber email: a short headline, about 6 words (`"A top degree, no job offer"`). If left out, the email uses `title`. |
+| `eteaser` | – | For the subscriber email: a one-line teaser, about 10 words (`"2,300 applications later, the hiring freeze still wins."`). If left out, the email uses the first sentence of `why`. |
 | `themes` | – | Catch up themes, any of: `AI`, `Markets`, `Banking`, `India`, `Jobs & careers`, `Geopolitics`, `Personal finance`, `Health & science`. Unknown names are ignored. If left out (or none match), the site picks themes from the category and title. |
 
 ## Content rules (checked before every edition goes live)

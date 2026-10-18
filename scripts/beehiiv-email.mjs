@@ -83,11 +83,12 @@ const radius = (n) => ({
 
 // ---------- Email copy ----------
 // The email is a quick, scannable digest that sends readers to the site for the full story.
-// Its short headlines, teasers and takeaway are written per edition (usually from each
-// explainer graphic's own headline and takeaway) and passed in with --copy:
+// Its short headlines, teasers and takeaway come from the newsletter itself (each story's
+// `ehead`/`eteaser` and the top-level `takeaway`, see docs/edition-format.md). For an edition
+// without them, they can be passed in with --copy:
 //   { "stories": [{ "head": "...", "teaser": "..." }, ...],   // one per story, in order
 //     "takeaway": { "a": "Big bets.", "b": "Few hires.", "line": "..." } }
-// Without it, the story title and the first sentence of "why it matters" stand in.
+// Failing both, the story title and the first sentence of "why it matters" stand in.
 const copyFile = opt("--copy");
 const copy = copyFile ? JSON.parse(fs.readFileSync(copyFile, "utf8")) : {};
 const firstSentence = (t) => (String(t || "").match(/^.*?[.!?](\s|$)/) || [String(t || "")])[0].trim();
@@ -135,8 +136,8 @@ fs.mkdirSync(path.join("public", "email"), { recursive: true });
 for (const [i, s] of stories.entries()) {
   const n = i + 1;
   const c = copy.stories?.[i] || {};
-  const head = c.head || s.title;
-  const teaser = c.teaser || firstSentence(s.why);
+  const head = c.head || s.emailHead || s.title;
+  const teaser = c.teaser || s.emailTeaser || firstSentence(s.why);
   const where = /pick/i.test(s.section) ? "PICK" : /india/i.test(s.section) ? "INDIA" : "WORLD";
   const label = `${String(n).padStart(2, "0")} · ${where} · ${String(s.category || "").replace(/^[^:]*:\s*/, "").toUpperCase()}`;
   const text =
@@ -187,7 +188,7 @@ if (ed.callouts?.length) {
 }
 
 // 3. KK's takeaway: the day in two short phrases and one line.
-const tk = copy.takeaway || {};
+const tk = copy.takeaway || ed.takeaway || {};
 const takeawayLine = tk.line || ed.slice;
 parts.push(
   section(
