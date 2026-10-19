@@ -138,10 +138,12 @@ rows.push(
 // 2. Today's stories: thumbnail, kicker, short headline, one-line teaser.
 rows.push(label("TODAY’S STORIES", 16));
 fs.mkdirSync(path.join("public", "email"), { recursive: true });
+const heads = [];
 for (const [i, s] of stories.entries()) {
   const n = i + 1;
   const c = copy.stories?.[i] || {};
   const head = c.head || s.emailHead || s.title;
+  heads.push(head);
   const teaser = c.teaser || s.emailTeaser || firstSentence(s.why);
   const where = /pick/i.test(s.section) ? "PICK" : /india/i.test(s.section) ? "INDIA" : "WORLD";
   const cat = String(s.category || "").replace(/^[^:]*:\s*/, "").toUpperCase();
@@ -263,3 +265,5 @@ const payload = {
 const json = JSON.stringify(payload, null, 2);
 if (out) fs.writeFileSync(out, json + "\n");
 else process.stdout.write(json + "\n");
+// Story headlines as they appear in the email, for checking the beehiiv draft (stderr when the JSON goes to stdout).
+(out ? console.log : console.error)(heads.map((h, i) => `${String(i + 1).padStart(2, "0")} · ${h}`).join("\n"));
