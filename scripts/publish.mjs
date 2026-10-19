@@ -52,7 +52,7 @@ for (const [name, cmd, argv] of steps) {
   const keep = {
     editions: lines.filter((l) => l.startsWith(date) || /Removed|Wrote/.test(l)),
     check: lines.filter((l) => !/^\s*$/.test(l)),
-    email: [`email written to ${email}`],
+    email: [`email written to ${email}`, ...lines.filter((l) => /^\d{2} · /.test(l))],
     build: [],
     qc: lines.filter((l) => /^(•|✓|Compared)/.test(l)),
   }[name];

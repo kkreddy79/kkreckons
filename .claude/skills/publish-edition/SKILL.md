@@ -150,7 +150,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      `save_post_theme` with its `theme`. This makes a **draft** only.
   4. Re-read it with `get_post_content` (`format: "editor_html"`, ~15KB; not `text`, which omits the HTML
      snippet and shows only the "read online" line, and never `html`, which is ~70KB) and confirm the
-     title and that every story's short headline appears once.
+     title and that every story's short headline (listed under "✓ email" in the publish summary) appears once.
   5. Also check `list_posts` for an older KKReckons post still in `draft`; mention it in one line so an
      unsent edition doesn't go unnoticed.
   6. Reply in this shape (and send a push notification if that tool is available):
