@@ -1,0 +1,275 @@
+{
+  "date": "2026-10-20",
+  "slice": "Rockets rise, wires lag, desks empty, streets burn. All want the upside. Few survive it.",
+  "artifact": "https://claude.ai/artifact/4zf3XG3wF3EABWGWhn18Qu",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "$173bn",
+      "text": "combined value of 70+ listed Indian new-age tech firms, Inc42’s tracker shows.",
+      "url": "https://inc42.com/features/indian-listed-new-age-tech-company-tracker-market-cap-revenue-more/"
+    },
+    {
+      "num": "4.9%",
+      "text": "French 10-year yield, its highest in over two decades, with the gap over Germany near 140bp.",
+      "url": "https://m.economictimes.com/news/international/world-news/france-is-on-fire-but-something-more-dangerous-burns-below-the-unrest/articleshow/135051898.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "India’s tech builders",
+          "tag": "",
+          "title": "India can build anything, and its founders are starting to",
+          "url": "https://x.com/awaisahmedna/status/2111786639098015843",
+          "url2": "https://yourstory.com/2026/10/india-can-build-anything-says-prof-ashok-jhunjhunwala",
+          "points": [
+            "Pixxel founder Awais Ahmed argues India must build rockets, chips and materials as well as apps, noting China’s share of world manufacturing rose from under 3% in 1990 to 32%.",
+            "He points to the government’s ₹1 lakh crore research fund, whose first 19 managers have ₹7,131 crore committed. YourStory reports Prof. Ashok Jhunjhunwala telling TechSparks that India can develop any technology and should back young risk-takers.",
+            "Inc42’s tracker says over 70 new-age tech companies are now listed, worth over $173bn combined, and over 60 are profitable."
+          ],
+          "numbers": [
+            [
+              "$173bn+",
+              "combined value of listed new-age tech"
+            ],
+            [
+              "70+",
+              "tech firms already listed"
+            ],
+            [
+              "₹1L cr",
+              "government research fund"
+            ]
+          ],
+          "why": "Consumer apps made India’s startups rich; the next test is whether that money and patience flow into the physical things India still imports.",
+          "other": "Ahmed himself says deep-tech founders must meet rigorous standards, because patience is no licence for endless experimenting. Will results arrive as fast as the optimism?",
+          "also": [
+            {
+              "title": "Inc42: Indian listed new-age tech company tracker",
+              "url": "https://inc42.com/features/indian-listed-new-age-tech-company-tracker-market-cap-revenue-more/"
+            }
+          ],
+          "image": "/figs/2026-10-20-1.jpg",
+          "imageAlt": "KKReckons explainer: India’s deep-tech push, the $173bn listed new-age tech base, the research fund and what founders need.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "X, YourStory and Inc42",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "India’s builders are just getting started",
+          "emailTeaser": "Rockets, a ₹1 lakh crore fund and 70+ listed tech firms."
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Solar and the grid",
+          "tag": "",
+          "title": "India’s solar boom is testing the grid",
+          "url": "https://www.livemint.com/economy/india-solar-boom-grid-challenges-11792407133953.html",
+          "url2": "",
+          "points": [
+            "Mint reports India reached 168.04GW of solar capacity by 31 August, but transmission lines and storage are struggling to carry and save the power.",
+            "Ember estimates 300 GWh of clean electricity was lost to transmission limits in the first quarter of 2026, and new renewable awards fell to 14.7GW in FY26 from 40.6GW a year earlier.",
+            "India has 8.6GWh of battery storage against a projected need of 236GWh by 2032; a proposed rule would require storage on new solar and wind projects from July 2027."
+          ],
+          "numbers": [
+            [
+              "168GW",
+              "solar capacity, 31 Aug"
+            ],
+            [
+              "300 GWh",
+              "clean power lost, Q1"
+            ],
+            [
+              "8.6GWh",
+              "battery storage vs 236GWh need"
+            ]
+          ],
+          "why": "Cheap sunshine only helps if it can reach users in the evening; wires and batteries now decide how much of India’s solar boom is actually used.",
+          "other": "One industry chief says the stress should not be called grid instability, and the ministry says it is expanding transmission and storage. Can the build-out keep pace with the sun?",
+          "also": [],
+          "image": "/figs/2026-10-20-2.jpg",
+          "imageAlt": "KKReckons explainer: India’s 168GW of solar, the power lost to weak transmission, and the battery and wires fix.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "India’s sun outruns its wires",
+          "emailTeaser": "168GW installed, yet 300 GWh of clean power lost in a quarter."
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI debt and credit",
+          "tag": "",
+          "title": "Ares and Gemes: AI debt looks safer than it is",
+          "url": "https://www.linkedin.com/pulse/ai-credit-i-have-seen-film-before-orlando-gemes-llzie",
+          "url2": "https://www.ares.com/content/dam/aresmgmt/Documents/In-the-Gaps/Ares_InTheGaps_Newsletter_Fall-2026.pdf",
+          "points": [
+            "Ares’ Fall 2026 ‘In The Gaps’ says insurers, long the market’s most cautious investors, now hold venture-style risk packaged as investment-grade bonds funding the AI build-out.",
+            "Ares traced 100+ financings back to eight names, from Meta and Oracle to OpenAI and Anthropic, and notes chip resale values are assumed anywhere from 10% to 60%.",
+            "Orlando Gemes’ LinkedIn summary adds early warnings: Meta-linked Beignet bonds hit a record low near 94.4, and Oracle sent a force majeure notice on its Project Jupiter campus."
+          ],
+          "numbers": [
+            [
+              "100+",
+              "financings Ares traced"
+            ],
+            [
+              "8",
+              "names behind them all"
+            ],
+            [
+              "94.4",
+              "Beignet bond price, record low"
+            ]
+          ],
+          "why": "A bond can pass every rating test and still fail a load nobody tested, and the insurers holding it are the ones backing retirees’ annuities.",
+          "other": "Gemes says none of this is a default yet, Oracle calls its notice precautionary and Blue Owl says its commitments are unchanged. Is this a structural flaw, or partly just rates?",
+          "also": [],
+          "image": "/figs/2026-10-20-3.jpg",
+          "imageAlt": "KKReckons explainer: eight names behind AI data-centre debt, who holds it, and the early warning signs.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "LinkedIn and Ares",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "AI debt that looks safer than it is",
+          "emailTeaser": "Eight names sit behind 100+ AI financings; one bond fell to 94.4."
+        },
+        {
+          "category": "AI infrastructure",
+          "tag": "Opinion",
+          "title": "Chris Miller: data centres need protection from drone warfare",
+          "url": "https://www.ft.com/content/15a049f3-b62e-40ed-b304-8a2452713338",
+          "url2": "",
+          "points": [
+            "Miller notes Ukraine has damaged a Yandex data centre in Russia, while Iran has hit facilities in Bahrain and the UAE, including ones run by US cloud firms.",
+            "Attacks are rising because military and civilian sites blur, campuses are growing costlier and a cheap drone can cause huge disruption.",
+            "The UAE is reworking its plans into a network of smaller sites, and designs may add blast-resistant concrete, jamming gear and missile defence."
+          ],
+          "numbers": [],
+          "why": "AI’s physical footprint is now a target, which raises the cost and risk for anyone planning sovereign AI.",
+          "other": "Hardened, dispersed and underground sites may blunt the threat. The real question is how much they add to the cost, not whether building continues.",
+          "also": [],
+          "image": "/figs/2026-10-20-4.jpg",
+          "imageAlt": "KKReckons explainer: why data centres are being attacked and how operators are responding.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Data centres are now targets",
+          "emailTeaser": "Cheap drones, costly campuses: AI’s new security bill."
+        },
+        {
+          "category": "Sovereign debt",
+          "tag": "",
+          "title": "France is on fire, but something more dangerous burns below",
+          "url": "https://m.economictimes.com/news/international/world-news/france-is-on-fire-but-something-more-dangerous-burns-below-the-unrest/articleshow/135051898.cms",
+          "url2": "",
+          "points": [
+            "The Economic Times says France’s debt is about €3.5tn, close to 120% of GDP, and its 10-year yield near 4.9% is the highest in over two decades, about 140 basis points above Germany’s.",
+            "The 2027 budget seeks €43bn in cuts and tax rises, while interest payments are projected at €91.2bn, more than education or defence.",
+            "Pension costs take 32% of the education ministry’s budget, so protests over schools collide with the need for austerity."
+          ],
+          "numbers": [
+            [
+              "4.9%",
+              "French 10-year yield"
+            ],
+            [
+              "~140bp",
+              "gap over Germany"
+            ]
+          ],
+          "why": "A state that cannot fund the services people want ends up paying more to borrow, which squeezes those services further.",
+          "other": "The piece notes France is not facing automatic default: long debt maturities and a diversified investor base give some cover, and the IMF calls the rise manageable for now.",
+          "also": [],
+          "image": "/figs/2026-10-20-5.jpg",
+          "imageAlt": "KKReckons explainer: France’s 4.9% yield, debt near 120% of GDP, the budget squeeze and the protests.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "France’s bond market lights up",
+          "emailTeaser": "Yields near 4.9% as riots meet a €43bn budget."
+        },
+        {
+          "category": "AI and jobs",
+          "tag": "Opinion",
+          "title": "Bloomberg Opinion: UK finance shows how AI may hit jobs",
+          "url": "https://www.bloomberg.com/graphics/2026-opinion-how-will-ai-affect-jobs-the-uk-finance-industry-is-showing-us/",
+          "url2": "",
+          "points": [
+            "The column says UK firms reported net staff cuts of about 8% due to AI in 2025, double the average in four other rich economies, with the lowest hiring rate in the survey.",
+            "Job adverts have fallen most in roles exposed to AI, such as accountants, analysts and finance back-office work, and HSBC plans to cut UK advisers by nearly 70%.",
+            "Towns such as Swindon and Bournemouth, home to bank and insurer back offices, could feel it first."
+          ],
+          "numbers": [
+            [
+              "8%",
+              "net AI staff cuts, UK firms 2025"
+            ],
+            [
+              "~70%",
+              "HSBC UK adviser cut planned"
+            ]
+          ],
+          "why": "Back-office finance work is routine and easy to track, and it is concentrated in a few towns, so it is where AI’s job effect may show first.",
+          "other": "Pandemic over-hiring and remote work may explain part of the slowdown, firms retrain more staff than they cut, and AI exposure is often still theoretical.",
+          "also": [],
+          "image": "/figs/2026-10-20-6.jpg",
+          "imageAlt": "KKReckons explainer: net AI-linked staff cuts at UK firms, HSBC’s adviser cuts and why the effect may be smaller.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "AI"
+          ],
+          "emailHead": "UK back offices feel AI first",
+          "emailTeaser": "Net 8% staff cuts at UK firms, double the peer average."
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Anand Mahindra’s post on X",
+      "url": "https://x.com/anandmahindra/status/2112176381081567540?s=46&t=8b3uxhyUfGCSwTKxXmCk4g",
+      "note": "on young Indian builders"
+    },
+    {
+      "title": "A long read in Nature",
+      "url": "https://www.nature.com/articles/d41586-026-03228-3",
+      "note": "technology promises efficiency, but who pays when the bill arrives?"
+    }
+  ],
+  "takeaway": {
+    "a": "Big ambition.",
+    "b": "Thin plumbing.",
+    "line": "Grids, guards and ratings must hold. So must jobs and living costs: UK back offices are shedding staff, and French protests turned violent over prices."
+  }
+}
