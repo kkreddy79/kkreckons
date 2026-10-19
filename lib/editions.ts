@@ -96,6 +96,8 @@ const PUBLISHERS: Record<string, string> = {
   "investmentnews.com": "InvestmentNews",
   "nature.com": "Nature",
   "apnews.com": "AP News",
+  "linkedin.com": "LinkedIn",
+  "ares.com": "Ares",
 };
 
 /** "https://www.livemint.com/…" → "Mint" (falls back to the domain) */

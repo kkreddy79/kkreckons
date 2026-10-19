@@ -1,5 +1,91 @@
 [
   {
+    "date": "2026-10-20",
+    "slice": "Rockets rise, wires lag, desks empty, streets burn. All want the upside. Few survive it.",
+    "artifact": "https://claude.ai/artifact/4zf3XG3wF3EABWGWhn18Qu",
+    "readingMinutes": 5,
+    "image": "/figs/2026-10-20-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "India can build anything, and its founders are starting to",
+        "category": "India’s tech builders",
+        "tag": "",
+        "url": "https://x.com/awaisahmedna/status/2111786639098015843",
+        "src": "X, YourStory and Inc42",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India’s solar boom is testing the grid",
+        "category": "Solar and the grid",
+        "tag": "",
+        "url": "https://www.livemint.com/economy/india-solar-boom-grid-challenges-11792407133953.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Ares and Gemes: AI debt looks safer than it is",
+        "category": "AI debt and credit",
+        "tag": "",
+        "url": "https://www.linkedin.com/pulse/ai-credit-i-have-seen-film-before-orlando-gemes-llzie",
+        "src": "LinkedIn and Ares",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Chris Miller: data centres need protection from drone warfare",
+        "category": "AI infrastructure",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/15a049f3-b62e-40ed-b304-8a2452713338",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "France is on fire, but something more dangerous burns below",
+        "category": "Sovereign debt",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/international/world-news/france-is-on-fire-but-something-more-dangerous-burns-below-the-unrest/articleshow/135051898.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Bloomberg Opinion: UK finance shows how AI may hit jobs",
+        "category": "AI and jobs",
+        "tag": "Opinion",
+        "url": "https://www.bloomberg.com/graphics/2026-opinion-how-will-ai-affect-jobs-the-uk-finance-industry-is-showing-us/",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-19",
     "slice": "AI cracks Enigma and picks locks. Humans still can’t close a loophole or settle a fee.",
     "artifact": "https://claude.ai/artifact/GqjN4KxosssKmiGTY7vsSR",
