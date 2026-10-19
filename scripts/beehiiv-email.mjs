@@ -114,8 +114,13 @@ rows.push(
     ACCENTS.map((c) => `<td width="25%" style="border-top:4px solid ${c};font-size:0;line-height:0;">&nbsp;</td>`).join("") +
     `</tr></table></td></tr>`,
 );
+// Name and date on the left, size on the right: one line instead of a separate title.
+const shortDate = `${DAYS[when.getUTCDay()].slice(0, 3)} ${d} ${monthName.slice(0, 3)} ${y}`.toUpperCase();
 rows.push(
-  `<tr><td colspan="2" style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.coral};">KKRECKONS · ${stories.length} STORIES · ${ed.readingMinutes} MIN</td></tr>`,
+  `<tr><td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
+    `<td style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.coral};white-space:nowrap;">KKRECKONS <span style="color:${E.ink};">· ${shortDate}</span></td>` +
+    `<td align="right" style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.muted};white-space:nowrap;">${stories.length} STORIES · ${ed.readingMinutes} MIN</td>` +
+    `</tr></table></td></tr>`,
 );
 rows.push(
   hasTakeaway
