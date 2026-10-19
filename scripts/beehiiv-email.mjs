@@ -241,11 +241,15 @@ const theme = {
   button_border_radius: "24",
 };
 
+// Subject: the takeaway's two phrases ("KKReckons · Big bets. Few hires."); the date is already in
+// the email's top line. Falls back to the date when an edition has no takeaway.
+const subject = tk.a ? `KKReckons · ${[tk.a, tk.b].filter(Boolean).join(" ")}` : `KKReckons, ${longDate}`;
+
 const payload = {
   title: `KKReckons, ${longDate}`,
   subtitle: ed.slice,
   email_settings: {
-    email_subject_line: `KKReckons, ${longDate}`,
+    email_subject_line: subject,
     email_preview_text: ed.slice,
     display_title_in_email: false,
     display_subtitle_in_email: false,
