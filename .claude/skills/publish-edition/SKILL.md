@@ -32,8 +32,10 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 
 1. Read the artifact (`Artifact` tool, `action: "read"`, `url`). Copy the saved page to
    `newsletters/<YYYY-MM-DD>.html` (source only; it is not served on the site).
-   It must be a full HTML document containing `<script id="data">`. If it isn't, stop and say so;
-   don't guess at content.
+   It must be a full HTML document containing a `<script>` with `id="data"` (usually
+   `<script type="application/json" id="data">`, so search for `id="data"`, not the literal tag).
+   If it isn't, stop and say so; don't guess at content. The saved page is wrapped in an extra outer
+   document skeleton; copy it as is, the build strips it.
 2. Add `"<YYYY-MM-DD>": { "artifact": "<artifact url>" }` to `data/edition-meta.json`, keeping the
    file's existing order (oldest first) and two-space indentation.
 3. `npm ci` (first time in the session), then run every mechanical step with one command:
@@ -42,7 +44,8 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    (`public/email/<YYYY-MM-DD>-<n>.png`, commit them with the edition) and the email JSON
    (`.publish/beehiiv-<YYYY-MM-DD>.json`, used in section 4), builds the site and runs QC, printing only
    a summary or the failing step's output. Only the new date's files should change besides
-   `data/editions.json`; investigate any other diffs.
+   `data/editions.json`; investigate any other diffs. Ignore "Removed unused image public/figs/<other date>-…"
+   lines for older dates: they are untracked leftovers and change nothing in git.
    **Email copy:** the newsletter normally carries it (`ehead`/`eteaser` per story and a top-level
    `takeaway`, see `docs/edition-format.md`). If it doesn't, write `.publish/copy-<YYYY-MM-DD>.json`
    (`{"stories": [{"head": "…", "teaser": "…"}, …], "takeaway": {"a": "…", "b": "…", "line": "…"}}`,
@@ -75,7 +78,9 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      the publish command (unused images are deleted automatically). List it in your message. Also mention
      any realistic AI-made likeness of a real person, for his decision.
    - **Own words:** for each source you can open (not paywalled), compare the points with the article.
-     Flag any sentence copied word for word or with only small word changes.
+     Flag any sentence copied word for word or with only small word changes. If no source can be opened
+     (the session's network may block publisher sites), review the wording by reading it, and say in
+     the pull request and your message that it was not compared side by side with the articles.
    - **Paywalled sources:** the summary must give the gist and his view, not the article's full substance.
      Flag any story that reads as a replacement for the original, and any quote longer than a short phrase.
    - **Original value:** every story's "why it matters" (and "other side" when present) must add his own
@@ -121,6 +126,11 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   If anything is off, say so at once and offer a rollback (Vercel "promote" of the previous production
   deployment, or a revert pull request), and don't draft the email.
 
+  **If the live site can't be reached** (the session's network blocks kkreckons.com and
+  `web_fetch_vercel_url` is refused): treat Vercel's `success` on the merge commit plus the passing QC
+  as enough, carry on with the email draft, and tell him plainly that the live pages weren't checked by
+  hand and he should open the link once.
+
   **Email draft (beehiiv, free plan):** every "publish" to the website also prepares the subscriber email,
   in the same run, without being asked. The beehiiv account is on the free (Launch) plan, which has no
   automatic sending (no RSS to Send, recurring series, automations or Send API), so the flow is: the
@@ -138,8 +148,9 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   3. Otherwise call `save_post` with the JSON's fields (`html_content` verbatim, not `theme`), then
      `edit_post` with its `email_settings` again (`save_post` ignores `display_byline_in_email`), then
      `save_post_theme` with its `theme`. This makes a **draft** only.
-  4. Re-read it with `get_post_content` (`format: "text"`; never `html`, which is ~70KB) and confirm the
-     title and that every story appears once.
+  4. Re-read it with `get_post_content` (`format: "editor_html"`, ~15KB; not `text`, which omits the HTML
+     snippet and shows only the "read online" line, and never `html`, which is ~70KB) and confirm the
+     title and that every story's short headline appears once.
   5. Also check `list_posts` for an older KKReckons post still in `draft`; mention it in one line so an
      unsent edition doesn't go unnoticed.
   6. Reply in this shape (and send a push notification if that tool is available):
