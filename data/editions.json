@@ -1,5 +1,103 @@
 [
   {
+    "date": "2026-10-19",
+    "slice": "AI cracks Enigma and picks locks. Humans still can’t close a loophole or settle a fee.",
+    "artifact": "https://claude.ai/artifact/GqjN4KxosssKmiGTY7vsSR",
+    "readingMinutes": 7,
+    "image": "/figs/2026-10-19-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "America’s $10tn AI data-centre boom is starting to fray",
+        "category": "AI infrastructure",
+        "tag": "",
+        "url": "https://www.ft.com/content/9ea5a37d-15c9-4d5b-94d6-719048c9cd3c?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Sebi’s gold-fund curbs leave a gap as savers pile into bullion",
+        "category": "Gold and the rupee",
+        "tag": "",
+        "url": "https://www.livemint.com/market/sebi-gold-price-fund-curbs-may-have-limited-impact-as-etf-route-remains-open-11792144976335.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India’s new UPI fee is reviving the case for cash",
+        "category": "Digital payments",
+        "tag": "",
+        "url": "https://www.ft.com/content/886006f8-284c-4a20-9411-3cfd9deead3f?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents breach Indian systems as Schwab locks them out",
+        "category": "AI agents and access",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/artificial-intelligence/india-ai-agent-cyber-attack-warning-cert-in-data-breach-11792137815639.html",
+        "src": "Mint and The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "FT column: not every billionaire is a policy failure",
+        "category": "Wealth and policy",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/2c8c610b-83f3-4cab-b409-bab69f4c2207?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Amateurs are cracking history’s secret codes with AI",
+        "category": "AI and history",
+        "tag": "",
+        "url": "https://www.nature.com/articles/d41586-026-03338-y",
+        "src": "Nature",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "North Korea claims an AI-guided torpedo; experts are sceptical",
+        "category": "Defence and AI",
+        "tag": "",
+        "url": "https://apnews.com/article/north-korea-torpedo-kim-jong-un-ai-b9856c5697a043f74586719974dad6cc",
+        "src": "AP",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-18",
     "slice": "Dr Doom calls a boom. International Banks call India. A PhD's 2,300 calls hit voicemail.",
     "artifact": "https://claude.ai/artifact/FrfWrTXNA8yHWEnGF4cuow",

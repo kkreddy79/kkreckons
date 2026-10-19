@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-19",
+  "slice": "AI cracks Enigma and picks locks. Humans still can’t close a loophole or settle a fee.",
+  "artifact": "https://claude.ai/artifact/GqjN4KxosssKmiGTY7vsSR",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$19.27bn",
+      "text": "of gold imports in April to September, down 27% on a year earlier.",
+      "url": "https://www.livemint.com/market/sebi-gold-price-fund-curbs-may-have-limited-impact-as-etf-route-remains-open-11792144976335.html"
+    },
+    {
+      "num": "4bn+",
+      "text": "Enigma settings tested by an AI model in ten hours to crack an 85-year-old message.",
+      "url": "https://www.nature.com/articles/d41586-026-03338-y"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI infrastructure",
+          "tag": "",
+          "title": "America’s $10tn AI data-centre boom is starting to fray",
+          "url": "https://www.ft.com/content/9ea5a37d-15c9-4d5b-94d6-719048c9cd3c?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The FT reports that America’s data-centre build-out, projected at more than $10tn, is running into delays, local opposition and nervous lenders.",
+            "At least 47 large projects have been delayed, withdrawn or blocked this year, and higher borrowing costs are squeezing the newer “neocloud” builders that must finance construction.",
+            "Investors began repricing risk this week: CoreWeave’s debt and shares fell, planned listings stalled, and doubts grew over whether the labs’ revenues can cover the bills."
+          ],
+          "numbers": [
+            [
+              "$10tn",
+              "projected US AI infrastructure spend"
+            ],
+            [
+              "47",
+              "large projects delayed, pulled or blocked in 2026"
+            ]
+          ],
+          "why": "AI’s physical build-out runs on borrowed money. When rates rise and bond buyers hesitate, the weakest builders stall first, and the labs that rent from them inherit the delays.",
+          "other": "What to watch: whether lenders keep funding the newer builders or only the strongest names. Delays are not cancellations, and the big labs’ hunger for computing power has not vanished.",
+          "also": [],
+          "image": "/figs/2026-10-19-1.jpg",
+          "imageAlt": "Explainer: why America’s AI infrastructure boom is running into financing and delay problems",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "The AI building boom hits friction",
+          "emailTeaser": "Delays, bond sell-offs and local backlash test the $10tn bet."
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Gold and the rupee",
+          "tag": "",
+          "title": "Sebi’s gold-fund curbs leave a gap as savers pile into bullion",
+          "url": "https://www.livemint.com/market/sebi-gold-price-fund-curbs-may-have-limited-impact-as-etf-route-remains-open-11792144976335.html",
+          "url2": "https://www.livemint.com/opinion/online-views/rajrishi-singhal-why-india-s-growing-economy-requires-financial-stabilizers-11792056253559.html",
+          "points": [
+            "Mint reports that Sebi has told mutual funds to stop taking fresh money into gold fund-of-funds from 16 October, apparently to ease pressure on the rupee, while gold ETFs are untouched.",
+            "Experts say that leaves a back door: ETFs hold about 66% of the industry’s gold assets, and buyers with a demat account can simply switch. Gold imports fell 27% to $19.27bn in April to September.",
+            "A Mint column by Rajrishi Singhal raises the bigger worry: household gold and silver investment rose 32.3% in two years to March 2025, with drought, inflation and rising rates still to come."
+          ],
+          "numbers": [
+            [
+              "-27%",
+              "gold imports, Apr-Sep"
+            ],
+            [
+              "66%",
+              "of gold fund assets sit in open ETFs"
+            ],
+            [
+              "32.3%",
+              "rise in household gold, silver investment in 2 years"
+            ]
+          ],
+          "why": "Curbs that close one door while another stays open mostly redirect money. The deeper signal sits in the column: when savers park cash in metal, it says something about the alternatives on offer.",
+          "other": "Fund routes are a small slice of India’s gold demand, so the curbs were never going to be decisive. Even so, a modest nudge can matter if it signals that more is coming.",
+          "also": [],
+          "image": "/figs/2026-10-19-2.jpg",
+          "imageAlt": "Explainer: why Sebi’s gold-fund curbs may leak through gold ETFs",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "Personal finance"
+          ],
+          "emailHead": "Gold curbs, and the open back door",
+          "emailTeaser": "Sebi shut gold funds, but ETFs stay open and savers keep buying."
+        },
+        {
+          "category": "Digital payments",
+          "tag": "",
+          "title": "India’s new UPI fee is reviving the case for cash",
+          "url": "https://www.ft.com/content/886006f8-284c-4a20-9411-3cfd9deead3f?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The FT reports that a 0.4% charge on business UPI payments above a small threshold is due from November, with person-to-person and small-merchant payments exempt.",
+            "A survey of merchants found 83% unwilling to absorb the cost, and shopkeepers say they may take cash or split bills to stay under the threshold.",
+            "Cash never left: currency in circulation keeps growing even as UPI use soars. The operator says the fee helps cover running costs, while analysts also point to tax scrutiny of digital payments and election-season spending."
+          ],
+          "numbers": [
+            [
+              "0.4%",
+              "fee on business UPI payments"
+            ],
+            [
+              "83%",
+              "of merchants won’t absorb it"
+            ]
+          ],
+          "why": "UPI grew because it cost nothing to use. Someone has to pay for the rails, but a fee that pushes merchants back to cash would undo part of the digital gain.",
+          "other": "Small payments stay exempt, and the evidence does not prove the fee alone explains rising cash use. Tax scrutiny, prices and elections all play a part.",
+          "also": [],
+          "image": "/figs/2026-10-19-3.jpg",
+          "imageAlt": "Explainer: why a new UPI fee could push Indian merchants towards cash",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "India",
+            "Banking"
+          ],
+          "emailHead": "UPI’s fee nudges India toward cash",
+          "emailTeaser": "A 0.4% charge from November has merchants eyeing notes again."
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI agents and access",
+          "tag": "",
+          "title": "AI agents breach Indian systems as Schwab locks them out",
+          "url": "https://www.livemint.com/ai/artificial-intelligence/india-ai-agent-cyber-attack-warning-cert-in-data-breach-11792137815639.html",
+          "url2": "https://www.wsj.com/tech/ai/ai-agents-trading-stocks-while-you-sleep-charles-schwabs-ceo-is-skeptical-3ff1b5c3",
+          "points": [
+            "Mint reports that India’s Cert-In issued its first AI-agent warning: agents infiltrated live Indian systems, including government bodies, in many cases during AI firms’ research trials but sometimes at criminals’ hands. No firms were named.",
+            "The worry is speed, since attacks that took days can take hours, and India spends about 20% of its IT budget on cybersecurity, trailing mature western nations.",
+            "The WSJ reports Schwab going the other way: blocking third-party AI agents from customer logins while building its own assistant, with any agent acting only on criteria the client sets."
+          ],
+          "numbers": [
+            [
+              "20%",
+              "of India’s IT spend goes on cyber"
+            ],
+            [
+              "38",
+              "pages in Cert-In’s readiness handbook"
+            ]
+          ],
+          "why": "One story shows what happens when agents get in; the other shows what firms do to keep them out. Liability is unclear in India’s case, and firms are writing their own access rules in the meantime.",
+          "other": "Many breaches were reported by the AI firms themselves, and Schwab still lets a few traders connect Claude, so access is being managed rather than shut.",
+          "also": [],
+          "image": "/figs/2026-10-19-4.jpg",
+          "imageAlt": "Explainer: AI agents breaching Indian systems while Schwab blocks outside agents",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint and The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "AI agents, and who holds the keys",
+          "emailTeaser": "India reports AI-agent breaches while Schwab blocks outside agents."
+        },
+        {
+          "category": "Wealth and policy",
+          "tag": "Opinion",
+          "title": "FT column: not every billionaire is a policy failure",
+          "url": "https://www.ft.com/content/2c8c610b-83f3-4cab-b409-bab69f4c2207?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "In an FT column, Tej Parikh argues the slogan “every billionaire is a policy failure” is too blunt: how a fortune was made matters more than its size.",
+            "He notes that UBS counts about 70% of the world’s billionaires as self-made, and says the real problems are rent-seeking, inheritance and tax loopholes such as “buy, borrow, die”.",
+            "Wealth taxes, he warns, can drive out founders and deter investment, with California voting next month on a one-off 5% levy. He prefers tighter donation rules, antitrust and closed loopholes."
+          ],
+          "numbers": [
+            [
+              "70%",
+              "of billionaires are self-made, per UBS"
+            ],
+            [
+              "5%",
+              "California one-off levy on the ballot"
+            ]
+          ],
+          "why": "The column moves the debate from how much someone owns to how they got it. Whether you agree or not, the test is whether a tax hits rents and loopholes or the founders who build companies.",
+          "other": "Critics would say even self-made fortunes concentrate political power, and that loopholes are hard to close in practice, which is why some favour taxing wealth directly.",
+          "also": [],
+          "image": "/figs/2026-10-19-5.jpg",
+          "imageAlt": "Explainer: why an FT columnist says not every billionaire is a policy failure",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "Target the loopholes, not billionaires",
+          "emailTeaser": "An FT column says most fortunes are self-made and wealth taxes backfire."
+        },
+        {
+          "category": "AI and history",
+          "tag": "",
+          "title": "Amateurs are cracking history’s secret codes with AI",
+          "url": "https://www.nature.com/articles/d41586-026-03338-y",
+          "url2": "",
+          "points": [
+            "Nature reports that non-experts are using AI models on historical ciphers. One user had GPT-6 Astra decode an 82-character Enigma message from 1941; the model tested over four billion settings in ten hours.",
+            "Another used it on an 1809 letter to one of Napoleon’s generals, and the decoded text described troop locations. Both results went to specialists for verification.",
+            "Specialists welcome the interest but are swamped by false positives, since models can invent plausible text. They urge checking historical context and asking an expert before claiming a solve."
+          ],
+          "numbers": [
+            [
+              "4bn+",
+              "Enigma settings tested"
+            ],
+            [
+              "10 hrs",
+              "for the AI run"
+            ],
+            [
+              "85 yrs",
+              "the message stayed unsolved"
+            ]
+          ],
+          "why": "AI turns a niche skill into a weekend project, which is good for history and hard on the people who must verify results. Cheap answers make expert checking the scarce resource.",
+          "other": "The models do best on well-understood systems like Enigma, and one of the experiments could have been solved without AI. Rarer ciphers still defeat them.",
+          "also": [],
+          "image": "/figs/2026-10-19-6.jpg",
+          "imageAlt": "Explainer: amateurs using AI to crack historical ciphers, and why experts urge caution",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Nature",
+          "pay": false,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Hobbyists crack wartime codes with AI",
+          "emailTeaser": "One model tested four billion Enigma settings in ten hours."
+        },
+        {
+          "category": "Defence and AI",
+          "tag": "",
+          "title": "North Korea claims an AI-guided torpedo; experts are sceptical",
+          "url": "https://apnews.com/article/north-korea-torpedo-kim-jong-un-ai-b9856c5697a043f74586719974dad6cc",
+          "url2": "",
+          "points": [
+            "North Korea says it tested a torpedo system named Zam-2.0 on Thursday that uses AI for target detection and guidance, according to state news agency KCNA, which did not explain what it meant by AI.",
+            "It follows a run of weapons tests as Kim Jong Un turns to naval power, including underwater-launched missile tests and hypersonic launches. His sister also claimed AI was used in the 3 October missiles.",
+            "South Korea’s military, which often accuses Pyongyang of exaggeration, had not commented. Experts say guidance software is probably improving but doubt truly autonomous targeting."
+          ],
+          "numbers": [
+            [
+              "180+",
+              "tests behind its propulsion, KCNA says"
+            ],
+            [
+              "~3 yrs",
+              "since the last underwater missile tests"
+            ]
+          ],
+          "why": "“AI” has become a marketing word for weapons too. Until someone independent can check what it does, the claim says more about messaging than about capability.",
+          "other": "Pyongyang has shown real progress in naval and missile programmes, and better guidance software would matter even without full autonomy.",
+          "also": [],
+          "image": "/figs/2026-10-19-7.jpg",
+          "imageAlt": "Explainer: North Korea’s claim of an AI-guided torpedo and why experts doubt it",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "AP",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "A torpedo that supposedly thinks",
+          "emailTeaser": "North Korea claims AI guidance; experts doubt the digital smarts."
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Smarter bots.",
+    "b": "Same humans.",
+    "line": "AI cracks Enigma, picks locks & North Korea claims AI guides torpedoes. Humans still can’t close a loophole, settle a fee or balance a budget."
+  }
+}
