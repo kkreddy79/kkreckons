@@ -4,9 +4,22 @@ import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "rea
 import s from "./StressIndex.module.css";
 
 /* Live data published every weekday after the US close by github.com/kkreddy79/ai-implosion. */
-const BASE = "https://kkreddy79.github.io/ai-implosion";
-const DATA_URL = `${BASE}/data.json`;
-const BACKTEST_URL = `${BASE}/backtest.json`;
+/* GitHub Pages first; the raw file on GitHub is the fallback when github.io can't be reached
+   (Pages outage, or a network that blocks github.io). Both serve the same docs/ files. */
+const BASES = ["https://kkreddy79.github.io/ai-implosion", "https://raw.githubusercontent.com/kkreddy79/ai-implosion/main/docs"];
+
+/* Tries each source in turn and returns the first JSON that loads; throws the first error if none do. */
+async function loadJson<T>(file: string, t: number): Promise<T> {
+  let first: Error | null = null;
+  for (const base of BASES) {
+    try {
+      const r = await fetch(`${base}/${file}?t=${t}`, { cache: "no-store" });
+      if (!r.ok) throw new Error(String(r.status));
+      return (await r.json()) as T;
+    } catch (e) { first ??= e as Error; }
+  }
+  throw first;
+}
 
 type Spark = { date: string; stress: number | null };
 type Factor = {
@@ -491,10 +504,8 @@ export default function StressIndex() {
 
   useEffect(() => {
     const t = Date.now();
-    fetch(`${DATA_URL}?t=${t}`, { cache: "no-store" })
-      .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
-      .then(setD).catch((e: Error) => setErr(e.message));
-    fetch(`${BACKTEST_URL}?t=${t}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).then(setBt).catch(() => setBt(null));
+    loadJson<Data>("data.json", t).then(setD).catch((e: Error) => setErr(e.message));
+    loadJson<Backtest>("backtest.json", t).then(setBt).catch(() => setBt(null));
   }, []);
 
   return (
