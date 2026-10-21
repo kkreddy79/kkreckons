@@ -151,7 +151,8 @@
             "Markets"
           ],
           "emailHead": "AI debt that looks safer than it is",
-          "emailTeaser": "Eight names sit behind 100+ AI financings; one bond fell to 94.4."
+          "emailTeaser": "Eight names sit behind 100+ AI financings; one bond fell to 94.4.",
+          "stressIndex": true
         },
         {
           "category": "AI infrastructure",
@@ -271,5 +272,10 @@
     "a": "Big ambition.",
     "b": "Thin plumbing.",
     "line": "Grids, guards and ratings must hold. So must jobs and living costs: UK back offices are shedding staff, and French protests turned violent over prices."
+  },
+  "stressIndex": {
+    "score": 28,
+    "band": "Elevated",
+    "asOf": "2026-10-19"
   }
 }

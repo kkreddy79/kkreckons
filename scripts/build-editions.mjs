@@ -24,6 +24,34 @@ const metaPath = path.join(root, "data", "edition-meta.json");
 const indexPath = path.join(root, "data", "editions.json");
 
 const meta = fs.existsSync(metaPath) ? JSON.parse(fs.readFileSync(metaPath, "utf8")) : {};
+let metaChanged = false;
+
+// The AI Stress Index reading shown on stories linked to it: the last close before the edition's
+// date (what a reader could see that morning). Taken once, when an edition first has a linked story,
+// and kept in data/edition-meta.json (`stressIndex`), so every rebuild shows the same dated number.
+// Readings before the index went live are back-calculated by its model and marked as such.
+// Same sources as the index page.
+const STRESS_SOURCES = [
+  "https://kkreddy79.github.io/ai-implosion/data.json",
+  "https://raw.githubusercontent.com/kkreddy79/ai-implosion/main/docs/data.json",
+];
+const STRESS_LIVE_SINCE = "2026-10-15";
+let stressHistory;
+const stressBand = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elevated" : "Normal");
+async function stressSnapshot(date) {
+  for (const url of stressHistory ? [] : STRESS_SOURCES) {
+    try {
+      const r = await fetch(`${url}?t=${Date.now()}`, { cache: "no-store" });
+      if (r.ok) {
+        stressHistory = (await r.json()).history.filter((h) => h.score != null);
+        break;
+      }
+    } catch {}
+  }
+  const last = stressHistory?.filter((h) => h.date < date).at(-1);
+  if (!last) return null;
+  return { score: last.score, band: stressBand(last.score), asOf: last.date, ...(last.date < STRESS_LIVE_SINCE ? { backCalculated: true } : {}) };
+}
 fs.mkdirSync(figsDir, { recursive: true });
 fs.mkdirSync(contentDir, { recursive: true });
 
@@ -84,6 +112,8 @@ function fromEmbedded(date, d) {
       // Short copy for the subscriber email (scripts/beehiiv-email.mjs).
       ...(clean(s.ehead) ? { emailHead: clean(s.ehead) } : {}),
       ...(clean(s.eteaser) ? { emailTeaser: clean(s.eteaser) } : {}),
+      // Editorial choice: link this story to the AI Stress Index (site card + email line).
+      ...(s.stressindex === true || /^(yes|true)$/i.test(String(s.stressindex ?? "")) ? { stressIndex: true } : {}),
     };
   };
   const sections = [
@@ -241,6 +271,15 @@ for (const file of files) {
   }
   content.sections = content.sections.filter((sec) => sec.stories.length);
   const stories = content.sections.flatMap((s) => s.stories);
+  if (stories.some((s) => s.stressIndex) && !m.stressIndex) {
+    const snap = await stressSnapshot(date);
+    if (snap) {
+      meta[date] = { ...meta[date], stressIndex: snap };
+      metaChanged = true;
+      console.log(`${date}: AI Stress Index reading saved (${snap.score}/100, ${snap.band}, as of ${snap.asOf}${snap.backCalculated ? ", back-calculated" : ""})`);
+    } else console.log(`${date}: AI Stress Index data unreachable; linked stories show the link without a number`);
+  }
+  const stress = meta[date]?.stressIndex;
   const words = JSON.stringify(stories).split(/\s+/).length;
   const record = {
     date,
@@ -251,6 +290,7 @@ for (const file of files) {
     sections: content.sections,
     reading: content.reading,
     ...(content.takeaway ? { takeaway: content.takeaway } : {}),
+    ...(stress && stories.some((s) => s.stressIndex) ? { stressIndex: stress } : {}),
   };
   fs.writeFileSync(path.join(contentDir, `${date}.json`), JSON.stringify(record, null, 2) + "\n");
 
@@ -277,6 +317,7 @@ for (const file of files) {
 }
 
 await browser?.close();
+if (metaChanged) fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2) + "\n");
 index.sort((a, b) => (a.date < b.date ? 1 : -1));
 fs.writeFileSync(indexPath, JSON.stringify(index, null, 2) + "\n");
 

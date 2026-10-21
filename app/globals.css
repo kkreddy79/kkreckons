@@ -223,6 +223,11 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-nums dd { margin: 0; font-size: 12.5px; line-height: 1.35; color: #5b5566; }
 .ev-why, .ev-other { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; margin: 0 0 10px; padding: 12px 14px; border-radius: 12px; font-size: 15px; line-height: 1.5; }
 .ev-why { background: #fff3ea; }
+.ev-si { display: flex; align-items: center; gap: 12px; margin: 0 0 10px; padding: 11px 14px; border-radius: 12px; border: 1px solid #e4dcf3; background: #f7f3fd; color: #24123f; text-decoration: none; font-size: 14px; line-height: 1.35; }
+.ev-si:hover { border-color: #cbbde6; }
+.ev-si-score { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: #fff; border: 1px solid #e4dcf3; font: 700 17px "Playfair Display", Georgia, serif; color: #35205f; }
+.ev-si b { display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #5e4d80; }
+.ev-si-go { margin-left: auto; font-weight: 800; color: #35205f; white-space: nowrap; }
 .ev-other { background: #f1ebfb; }
 .ev-why b, .ev-other b { display: block; margin-bottom: 2px; font: 800 11px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; }
 .ev-why b, .ev-why .ev-ic { color: #a8430f; }

@@ -68,7 +68,8 @@
           "other": "What to watch: A second person told the FT there is disagreement over whether force majeure can be triggered before a scheduled completion date. Oracle said the notices do not establish a delay and that Project Jupiter \"remains on our planned schedule.\" A Blue Owl spokesperson said the notice does not change the financial commitments.",
           "also": [],
           "image": "",
-          "imageAlt": ""
+          "imageAlt": "",
+          "stressIndex": true
         },
         {
           "category": "AI, Technology & Jobs",
@@ -159,5 +160,11 @@
       "url": "https://www.finalroundai.com/blog/oracle-layoffs-restructuring-plan",
       "note": "Final Round AI"
     }
-  ]
+  ],
+  "stressIndex": {
+    "score": 14,
+    "band": "Normal",
+    "asOf": "2026-09-24",
+    "backCalculated": true
+  }
 }

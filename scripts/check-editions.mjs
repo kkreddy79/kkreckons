@@ -66,6 +66,14 @@ let problems = 0;
 const warnings = [];
 const altless = [];
 const unnamed = new Set();
+// Stories that look like AI debt, AI financing or credit stress: suggested for an AI Stress Index link (info only).
+const AI_WORDS = /\b(AI|artificial intelligence|data[- ]cent(re|er)s?|neoclouds?|hyperscalers?|CoreWeave|Nscale|OpenAI|Anthropic|Nvidia|GPUs?|compute)\b/gi;
+const DEBT_WORDS = /\b(debt|bonds?|credit|loans?|lend(ers?|ing)|financing|CDS|defaults?|spreads?|leverage|borrow\w*|refinanc\w*)\b/gi;
+const stressCandidate = (s) => {
+  const t = [s.title, s.category, ...s.points, s.why].join(" ");
+  return (t.match(AI_WORDS) || []).length >= 2 && (t.match(DEBT_WORDS) || []).length >= 3;
+};
+const suggested = [];
 const webLink = (u) => /^https?:\/\//i.test(u);
 const flag = (date, title, rule, msg) => {
   if (excused(date, title, rule)) return;
@@ -114,6 +122,7 @@ for (const date of dates) {
       }
       if (s.image && !s.imageCredit)
         flag(date, s.title, "image", "image has no declared origin (figcredit); only original, Creative Commons or licensed images may be used");
+      if (!s.stressIndex && stressCandidate(s)) suggested.push(`${date} "${s.title}"`);
       if (s.image && !(s.imageAlt || "").trim()) altless.push(`${date} "${s.title}"`);
 
       for (const u of [s.url, s.url2]) if (u && !webLink(u)) flag(date, s.title, "link", `source link isn't an http(s) web address: ${u.slice(0, 60)}`);
@@ -136,6 +145,9 @@ for (const date of dates) {
 }
 if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBLISHERS in lib/editions.ts): ${[...unnamed].join(", ")}`);
 for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a repeat: ${w}`);
+for (const date of dates) if (content[date].sections.some((sec) => sec.stories.some((s) => s.stressIndex)) && !content[date].stressIndex)
+  console.log(`⚠ ${date}: a story links to the AI Stress Index but no reading was saved (index data was unreachable); it shows the link without a number`);
+for (const x of suggested) console.log(`ℹ Possible AI Stress Index link (AI debt/credit story, not tagged): ${x}`);
 for (const a of altless) console.log(`⚠ Image has no alt text for screen readers (add figalt): ${a}`);
 console.log(problems ? `${problems} problem(s) found.` : "All checks passed.");
 process.exit(problems ? 1 : 0);

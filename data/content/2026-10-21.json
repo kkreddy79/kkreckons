@@ -53,7 +53,8 @@
             "Markets"
           ],
           "emailHead": "Anthropic opens its books",
-          "emailTeaser": "An $80.7bn half-year loss and $750bn of compute ambition."
+          "emailTeaser": "An $80.7bn half-year loss and $750bn of compute ambition.",
+          "stressIndex": true
         },
         {
           "category": "Credit markets",
@@ -89,7 +90,8 @@
             "AI"
           ],
           "emailHead": "Insuring CoreWeave got pricey",
-          "emailTeaser": "A record CDS cost and 16%-plus yields flag fading confidence."
+          "emailTeaser": "A record CDS cost and 16%-plus yields flag fading confidence.",
+          "stressIndex": true
         }
       ]
     },
@@ -175,7 +177,8 @@
             "Markets"
           ],
           "emailHead": "A neocloud loses a big tenant",
-          "emailTeaser": "Nscale eyes a $35bn listing as Microsoft drops a UK lease."
+          "emailTeaser": "Nscale eyes a $35bn listing as Microsoft drops a UK lease.",
+          "stressIndex": true
         },
         {
           "category": "Billionaire finance",
@@ -308,5 +311,10 @@
     "a": "Debt now.",
     "b": "Profits later.",
     "line": "AI's future is priced in debt; the bill is arriving before the profits. From France's deficits to AIX's broken promises, leverage always has a reckoning."
+  },
+  "stressIndex": {
+    "score": 28,
+    "band": "Elevated",
+    "asOf": "2026-10-20"
   }
 }

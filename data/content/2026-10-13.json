@@ -166,7 +166,8 @@
           "themes": [
             "AI",
             "Markets"
-          ]
+          ],
+          "stressIndex": true
         },
         {
           "category": "AI assistants",
@@ -268,5 +269,11 @@
       ]
     }
   ],
-  "reading": []
+  "reading": [],
+  "stressIndex": {
+    "score": 18,
+    "band": "Normal",
+    "asOf": "2026-10-12",
+    "backCalculated": true
+  }
 }

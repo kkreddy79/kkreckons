@@ -16,7 +16,8 @@
           "Oracle has issued a force majeure notice on power supply to the project developer, a unit of Blue Owl Capital, after permitting delays amid rising local opposition, according to people cited by the FT.",
           "Under the contract, Oracle must still pay a carry cost in lieu of rent for up to three years if the project misses its first-phase deadline.",
           "Construction is under way on the 1,400-acre campus in Doña Ana County; the FT says Bloomberg first reported the notice."
-        ]
+        ],
+        "stressIndex": true
       },
       "Leaked document shows which Oracle cloud roles were cut": {
         "points": [
@@ -32,6 +33,12 @@
           "The test will evaluate how Google's Tensor Processing Units perform in space."
         ]
       }
+    },
+    "stressIndex": {
+      "score": 14,
+      "band": "Normal",
+      "asOf": "2026-09-24",
+      "backCalculated": true
     }
   },
   "2026-09-26": {
@@ -57,7 +64,18 @@
     "artifact": "https://claude.ai/artifact/UboVjRzKFFZR7b3DsaJCHo"
   },
   "2026-09-28": {
-    "artifact": "https://claude.ai/artifact/JRt6pwCjGePZ7k2Nevzy94"
+    "artifact": "https://claude.ai/artifact/JRt6pwCjGePZ7k2Nevzy94",
+    "stories": {
+      "AI hyperscalers are transforming debt": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 13,
+      "band": "Normal",
+      "asOf": "2026-09-25",
+      "backCalculated": true
+    }
   },
   "2026-09-29": {
     "artifact": "https://claude.ai/artifact/UnKZ6FJARwSjEtuq9N2dgu"
@@ -82,7 +100,8 @@
         "url": "https://view.asiae.co.kr/en/article/2026093005331209938"
       },
       "KKR warns of AI borrowing risk in credit": {
-        "url": "https://www.theglobeandmail.com/business/article-kkr-warns-about-the-growing-pile-of-ai-debt/"
+        "url": "https://www.theglobeandmail.com/business/article-kkr-warns-about-the-growing-pile-of-ai-debt/",
+        "stressIndex": true
       },
       "Santa Ana’s ‘viper’ was an AI hoax": {
         "url": "https://www.nbclosangeles.com/news/local/santa-ana-pd-ai-generated-viper-hoax/3949529/"
@@ -97,6 +116,12 @@
       "Burnham: rejoining the EU is an option": {
         "url": "https://www.businessday.co.za/world/2026-09-30-andy-burnham-says-uk-should-weigh-post-brexit-eu-options-including-rejoining/"
       }
+    },
+    "stressIndex": {
+      "score": 14,
+      "band": "Normal",
+      "asOf": "2026-09-29",
+      "backCalculated": true
     }
   },
   "2026-10-02": {
@@ -111,14 +136,34 @@
     }
   },
   "2026-10-04": {
-    "artifact": "https://claude.ai/artifact/WyXHghuh3Lu8uVLzYyJV8U"
+    "artifact": "https://claude.ai/artifact/WyXHghuh3Lu8uVLzYyJV8U",
+    "stories": {
+      "AI’s $2tn assumption: a boom built on debt": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 13,
+      "band": "Normal",
+      "asOf": "2026-10-02",
+      "backCalculated": true
+    }
   },
   "2026-10-05": {
     "artifact": "https://claude.ai/artifact/SHYtsnXk8e4kJtcPsHJMmk",
     "stories": {
       "Dimon’s plan: one big Western trade pact": {
         "remove": "Repeats the article used on 29 Sep"
+      },
+      "AI data-centre debt is turning up everywhere": {
+        "stressIndex": true
       }
+    },
+    "stressIndex": {
+      "score": 13,
+      "band": "Normal",
+      "asOf": "2026-10-02",
+      "backCalculated": true
     }
   },
   "2026-10-06": {
@@ -168,10 +213,32 @@
     "artifact": "https://claude.ai/artifact/HSex4mDuBGKSSHW5yipi5p"
   },
   "2026-10-12": {
-    "artifact": "https://claude.ai/artifact/CbuiN48id5HuvcmHxVYWCw"
+    "artifact": "https://claude.ai/artifact/CbuiN48id5HuvcmHxVYWCw",
+    "stories": {
+      "Banks try to offload the AI data-centre debt they just underwrote": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 17,
+      "band": "Normal",
+      "asOf": "2026-10-09",
+      "backCalculated": true
+    }
   },
   "2026-10-13": {
-    "artifact": "https://claude.ai/artifact/JdSVQW4983hwD9HzA8yJ8a"
+    "artifact": "https://claude.ai/artifact/JdSVQW4983hwD9HzA8yJ8a",
+    "stories": {
+      "Andy Kessler: how the AI data-centre boom ends": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 18,
+      "band": "Normal",
+      "asOf": "2026-10-12",
+      "backCalculated": true
+    }
   },
   "2026-10-14": {
     "artifact": "https://claude.ai/artifact/2pSDtwdaNH52uus9YKfeke"
@@ -183,19 +250,65 @@
     "artifact": "https://claude.ai/artifact/66vSHF6A2Uu18B9vKyW65m"
   },
   "2026-10-17": {
-    "artifact": "https://claude.ai/artifact/R8gefKkKbG35nfzRfqys8x"
+    "artifact": "https://claude.ai/artifact/R8gefKkKbG35nfzRfqys8x",
+    "stories": {
+      "CoreWeave shows the AI trade's weak spot: the borrowers": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 29,
+      "band": "Elevated",
+      "asOf": "2026-10-16"
+    }
   },
   "2026-10-18": {
     "artifact": "https://claude.ai/artifact/FrfWrTXNA8yHWEnGF4cuow",
     "slice": "Dr Doom calls a boom. International Banks call India. A PhD's 2,300 calls hit voicemail."
   },
   "2026-10-19": {
-    "artifact": "https://claude.ai/artifact/GqjN4KxosssKmiGTY7vsSR"
+    "artifact": "https://claude.ai/artifact/GqjN4KxosssKmiGTY7vsSR",
+    "stories": {
+      "America’s $10tn AI data-centre boom is starting to fray": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 29,
+      "band": "Elevated",
+      "asOf": "2026-10-16"
+    }
   },
   "2026-10-20": {
-    "artifact": "https://claude.ai/artifact/4zf3XG3wF3EABWGWhn18Qu"
+    "artifact": "https://claude.ai/artifact/4zf3XG3wF3EABWGWhn18Qu",
+    "stories": {
+      "Ares and Gemes: AI debt looks safer than it is": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 28,
+      "band": "Elevated",
+      "asOf": "2026-10-19"
+    }
   },
   "2026-10-21": {
-    "artifact": "https://claude.ai/artifact/4pGm82eq7vzUoTYQSs4xj8"
+    "artifact": "https://claude.ai/artifact/4pGm82eq7vzUoTYQSs4xj8",
+    "stories": {
+      "Anthropic's IPO filing: hot growth, a huge loss and a narrowing window": {
+        "stressIndex": true
+      },
+      "CoreWeave's bond yield and CDS: an early warning for AI debt?": {
+        "stressIndex": true
+      },
+      "Microsoft's exit from an Nscale lease is a reality check for neoclouds": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 28,
+      "band": "Elevated",
+      "asOf": "2026-10-20"
+    }
   }
 }

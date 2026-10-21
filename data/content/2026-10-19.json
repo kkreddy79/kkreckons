@@ -53,7 +53,8 @@
             "Markets"
           ],
           "emailHead": "The AI building boom hits friction",
-          "emailTeaser": "Delays, bond sell-offs and local backlash test the $10tn bet."
+          "emailTeaser": "Delays, bond sell-offs and local backlash test the $10tn bet.",
+          "stressIndex": true
         }
       ]
     },
@@ -295,5 +296,10 @@
     "a": "Smarter bots.",
     "b": "Same humans.",
     "line": "AI cracks Enigma, picks locks & North Korea claims AI guides torpedoes. Humans still can’t close a loophole, settle a fee or balance a budget."
+  },
+  "stressIndex": {
+    "score": 29,
+    "band": "Elevated",
+    "asOf": "2026-10-16"
   }
 }
