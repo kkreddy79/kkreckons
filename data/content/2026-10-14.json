@@ -46,7 +46,9 @@
           "pay": true,
           "themes": [
             "Jobs & careers"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         },
         {
           "category": "China jobs",
@@ -76,7 +78,9 @@
           "themes": [
             "Jobs & careers",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         }
       ]
     },
@@ -115,7 +119,9 @@
           "themes": [
             "India",
             "Markets"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         },
         {
           "category": "Rupee defence",
@@ -149,7 +155,9 @@
           "themes": [
             "India",
             "Banking"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         }
       ]
     },
@@ -188,7 +196,9 @@
           "themes": [
             "Banking",
             "Markets"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2844
         },
         {
           "category": "UK public finances",
@@ -222,7 +232,9 @@
           "themes": [
             "Markets",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         },
         {
           "category": "Creator economy",
@@ -256,7 +268,9 @@
           "themes": [
             "Jobs & careers",
             "Markets"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         }
       ]
     }

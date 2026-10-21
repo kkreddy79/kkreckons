@@ -55,7 +55,9 @@
           "themes": [
             "Markets",
             "India"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         },
         {
           "category": "Consulting",
@@ -93,7 +95,9 @@
           "themes": [
             "AI",
             "Jobs & careers"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         }
       ]
     },
@@ -132,7 +136,9 @@
           "themes": [
             "Banking",
             "India"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2842
         },
         {
           "category": "Banking",
@@ -166,7 +172,9 @@
           "themes": [
             "Banking",
             "India"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         }
       ]
     },
@@ -204,7 +212,9 @@
           "pay": false,
           "themes": [
             "AI"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         },
         {
           "category": "Banking tech",
@@ -238,7 +248,9 @@
           "themes": [
             "Banking",
             "AI"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         }
       ]
     }

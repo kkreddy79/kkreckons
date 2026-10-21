@@ -54,7 +54,7 @@ function StressLink({ si }: { si?: EditionContent["stressIndex"] }) {
 
 function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; si?: EditionContent["stressIndex"] }) {
   return (
-    <article className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
+    <article id={`story-${n}`} className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
         <span className="ev-num">{n}</span>
         {s.category && <span className="ev-cat">{s.category}</span>}
@@ -78,7 +78,22 @@ function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide
         <figure className="ev-fig">
           {/* Graphics are tall and detailed: link to the full-size file so phone readers can zoom in. */}
           <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
-            <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
+            {s.imageW ? (
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={["sm 640", "md 860", `lg ${Math.min(s.imageW, 1600)}`]
+                    .map((v) => v.split(" "))
+                    .filter(([, w]) => +w <= Math.min(s.imageW!, 1600))
+                    .map(([tag, w]) => `${s.image.replace(/\.[a-z]+$/, `-${tag}.webp`)} ${w}w`)
+                    .join(", ")}
+                  sizes={wide ? "(max-width: 700px) 100vw, 560px" : "(max-width: 700px) 100vw, 480px"}
+                />
+                <img src={s.image} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading="lazy" decoding="async" />
+              </picture>
+            ) : (
+              <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
+            )}
           </a>
           <figcaption>
             {s.imageCredit && <span>{s.imageCredit}</span>}
@@ -202,6 +217,27 @@ export default function EditionView({
         )}
         <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
       </section>
+
+      {count > 2 && (
+        <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
+          <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
+          <ol>
+            {e.sections
+              .flatMap((sec) => sec.stories)
+              .map((s, i) => (
+                <li key={s.title}>
+                  <a href={`#story-${i + 1}`}>
+                    <span className="ev-30s-n">{String(i + 1).padStart(2, "0")}</span>
+                    <span>
+                      {s.category && <small>{s.category}</small>}
+                      {s.emailHead || s.title}
+                    </span>
+                  </a>
+                </li>
+              ))}
+          </ol>
+        </nav>
+      )}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">

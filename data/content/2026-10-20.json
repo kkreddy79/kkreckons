@@ -62,7 +62,9 @@
             "Markets"
           ],
           "emailHead": "India’s builders are just getting started",
-          "emailTeaser": "Rockets, a ₹1 lakh crore fund and 70+ listed tech firms."
+          "emailTeaser": "Rockets, a ₹1 lakh crore fund and 70+ listed tech firms.",
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     },
@@ -106,7 +108,9 @@
             "India"
           ],
           "emailHead": "India’s sun outruns its wires",
-          "emailTeaser": "168GW installed, yet 300 GWh of clean power lost in a quarter."
+          "emailTeaser": "168GW installed, yet 300 GWh of clean power lost in a quarter.",
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     },
@@ -152,7 +156,9 @@
           ],
           "emailHead": "AI debt that looks safer than it is",
           "emailTeaser": "Eight names sit behind 100+ AI financings; one bond fell to 94.4.",
-          "stressIndex": true
+          "stressIndex": true,
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "AI infrastructure",
@@ -179,7 +185,9 @@
             "Geopolitics"
           ],
           "emailHead": "Data centres are now targets",
-          "emailTeaser": "Cheap drones, costly campuses: AI’s new security bill."
+          "emailTeaser": "Cheap drones, costly campuses: AI’s new security bill.",
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Sovereign debt",
@@ -215,7 +223,9 @@
             "Geopolitics"
           ],
           "emailHead": "France’s bond market lights up",
-          "emailTeaser": "Yields near 4.9% as riots meet a €43bn budget."
+          "emailTeaser": "Yields near 4.9% as riots meet a €43bn budget.",
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "AI and jobs",
@@ -251,7 +261,9 @@
             "AI"
           ],
           "emailHead": "UK back offices feel AI first",
-          "emailTeaser": "Net 8% staff cuts at UK firms, double the peer average."
+          "emailTeaser": "Net 8% staff cuts at UK firms, double the peer average.",
+          "imageW": 1080,
+          "imageH": 1418
         }
       ]
     }

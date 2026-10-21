@@ -54,7 +54,9 @@
           "pay": false,
           "themes": [
             "Geopolitics"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2758
         }
       ]
     },
@@ -93,7 +95,9 @@
           "themes": [
             "India",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2854
         },
         {
           "category": "Monetary policy",
@@ -127,7 +131,9 @@
           "themes": [
             "India",
             "Banking"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2758
         }
       ]
     },
@@ -167,7 +173,9 @@
             "AI",
             "Markets"
           ],
-          "stressIndex": true
+          "stressIndex": true,
+          "imageW": 2160,
+          "imageH": 2722
         },
         {
           "category": "AI assistants",
@@ -200,7 +208,9 @@
           "pay": false,
           "themes": [
             "AI"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2758
         },
         {
           "category": "US politics",
@@ -230,7 +240,9 @@
           "themes": [
             "Markets",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2758
         },
         {
           "category": "Alternative assets",
@@ -264,7 +276,9 @@
           "themes": [
             "Personal finance",
             "Markets"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2640
         }
       ]
     }

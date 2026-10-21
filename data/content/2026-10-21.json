@@ -54,7 +54,9 @@
           ],
           "emailHead": "Anthropic opens its books",
           "emailTeaser": "An $80.7bn half-year loss and $750bn of compute ambition.",
-          "stressIndex": true
+          "stressIndex": true,
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Credit markets",
@@ -91,7 +93,9 @@
           ],
           "emailHead": "Insuring CoreWeave got pricey",
           "emailTeaser": "A record CDS cost and 16%-plus yields flag fading confidence.",
-          "stressIndex": true
+          "stressIndex": true,
+          "imageW": 1080,
+          "imageH": 3745
         }
       ]
     },
@@ -136,7 +140,9 @@
             "Markets"
           ],
           "emailHead": "What France teaches India",
-          "emailTeaser": "Debt near 120% of GDP, and growth bunched in a few nations."
+          "emailTeaser": "Debt near 120% of GDP, and growth bunched in a few nations.",
+          "imageW": 1080,
+          "imageH": 1419
         }
       ]
     },
@@ -178,7 +184,9 @@
           ],
           "emailHead": "A neocloud loses a big tenant",
           "emailTeaser": "Nscale eyes a $35bn listing as Microsoft drops a UK lease.",
-          "stressIndex": true
+          "stressIndex": true,
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Billionaire finance",
@@ -214,7 +222,9 @@
             "Markets"
           ],
           "emailHead": "Buy, borrow, keep the shares",
-          "emailTeaser": "413 million Oracle shares pledged instead of sold."
+          "emailTeaser": "413 million Oracle shares pledged instead of sold.",
+          "imageW": 1080,
+          "imageH": 1416
         },
         {
           "category": "Investor protection",
@@ -249,7 +259,9 @@
             "Personal finance"
           ],
           "emailHead": "Dubai's high-return dream sours",
-          "emailTeaser": "Promised up to 30% a year, then coupons stopped for months."
+          "emailTeaser": "Promised up to 30% a year, then coupons stopped for months.",
+          "imageW": 1080,
+          "imageH": 1419
         },
         {
           "category": "Commodities",
@@ -285,7 +297,9 @@
             "Markets"
           ],
           "emailHead": "Sulphur: the war's hidden squeeze",
-          "emailTeaser": "Batteries outbid fertiliser as a refinery by-product runs short."
+          "emailTeaser": "Batteries outbid fertiliser as a refinery by-product runs short.",
+          "imageW": 1080,
+          "imageH": 3945
         }
       ]
     }

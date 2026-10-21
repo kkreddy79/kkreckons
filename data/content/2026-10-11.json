@@ -50,7 +50,9 @@
           "pay": false,
           "themes": [
             "AI"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1443
         },
         {
           "category": "Health and science",
@@ -83,7 +85,9 @@
           "pay": true,
           "themes": [
             "Health & science"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1419
         }
       ]
     },
@@ -122,7 +126,9 @@
           "themes": [
             "India",
             "Jobs & careers"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1358
         },
         {
           "category": "Work and generations",
@@ -152,7 +158,9 @@
           "themes": [
             "India",
             "Jobs & careers"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1381
         }
       ]
     },
@@ -182,7 +190,9 @@
           "themes": [
             "AI",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1422
         },
         {
           "category": "Tax and AI",
@@ -212,7 +222,9 @@
           "themes": [
             "Personal finance",
             "AI"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1383
         },
         {
           "category": "AI and hardware",
@@ -245,7 +257,9 @@
           "pay": true,
           "themes": [
             "AI"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1401
         }
       ]
     }

@@ -54,7 +54,9 @@
           ],
           "emailHead": "The AI building boom hits friction",
           "emailTeaser": "Delays, bond sell-offs and local backlash test the $10tn bet.",
-          "stressIndex": true
+          "stressIndex": true,
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     },
@@ -99,7 +101,9 @@
             "Personal finance"
           ],
           "emailHead": "Gold curbs, and the open back door",
-          "emailTeaser": "Sebi shut gold funds, but ETFs stay open and savers keep buying."
+          "emailTeaser": "Sebi shut gold funds, but ETFs stay open and savers keep buying.",
+          "imageW": 1080,
+          "imageH": 1496
         },
         {
           "category": "Digital payments",
@@ -135,7 +139,9 @@
             "Banking"
           ],
           "emailHead": "UPI’s fee nudges India toward cash",
-          "emailTeaser": "A 0.4% charge from November has merchants eyeing notes again."
+          "emailTeaser": "A 0.4% charge from November has merchants eyeing notes again.",
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     },
@@ -176,7 +182,9 @@
             "India"
           ],
           "emailHead": "AI agents, and who holds the keys",
-          "emailTeaser": "India reports AI-agent breaches while Schwab blocks outside agents."
+          "emailTeaser": "India reports AI-agent breaches while Schwab blocks outside agents.",
+          "imageW": 1080,
+          "imageH": 1419
         },
         {
           "category": "Wealth and policy",
@@ -211,7 +219,9 @@
             "Markets"
           ],
           "emailHead": "Target the loopholes, not billionaires",
-          "emailTeaser": "An FT column says most fortunes are self-made and wealth taxes backfire."
+          "emailTeaser": "An FT column says most fortunes are self-made and wealth taxes backfire.",
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "AI and history",
@@ -250,7 +260,9 @@
             "AI"
           ],
           "emailHead": "Hobbyists crack wartime codes with AI",
-          "emailTeaser": "One model tested four billion Enigma settings in ten hours."
+          "emailTeaser": "One model tested four billion Enigma settings in ten hours.",
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Defence and AI",
@@ -286,7 +298,9 @@
             "Geopolitics"
           ],
           "emailHead": "A torpedo that supposedly thinks",
-          "emailTeaser": "North Korea claims AI guidance; experts doubt the digital smarts."
+          "emailTeaser": "North Korea claims AI guidance; experts doubt the digital smarts.",
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     }
