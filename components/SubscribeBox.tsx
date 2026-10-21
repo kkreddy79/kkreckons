@@ -45,6 +45,12 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
             </a>
           </>
         )}
+        <p className="ab-join-privacy">
+          Emails are sent by beehiiv; your address is used only for this newsletter.{" "}
+          <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noreferrer">
+            Privacy policy ↗
+          </a>
+        </p>
       </div>
     </section>
   );

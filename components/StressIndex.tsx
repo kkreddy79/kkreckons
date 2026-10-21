@@ -95,6 +95,11 @@ const band = (v: number | null) => (v == null ? "—" : v >= 75 ? "Critical" : v
 // One colour scale for every reading: the index and each gauge's 0–100 stress score.
 const bandColor = (v: number | null) => (v == null ? C.slate : v >= 75 ? C.red : v >= 50 ? C.orangeRed : v >= 25 ? C.amber : C.green);
 const stressColor = (x: number) => bandColor(x * 100);
+// Darker shades of the same bands for text and white-on-colour badges: the fill colours above fall
+// below WCAG AA contrast (4.5:1) as text on white. Fills (bars, swatches, chart) keep the bright shades.
+const TEXT = { red: "#B91C1C", orangeRed: "#C2410C", green: "#15803D", amber: "#B45309" };
+const bandText = (v: number | null) => (v == null ? C.slate : v >= 75 ? TEXT.red : v >= 50 ? TEXT.orangeRed : v >= 25 ? TEXT.amber : TEXT.green);
+const stressText = (x: number) => bandText(x * 100);
 // The same bands label the index and every gauge score.
 const gaugeWord = (x: number) => band(s100(x));
 const an = (n: number) => (/^(8|11|18)/.test(String(n)) ? "an" : "a");
@@ -211,7 +216,7 @@ function GaugeCard({ f }: { f: Factor }) {
         <span className={`${s.gDir} ${dir.cls}`} title={dir.label}><b aria-hidden="true">{dir.arrow}</b> <span className={s.gDirTxt}>{dir.label}</span></span>
       </summary>
       <div className={s.gBody}>
-        <p className={s.gWord} style={{ color: stressColor(f.stress) }}>{gaugeWord(f.stress)} · {PILLAR[f.pillar]}</p>
+        <p className={s.gWord} style={{ color: stressText(f.stress) }}>{gaugeWord(f.stress)} · {PILLAR[f.pillar]}</p>
         <dl className={s.facts}>
           <div><dt>Latest</dt><dd>{f.current == null ? "—" : dd ? num(f.current) : `${num(f.current, 0)} bp`}</dd></div>
           <div><dt>{dd ? "From 2-year high" : "Change from 52-week low"}</dt><dd>{f.move == null ? "—" : dd ? pct(f.move, 1) : `+${num(f.move, 0)} bp`}</dd></div>
@@ -547,10 +552,10 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
         <div className={s.scoreCard}>
           <div className={s.label}>Overall stress</div>
           <div className={s.scoreRow}>
-            <span className={s.score} style={{ color: bandColor(d.score) }}>{d.score ?? "—"}</span>
+            <span className={s.score} style={{ color: bandText(d.score) }}>{d.score ?? "—"}</span>
             <span className={s.outOf}>/ 100</span>
             <span className={s.bandTxt}>
-              <span className={s.badge} style={{ background: staleW > LIMITED ? "#71717A" : bandColor(d.score) }}>{staleW > LIMITED ? "LIMITED DATA" : band(d.score).toUpperCase()}</span>
+              <span className={s.badge} style={{ background: staleW > LIMITED ? "#71717A" : bandText(d.score) }}>{staleW > LIMITED ? "LIMITED DATA" : band(d.score).toUpperCase()}</span>
               {change != null && <small>{change === 0 ? "Unchanged" : `${change > 0 ? "Up" : "Down"} ${Math.abs(change)} point${Math.abs(change) === 1 ? "" : "s"}`} vs previous close ({d.prevScore})</small>}
               {d.scoreRange && d.scoreRange.tight != null && d.scoreRange.loose != null && (
                 <small title={`Today’s index recomputed with every threshold ${pct(d.scoreRange.pct)} tighter or looser`}>Range {d.scoreRange.loose}–{d.scoreRange.tight} if thresholds move ±{pct(d.scoreRange.pct)}</small>
@@ -577,7 +582,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           {signal && (
             <div className={s.signal} style={{ borderColor: stressColor(signal.stress) }}>
               <div className={s.label}>The signal to watch</div>
-              <div className={s.signalRow}><span className={s.signalName}>{SHORT[signal.col]}<small>{signal.descriptor}</small></span><span className={s.signalPct} style={{ color: stressColor(signal.stress) }}>{s100(signal.stress)}<small>/100</small></span></div>
+              <div className={s.signalRow}><span className={s.signalName}>{SHORT[signal.col]}<small>{signal.descriptor}</small></span><span className={s.signalPct} style={{ color: stressText(signal.stress) }}>{s100(signal.stress)}<small>/100</small></span></div>
               <p>{gaugeWord(signal.stress)} on this index’s 0–100 scale, while overall stress is {band(d.score).toLowerCase()}. This signals pressure in {area(signal.col) === "credit" ? "riskier corporate borrowing" : area(signal.col)}, not {an(s100(signal.stress))} {s100(signal.stress)}% probability of a {area(signal.col) === "credit" ? "credit event" : "crash"}.</p>
             </div>
           )}
