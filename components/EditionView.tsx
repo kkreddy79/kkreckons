@@ -38,16 +38,17 @@ function loneStories(stories: FullStory[]) {
 // Darker shades of the AI Stress Index bands, readable as text on white (WCAG AA).
 const BAND_TEXT: Record<string, string> = { Normal: "#15803D", Elevated: "#B45309", Severe: "#C2410C", Critical: "#B91C1C" };
 
-/** A link to the AI Stress Index on stories KK tags as related. The reading is the one saved when the edition was published. */
-function StressLink({ si }: { si?: EditionContent["stressIndex"] }) {
+/** The AI Stress Index, shown once per edition when KK tags any story as related. The reading is the one saved when the edition was published. */
+function StressLink({ si, related }: { si?: EditionContent["stressIndex"]; related: number[] }) {
   return (
     <Link className="ev-si" href="/ai-stress-index">
       <span className="ev-si-score" style={si ? { color: BAND_TEXT[si.band] } : undefined} aria-hidden>
         {si ? si.score : "↗"}
       </span>
       <span>
-        <b>Track it: AI Stress Index</b>
+        <b>AI Stress Index</b>
         {si ? `${si.score}/100, ${si.band}, on ${shortDate(si.asOf)}${si.backCalculated ? " (back-calculated)" : ""}` : "A daily gauge of stress in AI stocks, financing and credit"}
+        <small>Tracks {related.length === 1 ? "story" : "stories"} {related.map((n) => String(n).padStart(2, "0")).join(", ")}</small>
       </span>
       <span className="ev-si-go">See →</span>
     </Link>
@@ -57,7 +58,7 @@ function StressLink({ si }: { si?: EditionContent["stressIndex"] }) {
 /** Graphics more than 1.6× as tall as they are wide are shown cut to the text's height, with a button to expand. */
 const TALL = 1.6;
 
-function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; si?: EditionContent["stressIndex"] }) {
+function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string }) {
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
@@ -155,8 +156,6 @@ function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide
       )}
       </div>
 
-      {s.stressIndex && <StressLink si={si} />}
-
       {s.also.length > 0 && (
         <p className="ev-also">
           Also read:{" "}
@@ -194,6 +193,7 @@ export default function EditionView({
 }) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
+  const related = e.sections.flatMap((sec) => sec.stories).flatMap((s, i) => (s.stressIndex ? [i + 1] : []));
   let n = 0;
 
   return (
@@ -244,13 +244,16 @@ export default function EditionView({
                     <span>
                       {s.category && <small>{s.category}</small>}
                       {s.emailHead || s.title}
+                      {s.stressIndex && <em className="ev-30s-tag">Index</em>}
                     </span>
                   </a>
                 </li>
               ))}
           </ol>
+          {related.length > 0 && <StressLink si={e.stressIndex} related={related} />}
         </nav>
       )}
+      {count <= 2 && related.length > 0 && <StressLink si={e.stressIndex} related={related} />}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">
@@ -298,7 +301,6 @@ export default function EditionView({
                     id={`qs-${e.date}-${n}`}
                     wide={sec.name === "Pick of the day"}
                     full={lone.has(i)}
-                    si={e.stressIndex}
                   />
                 );
               });
