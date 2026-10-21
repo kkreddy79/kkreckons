@@ -315,6 +315,12 @@
       "score": 28,
       "band": "Elevated",
       "asOf": "2026-10-20"
+    },
+    "reading": {
+      "https://youtu.be/1nPBbF1h-9Q": {
+        "title": "Video: Singing Bird on Wall Automaton",
+        "note": "Bliss Kolb's singing-bird automaton"
+      }
     }
   }
 }

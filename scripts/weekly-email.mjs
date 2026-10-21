@@ -84,7 +84,14 @@ const band = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elev
 const E = { ink: "#1B2636", body: "#3B4452", muted: "#6B7482", coral: "#C4553B", rule: "#E6E0D6" };
 const SANS = "'Inter',Helvetica,Arial,sans-serif";
 const SERIF = "'Playfair Display',Georgia,'Times New Roman',serif";
-const a = (href, html, style = "") => `<a href="${esc(href)}" target="_blank" style="text-decoration:none;${style}">${html}</a>`;
+// Links to the website carry UTM tags, so the analytics' UTM view shows visits from the email.
+const utm = (href) => {
+  if (!href.startsWith(SITE)) return href;
+  const [base, hash] = href.split("#");
+  return `${base}${base.includes("?") ? "&" : "?"}utm_source=newsletter&utm_medium=email&utm_campaign=${`weekly-${end}`}${hash ? `#${hash}` : ""}`;
+};
+const a = (href, html, style = "") =>
+  `<a href="${esc(utm(href))}" target="_blank" style="text-decoration:none;${style}">${html}</a>`;
 const label = (text, top = 18) =>
   `<tr><td colspan="2" style="padding:${top}px 0 4px;border-bottom:1px solid ${E.ink};font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.ink};"><span style="color:${E.coral};">■</span>&nbsp; ${esc(text)}</td></tr>`;
 const rows = [];
