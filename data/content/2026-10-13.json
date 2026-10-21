@@ -56,7 +56,7 @@
             "Geopolitics"
           ],
           "imageW": 2160,
-          "imageH": 2758
+          "imageH": 2844
         }
       ]
     },
@@ -97,7 +97,7 @@
             "Geopolitics"
           ],
           "imageW": 2160,
-          "imageH": 2854
+          "imageH": 2940
         },
         {
           "category": "Monetary policy",
@@ -133,7 +133,7 @@
             "Banking"
           ],
           "imageW": 2160,
-          "imageH": 2758
+          "imageH": 2844
         }
       ]
     },
@@ -175,7 +175,7 @@
           ],
           "stressIndex": true,
           "imageW": 2160,
-          "imageH": 2722
+          "imageH": 2808
         },
         {
           "category": "AI assistants",
@@ -210,7 +210,7 @@
             "AI"
           ],
           "imageW": 2160,
-          "imageH": 2758
+          "imageH": 2844
         },
         {
           "category": "US politics",
@@ -242,7 +242,7 @@
             "Geopolitics"
           ],
           "imageW": 2160,
-          "imageH": 2758
+          "imageH": 2844
         },
         {
           "category": "Alternative assets",
@@ -278,7 +278,7 @@
             "Markets"
           ],
           "imageW": 2160,
-          "imageH": 2640
+          "imageH": 2726
         }
       ]
     }

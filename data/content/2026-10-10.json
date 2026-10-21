@@ -57,7 +57,7 @@
             "Personal finance"
           ],
           "imageW": 1080,
-          "imageH": 1823
+          "imageH": 1866
         },
         {
           "category": "Global bonds",
@@ -97,7 +97,7 @@
             "Geopolitics"
           ],
           "imageW": 1080,
-          "imageH": 1715
+          "imageH": 1758
         }
       ]
     },
@@ -142,7 +142,7 @@
             "Markets"
           ],
           "imageW": 1080,
-          "imageH": 1491
+          "imageH": 1534
         }
       ]
     },
@@ -187,7 +187,7 @@
             "AI"
           ],
           "imageW": 1080,
-          "imageH": 1687
+          "imageH": 1730
         },
         {
           "category": "AI and markets",
@@ -227,7 +227,7 @@
             "Markets"
           ],
           "imageW": 1080,
-          "imageH": 1691
+          "imageH": 1734
         },
         {
           "category": "Energy and geopolitics",
@@ -267,7 +267,7 @@
             "Markets"
           ],
           "imageW": 1080,
-          "imageH": 1696
+          "imageH": 1739
         },
         {
           "category": "Retail and automation",
@@ -311,7 +311,7 @@
             "Jobs & careers"
           ],
           "imageW": 1080,
-          "imageH": 1725
+          "imageH": 1768
         }
       ]
     }

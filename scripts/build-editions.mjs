@@ -13,6 +13,7 @@
 
 import { chromium } from "playwright";
 import sharp from "sharp";
+import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -78,8 +79,55 @@ function saveFig(date, n, dataUrl) {
   if (!m) return "";
   const ext = m[1] === "jpeg" ? "jpg" : m[1];
   const name = `${date}-${n}.${ext}`;
-  fs.writeFileSync(path.join(figsDir, name), Buffer.from(m[2], "base64"));
+  // Written as received; figVariants() then adds the kkreckons.com credit strip (see creditStrip).
+  // A file already credited from this same source is left alone, so rebuilds don't redo it.
+  const file = path.join(figsDir, name);
+  const raw = Buffer.from(m[2], "base64");
+  if (!(fs.existsSync(file) && fileHead(file).includes(`src:${sourceHash(raw)}`))) fs.writeFileSync(file, raw);
   return `/figs/${name}`;
+}
+
+// A thin strip under every story graphic, "© KKReckons · share with credit … kkreckons.com", so a
+// screenshot shared on WhatsApp or LinkedIn leads back to the site. It sits below the graphic and
+// covers nothing. The copyright also goes in the file's EXIF, with a hash of the graphic as received,
+// which marks the file as done: rebuilds never add a second strip, and a changed graphic is redone.
+const COPYRIGHT = "Copyright KKReckons. Share with credit and a link to kkreckons.com";
+const sourceHash = (buf) => createHash("sha1").update(buf).digest("hex").slice(0, 12);
+const isCredited = (file) => fileHead(file).includes(COPYRIGHT);
+function fileHead(file) {
+  // EXIF sits near the start of a JPEG/PNG/WebP; reading the first 64KB is enough to find our tag.
+  const fd = fs.openSync(file, "r");
+  const buf = Buffer.alloc(65536);
+  const n = fs.readSync(fd, buf, 0, buf.length, 0);
+  fs.closeSync(fd);
+  return buf.subarray(0, n).toString("latin1");
+}
+async function creditStrip(file) {
+  if (isCredited(file)) return false;
+  const src = fs.readFileSync(file);
+  const hash = sourceHash(src);
+  const { width, height } = await sharp(src).metadata();
+  const h = Math.max(30, Math.round(width * 0.04));
+  const size = Math.round(h * 0.42);
+  const pad = Math.round(width * 0.045);
+  // Match the graphic's own bottom edge, so the strip reads as part of it.
+  const px = await sharp(src).extract({ left: 0, top: height - 3, width, height: 3 }).removeAlpha().raw().toBuffer();
+  const sum = [0, 0, 0];
+  for (let i = 0; i < px.length; i += 3) for (let c = 0; c < 3; c++) sum[c] += px[i + c];
+  const [r, g, b] = sum.map((v) => Math.round(v / (px.length / 3)));
+  const bg = { r, g, b };
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${h}">
+<line x1="${pad}" y1="0.5" x2="${width - pad}" y2="0.5" stroke="#24123f" stroke-opacity="0.15"/>
+<text x="${pad}" y="${Math.round(h * 0.63)}" font-family="Inter, DejaVu Sans, Arial, sans-serif" font-size="${size}" fill="#5b5566">© KKReckons · share with credit</text>
+<text x="${width - pad}" y="${Math.round(h * 0.63)}" text-anchor="end" font-family="Inter, DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="${Math.round(size * 1.12)}" fill="#a8430f">kkreckons.com</text>
+</svg>`;
+  const out = sharp({ create: { width, height: height + h, channels: 3, background: bg } })
+    .composite([{ input: src, top: 0, left: 0 }, { input: Buffer.from(svg), top: height, left: 0 }])
+    .withExif({ IFD0: { Copyright: COPYRIGHT, Artist: "KKReckons (kkreckons.com)", ImageDescription: `src:${hash}` } });
+  const ext = path.extname(file).toLowerCase();
+  const buf = await (ext === ".png" ? out.png({ compressionLevel: 9 }) : ext === ".webp" ? out.webp({ quality: 90 }) : out.jpeg({ quality: 88, mozjpeg: true })).toBuffer();
+  fs.writeFileSync(file, buf);
+  return true;
 }
 
 // Lighter copies of each story graphic for the site: WebP at 640px (phones) and at the original width
@@ -91,10 +139,11 @@ const variantName = (file, tag) => file.replace(/\.[a-z]+$/, `-${tag}.webp`);
 async function figVariants(image) {
   const file = path.join(figsDir, path.basename(image));
   if (!fs.existsSync(file)) return {};
+  const fresh = await creditStrip(file);
   const { width, height } = await sharp(file).metadata();
   for (const [tag, max] of VARIANTS) {
     const out = variantName(file, tag);
-    if (!fs.existsSync(out)) await sharp(file).resize({ width: Math.min(max, width), withoutEnlargement: true }).webp({ quality: 72, effort: 6 }).toFile(out);
+    if (fresh || !fs.existsSync(out)) await sharp(file).resize({ width: Math.min(max, width), withoutEnlargement: true }).withExif({ IFD0: { Copyright: COPYRIGHT } }).webp({ quality: 72, effort: 6 }).toFile(out);
   }
   return { imageW: width, imageH: height };
 }

@@ -53,7 +53,7 @@
             "AI"
           ],
           "imageW": 1080,
-          "imageH": 1419
+          "imageH": 1462
         }
       ]
     },
@@ -93,7 +93,7 @@
             "Markets"
           ],
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "Rupee hedging",
@@ -125,7 +125,7 @@
             "Banking"
           ],
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         }
       ]
     },
@@ -162,7 +162,7 @@
             "Banking"
           ],
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "AI agents and banks",
@@ -194,7 +194,7 @@
             "Banking"
           ],
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "AI and IPOs",
@@ -226,7 +226,7 @@
             "Markets"
           ],
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         }
       ]
     }

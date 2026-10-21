@@ -64,7 +64,7 @@
           "emailHead": "India’s builders are just getting started",
           "emailTeaser": "Rockets, a ₹1 lakh crore fund and 70+ listed tech firms.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         }
       ]
     },
@@ -110,7 +110,7 @@
           "emailHead": "India’s sun outruns its wires",
           "emailTeaser": "168GW installed, yet 300 GWh of clean power lost in a quarter.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         }
       ]
     },
@@ -158,7 +158,7 @@
           "emailTeaser": "Eight names sit behind 100+ AI financings; one bond fell to 94.4.",
           "stressIndex": true,
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "AI infrastructure",
@@ -187,7 +187,7 @@
           "emailHead": "Data centres are now targets",
           "emailTeaser": "Cheap drones, costly campuses: AI’s new security bill.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "Sovereign debt",
@@ -225,7 +225,7 @@
           "emailHead": "France’s bond market lights up",
           "emailTeaser": "Yields near 4.9% as riots meet a €43bn budget.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "AI and jobs",
@@ -263,7 +263,7 @@
           "emailHead": "UK back offices feel AI first",
           "emailTeaser": "Net 8% staff cuts at UK firms, double the peer average.",
           "imageW": 1080,
-          "imageH": 1418
+          "imageH": 1461
         }
       ]
     }
