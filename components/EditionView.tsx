@@ -6,6 +6,7 @@ import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource from "@/components/StorySource";
 import ShareRow from "@/components/ShareRow";
 import FigClamp from "@/components/FigClamp";
+import PrintImages from "@/components/PrintImages";
 
 const SECTION_NOTE: Record<string, string> = {
   "Pick of the day": "One story worth slowing down for",
@@ -228,6 +229,7 @@ export default function EditionView({
         )}
         <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
       </section>
+      <PrintImages />
 
       {count > 2 && (
         <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
