@@ -288,6 +288,8 @@ for (const file of files) {
     sec.stories = sec.stories.filter((s) => !s.remove);
   }
   content.sections = content.sections.filter((sec) => sec.stories.length);
+  // Further-reading fixes (a real title for a bare "Video (YouTube)" link), keyed by URL.
+  for (const r of content.reading) if (m.reading?.[r.url]) Object.assign(r, m.reading[r.url]);
   const stories = content.sections.flatMap((s) => s.stories);
   for (const s of stories) if (s.image) Object.assign(s, await figVariants(s.image));
   if (stories.some((s) => s.stressIndex) && !m.stressIndex) {

@@ -151,7 +151,7 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
           <ScalesIcon className="ev-ic" />
           <span>
             <b>{s.other.startsWith("What to watch") ? "Watch next" : "Other side"}</b>{" "}
-            {s.other.replace(/^What to watch:\s*/, "")}
+            {s.other.replace(/^What to watch:\s*(.)/, (_, c: string) => c.toUpperCase())}
           </span>
         </p>
       )}
