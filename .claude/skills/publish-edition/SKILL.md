@@ -177,6 +177,20 @@ in advance. Run sections 1 and 2 for that edition. If the checks, rights review 
 needs his decision, commit, open the pull request, merge it and carry on with section 4 (live check, then
 the email draft). If something does need his decision, stop at section 3 and ask.
 
+## Weekly best-of email
+
+When he asks for the weekly email ("draft the weekly", "best of the week"), make a beehiiv **draft** of
+KKReckons Weekly: KK's Pick of the day from each edition of the 7 days ending on the newest edition (or
+the end date he names), each linking to its story card on the site, plus the week's AI Stress Index move
+and a "Catch up on the week" button.
+1. `npm run -s weekly-email -- [YYYY-MM-DD] .publish/beehiiv-weekly-<end date>.json`. It prints the week, the
+   picks and the index move; check that each teaser reads on its own (they come from `emailTeaser`, or
+   from "why it matters" when an older edition has none).
+2. As for the daily email: check `list_posts` for slug `kkreckons-weekly-<end date>` first, then `save_post`
+   (`html_content` verbatim), `edit_post` with `email_settings`, `save_post_theme` with `theme`, and
+   re-read with `get_post_content` (`editor_html`) to confirm all the picks' headlines appear.
+3. Reply with the editor link for him to Send or Schedule (Saturday or Sunday morning suits a weekly).
+
 ## Keeping it light
 
 - Each "Publish" works best in a fresh session: this skill holds every step, so no earlier history is needed.
