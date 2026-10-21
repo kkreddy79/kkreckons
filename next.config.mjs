@@ -11,10 +11,6 @@ const securityHeaders = [
 
 const nextConfig = {
   images: { unoptimized: true },
-  // Readers and reviewers try /standards; the standards live on About.
-  async redirects() {
-    return [{ source: "/standards", destination: "/about#standards", permanent: true }];
-  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },

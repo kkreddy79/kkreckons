@@ -51,7 +51,7 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
         </p>
         <p className="ab-join-privacy">
           Emails are sent by beehiiv; your address is used only for this newsletter.{" "}
-          <Link href="/privacy">Privacy</Link> · <Link href="/about#standards">Editorial standards</Link>
+          <Link href="/privacy">Privacy</Link> · <Link href="/standards">Editorial standards</Link>
         </p>
       </div>
     </section>

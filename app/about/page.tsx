@@ -2,20 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Banner from "@/components/Banner";
 import SubscribeBox from "@/components/SubscribeBox";
+import EditorialStandards from "@/components/EditorialStandards";
 import {
   BuildingIcon,
   BulbIcon,
   ChartIcon,
   ChipIcon,
-  DocIcon,
   GlobeIcon,
-  LinkIcon,
   MoonIcon,
-  PeopleIcon,
-  ScalesIcon,
   SunIcon,
 } from "@/components/AboutIcons";
-import { CORRECTIONS_EMAIL, SUBSCRIBE_URL, correctionsHref } from "@/lib/site";
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
 const DESCRIPTION =
@@ -46,23 +42,6 @@ const BEATS = [
   { Icon: BuildingIcon, title: "Business & Companies", body: "Strategy, earnings and big moves." },
   { Icon: GlobeIcon, title: "U.S. & Global Affairs", body: "Key developments and their connections." },
   { Icon: BulbIcon, title: "Science & More", body: "Ideas and innovations shaping what’s next." },
-];
-
-const RULES = [
-  { Icon: LinkIcon, text: "Every story links to its source." },
-  { Icon: ScalesIcon, text: "Every story has an “other side.”" },
-  { Icon: DocIcon, text: "Reporting and opinion stay separate." },
-  { Icon: PeopleIcon, text: "I respect your intelligence." },
-];
-
-const STANDARDS = [
-  "Opinion and explainer pieces are labelled as such; everything else is reporting from the linked source.",
-  "Sources that may need a subscription are marked, so you know before you click.",
-  "Summaries stay short and quotes brief, so the original is still worth reading.",
-  "Graphics are original to KKReckons or used under licence, and each one is credited.",
-  "KKReckons graphics are © KKReckons. Share them freely with credit and a link to kkreckons.com; please don't edit, rebrand or resell them.",
-  "The AI Stress Index publishes its method, thresholds, sources and model changes on its page.",
-  "Nothing here is financial, legal or career advice.",
 ];
 
 function Pic({ name, alt, w, h, png }: { name: string; alt: string; w: number; h: number; png?: boolean }) {
@@ -174,32 +153,7 @@ export default function About() {
           </ul>
         </section>
 
-        <section className="ab-rules" id="standards" aria-labelledby="rules-title">
-          <p className="ab-kicker" id="rules-title">
-            Editorial standards &amp; corrections
-          </p>
-          <ul>
-            {RULES.map(({ Icon, text }) => (
-              <li key={text}>
-                <span className="ab-ic-circle">
-                  <Icon className="ab-ic" />
-                </span>
-                <p>{text}</p>
-              </li>
-            ))}
-          </ul>
-          <ul className="ab-std">
-            {STANDARDS.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
-          {CORRECTIONS_EMAIL && (
-            <p className="ab-fix">
-              Mistakes happen. If you spot one, <a href={correctionsHref("KKReckons")}>email us</a>; we fix it on the
-              site and note material corrections in that edition.
-            </p>
-          )}
-        </section>
+        <EditorialStandards />
 
         <SubscribeBox />
       </div>
