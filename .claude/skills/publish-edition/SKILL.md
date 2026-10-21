@@ -168,7 +168,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      If the draft can't be created (tool missing or permission denied), say so plainly, so he knows
      subscribers won't get this edition until it's made.
 - **Changes** (for example "drop story 4" or "fix the headline"): make small text fixes as overrides in
-  `data/edition-meta.json` (`slice`, or `stories` keyed by title). For bigger changes, ask him to update
+  `data/edition-meta.json` (`slice`, `stories` keyed by title, or `reading` keyed by URL, e.g. a real title for a bare "Video (YouTube)" link). For bigger changes, ask him to update
   the artifact in his Project, then re-read it. Rebuild, re-check, push, and send the new preview link.
 - **"skip"**: close the pull request without merging.
 
