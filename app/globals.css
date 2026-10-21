@@ -355,7 +355,6 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ab-btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
 
 /* ---------- Admin ---------- */
-.admin { max-width: 760px; margin: auto; }
 .form-card { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 24px; }
 .field { display: grid; gap: 7px; margin: 16px 0; }
 .field label { font-weight: 800; font-size: 13px; }
