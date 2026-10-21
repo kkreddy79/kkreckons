@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
-import { longDate, publisherName, shortDate, slugFor } from "@/lib/editions";
+import { editions, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
@@ -368,7 +368,12 @@ export default function EditionView({
           </div>
           {sec.name === "Pick of the day" && (
             <p className="ev-signup">
-              <span>One visual briefing a day. Free. Unsubscribe anytime.</span>
+              <span>
+                One visual briefing a day. Free, unsubscribe anytime.
+                <small>
+                  {editions.length} editions and {totalStories} stories so far
+                </small>
+              </span>
               <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
                 Get it by email ↗
               </a>

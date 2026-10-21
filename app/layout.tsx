@@ -4,7 +4,7 @@ import "@fontsource/playfair-display/latin-800.css";
 import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
-import { CORRECTIONS_EMAIL, SUBSCRIBE_URL } from "@/lib/site";
+import { SUBSCRIBE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/about">About</Link>
             <Link href="/daily/">Past editions</Link>
             <Link href="/ai-stress-index">AI Stress Index</Link>
-            <a href={`mailto:${CORRECTIONS_EMAIL}`}>Contact</a>
+            <Link href="/contact">Contact</Link>
             <Link href="/about#standards">Standards</Link>
             <Link href="/privacy">Privacy</Link>
             <a href="/feed.xml">RSS</a>

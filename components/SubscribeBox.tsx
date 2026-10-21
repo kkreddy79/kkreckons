@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MailIcon, SunIcon } from "@/components/AboutIcons";
+import { editions, totalStories } from "@/lib/editions";
 import { SUBSCRIBE_URL } from "@/lib/site";
 
 /**
@@ -45,6 +46,9 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
             </a>
           </>
         )}
+        <p className="ab-join-proof">
+          Free · {editions.length} editions and {totalStories} stories so far · Unsubscribe anytime
+        </p>
         <p className="ab-join-privacy">
           Emails are sent by beehiiv; your address is used only for this newsletter.{" "}
           <Link href="/privacy">Privacy</Link> · <Link href="/about#standards">Editorial standards</Link>
