@@ -438,7 +438,7 @@ a.ev-call:hover { transform: translateY(-2px); }
   .ev-story { padding: 18px 16px 16px; }
   .ev-qs-btn { margin-left: 0; }
   .ev-has-img { display: flex; }
-  .ev-has-img > .ev-fig { margin: 0 0 14px; }
+  .ev-has-img > .ev-fig { margin: 0 0 14px; align-self: stretch; }
   .ev-has-img > .ev-pair > .ev-other { margin-top: 0; }
   .ev-clamp-body { max-height: 620px; }
   .ev-story h3 { font-size: 20px; }
@@ -482,6 +482,13 @@ a.ev-call:hover { transform: translateY(-2px); }
 @media (max-width: 360px) {
   .site-header nav { gap: 12px; font-size: 13px; }
   .hdr-sub { padding: 7px 12px; }
+}
+
+/* Printing or saving as PDF: show tall graphics in full, without the fade or the button. */
+@media print {
+  .ev-clamp-body { max-height: none; }
+  .ev-clamp-body::after, .ev-clamp-btn { display: none; }
+  .ev-fig { break-inside: avoid; }
 }
 
 /* ---------- Accessibility ---------- */
