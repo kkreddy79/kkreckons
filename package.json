@@ -10,7 +10,8 @@
     "editions": "node scripts/build-editions.mjs",
     "check": "node scripts/check-editions.mjs",
     "qc": "node scripts/qc-publish.mjs",
-    "publish-edition": "node scripts/publish.mjs"
+    "publish-edition": "node scripts/publish.mjs",
+    "weekly-email": "node scripts/weekly-email.mjs"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",
