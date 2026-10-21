@@ -36,23 +36,79 @@ function loneStories(stories: FullStory[]) {
   return lone;
 }
 
-// Darker shades of the AI Stress Index bands, readable as text on white (WCAG AA).
-const BAND_TEXT: Record<string, string> = { Normal: "#15803D", Elevated: "#B45309", Severe: "#C2410C", Critical: "#B91C1C" };
+// AI Stress Index bands: [name, lower bound, fill colour bright enough to read on the dark card].
+const BANDS: [string, number, string][] = [
+  ["Normal", 0, "#4ADE80"],
+  ["Elevated", 25, "#FBBF24"],
+  ["Severe", 50, "#FB923C"],
+  ["Critical", 75, "#F87171"],
+];
+const bandOf = (score: number) => [...BANDS].reverse().find(([, lo]) => score >= lo)!;
 
-/** The AI Stress Index, shown once per edition when KK tags any story as related. The reading is the one saved when the edition was published. */
-function StressLink({ si, related }: { si?: EditionContent["stressIndex"]; related: number[] }) {
+/** The AI Stress Index, shown once near the top of an edition when KK tags any story as related. The reading is the one saved when the edition was published. */
+function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"]; related: number[]; date: string }) {
+  const band = si ? bandOf(si.score) : null;
+  const next = band ? BANDS[BANDS.indexOf(band) + 1] : null;
   return (
-    <Link className="ev-si" href="/ai-stress-index">
-      <span className="ev-si-score" style={si ? { color: BAND_TEXT[si.band] } : undefined} aria-hidden>
-        {si ? si.score : "↗"}
-      </span>
-      <span>
-        <b>AI Stress Index</b>
-        {si ? `${si.score}/100, ${si.band}, on ${shortDate(si.asOf)}${si.backCalculated ? " (back-calculated)" : ""}` : "A daily gauge of stress in AI stocks, financing and credit"}
-        <small>Tracks {related.length === 1 ? "story" : "stories"} {related.map((n) => String(n).padStart(2, "0")).join(", ")}</small>
-      </span>
-      <span className="ev-si-go">See →</span>
-    </Link>
+    <section className="ev-sx" aria-labelledby={`sx-${date}`}>
+      <div className="ev-sx-top">
+        {si && band && (
+          <p className="ev-sx-score" style={{ color: band[2] }}>
+            <b>{si.score}</b>
+            <span>/100</span>
+          </p>
+        )}
+        <div>
+          <p className="ev-sx-kicker">
+            AI Stress Index{si ? ` · ${shortDate(si.asOf)} close${si.backCalculated ? " (back-calculated)" : ""}` : ""}
+          </p>
+          <h2 id={`sx-${date}`}>
+            {si && band ? (
+              <>
+                Stress in AI markets is{" "}
+                <em style={{ background: band[2] }}>{band[0]}</em>
+              </>
+            ) : (
+              "How stressed are AI markets?"
+            )}
+          </h2>
+          <p className="ev-sx-sub">
+            A daily 0–100 gauge of strain in AI stocks, financing and credit
+            {si && next ? `. ${next[1] - si.score} point${next[1] - si.score === 1 ? "" : "s"} from ${next[0]}.` : "."}
+          </p>
+        </div>
+      </div>
+      {si && band && (
+        <div className="ev-sx-meter" role="img" aria-label={`${si.score} out of 100, in the ${band[0]} band`}>
+          <div className="ev-sx-bar">
+            {BANDS.map(([name, , c]) => (
+              <span key={name} style={{ background: c }} />
+            ))}
+            <i style={{ left: `${Math.min(100, Math.max(0, si.score))}%` }} />
+          </div>
+          <div className="ev-sx-scale" aria-hidden>
+            {BANDS.map(([name]) => (
+              <span key={name} className={name === band[0] ? "on" : undefined}>
+                {name}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+      <div className="ev-sx-foot">
+        <span>
+          Behind today’s {related.length === 1 ? "story" : "stories"}{" "}
+          {related.map((n) => (
+            <a key={n} href={`#story-${n}`}>
+              {String(n).padStart(2, "0")}
+            </a>
+          ))}
+        </span>
+        <Link className="ev-sx-cta" href="/ai-stress-index">
+          See the gauges →
+        </Link>
+      </div>
+    </section>
   );
 }
 
@@ -235,6 +291,8 @@ export default function EditionView({
       </section>
       <PrintImages />
 
+      {tracked.length > 0 && <StressCard si={e.stressIndex} related={tracked} date={e.date} />}
+
       {count > 2 && (
         <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
           <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
@@ -254,10 +312,8 @@ export default function EditionView({
                 </li>
               ))}
           </ol>
-          {tracked.length > 0 && <StressLink si={e.stressIndex} related={tracked} />}
         </nav>
       )}
-      {count <= 2 && tracked.length > 0 && <StressLink si={e.stressIndex} related={tracked} />}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">
