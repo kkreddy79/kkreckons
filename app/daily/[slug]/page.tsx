@@ -20,15 +20,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const found = getEdition((await params).slug);
   if (!found) return {};
   const { edition } = found;
+  // The day's headline leads the title (what searchers and shared links see), then the date.
+  const title = edition.slice ? `${edition.slice} | ${shortDate(edition.date)} ${edition.date.slice(0, 4)}` : longDate(edition.date);
   return {
-    title: longDate(edition.date),
+    title,
     alternates: { canonical: `/daily/${slugFor(edition.date)}` },
     // Setting openGraph here replaces the site-wide one, so the share image must be repeated.
     openGraph: {
       type: "article",
       publishedTime: edition.date,
       siteName: "KKReckons",
-      title: `${longDate(edition.date)} · KKReckons`,
+      title: `${title} · KKReckons`,
       images: [edition.image || "/about/two-worlds.jpg"],
     },
     twitter: { card: "summary_large_image", images: [edition.image || "/about/two-worlds.jpg"] },
