@@ -197,6 +197,15 @@ button { font: inherit; cursor: pointer; }
 .ev-nowrap { white-space: nowrap; }
 .ev-catchup { color: #0a716b; white-space: nowrap; }
 .ev-catchup:hover { text-decoration: underline; }
+.ev-30s { margin: 0 0 22px; padding: 16px 20px 10px; border-radius: 18px; background: #fff; border: 1px solid #efe7db; }
+.ev-30s h2 { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: #a8430f; }
+.ev-30s ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); column-gap: 24px; }
+.ev-30s li { border-top: 1px solid #f1ebe2; }
+.ev-30s a { display: flex; gap: 12px; align-items: baseline; padding: 9px 0; color: #24123f; font-weight: 700; font-size: 15px; line-height: 1.35; }
+.ev-30s a:hover { color: #a8430f; }
+.ev-30s-n { flex: none; font: 800 13px var(--sans); color: #a8430f; font-variant-numeric: tabular-nums; }
+.ev-30s small { display: block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #6b5a8e; margin-bottom: 2px; }
+.ev-story { scroll-margin-top: 120px; }
 .ev-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .ev-jump a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 13px; font-weight: 700; color: var(--ev-ink); }
 .ev-jump a:hover { border-color: var(--ev-orange); }

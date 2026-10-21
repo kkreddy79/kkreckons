@@ -56,7 +56,9 @@
             "AI",
             "Banking"
           ],
-          "stressIndex": true
+          "stressIndex": true,
+          "imageW": 2160,
+          "imageH": 2836
         },
         {
           "category": "Work and wellbeing",
@@ -89,7 +91,9 @@
           "pay": true,
           "themes": [
             "Jobs & careers"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2722
         },
         {
           "category": "Careers",
@@ -113,7 +117,9 @@
           "pay": true,
           "themes": [
             "Jobs & careers"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2678
         }
       ]
     },
@@ -151,7 +157,9 @@
           "pay": true,
           "themes": [
             "India"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2722
         },
         {
           "category": "Credit ratings",
@@ -189,7 +197,9 @@
           "themes": [
             "India",
             "Markets"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2842
         }
       ]
     },
@@ -224,7 +234,9 @@
           "themes": [
             "AI",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2722
         },
         {
           "category": "Cybersecurity",
@@ -262,7 +274,9 @@
           "pay": true,
           "themes": [
             "Geopolitics"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2800
         },
         {
           "category": "AI and productivity",
@@ -296,7 +310,9 @@
           "themes": [
             "AI",
             "Markets"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2678
         },
         {
           "category": "Wealth and housing",
@@ -330,7 +346,9 @@
           "themes": [
             "Personal finance",
             "Markets"
-          ]
+          ],
+          "imageW": 2160,
+          "imageH": 2640
         }
       ]
     }

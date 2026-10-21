@@ -2,11 +2,12 @@
 
 import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "react";
 import s from "./StressIndex.module.css";
+import { STRESS_BASES } from "@/lib/stress";
 
-/* Live data published every weekday after the US close by github.com/kkreddy79/ai-implosion. */
-/* GitHub Pages first; the raw file on GitHub is the fallback when github.io can't be reached
-   (Pages outage, or a network that blocks github.io). Both serve the same docs/ files. */
-const BASES = ["https://kkreddy79.github.io/ai-implosion", "https://raw.githubusercontent.com/kkreddy79/ai-implosion/main/docs"];
+/* Live data published every weekday after the US close by github.com/kkreddy79/ai-implosion.
+   The page is normally rendered on the server with this data (see app/ai-stress-index/page.tsx);
+   the browser only fetches it when the server couldn't. */
+const BASES = STRESS_BASES;
 
 /* Tries each source in turn and returns the first JSON that loads; throws the first error if none do. */
 async function loadJson<T>(file: string, t: number): Promise<T> {
@@ -32,7 +33,7 @@ type Factor = {
   plus10: { kind: "price"; drawdown: number; price: number } | { kind: "spread"; bp: number; via: string } | null;
 };
 type Pillars = { Equity: number | null; Financing: number | null; Credit: number | null };
-type Data = {
+export type Data = {
   asOf: string; generatedAt: string; score: number | null; factorCount: number;
   prevDate?: string | null; prevScore?: number | null; pillars?: Pillars; prevPillars?: Pillars | null;
   levels: { level: string; firstDate: string | null; active: boolean; paused?: boolean; streakStart?: string | null }[];
@@ -45,7 +46,7 @@ type Data = {
   notes?: string[]; editorNote?: string;
   model?: { version: string; changed: string; note?: string; changelog: { version: string; date: string; note: string }[] };
 };
-type Backtest = {
+export type Backtest = {
   dataStart: string; dataEnd: string; firstScored: string; scoredDays: number;
   episodes: { name: string; description: string; from?: string; to?: string; ndxPeak: string; ndxTrough: string; ndxDrawdown: number; maxScore: number | null;
     levels: { level: string; date: string | null; daysFromPeak: number | null }[]; dataQuality?: string; standInShare?: number; shockDate?: string | null }[];
@@ -411,7 +412,7 @@ function BacktestSummary({ b }: { b: Backtest }) {
         </ul>
       </div>
       <p className={s.caveat}><b>Read with care:</b> historical results before late 2023 are indicative. Several gauges use substitute series because today’s instruments or comparable data did not exist, so historical alert dates and severity may differ from results with fully comparable data. This replay shows when formal alerts would have fired; it is not a test of predictive accuracy.</p>
-      <p>The replay starts on {longDate(b.dataStart)} but scoring begins on {longDate(b.firstScored)}: each price gauge needs 2 years of history before its 2-year high exists. It runs day by day to {longDate(b.dataEnd)} ({b.scoredDays.toLocaleString()} scored trading days) with no look-ahead.</p>
+      <p>The replay starts on {longDate(b.dataStart)} but scoring begins on {longDate(b.firstScored)}: each price gauge needs 2 years of history before its 2-year high exists. It runs day by day to {longDate(b.dataEnd)} ({b.scoredDays.toLocaleString("en-US")} scored trading days) with no look-ahead.</p>
       <div className={s.btWrap}>
         <table className={s.bt}>
           <thead><tr><th>Selected sell-off</th><th>Nasdaq-100 fall</th><th>Peak index</th><th>First alert</th><th>Highest alert</th><th>Share of weight on stand-ins</th></tr></thead>
@@ -502,16 +503,17 @@ function Banner() {
 }
 
 /* ---------- Page ---------- */
-export default function StressIndex() {
-  const [d, setD] = useState<Data | null>(null);
-  const [bt, setBt] = useState<Backtest | null>(null);
+export default function StressIndex({ initial = null, initialBt = null }: { initial?: Data | null; initialBt?: Backtest | null }) {
+  const [d, setD] = useState<Data | null>(initial);
+  const [bt, setBt] = useState<Backtest | null>(initialBt);
   const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
+    if (initial) return; // already rendered on the server
     const t = Date.now();
     loadJson<Data>("data.json", t).then(setD).catch((e: Error) => setErr(e.message));
     loadJson<Backtest>("backtest.json", t).then(setBt).catch(() => setBt(null));
-  }, []);
+  }, [initial]);
 
   return (
     <main className={s.main}>
@@ -529,7 +531,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
   const signal = sorted[0] && sorted[0].stress >= 0.5 ? sorted[0] : null;
   const change = d.prevScore != null && d.score != null ? d.score - d.prevScore : null;
   const refreshed = new Date(d.generatedAt);
-  const refreshedTxt = isNaN(refreshed.getTime()) ? d.generatedAt : refreshed.toLocaleString("en-US", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
+  const refreshedTxt = isNaN(refreshed.getTime()) ? d.generatedAt : refreshed.toLocaleString("en-US", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit", timeZone: "UTC", timeZoneName: "short" });
   const movers = d.factors.filter((f) => f.prevStress != null).map((f) => ({ f, dlt: f.stress - (f.prevStress ?? 0) }))
     .filter((m) => Math.abs(m.dlt) >= 0.01).sort((a, b) => Math.abs(b.dlt) - Math.abs(a.dlt));
   const active = [...d.levels].reverse().find((l) => l.active);

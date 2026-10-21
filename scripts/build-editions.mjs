@@ -12,6 +12,7 @@
 // Inline story images are saved to public/figs/.
 
 import { chromium } from "playwright";
+import sharp from "sharp";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -79,6 +80,23 @@ function saveFig(date, n, dataUrl) {
   const name = `${date}-${n}.${ext}`;
   fs.writeFileSync(path.join(figsDir, name), Buffer.from(m[2], "base64"));
   return `/figs/${name}`;
+}
+
+// Lighter copies of each story graphic for the site: WebP at 640px (phones) and at the original width
+// (≤1600px), plus 860px for most phones, next to the original, which stays for "View full size" and the email thumbnails.
+// Made once and kept, so rebuilds don't rewrite them. The original's size is recorded so pages
+// reserve the space before the image loads.
+const VARIANTS = [["sm", 640], ["md", 860], ["lg", 1600]];
+const variantName = (file, tag) => file.replace(/\.[a-z]+$/, `-${tag}.webp`);
+async function figVariants(image) {
+  const file = path.join(figsDir, path.basename(image));
+  if (!fs.existsSync(file)) return {};
+  const { width, height } = await sharp(file).metadata();
+  for (const [tag, max] of VARIANTS) {
+    const out = variantName(file, tag);
+    if (!fs.existsSync(out)) await sharp(file).resize({ width: Math.min(max, width), withoutEnlargement: true }).webp({ quality: 72, effort: 6 }).toFile(out);
+  }
+  return { imageW: width, imageH: height };
 }
 
 /** `pay` may be a boolean or a word such as "paid", "free", "yes" or "no". */
@@ -271,6 +289,7 @@ for (const file of files) {
   }
   content.sections = content.sections.filter((sec) => sec.stories.length);
   const stories = content.sections.flatMap((s) => s.stories);
+  for (const s of stories) if (s.image) Object.assign(s, await figVariants(s.image));
   if (stories.some((s) => s.stressIndex) && !m.stressIndex) {
     const snap = await stressSnapshot(date);
     if (snap) {
@@ -328,7 +347,7 @@ const usedFigs = new Set(
     .readdirSync(contentDir)
     .filter((f) => f.endsWith(".json"))
     .flatMap((f) => JSON.parse(fs.readFileSync(path.join(contentDir, f), "utf8")).sections)
-    .flatMap((sec) => sec.stories.map((s) => path.basename(s.image || "")))
+    .flatMap((sec) => sec.stories.flatMap((s) => (s.image ? [s.image, ...VARIANTS.map(([tag]) => variantName(s.image, tag))].map((f) => path.basename(f)) : [])))
 );
 for (const f of fs.readdirSync(figsDir)) {
   if (!usedFigs.has(f)) {

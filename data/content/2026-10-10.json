@@ -55,7 +55,9 @@
           "themes": [
             "Markets",
             "Personal finance"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1823
         },
         {
           "category": "Global bonds",
@@ -93,7 +95,9 @@
           "themes": [
             "Markets",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1715
         }
       ]
     },
@@ -136,7 +140,9 @@
           "themes": [
             "India",
             "Markets"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1491
         }
       ]
     },
@@ -179,7 +185,9 @@
           "themes": [
             "Markets",
             "AI"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1687
         },
         {
           "category": "AI and markets",
@@ -217,7 +225,9 @@
           "themes": [
             "AI",
             "Markets"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1691
         },
         {
           "category": "Energy and geopolitics",
@@ -255,7 +265,9 @@
           "themes": [
             "Geopolitics",
             "Markets"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1696
         },
         {
           "category": "Retail and automation",
@@ -297,7 +309,9 @@
           "pay": true,
           "themes": [
             "Jobs & careers"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1725
         }
       ]
     }

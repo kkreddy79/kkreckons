@@ -14,6 +14,9 @@ export type FullStory = {
   other: string;
   also: { title: string; url: string }[];
   image: string;
+  /** Original size of `image`; WebP copies sit beside it as `-sm.webp` (640px), `-md.webp` (860px) and `-lg.webp` (full width). */
+  imageW?: number;
+  imageH?: number;
   imageAlt: string;
   /** Where the image comes from, for example "Original graphic: KKReckons" or a Creative Commons credit. */
   imageCredit?: string;
@@ -21,6 +24,8 @@ export type FullStory = {
   src?: string;
   pay?: boolean;
   themes?: string[];
+  /** Short headline written for the email; also used in the edition's "Today in 30 seconds" list. */
+  emailHead?: string;
   /** Editorial choice: show a link to the AI Stress Index under this story. */
   stressIndex?: boolean;
 };

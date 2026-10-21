@@ -51,7 +51,9 @@
           "themes": [
             "Jobs & careers",
             "AI"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Boom: India growth",
@@ -89,7 +91,9 @@
           "themes": [
             "India",
             "Geopolitics"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Banking deals",
@@ -127,7 +131,9 @@
           "themes": [
             "Banking",
             "India"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Privatisation",
@@ -165,7 +171,9 @@
           "themes": [
             "India",
             "Markets"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     },
@@ -208,7 +216,9 @@
           "themes": [
             "AI",
             "India"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     },
@@ -247,7 +257,9 @@
           "themes": [
             "AI",
             "Health & science"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1400
         },
         {
           "category": "Film",
@@ -293,7 +305,9 @@
           "pay": true,
           "themes": [
             "Health & science"
-          ]
+          ],
+          "imageW": 1080,
+          "imageH": 1400
         }
       ]
     }

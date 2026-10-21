@@ -244,7 +244,9 @@
           "also": [],
           "image": "/figs/2026-10-09-7.jpg",
           "imageAlt": "",
-          "imageCredit": "Original graphic: KKReckons"
+          "imageCredit": "Original graphic: KKReckons",
+          "imageW": 1000,
+          "imageH": 1051
         }
       ]
     }
