@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
-import { longDate, publisherName, shortDate } from "@/lib/editions";
-import { CORRECTIONS_EMAIL, correctionsHref } from "@/lib/site";
+import { longDate, publisherName, shortDate, slugFor } from "@/lib/editions";
+import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL } from "@/lib/site";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource, { storyHover } from "@/components/StorySource";
+import StorySource from "@/components/StorySource";
+import ShareRow from "@/components/ShareRow";
 
 const SECTION_NOTE: Record<string, string> = {
   "Pick of the day": "One story worth slowing down for",
@@ -52,7 +53,6 @@ function StressLink({ si }: { si?: EditionContent["stressIndex"] }) {
 }
 
 function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; si?: EditionContent["stressIndex"] }) {
-  const hover = storyHover(s);
   return (
     <article className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
@@ -62,8 +62,12 @@ function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide
       </div>
       <h3>
         {s.url ? (
-          <a href={s.url} target="_blank" rel="noreferrer" title={hover}>
+          <a href={s.url} target="_blank" rel="noreferrer">
             {s.title}
+            <span className="ev-ext" aria-hidden>
+              {" "}↗
+            </span>
+            <span className="sr-only"> (opens the source in a new tab)</span>
           </a>
         ) : (
           s.title
@@ -196,6 +200,7 @@ export default function EditionView({
             {e.reading.length > 0 && <a href="#further-reading">Further reading</a>}
           </nav>
         )}
+        <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
       </section>
 
       {e.callouts.length > 0 && (

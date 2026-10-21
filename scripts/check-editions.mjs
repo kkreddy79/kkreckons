@@ -74,6 +74,9 @@ const stressCandidate = (s) => {
   return (t.match(AI_WORDS) || []).length >= 2 && (t.match(DEBT_WORDS) || []).length >= 3;
 };
 const suggested = [];
+const vague = [];
+// Further-reading titles that only name a platform or format ("Video (YouTube)", "Link") tell readers nothing.
+const VAGUE_TITLE = /^(video|link|article|podcast|post|thread|read|watch)?\s*\(?\s*(youtube|youtu\.be|x|twitter|linkedin|instagram|link|video|article)?\s*\)?$/i;
 const webLink = (u) => /^https?:\/\//i.test(u);
 const flag = (date, title, rule, msg) => {
   if (excused(date, title, rule)) return;
@@ -134,6 +137,7 @@ for (const date of dates) {
       flag(date, `Further reading "${r.title}"`, "basics", "no link");
       continue;
     }
+    if (VAGUE_TITLE.test((r.title || "").trim())) vague.push(`${date} "${r.title}"`);
     if (!webLink(r.url)) flag(date, `Further reading "${r.title}"`, "link", `link isn't an http(s) web address: ${r.url.slice(0, 60)}`);
     const k = articleKey(r.url);
     if (used.has(k)) flag(date, `Further reading "${r.title}"`, "duplicate", `repeats an article already used in ${used.get(k)}`);
@@ -147,6 +151,7 @@ if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBL
 for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a repeat: ${w}`);
 for (const date of dates) if (content[date].sections.some((sec) => sec.stories.some((s) => s.stressIndex)) && !content[date].stressIndex)
   console.log(`⚠ ${date}: a story links to the AI Stress Index but no reading was saved (index data was unreachable); it shows the link without a number`);
+for (const v of vague) console.log(`⚠ Further reading needs a real title (it only names the platform): ${v}`);
 for (const x of suggested) console.log(`ℹ Possible AI Stress Index link (AI debt/credit story, not tagged): ${x}`);
 for (const a of altless) console.log(`⚠ Image has no alt text for screen readers (add figalt): ${a}`);
 console.log(problems ? `${problems} problem(s) found.` : "All checks passed.");

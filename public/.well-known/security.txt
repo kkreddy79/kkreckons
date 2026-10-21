@@ -1,0 +1,4 @@
+Contact: mailto:kkreckons@gmail.com
+Expires: 2027-10-21T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.kkreckons.com/.well-known/security.txt

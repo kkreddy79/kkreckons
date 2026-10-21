@@ -160,11 +160,11 @@ export default function ArchiveBrowser({
             if (ev.target.value) setView("stories");
           }}
         />
-        <div className="seg" role="tablist">
-          <button role="tab" aria-selected={view === "editions"} onClick={() => setView("editions")}>
+        <div className="seg" role="group" aria-label="View">
+          <button type="button" aria-pressed={view === "editions"} onClick={() => setView("editions")}>
             By edition
           </button>
-          <button role="tab" aria-selected={view === "stories"} onClick={() => setView("stories")}>
+          <button type="button" aria-pressed={view === "stories"} onClick={() => setView("stories")}>
             All stories
           </button>
         </div>
