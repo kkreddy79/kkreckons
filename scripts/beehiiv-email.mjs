@@ -97,8 +97,14 @@ const stories = ed.sections.flatMap((sec) => sec.stories.map((s) => ({ ...s, sec
 // The whole body is one compact HTML table (a beehiiv "HTML snippet"), so spacing is ours, not
 // the editor's block padding. Colour lives in text and borders, never in backgrounds alone, so
 // it reads the same where a mail app or printer drops backgrounds.
+// Links to the website carry UTM tags, so the analytics' UTM view shows visits from the email.
+const utm = (href) => {
+  if (!href.startsWith(SITE)) return href;
+  const [base, hash] = href.split("#");
+  return `${base}${base.includes("?") ? "&" : "?"}utm_source=newsletter&utm_medium=email&utm_campaign=${`daily-${date}`}${hash ? `#${hash}` : ""}`;
+};
 const a = (href, html, style = "") =>
-  `<a href="${esc(href)}" target="_blank" style="text-decoration:none;${style}">${html}</a>`;
+  `<a href="${esc(utm(href))}" target="_blank" style="text-decoration:none;${style}">${html}</a>`;
 const label = (text, top = 18) =>
   `<tr><td colspan="2" style="padding:${top}px 0 4px;border-bottom:1px solid ${E.ink};font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.ink};"><span style="color:${E.coral};">■</span>&nbsp; ${esc(text)}</td></tr>`;
 const rows = [];
