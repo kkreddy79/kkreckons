@@ -14,7 +14,6 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `/daily/` — archive: every edition by month, plus search and theme filters across all stories
 - `/daily/<month>-<day>-<year>` — one edition (for example `/daily/october-9-2026`), with previous/next navigation
 - `/about` — about the briefing
-- `/admin` — publishing dashboard placeholder (not linked from the site)
 
 ## How editions are stored
 - `newsletters/YYYY-MM-DD.html` — the original newsletter HTML, kept as the source only (not served on the site)

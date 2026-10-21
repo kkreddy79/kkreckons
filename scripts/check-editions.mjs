@@ -3,8 +3,9 @@
 //   - no repeat of an article already used in the same edition or any earlier one (same link);
 //   - a summary short enough not to replace the original (≤ MAX_SUMMARY_WORDS words of points);
 //   - no long quotation (any quoted passage ≤ MAX_QUOTE_WORDS words);
-//   - for any image, a declared origin (`figcredit` in the newsletter data).
-// Headlines that look like an earlier story are listed for review (warning only).
+//   - for any image, a declared origin (`figcredit` in the newsletter data);
+//   - only http(s) links (sources, further reading, numbers of the day).
+// Headlines that look like an earlier story, and images without alt text, are listed for review (warning only).
 //
 // Usage: npm run check                (all editions)
 //        npm run check -- 2026-10-10  (one or more dates; repeats are checked against all earlier dates)
@@ -63,7 +64,9 @@ const content = Object.fromEntries(sorted.map((d) => [d, JSON.parse(fs.readFileS
 
 let problems = 0;
 const warnings = [];
+const altless = [];
 const unnamed = new Set();
+const webLink = (u) => /^https?:\/\//i.test(u);
 const flag = (date, title, rule, msg) => {
   if (excused(date, title, rule)) return;
   problems += 1;
@@ -111,7 +114,9 @@ for (const date of dates) {
       }
       if (s.image && !s.imageCredit)
         flag(date, s.title, "image", "image has no declared origin (figcredit); only original, Creative Commons or licensed images may be used");
+      if (s.image && !(s.imageAlt || "").trim()) altless.push(`${date} "${s.title}"`);
 
+      for (const u of [s.url, s.url2]) if (u && !webLink(u)) flag(date, s.title, "link", `source link isn't an http(s) web address: ${u.slice(0, 60)}`);
       for (const u of [s.url, s.url2]) if (u && !named.has(host(u))) unnamed.add(host(u));
     }
   }
@@ -120,14 +125,17 @@ for (const date of dates) {
       flag(date, `Further reading "${r.title}"`, "basics", "no link");
       continue;
     }
+    if (!webLink(r.url)) flag(date, `Further reading "${r.title}"`, "link", `link isn't an http(s) web address: ${r.url.slice(0, 60)}`);
     const k = articleKey(r.url);
     if (used.has(k)) flag(date, `Further reading "${r.title}"`, "duplicate", `repeats an article already used in ${used.get(k)}`);
     else used.set(k, `${date} further reading "${r.title}"`);
     if (!named.has(host(r.url))) unnamed.add(host(r.url));
   }
+  for (const k of c.callouts || []) if (k.url && !webLink(k.url)) flag(date, `Number "${k.num}"`, "link", `link isn't an http(s) web address: ${k.url.slice(0, 60)}`);
   console.log(`${date}: ${stories} stories, ${c.reading.length} further reading`);
 }
 if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBLISHERS in lib/editions.ts): ${[...unnamed].join(", ")}`);
 for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a repeat: ${w}`);
+for (const a of altless) console.log(`⚠ Image has no alt text for screen readers (add figalt): ${a}`);
 console.log(problems ? `${problems} problem(s) found.` : "All checks passed.");
 process.exit(problems ? 1 : 0);
