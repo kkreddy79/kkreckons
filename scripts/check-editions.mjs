@@ -136,6 +136,8 @@ for (const date of dates) {
 }
 if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBLISHERS in lib/editions.ts): ${[...unnamed].join(", ")}`);
 for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a repeat: ${w}`);
+for (const date of dates) if (content[date].sections.some((sec) => sec.stories.some((s) => s.stressIndex)) && !content[date].stressIndex)
+  console.log(`⚠ ${date}: a story links to the AI Stress Index but no reading was saved (index data was unreachable); it shows the link without a number`);
 for (const a of altless) console.log(`⚠ Image has no alt text for screen readers (add figalt): ${a}`);
 console.log(problems ? `${problems} problem(s) found.` : "All checks passed.");
 process.exit(problems ? 1 : 0);

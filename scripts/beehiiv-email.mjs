@@ -135,6 +135,14 @@ rows.push(
     : `<tr><td colspan="2" style="padding:4px 0 2px 12px;border-left:4px solid ${E.coral};font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;color:${E.ink};">${esc(ed.slice)}</td></tr>`,
 );
 
+// A line under stories KK links to the AI Stress Index, with the reading saved at publication.
+const si = ed.stressIndex;
+const siDate = si ? `${+si.asOf.slice(8)} ${new Date(`${si.asOf}T00:00:00Z`).toLocaleString("en-GB", { month: "short", timeZone: "UTC" })}` : "";
+const stressLine =
+  `<div style="margin-top:5px;font-size:12px;line-height:1.3;">` +
+  a(`${SITE}/ai-stress-index`, si ? `&#9679; AI Stress Index: ${si.score}/100, ${esc(si.band)} (${siDate}) &rarr;` : "&#9679; See today’s AI Stress Index &rarr;", "color:#7048E8;font-weight:700;") +
+  `</div>`;
+
 // 2. Today's stories: thumbnail, kicker, short headline, one-line teaser.
 rows.push(label("TODAY’S STORIES", 16));
 fs.mkdirSync(path.join("public", "email"), { recursive: true });
@@ -159,7 +167,9 @@ for (const [i, s] of stories.entries()) {
       `<td valign="top" style="padding:8px 0;${line}font-family:${SANS};">` +
       `<div style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:${E.coral};">${String(n).padStart(2, "0")} · ${where} · ${esc(cat)}</div>` +
       `<div style="margin-top:1px;font-size:15px;line-height:1.3;font-weight:700;">${a(pageUrl, esc(head), `color:${E.ink};`)}</div>` +
-      `<div style="margin-top:1px;font-size:13px;line-height:1.35;color:${E.body};">${esc(teaser)}</div></td></tr>`,
+      `<div style="margin-top:1px;font-size:13px;line-height:1.35;color:${E.body};">${esc(teaser)}</div>` +
+      (s.stressIndex ? stressLine : "") +
+      `</td></tr>`,
   );
 }
 

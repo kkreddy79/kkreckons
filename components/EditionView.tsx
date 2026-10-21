@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
-import { longDate, publisherName } from "@/lib/editions";
+import { longDate, publisherName, shortDate } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref } from "@/lib/site";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { storyHover } from "@/components/StorySource";
@@ -32,7 +32,26 @@ function loneStories(stories: FullStory[]) {
   return lone;
 }
 
-function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string }) {
+// Darker shades of the AI Stress Index bands, readable as text on white (WCAG AA).
+const BAND_TEXT: Record<string, string> = { Normal: "#15803D", Elevated: "#B45309", Severe: "#C2410C", Critical: "#B91C1C" };
+
+/** A link to the AI Stress Index on stories KK tags as related. The reading is the one saved when the edition was published. */
+function StressLink({ si }: { si?: EditionContent["stressIndex"] }) {
+  return (
+    <Link className="ev-si" href="/ai-stress-index">
+      <span className="ev-si-score" style={si ? { color: BAND_TEXT[si.band] } : undefined} aria-hidden>
+        {si ? si.score : "↗"}
+      </span>
+      <span>
+        <b>Track it: AI Stress Index</b>
+        {si ? `${si.score}/100, ${si.band}, on ${shortDate(si.asOf)}` : "A daily gauge of stress in AI stocks, financing and credit"}
+      </span>
+      <span className="ev-si-go">See →</span>
+    </Link>
+  );
+}
+
+function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; si?: EditionContent["stressIndex"] }) {
   const hover = storyHover(s);
   return (
     <article className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
@@ -104,6 +123,8 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
           </span>
         </p>
       )}
+
+      {s.stressIndex && <StressLink si={si} />}
 
       {s.also.length > 0 && (
         <p className="ev-also">
@@ -223,6 +244,7 @@ export default function EditionView({
                     id={`qs-${e.date}-${n}`}
                     wide={sec.name === "Pick of the day"}
                     full={lone.has(i)}
+                    si={e.stressIndex}
                   />
                 );
               });

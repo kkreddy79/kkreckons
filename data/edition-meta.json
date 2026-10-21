@@ -196,6 +196,22 @@
     "artifact": "https://claude.ai/artifact/4zf3XG3wF3EABWGWhn18Qu"
   },
   "2026-10-21": {
-    "artifact": "https://claude.ai/artifact/4pGm82eq7vzUoTYQSs4xj8"
+    "artifact": "https://claude.ai/artifact/4pGm82eq7vzUoTYQSs4xj8",
+    "stories": {
+      "Anthropic's IPO filing: hot growth, a huge loss and a narrowing window": {
+        "stressIndex": true
+      },
+      "CoreWeave's bond yield and CDS: an early warning for AI debt?": {
+        "stressIndex": true
+      },
+      "Microsoft's exit from an Nscale lease is a reality check for neoclouds": {
+        "stressIndex": true
+      }
+    },
+    "stressIndex": {
+      "score": 28,
+      "band": "Elevated",
+      "asOf": "2026-10-20"
+    }
   }
 }

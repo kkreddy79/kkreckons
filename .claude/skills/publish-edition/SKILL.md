@@ -68,6 +68,9 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      (see the 2026-09-30 entry for the shape) and re-run `npm run -s publish-edition -- <YYYY-MM-DD>`. List every fix you made
      in the pull request and in your message, so he can check them. Anything you can't fix stays
      listed as an open problem.
+   **AI Stress Index links:** stories the newsletter marks `stressindex: true` get a link to the index (site card and email line)
+   with the reading saved at publication. If he asks to link a story that isn't marked, add `{ "stressIndex": true }`
+   under `stories` in `data/edition-meta.json` and re-run. Don't add links on your own; say in your message which stories have one.
 5. **Rights review** (copyright and paywall rules in `docs/edition-format.md`), done by you, not a script:
    - **Images:** look at every `public/figs/<YYYY-MM-DD>-*` file, all at once on one contact sheet
      (PIL, about 1600px wide) rather than one by one. Allowed: his own original

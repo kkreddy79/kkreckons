@@ -21,6 +21,8 @@ export type FullStory = {
   src?: string;
   pay?: boolean;
   themes?: string[];
+  /** Editorial choice: show a link to the AI Stress Index under this story. */
+  stressIndex?: boolean;
 };
 
 export type EditionContent = {
@@ -31,6 +33,8 @@ export type EditionContent = {
   callouts: { num: string; text: string; url: string }[];
   sections: { name: string; stories: FullStory[] }[];
   reading: { title: string; url: string; note: string }[];
+  /** AI Stress Index reading taken when the edition was published (only when a story links to it). */
+  stressIndex?: { score: number; band: string; asOf: string };
 };
 
 
