@@ -78,3 +78,8 @@ tables or images. Check each publication's terms if you plan to quote from it.
 repeats, summary length, quote length and image credits. The publishing routine also reviews images,
 copied wording and paywalled summaries by hand. Deliberate exceptions for already-published editions are
 recorded in `data/qc-exceptions.json`.
+
+## Graphics credit strip
+
+When an edition is built, every story graphic gets a thin strip underneath reading "© KKReckons · share with credit … kkreckons.com", plus a copyright note in the file's EXIF data. It is added once: the EXIF also holds a hash of the graphic as received, so rebuilds leave the file alone and a changed graphic is redone. Graphics don't need their own watermark.
+

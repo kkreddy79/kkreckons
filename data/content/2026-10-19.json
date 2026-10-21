@@ -56,7 +56,7 @@
           "emailTeaser": "Delays, bond sell-offs and local backlash test the $10tn bet.",
           "stressIndex": true,
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         }
       ]
     },
@@ -103,7 +103,7 @@
           "emailHead": "Gold curbs, and the open back door",
           "emailTeaser": "Sebi shut gold funds, but ETFs stay open and savers keep buying.",
           "imageW": 1080,
-          "imageH": 1496
+          "imageH": 1539
         },
         {
           "category": "Digital payments",
@@ -141,7 +141,7 @@
           "emailHead": "UPI’s fee nudges India toward cash",
           "emailTeaser": "A 0.4% charge from November has merchants eyeing notes again.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         }
       ]
     },
@@ -184,7 +184,7 @@
           "emailHead": "AI agents, and who holds the keys",
           "emailTeaser": "India reports AI-agent breaches while Schwab blocks outside agents.",
           "imageW": 1080,
-          "imageH": 1419
+          "imageH": 1462
         },
         {
           "category": "Wealth and policy",
@@ -221,7 +221,7 @@
           "emailHead": "Target the loopholes, not billionaires",
           "emailTeaser": "An FT column says most fortunes are self-made and wealth taxes backfire.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "AI and history",
@@ -262,7 +262,7 @@
           "emailHead": "Hobbyists crack wartime codes with AI",
           "emailTeaser": "One model tested four billion Enigma settings in ten hours.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "Defence and AI",
@@ -300,7 +300,7 @@
           "emailHead": "A torpedo that supposedly thinks",
           "emailTeaser": "North Korea claims AI guidance; experts doubt the digital smarts.",
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         }
       ]
     }

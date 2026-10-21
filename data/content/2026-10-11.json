@@ -52,7 +52,7 @@
             "AI"
           ],
           "imageW": 1080,
-          "imageH": 1443
+          "imageH": 1486
         },
         {
           "category": "Health and science",
@@ -87,7 +87,7 @@
             "Health & science"
           ],
           "imageW": 1080,
-          "imageH": 1419
+          "imageH": 1462
         }
       ]
     },
@@ -128,7 +128,7 @@
             "Jobs & careers"
           ],
           "imageW": 1080,
-          "imageH": 1358
+          "imageH": 1401
         },
         {
           "category": "Work and generations",
@@ -160,7 +160,7 @@
             "Jobs & careers"
           ],
           "imageW": 1080,
-          "imageH": 1381
+          "imageH": 1424
         }
       ]
     },
@@ -192,7 +192,7 @@
             "Geopolitics"
           ],
           "imageW": 1080,
-          "imageH": 1422
+          "imageH": 1465
         },
         {
           "category": "Tax and AI",
@@ -224,7 +224,7 @@
             "AI"
           ],
           "imageW": 1080,
-          "imageH": 1383
+          "imageH": 1426
         },
         {
           "category": "AI and hardware",
@@ -259,7 +259,7 @@
             "AI"
           ],
           "imageW": 1080,
-          "imageH": 1401
+          "imageH": 1444
         }
       ]
     }

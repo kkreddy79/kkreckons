@@ -53,7 +53,7 @@
             "Jobs & careers"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         },
         {
           "category": "Autos",
@@ -88,7 +88,7 @@
             "Markets"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         }
       ]
     },
@@ -129,7 +129,7 @@
             "India"
           ],
           "imageW": 2160,
-          "imageH": 2838
+          "imageH": 2924
         }
       ]
     },
@@ -170,7 +170,7 @@
             "Markets"
           ],
           "imageW": 2160,
-          "imageH": 2836
+          "imageH": 2922
         },
         {
           "category": "AI finance",
@@ -207,7 +207,7 @@
           ],
           "stressIndex": true,
           "imageW": 2160,
-          "imageH": 2920
+          "imageH": 3006
         },
         {
           "category": "Investing",
@@ -243,7 +243,7 @@
             "Markets"
           ],
           "imageW": 2160,
-          "imageH": 2838
+          "imageH": 2924
         },
         {
           "category": "AI policy",
@@ -279,7 +279,7 @@
             "Geopolitics"
           ],
           "imageW": 2160,
-          "imageH": 2842
+          "imageH": 2928
         },
         {
           "category": "Psychology",
@@ -314,7 +314,7 @@
             "Health & science"
           ],
           "imageW": 2160,
-          "imageH": 2806
+          "imageH": 2892
         }
       ]
     }

@@ -58,7 +58,7 @@
           ],
           "stressIndex": true,
           "imageW": 2160,
-          "imageH": 2836
+          "imageH": 2922
         },
         {
           "category": "Work and wellbeing",
@@ -93,7 +93,7 @@
             "Jobs & careers"
           ],
           "imageW": 2160,
-          "imageH": 2722
+          "imageH": 2808
         },
         {
           "category": "Careers",
@@ -119,7 +119,7 @@
             "Jobs & careers"
           ],
           "imageW": 2160,
-          "imageH": 2678
+          "imageH": 2764
         }
       ]
     },
@@ -159,7 +159,7 @@
             "India"
           ],
           "imageW": 2160,
-          "imageH": 2722
+          "imageH": 2808
         },
         {
           "category": "Credit ratings",
@@ -199,7 +199,7 @@
             "Markets"
           ],
           "imageW": 2160,
-          "imageH": 2842
+          "imageH": 2928
         }
       ]
     },
@@ -236,7 +236,7 @@
             "Geopolitics"
           ],
           "imageW": 2160,
-          "imageH": 2722
+          "imageH": 2808
         },
         {
           "category": "Cybersecurity",
@@ -276,7 +276,7 @@
             "Geopolitics"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         },
         {
           "category": "AI and productivity",
@@ -312,7 +312,7 @@
             "Markets"
           ],
           "imageW": 2160,
-          "imageH": 2678
+          "imageH": 2764
         },
         {
           "category": "Wealth and housing",
@@ -348,7 +348,7 @@
             "Markets"
           ],
           "imageW": 2160,
-          "imageH": 2640
+          "imageH": 2726
         }
       ]
     }

@@ -57,7 +57,7 @@
             "India"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         },
         {
           "category": "Consulting",
@@ -97,7 +97,7 @@
             "Jobs & careers"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         }
       ]
     },
@@ -138,7 +138,7 @@
             "India"
           ],
           "imageW": 2160,
-          "imageH": 2842
+          "imageH": 2928
         },
         {
           "category": "Banking",
@@ -174,7 +174,7 @@
             "India"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         }
       ]
     },
@@ -214,7 +214,7 @@
             "AI"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         },
         {
           "category": "Banking tech",
@@ -250,7 +250,7 @@
             "AI"
           ],
           "imageW": 2160,
-          "imageH": 2800
+          "imageH": 2886
         }
       ]
     }

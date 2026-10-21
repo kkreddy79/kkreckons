@@ -60,6 +60,7 @@ const STANDARDS = [
   "Sources that may need a subscription are marked, so you know before you click.",
   "Summaries stay short and quotes brief, so the original is still worth reading.",
   "Graphics are original to KKReckons or used under licence, and each one is credited.",
+  "KKReckons graphics are © KKReckons. Share them freely with credit and a link to kkreckons.com; please don't edit, rebrand or resell them.",
   "The AI Stress Index publishes its method, thresholds, sources and model changes on its page.",
   "Nothing here is financial, legal or career advice.",
 ];

@@ -56,7 +56,7 @@
           "emailTeaser": "An $80.7bn half-year loss and $750bn of compute ambition.",
           "stressIndex": true,
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "Credit markets",
@@ -95,7 +95,7 @@
           "emailTeaser": "A record CDS cost and 16%-plus yields flag fading confidence.",
           "stressIndex": true,
           "imageW": 1080,
-          "imageH": 3745
+          "imageH": 3788
         }
       ]
     },
@@ -142,7 +142,7 @@
           "emailHead": "What France teaches India",
           "emailTeaser": "Debt near 120% of GDP, and growth bunched in a few nations.",
           "imageW": 1080,
-          "imageH": 1419
+          "imageH": 1462
         }
       ]
     },
@@ -186,7 +186,7 @@
           "emailTeaser": "Nscale eyes a $35bn listing as Microsoft drops a UK lease.",
           "stressIndex": true,
           "imageW": 1080,
-          "imageH": 1400
+          "imageH": 1443
         },
         {
           "category": "Billionaire finance",
@@ -224,7 +224,7 @@
           "emailHead": "Buy, borrow, keep the shares",
           "emailTeaser": "413 million Oracle shares pledged instead of sold.",
           "imageW": 1080,
-          "imageH": 1416
+          "imageH": 1459
         },
         {
           "category": "Investor protection",
@@ -261,7 +261,7 @@
           "emailHead": "Dubai's high-return dream sours",
           "emailTeaser": "Promised up to 30% a year, then coupons stopped for months.",
           "imageW": 1080,
-          "imageH": 1419
+          "imageH": 1462
         },
         {
           "category": "Commodities",
@@ -299,7 +299,7 @@
           "emailHead": "Sulphur: the war's hidden squeeze",
           "emailTeaser": "Batteries outbid fertiliser as a refinery by-product runs short.",
           "imageW": 1080,
-          "imageH": 3945
+          "imageH": 3988
         }
       ]
     }
