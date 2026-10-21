@@ -266,6 +266,19 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-has-img { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); column-gap: 28px; align-content: start; }
 .ev-has-img > * { grid-column: 2; }
 .ev-has-img > .ev-fig { grid-column: 1; grid-row: 1 / span 9; margin: 0; align-self: start; }
+/* Beside a graphic the text column holds the headline, points, numbers and "Why it matters", which together
+   are about the graphic's height; "Other side", the Stress Index card and the source run full width underneath. */
+.ev-has-img > .ev-pair { display: contents; }
+.ev-has-img > .ev-pair > .ev-why { grid-column: 2; }
+.ev-has-img > .ev-pair > .ev-other, .ev-has-img > .ev-si, .ev-has-img > .ev-also, .ev-has-img > .ev-src { grid-column: 1 / -1; }
+.ev-has-img > .ev-pair > .ev-other { margin-top: 16px; }
+/* Very tall graphics: cut to a readable height with a fade; the button shows the rest. */
+.ev-clamp-body { position: relative; max-height: 520px; overflow: hidden; border-radius: 12px; }
+.ev-clamp-body::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(rgba(255, 255, 255, 0), #fff); pointer-events: none; }
+.ev-clamp-open .ev-clamp-body { max-height: none; }
+.ev-clamp-open .ev-clamp-body::after { display: none; }
+.ev-clamp-btn { display: block; width: 100%; margin-top: 8px; min-height: 40px; padding: 8px 14px; border-radius: 999px; border: 1px solid #e4dcf3; background: #f7f3fd; color: #35205f; font-weight: 800; font-size: 13.5px; }
+.ev-clamp-btn:hover { border-color: #cbbde6; }
 .ev-full { grid-column: 1 / -1; }
 .ev-src-label { font-weight: 700; color: #5b5566; }
 .ev-src { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 12px 0 0; padding-top: 12px; border-top: 1px solid #efe7db; font-size: 13px; font-weight: 800; }
@@ -426,6 +439,8 @@ a.ev-call:hover { transform: translateY(-2px); }
   .ev-qs-btn { margin-left: 0; }
   .ev-has-img { display: flex; }
   .ev-has-img > .ev-fig { margin: 0 0 14px; }
+  .ev-has-img > .ev-pair > .ev-other { margin-top: 0; }
+  .ev-clamp-body { max-height: 620px; }
   .ev-story h3 { font-size: 20px; }
   .ev-section { margin-top: 36px; }
   .ev-sec-head { flex-direction: column; gap: 2px; align-items: flex-start; }
