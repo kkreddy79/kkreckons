@@ -5,6 +5,7 @@ import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL } from "@/lib/site";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource from "@/components/StorySource";
 import ShareRow from "@/components/ShareRow";
+import FigClamp from "@/components/FigClamp";
 
 const SECTION_NOTE: Record<string, string> = {
   "Pick of the day": "One story worth slowing down for",
@@ -52,7 +53,31 @@ function StressLink({ si }: { si?: EditionContent["stressIndex"] }) {
   );
 }
 
+/** Graphics more than 1.6× as tall as they are wide are shown cut to the text's height, with a button to expand. */
+const TALL = 1.6;
+
 function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; si?: EditionContent["stressIndex"] }) {
+  const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
+  const pic = s.image && (
+    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
+      {s.imageW ? (
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={["sm 640", "md 860", `lg ${Math.min(s.imageW, 1600)}`]
+              .map((v) => v.split(" "))
+              .filter(([, w]) => +w <= Math.min(s.imageW!, 1600))
+              .map(([tag, w]) => `${s.image.replace(/\.[a-z]+$/, `-${tag}.webp`)} ${w}w`)
+              .join(", ")}
+            sizes={wide ? "(max-width: 700px) 100vw, 560px" : "(max-width: 700px) 100vw, 480px"}
+          />
+          <img src={s.image} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading="lazy" decoding="async" />
+        </picture>
+      ) : (
+        <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
+      )}
+    </a>
+  );
   return (
     <article id={`story-${n}`} className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
@@ -77,24 +102,7 @@ function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide
       {s.image && (
         <figure className="ev-fig">
           {/* Graphics are tall and detailed: link to the full-size file so phone readers can zoom in. */}
-          <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
-            {s.imageW ? (
-              <picture>
-                <source
-                  type="image/webp"
-                  srcSet={["sm 640", "md 860", `lg ${Math.min(s.imageW, 1600)}`]
-                    .map((v) => v.split(" "))
-                    .filter(([, w]) => +w <= Math.min(s.imageW!, 1600))
-                    .map(([tag, w]) => `${s.image.replace(/\.[a-z]+$/, `-${tag}.webp`)} ${w}w`)
-                    .join(", ")}
-                  sizes={wide ? "(max-width: 700px) 100vw, 560px" : "(max-width: 700px) 100vw, 480px"}
-                />
-                <img src={s.image} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading="lazy" decoding="async" />
-              </picture>
-            ) : (
-              <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
-            )}
-          </a>
+          {tall ? <FigClamp>{pic}</FigClamp> : pic}
           <figcaption>
             {s.imageCredit && <span>{s.imageCredit}</span>}
             <a href={s.image} target="_blank" rel="noreferrer">
@@ -125,6 +133,8 @@ function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide
         )}
       </div>
 
+      {/* Beside a graphic, "Other side" runs full width under it (see .ev-has-img in globals.css). */}
+      <div className="ev-pair">
       {s.why && (
         <p className="ev-why">
           <SunIcon className="ev-ic" />
@@ -142,6 +152,7 @@ function StoryCard({ s, n, wide, full, id, si }: { s: FullStory; n: number; wide
           </span>
         </p>
       )}
+      </div>
 
       {s.stressIndex && <StressLink si={si} />}
 
