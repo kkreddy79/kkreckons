@@ -596,6 +596,12 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
         </div>
       </section>
       {(d.notes ?? []).map((n) => <p key={n} className={s.note}>{n}</p>)}
+      {d.score != null && (
+        <p className={s.cite}>
+          <b>Cite this reading:</b> KKReckons AI Market Stress Index, {d.score}/100 ({band(d.score)}), data through {longDate(d.asOf)}. https://www.kkreckons.com/ai-stress-index{" "}
+          · <a href="#methodology">Method</a> · <a href="/about#standards">Editorial standards</a>
+        </p>
+      )}
       <p className={s.disclaim}>Stress bands describe today’s reading. Formal alerts need extra conditions held for 5 straight trading days, so the index can be Elevated (25+) before the first alert, Stress Watch, triggers at 50. Gauge scores are normalised 0–100 readings, not probabilities. A Normal reading is not a prediction that markets are safe or will rise.</p>
 
       <h2 className={s.h2}>Where is the pressure?</h2>

@@ -3,6 +3,7 @@ import EditionView from "@/components/EditionView";
 import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
+import { relatedFor } from "@/lib/related";
 import type { Metadata } from "next";
 import { latest, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
@@ -27,7 +28,7 @@ export default function Home() {
       />
       <Banner />
       <div className="ev-wrap">
-        <EditionView e={today} showCatchUp />
+        <EditionView e={today} showCatchUp related={relatedFor(latest.date)} />
         <SubscribeBox variant="home" />
       </div>
     </main>
