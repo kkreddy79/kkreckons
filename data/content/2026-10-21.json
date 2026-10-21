@@ -1,0 +1,312 @@
+{
+  "date": "2026-10-21",
+  "slice": "AI paper losses, Ellison pledges, Dubai stalls, sulphur runs dry. Lenders keep score.",
+  "artifact": "https://claude.ai/artifact/4pGm82eq7vzUoTYQSs4xj8",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$80.7bn",
+      "text": "Anthropic's H1 net loss, as it signals up to $750bn of compute spending ahead.",
+      "url": "https://www.wsj.com/tech/ai/anthropic-revenue-growth-ipo-accaf0f1"
+    },
+    {
+      "num": "413m",
+      "text": "Oracle shares Ellison pledged, worth about $58bn, to back his personal loans.",
+      "url": "https://www.wsj.com/finance/larry-ellison-warner-bros-loans-49918714"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI and IPOs",
+          "tag": "",
+          "title": "Anthropic's IPO filing: hot growth, a huge loss and a narrowing window",
+          "url": "https://www.wsj.com/tech/ai/anthropic-revenue-growth-ipo-accaf0f1",
+          "url2": "https://www.ft.com/content/6c6fb412-5eca-4ed3-8b3d-f1c367712c5c",
+          "points": [
+            "WSJ reports Anthropic's draft prospectus shows a first-half net loss of $80.7bn, mostly an accounting charge tied to the value of its convertible notes rather than cash spent running the business.",
+            "Revenue is growing far faster than computing costs, but a big share comes from a handful of customers, and the firm signals it could spend up to $750bn on compute, partly through deals still being negotiated.",
+            "An FT Unhedged column argues the listing window, now pencilled in for November, is narrowing as markets wobble, borrowing costs rise and questions grow over who is liable when AI agents cause harm."
+          ],
+          "numbers": [
+            [
+              "$80.7bn",
+              "net loss, first half of 2026"
+            ],
+            [
+              "$750bn",
+              "possible future compute spend"
+            ]
+          ],
+          "why": "The prospectus turns AI's biggest growth story into a test of whether revenue can outrun the bills, and the IPO will price that bet for the whole AI trade.",
+          "other": "What to watch: most of the loss is a non-cash accounting charge and revenue still outpaces costs, so the headline may overstate the strain. The sharper test is reliance on a few customers.",
+          "also": [],
+          "image": "/figs/2026-10-21-1.jpg",
+          "imageAlt": "KKReckons explainer: Anthropic's possible $750bn compute spend, its growth and its risks.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal and Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Anthropic opens its books",
+          "emailTeaser": "An $80.7bn half-year loss and $750bn of compute ambition."
+        },
+        {
+          "category": "Credit markets",
+          "tag": "Explainer",
+          "title": "CoreWeave's bond yield and CDS: an early warning for AI debt?",
+          "url": "https://m.economictimes.com/prime/one-company-2-words-bond-yield-and-cds-will-they-decide-the-fate-of-global-markets/primearticleshow/135054389.cms",
+          "url2": "",
+          "points": [
+            "Some CoreWeave bonds fell sharply in mid-October, pushing the yield on its 2031 notes above 16%. The coupon is unchanged, but new buyers now demand a far bigger return for the risk.",
+            "The cost of five-year credit default swaps, insurance that pays out if a borrower fails to pay, hit a record 1,194.5 basis points on 15 October.",
+            "ET Prime explains that rises in both signals show confidence weakening. Before the 2008 crisis, rising bank CDS gave early warning; the worry now is stress spreading to AI lenders, suppliers and stocks."
+          ],
+          "numbers": [
+            [
+              ">16%",
+              "yield on 2031 notes"
+            ],
+            [
+              "1,194.5",
+              "bps, record 5-year CDS"
+            ]
+          ],
+          "why": "When lenders charge more to fund AI's builders, every data-centre plan gets dearer, so these two quotes deserve more attention than daily share prices.",
+          "other": "What to watch: CoreWeave's November results. Markets often reprice risky debt without a crisis, the firm reports a large contracted backlog, and no one has forecast a default.",
+          "also": [],
+          "image": "/figs/2026-10-21-2.jpg",
+          "imageAlt": "KKReckons explainer: how a credit default swap works, CoreWeave's record 1,194.5 bps CDS and how stress can spread.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "AI"
+          ],
+          "emailHead": "Insuring CoreWeave got pricey",
+          "emailTeaser": "A record CDS cost and 16%-plus yields flag fading confidence."
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Debt and growth",
+          "tag": "",
+          "title": "France's debt trouble and a lopsided world economy: lessons for India",
+          "url": "https://www.livemint.com/opinion/online-views/french-protests-can-be-traced-to-weak-fiscal-management-a-key-lesson-for-the-world-11792500881763.html",
+          "url2": "https://www.livemint.com/economy/global-growth-vuca-international-monetary-fund-imf-india-gdp-growth-artificial-intelligence-11792434102444.html",
+          "points": [
+            "A Mint editorial traces France's student protests to fiscal strain: debt near 120% of GDP, a deficit above 5%, and a pension bill governments failed to rein in, as borrowing costs rise worldwide.",
+            "A Mint analysis of IMF data finds growth concentrated: 32 economies supplied over 95% of global growth in 2026, with China, India and the US together giving nearly 60%.",
+            "It argues AI investment is offsetting the drag from the West Asia war and costly oil, but warns India, a net debtor, needs a stronger current account to stay resilient."
+          ],
+          "numbers": [
+            [
+              "~120%",
+              "France's debt to GDP"
+            ],
+            [
+              "32",
+              "economies giving 95%+ of growth"
+            ],
+            [
+              "~60%",
+              "from China, India and the US"
+            ]
+          ],
+          "why": "India's lower deficit and debt look prudent next to France, but its reliance on foreign capital means discipline at home is its best shield against shocks from abroad.",
+          "other": "Debt ratios alone can mislead: a faster-growing economy can carry more borrowing, and street protests usually have many causes beyond the budget.",
+          "also": [],
+          "image": "/figs/2026-10-21-3.jpg",
+          "imageAlt": "KKReckons explainer: France's debt near 120% of GDP, concentrated world growth and India's lesson.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "What France teaches India",
+          "emailTeaser": "Debt near 120% of GDP, and growth bunched in a few nations."
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI infrastructure",
+          "tag": "Opinion",
+          "title": "Microsoft's exit from an Nscale lease is a reality check for neoclouds",
+          "url": "https://www.ft.com/content/0751ec3e-48d5-462c-a8d0-eca325daf1f3",
+          "url2": "",
+          "points": [
+            "Microsoft pulled out of leasing capacity at Nscale's planned data centre in Essex, which may not get power until after 2030, as Nscale targets a New York listing at a $35bn valuation.",
+            "An FT Lex column says neoclouds need power, chips and upfront financing at once, so their big order books carry heavy execution risk; Anthropic and Microsoft fill most of Nscale's backlog.",
+            "Valued on peers' multiples, Lex argues, Nscale is worth far less, while bigger players with ready capacity stand to win."
+          ],
+          "numbers": [
+            [
+              "$35bn",
+              "target IPO valuation"
+            ],
+            [
+              "~$6bn",
+              "Lex's peer-based value"
+            ]
+          ],
+          "why": "If power, not demand, decides who delivers AI capacity, the neocloud boom may consolidate into firms that already have grid connections.",
+          "other": "The Essex site was a small slice of Microsoft's spending with Nscale, and its other contracts may hold; one cancelled lease need not sink the model.",
+          "also": [],
+          "image": "/figs/2026-10-21-4.jpg",
+          "imageAlt": "KKReckons explainer: Nscale's $35bn IPO target and why Lex says neoclouds face a reality check.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "A neocloud loses a big tenant",
+          "emailTeaser": "Nscale eyes a $35bn listing as Microsoft drops a UK lease."
+        },
+        {
+          "category": "Billionaire finance",
+          "tag": "",
+          "title": "Larry Ellison borrowed against his shares to fund his son's Warner bid",
+          "url": "https://www.wsj.com/finance/larry-ellison-warner-bros-loans-49918714",
+          "url2": "",
+          "points": [
+            "WSJ reports Larry Ellison dropped a plan to sell Oracle stock and instead widened loans from several big banks, pledging shares in Oracle, Tesla, SpaceX and Paramount Skydance to help fund his son David's Warner Bros. takeover.",
+            "Oracle says 413 million of his shares, worth around $58bn, now back his personal debts, more than a year earlier.",
+            "Borrowing lets the very rich keep their stock and avoid locking in taxable gains, a strategy dubbed \"buy, borrow and die\". Oracle's board says he can repay without selling pledged shares."
+          ],
+          "numbers": [
+            [
+              "413m",
+              "Oracle shares pledged"
+            ],
+            [
+              "~$58bn",
+              "value of pledged stock"
+            ]
+          ],
+          "why": "It shows how the very rich fund deals with debt rather than sales, keeping control and deferring tax in ways ordinary investors rarely can.",
+          "other": "Pledged stock can force selling if prices slump, but Oracle reviews the pledges every quarter and most of his stake is not tied to borrowing.",
+          "also": [],
+          "image": "/figs/2026-10-21-5.jpg",
+          "imageAlt": "KKReckons explainer: Larry Ellison's 413 million pledged Oracle shares and the buy, borrow and die strategy.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "Buy, borrow, keep the shares",
+          "emailTeaser": "413 million Oracle shares pledged instead of sold."
+        },
+        {
+          "category": "Investor protection",
+          "tag": "",
+          "title": "AIX promised Dubai investors up to 30% a year. Now it cannot pay them",
+          "url": "https://www.ft.com/content/83be85af-1cc5-4661-954e-f671e8f3aa3b",
+          "url2": "",
+          "points": [
+            "The FT reports Dubai's AIX Investment Group, which advertised on Emirates and hosted clients in the Burj Khalifa, promised returns of up to 30% a year and paid advisers commissions to bring in money.",
+            "Over the past 11 months it quietly stopped paying coupons while still taking deposits, former staff and investors say, and it has sold a racing team and pledged assets to raise cash.",
+            "It now asks clients to back a court-led restructuring. The Cayman Islands regulator has warned about an unlicensed unit, and Dubai's patchwork of regulators leaves investors unsure where to turn."
+          ],
+          "numbers": [
+            [
+              "30%",
+              "top promised yearly return"
+            ],
+            [
+              "11 mo",
+              "of missed coupon payments"
+            ]
+          ],
+          "why": "Returns far above market rates, sold with glamour and referral bonuses, are the oldest warning sign. Indian savers, many among AIX's clients, should check who regulates any offshore scheme.",
+          "other": "AIX argues a restructuring lets its investments recover instead of being sold at a loss. The claims come from former staff and investors, and AIX declined to comment.",
+          "also": [],
+          "image": "/figs/2026-10-21-6.jpg",
+          "imageAlt": "KKReckons explainer: how Dubai's AIX promised up to 30% a year and why payments stopped.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Personal finance"
+          ],
+          "emailHead": "Dubai's high-return dream sours",
+          "emailTeaser": "Promised up to 30% a year, then coupons stopped for months."
+        },
+        {
+          "category": "Commodities",
+          "tag": "Explainer",
+          "title": "War's hidden squeeze: a sulphur shortage pits EV batteries against food",
+          "url": "https://m.economictimes.com/prime/wars-second-order-effects-are-becoming-visible-in-critical-sectors/primearticleshow/135011449.cms",
+          "url2": "",
+          "points": [
+            "ET Prime explains that refineries give out sulphur as a by-product, so with Gulf refineries cut off by the US-Iran war and Russian plants hit, sulphur is short, and nobody can make more on purpose.",
+            "Its acid is needed for phosphate fertiliser and EV battery materials. Buyers who can pass on costs keep running: in China, battery-material plants ran near full while fertiliser plants ran at about a third of capacity.",
+            "Export curbs by Russia, China, India and others deepened the squeeze. The hit to harvests may show up a season later; India has told refiners to supply fertiliser makers first."
+          ],
+          "numbers": [
+            [
+              "~1/3",
+              "China fertiliser plant use"
+            ],
+            [
+              "~1/4",
+              "world sulphur trapped by Hormuz"
+            ]
+          ],
+          "why": "A war far from the fields can still hurt food security: fertiliser not made this season cannot reach next season's crop, so a short war may still mean dearer food next year.",
+          "other": "What to watch: ships through Hormuz. If the strait reopens soon and the weather is kind, stockpiles and leaner fertiliser grades may soften the blow; nobody yet knows how big the harvest hit will be.",
+          "also": [],
+          "image": "/figs/2026-10-21-7.jpg",
+          "imageAlt": "KKReckons explainer: how the war cut sulphur supply, why batteries outbid fertiliser, and what it means for food and India.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "Sulphur: the war's hidden squeeze",
+          "emailTeaser": "Batteries outbid fertiliser as a refinery by-product runs short."
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Video: Indian deep-tech startups making good progress",
+      "url": "https://youtu.be/mSLsHERGuQQ",
+      "note": "KK's pick on India's deep-tech builders"
+    },
+    {
+      "title": "Video (YouTube)",
+      "url": "https://youtu.be/1nPBbF1h-9Q",
+      "note": "further viewing"
+    },
+    {
+      "title": "Kelly Clarkson, Molly the Bird and our obsession with objects that come alive",
+      "url": "https://www.wsj.com/style/design/molly-the-bird-bliss-kolb-kelly-clarkson-39ce6a61",
+      "note": "light read on automata"
+    }
+  ],
+  "takeaway": {
+    "a": "Debt now.",
+    "b": "Profits later.",
+    "line": "AI's future is priced in debt; the bill is arriving before the profits. From France's deficits to AIX's broken promises, leverage always has a reckoning."
+  }
+}

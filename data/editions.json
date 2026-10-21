@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-10-21",
+    "slice": "AI paper losses, Ellison pledges, Dubai stalls, sulphur runs dry. Lenders keep score.",
+    "artifact": "https://claude.ai/artifact/4pGm82eq7vzUoTYQSs4xj8",
+    "readingMinutes": 7,
+    "image": "/figs/2026-10-21-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Anthropic's IPO filing: hot growth, a huge loss and a narrowing window",
+        "category": "AI and IPOs",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/anthropic-revenue-growth-ipo-accaf0f1",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "CoreWeave's bond yield and CDS: an early warning for AI debt?",
+        "category": "Credit markets",
+        "tag": "Explainer",
+        "url": "https://m.economictimes.com/prime/one-company-2-words-bond-yield-and-cds-will-they-decide-the-fate-of-global-markets/primearticleshow/135054389.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "France's debt trouble and a lopsided world economy: lessons for India",
+        "category": "Debt and growth",
+        "tag": "",
+        "url": "https://www.livemint.com/opinion/online-views/french-protests-can-be-traced-to-weak-fiscal-management-a-key-lesson-for-the-world-11792500881763.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Microsoft's exit from an Nscale lease is a reality check for neoclouds",
+        "category": "AI infrastructure",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/0751ec3e-48d5-462c-a8d0-eca325daf1f3",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Larry Ellison borrowed against his shares to fund his son's Warner bid",
+        "category": "Billionaire finance",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/larry-ellison-warner-bros-loans-49918714",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AIX promised Dubai investors up to 30% a year. Now it cannot pay them",
+        "category": "Investor protection",
+        "tag": "",
+        "url": "https://www.ft.com/content/83be85af-1cc5-4661-954e-f671e8f3aa3b",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "War's hidden squeeze: a sulphur shortage pits EV batteries against food",
+        "category": "Commodities",
+        "tag": "Explainer",
+        "url": "https://m.economictimes.com/prime/wars-second-order-effects-are-becoming-visible-in-critical-sectors/primearticleshow/135011449.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-20",
     "slice": "Rockets rise, wires lag, desks empty, streets burn. All want the upside. Few survive it.",
     "artifact": "https://claude.ai/artifact/4zf3XG3wF3EABWGWhn18Qu",
