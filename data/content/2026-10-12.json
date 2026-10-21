@@ -55,7 +55,8 @@
           "themes": [
             "AI",
             "Banking"
-          ]
+          ],
+          "stressIndex": true
         },
         {
           "category": "Work and wellbeing",
@@ -334,5 +335,11 @@
       ]
     }
   ],
-  "reading": []
+  "reading": [],
+  "stressIndex": {
+    "score": 17,
+    "band": "Normal",
+    "asOf": "2026-10-09",
+    "backCalculated": true
+  }
 }

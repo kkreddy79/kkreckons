@@ -178,7 +178,8 @@
           "other": "Priced in? Spreads may already reflect it.",
           "also": [],
           "image": "",
-          "imageAlt": ""
+          "imageAlt": "",
+          "stressIndex": true
         },
         {
           "category": "AI misuse",
@@ -287,5 +288,11 @@
       ]
     }
   ],
-  "reading": []
+  "reading": [],
+  "stressIndex": {
+    "score": 14,
+    "band": "Normal",
+    "asOf": "2026-09-29",
+    "backCalculated": true
+  }
 }

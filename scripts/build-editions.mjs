@@ -26,24 +26,31 @@ const indexPath = path.join(root, "data", "editions.json");
 const meta = fs.existsSync(metaPath) ? JSON.parse(fs.readFileSync(metaPath, "utf8")) : {};
 let metaChanged = false;
 
-// The AI Stress Index reading shown on stories linked to it. Taken once, when an edition first has a
-// linked story, and kept in data/edition-meta.json (`stressIndex`), so every rebuild shows the same
-// dated number instead of whatever the index reads that day. Same sources as the index page.
+// The AI Stress Index reading shown on stories linked to it: the last close before the edition's
+// date (what a reader could see that morning). Taken once, when an edition first has a linked story,
+// and kept in data/edition-meta.json (`stressIndex`), so every rebuild shows the same dated number.
+// Readings before the index went live are back-calculated by its model and marked as such.
+// Same sources as the index page.
 const STRESS_SOURCES = [
   "https://kkreddy79.github.io/ai-implosion/data.json",
   "https://raw.githubusercontent.com/kkreddy79/ai-implosion/main/docs/data.json",
 ];
+const STRESS_LIVE_SINCE = "2026-10-15";
+let stressHistory;
 const stressBand = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elevated" : "Normal");
-async function stressSnapshot() {
-  for (const url of STRESS_SOURCES) {
+async function stressSnapshot(date) {
+  for (const url of stressHistory ? [] : STRESS_SOURCES) {
     try {
       const r = await fetch(`${url}?t=${Date.now()}`, { cache: "no-store" });
-      if (!r.ok) continue;
-      const last = (await r.json()).history.filter((h) => h.score != null).at(-1);
-      if (last) return { score: last.score, band: stressBand(last.score), asOf: last.date };
+      if (r.ok) {
+        stressHistory = (await r.json()).history.filter((h) => h.score != null);
+        break;
+      }
     } catch {}
   }
-  return null;
+  const last = stressHistory?.filter((h) => h.date < date).at(-1);
+  if (!last) return null;
+  return { score: last.score, band: stressBand(last.score), asOf: last.date, ...(last.date < STRESS_LIVE_SINCE ? { backCalculated: true } : {}) };
 }
 fs.mkdirSync(figsDir, { recursive: true });
 fs.mkdirSync(contentDir, { recursive: true });
@@ -265,11 +272,11 @@ for (const file of files) {
   content.sections = content.sections.filter((sec) => sec.stories.length);
   const stories = content.sections.flatMap((s) => s.stories);
   if (stories.some((s) => s.stressIndex) && !m.stressIndex) {
-    const snap = await stressSnapshot();
+    const snap = await stressSnapshot(date);
     if (snap) {
       meta[date] = { ...meta[date], stressIndex: snap };
       metaChanged = true;
-      console.log(`${date}: AI Stress Index reading saved (${snap.score}/100, ${snap.band}, as of ${snap.asOf})`);
+      console.log(`${date}: AI Stress Index reading saved (${snap.score}/100, ${snap.band}, as of ${snap.asOf}${snap.backCalculated ? ", back-calculated" : ""})`);
     } else console.log(`${date}: AI Stress Index data unreachable; linked stories show the link without a number`);
   }
   const stress = meta[date]?.stressIndex;

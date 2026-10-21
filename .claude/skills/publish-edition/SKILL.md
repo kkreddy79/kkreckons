@@ -68,9 +68,12 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      (see the 2026-09-30 entry for the shape) and re-run `npm run -s publish-edition -- <YYYY-MM-DD>`. List every fix you made
      in the pull request and in your message, so he can check them. Anything you can't fix stays
      listed as an open problem.
-   **AI Stress Index links:** stories the newsletter marks `stressindex: true` get a link to the index (site card and email line)
-   with the reading saved at publication. If he asks to link a story that isn't marked, add `{ "stressIndex": true }`
-   under `stories` in `data/edition-meta.json` and re-run. Don't add links on your own; say in your message which stories have one.
+   **AI Stress Index links** (he wants these every day): stories about AI debt, AI financing or credit stress get a link to
+   the index (site card and email line) with the reading saved at publication. The newsletter can mark them `stressindex: true`;
+   the check also prints "ℹ Possible AI Stress Index link" for likely ones it doesn't mark. Tag each story that is clearly about
+   AI debt, AI financing or credit stress with `{ "stressIndex": true }` under `stories` in `data/edition-meta.json` and re-run;
+   skip passing mentions (a story that is mainly about something else). List the linked stories in the pull request and your
+   message so he can say "remove" for any. Tagging a story this way is not a decision that holds up an advance-approved publish.
 5. **Rights review** (copyright and paywall rules in `docs/edition-format.md`), done by you, not a script:
    - **Images:** look at every `public/figs/<YYYY-MM-DD>-*` file, all at once on one contact sheet
      (PIL, about 1600px wide) rather than one by one. Allowed: his own original

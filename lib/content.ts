@@ -34,7 +34,7 @@ export type EditionContent = {
   sections: { name: string; stories: FullStory[] }[];
   reading: { title: string; url: string; note: string }[];
   /** AI Stress Index reading taken when the edition was published (only when a story links to it). */
-  stressIndex?: { score: number; band: string; asOf: string };
+  stressIndex?: { score: number; band: string; asOf: string; backCalculated?: boolean };
 };
 
 

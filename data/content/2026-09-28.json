@@ -246,10 +246,17 @@
           "other": "Whether hyperscaler debt is lifting government yields is disputed: HSBC’s Adam Bothamley calls it a stretch, and Morgan Stanley’s Matthew Hornbach sees a far smaller effect than rates and deficits. Morgan Stanley also says euro capacity is untapped. The risk is if AI cash flows disappoint: Apollo’s Torsten Sløk notes the credit case rests on operating cash flow tripling from $600bn to $2tn.",
           "also": [],
           "image": "",
-          "imageAlt": ""
+          "imageAlt": "",
+          "stressIndex": true
         }
       ]
     }
   ],
-  "reading": []
+  "reading": [],
+  "stressIndex": {
+    "score": 13,
+    "band": "Normal",
+    "asOf": "2026-09-25",
+    "backCalculated": true
+  }
 }

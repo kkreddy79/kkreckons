@@ -44,7 +44,7 @@ function StressLink({ si }: { si?: EditionContent["stressIndex"] }) {
       </span>
       <span>
         <b>Track it: AI Stress Index</b>
-        {si ? `${si.score}/100, ${si.band}, on ${shortDate(si.asOf)}` : "A daily gauge of stress in AI stocks, financing and credit"}
+        {si ? `${si.score}/100, ${si.band}, on ${shortDate(si.asOf)}${si.backCalculated ? " (back-calculated)" : ""}` : "A daily gauge of stress in AI stocks, financing and credit"}
       </span>
       <span className="ev-si-go">See →</span>
     </Link>

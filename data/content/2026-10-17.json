@@ -196,7 +196,8 @@
           "themes": [
             "AI",
             "Markets"
-          ]
+          ],
+          "stressIndex": true
         },
         {
           "category": "Investing",
@@ -302,5 +303,10 @@
       ]
     }
   ],
-  "reading": []
+  "reading": [],
+  "stressIndex": {
+    "score": 29,
+    "band": "Elevated",
+    "asOf": "2026-10-16"
+  }
 }

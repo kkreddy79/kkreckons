@@ -263,7 +263,8 @@
           "other": "Strong, highly rated tenants back many of these leases, and the bonds fund buildings, not chips. Is the risk overstated?",
           "also": [],
           "image": "",
-          "imageAlt": ""
+          "imageAlt": "",
+          "stressIndex": true
         }
       ]
     }
@@ -279,5 +280,11 @@
       "url": "https://www.wsj.com/opinion/jamie-dimons-third-pillar-matters-the-most-a6a8e866?st=XQvvD7&reflink=article_copyURL_share",
       "note": "a reader’s reply to Dimon’s plan"
     }
-  ]
+  ],
+  "stressIndex": {
+    "score": 13,
+    "band": "Normal",
+    "asOf": "2026-10-02",
+    "backCalculated": true
+  }
 }

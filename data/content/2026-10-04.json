@@ -205,7 +205,8 @@
           "other": "Unlike 2008’s low-income households, today’s borrowers are among the richest, highest-rated firms ever. Bubble, or big build?",
           "also": [],
           "image": "",
-          "imageAlt": ""
+          "imageAlt": "",
+          "stressIndex": true
         },
         {
           "category": "Public finance",
@@ -298,5 +299,11 @@
       "url": "https://www.livemint.com/money/over-550-mn-upi-users-69-mn-mf-investors-and-50-mn-stock-buyers-why-are-millions-still-not-investing-report-decodes-11791018086933.html",
       "note": "not verified (site blocked); its 69 mn figure differs from EY’s ~62 mn"
     }
-  ]
+  ],
+  "stressIndex": {
+    "score": 13,
+    "band": "Normal",
+    "asOf": "2026-10-02",
+    "backCalculated": true
+  }
 }
