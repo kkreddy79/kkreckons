@@ -58,7 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/daily/">Past editions</Link>
             <Link href="/ai-stress-index">AI Stress Index</Link>
             <Link href="/contact">Contact</Link>
-            <Link href="/about#standards">Standards</Link>
+            <Link href="/standards">Standards</Link>
             <Link href="/privacy">Privacy</Link>
             <a href="/feed.xml">RSS</a>
           </nav>

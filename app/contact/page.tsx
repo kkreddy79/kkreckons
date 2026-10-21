@@ -23,7 +23,7 @@ export default function ContactPage() {
         <ul>
           <li>
             <b>Corrections.</b> Name the edition and the story; material corrections are noted in that edition. See the{" "}
-            <Link href="/about#standards">editorial standards</Link>.
+            <Link href="/standards">editorial standards</Link>.
           </li>
           <li>
             <b>Tips and feedback</b> on stories, the AI Stress Index or the site.
