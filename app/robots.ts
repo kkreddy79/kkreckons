@@ -8,6 +8,6 @@ const NAMED = ["Googlebot", "Bingbot", "Google-Extended", "GPTBot", "OAI-SearchB
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*", allow: "/" }, ...NAMED.map((userAgent) => ({ userAgent, allow: "/" }))],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/news-sitemap.xml`],
   };
 }
