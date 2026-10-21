@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { longDate, publisherName, shortDate, slugFor } from "@/lib/editions";
-import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL } from "@/lib/site";
+import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
+import type { Related } from "@/lib/related";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource from "@/components/StorySource";
 import ShareRow from "@/components/ShareRow";
@@ -181,6 +182,7 @@ export default function EditionView({
   headingLevel = "h1",
   showDate = true,
   showCatchUp = false,
+  related = [],
   children,
 }: {
   e: EditionContent;
@@ -189,11 +191,13 @@ export default function EditionView({
   showDate?: boolean;
   /** Adds a "Catch up on past editions" link to the meta line (Home, where new visitors land). */
   showCatchUp?: boolean;
+  /** Earlier or later stories naming the same companies, people or policies (see lib/related.ts). */
+  related?: Related[];
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
-  const related = e.sections.flatMap((sec) => sec.stories).flatMap((s, i) => (s.stressIndex ? [i + 1] : []));
+  const tracked = e.sections.flatMap((sec) => sec.stories).flatMap((s, i) => (s.stressIndex ? [i + 1] : []));
   let n = 0;
 
   return (
@@ -250,10 +254,10 @@ export default function EditionView({
                 </li>
               ))}
           </ol>
-          {related.length > 0 && <StressLink si={e.stressIndex} related={related} />}
+          {tracked.length > 0 && <StressLink si={e.stressIndex} related={tracked} />}
         </nav>
       )}
-      {count <= 2 && related.length > 0 && <StressLink si={e.stressIndex} related={related} />}
+      {count <= 2 && tracked.length > 0 && <StressLink si={e.stressIndex} related={tracked} />}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">
@@ -306,6 +310,14 @@ export default function EditionView({
               });
             })()}
           </div>
+          {sec.name === "Pick of the day" && (
+            <p className="ev-signup">
+              <span>One visual briefing a day. Free. Unsubscribe anytime.</span>
+              <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+                Get it by email ↗
+              </a>
+            </p>
+          )}
         </section>
       ))}
 
@@ -327,6 +339,22 @@ export default function EditionView({
         )}
         {children}
       </div>
+
+      {related.length > 0 && (
+        <section className="ev-related" aria-labelledby={`rel-${e.date}`}>
+          <h2 id={`rel-${e.date}`}>Related coverage</h2>
+          <ul>
+            {related.map((r) => (
+              <li key={r.href}>
+                <Link href={r.href}>
+                  <small>{shortDate(r.date)}</small>
+                  {r.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {CORRECTIONS_EMAIL && (
         <p className="ev-fix">

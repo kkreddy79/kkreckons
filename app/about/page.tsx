@@ -55,6 +55,15 @@ const RULES = [
   { Icon: PeopleIcon, text: "I respect your intelligence." },
 ];
 
+const STANDARDS = [
+  "Opinion and explainer pieces are labelled as such; everything else is reporting from the linked source.",
+  "Sources that may need a subscription are marked, so you know before you click.",
+  "Summaries stay short and quotes brief, so the original is still worth reading.",
+  "Graphics are original to KKReckons or used under licence, and each one is credited.",
+  "The AI Stress Index publishes its method, thresholds, sources and model changes on its page.",
+  "Nothing here is financial, legal or career advice.",
+];
+
 function Pic({ name, alt, w, h, png }: { name: string; alt: string; w: number; h: number; png?: boolean }) {
   return (
     <picture>
@@ -164,9 +173,9 @@ export default function About() {
           </ul>
         </section>
 
-        <section className="ab-rules" aria-labelledby="rules-title">
+        <section className="ab-rules" id="standards" aria-labelledby="rules-title">
           <p className="ab-kicker" id="rules-title">
-            House rules
+            Editorial standards &amp; corrections
           </p>
           <ul>
             {RULES.map(({ Icon, text }) => (
@@ -176,6 +185,11 @@ export default function About() {
                 </span>
                 <p>{text}</p>
               </li>
+            ))}
+          </ul>
+          <ul className="ab-std">
+            {STANDARDS.map((t) => (
+              <li key={t}>{t}</li>
             ))}
           </ul>
           {CORRECTIONS_EMAIL && (

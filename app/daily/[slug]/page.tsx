@@ -5,6 +5,7 @@ import EditionView from "@/components/EditionView";
 import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
+import { relatedFor } from "@/lib/related";
 import { editions, getEdition, longDate, shortDate, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
 
@@ -81,7 +82,7 @@ export default async function EditionPage({ params }: Props) {
         <Link href="/daily/">Catch up</Link> <span>/</span> {longDate(edition.date)}
       </nav>
 
-      <EditionView e={content} showDate={false} />
+      <EditionView e={content} showDate={false} related={relatedFor(edition.date)} />
       <SubscribeBox />
 
       <nav className="pager">
