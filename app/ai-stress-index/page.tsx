@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/ai-stress-index",
     images: [{ url: "/og/ai-stress-index.jpg", width: 1200, height: 630, alt: "AI Market Stress Index: a daily 0–100 stress gauge by KK Reddy" }],
   },
-  twitter: { card: "summary_large_image", title: `${TITLE} · KKReckons`, description: DESCRIPTION, images: ["/og/ai-stress-index.jpg"] },
+  twitter: { card: "summary_large_image", creator: "@kkreddy78", title: `${TITLE} · KKReckons`, description: DESCRIPTION, images: ["/og/ai-stress-index.jpg"] },
 };
 
 /* The data is rebuilt every weekday by github.com/kkreddy79/ai-implosion. The page is rendered on the

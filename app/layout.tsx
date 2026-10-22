@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["/about/two-worlds.jpg"],
   },
-  twitter: { card: "summary_large_image", images: ["/about/two-worlds.jpg"] },
+  twitter: { card: "summary_large_image", creator: "@kkreddy78", images: ["/about/two-worlds.jpg"] },
   // Lets Google show the graphics as large previews (Discover, search).
   robots: { index: true, follow: true, "max-image-preview": "large", googleBot: { index: true, follow: true, "max-image-preview": "large" } },
 };
@@ -66,6 +66,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <a href="/feed.xml">RSS</a>
             <a href={PROFILES.linkedin} rel="me noreferrer" target="_blank">
               LinkedIn
+            </a>
+            <a href={PROFILES.x} rel="me noreferrer" target="_blank">
+              X
             </a>
           </nav>
         </footer>

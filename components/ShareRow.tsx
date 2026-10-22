@@ -25,7 +25,7 @@ export default function ShareRow({ url, slice }: { url: string; slice: string })
       <a className="ev-wa" href={`https://wa.me/?text=${enc(`${text}\n${tagged(url, "whatsapp")}`)}`} target="_blank" rel="noreferrer">
         WhatsApp
       </a>
-      <a href={`https://x.com/intent/post?text=${enc(text)}&url=${enc(tagged(url, "x"))}`} target="_blank" rel="noreferrer">
+      <a href={`https://x.com/intent/post?text=${enc(text)}&url=${enc(tagged(url, "x"))}&via=kkreddy78`} target="_blank" rel="noreferrer">
         X
       </a>
       <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${enc(tagged(url, "linkedin"))}`} target="_blank" rel="noreferrer">
