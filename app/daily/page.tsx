@@ -25,7 +25,7 @@ function readingLinks(): ReadingLink[] {
 }
 
 export const metadata: Metadata = {
-  title: "Catch up",
+  title: "Catch up: every daily briefing",
   description: "Missed a day? Every KKReckons edition, organised by date, with searchable headlines.",
   alternates: { canonical: "/daily" },
 };

@@ -21,10 +21,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const found = getEdition((await params).slug);
   if (!found) return {};
   const { edition } = found;
-  // The day's headline leads the title (what searchers and shared links see), then the date.
-  const title = edition.slice ? `${edition.slice} | ${shortDate(edition.date)} ${edition.date.slice(0, 4)}` : longDate(edition.date);
+  // Search results show the lead story's own headline (what people search for), then the date; shared
+  // links keep KK's headline for the day (slice), which reads well in a feed but says little in search.
+  const day = `${shortDate(edition.date)} ${edition.date.slice(0, 4)}`;
+  const lead = edition.stories[0]?.title;
+  const more = edition.stories.length - 1;
+  const title = edition.slice ? `${edition.slice} | ${day}` : longDate(edition.date);
+  const searchTitle = lead ? `${lead}${more > 0 ? ` + ${more} more` : ""} | ${day}` : title;
+  const heads = edition.stories.map((s) => s.title).join(" · ");
+  const description = clip(`KKReckons briefing for ${longDate(edition.date)}: ${heads}`, 158);
   return {
-    title,
+    title: searchTitle,
     alternates: { canonical: `/daily/${slugFor(edition.date)}` },
     // Setting openGraph here replaces the site-wide one, so the share image must be repeated.
     openGraph: {
@@ -35,13 +42,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [edition.image || "/about/two-worlds.jpg"],
     },
     twitter: { card: "summary_large_image", images: [edition.image || "/about/two-worlds.jpg"] },
-    description:
-      edition.slice ||
-      edition.stories
-        .map((s) => s.title)
-        .slice(0, 3)
-        .join(" · "),
+    description,
   };
+}
+
+/** Cut at a word boundary so search snippets end cleanly. */
+function clip(s: string, max: number) {
+  if (s.length <= max) return s;
+  return s.slice(0, s.lastIndexOf(" ", max - 1)).replace(/[;,:·]$/, "").trim() + "…";
 }
 
 export default async function EditionPage({ params }: Props) {
@@ -69,7 +77,7 @@ export default async function EditionPage({ params }: Props) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Catch up", item: `${SITE_URL}/daily/` },
+        { "@type": "ListItem", position: 1, name: "Catch up", item: `${SITE_URL}/daily` },
         { "@type": "ListItem", position: 2, name: longDate(edition.date), item: url },
       ],
     },
