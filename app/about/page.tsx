@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
 import Link from "next/link";
 import Banner from "@/components/Banner";
 import SubscribeBox from "@/components/SubscribeBox";
@@ -15,7 +16,7 @@ import {
 
 const TITLE = "About KKReckons | Signal & Spice from Two Worlds";
 const DESCRIPTION =
-  "Meet Krishnakanth Reddy and discover KKReckons: thoughtful briefings on AI, markets, business and global affairs, with context, evidence and perspectives beyond the headlines.";
+  "Meet Krishnakanth Reddy and KKReckons: visual daily briefings on AI, markets, business and global affairs, with sources, context and the other side.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -58,6 +59,15 @@ export default function About() {
 
   return (
     <main className="about">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          name: TITLE,
+          description: DESCRIPTION,
+          mainEntity: { ...AUTHOR, worksFor: PUBLISHER },
+        }}
+      />
       <Banner />
 
       <div className="ab-wrap">
