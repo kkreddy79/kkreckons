@@ -11,6 +11,11 @@ const securityHeaders = [
 
 const nextConfig = {
   images: { unoptimized: true },
+  // The AI Stress Index data, published by its own pipeline on GitHub Pages, is also served from this
+  // domain, so citations and dataset listings credit kkreckons.com.
+  async rewrites() {
+    return [{ source: "/ai-stress-index/:file(data|backtest).json", destination: "https://kkreddy79.github.io/ai-implosion/:file.json" }];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },

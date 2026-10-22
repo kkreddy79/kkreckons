@@ -15,5 +15,5 @@ export const PUBLISHER = {
   "@type": "Organization",
   name: "KKReckons",
   url: SITE_URL,
-  logo: { "@type": "ImageObject", url: `${SITE_URL}/about/two-worlds.jpg` },
+  logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png`, width: 600, height: 600 },
 };

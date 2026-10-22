@@ -119,7 +119,7 @@ function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"];
 /** Graphics more than 1.6× as tall as they are wide are shown cut to the text's height, with a button to expand. */
 const TALL = 1.6;
 
-function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string }) {
+function StoryCard({ s, n, wide, full, id, date }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string }) {
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
@@ -228,6 +228,12 @@ function StoryCard({ s, n, wide, full, id }: { s: FullStory; n: number; wide: bo
               </a>
             </span>
           ))}
+        </p>
+      )}
+
+      {s.cite && (
+        <p className="ev-cite">
+          <b>Quote this</b> {s.cite} <span>(KKReckons, {shortDate(date)} {date.slice(0, 4)})</span>
         </p>
       )}
 
@@ -363,6 +369,7 @@ export default function EditionView({
                     s={s}
                     n={n}
                     id={`qs-${e.date}-${n}`}
+                    date={e.date}
                     wide={sec.name === "Pick of the day"}
                     full={lone.has(i)}
                   />

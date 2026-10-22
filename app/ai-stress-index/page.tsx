@@ -54,7 +54,7 @@ export default async function AiStressIndexPage() {
             dateModified: d.generatedAt,
             ...(hist.length ? { temporalCoverage: `${hist[0].date}/${hist[hist.length - 1].date}` } : {}),
             variableMeasured: ["AI Market Stress Index (0–100)", ...d.factors.map((f) => f.name)],
-            distribution: { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${STRESS_BASES[0]}/data.json` },
+            distribution: { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${SITE_URL}/ai-stress-index/data.json` },
           }}
         />
       )}

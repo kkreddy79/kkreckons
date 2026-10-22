@@ -181,6 +181,8 @@ function fromEmbedded(date, d) {
       // Short copy for the subscriber email (scripts/beehiiv-email.mjs).
       ...(clean(s.ehead) ? { emailHead: clean(s.ehead) } : {}),
       ...(clean(s.eteaser) ? { emailTeaser: clean(s.eteaser) } : {}),
+      // A quotable one-sentence fact with its figure (shown as "Quote this" under the story).
+      ...(clean(s.cite) ? { cite: clean(s.cite) } : {}),
       // Editorial choice: link this story to the AI Stress Index (site card + email line).
       ...(s.stressindex === true || /^(yes|true)$/i.test(String(s.stressindex ?? "")) ? { stressIndex: true } : {}),
     };
