@@ -4,9 +4,9 @@ import StressIndex, { type Backtest, type Data } from "@/components/StressIndex"
 import { STRESS_BASES } from "@/lib/stress";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "AI Market Stress Index: a daily AI bubble gauge";
+const TITLE = "AI Market Stress Index: an experimental daily AI-bubble stress gauge";
 const DESCRIPTION =
-  "A daily 0–100 gauge of stress in the AI boom: AI stocks, the financing behind the AI build-out and the wider credit market. By Krishnakanth Reddy.";
+  "An experimental daily 0–100 composite of stress in AI stocks, AI financing and credit markets: a monitoring dashboard, not a forecast. By Krishnakanth Reddy.";
 
 export const metadata: Metadata = {
   title: TITLE,

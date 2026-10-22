@@ -79,6 +79,16 @@ const SHORT: Record<string, string> = {
   NDX: "Nasdaq-100", SOX: "Semiconductors", AIQ: "AI & tech ETF", DTCR: "Data-center ETF", BBB: "BBB credit spreads",
   CCC: "CCC credit spreads", BIZD: "Listed BDCs", BKLN: "Leveraged loans", HY: "High-yield spreads",
 };
+// Which gauges measure AI exposure directly, and which are broad-market proxies (they move with the
+// whole market or all borrowers, not only AI). Shown beside each gauge so stress isn't misattributed to AI.
+const KIND: Record<string, "AI-specific" | "Broad-market proxy"> = {
+  SOX: "AI-specific", AIQ: "AI-specific", DTCR: "AI-specific",
+  NDX: "Broad-market proxy", BIZD: "Broad-market proxy", BKLN: "Broad-market proxy", BBB: "Broad-market proxy", CCC: "Broad-market proxy", HY: "Broad-market proxy",
+};
+function KindTag({ col }: { col: string }) {
+  const k = KIND[col];
+  return k ? <em className={k === "AI-specific" ? s.kindAi : s.kindBroad}>{k}</em> : null;
+}
 const C = { red: "#DC2626", orangeRed: "#EA580C", green: "#16A34A", amber: "#F59E0B", indigo: "#4F46E5", teal: "#0D9488", slate: "#1E293B" };
 const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -210,7 +220,7 @@ function GaugeCard({ f }: { f: Factor }) {
   return (
     <details className={s.gaugeRow}>
       <summary>
-        <span className={s.gName}>{SHORT[f.col] ?? f.name}{f.stale && <em className={s.staleTag}>stale</em>}<small>{f.descriptor}</small>
+        <span className={s.gName}>{SHORT[f.col] ?? f.name}<KindTag col={f.col} />{f.stale && <em className={s.staleTag}>stale</em>}<small>{f.descriptor}</small>
           <small className={s.gQuick}>{f.current == null ? "No data" : dd ? num(f.current) : `${num(f.current, 0)} bp`} · contributes {f.points.toFixed(1)} pts</small></span>
         <span className={s.gBar}><span style={{ width: pct(f.stress, 1), background: stressColor(f.stress) }} /></span>
         <span className={s.gPct}>{s100(f.stress)}<small>/100</small></span>
@@ -556,7 +566,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
       {/* Layer 1: the daily snapshot */}
       <section className={s.hero} id="today">
         <div className={s.scoreCard}>
-          <div className={s.label}>Overall stress</div>
+          <div className={s.label}>Composite stress score (0–100)</div>
           <div className={s.scoreRow}>
             <span className={s.score} style={{ color: bandText(d.score) }}>{d.score ?? "—"}</span>
             <span className={s.outOf}>/ 100</span>
@@ -573,13 +583,16 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           )}
           <Meter score={d.score} />
           <p className={s.interp}>{h.line}</p>
+          <p className={s.meaningLine}>
+            A summary of the nine gauges below, not a probability of a crash or a verdict on AI valuations. <a href="#meaning">What this score means</a>
+          </p>
           <p className={s.alert}>Stress band: <b>{band(d.score)}</b> · Formal alert: <b>{active ? `${active.level} ${ALERTS[active.level]}` : "None"}</b>{d.shock && <> · Shock flag: <b style={d.shock.active ? { color: C.red } : undefined}>{d.shock.active ? "On" : "Off"}</b></>}</p>
           {d.shock?.active && <p className={s.staleWarn}>Shock flag: the index is {d.score}, at or above {d.shock.threshold}, but no formal alert has confirmed. Fast sell-offs can do this without holding long enough for an alert. It is a heads-up, not an alert.</p>}
           <div className={s.fresh}>
             <div><span>Stock &amp; ETF data</span><b>{longDate(priceDate)} · US close</b><em className={s.ok}>Current</em></div>
             <div><span>Credit spread data</span><b>{longDate(spreadDate)} · latest available</b>
               <em className={spreadLag > 3 ? s.bad : s.ok}>{spreadLag === 0 ? "Current" : spreadLag <= 3 ? `${spreadLag}-day publication lag` : `Stale (${spreadLag} days)`}</em></div>
-            <p>Refreshed {refreshedTxt}.{carried.length > 0 && spreadDate ? ` No newer credit spread readings were published since ${shortDate(spreadDate)}, so the index uses those.` : ""}{stale.length ? ` ${stale.length} gauge${stale.length > 1 ? "s are" : " is"} stale and ${stale.length > 1 ? "keep their" : "keeps its"} last value in the index.` : ""}</p>
+            <p><a href="/ai-stress-index/data.json" download>Download the data (JSON)</a> · Refreshed {refreshedTxt}.{carried.length > 0 && spreadDate ? ` No newer credit spread readings were published since ${shortDate(spreadDate)}, so the index uses those.` : ""}{stale.length ? ` ${stale.length} gauge${stale.length > 1 ? "s are" : " is"} stale and ${stale.length > 1 ? "keep their" : "keeps its"} last value in the index.` : ""}</p>
           </div>
         </div>
 
@@ -666,6 +679,18 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
         </div>
       </details>
 
+      <section className={s.meaning} id="meaning" aria-labelledby="meaning-title">
+        <h2 id="meaning-title">What this score means</h2>
+        <p>An experimental monitoring dashboard: one 0–100 composite of nine AI-related stock, financing and credit-market gauges, under the published method below.</p>
+        <ul>
+          <li><b>Not a probability.</b> 70/100 is not a 70% chance of a crash, and a low score doesn’t mean markets are safe.</li>
+          <li><b>Not a valuation call.</b> It reads market stress, not whether AI companies are fairly priced or will earn back their spending.</li>
+          <li><b>Partly proxies.</b> Six of the nine gauges are broad-market measures (marked on each gauge), so general credit or market stress can move the score without an AI-specific cause.</li>
+          <li><b>Alerts can be late or wrong.</b> They need 5 trading days to confirm, may come after a sell-off has started, and can fire without a later decline. The backtest below lists misses and false alarms.</li>
+        </ul>
+        <p>Use it alongside established volatility and credit indicators and your own research. Not financial advice. <a href="/ai-stress-index/data.json" download>Download today’s data (JSON)</a></p>
+      </section>
+
       {/* Layer 3: the methodology */}
       <h2 className={s.h2} id="methodology">Methodology</h2>
       <details className={s.fold}>
@@ -695,7 +720,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
         <summary>Why each gauge is weighted this way</summary>
         <div className={s.foldBody}>
           <ul className={s.whyList}>
-            {d.factors.map((f) => <li key={f.col}><b>{SHORT[f.col]} · {pct(f.weight)} · {PILLAR[f.pillar]}</b><span>{f.rationale}</span><small>{plus10(f)}</small></li>)}
+            {d.factors.map((f) => <li key={f.col}><b>{SHORT[f.col]} · {pct(f.weight)} · {PILLAR[f.pillar]} · {KIND[f.col] ?? ""}</b><span>{f.rationale}</span><small>{plus10(f)}</small></li>)}
           </ul>
         </div>
       </details>
