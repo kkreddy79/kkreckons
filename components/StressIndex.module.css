@@ -81,9 +81,9 @@
 .pillarVal { font-family: var(--serif); font-size: 34px; font-weight: 700; color: #1E293B; margin: 4px 0 8px; font-variant-numeric: tabular-nums; }
 .pillarVal small { font-family: var(--sans); font-size: 14px; color: var(--muted); font-weight: 600; margin-left: 2px; }
 .pillarVal span { font-family: var(--sans); font-size: 14px; font-weight: 800; margin-left: 8px; }
-.cite { font-size: 13px; line-height: 1.5; margin: 14px 0 0; padding: 10px 14px; border-radius: 10px; background: #f7f3fd; border: 1px solid #e4dcf3; color: #24123f; overflow-wrap: anywhere; }
+.cite { font-size: 13px; line-height: 1.5; margin: 28px 0 0; color: var(--muted2); overflow-wrap: anywhere; }
 .cite a { color: #35205f; font-weight: 700; }
-.disclaim { font-size: 13px; color: var(--muted); margin: 12px 0 0; font-style: italic; }
+.disclaim { font-size: 13px; line-height: 1.5; color: var(--muted2); margin: 8px 0 0; }
 
 /* ---------- Layer 2 ---------- */
 .worse { color: #B91C1C; font-weight: 800; }
