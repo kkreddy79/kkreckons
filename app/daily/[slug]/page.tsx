@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${title} · KKReckons`,
       images: [edition.image || "/about/two-worlds.jpg"],
     },
-    twitter: { card: "summary_large_image", images: [edition.image || "/about/two-worlds.jpg"] },
+    twitter: { card: "summary_large_image", creator: "@kkreddy78", images: [edition.image || "/about/two-worlds.jpg"] },
     description,
   };
 }
