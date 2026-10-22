@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function StandardsPage() {
   return (
-    <main className="about">
+    <main className="about ab-standards">
       <div className="ab-wrap">
         <section className="ab-hero ab-hero-plain" aria-labelledby="standards-title">
           <p className="ab-kicker">Standards</p>
