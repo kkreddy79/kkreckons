@@ -364,6 +364,11 @@ a.ev-call:hover { transform: translateY(-2px); }
 
 .ab-hero { margin-top: clamp(-80px, -5vw, -30px); position: relative; padding-bottom: 28px; }
 .ab-hero-plain { margin-top: clamp(28px, 4vw, 48px); }
+.ab-standards .ab-hero { padding-bottom: 0; }
+.ab-standards .ab-hero h1 { margin-bottom: 10px; font-size: clamp(32px, 4vw, 46px); }
+.ab-standards .ab-lede { max-width: none; }
+.ab-standards .ab-lede a { white-space: nowrap; }
+.ab-standards .ab-rules { margin-top: 24px; }
 .ab-hero h1 { margin: 0 0 16px; font-size: clamp(34px, 5.4vw, 60px); line-height: 1.06; letter-spacing: -0.02em; color: var(--ab-ink); }
 .ab-lede { margin: 0; max-width: 560px; font-size: clamp(16px, 1.7vw, 19px); line-height: 1.5; color: #3b3546; }
 
