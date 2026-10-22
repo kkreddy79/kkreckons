@@ -22,6 +22,7 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `callout` | – | Numbers of the day: `{ "num": "20,000+", "lead": "staff moved…", "rest": "…", "url": "…" }`. |
 | `reading` | – | Further reading: `{ "title": "…", "url": "…", "note": "…" }` (`src` is accepted in place of `note`). |
 | `takeaway` | – | For the subscriber email: the day in two short contrasting phrases plus one line, `{ "a": "Big bets.", "b": "Few hires.", "line": "Money is pouring into India. Jobs need to keep up." }`. |
+| `cover` | – | The edition's cover for link previews, Google Discover and the article's structured data: a 1600×900 (16:9) image as a `data:image/jpeg;base64,…` (or PNG/WebP) string, or `{ "src": "data:…", "alt": "…" }`. Another size is cropped to 1600×900. Without one, previews use the first story graphic. |
 
 ## Each story
 

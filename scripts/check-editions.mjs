@@ -154,5 +154,9 @@ for (const date of dates) if (content[date].sections.some((sec) => sec.stories.s
 for (const v of vague) console.log(`⚠ Further reading needs a real title (it only names the platform): ${v}`);
 for (const x of suggested) console.log(`ℹ Possible AI Stress Index link (AI debt/credit story, not tagged): ${x}`);
 for (const a of altless) console.log(`⚠ Image has no alt text for screen readers (add figalt): ${a}`);
+{
+  const newest = [...dates].sort().pop();
+  if (newest && !content[newest].cover) console.log(`ℹ ${newest}: no 1600×900 cover (newsletter "cover"); link previews and Google Discover use the first story graphic`);
+}
 console.log(problems ? `${problems} problem(s) found.` : "All checks passed.");
 process.exit(problems ? 1 : 0);

@@ -74,6 +74,10 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    AI debt, AI financing or credit stress with `{ "stressIndex": true }` under `stories` in `data/edition-meta.json` and re-run;
    skip passing mentions (a story that is mainly about something else). List the linked stories in the pull request and your
    message so he can say "remove" for any. Tagging a story this way is not a decision that holds up an advance-approved publish.
+   **Cover:** the newsletter's top-level `cover` (1600×900) becomes the edition's share image, Google
+   Discover image and first structured-data image. The check prints "ℹ … no 1600×900 cover" when it's
+   missing; mention it in your message (previews then fall back to the first story graphic). Look at the
+   cover in the rights review like any graphic.
 5. **Rights review** (copyright and paywall rules in `docs/edition-format.md`), done by you, not a script:
    - **Images:** look at every `public/figs/<YYYY-MM-DD>-*` file, all at once on one contact sheet
      (PIL, about 1600px wide) rather than one by one. Allowed: his own original
