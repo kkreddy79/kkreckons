@@ -4,7 +4,7 @@ import "@fontsource/playfair-display/latin-800.css";
 import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
-import { SUBSCRIBE_URL } from "@/lib/site";
+import { PROFILES, SUBSCRIBE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -49,7 +49,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </div>
         <footer className="site-footer">
           <div>
-            Curated by Krishnakanth Reddy
+            Curated by{" "}
+            <a href={PROFILES.linkedin} rel="me noreferrer" target="_blank">
+              Krishnakanth Reddy
+            </a>
             <br />
             <span className="fine">For information only. Not financial, legal or career advice.</span>
           </div>
@@ -61,6 +64,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/standards">Standards</Link>
             <Link href="/privacy">Privacy</Link>
             <a href="/feed.xml">RSS</a>
+            <a href={PROFILES.linkedin} rel="me noreferrer" target="_blank">
+              LinkedIn
+            </a>
           </nav>
         </footer>
         <Analytics />

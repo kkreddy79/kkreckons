@@ -26,6 +26,8 @@ export type FullStory = {
   themes?: string[];
   /** Short headline written for the email; also used in the edition's "Today in 30 seconds" list. */
   emailHead?: string;
+  /** One self-contained sentence with the story's key figure, for readers and AI tools to quote. */
+  cite?: string;
   /** Editorial choice: show a link to the AI Stress Index under this story. */
   stressIndex?: boolean;
 };
