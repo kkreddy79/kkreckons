@@ -38,6 +38,8 @@ const STRESS_SOURCES = [
   "https://raw.githubusercontent.com/kkreddy79/ai-implosion/main/docs/data.json",
 ];
 const STRESS_LIVE_SINCE = "2026-10-15";
+// From this edition on, every edition shows the day's reading, whether or not a story is linked to it.
+const STRESS_DAILY_FROM = "2026-10-22";
 let stressHistory;
 const stressBand = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elevated" : "Normal");
 async function stressSnapshot(date) {
@@ -341,13 +343,14 @@ for (const file of files) {
   for (const r of content.reading) if (m.reading?.[r.url]) Object.assign(r, m.reading[r.url]);
   const stories = content.sections.flatMap((s) => s.stories);
   for (const s of stories) if (s.image) Object.assign(s, await figVariants(s.image));
-  if (stories.some((s) => s.stressIndex) && !m.stressIndex) {
+  const showStress = stories.some((s) => s.stressIndex) || date >= STRESS_DAILY_FROM;
+  if (showStress && !m.stressIndex) {
     const snap = await stressSnapshot(date);
     if (snap) {
       meta[date] = { ...meta[date], stressIndex: snap };
       metaChanged = true;
       console.log(`${date}: AI Stress Index reading saved (${snap.score}/100, ${snap.band}, as of ${snap.asOf}${snap.backCalculated ? ", back-calculated" : ""})`);
-    } else console.log(`${date}: AI Stress Index data unreachable; linked stories show the link without a number`);
+    } else console.log(`${date}: AI Stress Index data unreachable; the edition shows the link without a number`);
   }
   const stress = meta[date]?.stressIndex;
   const words = JSON.stringify(stories).split(/\s+/).length;
@@ -360,7 +363,7 @@ for (const file of files) {
     sections: content.sections,
     reading: content.reading,
     ...(content.takeaway ? { takeaway: content.takeaway } : {}),
-    ...(stress && stories.some((s) => s.stressIndex) ? { stressIndex: stress } : {}),
+    ...(stress && showStress ? { stressIndex: stress } : {}),
   };
   fs.writeFileSync(path.join(contentDir, `${date}.json`), JSON.stringify(record, null, 2) + "\n");
 

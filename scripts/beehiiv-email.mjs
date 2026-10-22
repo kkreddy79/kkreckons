@@ -141,7 +141,7 @@ rows.push(
     : `<tr><td colspan="2" style="padding:4px 0 2px 12px;border-left:4px solid ${E.coral};font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;color:${E.ink};">${esc(ed.slice)}</td></tr>`,
 );
 
-// One AI Stress Index line under the story list when KK links any story to it, with the reading saved at publication.
+// One AI Stress Index line under the story list, with the reading saved at publication (and the linked stories, if any).
 const si = ed.stressIndex;
 const siDate = si ? `${+si.asOf.slice(8)} ${new Date(`${si.asOf}T00:00:00Z`).toLocaleString("en-GB", { month: "short", timeZone: "UTC" })}` : "";
 const related = stories.flatMap((s, i) => (s.stressIndex ? [String(i + 1).padStart(2, "0")] : []));
@@ -175,11 +175,12 @@ for (const [i, s] of stories.entries()) {
   );
 }
 
-if (related.length) {
+if (si || related.length) {
   rows.push(
     `<tr><td colspan="2" style="padding:8px 0 0;font-family:${SANS};font-size:13px;line-height:1.35;">` +
       a(`${SITE}/ai-stress-index`, si ? `&#9679; AI Stress Index: ${si.score}/100, ${esc(si.band)} (${siDate}${si.backCalculated ? ", back-calculated" : ""}) &rarr;` : "&#9679; See today’s AI Stress Index &rarr;", "color:#7048E8;font-weight:700;") +
-      `<span style="color:${E.muted};"> · tracks ${related.length === 1 ? "story" : "stories"} ${related.join(", ")}</span></td></tr>`,
+      (related.length ? `<span style="color:${E.muted};"> · tracks ${related.length === 1 ? "story" : "stories"} ${related.join(", ")}</span>` : "") +
+      `</td></tr>`,
   );
 }
 

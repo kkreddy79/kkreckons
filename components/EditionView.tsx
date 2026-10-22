@@ -45,7 +45,7 @@ const BANDS: [string, number, string][] = [
 ];
 const bandOf = (score: number) => [...BANDS].reverse().find(([, lo]) => score >= lo)!;
 
-/** The AI Stress Index, shown once near the top of an edition when KK tags any story as related. The reading is the one saved when the edition was published. */
+/** The AI Stress Index, shown once near the top of an edition (every edition from 22 Oct 2026, earlier ones only when KK tagged a story). The reading is the one saved when the edition was published. */
 function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"]; related: number[]; date: string }) {
   const band = si ? bandOf(si.score) : null;
   const next = band ? BANDS[BANDS.indexOf(band) + 1] : null;
@@ -96,14 +96,18 @@ function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"];
         </div>
       )}
       <div className="ev-sx-foot">
-        <span>
-          Behind today’s {related.length === 1 ? "story" : "stories"}{" "}
-          {related.map((n) => (
-            <a key={n} href={`#story-${n}`}>
-              {String(n).padStart(2, "0")}
-            </a>
-          ))}
-        </span>
+        {related.length > 0 ? (
+          <span>
+            Behind today’s {related.length === 1 ? "story" : "stories"}{" "}
+            {related.map((n) => (
+              <a key={n} href={`#story-${n}`}>
+                {String(n).padStart(2, "0")}
+              </a>
+            ))}
+          </span>
+        ) : (
+          <span>Updated every trading day</span>
+        )}
         <Link className="ev-sx-cta" href="/ai-stress-index">
           See the gauges →
         </Link>
@@ -291,7 +295,7 @@ export default function EditionView({
       </section>
       <PrintImages />
 
-      {tracked.length > 0 && <StressCard si={e.stressIndex} related={tracked} date={e.date} />}
+      {(tracked.length > 0 || e.stressIndex) && <StressCard si={e.stressIndex} related={tracked} date={e.date} />}
 
       {count > 2 && (
         <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
