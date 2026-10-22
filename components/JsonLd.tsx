@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/lib/site";
+import { PROFILES, SITE_URL } from "@/lib/site";
 
 /** Structured data for search engines (schema.org JSON-LD). */
 export default function JsonLd({ data }: { data: object }) {
@@ -10,7 +10,7 @@ export default function JsonLd({ data }: { data: object }) {
   );
 }
 
-export const AUTHOR = { "@type": "Person", name: "Krishnakanth Reddy", url: `${SITE_URL}/about` };
+export const AUTHOR = { "@type": "Person", name: "Krishnakanth Reddy", url: `${SITE_URL}/about`, sameAs: Object.values(PROFILES) };
 export const PUBLISHER = {
   "@type": "Organization",
   name: "KKReckons",

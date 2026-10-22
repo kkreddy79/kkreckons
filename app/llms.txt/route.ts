@@ -1,5 +1,5 @@
 import { editions, latest, longDate, slugFor } from "@/lib/editions";
-import { SITE_URL } from "@/lib/site";
+import { PROFILES, SITE_URL } from "@/lib/site";
 import { STRESS_BASES } from "@/lib/stress";
 
 export const dynamic = "force-static";
@@ -9,7 +9,7 @@ export function GET() {
   const recent = editions.slice(0, 14);
   const body = `# KKReckons
 
-> A free daily visual briefing on AI, markets, business, India and the world, curated by Krishnakanth Reddy. Each edition has about seven stories, each with a source link, summary points, key numbers, "why it matters" and the other side.
+> A free daily visual briefing on AI, markets, business, India and the world, curated by Krishnakanth Reddy (LinkedIn: ${PROFILES.linkedin}). Each edition has about seven stories, each with a source link, summary points, key numbers, "why it matters" and the other side.
 
 Editions are published at ${SITE_URL}/daily/<month>-<day>-<year> (for example ${SITE_URL}/daily/${slugFor(latest.date)}). Every story links to its original source; summaries are written in KKReckons' own words.
 
