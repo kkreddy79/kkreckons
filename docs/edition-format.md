@@ -20,7 +20,7 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `india` | – | India edition stories. |
 | `world` | – | World edition stories. |
 | `callout` | – | Numbers of the day: `{ "num": "20,000+", "lead": "staff moved…", "rest": "…", "url": "…" }`. |
-| `reading` | – | Further reading: `{ "title": "…", "url": "…", "note": "…" }` (`src` is accepted in place of `note`). |
+| `reading` | – | Further reading: `{ "title": "…", "url": "…", "note": "…" }` (`src` is accepted in place of `note`). Every item needs a real title (never a bare platform name such as "Video (YouTube)") and a one-line note on why it's worth reading. |
 | `takeaway` | – | For the subscriber email: the day in two short contrasting phrases plus one line, `{ "a": "Big bets.", "b": "Few hires.", "line": "Money is pouring into India. Jobs need to keep up." }`. |
 | `cover` | – | The edition's cover for link previews, Google Discover and the article's structured data: a 1600×900 (16:9) image as a `data:image/jpeg;base64,…` (or PNG/WebP) string, or `{ "src": "data:…", "alt": "…" }`. Another size is cropped to 1600×900. Without one, previews use the first story graphic. |
 
@@ -36,9 +36,9 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `pts` | yes | Summary points, **at least two**. |
 | `nums` | – | Key numbers: `[["₹7.10L cr", "deficit, April–August"], …]`. |
 | `why` | yes | Why it matters. |
-| `flip` | – | Other side. Start with `What to watch:` to label it "Watch next" instead. |
+| `flip` | – | Other side: the counter-argument. Every story should have one (the site promises it). Start with `What to watch:` only for a genuine dated upcoming event; it is then labelled "Watch next". |
 | `also` | – | Also read: `[{ "t": "title", "u": "url" }]`. |
-| `fig`, `figalt` | – | Story image as a `data:image/…;base64,` URL, plus its alt text. |
+| `fig`, `figalt` | – | Story image as a `data:image/…;base64,` URL, rendered **1280px wide or more**, plus its alt text. `figalt` names the 2–3 key figures the graphic shows, so screen readers and search can read them. |
 | `figcredit` | with `fig` | Where the image comes from, shown under it. For example `Original graphic: KKReckons`, `Photo: Jane Doe / Unsplash` or `Wikimedia Commons, CC BY-SA 4.0`. An image without one fails the checks. |
 | `src` | – | Publisher name to show, for example `Mint`. If left out, the site names it from the link. |
 | `pay` | – | `true`/`"paid"` or `false`/`"free"`. If left out, the site decides from the link's domain. |
@@ -47,6 +47,20 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `eteaser` | – | For the subscriber email: a one-line teaser, about 10 words (`"2,300 applications later, the hiring freeze still wins."`). If left out, the email uses the first sentence of `why`. |
 | `stressindex` | – | `true` to link the story to the AI Stress Index. The edition then shows the index once (a card in "Today in 30 seconds" on the website, with an "Index" tag on each linked story, and one line under the story list in the email), showing the index reading at the last close before the edition (saved once, so old editions keep their dated number; readings from before the index went live on 15 October 2026 are marked back-calculated). Use it for stories about AI debt, AI financing or credit stress; it's an editorial choice. It can also be set afterwards with a `{ "stressIndex": true }` story override in `data/edition-meta.json`. |
 | `themes` | – | Catch up themes, any of: `AI`, `Markets`, `Banking`, `India`, `Jobs & careers`, `Geopolitics`, `Personal finance`, `Health & science`. Unknown names are ignored. If left out (or none match), the site picks themes from the category and title. |
+
+## Writing for search, previews and the email
+
+- **Cover on every edition.** Add the top-level `cover` (1600×900). It is the share image, the Google Discover
+  image and the first image Google reads for the article. Own original artwork only (same rules as story
+  graphics), with key text away from the edges, because previews crop.
+- **The lead headline is the search title.** The first Pick of the day story's `title` is what Google shows in
+  results ("<title> + 7 more | 22 Oct 2026"). Make it plain and searchable: names, numbers, the actual news,
+  not wordplay. Keep the wit in `slice`, which shared links still show.
+- **Quotable facts.** Where a story has a headline figure, add `cite`: one self-contained sentence with the
+  figure and its date.
+- **AI Stress Index.** The day's reading appears on every edition automatically. Set `stressindex: true` only on
+  stories that are mainly about AI debt, AI financing or credit stress.
+- **Email copy.** Keep `ehead`, `eteaser` and `takeaway` on every edition: they write the subscriber email.
 
 ## Content rules (checked before every edition goes live)
 
