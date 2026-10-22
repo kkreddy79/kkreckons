@@ -351,5 +351,10 @@
     "a": "Cheap today.",
     "b": "Costly later.",
     "line": "An overlooked flaw, a one-time tax and a high-yield shortcut — all look attractive until the bill comes due."
+  },
+  "stressIndex": {
+    "score": 26,
+    "band": "Elevated",
+    "asOf": "2026-10-21"
   }
 }

@@ -69,7 +69,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      in the pull request and in your message, so he can check them. Anything you can't fix stays
      listed as an open problem.
    **AI Stress Index links** (he wants these every day): stories about AI debt, AI financing or credit stress get a link to
-   the index (shown once per edition: a card in "Today in 30 seconds" with an "Index" tag on each linked story, and one email line) with the reading saved at publication. The newsletter can mark them `stressindex: true`;
+   the index. Every edition (from 22 Oct 2026) shows the day's reading, saved at publication, once: a card in "Today in 30 seconds" and one email line. Linked stories add an "Index" tag and are named on the card; with none it reads "Updated every trading day". The newsletter can mark them `stressindex: true`;
    the check also prints "ℹ Possible AI Stress Index link" for likely ones it doesn't mark. Tag each story that is clearly about
    AI debt, AI financing or credit stress with `{ "stressIndex": true }` under `stories` in `data/edition-meta.json` and re-run;
    skip passing mentions (a story that is mainly about something else). List the linked stories in the pull request and your
