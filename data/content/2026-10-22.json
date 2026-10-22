@@ -1,0 +1,355 @@
+{
+  "date": "2026-10-22",
+  "slice": "Patch the code. Hedge AI. China hoards cash. Ask the bot. Risk finds a new address.",
+  "artifact": "https://claude.ai/artifact/A8FnAYK87WkjFHqR2zh97M",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "85%",
+      "text": "of 100,000 simulations show California’s billionaire tax losing money (NBER paper)",
+      "url": "https://www.nber.org/system/files/working_papers/w35899/w35899.pdf"
+    },
+    {
+      "num": "2 in 3",
+      "text": "US doctors now use OpenEvidence, an ad-funded AI search tool, its founder says",
+      "url": "https://www.ft.com/content/0ed17b79-47dd-4ad8-8dca-44eb35617edc?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Global economy",
+          "tag": "",
+          "title": "Is China falling into Japan’s lost-decade trap?",
+          "url": "https://www.ft.com/content/512ef255-89c2-4128-becc-914885c3a2a5?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The FT finds China showing Japan-style malaise: falling property values, deflationary pressure, cautious consumers and a population that began shrinking in 2022. Total debt is near 300% of GDP, by Capital Economics’ count.",
+            "An updated Goldman Sachs ‘Japanisation’ gauge has rated China more Japanised than Japan for years, and household bank lending has fallen outright for the first time.",
+            "Nomura’s Richard Koo calls it a balance-sheet recession needing bold fiscal spending; Beijing is leaning on exports and high-tech bets instead."
+          ],
+          "numbers": [
+            [
+              "~300%",
+              "China’s total debt to GDP"
+            ],
+            [
+              "2022",
+              "year China’s population began to shrink"
+            ]
+          ],
+          "why": "If Chinese households keep hoarding cash, the slowdown travels abroad as cheap exports and weaker demand for everyone else’s goods.",
+          "other": "BNP Paribas’s Isabelle Mateos y Lago says the differences matter more: China is poorer, its factories stay competitive, and its very high household savings could be unlocked.",
+          "also": [],
+          "image": "/figs/2026-10-22-1.jpg",
+          "imageAlt": "Explainer: signs that China resembles 1990s Japan, and why it may differ.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "China’s Japan problem",
+          "emailTeaser": "Debt near 300% of GDP, and households still won’t spend.",
+          "imageW": 1080,
+          "imageH": 1544
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "PHP2Shell, eMudhra, PingCAP: one week, three security scares",
+          "url": "https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/",
+          "url2": "https://www.pingcap.com/trust-hub/security/security-update-october-2026/",
+          "points": [
+            "PHP2Shell: two critical flaws (severity 9.2 of 10) let attackers take over unpatched PHP servers without a password. Found with AI help, fixes shipped on 21 Oct, a day early after a leak; Amazon says they are now broadly exploited, and the NSA says patch or go offline.",
+            "eMudhra: eight intermediate certificates had keys weak enough to recover almost instantly. Mozilla, Google, Apple and Microsoft have blocked them; no misuse shows in public logs, and India’s IT ministry has set up a probe.",
+            "PingCAP: stolen service credentials let an intruder copy TiDB Cloud user details, SQL editor text, billing data and encrypted API keys. It sees no sign that data stored in TiDB was hit."
+          ],
+          "numbers": [
+            [
+              "70%",
+              "of websites run on PHP, says Wiz"
+            ],
+            [
+              "9.2",
+              "PHP2Shell severity score"
+            ],
+            [
+              "8",
+              "eMudhra certificates blocked"
+            ]
+          ],
+          "why": "AI is now finding old flaws faster than defenders can patch them, and the weak link is often a script or a stolen password rather than exotic code.",
+          "other": "What to watch: patch speed. Servers and apps that update slowly may show damage in the coming weeks, though so far no attack using the eMudhra keys is known.",
+          "also": [
+            {
+              "title": "Browsers block eMudhra intermediate CAs (SecurityWeek)",
+              "url": "https://www.securityweek.com/browsers-block-emudhra-intermediate-cas-over-recoverable-private-keys/"
+            },
+            {
+              "title": "What is eMudhra and why the internet is worried (India Today)",
+              "url": "https://www.indiatoday.in/amp/technology/news/story/what-is-emudhra-and-why-internet-is-having-a-meltdown-over-this-indian-company-right-now-3021776-2026-10-21"
+            },
+            {
+              "title": "AI just found a bug that puts up to 70% of websites at risk (WSJ)",
+              "url": "https://www.wsj.com/tech/cybersecurity/ai-just-found-a-bug-that-puts-up-to-70-of-the-worlds-websites-at-risk-fd0902ea"
+            },
+            {
+              "title": "Amazon warns the AI-found flaws are being broadly exploited (FT)",
+              "url": "https://www.ft.com/content/245778d9-597b-492d-b5b6-a2967c77e853?syn-25a6b1a6=1"
+            }
+          ],
+          "image": "/figs/2026-10-22-2.jpg",
+          "imageAlt": "Explainer: PHP2Shell, eMudhra and PingCAP incidents and what to do.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "SecurityWeek and PingCAP",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Three security scares, one week",
+          "emailTeaser": "A PHP takeover bug, weak certificate keys and stolen credentials.",
+          "imageW": 1080,
+          "imageH": 1539
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Tax policy",
+          "tag": "",
+          "title": "California’s one-time billionaire tax may lose money, study finds",
+          "url": "https://www.nber.org/system/files/working_papers/w35899/w35899.pdf",
+          "url2": "",
+          "points": [
+            "California’s proposed Billionaire Tax Act, on the November ballot, would take a one-time 5% of the worldwide wealth of residents worth over $1bn on 1 January 2026.",
+            "Economists Benjamin Jaros and Joshua Rauh estimate it would raise about $30bn ($28–36bn), under a third of an earlier $100bn projection, partly because seven billionaires holding about 28.5% of the base left first.",
+            "Billionaires pay an estimated $3.3–5.8bn a year in state income tax. Counting those lost years, the authors put the net value at −$38.9bn, with 85% of 100,000 simulations negative."
+          ],
+          "numbers": [
+            [
+              "~$30bn",
+              "estimated one-time take"
+            ],
+            [
+              "−$38.9bn",
+              "net value to the state, mean estimate"
+            ]
+          ],
+          "why": "A one-time tax pays only if the taxpayers stay; mobile billionaires can turn a windfall into a recurring loss.",
+          "other": "What to watch: the paper assumes even odds the tax survives court and is not yet peer reviewed; 15% of its simulations still show a gain for the state.",
+          "also": [],
+          "image": "/figs/2026-10-22-3.jpg",
+          "imageAlt": "Explainer: why California's one-time billionaire tax may lose money.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "NBER",
+          "pay": false,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "The tax that could cost California",
+          "emailTeaser": "A $30bn windfall versus years of lost income tax.",
+          "imageW": 1080,
+          "imageH": 1587
+        },
+        {
+          "category": "AI markets",
+          "tag": "",
+          "title": "Want to short the AI boom? Futures on chip rental prices are coming",
+          "url": "https://www.wsj.com/finance/investing/want-to-short-the-ai-boom-she-wants-to-give-you-a-way-to-bet-on-compute-prices-bcdafd3e",
+          "url2": "",
+          "points": [
+            "Silicon Data, founded by former Bloomberg data executive Carmen Li, compiles indexes of Nvidia chip rental prices. CME plans cash-settled futures on them for H100 and B200 chips, running up to three years out.",
+            "The launch slipped after the CFTC extended its review; the regulator has flagged manipulation risk and doubts that compute is standard enough to trade like a commodity.",
+            "Rival Ornn, backed by a16z, is working with ICE on similar contracts. Silicon Data’s backers include DRW founder Don Wilson, VanEck and Jump Trading."
+          ],
+          "numbers": [
+            [
+              "3 years",
+              "how far ahead contracts may run"
+            ]
+          ],
+          "why": "A trusted price for compute lets AI buyers hedge their biggest cost and gives sceptics a clean way to bet against the boom.",
+          "other": "Sceptics recall dot-com bandwidth futures, which failed when a fibre glut sank prices; a market only works if its benchmark can be trusted.",
+          "also": [],
+          "image": "/figs/2026-10-22-4.jpg",
+          "imageAlt": "Explainer: how planned compute futures would work and the concerns.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "A futures market for AI chips",
+          "emailTeaser": "Hedge, or bet against, the price of Nvidia chip rentals.",
+          "imageW": 1080,
+          "imageH": 1501
+        },
+        {
+          "category": "Health and AI",
+          "tag": "",
+          "title": "OpenEvidence: the $15bn AI start-up reshaping how US doctors treat",
+          "url": "https://www.ft.com/content/0ed17b79-47dd-4ad8-8dca-44eb35617edc?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "OpenEvidence, founded by Daniel Nadler, runs an ad-funded chatbot that searches peer-reviewed journals and clinical guidelines to help doctors diagnose and treat patients.",
+            "Nadler says nearly two-thirds of US physicians use it. It raised money in September at a $15bn valuation, and hospitals including NYU Langone and Mount Sinai have built it into their record systems.",
+            "Evidence on accuracy is mixed: a Mayo Clinic study (Mayo is an investor) found accurate advice, while a June Nature paper found it trailed general models such as Gemini and GPT on clinical benchmarks."
+          ],
+          "numbers": [
+            [
+              "$15bn",
+              "valuation in September"
+            ],
+            [
+              "2 in 3",
+              "US doctors use it, per founder"
+            ]
+          ],
+          "why": "When the most-used clinical reference runs on ads, who pays for each answer matters almost as much as how good it is.",
+          "other": "Doctors adopted it on their own, which suggests it saves real time; the worry is juniors leaning on it before mastering the basics, and OpenAI and Anthropic are moving in.",
+          "also": [],
+          "image": "/figs/2026-10-22-5.jpg",
+          "imageAlt": "Explainer: why doctors use OpenEvidence and the open questions.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Health & science",
+            "AI"
+          ],
+          "emailHead": "The chatbot doctors ask first",
+          "emailTeaser": "Two in three US doctors use it, its founder says. Ads pay.",
+          "imageW": 1080,
+          "imageH": 1501
+        },
+        {
+          "category": "Personal finance",
+          "tag": "",
+          "title": "‘Dividend nomads’ fund life abroad with high-yield option ETFs",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-16/-dividend-nomads-chase-passive-income-with-high-yield-etfs",
+          "url2": "",
+          "points": [
+            "‘Dividend nomads’ fund travel and cheap living abroad with ETFs that sell options to pay out monthly. Such derivative-income funds now hold more than $270bn, and many charge high fees.",
+            "Jae Hyouk Jang quit his job to travel; when Coinbase fell, his YieldMax CONY fund lost nearly 40%, shrinking his payouts. He has moved to safer funds and is weighing remote work.",
+            "Those who last keep yields modest and keep working: a couple in Portugal tops up JPMorgan’s JEPI income with farm work, and Kristy Shen and Bryce Leung grew their pot by freelancing and writing."
+          ],
+          "numbers": [
+            [
+              "$270bn+",
+              "in derivative-income ETFs"
+            ],
+            [
+              "~40%",
+              "fall in one nomad’s fund"
+            ]
+          ],
+          "why": "Option-income funds trade future upside for cash today; as a paycheque, that works only while markets cooperate.",
+          "other": "YieldMax says most of its funds have produced attractive returns, and with low costs abroad and side income, a tamer income fund can work.",
+          "also": [],
+          "image": "/figs/2026-10-22-6.jpg",
+          "imageAlt": "Explainer: how dividend nomads use option-income ETFs and the risks.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg",
+          "pay": true,
+          "themes": [
+            "Personal finance"
+          ],
+          "emailHead": "Travelling on option income",
+          "emailTeaser": "Big monthly payouts, until the stock behind them falls.",
+          "imageW": 1080,
+          "imageH": 1574
+        },
+        {
+          "category": "Private equity",
+          "tag": "Opinion",
+          "title": "Chris Hughes: Recordati shows private equity’s self-dealing problem",
+          "url": "https://www.bloomberg.com/opinion/articles/2026-10-20/recordati-spa-fight-illustrates-private-equity-s-self-dealing-problem",
+          "url2": "",
+          "points": [
+            "CVC’s Fund VII has held 47% of Milan-listed drugmaker Recordati since a 2018 deal with the founding family, but a clean exit proved elusive.",
+            "In May a consortium led by CVC’s Fund IX and Groupe Bruxelles Lambert agreed to buy the whole company for €10.7bn. The board backed it, but the independent directors called the price inadequate, and activist Palliser says a small top-up still is not fair.",
+            "Columnist Chris Hughes argues the price looks skewed to the buyer; if the deal fails, Fund VII may have to sell its shares in the market at a discount."
+          ],
+          "numbers": [
+            [
+              "€10.7bn",
+              "agreed price for Recordati"
+            ],
+            [
+              "47%",
+              "stake held by CVC Fund VII"
+            ]
+          ],
+          "why": "When one firm sits on both sides, minority shareholders carry the risk that the price serves the firm rather than them.",
+          "other": "Hughes himself notes such deals are not wrong in themselves if each side has independent governance, and the buyer brings fresh co-investors.",
+          "also": [],
+          "image": "/figs/2026-10-22-7.jpg",
+          "imageAlt": "Explainer: how CVC is selling Recordati from one fund to another.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg Opinion",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "When a buyout firm sells to itself",
+          "emailTeaser": "CVC is on both sides of a €10.7bn Recordati deal.",
+          "imageW": 1080,
+          "imageH": 1504
+        },
+        {
+          "category": "Climate and markets",
+          "tag": "",
+          "title": "Money managers brace as a record El Niño forms",
+          "url": "https://m.economictimes.com/news/international/business/money-managers-say-theres-nowhere-to-hide-as-super-el-nio-forms/articleshow/135097594.cms",
+          "url2": "",
+          "points": [
+            "Forecasters see a very strong El Niño likely lasting into early 2027; Pictet’s Katie Self says it is almost certain to be the most extreme on record, with knock-on effects everywhere.",
+            "It is already fanning droughts and floods: India had its weakest monsoon in more than a decade, food commodity prices are rising, and economists are revising inflation and deficit forecasts.",
+            "T. Rowe Price uses custom models to shield its $165bn emerging-market portfolio, and an Anthropocene Fixed Income Institute note names Indonesia, Brazil and Colombia as the most exposed sovereigns."
+          ],
+          "numbers": [
+            [
+              "Early 2027",
+              "strong El Niño likely lasts until"
+            ],
+            [
+              "$165bn",
+              "T. Rowe portfolio being shielded"
+            ]
+          ],
+          "why": "Weather is becoming a macro variable: a strong El Niño can lift food inflation just as high debt leaves governments little room to cushion it, and India feels it through the monsoon.",
+          "other": "El Niño cycles are not new and markets have lived through them; forecasters see the odds of a strong event fading through the first half of 2027.",
+          "also": [],
+          "image": "/figs/2026-10-22-8.jpg",
+          "imageAlt": "Explainer: El Niño's effects so far and how investors are positioning.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "India"
+          ],
+          "emailHead": "El Niño reaches your portfolio",
+          "emailTeaser": "Weak monsoon, pricier food, and funds rewriting their models.",
+          "imageW": 1080,
+          "imageH": 1543
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Cheap today.",
+    "b": "Costly later.",
+    "line": "An overlooked flaw, a one-time tax and a high-yield shortcut — all look attractive until the bill comes due."
+  }
+}
