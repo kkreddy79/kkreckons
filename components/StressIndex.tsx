@@ -546,6 +546,10 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
   const stale = d.factors.filter((f) => f.stale);
   const staleW = stale.reduce((t, f) => t + f.weight, 0) / d.factors.reduce((t, f) => t + f.weight, 0);
   const LIMITED = 0.25; // above this share of the index weight on stale inputs, no stress band is shown
+  // Pipeline notes such as "FRED BAMLH0A0HYM2 unavailable this run; carried from 2026-10-19." only mean the
+  // publisher hadn't posted a newer reading: say that once in the freshness box instead of showing raw series IDs.
+  const carried = (d.notes ?? []).filter((n) => /unavailable this run; carried from/i.test(n));
+  const otherNotes = (d.notes ?? []).filter((n) => !carried.includes(n));
 
   return (
     <div className={`container ${s.page}`}>
@@ -575,7 +579,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
             <div><span>Stock &amp; ETF data</span><b>{longDate(priceDate)} · US close</b><em className={s.ok}>Current</em></div>
             <div><span>Credit spread data</span><b>{longDate(spreadDate)} · latest available</b>
               <em className={spreadLag > 3 ? s.bad : s.ok}>{spreadLag === 0 ? "Current" : spreadLag <= 3 ? `${spreadLag}-day publication lag` : `Stale (${spreadLag} days)`}</em></div>
-            <p>Refreshed {refreshedTxt}.{stale.length ? ` ${stale.length} gauge${stale.length > 1 ? "s are" : " is"} stale and ${stale.length > 1 ? "keep their" : "keeps its"} last value in the index.` : ""}</p>
+            <p>Refreshed {refreshedTxt}.{carried.length > 0 && spreadDate ? ` No newer credit spread readings were published since ${shortDate(spreadDate)}, so the index uses those.` : ""}{stale.length ? ` ${stale.length} gauge${stale.length > 1 ? "s are" : " is"} stale and ${stale.length > 1 ? "keep their" : "keeps its"} last value in the index.` : ""}</p>
           </div>
         </div>
 
@@ -595,7 +599,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           </div>
         </div>
       </section>
-      {(d.notes ?? []).map((n) => <p key={n} className={s.note}>{n}</p>)}
+      {otherNotes.map((n) => <p key={n} className={s.note}><b>Data note:</b> {n}</p>)}
       {d.score != null && (
         <p className={s.cite}>
           <b>Cite this reading:</b> KKReckons AI Market Stress Index, {d.score}/100 ({band(d.score)}), data through {longDate(d.asOf)}. https://www.kkreckons.com/ai-stress-index{" "}
