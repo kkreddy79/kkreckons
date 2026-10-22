@@ -1,5 +1,116 @@
 [
   {
+    "date": "2026-10-22",
+    "slice": "Patch the code. Hedge AI. China hoards cash. Ask the bot. Risk finds a new address.",
+    "artifact": "https://claude.ai/artifact/A8FnAYK87WkjFHqR2zh97M",
+    "readingMinutes": 7,
+    "image": "/figs/2026-10-22-1.jpg",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Is China falling into Japan’s lost-decade trap?",
+        "category": "Global economy",
+        "tag": "",
+        "url": "https://www.ft.com/content/512ef255-89c2-4128-becc-914885c3a2a5?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "PHP2Shell, eMudhra, PingCAP: one week, three security scares",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/",
+        "src": "SecurityWeek and PingCAP",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "California’s one-time billionaire tax may lose money, study finds",
+        "category": "Tax policy",
+        "tag": "",
+        "url": "https://www.nber.org/system/files/working_papers/w35899/w35899.pdf",
+        "src": "NBER",
+        "pay": false,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Want to short the AI boom? Futures on chip rental prices are coming",
+        "category": "AI markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/want-to-short-the-ai-boom-she-wants-to-give-you-a-way-to-bet-on-compute-prices-bcdafd3e",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "OpenEvidence: the $15bn AI start-up reshaping how US doctors treat",
+        "category": "Health and AI",
+        "tag": "",
+        "url": "https://www.ft.com/content/0ed17b79-47dd-4ad8-8dca-44eb35617edc?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Health & science",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "‘Dividend nomads’ fund life abroad with high-yield option ETFs",
+        "category": "Personal finance",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-16/-dividend-nomads-chase-passive-income-with-high-yield-etfs",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Chris Hughes: Recordati shows private equity’s self-dealing problem",
+        "category": "Private equity",
+        "tag": "Opinion",
+        "url": "https://www.bloomberg.com/opinion/articles/2026-10-20/recordati-spa-fight-illustrates-private-equity-s-self-dealing-problem",
+        "src": "Bloomberg Opinion",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Money managers brace as a record El Niño forms",
+        "category": "Climate and markets",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/international/business/money-managers-say-theres-nowhere-to-hide-as-super-el-nio-forms/articleshow/135097594.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "India"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-21",
     "slice": "AI paper losses, Ellison pledges, Dubai stalls, sulphur runs dry. Lenders keep score.",
     "artifact": "https://claude.ai/artifact/4pGm82eq7vzUoTYQSs4xj8",
