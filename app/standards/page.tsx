@@ -12,7 +12,7 @@ export default function StandardsPage() {
   return (
     <main className="about">
       <div className="ab-wrap">
-        <section className="ab-hero" aria-labelledby="standards-title">
+        <section className="ab-hero ab-hero-plain" aria-labelledby="standards-title">
           <p className="ab-kicker">Standards</p>
           <h1 id="standards-title">How KKReckons is made.</h1>
           <p className="ab-lede">
