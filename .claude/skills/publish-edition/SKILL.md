@@ -180,16 +180,18 @@ the email draft). If something does need his decision, stop at section 3 and ask
 ## Weekly best-of email
 
 When he asks for the weekly email ("draft the weekly", "best of the week"), make a beehiiv **draft** of
-KKReckons Weekly: KK's Pick of the day from each edition of the 7 days ending on the newest edition (or
-the end date he names), each linking to its story card on the site, plus the week's AI Stress Index move
-and a "Catch up on the week" button.
+KKReckons Weekly, sent **Friday night**: the week's best stories across different topics from the 7 days
+Saturday to Friday (pass that Friday as the end date). Up to 8 stories, one from every edition, KK's Picks
+first, at most one per topic (two for AI); each links to its story card on the site, plus the week's AI
+Stress Index move and a "Catch up on the week" button. If Friday's edition isn't published yet, build
+it anyway and rebuild after that edition goes live.
 1. `npm run -s weekly-email -- [YYYY-MM-DD] .publish/beehiiv-weekly-<end date>.json`. It prints the week, the
    picks and the index move; check that each teaser reads on its own (they come from `emailTeaser`, or
    from "why it matters" when an older edition has none).
 2. As for the daily email: check `list_posts` for slug `kkreckons-weekly-<end date>` first, then `save_post`
    (`html_content` verbatim), `edit_post` with `email_settings`, `save_post_theme` with `theme`, and
    re-read with `get_post_content` (`editor_html`) to confirm all the picks' headlines appear.
-3. Reply with the editor link for him to Send or Schedule (Saturday or Sunday morning suits a weekly).
+3. Reply with the editor link for him to Send or Schedule (Friday night).
 
 ## Keeping it light
 

@@ -1,7 +1,8 @@
-// Builds the beehiiv draft for the weekly best-of email: KK's Pick of the day from each edition
-// of the past 7 days, the week's AI Stress Index move, and a link to catch up on the website.
+// Builds the beehiiv draft for the weekly best-of email: the week's best stories across different
+// topics (KK's Picks of the day first), the week's AI Stress Index move, and a link to catch up.
 // Usage: node scripts/weekly-email.mjs [end YYYY-MM-DD] [out.json]
-//   end defaults to the newest edition; the week is the 7 days ending on it.
+//   end defaults to the newest edition; the week is the 7 days ending on it (Saturday to Friday
+//   when end is a Friday, for the Friday-night send).
 //
 // Same look as the daily email (scripts/beehiiv-email.mjs): one compact HTML table, colour in
 // text and borders only. Each story links to its card on the website (/daily/<date>#story-N) and
@@ -46,22 +47,54 @@ function teaserFrom(why) {
   return t;
 }
 
-// The week's best: KK's own Pick of the day from each edition (the first one, when a day has two).
-const picks = week.map((d) => {
+// Broad topics, from each story's category (first match wins). The weekly takes at most one story
+// per topic (two for AI, the site's main beat), so a week heavy on one subject still reads varied.
+const TOPICS = [
+  ["AI", /\bAI\b|neocloud|chip/i],
+  ["India", /india|rupee|upi/i],
+  ["Jobs and careers", /\bjobs?\b|career/i],
+  ["Tech and security", /cyber|security|software|IT services|payments|tech/i],
+  ["Markets and money", /invest|credit|bond|debt|equity|IPO|commodit|gold|finance|bank|billionaire|wealth/i],
+  ["Economy and policy", /econom|tax|policy|privatis|growth|sovereign|trade/i],
+  ["Climate and energy", /climate|solar|energy|grid|weather/i],
+  ["Transport", /transport|auto|aviation/i],
+  ["Health and science", /health|medic|science/i],
+  ["Ideas and culture", /.*/],
+];
+const MAX = 8;
+const CAP = { AI: 2 };
+const topicOf = (s) => (/india/i.test(s.section) && !/\bAI\b/i.test(s.category || "") ? "India" : TOPICS.find(([, re]) => re.test(s.category || ""))[0]);
+
+const stories = week.flatMap((d) => {
   const c = JSON.parse(fs.readFileSync(path.join("data", "content", `${d}.json`), "utf8"));
-  const all = c.sections.flatMap((sec) => sec.stories.map((s) => ({ ...s, section: sec.name })));
-  const i = Math.max(0, all.findIndex((s) => /pick/i.test(s.section)));
-  const s = all[i];
-  const thumb = fs.existsSync(path.join("public", "email", `${d}-${i + 1}.png`)) ? `${SITE}/email/${d}-${i + 1}.png` : "";
-  return {
-    date: d,
-    head: s.emailHead || s.title,
-    teaser: s.emailTeaser || teaserFrom(s.why),
-    cat: String(s.category || "").replace(/^[^:]*:\s*/, "").toUpperCase(),
-    url: `${SITE}/daily/${slug(d)}#story-${i + 1}`,
-    thumb,
-  };
+  return c.sections.flatMap((sec) => sec.stories.map((s) => ({ ...s, section: sec.name }))).map((s, i) => ({ ...s, date: d, n: i + 1 }));
 });
+// KK's Picks of the day come first, then the rest of each edition in its own order. Every edition
+// gets one story (its first with a topic still free), then the remaining places go by topic.
+const ranked = [...stories.filter((s) => /pick/i.test(s.section)), ...stories.filter((s) => !/pick/i.test(s.section))];
+const used = {};
+const perDay = {};
+const chosen = [];
+const take = (s) => {
+  const t = topicOf(s);
+  if (chosen.includes(s) || chosen.length >= MAX || (used[t] || 0) >= (CAP[t] || 1) || (perDay[s.date] || 0) >= 2) return false;
+  used[t] = (used[t] || 0) + 1;
+  perDay[s.date] = (perDay[s.date] || 0) + 1;
+  chosen.push(Object.assign(s, { topic: t }));
+  return true;
+};
+for (const d of week) ranked.filter((s) => s.date === d).some(take);
+ranked.forEach(take);
+chosen.sort((x, y) => x.date.localeCompare(y.date) || x.n - y.n);
+const picks = chosen.map((s) => ({
+  date: s.date,
+  head: s.emailHead || s.title,
+  teaser: s.emailTeaser || teaserFrom(s.why),
+  cat: s.topic.toUpperCase(),
+  pick: /pick/i.test(s.section),
+  url: `${SITE}/daily/${slug(s.date)}#story-${s.n}`,
+  thumb: fs.existsSync(path.join("public", "email", `${s.date}-${s.n}.png`)) ? `${SITE}/email/${s.date}-${s.n}.png` : "",
+}));
 
 // The AI Stress Index over the week: the last close before the week against the latest close in it.
 async function stressMove() {
@@ -110,10 +143,10 @@ rows.push(
 );
 rows.push(
   `<tr><td colspan="2" style="padding:12px 0 2px;font-family:${SERIF};font-size:22px;line-height:1.25;font-weight:700;color:${E.ink};">The week in ${picks.length} stories</td></tr>` +
-    `<tr><td colspan="2" style="padding:0 0 2px;font-family:${SANS};font-size:13px;line-height:1.4;color:${E.body};">Missed a day? Here is the one story from each edition worth slowing down for.</td></tr>`,
+    `<tr><td colspan="2" style="padding:0 0 2px;font-family:${SANS};font-size:13px;line-height:1.4;color:${E.body};">Missed a day? The week’s best stories, one per topic.</td></tr>`,
 );
 
-rows.push(label("PICKS OF THE WEEK", 14));
+rows.push(label("BEST OF THE WEEK", 14));
 picks.forEach((p, i) => {
   const line = i === picks.length - 1 ? "" : `border-bottom:1px solid ${E.rule};`;
   const thumb = p.thumb ? a(p.url, `<img src="${p.thumb}" width="44" height="44" alt="" style="display:block;width:44px;height:44px;border:0;">`) : "";
@@ -168,7 +201,7 @@ const payload = {
   title: `KKReckons Weekly, ${range} ${day(end).getUTCFullYear()}`,
   subtitle: preview,
   email_settings: {
-    email_subject_line: `KKReckons Weekly · The ${picks.length} stories that mattered, ${range}`,
+    email_subject_line: `KKReckons Weekly · The week in ${picks.length} stories, ${range}`,
     email_preview_text: preview,
     display_title_in_email: false,
     display_subtitle_in_email: false,
@@ -182,5 +215,5 @@ const json = JSON.stringify(payload, null, 2);
 if (out) fs.writeFileSync(out, json + "\n");
 else process.stdout.write(json + "\n");
 (out ? console.log : console.error)(
-  [`${range}: ${picks.length} picks${si ? `, AI Stress Index ${si.from ?? "?"} → ${si.to}` : ", no AI Stress Index reading (data unreachable)"}`, ...picks.map((p) => `${p.date} · ${p.head}`)].join("\n"),
+  [`${range}: ${picks.length} picks${si ? `, AI Stress Index ${si.from ?? "?"} → ${si.to}` : ", no AI Stress Index reading (data unreachable)"}`, ...picks.map((p) => `${p.date} · ${p.cat.toLowerCase()}${p.pick ? " (pick)" : ""} · ${p.head}`)].join("\n"),
 );
