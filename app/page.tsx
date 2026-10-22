@@ -9,7 +9,16 @@ import { latest } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
 
 // Home is its own page in search (brand searches land here); each edition is indexed at its dated page.
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  // Shared links to Home preview today's cover when the edition has one (else the site-wide image).
+  ...(latest.cover
+    ? {
+        openGraph: { siteName: "KKReckons", type: "website", images: [{ url: latest.cover, width: 1600, height: 900, alt: latest.coverAlt || latest.slice }] },
+        twitter: { card: "summary_large_image", creator: "@kkreddy78", images: [latest.cover] },
+      }
+    : {}),
+};
 
 export default function Home() {
   const today = getContent(latest.date);

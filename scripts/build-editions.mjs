@@ -89,6 +89,28 @@ function saveFig(date, n, dataUrl) {
   return `/figs/${name}`;
 }
 
+// The edition's cover: one 1600×900 (16:9) image that link previews, Google Discover and the
+// article's structured data use (the story graphics are tall and 1080px wide, too narrow for
+// Discover's large previews). Saved as /figs/<date>-cover.jpg, cropped to exactly 1600×900 if the
+// newsletter sends another size, with the copyright in its EXIF; no credit strip, so it stays 16:9.
+const COVER_W = 1600;
+const COVER_H = 900;
+async function saveCover(date, dataUrl) {
+  const m = /^data:image\/(png|jpe?g|webp);base64,(.+)$/.exec(dataUrl || "");
+  if (!m) return "";
+  const raw = Buffer.from(m[2], "base64");
+  const file = path.join(figsDir, `${date}-cover.jpg`);
+  if (!(fs.existsSync(file) && fileHead(file).includes(`src:${sourceHash(raw)}`))) {
+    const buf = await sharp(raw)
+      .resize(COVER_W, COVER_H, { fit: "cover", position: "attention" })
+      .withExif({ IFD0: { Copyright: COPYRIGHT, Artist: "KKReckons (kkreckons.com)", ImageDescription: `src:${sourceHash(raw)}` } })
+      .jpeg({ quality: 86, mozjpeg: true })
+      .toBuffer();
+    fs.writeFileSync(file, buf);
+  }
+  return `/figs/${date}-cover.jpg`;
+}
+
 // A thin strip under every story graphic, "© KKReckons · share with credit … kkreckons.com", so a
 // screenshot shared on WhatsApp or LinkedIn leads back to the site. It sits below the graphic and
 // covers nothing. The copyright also goes in the file's EXIF, with a hash of the graphic as received,
@@ -199,6 +221,8 @@ function fromEmbedded(date, d) {
     callouts: (d.callout || []).map((c) => ({ num: clean(c.num), text: clean(`${c.lead || ""}${c.rest || ""}`), url: c.url || "" })),
     sections,
     reading: (d.reading || []).map((r) => ({ title: clean(r.title), url: r.url || "", note: clean(r.note || r.src || "") })),
+    ...(typeof d.cover === "string" && d.cover ? { coverData: d.cover } : {}),
+    ...(d.cover && typeof d.cover === "object" && d.cover.src ? { coverData: d.cover.src, coverAlt: clean(d.cover.alt) } : {}),
     ...(d.takeaway && clean(d.takeaway.line)
       ? { takeaway: { a: clean(d.takeaway.a), b: clean(d.takeaway.b), line: clean(d.takeaway.line) } }
       : {}),
@@ -354,6 +378,8 @@ for (const file of files) {
       console.log(`${date}: AI Stress Index reading saved (${snap.score}/100, ${snap.band}, as of ${snap.asOf}${snap.backCalculated ? ", back-calculated" : ""})`);
     } else console.log(`${date}: AI Stress Index data unreachable; the edition shows the link without a number`);
   }
+  // Cover image (see saveCover); `"cover": ""` in edition-meta hides it.
+  const cover = m.cover === "" ? "" : content.coverData ? await saveCover(date, content.coverData) : "";
   const stress = meta[date]?.stressIndex;
   const words = JSON.stringify(stories).split(/\s+/).length;
   const record = {
@@ -365,6 +391,7 @@ for (const file of files) {
     sections: content.sections,
     reading: content.reading,
     ...(content.takeaway ? { takeaway: content.takeaway } : {}),
+    ...(cover ? { cover, coverAlt: content.coverAlt || content.slice } : {}),
     ...(stress && showStress ? { stressIndex: stress } : {}),
   };
   fs.writeFileSync(path.join(contentDir, `${date}.json`), JSON.stringify(record, null, 2) + "\n");
@@ -375,6 +402,7 @@ for (const file of files) {
     artifact: record.artifact,
     readingMinutes: record.readingMinutes,
     image: stories.find((s) => s.image)?.image || "",
+    ...(cover ? { cover, coverAlt: record.coverAlt } : {}),
     stories: content.sections.flatMap((sec) =>
       sec.stories.map((s) => ({
         section: sec.name,
@@ -398,13 +426,16 @@ fs.writeFileSync(indexPath, JSON.stringify(index, null, 2) + "\n");
 
 // Delete images no edition uses (for example one hidden with an edition-meta override), so a
 // removed image is never left reachable on the site.
-const usedFigs = new Set(
-  fs
-    .readdirSync(contentDir)
-    .filter((f) => f.endsWith(".json"))
-    .flatMap((f) => JSON.parse(fs.readFileSync(path.join(contentDir, f), "utf8")).sections)
-    .flatMap((sec) => sec.stories.flatMap((s) => (s.image ? [s.image, ...VARIANTS.map(([tag]) => variantName(s.image, tag))].map((f) => path.basename(f)) : [])))
-);
+const allContent = fs
+  .readdirSync(contentDir)
+  .filter((f) => f.endsWith(".json"))
+  .map((f) => JSON.parse(fs.readFileSync(path.join(contentDir, f), "utf8")));
+const usedFigs = new Set([
+  ...allContent
+    .flatMap((c) => c.sections)
+    .flatMap((sec) => sec.stories.flatMap((s) => (s.image ? [s.image, ...VARIANTS.map(([tag]) => variantName(s.image, tag))].map((f) => path.basename(f)) : []))),
+  ...allContent.flatMap((c) => (c.cover ? [path.basename(c.cover)] : [])),
+]);
 for (const f of fs.readdirSync(figsDir)) {
   if (!usedFigs.has(f)) {
     fs.unlinkSync(path.join(figsDir, f));

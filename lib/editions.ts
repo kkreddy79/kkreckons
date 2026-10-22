@@ -18,6 +18,9 @@ export type Edition = {
   artifact: string;
   readingMinutes: number;
   image: string;
+  /** 1600×900 cover for link previews, Google Discover and structured data (newer editions). */
+  cover?: string;
+  coverAlt?: string;
   stories: Story[];
 };
 

@@ -21,6 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const found = getEdition((await params).slug);
   if (!found) return {};
   const { edition } = found;
+  // The 1600×900 cover (when the edition has one) is the share and Discover image; older editions
+  // fall back to their first story graphic.
+  const share = edition.cover
+    ? { url: edition.cover, width: 1600, height: 900, alt: edition.coverAlt || edition.slice }
+    : { url: edition.image || "/about/two-worlds.jpg" };
   // Search results show the lead story's own headline (what people search for), then the date; shared
   // links keep KK's headline for the day (slice), which reads well in a feed but says little in search.
   const day = `${shortDate(edition.date)} ${edition.date.slice(0, 4)}`;
@@ -39,9 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: edition.date,
       siteName: "KKReckons",
       title: `${title} · KKReckons`,
-      images: [edition.image || "/about/two-worlds.jpg"],
+      images: [share],
     },
-    twitter: { card: "summary_large_image", creator: "@kkreddy78", images: [edition.image || "/about/two-worlds.jpg"] },
+    twitter: { card: "summary_large_image", creator: "@kkreddy78", images: [share] },
     description,
   };
 }
@@ -59,6 +64,10 @@ export default async function EditionPage({ params }: Props) {
   const content = getContent(edition.date);
   const url = `${SITE_URL}/daily/${slugFor(edition.date)}`;
   const image = edition.image ? new URL(edition.image, SITE_URL).href : `${SITE_URL}/about/two-worlds.jpg`;
+  // Cover first: Google picks the article's preview image from this list.
+  const images = edition.cover
+    ? [{ "@type": "ImageObject", url: new URL(edition.cover, SITE_URL).href, width: 1600, height: 900 }, image]
+    : [image];
   const ld = [
     {
       "@context": "https://schema.org",
@@ -69,7 +78,7 @@ export default async function EditionPage({ params }: Props) {
       dateModified: edition.date,
       url,
       mainEntityOfPage: url,
-      image: [image],
+      image: images,
       author: AUTHOR,
       publisher: PUBLISHER,
     },
