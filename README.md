@@ -13,7 +13,9 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `/` — today's edition, followed by earlier editions
 - `/daily/` — archive: every edition by month, plus search and theme filters across all stories
 - `/daily/<month>-<day>-<year>` — one edition (for example `/daily/october-9-2026`), with previous/next navigation
+- `/topics` and `/topics/<topic>` — every story in each archive theme (for example `/topics/ai`), newest first
 - `/about` — about the briefing
+- `/api/subscribe` — adds a reader to the beehiiv list from the on-page email form
 
 ## How editions are stored
 - `newsletters/YYYY-MM-DD.html` — the original newsletter HTML, kept as the source only (not served on the site)
@@ -43,6 +45,11 @@ Manual steps, if needed:
 3. Run `npm install` (first time only), then `npm run editions`. Newsletters that embed their data in a `<script id="data">` tag are read directly; older formats are read from the rendered page in headless Chromium.
    If Playwright's browser isn't installed, run `npx playwright install chromium` once, or point `CHROMIUM_PATH` at an existing Chrome.
 4. Commit and push. Vercel redeploys automatically, and the home page shows the new edition.
+
+## Email sign-up
+The email boxes on Home, after each edition's Pick of the day and in the closing band sign readers up without
+leaving the site. They need a beehiiv API key set as `BEEHIIV_API_KEY` in Vercel (Production and Preview),
+then a redeploy. Without it, those spots stay links to beehiiv's sign-up page.
 
 ## Develop
 ```

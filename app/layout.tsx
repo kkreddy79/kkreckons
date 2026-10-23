@@ -59,6 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <nav className="foot-links" aria-label="Footer">
             <Link href="/about">About</Link>
             <Link href="/daily/">Past editions</Link>
+            <Link href="/topics">Topics</Link>
             <Link href="/ai-stress-index">AI Stress Index</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/standards">Standards</Link>

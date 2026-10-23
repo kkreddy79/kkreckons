@@ -10,6 +10,8 @@ import {
   monthLabel,
   publisherName,
   slugFor,
+  storyHref,
+  themeSlug,
   themesOf,
   weekday,
 } from "@/lib/editions";
@@ -21,10 +23,6 @@ export type ReadingLink = { date: string; title: string; url: string; note: stri
 
 /** "12 stories" / "1 further reading link" */
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
-
-/** A story on its edition page: stories are numbered in edition order, matching the #story-N anchors there. */
-const storyHref = (e: Edition, story: Edition["stories"][number]) =>
-  `/daily/${slugFor(e.date)}#story-${e.stories.indexOf(story) + 1}`;
 
 /** Dropdown count: stories, plus further reading links when there are any. */
 const countLabel = (stories: number, links: number) => (links ? `${stories} · ${links} reading` : `${stories}`);
@@ -256,6 +254,12 @@ export default function ArchiveBrowser({
             {source && <> from <b>{source}</b></>}
             {free && <>, free to read</>}
             {q && <> matching “{query.trim()}”</>}
+            {theme && (
+              <>
+                {" "}
+                · <Link href={`/topics/${themeSlug(theme)}`}>All {theme} stories on one page →</Link>
+              </>
+            )}
           </p>
           {matches.length === 0 && readingMatches.length === 0 && (
             <div className="sr-empty">

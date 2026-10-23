@@ -219,6 +219,9 @@ export const THEMES: { name: string; match: RegExp }[] = [
   { name: "Health & science", match: /health|plague|drug|science|medical|fossil|magnet|orbit|space/i },
 ];
 
+/** A theme's topic page address, e.g. "Jobs & careers" → "jobs-careers" (/topics/jobs-careers). */
+export const themeSlug = (name: string) => name.toLowerCase().replace(/&/g, "").replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
+
 export function themesOf(s: Pick<Story, "category" | "title" | "themes">) {
   if (s.themes?.length) {
     const want = new Set(s.themes.map((t) => t.toLowerCase()));
@@ -228,5 +231,8 @@ export function themesOf(s: Pick<Story, "category" | "title" | "themes">) {
   const hay = `${s.category} ${s.title}`;
   return THEMES.filter((t) => t.match.test(hay)).map((t) => t.name);
 }
+
+/** A story on its edition page: stories are numbered in edition order, matching the #story-N anchors there. */
+export const storyHref = (e: Edition, story: Story) => `/daily/${slugFor(e.date)}#story-${e.stories.indexOf(story) + 1}`;
 
 export const totalStories = editions.reduce((n, e) => n + e.stories.length, 0);

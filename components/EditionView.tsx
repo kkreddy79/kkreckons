@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
-import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
+import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource from "@/components/StorySource";
 import ShareRow from "@/components/ShareRow";
+import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
 import PrintImages from "@/components/PrintImages";
 
@@ -249,6 +250,7 @@ export default function EditionView({
   showDate = true,
   showCatchUp = false,
   related = [],
+  signup,
   children,
 }: {
   e: EditionContent;
@@ -259,6 +261,8 @@ export default function EditionView({
   showCatchUp?: boolean;
   /** Earlier or later stories naming the same companies, people or policies (see lib/related.ts). */
   related?: Related[];
+  /** Shown under the share row (Home's email sign-up). */
+  signup?: React.ReactNode;
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
@@ -298,6 +302,7 @@ export default function EditionView({
           </nav>
         )}
         <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
+        {signup}
       </section>
       <PrintImages />
 
@@ -378,17 +383,21 @@ export default function EditionView({
             })()}
           </div>
           {sec.name === "Pick of the day" && (
-            <p className="ev-signup">
+            <div className={`ev-signup${INLINE_SIGNUP ? " ev-signup-form" : ""}`}>
               <span>
                 One visual briefing a day. Free, unsubscribe anytime.
                 <small>
                   {editions.length} editions and {totalStories} stories so far
                 </small>
               </span>
-              <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-                Get it by email ↗
-              </a>
-            </p>
+              {INLINE_SIGNUP ? (
+                <EmailSignup placement="after-pick" />
+              ) : (
+                <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+                  Get it by email ↗
+                </a>
+              )}
+            </div>
           )}
         </section>
       ))}

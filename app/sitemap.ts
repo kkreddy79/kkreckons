@@ -1,10 +1,13 @@
 import type { MetadataRoute } from "next";
 import { editions, latest, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
+import { TOPICS } from "@/lib/topics";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE_URL}/daily`, lastModified: latest.date, changeFrequency: "daily", priority: 0.8 },
+    { url: `${SITE_URL}/topics`, lastModified: latest.date, changeFrequency: "daily", priority: 0.7 },
+    ...TOPICS.map((t) => ({ url: `${SITE_URL}/topics/${t.slug}`, lastModified: latest.date, changeFrequency: "daily" as const, priority: 0.7 })),
     { url: `${SITE_URL}/ai-stress-index`, changeFrequency: "daily", priority: 0.7 },
     { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/standards`, changeFrequency: "monthly", priority: 0.4 },

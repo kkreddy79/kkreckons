@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { MailIcon, SunIcon } from "@/components/AboutIcons";
 import { editions, totalStories } from "@/lib/editions";
-import { SUBSCRIBE_URL } from "@/lib/site";
+import EmailSignup from "@/components/EmailSignup";
+import { INLINE_SIGNUP, SUBSCRIBE_URL } from "@/lib/site";
 
 /**
  * Closing call-to-action band. The default version points readers to today's
@@ -29,9 +30,13 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
       <div className="ab-join-cta">
         {home ? (
           <>
-            <a className="ab-btn" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-              Subscribe free ↗
-            </a>
+            {INLINE_SIGNUP ? (
+              <EmailSignup placement="home-end" tone="dark" />
+            ) : (
+              <a className="ab-btn" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+                Subscribe free ↗
+              </a>
+            )}
             <Link className="ab-btn-ghost" href="/daily/">
               Catch up on past editions
             </Link>
@@ -41,9 +46,13 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
             <Link className="ab-btn" href="/">
               Read Today’s Edition →
             </Link>
-            <a className="ab-btn-ghost" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-              Get it by email ↗
-            </a>
+            {INLINE_SIGNUP ? (
+              <EmailSignup placement="page-end" tone="dark" />
+            ) : (
+              <a className="ab-btn-ghost" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+                Get it by email ↗
+              </a>
+            )}
           </>
         )}
         <p className="ab-join-proof">
