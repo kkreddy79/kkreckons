@@ -5,6 +5,7 @@ import EmailSignup from "@/components/EmailSignup";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
 import { relatedFor } from "@/lib/related";
+import { liveStress, loadStressFile } from "@/lib/stress";
 import type { Metadata } from "next";
 import { latest } from "@/lib/editions";
 import { INLINE_SIGNUP, SITE_URL } from "@/lib/site";
@@ -21,8 +22,12 @@ export const metadata: Metadata = {
     : {}),
 };
 
-export default function Home() {
+// Re-rendered at most hourly so the AI Stress Index card shows the latest reading (as on /ai-stress-index).
+export const revalidate = 3600;
+
+export default async function Home() {
   const today = getContent(latest.date);
+  const stress = liveStress(await loadStressFile("data.json"));
 
   return (
     <main>
@@ -42,6 +47,7 @@ export default function Home() {
           e={today}
           showCatchUp
           related={relatedFor(latest.date)}
+          liveStress={stress}
           signup={
             INLINE_SIGNUP && (
               <div className="ev-inbox">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "react";
 import s from "./StressIndex.module.css";
-import { STRESS_BASES } from "@/lib/stress";
+import { LIMITED, STRESS_BASES } from "@/lib/stress";
 
 /* Live data published every weekday after the US close by github.com/kkreddy79/ai-implosion.
    The page is normally rendered on the server with this data (see app/ai-stress-index/page.tsx);
@@ -555,7 +555,6 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
   const spreadLag = spreadDate ? weekdaysBetween(spreadDate, d.asOf) : 0;
   const stale = d.factors.filter((f) => f.stale);
   const staleW = stale.reduce((t, f) => t + f.weight, 0) / d.factors.reduce((t, f) => t + f.weight, 0);
-  const LIMITED = 0.25; // above this share of the index weight on stale inputs, no stress band is shown
   // Pipeline notes such as "FRED BAMLH0A0HYM2 unavailable this run; carried from 2026-10-19." only mean the
   // publisher hadn't posted a newer reading: say that once in the freshness box instead of showing raw series IDs.
   const carried = (d.notes ?? []).filter((n) => /unavailable this run; carried from/i.test(n));
