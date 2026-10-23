@@ -124,7 +124,7 @@ button { font: inherit; cursor: pointer; }
 .button.alt { background: var(--card); color: var(--ink); border-color: var(--line); }
 .button.alt:hover { box-shadow: 0 8px 20px rgba(45, 35, 20, 0.08); }
 .cat { display: inline-block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal-text); font-weight: 800; margin-right: 8px; }
-.tag { display: inline-block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; color: var(--orange); border: 1px solid var(--warm-line-b); border-radius: 6px; padding: 1px 6px; margin-right: 8px; vertical-align: 1px; }
+.tag { display: inline-block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; color: var(--accent); border: 1px solid var(--warm-line-b); border-radius: 6px; padding: 1px 6px; margin-right: 8px; vertical-align: 1px; }
 .section-title { display: flex; justify-content: space-between; align-items: end; margin: 56px 0 20px; gap: 12px; }
 .section-title h2 { font-family: var(--serif); font-size: 34px; margin: 0; letter-spacing: -0.5px; }
 .section-title > span, .section-title > a { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); font-weight: 700; }
@@ -150,7 +150,7 @@ button { font: inherit; cursor: pointer; }
 .chip { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 700; color: var(--control); }
 .chip:hover { border-color: var(--purple); }
 .chip.on { background: var(--purple); color: #fff; border-color: var(--purple); }
-.chip.clear { color: var(--orange); }
+.chip.clear { color: var(--accent); }
 .src-filter { position: relative; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 14px; }
 .src-filter .src-label, .src-filter .chip { flex: none; }
 .src-filter .src-label { font-size: 13px; font-weight: 800; color: var(--control); }
@@ -618,6 +618,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .tp-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 20px; }
 .tp-nav .chip { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; }
 .tp-nav .chip span { font-size: 12px; font-weight: 700; opacity: 0.7; }
+.tp-nav .chip.on span { opacity: 0.9; }
 .tp-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 0; padding: 0; }
 .tp-grid a { display: block; height: 100%; padding: 20px 22px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; color: var(--ink2); text-decoration: none; }
 .tp-grid a:hover { border-color: var(--purple); }

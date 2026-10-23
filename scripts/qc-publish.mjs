@@ -3,6 +3,7 @@
 //   npm run qc                          compare with origin/main
 //   npm run qc -- --base <ref>          compare with another git ref
 //   npm run qc -- --allow 2026-10-08    let an earlier edition change on purpose (a correction)
+//   npm run qc -- --site-change         a design or code pull request: skip only the "edition files only" rule
 //
 // 1. Nothing lost: every edition already live is still listed, and its data, original newsletter
 //    and images are byte-for-byte unchanged (unless --allow'd). The pull request touches only
@@ -24,6 +25,7 @@ const opt = (name) => {
 };
 const base = opt("--base") || "origin/main";
 const allowed = new Set(args.filter((a, i) => args[i - 1] === "--allow"));
+const siteChange = args.includes("--site-change");
 
 const failures = [];
 const notes = [];
@@ -104,7 +106,7 @@ const editionFile = (f) => {
   const m = /^(?:newsletters|data\/content|public\/figs|public\/email)\/(\d{4}-\d{2}-\d{2})/.exec(f);
   return Boolean(m && (added.includes(m[1]) || allowed.has(m[1])));
 };
-for (const f of new Set([...changed, ...uncommitted])) {
+for (const f of siteChange ? [] : new Set([...changed, ...uncommitted])) {
   if (!editionFile(f)) fail(`Unexpected file in an edition update: ${f}. Edition pull requests should only add edition files.`);
 }
 for (const f of fs.readdirSync(path.join(root, "public/figs"))) {

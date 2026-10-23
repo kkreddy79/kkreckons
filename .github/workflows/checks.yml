@@ -1,0 +1,49 @@
+# Checks every pull request before Krishnakanth looks at the Vercel preview:
+# edition content rules, the build, publishing QC, and a browser + accessibility pass over every page type.
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Content check (sources, summaries, quotes, image credits, alt text)
+        run: npm run -s check
+
+      - name: Build
+        run: npm run -s build
+
+      # Edition pull requests (edition/*) may only touch edition files; any other branch is a site change.
+      - name: Publishing QC
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch -q origin main
+          if [[ "${{ github.head_ref }}" == edition/* ]]; then npm run -s qc; else npm run -s qc -- --site-change; fi
+
+      - name: Browser and accessibility check
+        run: |
+          npx playwright install --with-deps chromium
+          npx next start -p 3000 &
+          timeout 60 bash -c 'until curl -s -o /dev/null http://localhost:3000; do sleep 1; done'
+          npm run -s site-check
