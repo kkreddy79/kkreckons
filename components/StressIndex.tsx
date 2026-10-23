@@ -317,13 +317,15 @@ function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) 
         ))}
       </div>
       {hi && lo && avg != null && score != null && (
+        <>
         <dl className={s.compare}>
           <div><dt>Today</dt><dd>{score}</dd></div>
           <div><dt>52-week high</dt><dd>{hi.score}<small>{longDate(hi.date)}</small></dd></div>
           <div><dt>52-week low</dt><dd>{lo.score}<small>{longDate(lo.date)}</small></dd></div>
           <div><dt>52-week average</dt><dd>{avg.toFixed(0)}</dd></div>
-          {below != null && <p className={s.compareNote}>Today’s score is higher than {nBelow} of the {scored.length} daily readings over the past 52 weeks{nEqual > 1 ? ` (and equal to ${nEqual - 1} others)` : ""}: about the {below}th percentile{score < 25 ? ", even though it is still in the Normal band" : ""}. Each trading day counts once using that day’s latest data; ties are not counted as lower. Range over the year: {lo.score} to {hi.score}.</p>}
         </dl>
+          {below != null && <p className={s.compareNote}>Today’s score is higher than {nBelow} of the {scored.length} daily readings over the past 52 weeks{nEqual > 1 ? ` (and equal to ${nEqual - 1} others)` : ""}: about the {below}th percentile{score < 25 ? ", even though it is still in the Normal band" : ""}. Each trading day counts once using that day’s latest data; ties are not counted as lower. Range over the year: {lo.score} to {hi.score}.</p>}
+        </>
       )}
     </figure>
   );
