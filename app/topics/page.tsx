@@ -39,6 +39,9 @@ export default function Topics() {
             </li>
           ))}
         </ul>
+        <p className="tp-more">
+          Following a company or person? <Link href="/coverage">See who’s in the news →</Link>
+        </p>
         <SubscribeBox />
       </div>
     </main>

@@ -75,7 +75,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/about">About</Link>
             <Link href="/daily/">Past editions</Link>
             <Link href="/topics">Topics</Link>
+            <Link href="/coverage">In the news</Link>
             <Link href="/week">This week</Link>
+            <Link href="/quiz">Weekly quiz</Link>
             <Link href={`/month/${monthSlug(months[0])}`}>Best of the month</Link>
             <Link href="/ai-stress-index">AI Stress Index</Link>
             <Link href="/contact">Contact</Link>

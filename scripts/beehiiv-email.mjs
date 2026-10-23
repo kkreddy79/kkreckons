@@ -236,6 +236,15 @@ rows.push(
     `</td></tr>`,
 );
 
+// Saturdays: the weekly quiz (built on the site from the week's "Quote this" figures).
+if (when.getUTCDay() === 6) {
+  rows.push(
+    `<tr><td colspan="2" align="center" style="padding:16px 0 0;font-family:${SANS};font-size:14px;">` +
+      a(`${SITE}/quiz`, "How closely did you follow the week? Take the 5-question quiz &rarr;", `color:#7048E8;font-weight:700;`) +
+      `</td></tr>`,
+  );
+}
+
 // 6. One-tap feedback: each answer is its own page on the site, so beehiiv's click report and Vercel's
 // page views both count the votes (no form or database needed).
 const vote = (v, label) => a(`${SITE}/feedback/${MONTHS[m - 1]}-${d}-${y}/${v}`, label, `display:inline-block;margin:0 4px;padding:5px 12px;border:1px solid #E7E1D6;border-radius:16px;font-family:${SANS};font-size:13px;font-weight:700;color:${E.ink};`);

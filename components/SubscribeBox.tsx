@@ -3,7 +3,7 @@ import { MailIcon, SunIcon } from "@/components/AboutIcons";
 import { editions, totalStories } from "@/lib/editions";
 import EmailSignup from "@/components/EmailSignup";
 import Testimonials from "@/components/Testimonials";
-import { INLINE_SIGNUP, REFERRAL, SUBSCRIBE_URL } from "@/lib/site";
+import { INLINE_SIGNUP, REFERRAL, SUBSCRIBE_URL, WHATSAPP_CHANNEL } from "@/lib/site";
 
 /**
  * Closing call-to-action band. The default version points readers to today's
@@ -56,6 +56,11 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
               </a>
             )}
           </>
+        )}
+        {WHATSAPP_CHANNEL && (
+          <a className="ab-btn-ghost ab-btn-wa" href={WHATSAPP_CHANNEL} target="_blank" rel="noreferrer">
+            Follow on WhatsApp ↗
+          </a>
         )}
         <p className="ab-join-proof">
           Free · {editions.length} editions and {totalStories} stories so far · Unsubscribe anytime

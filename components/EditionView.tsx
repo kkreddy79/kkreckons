@@ -7,6 +7,8 @@ import type { LiveStress } from "@/lib/stress";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { PaidMark, sourceLinks } from "@/components/StorySource";
 import FreeToggle from "@/components/FreeToggle";
+import { Glossed } from "@/components/Glossary";
+import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
 import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
@@ -136,6 +138,7 @@ export const storyPageUrl = (date: string, n: number) => `${SITE_URL}/daily/${sl
 export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority = false }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string; as?: "h1" | "h3"; priority?: boolean }) {
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const topic = themesOf(s)[0];
+  const seen = new Set<string>();
   const links = sourceLinks(s);
   const freeHref = links[0]?.paid ? links.find((l) => !l.paid)?.href : undefined;
   const pic = s.image && (
@@ -202,7 +205,9 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
         {s.points.length > 0 && (
           <ul className="ev-points">
             {s.points.map((p) => (
-              <li key={p}>{p}</li>
+              <li key={p}>
+                <Glossed text={p} seen={seen} id={id} />
+              </li>
             ))}
           </ul>
         )}
@@ -225,7 +230,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
         <p className="ev-why">
           <SunIcon className="ev-ic" />
           <span>
-            <b>Why it matters</b> {s.why}
+            <b>Why it matters</b> <Glossed text={s.why} seen={seen} id={id} />
           </span>
         </p>
       )}
@@ -234,7 +239,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
           <ScalesIcon className="ev-ic" />
           <span>
             <b>{s.other.startsWith("What to watch") ? "Watch next" : "Other side"}</b>{" "}
-            {s.other.replace(/^What to watch:\s*(.)/, (_, c: string) => c.toUpperCase())}
+            <Glossed text={s.other.replace(/^What to watch:\s*(.)/, (_, c: string) => c.toUpperCase())} seen={seen} id={id} />
           </span>
         </p>
       )}
@@ -376,6 +381,7 @@ export default function EditionView({
       )}
       <PrintImages />
 
+      <ReadTracker date={e.date} editions={showCatchUp ? editions.map((x) => x.date) : undefined} />
       {digest}
 
       {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} />}

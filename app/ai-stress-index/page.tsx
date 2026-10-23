@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import StressIndex, { type Backtest, type Data } from "@/components/StressIndex";
 import { loadStressFile } from "@/lib/stress";
+import { getContent } from "@/lib/content";
+import { editions, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "AI Market Stress Index: an experimental daily AI-bubble stress gauge";
@@ -30,6 +32,12 @@ export const revalidate = 3600;
 export default async function AiStressIndexPage() {
   const [d, bt] = await Promise.all([loadStressFile<Data>("data.json"), loadStressFile<Backtest>("backtest.json")]);
   const hist = d?.history.filter((h) => h.score != null) ?? [];
+  // Stories KK linked to the index, marked on the trend chart on the day they ran.
+  const marks = editions.flatMap((e) =>
+    getContent(e.date)
+      .sections.flatMap((sec) => sec.stories)
+      .flatMap((s, i) => (s.stressIndex ? [{ date: e.date, title: s.emailHead || s.title, href: `/daily/${slugFor(e.date)}/${i + 1}` }] : [])),
+  );
   return (
     <>
       {d && (
@@ -48,7 +56,7 @@ export default async function AiStressIndexPage() {
           }}
         />
       )}
-      <StressIndex initial={d} initialBt={bt} />
+      <StressIndex initial={d} initialBt={bt} marks={marks} />
     </>
   );
 }
