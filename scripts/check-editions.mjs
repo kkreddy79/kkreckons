@@ -64,7 +64,6 @@ const content = Object.fromEntries(sorted.map((d) => [d, JSON.parse(fs.readFileS
 
 let problems = 0;
 const warnings = [];
-const altless = [];
 const unnamed = new Set();
 // Stories that look like AI debt, AI financing or credit stress: suggested for an AI Stress Index link (info only).
 const AI_WORDS = /\b(AI|artificial intelligence|data[- ]cent(re|er)s?|neoclouds?|hyperscalers?|CoreWeave|Nscale|OpenAI|Anthropic|Nvidia|GPUs?|compute)\b/gi;
@@ -126,7 +125,8 @@ for (const date of dates) {
       if (s.image && !s.imageCredit)
         flag(date, s.title, "image", "image has no declared origin (figcredit); only original, Creative Commons or licensed images may be used");
       if (!s.stressIndex && stressCandidate(s)) suggested.push(`${date} "${s.title}"`);
-      if (s.image && !(s.imageAlt || "").trim()) altless.push(`${date} "${s.title}"`);
+      if (s.image && !(s.imageAlt || "").trim())
+        flag(date, s.title, "alt", 'graphic has no alt text (figalt, or an "imageAlt" override in data/edition-meta.json); screen readers and search can\'t read it');
 
       for (const u of [s.url, s.url2]) if (u && !webLink(u)) flag(date, s.title, "link", `source link isn't an http(s) web address: ${u.slice(0, 60)}`);
       for (const u of [s.url, s.url2]) if (u && !named.has(host(u))) unnamed.add(host(u));
@@ -153,7 +153,6 @@ for (const date of dates) if (content[date].sections.some((sec) => sec.stories.s
   console.log(`⚠ ${date}: a story links to the AI Stress Index but no reading was saved (index data was unreachable); it shows the link without a number`);
 for (const v of vague) console.log(`⚠ Further reading needs a real title (it only names the platform): ${v}`);
 for (const x of suggested) console.log(`ℹ Possible AI Stress Index link (AI debt/credit story, not tagged): ${x}`);
-for (const a of altless) console.log(`⚠ Image has no alt text for screen readers (add figalt): ${a}`);
 {
   const newest = [...dates].sort().pop();
   if (newest && !content[newest].cover) console.log(`ℹ ${newest}: no 1600×900 cover (newsletter "cover"); link previews and Google Discover use the first story graphic`);

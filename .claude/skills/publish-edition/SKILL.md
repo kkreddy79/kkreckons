@@ -57,7 +57,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      further reading). Similar-headline warnings (⚠) must be looked at and mentioned in your message;
    - a summary of at most 120 words of points, so it doesn't replace reading the original;
    - no quoted passage over 25 words;
-   - for any image, a declared origin (`figcredit`).
+   - for any image, a declared origin (`figcredit`) and alt text (`figalt`).
 
    Problems of these kinds are **editorial**: don't rewrite his text, drop stories or pick a replacement
    article yourself. Report each one with a suggested fix and let him decide.
@@ -68,6 +68,12 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      (see the 2026-09-30 entry for the shape) and re-run `npm run -s publish-edition -- <YYYY-MM-DD>`. List every fix you made
      in the pull request and in your message, so he can check them. Anything you can't fix stays
      listed as an open problem.
+   **Alt text** is the one gap you fill in yourself, not an editorial problem: for each graphic the check
+   reports without alt text, look at it (the contact sheet in step 5 is enough) and write one or two plain
+   sentences naming the graphic's headline, its big number and the two or three key points it shows, in the
+   graphic's own words and figures, nothing it doesn't show. Add it as `{ "imageAlt": "…" }` under `stories`
+   in `data/edition-meta.json` and re-run. Say in the pull request and your message which graphics you wrote
+   alt text for, so he can change any.
    **AI Stress Index links** (he wants these every day): stories about AI debt, AI financing or credit stress get a link to
    the index. Every edition (from 22 Oct 2026) shows the day's reading, saved at publication, once: a card in "Today in 30 seconds" and one email line. Linked stories add an "Index" tag and are named on the card; with none it reads "Updated every trading day". The newsletter can mark them `stressindex: true`;
    the check also prints "ℹ Possible AI Stress Index link" for likely ones it doesn't mark. Tag each story that is clearly about

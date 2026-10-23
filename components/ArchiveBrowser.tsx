@@ -15,6 +15,7 @@ import {
   themesOf,
   weekday,
 } from "@/lib/editions";
+import SourcePicker from "@/components/SourcePicker";
 import StorySource, { storyHover, storyPaid } from "@/components/StorySource";
 
 export type StoryDetails = Record<string, { url2: string; points: string[]; why: string }>;
@@ -195,17 +196,15 @@ export default function ArchiveBrowser({
         )}
       </div>
       <div className="src-filter">
-        <label htmlFor="src-select">Source</label>
-        <select id="src-select" value={source} onChange={(ev) => setParam("source", ev.target.value)}>
-          <option value="">All sources ({countLabel(base.length, readingBase.length)})</option>
-          <optgroup label="Publisher">
-            {publishers.map(([name, [stories, links]]) => (
-              <option key={name} value={name}>
-                {name} ({countLabel(stories, links)})
-              </option>
-            ))}
-          </optgroup>
-        </select>
+        <span className="src-label" id="src-label">Source</span>
+        <SourcePicker
+          value={source}
+          onChange={(v) => setParam("source", v)}
+          options={[
+            { value: "", label: "All sources", count: countLabel(base.length, readingBase.length) },
+            ...publishers.map(([name, [stories, links]]) => ({ value: name, label: name, count: countLabel(stories, links) })),
+          ]}
+        />
         {source && (
           <button className="chip clear" onClick={() => setParam("source", "")}>
             Clear ×
