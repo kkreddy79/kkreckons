@@ -775,8 +775,6 @@ function Report({ d, bt, marks = [] }: { d: Data; bt: Backtest | null; marks?: M
         <p>Use it alongside established volatility and credit indicators and your own research. Not financial advice. <a href="/ai-stress-index/data.json" download>Download today’s data (JSON)</a></p>
       </section>
 
-      <EmbedBox />
-
       {/* Layer 3: the methodology */}
       <h2 className={s.h2} id="methodology">Methodology</h2>
       <details className={s.fold}>
@@ -844,6 +842,8 @@ function Report({ d, bt, marks = [] }: { d: Data; bt: Backtest | null; marks?: M
           · <a href="#methodology">Method</a> · <a href="/standards">Editorial standards</a>
         </p>
       )}
+      {/* Layer 4: for publishers who want to show the index on their own site. */}
+      <EmbedBox />
       <p className={s.disclaim}>Stress bands describe today’s reading. Formal alerts need extra conditions held for 5 straight trading days, so the index can be Elevated (25+) before the first alert, Stress Watch, triggers at 50. Gauge scores are normalised 0–100 readings, not probabilities. A Normal reading is not a prediction that markets are safe or will rise.</p>
       <p className={s.fine}>{d.model ? `Model v${d.model.version}. ` : ""}Built and curated by KK Reddy. An indicator of market conditions, not a forecast. For information only; not financial advice. Market data as of {longDate(d.asOf)} · refreshed {refreshedTxt}.</p>
     </div>
