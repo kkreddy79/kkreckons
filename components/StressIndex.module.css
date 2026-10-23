@@ -230,7 +230,7 @@
 .embedHead button { border: 1px solid var(--line); background: var(--paper); color: var(--si-ink); border-radius: 999px; padding: 6px 14px; font: 700 13px var(--sans); }
 .embedHead button:hover { border-color: var(--si-ink); }
 .embedSnip p { margin: 4px 0 8px !important; font-size: 13px !important; color: var(--muted2) !important; }
-.embedSnip pre { margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--si-read); border: 1px solid var(--line); overflow-x: auto; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--si-text); white-space: pre-wrap; word-break: break-all; }
+.embedSnip pre { margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--si-read); border: 1px solid var(--line); overflow-x: auto; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--si-text); white-space: pre-wrap; overflow-wrap: anywhere; }
 /* KKReckons stories marked on the trend chart. */
 .markNote { margin: 6px 0 0; font-size: 13px; text-align: center; color: var(--si-text); }
 .markNote a { color: var(--si-link); font-weight: 700; }
