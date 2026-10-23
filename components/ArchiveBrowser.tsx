@@ -22,6 +22,10 @@ export type ReadingLink = { date: string; title: string; url: string; note: stri
 /** "12 stories" / "1 further reading link" */
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
+/** A story on its edition page: stories are numbered in edition order, matching the #story-N anchors there. */
+const storyHref = (e: Edition, story: Edition["stories"][number]) =>
+  `/daily/${slugFor(e.date)}#story-${e.stories.indexOf(story) + 1}`;
+
 /** Dropdown count: stories, plus further reading links when there are any. */
 const countLabel = (stories: number, links: number) => (links ? `${stories} · ${links} reading` : `${stories}`);
 
@@ -34,29 +38,39 @@ export default function ArchiveBrowser({
   details: StoryDetails;
   reading: ReadingLink[];
 }) {
-  // Filters live in the URL (?q=, ?theme=, ?source=) but are read after mount, so the page is fully
+  // Filters live in the URL (?q=, ?theme=, ?source=, ?free=1) but are read after mount, so the page is fully
   // rendered on the server with the default "By edition" list (visible to crawlers and link previews).
   const [query, setQuery] = useState("");
   const [theme, setThemeState] = useState("");
   const [source, setSource] = useState("");
+  const [free, setFree] = useState(false);
   const [view, setView] = useState<"editions" | "stories">("editions");
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
     const [q, t, s] = [p.get("q") ?? "", p.get("theme") ?? "", p.get("source") ?? ""];
-    if (!q && !t && !s) return;
+    // ?source=free is the older link form of the free-to-read filter.
+    const f = p.get("free") === "1" || s === "free";
+    if (!q && !t && !s && !f) return;
     setQuery(q);
     setThemeState(t);
-    setSource(s);
+    setSource(s === "free" ? "" : s);
+    setFree(f);
     setView("stories");
+    if (s === "free") {
+      p.delete("source");
+      p.set("free", "1");
+      window.history.replaceState(null, "", `/daily/?${p}`);
+    }
   }, []);
 
-  const setParam = (key: "theme" | "source", value: string) => {
+  const setParam = (key: "theme" | "source" | "free", value: string) => {
     const next = new URLSearchParams(window.location.search);
     if (value) next.set(key, value);
     else next.delete(key);
     window.history.replaceState(null, "", `/daily/${next.size ? `?${next}` : ""}`);
     if (key === "theme") setThemeState(value);
+    else if (key === "free") setFree(!!value);
     else setSource(value);
     if (value) setView("stories");
   };
@@ -64,6 +78,7 @@ export default function ArchiveBrowser({
     setQuery("");
     setThemeState("");
     setSource("");
+    setFree(false);
     window.history.replaceState(null, "", "/daily/");
   };
   const setTheme = (t: string) => setParam("theme", t !== theme ? t : "");
@@ -121,19 +136,19 @@ export default function ArchiveBrowser({
     };
     for (const a of base) for (const p of new Set(a.pubs)) bump(p, 0);
     for (const r of readingBase) bump(r.pub, 1);
-    if (source && source !== "free" && !n.has(source)) n.set(source, [0, 0]);
+    if (source && !n.has(source)) n.set(source, [0, 0]);
     return [...n].sort((a, b) => b[1][0] - a[1][0] || b[1][1] - a[1][1] || a[0].localeCompare(b[0]));
   }, [base, readingBase, source]);
-  const freeCount = base.filter((a) => !a.paid).length;
-  const freeReading = readingBase.filter((r) => !r.paid).length;
+  const freeCount = base.filter((a) => !a.paid && (!source || a.pubs.includes(source))).length;
+  const freeReading = readingBase.filter((r) => !r.paid && (!source || r.pub === source)).length;
 
   const matches = useMemo(
-    () => base.filter((a) => !source || (source === "free" ? !a.paid : a.pubs.includes(source))),
-    [base, source]
+    () => base.filter((a) => (!source || a.pubs.includes(source)) && (!free || !a.paid)),
+    [base, source, free]
   );
   const readingMatches = useMemo(
-    () => readingBase.filter((r) => !source || (source === "free" ? !r.paid : r.pub === source)),
-    [readingBase, source]
+    () => readingBase.filter((r) => (!source || r.pub === source) && (!free || !r.paid)),
+    [readingBase, source, free]
   );
 
   const months = useMemo(() => {
@@ -185,7 +200,6 @@ export default function ArchiveBrowser({
         <label htmlFor="src-select">Source</label>
         <select id="src-select" value={source} onChange={(ev) => setParam("source", ev.target.value)}>
           <option value="">All sources ({countLabel(base.length, readingBase.length)})</option>
-          <option value="free">Free to read only ({countLabel(freeCount, freeReading)})</option>
           <optgroup label="Publisher">
             {publishers.map(([name, [stories, links]]) => (
               <option key={name} value={name}>
@@ -199,6 +213,14 @@ export default function ArchiveBrowser({
             Clear ×
           </button>
         )}
+        <button
+          type="button"
+          className={`chip${free ? " on" : ""}`}
+          aria-pressed={free}
+          onClick={() => setParam("free", free ? "" : "1")}
+        >
+          Free to read ({countLabel(freeCount, freeReading)})
+        </button>
       </div>
 
       {view === "editions" ? (
@@ -231,7 +253,8 @@ export default function ArchiveBrowser({
             {plural(matches.length, "story", "stories")}
             {readingMatches.length > 0 && <> and {plural(readingMatches.length, "further reading link", "further reading links")}</>}
             {theme && <> in <b>{theme}</b></>}
-            {source && <> from <b>{source === "free" ? "free-to-read sources" : source}</b></>}
+            {source && <> from <b>{source}</b></>}
+            {free && <>, free to read</>}
             {q && <> matching “{query.trim()}”</>}
           </p>
           {matches.length === 0 && readingMatches.length === 0 && (
@@ -247,7 +270,7 @@ export default function ArchiveBrowser({
           <ul>
             {matches.map(({ edition, story, s }, i) => (
               <li key={edition.date + story.title}>
-                <Link href={`/daily/${slugFor(edition.date)}`} className="sr-date">
+                <Link href={storyHref(edition, story)} className="sr-date">
                   {longDate(edition.date)}
                 </Link>
                 <div className="sr-title">
@@ -258,7 +281,7 @@ export default function ArchiveBrowser({
                       {story.title}
                     </a>
                   ) : (
-                    <Link href={`/daily/${slugFor(edition.date)}`}>{story.title}</Link>
+                    <Link href={storyHref(edition, story)}>{story.title}</Link>
                   )}
                 </div>
                 <div className="sr-src">
