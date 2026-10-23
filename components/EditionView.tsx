@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Fragment } from "react";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
@@ -52,104 +51,71 @@ const bandOf = (score: number) => [...BANDS].reverse().find(([, lo]) => score >=
 /** A reading for the card: the one saved with the edition, or on Home the latest one (with its change and trend). */
 type Reading = NonNullable<EditionContent["stressIndex"]> | (LiveStress & { backCalculated?: undefined });
 
-/** The last 30 daily scores as a line, scaled to their own range so small moves show. */
+/** The last 30 daily scores as a small line, scaled to their own range so small moves show. */
 function Trend({ points }: { points: number[] }) {
   const lo = Math.min(...points);
   const hi = Math.max(...points, lo + 10);
   const xy = points.map((v, i) => `${((i / (points.length - 1)) * 100).toFixed(1)},${(28 - ((v - lo) / (hi - lo)) * 24).toFixed(1)}`);
   return (
-    <div className="ev-sx-trend">
-      <svg viewBox="0 0 100 32" preserveAspectRatio="none" role="img" aria-label={`Last ${points.length} trading days: low ${Math.min(...points)}, high ${Math.max(...points)}`}>
-        <polyline points={xy.join(" ")} fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-      </svg>
-      <span>
-        {points.length} trading days · low {Math.min(...points)} · high {Math.max(...points)}
-      </span>
-    </div>
+    <svg className="ev-sx-spark" viewBox="0 0 100 32" preserveAspectRatio="none" role="img" aria-label={`Last ${points.length} trading days: low ${Math.min(...points)}, high ${Math.max(...points)}`}>
+      <polyline points={xy.join(" ")} fill="none" stroke="#fff" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+    </svg>
   );
 }
 
-/** "Up 6 points from 21 Oct" */
+/** "Up 6 from 21 Oct" */
 function changeText(score: number, prev: number | null | undefined, prevDate: string | null | undefined) {
   if (prev == null || !prevDate) return "";
   const d = score - prev;
-  if (d === 0) return ` Unchanged from ${shortDate(prevDate)}.`;
-  return ` ${d > 0 ? "Up" : "Down"} ${Math.abs(d)} point${Math.abs(d) === 1 ? "" : "s"} from ${shortDate(prevDate)}.`;
+  return d === 0 ? `Unchanged from ${shortDate(prevDate)}` : `${d > 0 ? "Up" : "Down"} ${Math.abs(d)} from ${shortDate(prevDate)}`;
 }
 
-/** The AI Stress Index, shown once near the top of an edition (every edition from 22 Oct 2026, earlier ones only when KK tagged a story). Edition pages show the reading saved when the edition was published; Home shows the latest one. */
-function StressCard({ si, related, date }: { si?: Reading; related: number[]; date: string }) {
+/**
+ * The AI Stress Index as one slim strip near the top of an edition (every edition from 22 Oct 2026, earlier
+ * ones only when KK tagged a story): score, band, the day's change and a 30-day line on Home, and the
+ * stories it relates to. Edition pages show the reading saved when the edition was published; Home the latest.
+ */
+function StressCard({ si, related }: { si?: Reading; related: number[] }) {
   const live = si && "trend" in si ? si : null;
   const band = si && !live?.limited ? bandOf(si.score) : null;
-  const next = band ? BANDS[BANDS.indexOf(band) + 1] : null;
+  const notes = [
+    live ? changeText(live.score, live.prevScore, live.prevDate) : "",
+    si ? `${shortDate(si.asOf)} close${si.backCalculated ? " (back-calculated)" : ""}` : "Updated every trading day",
+  ].filter(Boolean);
   return (
-    <section className="ev-sx" aria-labelledby={`sx-${date}`}>
-      <div className="ev-sx-top">
-        {si && (
-          <p className="ev-sx-score" style={{ color: band ? band[2] : "#fff" }}>
-            <b>{si.score}</b>
-            <span>/100</span>
-          </p>
-        )}
-        <div>
-          <p className="ev-sx-kicker">
-            AI Stress Index{si ? ` · ${live ? "latest, " : ""}${shortDate(si.asOf)} close${si.backCalculated ? " (back-calculated)" : ""}` : ""}
-          </p>
-          <h2 id={`sx-${date}`}>
-            {si && band ? (
-              <>
-                Stress in AI markets is{" "}
-                <em style={{ background: band[2] }}>{band[0]}</em>
-              </>
-            ) : live?.limited ? (
-              "Limited data in today’s reading"
-            ) : (
-              "How stressed are AI markets?"
-            )}
-          </h2>
-          <p className="ev-sx-sub">
-            A daily 0–100 gauge of strain in AI stocks, financing and credit
-            {si && next ? `. ${next[1] - si.score} point${next[1] - si.score === 1 ? "" : "s"} from ${next[0]}.` : "."}
-            {live?.limited && " Over a quarter of the inputs are stale, so no band is shown."}
-            {live && changeText(live.score, live.prevScore, live.prevDate)}
-          </p>
-        </div>
+    <section className="ev-sx" aria-label="AI Stress Index">
+      <div className="ev-sx-main">
+        <p className="ev-sx-kicker" title="A daily 0–100 gauge of strain in AI stocks, financing and credit">
+          AI Stress Index
+        </p>
+        <p className="ev-sx-read">
+          {si && (
+            <>
+              <b style={{ color: band ? band[2] : "#fff" }}>{si.score}</b>
+              <span>/100</span>
+            </>
+          )}
+          {band ? <em style={{ background: band[2] }}>{band[0]}</em> : live?.limited ? <em className="ev-sx-limited">Limited data</em> : null}
+        </p>
+        <p className="ev-sx-note">
+          {notes.join(" · ")}
+          {related.length > 0 && (
+            <>
+              {" · "}
+              {related.length === 1 ? "Story" : "Stories"}{" "}
+              {related.map((n) => (
+                <a key={n} href={`#story-${n}`}>
+                  {String(n).padStart(2, "0")}
+                </a>
+              ))}
+            </>
+          )}
+        </p>
       </div>
-      {si && band && (
-        <div className="ev-sx-meter" role="img" aria-label={`${si.score} out of 100, in the ${band[0]} band`}>
-          <div className="ev-sx-bar">
-            {BANDS.map(([name, , c]) => (
-              <span key={name} style={{ background: c }} />
-            ))}
-            <i style={{ left: `${Math.min(100, Math.max(0, si.score))}%` }} />
-          </div>
-          <div className="ev-sx-scale" aria-hidden>
-            {BANDS.map(([name]) => (
-              <span key={name} className={name === band[0] ? "on" : undefined}>
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
       {live && live.trend.length > 1 && <Trend points={live.trend} />}
-      <div className="ev-sx-foot">
-        {related.length > 0 ? (
-          <span>
-            Behind today’s {related.length === 1 ? "story" : "stories"}{" "}
-            {related.map((n) => (
-              <a key={n} href={`#story-${n}`}>
-                {String(n).padStart(2, "0")}
-              </a>
-            ))}
-          </span>
-        ) : (
-          <span>Updated every trading day</span>
-        )}
-        <Link className="ev-sx-cta" href="/ai-stress-index">
-          See the gauges →
-        </Link>
-      </div>
+      <Link className="ev-sx-cta" href="/ai-stress-index">
+        Gauges →
+      </Link>
     </section>
   );
 }
@@ -293,7 +259,6 @@ export default function EditionView({
   related = [],
   signup,
   liveStress,
-  digestAfterPick: digestAfterPickProp = false,
   children,
 }: {
   e: EditionContent;
@@ -308,13 +273,11 @@ export default function EditionView({
   signup?: React.ReactNode;
   /** Home: today's AI Stress Index reading, shown instead of the one saved with the edition. */
   liveStress?: LiveStress | null;
-  /** Home: show "Today in 30 seconds" after Pick of the day instead of above the stories. */
-  digestAfterPick?: boolean;
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
-  // "Today in 30 seconds": near the top, or on Home after Pick of the day so the first story comes sooner.
+  // "Today in 30 seconds", right under the headline.
   const digest = count > 2 && (
     <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
       <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
@@ -336,7 +299,6 @@ export default function EditionView({
       </ol>
     </nav>
   );
-  const digestAfterPick = digestAfterPickProp && e.sections.some((sec) => sec.name === "Pick of the day");
   const tracked = e.sections.flatMap((sec) => sec.stories).flatMap((s, i) => (s.stressIndex ? [i + 1] : []));
   let n = 0;
 
@@ -361,13 +323,6 @@ export default function EditionView({
             </>
           )}
         </p>
-        {liveStress && (
-          <a href={`#sx-${e.date}`} className="ev-sx-chip">
-            <i style={{ background: liveStress.limited ? "#a1a1aa" : bandOf(liveStress.score)[2] }} aria-hidden />
-            AI Stress Index <b>{liveStress.score}</b>
-            {!liveStress.limited && <span>{bandOf(liveStress.score)[0]}</span>}
-          </a>
-        )}
         {e.sections.length > 1 && (
           <nav className="ev-jump" id={`jump-${e.date}`} aria-label="Sections">
             {e.sections.map((s) => (
@@ -392,9 +347,9 @@ export default function EditionView({
       )}
       <PrintImages />
 
-      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} date={e.date} />}
+      {digest}
 
-      {!digestAfterPick && digest}
+      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} />}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">
@@ -419,8 +374,8 @@ export default function EditionView({
       )}
 
       {e.sections.map((sec) => (
-        <Fragment key={sec.name}>
         <section
+          key={sec.name}
           className="ev-section"
           data-sec={sectionId(sec.name)}
           id={sectionId(sec.name)}
@@ -467,8 +422,6 @@ export default function EditionView({
             </div>
           )}
         </section>
-        {digestAfterPick && sec.name === "Pick of the day" && digest}
-        </Fragment>
       ))}
 
       <div className={`ev-end${e.reading.length ? "" : " ev-end-solo"}`}>
