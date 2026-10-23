@@ -1,7 +1,10 @@
-/** Two-worlds sunset panorama with the KKReckons wordmark, fading into the page. */
-export default function Banner({ strap = "A clearer slice of a complex world" }: { strap?: string }) {
+/**
+ * Two-worlds sunset panorama with the KKReckons wordmark, fading into the page. `compact` is the shorter
+ * version for Home, so today's headline and first story sit higher on the screen.
+ */
+export default function Banner({ strap = "A clearer slice of a complex world", compact }: { strap?: string; compact?: boolean }) {
   return (
-    <header className="ab-top">
+    <header className={`ab-top${compact ? " ab-top-sm" : ""}`}>
       <picture className="ab-top-img">
         <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.webp" type="image/webp" />
         <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.jpg" />

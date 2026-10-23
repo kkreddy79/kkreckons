@@ -19,5 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
+    ...editions.flatMap((e) =>
+      e.stories.map((_, i) => ({ url: `${SITE_URL}/daily/${slugFor(e.date)}/${i + 1}`, lastModified: e.date, changeFrequency: "monthly" as const, priority: 0.5 }))
+    ),
   ];
 }
