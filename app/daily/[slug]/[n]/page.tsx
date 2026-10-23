@@ -6,6 +6,8 @@ import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
 import { relatedForStory } from "@/lib/related";
+import { entitiesForStory } from "@/lib/entities";
+import ReadTracker from "@/components/ReadTracker";
 import { topicStories } from "@/lib/topics";
 import { editions, getEdition, longDate, shortDate, slugFor, storyHref, themesOf } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
@@ -68,6 +70,7 @@ export default async function StoryPage({ params }: Props) {
         .filter((t) => t.edition.date !== edition.date)
         .map((t) => ({ date: t.edition.date, title: t.story.title, href: storyHref(t.edition, t.story).replace("#story-", "/") }))
     : [];
+  const names = entitiesForStory(edition.date, n).slice(0, 4);
   const related = [...named, ...sameTopic.filter((t) => !named.some((r) => r.href === t.href))].slice(0, 3);
   return (
     <main className="ev-wrap ev-page st-page">
@@ -101,6 +104,7 @@ export default async function StoryPage({ params }: Props) {
       <nav className="crumbs">
         <Link href="/daily/">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
       </nav>
+      <ReadTracker date={edition.date} story={n} />
       <div className="ev">
         <StoryCard s={story} n={n} wide full as="h1" priority id={`st-qs-${edition.date}-${n}`} date={edition.date} />
         <p className="st-more">
@@ -111,6 +115,16 @@ export default async function StoryPage({ params }: Props) {
             Catch up on past editions
           </Link>
         </p>
+        {names.length > 0 && (
+          <p className="st-names">
+            More on:
+            {names.map((x) => (
+              <Link key={x.slug} href={`/coverage/${x.slug}`} className="chip">
+                {x.name} <span>{x.stories.length}</span>
+              </Link>
+            ))}
+          </p>
+        )}
         {related.length > 0 && (
           <section className="ev-related" aria-labelledby="st-rel-t">
             <h2 id="st-rel-t">Read next</h2>

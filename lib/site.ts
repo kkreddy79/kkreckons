@@ -32,3 +32,6 @@ export function correctionsHref(subject: string) {
  * set `reward` (e.g. "the Best of KKReckons PDF: 10 top explainers") and `referrals` once the program is on.
  */
 export const REFERRAL = { reward: "", referrals: 3 };
+
+/** The KKReckons WhatsApp Channel link (https://whatsapp.com/channel/…). Left empty, the "Follow on WhatsApp" buttons stay hidden. */
+export const WHATSAPP_CHANNEL = "";

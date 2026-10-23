@@ -63,7 +63,7 @@ export default function Week() {
           ))}
         </ol>
         <p className="tp-more">
-          Looking further back? <Link href={`/month/${monthSlug(months[0])}`}>Best of {monthLabel(`${months[0]}-01`)} →</Link> ·{" "}
+          Test yourself: <Link href="/quiz">take the weekly quiz →</Link> · Looking further back? <Link href={`/month/${monthSlug(months[0])}`}>Best of {monthLabel(`${months[0]}-01`)} →</Link> ·{" "}
           Want everything? <Link href="/daily/">Catch up on every edition →</Link>
         </p>
         <SubscribeBox />

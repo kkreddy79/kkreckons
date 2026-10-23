@@ -257,7 +257,7 @@ function GaugeCard({ f }: { f: Factor }) {
   );
 }
 
-function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) {
+function TrendChart({ H, score, marks = [] }: { H: Data["history"]; score: number | null; marks?: Mark[] }) {
   const [show, setShow] = useState({ equity: true, financing: true, credit: true });
   const [hover, setHover] = useState<number | null>(null);
   const W = 720, Ht = 240, L = 34, R = 10, T = 10, B = 26;
@@ -290,15 +290,24 @@ function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) 
   };
   const hp = hover != null ? H[hover] : null;
   const shown = hp ?? last; // with nothing selected, the readout shows the latest day
+  // Each story sits on the last trading day before it ran (the close it was written after).
+  const at = new Map<number, Mark[]>();
+  for (const m of marks) {
+    let i = -1;
+    H.forEach((p, k) => { if (p.date < m.date) i = k; });
+    if (i >= 0 && m.date > H[0].date) at.set(i, [...(at.get(i) || []), m]);
+  }
+  const shownAt = at.get(hover ?? H.length - 1) ?? [];
   return (
     <figure className={s.panel}>
-      <figcaption className={s.chartHead}>Is AI market stress building?<small>Daily index, last 52 weeks, on its 0–100 scale. Tap, drag or hover to read any day. Coloured lines show where the stress comes from; tap a label to hide or show it.</small></figcaption>
+      <figcaption className={s.chartHead}>Is AI market stress building?<small>Daily index, last 52 weeks, on its 0–100 scale. Tap, drag or hover to read any day. Coloured lines show where the stress comes from; tap a label to hide or show it. Orange markers are days KKReckons covered AI debt or credit stress.</small></figcaption>
       <svg viewBox={`0 0 ${W} ${Ht}`} role="img" aria-label="Index over the last 52 weeks" onPointerMove={onMove} onPointerDown={onMove} onPointerLeave={(e) => { if (e.pointerType === "mouse") setHover(null); }} style={{ touchAction: "pan-y" }}>
         {[25, 50, 75].map((b) => <rect key={b} x={L} width={W - L - R} y={ys(b + 25)} height={ys(b) - ys(b + 25)} fill={b === 75 ? "var(--si-zone-75)" : b === 50 ? "var(--si-zone-50)" : "var(--si-zone-25)"} />)}
         {[0, 25, 50, 75, 100].map((g) => <g key={g}><line x1={L} x2={W - R} y1={ys(g)} y2={ys(g)} stroke="var(--line)" /><text x={L - 6} y={ys(g) + 4} textAnchor="end" className={s.axis}>{g}</text></g>)}
         {ticks.filter((_, n) => n % 2 === 0).map(({ p, i }) => <text key={p.date} x={xs(i)} y={Ht - 6} textAnchor="middle" className={s.axis}>{MON[Number(p.date.slice(5, 7)) - 1]}</text>)}
         {comps.map((c) => show[c.key] && <path key={c.key} d={path(c.key)} fill="none" stroke={c.color} strokeWidth="1.6" strokeLinejoin="round" />)}
         <path d={path("score")} fill="none" stroke={C.slate} strokeWidth="3" strokeLinejoin="round" />
+        {[...at.keys()].map((i) => <path key={i} d={`M${xs(i).toFixed(1)},${Ht - B - 2} l-5,-8 h10 z`} fill="var(--si-mark, #E8590C)" />)}
         {!hp && last && last.score != null && <g><circle cx={xs(H.length - 1)} cy={ys(last.score)} r="5" fill={C.slate} /><text x={xs(H.length - 1) - 8} y={ys(last.score) - 10} textAnchor="end" className={s.lastLabel}>{last.score} · {shortDate(last.date)}</text></g>}
         {hp && hover != null && <g><line x1={xs(hover)} x2={xs(hover)} y1={T} y2={Ht - B} stroke="#94A3B8" strokeDasharray="3 3" />
           {comps.map((c) => show[c.key] && hp[c.key] != null && <circle key={c.key} cx={xs(hover)} cy={ys(hp[c.key] as number)} r="3.5" fill={c.color} />)}
@@ -308,8 +317,20 @@ function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) 
       <div className={s.readout} aria-live="polite">
         {shown ? <><b>{longDate(shown.date)}{hp ? "" : " (latest)"}</b> · <span className={s.roIdx}>Index {shown.score ?? "—"}</span>{comps.filter((c) => show[c.key]).map((c) => <span key={c.key} className={s.roItem}><i style={{ background: c.color }} />{c.label} {shown[c.key] == null ? "—" : (shown[c.key] as number).toFixed(0)}</span>)}</> : <span>&nbsp;</span>}
       </div>
+      {shownAt.length > 0 && (
+        <p className={s.markNote}>
+          On KKReckons:{" "}
+          {shownAt.map((m, k) => (
+            <span key={m.href}>
+              {k > 0 && " · "}
+              <a href={m.href}>{m.title}</a>
+            </span>
+          ))}
+        </p>
+      )}
       <div className={s.toggles}>
         <span className={s.toggleOn}><i style={{ background: C.slate }} />Index</span>
+        {at.size > 0 && <span className={s.toggleOn}><i className={s.markKey} />KKReckons story</span>}
         {comps.map((c) => (
           <button key={c.key} type="button" aria-pressed={show[c.key]} className={show[c.key] ? s.toggleOn : s.toggle} onClick={() => setShow((v) => ({ ...v, [c.key]: !v[c.key] }))}>
             <i style={{ background: c.color }} />{c.label}
@@ -574,7 +595,10 @@ function EmbedBox() {
 }
 
 /* ---------- Page ---------- */
-export default function StressIndex({ initial = null, initialBt = null }: { initial?: Data | null; initialBt?: Backtest | null }) {
+/** A KKReckons story about AI debt or credit stress, marked on the trend chart. */
+export type Mark = { date: string; title: string; href: string };
+
+export default function StressIndex({ initial = null, initialBt = null, marks = [] }: { initial?: Data | null; initialBt?: Backtest | null; marks?: Mark[] }) {
   const [d, setD] = useState<Data | null>(initial);
   const [bt, setBt] = useState<Backtest | null>(initialBt);
   const [err, setErr] = useState<string | null>(null);
@@ -591,12 +615,12 @@ export default function StressIndex({ initial = null, initialBt = null }: { init
       <Banner />
       {err ? <div className={`container ${s.page}`}><p className={s.err}>The latest index data couldn’t be loaded ({err}). Please try again shortly.</p></div>
         : !d ? <div className={`container ${s.page}`}><p className={s.loading}>Loading today’s index…</p></div>
-        : <Report d={d} bt={bt} />}
+        : <Report d={d} bt={bt} marks={marks} />}
     </main>
   );
 }
 
-function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
+function Report({ d, bt, marks = [] }: { d: Data; bt: Backtest | null; marks?: Mark[] }) {
   const h = hook(d);
   const sorted = [...d.factors].sort((a, b) => b.stress - a.stress);
   const signal = sorted[0] && sorted[0].stress >= 0.5 ? sorted[0] : null;
@@ -724,7 +748,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
       <p className={s.small}>Sorted by stress score (0–100). Tap a gauge for its latest value, contribution and why it matters, then open the details for thresholds, history and source.</p>
       <div className={s.gauges}>{sorted.map((f) => <GaugeCard key={f.col} f={f} />)}</div>
 
-      <TrendChart H={d.history} score={d.score} />
+      <TrendChart H={d.history} score={d.score} marks={marks} />
 
       <details className={s.fold}>
         <summary>Weekly highs and formal alerts</summary>

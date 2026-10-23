@@ -1,8 +1,11 @@
 # Welcome email series (draft for approval)
 
-Three emails sent by a beehiiv automation to every new subscriber, triggered on sign-up.
-Nothing is live until Krishnakanth approves the copy; then it is set up in beehiiv
-(Automations → New → trigger "Subscription created") with these three emails.
+Three emails for every new subscriber. Nothing is live until Krishnakanth approves the copy.
+
+**Plan limits:** the KKReckons beehiiv account is on the free Launch plan, which has no automations. So:
+- **Email 1** goes in as beehiiv's welcome email (the single email sent on sign-up), if the plan offers it.
+- **Emails 2 and 3** need an automation (Automations → New → trigger "Subscription created"), which needs a
+  paid beehiiv plan. Until then they stay here as drafts; parts of them can run as occasional notes in the daily email.
 
 Links use the site's real pages. `{{rp_refer_url}}` is beehiiv's merge tag for the reader's personal referral link
 (only used once the referral program is on; until then email 3 uses the plain share line in brackets).
