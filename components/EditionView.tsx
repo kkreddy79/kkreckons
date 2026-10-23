@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
@@ -292,6 +293,7 @@ export default function EditionView({
   related = [],
   signup,
   liveStress,
+  digestAfterPick: digestAfterPickProp = false,
   children,
 }: {
   e: EditionContent;
@@ -306,10 +308,35 @@ export default function EditionView({
   signup?: React.ReactNode;
   /** Home: today's AI Stress Index reading, shown instead of the one saved with the edition. */
   liveStress?: LiveStress | null;
+  /** Home: show "Today in 30 seconds" after Pick of the day instead of above the stories. */
+  digestAfterPick?: boolean;
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
+  // "Today in 30 seconds": near the top, or on Home after Pick of the day so the first story comes sooner.
+  const digest = count > 2 && (
+    <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
+      <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
+      <ol>
+        {e.sections
+          .flatMap((sec) => sec.stories)
+          .map((s, i) => (
+            <li key={s.title}>
+              <a href={`#story-${i + 1}`}>
+                <span className="ev-30s-n">{String(i + 1).padStart(2, "0")}</span>
+                <span>
+                  {s.category && <small>{s.category}</small>}
+                  {s.emailHead || s.title}
+                  {s.stressIndex && <em className="ev-30s-tag">Index</em>}
+                </span>
+              </a>
+            </li>
+          ))}
+      </ol>
+    </nav>
+  );
+  const digestAfterPick = digestAfterPickProp && e.sections.some((sec) => sec.name === "Pick of the day");
   const tracked = e.sections.flatMap((sec) => sec.stories).flatMap((s, i) => (s.stressIndex ? [i + 1] : []));
   let n = 0;
 
@@ -367,27 +394,7 @@ export default function EditionView({
 
       {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} date={e.date} />}
 
-      {count > 2 && (
-        <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
-          <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
-          <ol>
-            {e.sections
-              .flatMap((sec) => sec.stories)
-              .map((s, i) => (
-                <li key={s.title}>
-                  <a href={`#story-${i + 1}`}>
-                    <span className="ev-30s-n">{String(i + 1).padStart(2, "0")}</span>
-                    <span>
-                      {s.category && <small>{s.category}</small>}
-                      {s.emailHead || s.title}
-                      {s.stressIndex && <em className="ev-30s-tag">Index</em>}
-                    </span>
-                  </a>
-                </li>
-              ))}
-          </ol>
-        </nav>
-      )}
+      {!digestAfterPick && digest}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">
@@ -412,8 +419,8 @@ export default function EditionView({
       )}
 
       {e.sections.map((sec) => (
+        <Fragment key={sec.name}>
         <section
-          key={sec.name}
           className="ev-section"
           data-sec={sectionId(sec.name)}
           id={sectionId(sec.name)}
@@ -460,6 +467,8 @@ export default function EditionView({
             </div>
           )}
         </section>
+        {digestAfterPick && sec.name === "Pick of the day" && digest}
+        </Fragment>
       ))}
 
       <div className={`ev-end${e.reading.length ? "" : " ev-end-solo"}`}>

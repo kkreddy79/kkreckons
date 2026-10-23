@@ -89,7 +89,8 @@ function KindTag({ col }: { col: string }) {
   const k = KIND[col];
   return k ? <em className={k === "AI-specific" ? s.kindAi : s.kindBroad}>{k}</em> : null;
 }
-const C = { red: "#DC2626", orangeRed: "#EA580C", green: "#16A34A", amber: "#F59E0B", indigo: "#4F46E5", teal: "#0D9488", slate: "#1E293B" };
+// Slate follows the theme (dark ink on light, light ink on dark, see StressIndex.module.css); the band fills read on both.
+const C = { red: "#DC2626", orangeRed: "#EA580C", green: "#16A34A", amber: "#F59E0B", indigo: "#4F46E5", teal: "#0D9488", slate: "var(--si-ink)" };
 const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const longDate = (iso: string | null | undefined) => {
@@ -108,7 +109,11 @@ const bandColor = (v: number | null) => (v == null ? C.slate : v >= 75 ? C.red :
 const stressColor = (x: number) => bandColor(x * 100);
 // Darker shades of the same bands for text and white-on-colour badges: the fill colours above fall
 // below WCAG AA contrast (4.5:1) as text on white. Fills (bars, swatches, chart) keep the bright shades.
-const TEXT = { red: "#B91C1C", orangeRed: "#C2410C", green: "#15803D", amber: "#B45309" };
+// In dark mode these switch to lighter shades of the same bands (StressIndex.module.css).
+const TEXT = { red: "var(--si-band-red)", orangeRed: "var(--si-band-orange)", green: "var(--si-band-green)", amber: "var(--si-band-amber)" };
+// White-on-colour badges keep the darker shades in both themes.
+const BADGE = { red: "#B91C1C", orangeRed: "#C2410C", green: "#15803D", amber: "#B45309" };
+const badgeBg = (v: number | null) => (v == null ? "#1E293B" : v >= 75 ? BADGE.red : v >= 50 ? BADGE.orangeRed : v >= 25 ? BADGE.amber : BADGE.green);
 const bandText = (v: number | null) => (v == null ? C.slate : v >= 75 ? TEXT.red : v >= 50 ? TEXT.orangeRed : v >= 25 ? TEXT.amber : TEXT.green);
 const stressText = (x: number) => bandText(x * 100);
 // The same bands label the index and every gauge score.
@@ -199,7 +204,7 @@ function Sparkline({ data }: { data: Spark[] }) {
   pts.forEach((p) => { if (p.y == null) { pen = false; return; } path += `${pen ? "L" : "M"}${p.x.toFixed(1)},${p.y.toFixed(1)} `; pen = true; });
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className={s.spark} preserveAspectRatio="none" role="img" aria-label="Stress score over the last 52 weeks">
-      <line x1={P} x2={W - P} y1={H / 2} y2={H / 2} stroke="#D6D0C4" strokeDasharray="4 4" vectorEffect="non-scaling-stroke" />
+      <line x1={P} x2={W - P} y1={H / 2} y2={H / 2} stroke="var(--si-grid)" strokeDasharray="4 4" vectorEffect="non-scaling-stroke" />
       <path d={path} fill="none" stroke={C.indigo} strokeWidth="2" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
     </svg>
   );
@@ -289,8 +294,8 @@ function TrendChart({ H, score }: { H: Data["history"]; score: number | null }) 
     <figure className={s.panel}>
       <figcaption className={s.chartHead}>Is AI market stress building?<small>Daily index, last 52 weeks, on its 0–100 scale. Tap, drag or hover to read any day. Coloured lines show where the stress comes from; tap a label to hide or show it.</small></figcaption>
       <svg viewBox={`0 0 ${W} ${Ht}`} role="img" aria-label="Index over the last 52 weeks" onPointerMove={onMove} onPointerDown={onMove} onPointerLeave={(e) => { if (e.pointerType === "mouse") setHover(null); }} style={{ touchAction: "pan-y" }}>
-        {[25, 50, 75].map((b) => <rect key={b} x={L} width={W - L - R} y={ys(b + 25)} height={ys(b) - ys(b + 25)} fill={b === 75 ? "#FEF2F2" : b === 50 ? "#FFF7ED" : "#FFFBEB"} />)}
-        {[0, 25, 50, 75, 100].map((g) => <g key={g}><line x1={L} x2={W - R} y1={ys(g)} y2={ys(g)} stroke="#E9E4DC" /><text x={L - 6} y={ys(g) + 4} textAnchor="end" className={s.axis}>{g}</text></g>)}
+        {[25, 50, 75].map((b) => <rect key={b} x={L} width={W - L - R} y={ys(b + 25)} height={ys(b) - ys(b + 25)} fill={b === 75 ? "var(--si-zone-75)" : b === 50 ? "var(--si-zone-50)" : "var(--si-zone-25)"} />)}
+        {[0, 25, 50, 75, 100].map((g) => <g key={g}><line x1={L} x2={W - R} y1={ys(g)} y2={ys(g)} stroke="var(--line)" /><text x={L - 6} y={ys(g) + 4} textAnchor="end" className={s.axis}>{g}</text></g>)}
         {ticks.filter((_, n) => n % 2 === 0).map(({ p, i }) => <text key={p.date} x={xs(i)} y={Ht - 6} textAnchor="middle" className={s.axis}>{MON[Number(p.date.slice(5, 7)) - 1]}</text>)}
         {comps.map((c) => show[c.key] && <path key={c.key} d={path(c.key)} fill="none" stroke={c.color} strokeWidth="1.6" strokeLinejoin="round" />)}
         <path d={path("score")} fill="none" stroke={C.slate} strokeWidth="3" strokeLinejoin="round" />
@@ -330,7 +335,7 @@ function WeeklyChart({ Wk }: { Wk: Data["weekly"] }) {
   const ys = (v: number) => T + (1 - v / 100) * (Ht - T - B);
   return (
     <svg viewBox={`0 0 ${W} ${Ht}`} role="img" aria-label="Weekly high of the index over 26 weeks">
-      {[0, 25, 50, 75, 100].map((g) => <g key={g}><line x1={L} x2={W - R} y1={ys(g)} y2={ys(g)} stroke="#E9E4DC" /><text x={L - 6} y={ys(g) + 4} textAnchor="end" className={s.axis}>{g}</text></g>)}
+      {[0, 25, 50, 75, 100].map((g) => <g key={g}><line x1={L} x2={W - R} y1={ys(g)} y2={ys(g)} stroke="var(--line)" /><text x={L - 6} y={ys(g) + 4} textAnchor="end" className={s.axis}>{g}</text></g>)}
       {Wk.map((w, i) => (
         <g key={w.weekEnding}>
           {w.high != null && <rect x={L + i * bw + bw * 0.15} width={bw * 0.7} y={ys(w.high)} height={Math.max(0, ys(0) - ys(w.high))} rx="2" fill={bandColor(w.high)}><title>{`Week ending ${longDate(w.weekEnding)}: ${w.high}`}</title></rect>}
@@ -512,6 +517,60 @@ function Banner() {
   );
 }
 
+/* ---------- Embed snippets ---------- */
+const SITE = "https://www.kkreckons.com";
+const EMBEDS = [
+  {
+    key: "card",
+    label: "Live card (iframe)",
+    note: "For sites that allow embeds: a small card with today’s score, band and change, updated hourly.",
+    code: `<iframe src="${SITE}/ai-stress-index/embed" title="AI Stress Index by KKReckons" width="360" height="150" style="border:0;max-width:100%" loading="lazy"></iframe>`,
+  },
+  {
+    key: "badge",
+    label: "Badge (image)",
+    note: "For newsletters, blogs and READMEs that only take images: a one-line badge that links back here.",
+    code: `<a href="${SITE}/ai-stress-index"><img src="${SITE}/ai-stress-index/badge.svg" alt="AI Stress Index by KKReckons" height="22"></a>`,
+  },
+];
+
+/** Copy-and-paste snippets so other sites can show the index and link back to it. */
+function EmbedBox() {
+  const [copied, setCopied] = useState("");
+  const copy = async (key: string, code: string) => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(key);
+      setTimeout(() => setCopied(""), 2000);
+    } catch {
+      window.prompt("Copy this snippet:", code);
+    }
+  };
+  return (
+    <section className={s.meaning} id="embed" aria-labelledby="embed-title">
+      <h2 id="embed-title">Embed this index</h2>
+      <p>Free to use with the link back intact. The reading refreshes hourly after each US close.</p>
+      <div className={s.embedPreview}>
+        <iframe src="/ai-stress-index/embed" title="Preview of the AI Stress Index card" width="360" height="150" loading="lazy" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/ai-stress-index/badge.svg" alt="Preview of the AI Stress Index badge" height={22} />
+      </div>
+      {EMBEDS.map((e) => (
+        <div key={e.key} className={s.embedSnip}>
+          <div className={s.embedHead}>
+            <b>{e.label}</b>
+            <button type="button" onClick={() => copy(e.key, e.code)} aria-live="polite">
+              {copied === e.key ? "Copied ✓" : "Copy code"}
+            </button>
+          </div>
+          <p>{e.note}</p>
+          <pre><code>{e.code}</code></pre>
+        </div>
+      ))}
+    </section>
+  );
+}
+
 /* ---------- Page ---------- */
 export default function StressIndex({ initial = null, initialBt = null }: { initial?: Data | null; initialBt?: Backtest | null }) {
   const [d, setD] = useState<Data | null>(initial);
@@ -570,7 +629,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
             <span className={s.score} style={{ color: bandText(d.score) }}>{d.score ?? "—"}</span>
             <span className={s.outOf}>/ 100</span>
             <span className={s.bandTxt}>
-              <span className={s.badge} style={{ background: staleW > LIMITED ? "#71717A" : bandText(d.score) }}>{staleW > LIMITED ? "LIMITED DATA" : band(d.score).toUpperCase()}</span>
+              <span className={s.badge} style={{ background: staleW > LIMITED ? "#71717A" : badgeBg(d.score) }}>{staleW > LIMITED ? "LIMITED DATA" : band(d.score).toUpperCase()}</span>
               {change != null && <small>{change === 0 ? "Unchanged" : `${change > 0 ? "Up" : "Down"} ${Math.abs(change)} point${Math.abs(change) === 1 ? "" : "s"}`} vs previous close ({d.prevScore})</small>}
               {d.scoreRange && d.scoreRange.tight != null && d.scoreRange.loose != null && (
                 <small title={`Today’s index recomputed with every threshold ${pct(d.scoreRange.pct)} tighter or looser`}>Range {d.scoreRange.loose}–{d.scoreRange.tight} if thresholds move ±{pct(d.scoreRange.pct)}</small>
@@ -585,7 +644,7 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
           <p className={s.meaningLine}>
             A summary of the nine gauges below, not a probability of a crash or a verdict on AI valuations. <a href="#meaning">What this score means</a>
           </p>
-          <p className={s.alert}>Stress band: <b>{band(d.score)}</b> · Formal alert: <b>{active ? `${active.level} ${ALERTS[active.level]}` : "None"}</b>{d.shock && <> · Shock flag: <b style={d.shock.active ? { color: C.red } : undefined}>{d.shock.active ? "On" : "Off"}</b></>}</p>
+          <p className={s.alert}>Stress band: <b>{band(d.score)}</b> · Formal alert: <b>{active ? `${active.level} ${ALERTS[active.level]}` : "None"}</b>{d.shock && <> · Shock flag: <b style={d.shock.active ? { color: "var(--si-red)" } : undefined}>{d.shock.active ? "On" : "Off"}</b></>}</p>
           {d.shock?.active && <p className={s.staleWarn}>Shock flag: the index is {d.score}, at or above {d.shock.threshold}, but no formal alert has confirmed. Fast sell-offs can do this without holding long enough for an alert. It is a heads-up, not an alert.</p>}
           <div className={s.fresh}>
             <div><span>Stock &amp; ETF data</span><b>{longDate(priceDate)} · US close</b><em className={s.ok}>Current</em></div>
@@ -689,6 +748,8 @@ function Report({ d, bt }: { d: Data; bt: Backtest | null }) {
         </ul>
         <p>Use it alongside established volatility and credit indicators and your own research. Not financial advice. <a href="/ai-stress-index/data.json" download>Download today’s data (JSON)</a></p>
       </section>
+
+      <EmbedBox />
 
       {/* Layer 3: the methodology */}
       <h2 className={s.h2} id="methodology">Methodology</h2>
