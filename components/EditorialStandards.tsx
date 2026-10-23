@@ -10,7 +10,7 @@ const RULES = [
 
 const STANDARDS = [
   "Opinion and explainer pieces are labelled as such; everything else is reporting from the linked source.",
-  "Sources that may need a subscription are marked, so you know before you click.",
+  "Sources that may need a subscription carry a small lock, so you know before you click.",
   "Summaries stay short and quotes brief, so the original is still worth reading.",
   "Graphics are original to KKReckons or used under licence, and each one is credited.",
   "KKReckons graphics are © KKReckons. Share them freely with credit and a link to kkreckons.com; please don't edit, rebrand or resell them.",

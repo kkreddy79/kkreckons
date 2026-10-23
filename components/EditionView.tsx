@@ -1,11 +1,11 @@
 import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
-import { editions, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
+import { editions, isPaywalled, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource from "@/components/StorySource";
+import StorySource, { PaidMark } from "@/components/StorySource";
 import ShareRow from "@/components/ShareRow";
 import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
@@ -443,7 +443,12 @@ export default function EditionView({
                   <a href={r.url} target="_blank" rel="noreferrer">
                     {r.title} <span aria-hidden>↗</span>
                   </a>
-                  {(r.note || publisherName(r.url)) && <small>{r.note || publisherName(r.url)}</small>}
+                  {(r.note || publisherName(r.url)) && (
+                    <small>
+                      {r.note || publisherName(r.url)}
+                      {isPaywalled(r.url) && <PaidMark />}
+                    </small>
+                  )}
                 </li>
               ))}
             </ul>
