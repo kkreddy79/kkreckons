@@ -1,5 +1,5 @@
 import { isPaywalled, publisherName, sourceName } from "@/lib/editions";
-import { InfoIcon, LinkIcon } from "@/components/AboutIcons";
+import { InfoIcon, LinkIcon, LockIcon } from "@/components/AboutIcons";
 
 /** What the source line and quick summary need from a story. */
 export type SourceStory = {
@@ -24,8 +24,18 @@ export function storyPaid(s: SourceStory) {
   return s.pay ?? [s.url, s.url2].some((u) => u && isPaywalled(u));
 }
 
+/** Small lock after a publisher name: the source may need a subscription. Free sources carry no mark. */
+export function PaidMark() {
+  return (
+    <span className="ev-lock" title="May need a subscription">
+      <LockIcon className="ev-lock-ic" />
+      <span className="sr-only"> (may need a subscription)</span>
+    </span>
+  );
+}
+
 /**
- * "Original source: Publisher ↗" line and paywall badge, plus the Quick summary popover where the
+ * "Original source: Publisher ↗" line with a lock on paywalled sources, plus the Quick summary popover where the
  * page shows only the headline (story cards already show the full points).
  */
 export default function StorySource({ s, id, summary = true }: { s: SourceStory; id: string; summary?: boolean }) {
@@ -41,15 +51,16 @@ export default function StorySource({ s, id, summary = true }: { s: SourceStory;
         <span className="ev-src-label">Original source:</span>
         {src && (
           <a href={s.url} target="_blank" rel="noreferrer" title={hover}>
-            {s.src || publisherName(s.url)} ↗
+            {s.src || publisherName(s.url)}
+            {(s.pay ?? isPaywalled(s.url)) && <PaidMark />} ↗
           </a>
         )}
         {s.url2 && (
           <a href={s.url2} target="_blank" rel="noreferrer" title={hover}>
-            {publisherName(s.url2)} ↗
+            {publisherName(s.url2)}
+            {(src ? isPaywalled(s.url2) : paid) && <PaidMark />} ↗
           </a>
         )}
-        {paid && <span className="ev-paid">May need subscription</span>}
         {summary && (
           <button type="button" className="ev-qs-btn" popoverTarget={id}>
             <InfoIcon className="ev-ic-sm" /> Quick summary

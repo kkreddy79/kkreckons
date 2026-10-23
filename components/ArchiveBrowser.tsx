@@ -16,7 +16,7 @@ import {
   weekday,
 } from "@/lib/editions";
 import SourcePicker from "@/components/SourcePicker";
-import StorySource, { storyHover, storyPaid } from "@/components/StorySource";
+import StorySource, { PaidMark, storyHover, storyPaid } from "@/components/StorySource";
 
 export type StoryDetails = Record<string, { url2: string; points: string[]; why: string }>;
 
@@ -311,7 +311,7 @@ export default function ArchiveBrowser({
                       </a>
                       <p className="sr-pub">
                         {r.pub}
-                        {r.paid && <span className="ev-paid">May need subscription</span>}
+                        {r.paid && <PaidMark />}
                       </p>
                     </div>
                   </li>
