@@ -236,6 +236,15 @@ rows.push(
     `</td></tr>`,
 );
 
+// 6. One-tap feedback: each answer is its own page on the site, so beehiiv's click report and Vercel's
+// page views both count the votes (no form or database needed).
+const vote = (v, label) => a(`${SITE}/feedback/${MONTHS[m - 1]}-${d}-${y}/${v}`, label, `display:inline-block;margin:0 4px;padding:5px 12px;border:1px solid #E7E1D6;border-radius:16px;font-family:${SANS};font-size:13px;font-weight:700;color:${E.ink};`);
+rows.push(
+  `<tr><td colspan="2" align="center" style="padding:18px 0 0;font-family:${SANS};font-size:13px;color:${E.muted};">` +
+    `Was today’s briefing useful?<div style="margin-top:6px;">${vote("yes", "Yes")}${vote("somewhat", "Somewhat")}${vote("no", "Not really")}</div>` +
+    `</td></tr>`,
+);
+
 const parts = [
   `<pre data-type="htmlSnippet"><code class="language-html">${esc(
     `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;"><tbody>${rows.join("")}</tbody></table>`,

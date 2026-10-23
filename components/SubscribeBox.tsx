@@ -2,7 +2,8 @@ import Link from "next/link";
 import { MailIcon, SunIcon } from "@/components/AboutIcons";
 import { editions, totalStories } from "@/lib/editions";
 import EmailSignup from "@/components/EmailSignup";
-import { INLINE_SIGNUP, SUBSCRIBE_URL } from "@/lib/site";
+import Testimonials from "@/components/Testimonials";
+import { INLINE_SIGNUP, REFERRAL, SUBSCRIBE_URL } from "@/lib/site";
 
 /**
  * Closing call-to-action band. The default version points readers to today's
@@ -26,6 +27,7 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
             ? "Free. One visual briefing a day on India, the world, and what’s next. Unsubscribe anytime."
             : "A daily visual briefing on the stories that matter: India, the world, and what’s next."}
         </p>
+        <Testimonials />
       </div>
       <div className="ab-join-cta">
         {home ? (
@@ -61,6 +63,12 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
         <p className="ab-join-privacy">
           Emails are sent by beehiiv; your address is used only for this newsletter.{" "}
           <Link href="/privacy">Privacy</Link> · <Link href="/standards">Editorial standards</Link>
+          {REFERRAL.reward && (
+            <>
+              {" "}
+              · <Link href="/refer">Share and get a reward</Link>
+            </>
+          )}
         </p>
       </div>
     </section>

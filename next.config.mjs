@@ -27,6 +27,8 @@ const nextConfig = {
           { key: "Content-Security-Policy", value: "frame-ancestors *" },
         ],
       },
+      // Self-hosted heading fonts: renamed if they ever change, so browsers can keep them for a year.
+      { source: "/fonts/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       // Story graphics rarely change once published: let browsers keep them a day (and reuse them for a
       // week while re-checking), instead of re-validating every image on every visit.
       { source: "/figs/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }] },

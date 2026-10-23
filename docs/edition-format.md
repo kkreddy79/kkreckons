@@ -42,6 +42,8 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `figcredit` | with `fig` | Where the image comes from, shown under it. For example `Original graphic: KKReckons`, `Photo: Jane Doe / Unsplash` or `Wikimedia Commons, CC BY-SA 4.0`. An image without one fails the checks. |
 | `src` | – | Publisher name to show, for example `Mint`. If left out, the site names it from the link. |
 | `pay` | – | `true`/`"paid"` or `false`/`"free"`. If left out, the site decides from the link's domain. |
+| `free` | – | For a paywalled story: a link to a **free version of the same news** (wire copy such as Reuters or AP, the company's or regulator's own release, a free outlet reporting the same facts, or a gift/share link). Shown as "Free version: <publisher>" beside the original, and used by the "Free sources only" switch. Leave it out when nothing free covers the same facts; never point it at another paywalled site. |
+| `freesrc` | – | Publisher name for `free`, for example `Reuters`. If left out, the site names it from the link. |
 | `ehead` | – | For the subscriber email: a short headline, about 6 words (`"A top degree, no job offer"`). If left out, the email uses `title`. |
 | `cite` | – | Optional. One self-contained sentence with the story's key figure, written to be quoted (`"CoreWeave's 5-year CDS hit a record 1,194.5 bp on 15 Oct 2026."`). Shown under the story as "Quote this", with the edition date. |
 | `eteaser` | – | For the subscriber email: a one-line teaser, about 10 words (`"2,300 applications later, the hiring freeze still wins."`). If left out, the email uses the first sentence of `why`. |
@@ -88,7 +90,8 @@ like an earlier story are flagged for a second look.
 - Every image needs a `figcredit`.
 
 **Paywalled sources.** Summarise the gist and give your view; don't reproduce the article's substance, data
-tables or images. Check each publication's terms if you plan to quote from it.
+tables or images. Check each publication's terms if you plan to quote from it. Add a `free` link when a free
+source reports the same facts, so readers without a subscription can still check them.
 
 `npm run check -- YYYY-MM-DD` runs the automatic checks: links, two or more points, "why it matters",
 repeats, summary length, quote length and image credits. The publishing routine also reviews images,

@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource/playfair-display/latin-700.css";
-import "@fontsource/playfair-display/latin-800.css";
 import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
 import ThemeToggle from "@/components/ThemeToggle";
 import Lightbox from "@/components/Lightbox";
+import SearchKey from "@/components/SearchKey";
 import { PROFILES, SUBSCRIBE_URL } from "@/lib/site";
+import { months, monthSlug } from "@/lib/month";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -39,6 +39,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        {/* The edition headline's face: fetched with the page instead of after the CSS, so the headline doesn't reflow. */}
+        <link rel="preload" href="/fonts/playfair-800.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {/* In the layout, not metadata, so pages that set their own canonical keep it. */}
         <link rel="alternate" type="application/rss+xml" title="KKReckons daily editions" href="/feed.xml" />
       </head>
@@ -56,6 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             Subscribe
           </a>
         </header>
+        <SearchKey />
         <div id="main" tabIndex={-1}>
           {children}
         </div>
@@ -73,6 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/daily/">Past editions</Link>
             <Link href="/topics">Topics</Link>
             <Link href="/week">This week</Link>
+            <Link href={`/month/${monthSlug(months[0])}`}>Best of the month</Link>
             <Link href="/ai-stress-index">AI Stress Index</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/standards">Standards</Link>

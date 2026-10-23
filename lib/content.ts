@@ -23,6 +23,9 @@ export type FullStory = {
   /** Optional overrides from the newsletter data: publisher name, paywall flag, theme names. */
   src?: string;
   pay?: boolean;
+  /** A free version of a paywalled story (wire copy, the company's own release, a gift link), and its publisher name. */
+  freeUrl?: string;
+  freeSrc?: string;
   themes?: string[];
   /** Short headline written for the email; also used in the edition's "Today in 30 seconds" list. */
   emailHead?: string;

@@ -26,3 +26,9 @@ export const CORRECTIONS_EMAIL = "kkreckons@gmail.com";
 export function correctionsHref(subject: string) {
   return `mailto:${CORRECTIONS_EMAIL}?subject=${encodeURIComponent(`Correction: ${subject}`)}`;
 }
+
+/**
+ * Reader referral reward (beehiiv referral program). Left empty, the /refer page and its links stay hidden;
+ * set `reward` (e.g. "the Best of KKReckons PDF: 10 top explainers") and `referrals` once the program is on.
+ */
+export const REFERRAL = { reward: "", referrals: 3 };
