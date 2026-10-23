@@ -101,7 +101,7 @@ button { font: inherit; cursor: pointer; }
 .chip:hover { border-color: var(--purple); }
 .chip.on { background: var(--purple); color: #fff; border-color: var(--purple); }
 .chip.clear { color: var(--orange); }
-.src-filter { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; }
+.src-filter { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 14px; }
 .src-filter label, .src-filter .chip { flex: none; }
 .src-filter label { font-size: 13px; font-weight: 800; color: #34333b; }
 .src-filter select { appearance: none; flex: 0 1 auto; min-width: 0; border: 1px solid var(--line); border-radius: 999px; padding: 8px 36px 8px 14px; font: 700 13px var(--sans); color: #34333b; max-width: 100%;
