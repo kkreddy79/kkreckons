@@ -10,6 +10,7 @@ import ShareRow from "@/components/ShareRow";
 import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
 import PrintImages from "@/components/PrintImages";
+import SectionBar from "@/components/SectionBar";
 
 const SECTION_NOTE: Record<string, string> = {
   "Pick of the day": "One story worth slowing down for",
@@ -161,7 +162,7 @@ export const storyPageUrl = (date: string, n: number) => `${SITE_URL}/daily/${sl
 export function StoryCard({ s, n, wide, full, id, date, as: H = "h3" }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string; as?: "h1" | "h3" }) {
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const pic = s.image && (
-    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
+    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title}>
       {s.imageW ? (
         <picture>
           <source
@@ -207,7 +208,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3" }: { s: Ful
           {tall ? <FigClamp>{pic}</FigClamp> : pic}
           <figcaption>
             {s.imageCredit && <span>{s.imageCredit}</span>}
-            <a href={s.image} target="_blank" rel="noreferrer">
+            <a href={s.image} target="_blank" rel="noreferrer" data-lightbox={s.imageAlt || s.title}>
               View full size ↗
             </a>
           </figcaption>
@@ -341,7 +342,7 @@ export default function EditionView({
           </a>
         )}
         {e.sections.length > 1 && (
-          <nav className="ev-jump" aria-label="Sections">
+          <nav className="ev-jump" id={`jump-${e.date}`} aria-label="Sections">
             {e.sections.map((s) => (
               <a key={s.name} href={`#${sectionId(s.name)}`}>
                 {s.name} <span>{s.stories.length}</span>
@@ -353,6 +354,15 @@ export default function EditionView({
         <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
         {signup}
       </section>
+      {e.sections.length > 1 && (
+        <SectionBar
+          watch={`jump-${e.date}`}
+          items={[
+            ...e.sections.map((s) => ({ id: sectionId(s.name), label: s.name, count: s.stories.length })),
+            ...(e.reading.length > 0 ? [{ id: "further-reading", label: "Further reading" }] : []),
+          ]}
+        />
+      )}
       <PrintImages />
 
       {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} date={e.date} />}

@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
 import ThemeToggle from "@/components/ThemeToggle";
+import Lightbox from "@/components/Lightbox";
 import { PROFILES, SUBSCRIBE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </a>
           </nav>
         </footer>
+        <Lightbox />
         <Analytics />
       </body>
     </html>

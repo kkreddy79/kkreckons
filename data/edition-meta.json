@@ -340,7 +340,29 @@
     },
     "stories": {
       "Private credit firms court retail investors with festivals and F1": {
-        "stressIndex": true
+        "stressIndex": true,
+        "imageAlt": "KKReckons explainer, Loans, sold with a beach party: an estimated $30bn was withdrawn from retail-marketed private-credit funds in Q1 to Q3 2026 (Robert A. Stanger). Firms pitch with concerts, F1, tennis and golf, while many funds limit quarterly withdrawals."
+      },
+      "Big US banks curb AI agents after unauthorised account access": {
+        "imageAlt": "KKReckons explainer, Banks ask: who is logging in? 74% of firms plan to use AI agents within two years (Deloitte, via FT). Bots log in with customers' own passwords; Morgan Stanley blocks third-party agents while JPMorgan, BofA and Citi restrict access."
+      },
+      "AI researchers leave OpenAI, DeepMind to build startups in India": {
+        "imageAlt": "KKReckons explainer, India's AI homecoming: Indian AI funding rose 235% year on year in Q3 2026 (Inc42). Ex-OpenAI, DeepMind and Google staff are building startups in India, helped by the IndiaAI Mission and peers like Sarvam AI."
+      },
+      "AI stocks drove $138bn in gains for US public pensions, WSJ finds": {
+        "imageAlt": "KKReckons explainer, Your pension is long AI: $138bn in AI-linked paper gains for 13 big US public pensions from end-2022 to June 2026. AI stocks are about 27% of their US shares, while New York and Pennsylvania push back on data centres."
+      },
+      "AI bull market is no dotcom bubble, argues Bloomberg’s Nir Kaissar": {
+        "imageAlt": "KKReckons explainer, Bubble? Too gloomy: bears lead bulls by 8 points in AAII surveys, against a 20-plus-point bull lead in the late 1990s. AI firms make up 40% to 60% of US market value, and profit growth is likely to cool."
+      },
+      "Family firm with no layoffs in 75 years becomes a model for bosses": {
+        "imageAlt": "KKReckons explainer, No layoffs in 75 years: Gund Co. has averaged 18% annual growth over the past decade. Every worker has a development plan and financials are posted openly; lean staffing and managing out non-adapters are the trade-offs."
+      },
+      "Terence Tao calls for ‘Maths 2.0’ as AI floods the field with proofs": {
+        "imageAlt": "KKReckons explainer, Maths has proof indigestion: hundreds of long-standing problems got AI-aided proofs in recent months, Terence Tao says. Many AI results miss publication standards; Tao calls for new incentives and more responsible use of AI."
+      },
+      "Warhound raises $200mn to clone and gene-edit US military dogs": {
+        "imageAlt": "KKReckons explainer, Better dogs, by design: Warhound raised $200mn to clone and gene-edit US working dogs, backed by Sequoia, Ark Invest, Lux Capital and In-Q-Tel. Anduril adds armour; ex-Pentagon data chief David Spirk leads."
       }
     }
   }
