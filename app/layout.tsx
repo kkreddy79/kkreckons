@@ -4,6 +4,7 @@ import "@fontsource/playfair-display/latin-800.css";
 import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import NavLinks from "@/components/NavLinks";
+import ThemeToggle from "@/components/ThemeToggle";
 import { PROFILES, SUBSCRIBE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -22,12 +23,21 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, "max-image-preview": "large", googleBot: { index: true, follow: true, "max-image-preview": "large" } },
 };
 
-export const viewport: Viewport = { themeColor: "#fbf8f1" };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fbf8f1" },
+    { media: "(prefers-color-scheme: dark)", color: "#14111b" },
+  ],
+};
+
+// Applies a reader's saved light/dark choice before the page paints, so it never flashes the other theme.
+const THEME_SCRIPT = `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         {/* In the layout, not metadata, so pages that set their own canonical keep it. */}
         <link rel="alternate" type="application/rss+xml" title="KKReckons daily editions" href="/feed.xml" />
       </head>
@@ -40,6 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             KK<b>Reckons</b>
           </Link>
           <NavLinks />
+          <ThemeToggle />
           <a className="hdr-sub" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
             Subscribe
           </a>
