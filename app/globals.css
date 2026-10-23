@@ -283,9 +283,9 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #c4531c; color: #fff; font: 800 13px var(--sans); }
 .ev-cat { font: 800 12px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
 .ev-tag { font: 800 12px var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet); background: var(--other); border-radius: 999px; padding: 3px 9px; }
-.ev-story h3 { margin: 12px 0 12px; font-size: 22px; line-height: 1.22; color: var(--ink2); }
-.ev-wide h3 { font-size: clamp(24px, 2.8vw, 30px); }
-.ev-story h3 a:hover { text-decoration: underline; text-decoration-color: var(--ev-orange); text-underline-offset: 4px; }
+.ev-story :is(h1, h3) { margin: 12px 0 12px; font-size: 22px; line-height: 1.22; color: var(--ink2); }
+.ev-wide :is(h1, h3) { font-size: clamp(24px, 2.8vw, 30px); }
+.ev-story :is(h1, h3) a:hover { text-decoration: underline; text-decoration-color: var(--ev-orange); text-underline-offset: 4px; }
 .ev-fig { margin: 0 0 14px; }
 .ev-fig figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; margin-top: 6px; font-size: 12px; color: var(--text3); }
 .ev-fig figcaption a { color: var(--teal-text); font-weight: 800; display: inline-block; padding-block: 5px; } /* ≥24px tap target */
@@ -339,7 +339,7 @@ a.ev-call:hover { transform: translateY(-2px); }
    are about the graphic's height; "Other side", the Stress Index card and the source run full width underneath. */
 .ev-has-img > .ev-pair { display: contents; }
 .ev-has-img > .ev-pair > .ev-why { grid-column: 2; }
-.ev-has-img > .ev-pair > .ev-other, .ev-has-img > .ev-also, .ev-has-img > .ev-src { grid-column: 1 / -1; }
+.ev-has-img > .ev-pair > .ev-other, .ev-has-img > .ev-also, .ev-has-img > .ev-src, .ev-has-img > .ev-share-sm { grid-column: 1 / -1; }
 .ev-has-img > .ev-pair > .ev-other { margin-top: 16px; }
 /* Very tall graphics: cut to a readable height with a fade; the button shows the rest. */
 .ev-clamp-body { position: relative; max-height: 520px; overflow: hidden; border-radius: 12px; }
@@ -410,6 +410,10 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ab-brand p { margin: 0; }
 .ab-wordmark { font: 800 clamp(40px, 6.6vw, 84px)/1 "Playfair Display", Georgia, serif; letter-spacing: -0.02em; color: var(--ab-ink); text-shadow: 0 0 30px rgba(255, 248, 236, 0.9); }
 .ab-wordmark span { color: var(--ab-orange); }
+.ab-top-sm .ab-top-img img { height: clamp(170px, 19vw, 250px); object-position: 50% 66%; }
+.ab-top-sm .ab-brand { top: clamp(12px, 2vw, 26px); }
+.ab-top-sm .ab-wordmark { font-size: clamp(34px, 4.6vw, 60px); }
+.ab-top-sm + .ev-wrap .ev-head { margin-top: clamp(-50px, -3vw, -20px); }
 .ab-strap { margin-top: 10px !important; font: 700 clamp(9px, 1.1vw, 13px) var(--sans); letter-spacing: 0.34em; text-transform: uppercase; color: #2b1d40; text-shadow: 0 0 12px rgba(255, 248, 236, 0.95); }
 
 .ab-kicker { display: flex; align-items: center; gap: 18px; margin: 0 0 18px; font: 800 12px var(--sans); letter-spacing: 0.3em; text-transform: uppercase; color: var(--ab-ink); }
@@ -529,7 +533,7 @@ a.ev-call:hover { transform: translateY(-2px); }
   .ev-has-img > .ev-fig { margin: 0 0 14px; align-self: stretch; }
   .ev-has-img > .ev-pair > .ev-other { margin-top: 0; }
   .ev-clamp-body { max-height: 620px; }
-  .ev-story h3 { font-size: 20px; }
+  .ev-story :is(h1, h3) { font-size: 20px; }
   .ev-section { margin-top: 36px; }
   .ev-sec-head { flex-direction: column; gap: 2px; align-items: flex-start; }
   .ev-call { padding: 18px 18px; }
@@ -545,6 +549,8 @@ a.ev-call:hover { transform: translateY(-2px); }
   .tl-day b { font-size: 24px; }
   .ab-wrap { padding: 0 16px; }
   .ab-top-img img { height: auto; aspect-ratio: 1200 / 749; object-fit: cover; -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 100%); mask-image: linear-gradient(180deg, #000 78%, transparent 100%); }
+  .ab-top-sm .ab-top-img img { aspect-ratio: 1200 / 520; object-position: 50% 70%; }
+  .ab-top-sm + .ev-wrap .ev-head { margin-top: 4px; }
   .ab-br { display: none; }
   .ab-hero { margin-top: 4px; padding-bottom: 18px; }
   .ab-hero-plain { margin-top: 24px; }
@@ -659,3 +665,16 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) :is(.ev-sx, .ab-join, .ev-call, .hdr-sub, .ev-sx-chip, .tl-day, .ab-third) { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
 }
+
+/* Per-story share row (end of each story card) and story pages (/daily/<edition>/<n>) */
+.ev-share-sm { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line-2); font-size: 12.5px; }
+.ev-share-sm a, .ev-share-sm button { min-height: 30px; padding: 3px 11px; font-size: 12.5px; }
+.st-page .ev-story { margin-top: 6px; }
+.st-more { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
+.st-list { margin: 26px 0 0; padding: 16px 20px 6px; border-radius: 18px; background: var(--card); border: 1px solid var(--line-2); }
+.st-list h2 { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.st-list ol { list-style: none; margin: 0; padding: 0; }
+.st-list li { border-top: 1px solid var(--line-2b); }
+.st-list a { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; color: var(--ink2); font-weight: 700; font-size: 15px; line-height: 1.35; }
+.st-list a:hover { color: var(--accent); }
+.st-list span { flex: none; font: 800 13px var(--sans); color: var(--accent); font-variant-numeric: tabular-nums; }

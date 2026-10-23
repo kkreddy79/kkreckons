@@ -155,7 +155,10 @@ function StressCard({ si, related, date }: { si?: Reading; related: number[]; da
 /** Graphics more than 1.6× as tall as they are wide are shown cut to the text's height, with a button to expand. */
 const TALL = 1.6;
 
-function StoryCard({ s, n, wide, full, id, date }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string }) {
+/** The story's own page (/daily/<edition>/<n>), which link previews show with the story's headline and graphic. */
+export const storyPageUrl = (date: string, n: number) => `${SITE_URL}/daily/${slugFor(date)}/${n}`;
+
+export function StoryCard({ s, n, wide, full, id, date, as: H = "h3" }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string; as?: "h1" | "h3" }) {
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image">
@@ -184,7 +187,7 @@ function StoryCard({ s, n, wide, full, id, date }: { s: FullStory; n: number; wi
         {s.category && <span className="ev-cat">{s.category}</span>}
         {s.tag && <span className="ev-tag">{s.tag}</span>}
       </div>
-      <h3>
+      <H>
         {s.url ? (
           <a href={s.url} target="_blank" rel="noreferrer">
             {s.title}
@@ -196,7 +199,7 @@ function StoryCard({ s, n, wide, full, id, date }: { s: FullStory; n: number; wi
         ) : (
           s.title
         )}
-      </h3>
+      </H>
 
       {s.image && (
         <figure className="ev-fig">
@@ -274,6 +277,7 @@ function StoryCard({ s, n, wide, full, id, date }: { s: FullStory; n: number; wi
       )}
 
       <StorySource s={s} id={id} summary={false} />
+      <ShareRow url={storyPageUrl(date, n)} slice={s.emailHead || s.title} image={s.image || undefined} compact />
     </article>
   );
 }
