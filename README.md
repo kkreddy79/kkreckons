@@ -37,7 +37,15 @@ live. It checks that no earlier edition's data, newsletter or images changed or 
 shows all of its data, and that the edition Home replaces moves to Catch up.
 
 `npm run check` (or `npm run check -- YYYY-MM-DD`) confirms every story has a source link, at least two
-summary points and a "why it matters".
+summary points, a "why it matters" and alt text for every graphic.
+
+`npm run site-check` (with the built site running: `npx next start -p 3000`) opens every page type at phone
+and desktop width, in light and dark mode, and fails on a page that doesn't load, throws a script error,
+scrolls sideways, or has a serious accessibility problem (axe).
+
+Every pull request runs all of these on GitHub Actions (`.github/workflows/checks.yml`): the content check,
+the build, QC (`--site-change` for anything that isn't an `edition/*` branch, which skips only the
+"edition files only" rule) and the site check.
 
 Manual steps, if needed:
 1. Save the edition's HTML as `newsletters/YYYY-MM-DD.html`.

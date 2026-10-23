@@ -167,7 +167,7 @@
 .compare dt { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 800; }
 .compare dd { margin: 2px 0 0; font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--si-ink); }
 .compare dd small { display: block; font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--muted); }
-.compareNote { grid-column: 1 / -1; margin: 4px 0 0; font-size: 14px; color: var(--si-text); }
+.compareNote { margin: 8px 0 0; font-size: 14px; color: var(--si-text); }
 @media (max-width: 560px) { .compare { grid-template-columns: 1fr 1fr; } }
 
 .fresh { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 10px; display: grid; gap: 6px; font-size: 13px; }
