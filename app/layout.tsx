@@ -72,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/about">About</Link>
             <Link href="/daily/">Past editions</Link>
             <Link href="/topics">Topics</Link>
+            <Link href="/week">This week</Link>
             <Link href="/ai-stress-index">AI Stress Index</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/standards">Standards</Link>

@@ -13,6 +13,8 @@ export default function Banner({ strap = "A clearer slice of a complex world", c
           src="/about/two-worlds.jpg"
           width={2000}
           height={816}
+          // The banner is the largest thing on screen when these pages open: fetch it first.
+          fetchPriority="high"
           alt="Sunset panorama: South Indian temples and forts on one side, the Los Angeles skyline and Santa Monica pier on the other"
         />
       </picture>

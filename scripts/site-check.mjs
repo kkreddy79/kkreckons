@@ -21,7 +21,7 @@ const editions = JSON.parse(fs.readFileSync(path.join(root, "data", "editions.js
 const latest = slugFor(editions.at(-1));
 const earlier = slugFor(editions.at(-2) ?? editions.at(-1));
 
-const PAGES = ["/", "/daily/", "/daily/?theme=AI", `/daily/${earlier}`, `/daily/${latest}/1`, "/topics", "/topics/ai", "/ai-stress-index", "/about", "/standards", "/contact", "/privacy"];
+const PAGES = ["/", "/daily/", "/daily/?theme=AI", `/daily/${earlier}`, `/daily/${latest}/1`, "/topics", "/topics/ai", "/week", "/ai-stress-index", "/about", "/standards", "/contact", "/privacy"];
 const VIEWS = [
   { name: "phone", width: 390, height: 844 },
   { name: "desktop", width: 1280, height: 900 },

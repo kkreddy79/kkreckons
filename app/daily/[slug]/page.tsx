@@ -62,6 +62,8 @@ export default async function EditionPage({ params }: Props) {
   if (!found) notFound();
   const { edition, newer, older } = found;
   const content = getContent(edition.date);
+  // The latest earlier edition with a saved AI Stress Index reading, to flag a move into a new band.
+  const prevStressScore = editions.filter((x) => x.date < edition.date).map((x) => getContent(x.date).stressIndex).find(Boolean)?.score ?? null;
   const url = `${SITE_URL}/daily/${slugFor(edition.date)}`;
   const image = edition.image ? new URL(edition.image, SITE_URL).href : `${SITE_URL}/about/two-worlds.jpg`;
   // Cover first: Google picks the article's preview image from this list.
@@ -99,7 +101,7 @@ export default async function EditionPage({ params }: Props) {
         <Link href="/daily/">Catch up</Link> <span>/</span> {longDate(edition.date)}
       </nav>
 
-      <EditionView e={content} showDate={false} related={relatedFor(edition.date)} />
+      <EditionView e={content} showDate={false} related={relatedFor(edition.date)} prevStressScore={prevStressScore} />
       <SubscribeBox />
 
       <nav className="pager">

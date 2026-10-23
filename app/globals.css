@@ -718,3 +718,28 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 @media (max-width: 700px) {
   :is(.ev-section[data-sec="pick-of-the-day"], .ev-section[data-sec="india-edition"], .ev-section[data-sec="world-edition"]) { margin: 28px -8px 0; padding: 16px 8px 18px; border-radius: 20px; }
 }
+
+/* "Not found" page */
+.nf-search { display: flex; gap: 8px; max-width: 560px; margin-top: 18px; }
+.nf-search input { flex: 1 1 auto; min-width: 0; height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line-3); background: var(--card); color: var(--ink2); font: 16px var(--sans); }
+.nf-search input:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 4px var(--purple-soft); }
+.nf-search button { flex: none; height: 46px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--purple); color: #fff; font: 800 14px var(--sans); }
+.nf-topics h2 { margin: 10px 0 10px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.nf-topics p { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.nf-topics .chip { text-decoration: none; }
+
+/* This week (/week) */
+.wk-list { list-style: none; display: grid; gap: 12px; margin: 0; padding: 0; counter-reset: wk; }
+.wk-list a { display: flex; gap: 16px; align-items: flex-start; padding: 14px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); color: var(--ink2); text-decoration: none; }
+.wk-list a:hover { border-color: var(--lilac-line-2); }
+.wk-list img { flex: none; width: 92px; height: 120px; object-fit: cover; object-position: top; border-radius: 10px; }
+.wk-body { display: grid; gap: 4px; min-width: 0; }
+.wk-body small { font: 800 11.5px var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.wk-body small em { margin-left: 8px; padding: 1px 7px; border-radius: 999px; background: var(--why); color: var(--accent); font-style: normal; letter-spacing: 0.04em; }
+.wk-body b { font: 700 20px/1.25 "Playfair Display", Georgia, serif; }
+.wk-body > span { font-size: 15px; line-height: 1.5; color: var(--text2); }
+@media (max-width: 700px) {
+  .wk-list img { width: 72px; height: 96px; }
+  .wk-body b { font-size: 18px; }
+}
+.ev-sx-new { padding: 2px 9px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.5); color: #fff; font: 800 11.5px var(--sans); letter-spacing: 0.04em; }
