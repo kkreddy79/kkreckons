@@ -542,3 +542,45 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Topic pages (/topics, /topics/<slug>) */
+.tp-browse { margin: 6px 0 4px; }
+.tp-browse h2 { margin: 0 0 4px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: #a8430f; }
+.tp-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 20px; }
+.tp-nav .chip { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; }
+.tp-nav .chip span { font-size: 12px; font-weight: 700; opacity: 0.7; }
+.tp-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 0; padding: 0; }
+.tp-grid a { display: block; height: 100%; padding: 20px 22px; background: #fff; border: 1px solid var(--line); border-radius: 20px; color: #24123f; text-decoration: none; }
+.tp-grid a:hover { border-color: var(--purple); }
+.tp-grid h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font: 800 24px/1.15 "Playfair Display", Georgia, serif; }
+.tp-grid h2 span { padding: 2px 9px; border-radius: 999px; background: #f3ece2; font: 800 12px var(--sans); }
+.tp-grid p { margin: 0; font-size: 14.5px; line-height: 1.5; color: #3b3546; }
+.tp-grid .tp-latest { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 13px; color: #5b5566; }
+.tp-results .sr-title h2 { display: inline; margin: 0; font: inherit; font-weight: 700; }
+.tp-why { margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3b3546; }
+.tp-more { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
+.tp-more a, .story-results .count a { color: var(--purple); font-weight: 700; }
+.cu-hero .ab-kicker a { color: inherit; }
+
+/* On-page email sign-up (components/EmailSignup.tsx) */
+.ev-inbox { margin-top: 16px; padding: 14px 16px; border-radius: 16px; background: #fff; border: 1px solid var(--line); max-width: 560px; }
+.ev-inbox > p { margin: 0 0 10px; font-size: 14px; color: #5b5566; }
+.ev-inbox > p b { color: #24123f; }
+.ev-signup-form .es { flex: 1 1 320px; max-width: 440px; }
+.es { margin: 0; }
+.es-row { display: flex; gap: 8px; }
+.es input[type="email"] { flex: 1 1 auto; min-width: 0; height: 46px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font: 16px var(--sans); color: #24123f; }
+.es input[type="email"]:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 4px var(--purple-soft); }
+.es button { flex: none; height: 46px; padding: 0 20px; border: 0; border-radius: 999px; background: #c4531c; color: #fff; font: 800 15px var(--sans); cursor: pointer; }
+.es button:hover { background: #b84a17; }
+.es button:disabled { opacity: 0.7; cursor: progress; }
+.es-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.es-msg { margin: 8px 0 0; font-size: 13px; color: #a8430f; }
+.es-msg a { color: inherit; text-decoration: underline; font-weight: 700; }
+.es-done { font-size: 14.5px; color: #24123f; }
+.es-dark input[type="email"] { border-color: transparent; }
+.es-dark .es-msg, .es-dark.es-done { color: #fff; }
+@media (max-width: 420px) {
+  .es-row { flex-direction: column; }
+  .es button { width: 100%; }
+}

@@ -6,6 +6,16 @@ export const PROFILES = { linkedin: "https://www.linkedin.com/in/krishnakanthred
 /** beehiiv's hosted sign-up page for the KKReckons publication. */
 export const SUBSCRIBE_URL = "https://kkreckons.beehiiv.com/subscribe";
 
+/** The KKReckons publication on beehiiv (an ID, not a secret), used by /api/subscribe. */
+export const BEEHIIV_PUBLICATION_ID = "pub_8ac4375a-ab66-4eff-8d3e-d8029c985186";
+
+/**
+ * On-page email sign-up needs a beehiiv API key in the BEEHIIV_API_KEY environment variable (Vercel).
+ * Pages are built statically, so this is read at build time: without a key, sign-up stays a link to
+ * beehiiv's page, exactly as before.
+ */
+export const INLINE_SIGNUP = Boolean(process.env.BEEHIIV_API_KEY);
+
 /**
  * Where readers report errors ("Spotted an error?" links and the About page corrections note).
  * Left empty, those links stay hidden.
