@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import StressIndex, { type Backtest, type Data } from "@/components/StressIndex";
-import { STRESS_BASES } from "@/lib/stress";
+import { loadStressFile } from "@/lib/stress";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "AI Market Stress Index: an experimental daily AI-bubble stress gauge";
@@ -27,18 +27,8 @@ export const metadata: Metadata = {
    the page falls back to loading it in the browser. */
 export const revalidate = 3600;
 
-async function load<T>(file: string): Promise<T | null> {
-  for (const base of STRESS_BASES) {
-    try {
-      const r = await fetch(`${base}/${file}`, { next: { revalidate: 3600 } });
-      if (r.ok) return (await r.json()) as T;
-    } catch {}
-  }
-  return null;
-}
-
 export default async function AiStressIndexPage() {
-  const [d, bt] = await Promise.all([load<Data>("data.json"), load<Backtest>("backtest.json")]);
+  const [d, bt] = await Promise.all([loadStressFile<Data>("data.json"), loadStressFile<Backtest>("backtest.json")]);
   const hist = d?.history.filter((h) => h.score != null) ?? [];
   return (
     <>

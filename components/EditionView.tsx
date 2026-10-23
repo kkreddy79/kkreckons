@@ -3,6 +3,7 @@ import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
+import type { LiveStress } from "@/lib/stress";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource from "@/components/StorySource";
 import ShareRow from "@/components/ShareRow";
@@ -46,22 +47,51 @@ const BANDS: [string, number, string][] = [
 ];
 const bandOf = (score: number) => [...BANDS].reverse().find(([, lo]) => score >= lo)!;
 
-/** The AI Stress Index, shown once near the top of an edition (every edition from 22 Oct 2026, earlier ones only when KK tagged a story). The reading is the one saved when the edition was published. */
-function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"]; related: number[]; date: string }) {
-  const band = si ? bandOf(si.score) : null;
+/** A reading for the card: the one saved with the edition, or on Home the latest one (with its change and trend). */
+type Reading = NonNullable<EditionContent["stressIndex"]> | (LiveStress & { backCalculated?: undefined });
+
+/** The last 30 daily scores as a line, scaled to their own range so small moves show. */
+function Trend({ points }: { points: number[] }) {
+  const lo = Math.min(...points);
+  const hi = Math.max(...points, lo + 10);
+  const xy = points.map((v, i) => `${((i / (points.length - 1)) * 100).toFixed(1)},${(28 - ((v - lo) / (hi - lo)) * 24).toFixed(1)}`);
+  return (
+    <div className="ev-sx-trend">
+      <svg viewBox="0 0 100 32" preserveAspectRatio="none" role="img" aria-label={`Last ${points.length} trading days: low ${Math.min(...points)}, high ${Math.max(...points)}`}>
+        <polyline points={xy.join(" ")} fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+      </svg>
+      <span>
+        {points.length} trading days · low {Math.min(...points)} · high {Math.max(...points)}
+      </span>
+    </div>
+  );
+}
+
+/** "Up 6 points from 21 Oct" */
+function changeText(score: number, prev: number | null | undefined, prevDate: string | null | undefined) {
+  if (prev == null || !prevDate) return "";
+  const d = score - prev;
+  if (d === 0) return ` Unchanged from ${shortDate(prevDate)}.`;
+  return ` ${d > 0 ? "Up" : "Down"} ${Math.abs(d)} point${Math.abs(d) === 1 ? "" : "s"} from ${shortDate(prevDate)}.`;
+}
+
+/** The AI Stress Index, shown once near the top of an edition (every edition from 22 Oct 2026, earlier ones only when KK tagged a story). Edition pages show the reading saved when the edition was published; Home shows the latest one. */
+function StressCard({ si, related, date }: { si?: Reading; related: number[]; date: string }) {
+  const live = si && "trend" in si ? si : null;
+  const band = si && !live?.limited ? bandOf(si.score) : null;
   const next = band ? BANDS[BANDS.indexOf(band) + 1] : null;
   return (
     <section className="ev-sx" aria-labelledby={`sx-${date}`}>
       <div className="ev-sx-top">
-        {si && band && (
-          <p className="ev-sx-score" style={{ color: band[2] }}>
+        {si && (
+          <p className="ev-sx-score" style={{ color: band ? band[2] : "#fff" }}>
             <b>{si.score}</b>
             <span>/100</span>
           </p>
         )}
         <div>
           <p className="ev-sx-kicker">
-            AI Stress Index{si ? ` · ${shortDate(si.asOf)} close${si.backCalculated ? " (back-calculated)" : ""}` : ""}
+            AI Stress Index{si ? ` · ${live ? "latest, " : ""}${shortDate(si.asOf)} close${si.backCalculated ? " (back-calculated)" : ""}` : ""}
           </p>
           <h2 id={`sx-${date}`}>
             {si && band ? (
@@ -69,6 +99,8 @@ function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"];
                 Stress in AI markets is{" "}
                 <em style={{ background: band[2] }}>{band[0]}</em>
               </>
+            ) : live?.limited ? (
+              "Limited data in today’s reading"
             ) : (
               "How stressed are AI markets?"
             )}
@@ -76,6 +108,8 @@ function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"];
           <p className="ev-sx-sub">
             A daily 0–100 gauge of strain in AI stocks, financing and credit
             {si && next ? `. ${next[1] - si.score} point${next[1] - si.score === 1 ? "" : "s"} from ${next[0]}.` : "."}
+            {live?.limited && " Over a quarter of the inputs are stale, so no band is shown."}
+            {live && changeText(live.score, live.prevScore, live.prevDate)}
           </p>
         </div>
       </div>
@@ -96,6 +130,7 @@ function StressCard({ si, related, date }: { si?: EditionContent["stressIndex"];
           </div>
         </div>
       )}
+      {live && live.trend.length > 1 && <Trend points={live.trend} />}
       <div className="ev-sx-foot">
         {related.length > 0 ? (
           <span>
@@ -251,6 +286,7 @@ export default function EditionView({
   showCatchUp = false,
   related = [],
   signup,
+  liveStress,
   children,
 }: {
   e: EditionContent;
@@ -263,6 +299,8 @@ export default function EditionView({
   related?: Related[];
   /** Shown under the share row (Home's email sign-up). */
   signup?: React.ReactNode;
+  /** Home: today's AI Stress Index reading, shown instead of the one saved with the edition. */
+  liveStress?: LiveStress | null;
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
@@ -291,6 +329,13 @@ export default function EditionView({
             </>
           )}
         </p>
+        {liveStress && (
+          <a href={`#sx-${e.date}`} className="ev-sx-chip">
+            <i style={{ background: liveStress.limited ? "#a1a1aa" : bandOf(liveStress.score)[2] }} aria-hidden />
+            AI Stress Index <b>{liveStress.score}</b>
+            {!liveStress.limited && <span>{bandOf(liveStress.score)[0]}</span>}
+          </a>
+        )}
         {e.sections.length > 1 && (
           <nav className="ev-jump" aria-label="Sections">
             {e.sections.map((s) => (
@@ -306,7 +351,7 @@ export default function EditionView({
       </section>
       <PrintImages />
 
-      {(tracked.length > 0 || e.stressIndex) && <StressCard si={e.stressIndex} related={tracked} date={e.date} />}
+      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} date={e.date} />}
 
       {count > 2 && (
         <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
