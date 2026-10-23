@@ -1,3 +1,6 @@
+/* Playfair Display (SIL Open Font License), self-hosted and cut down to Latin, punctuation, ₹ and € (made with pyftsubset). */
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/playfair-700.woff2) format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/playfair-800.woff2) format("woff2"); }
 :root {
   --ink: #16151b;
   --muted: #686873;
@@ -295,6 +298,8 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .ev-num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #c4531c; color: #fff; font: 800 13px var(--sans); }
 .ev-cat { font: 800 12px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+a.ev-cat { text-decoration: none; }
+a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-tag { font: 800 12px var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet); background: var(--other); border-radius: 999px; padding: 3px 9px; }
 .ev-story :is(h1, h3) { margin: 12px 0 12px; font-size: 22px; line-height: 1.22; color: var(--ink2); }
 .ev-wide :is(h1, h3) { font-size: clamp(24px, 2.8vw, 30px); }
@@ -362,6 +367,20 @@ a.ev-call:hover { transform: translateY(-2px); }
 .ev-src a:hover { text-decoration: underline; }
 .ev-lock { display: inline-flex; vertical-align: -1px; margin-left: 4px; color: var(--paid-text); }
 .ev-lock-ic { width: 12px; height: 12px; }
+.ev-free { display: inline-flex; align-items: center; gap: 6px; }
+.ev-free-tag { padding: 1px 7px; border-radius: 999px; background: var(--wa); color: var(--wa-text); font-size: 11px; letter-spacing: 0.03em; }
+.ev-nofree { display: none; font-weight: 600; color: var(--text3); }
+/* "Free sources only": hide paywalled links and say when a story has no free version. */
+:root[data-free="1"] .ev-src a[data-paid], :root[data-free="1"] .ev-reading li[data-paid] { display: none; }
+:root[data-free="1"] .ev-src-paid .ev-nofree { display: inline; }
+.ev-freebar { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.ev-freebar-n { display: inline-flex; align-items: center; gap: 4px; color: var(--paid-text); }
+.ev-free-switch { display: inline-flex; align-items: center; gap: 7px; min-height: 28px; padding: 2px 10px 2px 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text2); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.ev-free-knob { position: relative; width: 26px; height: 16px; border-radius: 999px; background: var(--line-3); transition: background 0.15s; }
+.ev-free-knob::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--card); transition: transform 0.15s; }
+.ev-free-switch[aria-checked="true"] { border-color: var(--wa-line); color: var(--wa-text); }
+.ev-free-switch[aria-checked="true"] .ev-free-knob { background: var(--wa-text); }
+.ev-free-switch[aria-checked="true"] .ev-free-knob::after { transform: translateX(10px); }
 .ev-qs-btn { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--lilac-line-b); background: var(--lilac-b); color: var(--violet); font: 800 12.5px var(--sans); cursor: pointer; }
 .ev-qs-btn:hover { background: var(--lilac-2); }
 .ev-qs-btn .ev-ic-sm { color: var(--violet); }
@@ -619,6 +638,26 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .tp-grid .tp-latest { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text3); }
 .tp-results .sr-title h2 { display: inline; margin: 0; font: inherit; font-weight: 700; }
 .tp-why { margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: var(--text2); }
+.ev-poll { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin: 22px 0 0; font-size: 14px; font-weight: 700; color: var(--text3); }
+.ev-poll a { padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink2); text-decoration: none; }
+.ev-poll a:hover { border-color: var(--purple); }
+.fb-mail { user-select: all; font-weight: 700; }
+.tm-list { display: grid; gap: 10px; margin: 14px 0 0; }
+.tm { margin: 0; padding: 10px 14px; border-left: 3px solid var(--accent); }
+.tm blockquote { margin: 0; font-size: 15px; line-height: 1.5; font-style: italic; }
+.tm figcaption { margin-top: 4px; font-size: 13px; font-weight: 700; opacity: 0.85; }
+.tm figcaption span { font-weight: 400; }
+.rf-steps { display: grid; gap: 10px; margin: 0; padding-left: 22px; font-size: 16px; line-height: 1.55; color: var(--text2); }
+.rf-steps b { color: var(--ink2); }
+.mo-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 0 0 18px; }
+.mo-facts section { padding: 14px 16px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); min-width: 0; }
+.mo-facts h2 { margin: 0 0 8px; font: 800 11.5px var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.mo-facts p { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin: 0; font-size: 15px; line-height: 1.5; color: var(--text2); }
+.mo-facts p.mo-line { display: block; }
+.mo-facts a:not(.chip) { color: var(--violet-2); font-weight: 700; }
+.mo-facts .chip span { margin-left: 4px; color: var(--muted); }
+.mo-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 18px 0 0; font-weight: 700; }
+.mo-nav a { color: var(--violet-2); }
 .tp-more { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
 .tp-more a, .story-results .count a { color: var(--violet-2); font-weight: 700; }
 .cu-hero .ab-kicker a { color: inherit; }

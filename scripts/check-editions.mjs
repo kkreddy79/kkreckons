@@ -22,6 +22,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const index = JSON.parse(fs.readFileSync(path.join(root, "data", "editions.json"), "utf8"));
 const lib = fs.readFileSync(path.join(root, "lib", "editions.ts"), "utf8");
 const named = new Set([...lib.matchAll(/^  "([^"]+)": "/gm)].map((m) => m[1]));
+const paywalled = new Set([...(lib.match(/const PAYWALLED = new Set\(\[([^\]]*)\]/)?.[1] || "").matchAll(/"([^"]+)"/g)].map((m) => m[1]));
 const exceptionsFile = path.join(root, "data", "qc-exceptions.json");
 const exceptions = fs.existsSync(exceptionsFile) ? JSON.parse(fs.readFileSync(exceptionsFile, "utf8")).exceptions : [];
 const excused = (date, title, rule) => exceptions.some((x) => x.date === date && x.title === title && x.rules.includes(rule));
@@ -73,6 +74,9 @@ const stressCandidate = (s) => {
   return (t.match(AI_WORDS) || []).length >= 2 && (t.match(DEBT_WORDS) || []).length >= 3;
 };
 const suggested = [];
+// Paywalled stories with no free version (info only; editions from when the `free` field arrived).
+const FREE_FROM = "2026-10-24";
+const noFree = [];
 const vague = [];
 // Further-reading titles that only name a platform or format ("Video (YouTube)", "Link") tell readers nothing.
 const VAGUE_TITLE = /^(video|link|article|podcast|post|thread|read|watch)?\s*\(?\s*(youtube|youtu\.be|x|twitter|linkedin|instagram|link|video|article)?\s*\)?$/i;
@@ -89,7 +93,7 @@ for (const date of dates) {
   const used = new Map();
   for (const d of sorted.filter((x) => x < date)) {
     for (const s of content[d].sections.flatMap((sec) => sec.stories)) {
-      for (const u of [s.url, s.url2]) if (u) used.set(articleKey(u), `${d} "${s.title}"`);
+      for (const u of [s.url, s.url2, s.freeUrl]) if (u) used.set(articleKey(u), `${d} "${s.title}"`);
     }
     for (const r of content[d].reading) if (r.url) used.set(articleKey(r.url), `${d} further reading "${r.title}"`);
   }
@@ -105,7 +109,7 @@ for (const date of dates) {
       if (!s.why) issues.push('no "why it matters"');
       if (issues.length) flag(date, s.title, "basics", issues.join(", "));
 
-      for (const u of new Set([s.url, s.url2].filter(Boolean).map(articleKey))) {
+      for (const u of new Set([s.url, s.url2, s.freeUrl].filter(Boolean).map(articleKey))) {
         if (used.has(u)) flag(date, s.title, "duplicate", `repeats an article already used in ${used.get(u)}`);
         else used.set(u, `${date} "${s.title}"`);
       }
@@ -125,11 +129,17 @@ for (const date of dates) {
       if (s.image && !s.imageCredit)
         flag(date, s.title, "image", "image has no declared origin (figcredit); only original, Creative Commons or licensed images may be used");
       if (!s.stressIndex && stressCandidate(s)) suggested.push(`${date} "${s.title}"`);
+      const srcs = [s.url, s.url2].filter(Boolean);
+      if (date >= FREE_FROM && !s.freeUrl && srcs.length && (s.pay ?? paywalled.has(host(srcs[0]))) && srcs.slice(1).every((u) => paywalled.has(host(u))))
+        noFree.push(`${date} "${s.title}" (${host(srcs[0])})`);
       if (s.image && !(s.imageAlt || "").trim())
         flag(date, s.title, "alt", 'graphic has no alt text (figalt, or an "imageAlt" override in data/edition-meta.json); screen readers and search can\'t read it');
 
-      for (const u of [s.url, s.url2]) if (u && !webLink(u)) flag(date, s.title, "link", `source link isn't an http(s) web address: ${u.slice(0, 60)}`);
-      for (const u of [s.url, s.url2]) if (u && !named.has(host(u))) unnamed.add(host(u));
+      // The free version must really be free: a gift or share link is fine, a plain paywalled link isn't.
+      if (s.freeUrl && paywalled.has(host(s.freeUrl)) && !/gift|share|accessToken|giftToken/i.test(s.freeUrl))
+        flag(date, s.title, "link", `"free" link points to a paywalled site (${host(s.freeUrl)}); use wire copy, the original release or a gift link`);
+      for (const u of [s.url, s.url2, s.freeUrl]) if (u && !webLink(u)) flag(date, s.title, "link", `source link isn't an http(s) web address: ${u.slice(0, 60)}`);
+      for (const u of [s.url, s.url2, s.freeUrl]) if (u && !named.has(host(u))) unnamed.add(host(u));
     }
   }
   for (const r of c.reading) {
@@ -152,6 +162,7 @@ for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a re
 for (const date of dates) if (content[date].sections.some((sec) => sec.stories.some((s) => s.stressIndex)) && !content[date].stressIndex)
   console.log(`⚠ ${date}: a story links to the AI Stress Index but no reading was saved (index data was unreachable); it shows the link without a number`);
 for (const v of vague) console.log(`⚠ Further reading needs a real title (it only names the platform): ${v}`);
+for (const x of noFree) console.log(`ℹ Paywalled, no free version (add "free" or a { "freeUrl", "freeSrc" } override): ${x}`);
 for (const x of suggested) console.log(`ℹ Possible AI Stress Index link (AI debt/credit story, not tagged): ${x}`);
 {
   const newest = [...dates].sort().pop();

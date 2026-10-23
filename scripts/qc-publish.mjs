@@ -156,8 +156,8 @@ if (!fs.existsSync(path.join(out, "index.html"))) {
       sections: count(html, 'class="ev-section"'),
       "numbers of the day": count(html, 'class="ev-call '),
       images: count(html, 'class="ev-fig"'),
-      "source lines": count(html, 'class="ev-src"'),
-      "further reading": c.reading.length ? (/<section class="ev-reading"[\s\S]*?<\/section>/.exec(html)?.[0].match(/<li>/g) || []).length : 0,
+      "source lines": (html.match(/class="ev-src(?: [^"]*)?"/g) || []).length,
+      "further reading": c.reading.length ? (/<section class="ev-reading"[\s\S]*?<\/section>/.exec(html)?.[0].match(/<li[ >]/g) || []).length : 0,
     };
     for (const k of Object.keys(expect)) if (expect[k] !== got[k]) fail(`${e.date}: page shows ${got[k]} ${k}, data has ${expect[k]}.`);
     for (const s of stories) if (!html.includes(esc(s.title))) fail(`${e.date}: story "${s.title}" isn't on its page.`);

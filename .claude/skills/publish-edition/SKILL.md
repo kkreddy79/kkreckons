@@ -63,6 +63,11 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    article yourself. Report each one with a suggested fix and let him decide.
    - Publishers listed as "bare domains": add a display name to `PUBLISHERS` in `lib/editions.ts`
      (and to `PAYWALLED` if the site usually needs a subscription).
+   - "ℹ Paywalled, no free version": search for a free report of **the same facts** (Reuters, AP, PTI, the
+     company's, regulator's or court's own release, a free outlet quoting the same figures, or a gift link).
+     When one clearly matches, add `{ "freeUrl": "…", "freeSrc": "Reuters" }` under `stories` in
+     `data/edition-meta.json` and re-run. It sits beside the original, never replaces it. List each one in the
+     pull request and your message so he can check it; when nothing matches, leave it and say so.
    - Missing source links or thin summaries: **don't invent anything.** Search for the original article.
      If you find it, add the fix as a per-story override under `stories` in `data/edition-meta.json`
      (see the 2026-09-30 entry for the shape) and re-run `npm run -s publish-edition -- <YYYY-MM-DD>`. List every fix you made

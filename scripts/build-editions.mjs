@@ -199,6 +199,9 @@ function fromEmbedded(date, d) {
       ...(s.fig && clean(s.figcredit) ? { imageCredit: clean(s.figcredit) } : {}),
       ...(clean(s.src) ? { src: clean(s.src) } : {}),
       ...(s.pay !== undefined && s.pay !== null && s.pay !== "" ? { pay: paid(s.pay) } : {}),
+      // A free version of a paywalled story, shown as "Free version: <publisher>".
+      ...(typeof s.free === "string" && /^https?:\/\//.test(s.free) ? { freeUrl: s.free } : {}),
+      ...(clean(s.freesrc) ? { freeSrc: clean(s.freesrc) } : {}),
       ...(Array.isArray(s.themes) && s.themes.length ? { themes: s.themes.map(clean).filter(Boolean) } : {}),
       // Short copy for the subscriber email (scripts/beehiiv-email.mjs).
       ...(clean(s.ehead) ? { emailHead: clean(s.ehead) } : {}),

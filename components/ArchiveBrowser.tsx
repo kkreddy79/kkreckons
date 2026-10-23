@@ -45,6 +45,11 @@ export default function ArchiveBrowser({
   const [free, setFree] = useState(false);
   const [view, setView] = useState<"editions" | "stories">("editions");
 
+  // Arriving from the "/" shortcut on another page (/daily/#search): put the cursor in the search box.
+  useEffect(() => {
+    if (location.hash === "#search") document.getElementById("archive-search")?.focus();
+  }, []);
+
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
     const [q, t, s] = [p.get("q") ?? "", p.get("theme") ?? "", p.get("source") ?? ""];
@@ -165,8 +170,10 @@ export default function ArchiveBrowser({
     <>
       <div className="toolbar">
         <input
+          id="archive-search"
           type="search"
           value={query}
+          aria-keyshortcuts="/"
           placeholder="Search headlines, topics, companies…"
           aria-label="Search stories"
           onChange={(ev) => {

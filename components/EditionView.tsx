@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
-import { editions, isPaywalled, longDate, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
+import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource, { PaidMark } from "@/components/StorySource";
+import StorySource, { PaidMark, sourceLinks } from "@/components/StorySource";
+import FreeToggle from "@/components/FreeToggle";
 import ShareRow from "@/components/ShareRow";
 import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
@@ -134,6 +135,9 @@ export const storyPageUrl = (date: string, n: number) => `${SITE_URL}/daily/${sl
 /** `priority` is for a story page, where the graphic is the main thing on screen: load it at once, not lazily. */
 export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority = false }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string; as?: "h1" | "h3"; priority?: boolean }) {
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
+  const topic = themesOf(s)[0];
+  const links = sourceLinks(s);
+  const freeHref = links[0]?.paid ? links.find((l) => !l.paid)?.href : undefined;
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title}>
       {s.imageW ? (
@@ -158,12 +162,18 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
     <article id={`story-${n}`} className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
         <span className="ev-num">{n}</span>
-        {s.category && <span className="ev-cat">{s.category}</span>}
+        {s.category && (topic ? (
+          <Link href={`/topics/${themeSlug(topic)}`} className="ev-cat" title={`More on ${topic}`}>
+            {s.category}
+          </Link>
+        ) : (
+          <span className="ev-cat">{s.category}</span>
+        ))}
         {s.tag && <span className="ev-tag">{s.tag}</span>}
       </div>
       <H>
         {s.url ? (
-          <a href={s.url} target="_blank" rel="noreferrer">
+          <a href={s.url} target="_blank" rel="noreferrer" data-free-href={freeHref}>
             {s.title}
             <span className="ev-ext" aria-hidden>
               {" "}↗
@@ -286,6 +296,7 @@ export default function EditionView({
 }) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
+  const paywalled = e.sections.flatMap((sec) => sec.stories).filter((s) => sourceLinks(s).some((l) => l.paid)).length;
   // "Today in 30 seconds", right under the headline.
   const digest = count > 2 && (
     <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
@@ -329,6 +340,15 @@ export default function EditionView({
               <Link href="/daily/" className="ev-catchup">
                 Catch up on past editions →
               </Link>
+            </>
+          )}
+          {paywalled > 0 && (
+            <>
+              {" "}
+              <span className="ev-sub-sep" aria-hidden>
+                ·
+              </span>{" "}
+              <FreeToggle paid={paywalled} />
             </>
           )}
         </p>
@@ -439,7 +459,7 @@ export default function EditionView({
             <h2 id="fr-t">Further reading</h2>
             <ul>
               {e.reading.map((r) => (
-                <li key={r.url + r.title}>
+                <li key={r.url + r.title} data-paid={isPaywalled(r.url) ? "" : undefined}>
                   <a href={r.url} target="_blank" rel="noreferrer">
                     {r.title} <span aria-hidden>↗</span>
                   </a>
@@ -456,6 +476,15 @@ export default function EditionView({
         )}
         {children}
       </div>
+
+      <p className="ev-poll">
+        Was this briefing useful?
+        {(["yes", "somewhat", "no"] as const).map((v) => (
+          <Link key={v} href={`/feedback/${slugFor(e.date)}/${v}`} rel="nofollow" prefetch={false}>
+            {v === "yes" ? "Yes" : v === "somewhat" ? "Somewhat" : "Not really"}
+          </Link>
+        ))}
+      </p>
 
       {related.length > 0 && (
         <section className="ev-related" aria-labelledby={`rel-${e.date}`}>
