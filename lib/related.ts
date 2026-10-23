@@ -45,6 +45,30 @@ function build() {
   weight = new Map([...df].map(([w, k]) => [w, Math.log((index!.length + 1) / k)]));
 }
 
+/** Up to `limit` stories from other editions that name the same things as one story (its own page links to theirs). */
+export function relatedForStory(date: string, n: number, limit = 3): Related[] {
+  if (!index) build();
+  const m = index!.find((x) => x.date === date && x.n === n);
+  if (!m) return [];
+  const found: { score: number; x: Entry; shared: string[] }[] = [];
+  for (const x of index!) {
+    if (x.date === date) continue;
+    const shared = [...m.names].filter((w) => x.names.has(w));
+    const score = shared.reduce((t, w) => t + weight!.get(w)! * (m.lead.has(w) || x.lead.has(w) ? 2 : 1), 0);
+    if (!shared.some((w) => m.lead.has(w))) continue;
+    if (shared.length >= 2 ? score >= MIN_SCORE : shared.length === 1 && score >= MIN_SINGLE) found.push({ score, x, shared });
+  }
+  found.sort((a, b) => b.score - a.score || (a.x.date < b.x.date ? 1 : -1));
+  const picked: typeof found = [];
+  for (const f of found) if (picked.length < limit && !picked.some((p) => p.x.date === f.x.date)) picked.push(f);
+  return picked.map(({ x, shared }) => ({
+    date: x.date,
+    title: x.title,
+    href: `/daily/${slugFor(x.date)}/${x.n}`,
+    shared: shared.sort((a, b) => weight!.get(b)! - weight!.get(a)!).slice(0, 3),
+  }));
+}
+
 /** Up to `limit` stories from other editions that name the same things as this edition's stories: one per edition, spread across this edition's stories first. */
 export function relatedFor(date: string, limit = 3): Related[] {
   if (!index) build();

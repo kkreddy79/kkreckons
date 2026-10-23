@@ -145,6 +145,19 @@ rows.push(
 const si = ed.stressIndex;
 const siDate = si ? `${+si.asOf.slice(8)} ${new Date(`${si.asOf}T00:00:00Z`).toLocaleString("en-GB", { month: "short", timeZone: "UTC" })}` : "";
 const related = stories.flatMap((s, i) => (s.stressIndex ? [String(i + 1).padStart(2, "0")] : []));
+// A move into a new band since the previous edition's saved reading is the news: the line calls it out.
+const BAND_ORDER = ["Normal", "Elevated", "Severe", "Critical"];
+const prevSi = fs
+  .readdirSync(path.join("data", "content"))
+  .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0, 10) < date)
+  .sort()
+  .reverse()
+  .map((f) => JSON.parse(fs.readFileSync(path.join("data", "content", f), "utf8")).stressIndex)
+  .find(Boolean);
+const bandMove =
+  si && prevSi && prevSi.band !== si.band && BAND_ORDER.includes(si.band) && BAND_ORDER.includes(prevSi.band)
+    ? `${BAND_ORDER.indexOf(si.band) > BAND_ORDER.indexOf(prevSi.band) ? "up" : "down"} from ${prevSi.band}`
+    : "";
 
 // 2. Today's stories: thumbnail, kicker, short headline, one-line teaser.
 rows.push(label("TODAY’S STORIES", 16));
@@ -179,6 +192,7 @@ if (si || related.length) {
   rows.push(
     `<tr><td colspan="2" style="padding:8px 0 0;font-family:${SANS};font-size:13px;line-height:1.35;">` +
       a(`${SITE}/ai-stress-index`, si ? `&#9679; AI Stress Index: ${si.score}/100, ${esc(si.band)} (${siDate}${si.backCalculated ? ", back-calculated" : ""}) &rarr;` : "&#9679; See today’s AI Stress Index &rarr;", "color:#7048E8;font-weight:700;") +
+      (bandMove ? `<span style="color:#C2410C;font-weight:800;"> · New band: ${esc(bandMove)}</span>` : "") +
       (related.length ? `<span style="color:${E.muted};"> · tracks ${related.length === 1 ? "story" : "stories"} ${related.join(", ")}</span>` : "") +
       `</td></tr>`,
   );

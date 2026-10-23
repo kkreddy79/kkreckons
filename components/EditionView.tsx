@@ -75,9 +75,13 @@ function changeText(score: number, prev: number | null | undefined, prevDate: st
  * ones only when KK tagged a story): score, band, the day's change and a 30-day line on Home, and the
  * stories it relates to. Edition pages show the reading saved when the edition was published; Home the latest.
  */
-function StressCard({ si, related }: { si?: Reading; related: number[] }) {
+function StressCard({ si, related, prevScore }: { si?: Reading; related: number[]; prevScore?: number | null }) {
   const live = si && "trend" in si ? si : null;
   const band = si && !live?.limited ? bandOf(si.score) : null;
+  // A move into a new band since the previous reading is the news: call it out.
+  const before = live ? live.prevScore : prevScore;
+  const was = band && before != null ? bandOf(before) : null;
+  const moved = band && was && was[0] !== band[0] ? `${band[1] > was[1] ? "Up" : "Down"} from ${was[0]}` : "";
   const notes = [
     live ? changeText(live.score, live.prevScore, live.prevDate) : "",
     si ? `${shortDate(si.asOf)} close${si.backCalculated ? " (back-calculated)" : ""}` : "Updated every trading day",
@@ -96,6 +100,7 @@ function StressCard({ si, related }: { si?: Reading; related: number[] }) {
             </>
           )}
           {band ? <em style={{ background: band[2] }}>{band[0]}</em> : live?.limited ? <em className="ev-sx-limited">Limited data</em> : null}
+          {moved && <strong className="ev-sx-new">New · {moved[0].toLowerCase() + moved.slice(1)}</strong>}
         </p>
         <p className="ev-sx-note">
           {notes.join(" · ")}
@@ -126,7 +131,8 @@ const TALL = 1.6;
 /** The story's own page (/daily/<edition>/<n>), which link previews show with the story's headline and graphic. */
 export const storyPageUrl = (date: string, n: number) => `${SITE_URL}/daily/${slugFor(date)}/${n}`;
 
-export function StoryCard({ s, n, wide, full, id, date, as: H = "h3" }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string; as?: "h1" | "h3" }) {
+/** `priority` is for a story page, where the graphic is the main thing on screen: load it at once, not lazily. */
+export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority = false }: { s: FullStory; n: number; wide: boolean; full?: boolean; id: string; date: string; as?: "h1" | "h3"; priority?: boolean }) {
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title}>
@@ -141,10 +147,10 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3" }: { s: Ful
               .join(", ")}
             sizes={wide ? "(max-width: 700px) 100vw, 560px" : "(max-width: 700px) 100vw, 480px"}
           />
-          <img src={s.image} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading="lazy" decoding="async" />
+          <img src={s.image} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" />
         </picture>
       ) : (
-        <img src={s.image} alt={s.imageAlt || ""} loading="lazy" />
+        <img src={s.image} alt={s.imageAlt || ""} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} />
       )}
     </a>
   );
@@ -259,6 +265,7 @@ export default function EditionView({
   related = [],
   signup,
   liveStress,
+  prevStressScore,
   children,
 }: {
   e: EditionContent;
@@ -273,6 +280,8 @@ export default function EditionView({
   signup?: React.ReactNode;
   /** Home: today's AI Stress Index reading, shown instead of the one saved with the edition. */
   liveStress?: LiveStress | null;
+  /** Edition pages: the previous edition's saved index score, to flag a move into a new band. */
+  prevStressScore?: number | null;
   children?: React.ReactNode;
 }) {
   const H = headingLevel;
@@ -349,7 +358,7 @@ export default function EditionView({
 
       {digest}
 
-      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} />}
+      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} />}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">

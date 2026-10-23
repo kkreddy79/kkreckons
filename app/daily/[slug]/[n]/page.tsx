@@ -5,7 +5,9 @@ import { StoryCard, storyPageUrl } from "@/components/EditionView";
 import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
-import { editions, getEdition, longDate, shortDate, slugFor } from "@/lib/editions";
+import { relatedForStory } from "@/lib/related";
+import { topicStories } from "@/lib/topics";
+import { editions, getEdition, longDate, shortDate, slugFor, storyHref, themesOf } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
 
 // One story on its own page, so a shared story previews with its own headline and graphic.
@@ -58,6 +60,15 @@ export default async function StoryPage({ params }: Props) {
   const { edition, stories, story, n } = f;
   const editionUrl = `/daily/${slugFor(edition.date)}`;
   const url = storyPageUrl(edition.date, n);
+  // Read next: stories that name the same companies or people, topped up with the latest from the same topic.
+  const named = relatedForStory(edition.date, n);
+  const theme = themesOf(edition.stories[n - 1])[0];
+  const sameTopic = theme
+    ? topicStories(theme)
+        .filter((t) => t.edition.date !== edition.date)
+        .map((t) => ({ date: t.edition.date, title: t.story.title, href: storyHref(t.edition, t.story).replace("#story-", "/") }))
+    : [];
+  const related = [...named, ...sameTopic.filter((t) => !named.some((r) => r.href === t.href))].slice(0, 3);
   return (
     <main className="ev-wrap ev-page st-page">
       <JsonLd
@@ -91,7 +102,7 @@ export default async function StoryPage({ params }: Props) {
         <Link href="/daily/">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
       </nav>
       <div className="ev">
-        <StoryCard s={story} n={n} wide full as="h1" id={`st-qs-${edition.date}-${n}`} date={edition.date} />
+        <StoryCard s={story} n={n} wide full as="h1" priority id={`st-qs-${edition.date}-${n}`} date={edition.date} />
         <p className="st-more">
           <Link className="button" href={`${editionUrl}#story-${n}`}>
             Read the full {shortDate(edition.date)} edition →
@@ -100,6 +111,21 @@ export default async function StoryPage({ params }: Props) {
             Catch up on past editions
           </Link>
         </p>
+        {related.length > 0 && (
+          <section className="ev-related" aria-labelledby="st-rel-t">
+            <h2 id="st-rel-t">Read next</h2>
+            <ul>
+              {related.map((r) => (
+                <li key={r.href}>
+                  <Link href={r.href}>
+                    <small>{shortDate(r.date)}</small>
+                    {r.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         {stories.length > 1 && (
           <nav className="st-list" aria-labelledby="st-list-t">
             <h2 id="st-list-t">Also in this edition</h2>

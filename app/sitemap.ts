@@ -6,6 +6,7 @@ import { TOPICS } from "@/lib/topics";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE_URL}/daily`, lastModified: latest.date, changeFrequency: "daily", priority: 0.8 },
+    { url: `${SITE_URL}/week`, lastModified: latest.date, changeFrequency: "daily", priority: 0.7 },
     { url: `${SITE_URL}/topics`, lastModified: latest.date, changeFrequency: "daily", priority: 0.7 },
     ...TOPICS.map((t) => ({ url: `${SITE_URL}/topics/${t.slug}`, lastModified: latest.date, changeFrequency: "daily" as const, priority: 0.7 })),
     { url: `${SITE_URL}/ai-stress-index`, changeFrequency: "daily", priority: 0.7 },

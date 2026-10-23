@@ -25,7 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${topic.name} news, explained: ${n} stories`,
     description: `${topic.blurb} Every KKReckons ${topic.name} story, with why it matters and the other side.`,
-    alternates: { canonical: `/topics/${topic.slug}` },
+    alternates: {
+      canonical: `/topics/${topic.slug}`,
+      types: { "application/rss+xml": [{ url: `/topics/${topic.slug}/feed.xml`, title: `KKReckons · ${topic.name}` }] },
+    },
   };
 }
 
@@ -107,6 +110,8 @@ export default async function TopicPage({ params }: Props) {
         </section>
         <p className="tp-more">
           Want to narrow it down? <Link href={`/daily/?theme=${encodeURIComponent(topic.name)}`}>Search {topic.name} stories in Catch up →</Link>
+          {" · "}
+          <a href={`/topics/${topic.slug}/feed.xml`}>RSS feed for {topic.name}</a>
         </p>
         <SubscribeBox />
       </div>
