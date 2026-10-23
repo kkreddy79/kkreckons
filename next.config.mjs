@@ -18,7 +18,15 @@ const nextConfig = {
   },
   async headers() {
     return [
-      { source: "/:path*", headers: securityHeaders },
+      // Every page refuses to be framed by other sites, except the AI Stress Index embed card, which exists to be.
+      { source: "/:path((?!ai-stress-index/embed$).*)", headers: securityHeaders },
+      {
+        source: "/ai-stress-index/embed",
+        headers: [
+          ...securityHeaders.filter((h) => h.key !== "X-Frame-Options" && h.key !== "Content-Security-Policy"),
+          { key: "Content-Security-Policy", value: "frame-ancestors *" },
+        ],
+      },
       // Story graphics rarely change once published: let browsers keep them a day (and reuse them for a
       // week while re-checking), instead of re-validating every image on every visit.
       { source: "/figs/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }] },

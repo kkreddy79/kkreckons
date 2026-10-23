@@ -48,6 +48,7 @@ export default async function Home() {
           showCatchUp
           related={relatedFor(latest.date)}
           liveStress={stress}
+          digestAfterPick
           signup={
             INLINE_SIGNUP && (
               <div className="ev-inbox">
