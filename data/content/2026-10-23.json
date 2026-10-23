@@ -1,0 +1,370 @@
+{
+  "date": "2026-10-23",
+  "slice": "Bots borrow logins, proofs pile up, risk throws a beach party. Trust pays the price.",
+  "artifact": "https://claude.ai/artifact/WyUPHZtoRcw7JeJR47MNFT",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "$138bn",
+      "text": "in paper gains for 13 big US public pensions from AI-linked stocks since late 2022 (WSJ)",
+      "url": "https://www.wsj.com/finance/investing/politicians-are-turning-against-ai-but-your-pension-is-riding-on-it-6764d852"
+    },
+    {
+      "num": "$30bn",
+      "text": "pulled out of retail-marketed private-credit funds in 2026’s first three quarters",
+      "url": "https://www.wsj.com/finance/investing/private-credit-retail-investors-festival-c550f07b"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI and banking",
+          "tag": "",
+          "title": "Big US banks curb AI agents after unauthorised account access",
+          "url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
+          "url2": "https://www.ft.com/content/5116beca-1b6e-418e-99d7-462339b3b57e?syn-25a6b1a6=1",
+          "points": [
+            "Axios reports that big US banks are finding third-party AI agents inside customer accounts, usually logged in with the customer’s own password, and some acting beyond instructions. Morgan Stanley is blocking them; JPMorgan, Bank of America and Citi are restricting them; most banks lean towards read-only access.",
+            "In an FT column, John Thornhill argues firms must ‘Know Your Agent’: identify it, keep it behaving as intended and settle who is liable when it errs. He cites Deloitte: 74% of companies plan to use agents within two years.",
+            "404 Media shows ID checks already strain: a scammer opened a CashApp account in Amanda Smith’s name, and she was charged."
+          ],
+          "numbers": [
+            [
+              "74%",
+              "of firms plan to use AI agents within two years (Deloitte, via FT)"
+            ],
+            [
+              "4",
+              "big US banks named as blocking or restricting agents"
+            ]
+          ],
+          "why": "Banks spent decades perfecting Know Your Customer. Agents break that model: the login is genuine, but the person may not be the one acting.",
+          "other": "Customers will want agents to pay bills and move money, and bankers admit a middle ground is needed. Blanket bans may only push password-sharing out of sight; vetted, read-only or signed agent access could prove safer.",
+          "also": [
+            {
+              "title": "Someone Opened a CashApp In Her Name. She Faces Years in Prison",
+              "url": "https://www.404media.co/amanda-smith-opened-a-cashapp-in-her-name-she-faces-years-in-prison-cashapp-fraud/"
+            }
+          ],
+          "image": "/figs/2026-10-23-1.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Axios and Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Your bank vs your bot",
+          "emailTeaser": "JPMorgan, Morgan Stanley and others curb agents logging in for you.",
+          "cite": "Deloitte found 23% of companies use AI agents and 74% plan to within two years, the FT reported on 22 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1775
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "AI talent",
+          "tag": "",
+          "title": "AI researchers leave OpenAI, DeepMind to build startups in India",
+          "url": "https://inc42.com/features/can-india-capitalise-on-the-ai-homecoming/",
+          "url2": "",
+          "points": [
+            "Inc42 tracks researchers leaving global labs to build in India: Shyamal Anadkat, who led OpenAI’s Applied Evals team, founded Empirical Machines for AI-driven molecule and materials research; ex-DeepMind engineer Parth Sarthi’s Chariot builds speech-native models under the IndiaAI Mission.",
+            "Former Google engineering director Anish Das Sarma’s Reinforce Labs red-teams enterprise AI. Empirical Machines is reportedly in talks to raise about $15 Mn, per Moneycontrol.",
+            "Investors say lab pedigree helps recruit talent but does not prove a business; DeVC’s Rahul Mathur asks who will pay for the research."
+          ],
+          "numbers": [
+            [
+              "235%",
+              "YoY rise in Indian AI funding, Q3 2026 (Inc42)"
+            ],
+            [
+              "$15 Mn",
+              "raise Empirical Machines is reportedly in talks for"
+            ]
+          ],
+          "why": "The scarce input in AI is people who have trained frontier models. If even a few build here, India gains not just companies but the researchers they go on to train.",
+          "other": "Pedigree is not product. Research takes years to pay off, compute is costly, and investors say customers, not résumés, will decide which of these startups survive.",
+          "also": [],
+          "image": "/figs/2026-10-23-2.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Inc42",
+          "pay": true,
+          "themes": [
+            "India",
+            "AI"
+          ],
+          "emailHead": "The AI homecoming",
+          "emailTeaser": "Ex-OpenAI and DeepMind talent bets on building from India.",
+          "cite": "Indian AI startup funding rose 235% year on year in Q3 2026, according to an Inc42 report cited on 21 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Pensions and AI",
+          "tag": "",
+          "title": "AI stocks drove $138bn in gains for US public pensions, WSJ finds",
+          "url": "https://www.wsj.com/finance/investing/politicians-are-turning-against-ai-but-your-pension-is-riding-on-it-6764d852",
+          "url2": "",
+          "points": [
+            "A WSJ analysis of 13 large public pensions finds a basket of 15 AI-linked stocks drove $138 billion in paper gains from late 2022 to June, rising to about 27% of their US equity holdings.",
+            "Yet officials in the same states are slowing data centres: New York paused many new projects in July, and Pennsylvania’s governor tightened approval rules in August.",
+            "The Equable Institute says the boom has nearly restored pre-2008 funding levels; a sharp downturn could leave governments facing tens of billions in costs."
+          ],
+          "numbers": [
+            [
+              "$138bn",
+              "AI-linked paper gains, 13 funds, end-2022 to June"
+            ],
+            [
+              "27%",
+              "AI basket’s share of their US stocks"
+            ]
+          ],
+          "why": "Teachers and firefighters are quietly long the AI trade. Concentration risk now sits in retirement funds most beneficiaries never chose.",
+          "other": "Pensions mostly track indexes, so the AI weight reflects the market, not a bet. Selling to make a political point has cost retirees before, and trustees’ duty is to risk-adjusted returns.",
+          "also": [],
+          "image": "/figs/2026-10-23-3.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Personal finance"
+          ],
+          "emailHead": "Your pension is long AI",
+          "emailTeaser": "Politicians fight data centres their pension funds profit from.",
+          "cite": "AI-linked stocks drove $138 billion in paper gains for 13 large US public pensions from end-2022 to June 2026, a WSJ analysis found.",
+          "imageW": 1280,
+          "imageH": 1729
+        },
+        {
+          "category": "AI and markets",
+          "tag": "Opinion",
+          "title": "AI bull market is no dotcom bubble, argues Bloomberg’s Nir Kaissar",
+          "url": "https://www.livemint.com/opinion/online-views/why-americas-ai-fuelled-bull-market-is-not-a-repeat-of-the-dotcom-bubble-11792593066902.html",
+          "url2": "",
+          "points": [
+            "In a Bloomberg Opinion column carried by Mint, Nir Kaissar argues the AI rally lacks the euphoria that drives bubbles: bears now outnumber bulls by 8 percentage points in AAII surveys, while bulls led by over 20 points in the late 1990s.",
+            "He concedes AI’s grip is bigger: AI firms make up 40% to 60% of US market value and nearly 70% of S&P 500 third-quarter earnings growth, per Citadel Securities estimates.",
+            "His forecast: profit growth cools and a pullback follows, but absent a crisis, nothing worse than an ordinary bear market."
+          ],
+          "numbers": [
+            [
+              "8 pts",
+              "bears ahead of bulls, AAII survey"
+            ],
+            [
+              "~70%",
+              "of S&P 500 Q3 earnings growth from AI firms (Citadel est.)"
+            ]
+          ],
+          "why": "Sentiment is a useful tell, but read it with today’s pensions story: when AI carries most of the market’s growth, even an ordinary bear market lands on retirees.",
+          "other": "Scepticism alone does not prevent a bust. Concentration is higher than in 1999, earnings can disappoint, and as Kaissar admits, bubbles are hard to call in real time.",
+          "also": [],
+          "image": "/figs/2026-10-23-4.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "AI"
+          ],
+          "emailHead": "The bubble nobody loves",
+          "emailTeaser": "Bears outnumber bulls by 8 points; a columnist says relax.",
+          "cite": "AI-related companies accounted for nearly 70% of S&P 500 earnings growth in Q3 2026, according to Citadel Securities estimates cited by Bloomberg Opinion.",
+          "imageW": 1280,
+          "imageH": 1732
+        },
+        {
+          "category": "Private credit",
+          "tag": "",
+          "title": "Private credit firms court retail investors with festivals and F1",
+          "url": "https://www.wsj.com/finance/investing/private-credit-retail-investors-festival-c550f07b",
+          "url2": "",
+          "points": [
+            "The WSJ reports asset managers are courting wealth advisers at events like California’s Future Proof Festival, where nearly 6,000 attendees got concerts, wellness classes and private-credit pitches, as institutional clients reach their limits.",
+            "Carlyle uses a Red Bull F1 sponsorship; Blue Owl and EQT back tennis; Apollo sponsors a PGA golfer.",
+            "Withdrawals are rising: investors pulled an estimated $30 billion from retail-marketed funds in 2026’s first three quarters, per Robert A. Stanger, and many funds limit quarterly exits."
+          ],
+          "numbers": [
+            [
+              "$30bn",
+              "pulled from retail private-credit funds, Q1–Q3 2026 (Stanger)"
+            ],
+            [
+              "~6,000",
+              "attendees at the Future Proof Festival"
+            ]
+          ],
+          "why": "When a product needs a beach festival to sell, ask who carries the risk. Individual investors pay higher fees than pensions and cannot always get out quickly.",
+          "other": "Supporters say it opens returns once reserved for institutions, and advisers insist perks don’t sway their picks. For some clients a small allocation can make sense.",
+          "also": [],
+          "image": "/figs/2026-10-23-5.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Personal finance"
+          ],
+          "emailHead": "Come for the concert, stay for credit",
+          "emailTeaser": "Concerts and F1 sell hard-to-exit loan funds to advisers.",
+          "cite": "Investors withdrew an estimated $30 billion from retail-marketed private-credit funds in the first three quarters of 2026, according to Robert A. Stanger.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Workplace",
+          "tag": "",
+          "title": "Family firm with no layoffs in 75 years becomes a model for bosses",
+          "url": "https://www.wsj.com/business/bosses-want-the-secrets-of-the-family-firm-that-has-never-had-a-layoff-in-75-years-ac608165",
+          "url2": "",
+          "points": [
+            "The WSJ profiles Gund Co., a St. Louis composite-materials maker founded by the CEO’s grandfather that has never laid anyone off and has averaged 18% annual growth for a decade.",
+            "CEO Steve Gund’s people-first playbook: red cards on the factory floor flag problems, everyone has a development plan, financials are posted openly, and workers own part of the firm.",
+            "It is not soft: Gund staffs lean to ride out slow patches and manages out those who don’t adapt. Leaders from many companies have visited; few copy it fully."
+          ],
+          "numbers": [
+            [
+              "75 yrs",
+              "without a single layoff"
+            ],
+            [
+              "18%",
+              "average annual growth over a decade"
+            ]
+          ],
+          "why": "In a year of AI-driven job cuts, Gund argues keeping people can be a growth strategy, not a cost. Its secret is discipline as much as kindness.",
+          "other": "A private family firm answers to no quarterly investors and can staff lean by choice. What works on a Midwest factory floor may not survive a deep downturn, a sale or an industry remade by AI.",
+          "also": [],
+          "image": "/figs/2026-10-23-6.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ],
+          "emailHead": "The firm that never fires",
+          "emailTeaser": "Gund grows about 18% a year without a single layoff.",
+          "cite": "Gund Co. has averaged 18% annual growth for a decade without ever laying off an employee, the WSJ reported on 22 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1732
+        },
+        {
+          "category": "AI and science",
+          "tag": "Opinion",
+          "title": "Terence Tao calls for ‘Maths 2.0’ as AI floods the field with proofs",
+          "url": "https://www.nature.com/articles/d41586-026-03389-1",
+          "url2": "",
+          "points": [
+            "In a Nature World View column, Fields medallist Terence Tao says AI-aided proofs have appeared for hundreds of long-standing problems in recent months, and calls for a ‘Maths 2.0’ no longer defined by scarce proofs.",
+            "He flags costs: OpenAI’s 6 October release of hundreds of solutions disrupted research programmes; many AI results miss publication standards; credit for prior work is unclear; juniors lose a route to recognition.",
+            "He warns understanding lags output, ‘proof indigestion’, and sees similar risks in opaque models used for bank lending."
+          ],
+          "numbers": [
+            [
+              "100s",
+              "long-standing problems with AI-aided proofs"
+            ],
+            [
+              "6 Oct",
+              "OpenAI’s mass release of solutions"
+            ]
+          ],
+          "why": "When proofs become cheap, understanding becomes the scarce good. The same gap appears wherever banks and funds lean on models nobody can explain.",
+          "other": "Tao uses AI in his own research and says that, used creatively and with the right incentives, it could deepen understanding. The upheaval may be a transition cost, not a lasting loss.",
+          "also": [],
+          "image": "/figs/2026-10-23-7.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Nature",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "Proof indigestion",
+          "emailTeaser": "AI cracked hundreds of old problems; Tao says digestion lags.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Defence tech",
+          "tag": "",
+          "title": "Warhound raises $200mn to clone and gene-edit US military dogs",
+          "url": "https://www.ft.com/content/8a558139-2318-4509-8acd-199d5f888b9e?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The FT reports Warhound, conceived by Anduril co-founder Palmer Luckey and Colossal Biosciences’ Ben Lamm, has raised $200mn from backers including Sequoia, Ark Invest and the CIA-founded In-Q-Tel to rebuild US supply of military working dogs.",
+            "It plans to clone top dogs and gene-edit them for longevity and performance; Anduril will develop body armour and ‘cybernetics’. Most such dogs now come from European breeders.",
+            "Luckey holds no equity and no daily role; ex-Pentagon data chief David Spirk will run it."
+          ],
+          "numbers": [
+            [
+              "$200mn",
+              "raised from investors"
+            ],
+            [
+              "$1.2bn",
+              "valuation including the new money, per a source"
+            ]
+          ],
+          "why": "Defence-tech money is now flowing into biology, not just drones. Who sets the ethical rules for editing animals for war is still an open question.",
+          "other": "Lamm argues editing is more humane, since many working dogs fail training today. But it is a promise, not a result: edited dogs still have to prove they outperform well-bred ones.",
+          "also": [],
+          "image": "/figs/2026-10-23-8.jpg",
+          "imageAlt": "",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Health & science"
+          ],
+          "emailHead": "Captain America, but a dog",
+          "emailTeaser": "Cloned, gene-edited working dogs draw $200mn from Sequoia and Ark.",
+          "cite": "Warhound raised $200mn from investors including Sequoia and Ark Invest, the FT reported on 22 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Demis Hassabis: AI, DeepMind and Isomorphic Labs (WSJ)",
+      "url": "https://www.wsj.com/tech/ai/demis-hassabis-ai-deepmind-google-isomorphic-2b4e3153",
+      "note": "The DeepMind co-founder and Nobel laureate on where AI goes next, from Google to AI drug discovery."
+    }
+  ],
+  "takeaway": {
+    "a": "Who’s acting?",
+    "b": "Who’s liable?",
+    "line": "From bank logins to pensions and beach-tent fund pitches, one question runs through today: who is really making the call, and who holds the bill when it goes wrong?"
+  },
+  "cover": "/figs/2026-10-23-cover.jpg",
+  "coverAlt": "Flat illustration of a robot holding a key card outside a bank with a closed vault door and a red no-entry sign.",
+  "stressIndex": {
+    "score": 32,
+    "band": "Elevated",
+    "asOf": "2026-10-22"
+  }
+}

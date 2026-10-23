@@ -1,5 +1,119 @@
 [
   {
+    "date": "2026-10-23",
+    "slice": "Bots borrow logins, proofs pile up, risk throws a beach party. Trust pays the price.",
+    "artifact": "https://claude.ai/artifact/WyUPHZtoRcw7JeJR47MNFT",
+    "readingMinutes": 8,
+    "image": "/figs/2026-10-23-1.jpg",
+    "cover": "/figs/2026-10-23-cover.jpg",
+    "coverAlt": "Flat illustration of a robot holding a key card outside a bank with a closed vault door and a red no-entry sign.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Big US banks curb AI agents after unauthorised account access",
+        "category": "AI and banking",
+        "tag": "",
+        "url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
+        "src": "Axios and Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI researchers leave OpenAI, DeepMind to build startups in India",
+        "category": "AI talent",
+        "tag": "",
+        "url": "https://inc42.com/features/can-india-capitalise-on-the-ai-homecoming/",
+        "src": "Inc42",
+        "pay": true,
+        "themes": [
+          "India",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI stocks drove $138bn in gains for US public pensions, WSJ finds",
+        "category": "Pensions and AI",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/politicians-are-turning-against-ai-but-your-pension-is-riding-on-it-6764d852",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI bull market is no dotcom bubble, argues Bloomberg’s Nir Kaissar",
+        "category": "AI and markets",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/why-americas-ai-fuelled-bull-market-is-not-a-repeat-of-the-dotcom-bubble-11792593066902.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Private credit firms court retail investors with festivals and F1",
+        "category": "Private credit",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/private-credit-retail-investors-festival-c550f07b",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Family firm with no layoffs in 75 years becomes a model for bosses",
+        "category": "Workplace",
+        "tag": "",
+        "url": "https://www.wsj.com/business/bosses-want-the-secrets-of-the-family-firm-that-has-never-had-a-layoff-in-75-years-ac608165",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Terence Tao calls for ‘Maths 2.0’ as AI floods the field with proofs",
+        "category": "AI and science",
+        "tag": "Opinion",
+        "url": "https://www.nature.com/articles/d41586-026-03389-1",
+        "src": "Nature",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Warhound raises $200mn to clone and gene-edit US military dogs",
+        "category": "Defence tech",
+        "tag": "",
+        "url": "https://www.ft.com/content/8a558139-2318-4509-8acd-199d5f888b9e?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-22",
     "slice": "Patch the code. Hedge AI. China hoards cash. Ask the bot. Risk finds a new address.",
     "artifact": "https://claude.ai/artifact/A8FnAYK87WkjFHqR2zh97M",

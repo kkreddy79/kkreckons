@@ -330,5 +330,18 @@
       "band": "Elevated",
       "asOf": "2026-10-21"
     }
+  },
+  "2026-10-23": {
+    "artifact": "https://claude.ai/artifact/WyUPHZtoRcw7JeJR47MNFT",
+    "stressIndex": {
+      "score": 32,
+      "band": "Elevated",
+      "asOf": "2026-10-22"
+    },
+    "stories": {
+      "Private credit firms court retail investors with festivals and F1": {
+        "stressIndex": true
+      }
+    }
   }
 }
