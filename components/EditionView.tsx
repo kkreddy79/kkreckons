@@ -415,6 +415,7 @@ export default function EditionView({
         <section
           key={sec.name}
           className="ev-section"
+          data-sec={sectionId(sec.name)}
           id={sectionId(sec.name)}
           aria-labelledby={`${sectionId(sec.name)}-t`}
         >
