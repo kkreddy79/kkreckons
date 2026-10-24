@@ -38,16 +38,25 @@ type StressData = {
   history: { score: number | null }[];
 };
 
+/** A finite number, or null: the data comes from another repository, and the embed card and badge put these
+ *  values straight into HTML and SVG, so anything that isn't a number never gets that far. */
+const num = (v: unknown) => (typeof v === "number" && Number.isFinite(v) ? v : null);
+
 export function liveStress(d: StressData | null): LiveStress | null {
-  if (!d || d.score == null) return null;
-  const total = d.factors.reduce((t, f) => t + f.weight, 0);
-  const stale = d.factors.filter((f) => f.stale).reduce((t, f) => t + f.weight, 0);
+  const score = num(d?.score);
+  if (!d || score == null) return null;
+  const factors = Array.isArray(d.factors) ? d.factors : [];
+  const total = factors.reduce((t, f) => t + (num(f.weight) ?? 0), 0);
+  const stale = factors.filter((f) => f.stale).reduce((t, f) => t + (num(f.weight) ?? 0), 0);
   return {
-    score: d.score,
-    asOf: d.asOf,
-    prevScore: d.prevScore ?? null,
-    prevDate: d.prevDate ?? null,
+    score,
+    asOf: String(d.asOf),
+    prevScore: num(d.prevScore),
+    prevDate: d.prevDate == null ? null : String(d.prevDate),
     limited: total > 0 && stale / total > LIMITED,
-    trend: d.history.flatMap((h) => (h.score == null ? [] : [h.score])).slice(-30),
+    trend: (Array.isArray(d.history) ? d.history : []).flatMap((h) => {
+      const v = num(h?.score);
+      return v == null ? [] : [v];
+    }).slice(-30),
   };
 }
