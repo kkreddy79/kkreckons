@@ -18,7 +18,10 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `/api/subscribe` — adds a reader to the beehiiv list from the on-page email form
 
 ## How editions are stored
-- `newsletters/YYYY-MM-DD.html` — the original newsletter HTML, kept as the source only (not served on the site)
+- `newsletters/YYYY-MM-DD.html` — the original newsletter HTML, kept as the source only (not served on the site).
+  From 25 Oct 2026 each is stored without its images: once `npm run editions` has saved them to `public/figs/`,
+  the publish command swaps each one for a `kkreckons-fig:/figs/<file>` pointer (about 2.7 MB → 0.1 MB a day).
+  Earlier newsletters stay as published; the claude.ai artifact keeps every original.
 - `data/content/YYYY-MM-DD.json` — each edition's stories, numbers, why it matters, other side, sources and further reading, generated
 - `data/editions.json` — the index used by the archive and home page, generated
 - `public/figs/` — story images pulled out of the newsletters, generated
@@ -30,7 +33,12 @@ Every edition is rendered in the same KKReckons design from its content JSON, wh
 A nightly routine (8:53 pm and 11:53 pm Pacific) runs the `publish-edition` skill (`.claude/skills/publish-edition/SKILL.md`):
 it finds the newest artifact titled `KKReckons, <Weekday>, <D> <Month> <YYYY>` that isn't on the site yet,
 builds and checks it, opens a pull request with a Vercel preview, and merges only after Krishnakanth replies
-"publish". To run it by hand, ask Claude Code to "publish today's edition".
+"publish". To run it by hand, ask Claude Code to "publish today's edition". The Friday best-of email has its own
+skill (`.claude/skills/weekly-email/SKILL.md`): ask for "the weekly".
+
+Both skills run on Sonnet (`model: sonnet` in their frontmatter), which covers the turn that starts them; start
+publishing sessions on Sonnet too (model picker or `/model sonnet`) so the approval and email turns stay on it.
+The rights review asks an Opus subagent only about graphics that aren't plainly KKReckons' own.
 
 `npm run qc` (after `npm run editions` and `npm run build`) is the quality-control gate before any edition goes
 live. It checks that no earlier edition's data, newsletter or images changed or went missing, that every page

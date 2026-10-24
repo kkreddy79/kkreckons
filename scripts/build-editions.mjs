@@ -76,7 +76,20 @@ function normalise(html) {
   return html;
 }
 
+// Newsletters published from 25 Oct 2026 are stored without their images (scripts/strip-newsletter-images.mjs):
+// each "fig" and "cover" then holds a pointer, "kkreckons-fig:/figs/<file>", to the copy already in public/figs.
+// The claude.ai artifact keeps the original. A pointer to a missing file is reported and leaves no image.
+function storedFig(ref) {
+  const m = /^kkreckons-fig:(\/figs\/[\w.-]+)$/.exec(ref || "");
+  if (!m) return null;
+  if (fs.existsSync(path.join(figsDir, path.basename(m[1])))) return m[1];
+  console.warn(`Missing stored image ${m[1]}: the newsletter points to it, but public/figs has no such file.`);
+  return "";
+}
+
 function saveFig(date, n, dataUrl) {
+  const stored = storedFig(dataUrl);
+  if (stored !== null) return stored;
   const m = /^data:image\/(png|jpe?g|webp);base64,(.+)$/.exec(dataUrl || "");
   if (!m) return "";
   const ext = m[1] === "jpeg" ? "jpg" : m[1];
@@ -96,6 +109,8 @@ function saveFig(date, n, dataUrl) {
 const COVER_W = 1600;
 const COVER_H = 900;
 async function saveCover(date, dataUrl) {
+  const stored = storedFig(dataUrl);
+  if (stored !== null) return stored;
   const m = /^data:image\/(png|jpe?g|webp);base64,(.+)$/.exec(dataUrl || "");
   if (!m) return "";
   const raw = Buffer.from(m[2], "base64");
