@@ -10,6 +10,11 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 - **Data:** a full HTML page containing one `<script id="data" type="application/json">` block with the JSON
   below. The website rebuilds everything from this JSON in its own design, whatever the newsletter looks like.
   The site saves the page as `newsletters/YYYY-MM-DD.html` (source only, never served); the artifact's own file name doesn't matter.
+- **Template:** start each edition from `templates/KKReckons_Template_lite.html` (about 140 KB), not from a past edition
+  (about 3 MB, mostly embedded fonts and graphics, too large for Claude to read in full in a Project). It has the same
+  design, scripts and data format, one example story per section and no images; fonts load from Google Fonts and the
+  device instead of being embedded. Rebuild it from the newest edition after a design change with
+  `node scripts/make-lite-template.mjs`.
 
 ## Top level
 
