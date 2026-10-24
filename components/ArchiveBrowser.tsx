@@ -11,6 +11,7 @@ import {
   publisherName,
   slugFor,
   storyHref,
+  storyPageHref,
   themeSlug,
   themesOf,
   weekday,
@@ -21,8 +22,8 @@ import StorySource, { PaidMark, storyHover, storyPaid } from "@/components/Story
 /** A story's second source link, keyed by "date|title". */
 export type StoryLinks = Record<string, string>;
 
-/** A story's first summary points and "why it matters", keyed by "date|title" (served by /daily/summaries.json). */
-export type StorySummaries = Record<string, { points: string[]; why: string }>;
+/** A story's first summary points, "why it matters" and other side, keyed by "date|title" (served by /daily/summaries.json). */
+export type StorySummaries = Record<string, { points: string[]; why: string; other?: string }>;
 
 export type ReadingLink = { date: string; title: string; url: string; note: string };
 
@@ -326,7 +327,7 @@ export default function ArchiveBrowser({
                   )}
                 </div>
                 <div className="sr-src">
-                  <StorySource s={s} id={`sr-qs-${edition.date}-${i}`} />
+                  <StorySource s={s} id={`sr-qs-${edition.date}-${i}`} explainer={storyPageHref(edition, story)} />
                 </div>
               </li>
             ))}
