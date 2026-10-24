@@ -835,3 +835,23 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .wk-body b { font-size: 18px; }
 }
 .ev-sx-new { padding: 2px 9px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.5); color: #fff; font: 800 11.5px var(--sans); letter-spacing: 0.04em; }
+
+/* ---------- The day in cards (/daily/[slug]/cards) ---------- */
+.cards-head { margin: 0 0 22px; }
+.cards-head h1 { margin: 0 0 8px; font: 800 clamp(30px, 4.6vw, 48px)/1.08 "Playfair Display", Georgia, serif; letter-spacing: -0.02em; color: var(--ink2); }
+.cards-head p { margin: 0; max-width: 680px; font-size: 16px; line-height: 1.5; color: var(--text2); }
+.cards-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.cards-item { display: flex; flex-direction: column; gap: 10px; }
+.cards-fig { display: block; border-radius: 14px; overflow: hidden; background: var(--card); border: 1px solid var(--line-2); box-shadow: 0 12px 34px rgba(60, 35, 20, 0.07); transition: transform 0.15s; }
+.cards-fig:hover { transform: translateY(-2px); }
+.cards-fig img { display: block; width: 100%; height: auto; }
+.cards-title { display: flex; gap: 10px; align-items: baseline; font-weight: 700; font-size: 15px; line-height: 1.35; color: var(--ink2); }
+.cards-title:hover { color: var(--accent); }
+.cards-n { flex: none; font: 800 13px var(--sans); color: var(--accent); font-variant-numeric: tabular-nums; }
+@media (max-width: 700px) {
+  .cards-grid { grid-template-columns: 1fr; gap: 18px; }
+}
+.ev-free-note { flex-basis: 100%; font-size: 13px; font-weight: 600; color: var(--wa-text); }
+.ev-free-note:empty { position: absolute; width: 1px; height: 1px; overflow: hidden; } /* kept in the tree so the live region announces */
+.ev-jump a.ev-jump-cards { background: var(--ink2); border-color: var(--ink2); color: var(--cream); }
+.ev-jump a.ev-jump-cards:hover { background: var(--accent); border-color: var(--accent); }

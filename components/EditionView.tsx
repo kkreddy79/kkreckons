@@ -5,7 +5,7 @@ import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_
 import type { Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
 import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource, { PaidMark, sourceLinks } from "@/components/StorySource";
+import StorySource, { PaidMark, sourceLinks, storyPaid } from "@/components/StorySource";
 import FreeToggle from "@/components/FreeToggle";
 import { Glossed } from "@/components/Glossary";
 import ReadTracker from "@/components/ReadTracker";
@@ -265,6 +265,18 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
   );
 }
 
+/** Four tiles: the "View as cards" chip. */
+function CardsIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" fill="currentColor">
+      <rect x="0" y="0" width="6" height="6" rx="1.5" />
+      <rect x="8" y="0" width="6" height="6" rx="1.5" />
+      <rect x="0" y="8" width="6" height="6" rx="1.5" />
+      <rect x="8" y="8" width="6" height="6" rx="1.5" />
+    </svg>
+  );
+}
+
 /** An edition in the KKReckons design: slice, key numbers, sections of stories, further reading. */
 export default function EditionView({
   e,
@@ -295,7 +307,11 @@ export default function EditionView({
 }) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
+  // Story graphics; with two or more the edition has a "day in cards" page (app/daily/[slug]/cards).
+  const cards = e.sections.flatMap((sec) => sec.stories).filter((s) => s.image).length;
   const paywalled = e.sections.flatMap((sec) => sec.stories).filter((s) => sourceLinks(s).some((l) => l.paid)).length;
+  // Paywalled stories with no free source at all: with "Free sources only" on they keep just the summary.
+  const noFree = e.sections.flatMap((sec) => sec.stories).filter(storyPaid).length;
   // "Today in 30 seconds", right under the headline.
   const digest = count > 2 && (
     <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
@@ -347,18 +363,23 @@ export default function EditionView({
               <span className="ev-sub-sep" aria-hidden>
                 ·
               </span>{" "}
-              <FreeToggle paid={paywalled} />
+              <FreeToggle paid={paywalled} noFree={noFree} />
             </>
           )}
         </p>
-        {e.sections.length > 1 && (
+        {(e.sections.length > 1 || cards >= 2) && (
           <nav className="ev-jump" id={`jump-${e.date}`} aria-label="Sections">
-            {e.sections.map((s) => (
+            {cards >= 2 && (
+              <Link href={`/daily/${slugFor(e.date)}/cards`} prefetch={false} className="ev-jump-cards">
+                <CardsIcon /> View as cards
+              </Link>
+            )}
+            {e.sections.length > 1 && e.sections.map((s) => (
               <a key={s.name} href={`#${sectionId(s.name)}`}>
                 {s.name} <span>{s.stories.length}</span>
               </a>
             ))}
-            {e.reading.length > 0 && <a href="#further-reading">Further reading</a>}
+            {e.sections.length > 1 && e.reading.length > 0 && <a href="#further-reading">Further reading</a>}
           </nav>
         )}
         <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
