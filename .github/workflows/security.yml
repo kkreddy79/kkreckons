@@ -1,0 +1,61 @@
+# Daily security scan, free and with no AI involved: secrets in the whole git history (gitleaks), known
+# vulnerabilities in npm packages (OSV-Scanner) and code-level weaknesses (CodeQL, free on public repos).
+# A failing run emails the repository owner (GitHub's default); CodeQL findings also appear under
+# Security → Code scanning. On pull requests it runs only when this workflow or the scanner config
+# changes, so it never holds up an edition.
+name: Security
+
+on:
+  schedule:
+    - cron: "41 2 * * *" # 08:11 IST
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/security.yml
+      - .gitleaks.toml
+
+permissions:
+  contents: read
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Scan git history for secrets (gitleaks)
+        env:
+          GITLEAKS_VERSION: 8.30.1
+        run: |
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar xz gitleaks
+          # --redact keeps any found value out of the job log; .gitleaks.toml lists the known false positives.
+          ./gitleaks git --redact --no-banner -c .gitleaks.toml .
+
+  dependencies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check npm packages against the OSV vulnerability database
+        env:
+          OSV_VERSION: 2.7.0
+        run: |
+          curl -sSfL -o osv-scanner "https://github.com/google/osv-scanner/releases/download/v${OSV_VERSION}/osv-scanner_linux_amd64"
+          chmod +x osv-scanner
+          ./osv-scanner scan source --lockfile package-lock.json
+
+  codeql:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          languages: javascript-typescript
+          queries: security-extended
+      - uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
