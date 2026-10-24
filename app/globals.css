@@ -406,6 +406,10 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-qs li { margin-bottom: 7px; font-size: 15px; line-height: 1.5; color: var(--body); }
 .ev-qs-why { margin: 0 0 12px; padding: 10px 12px; border-radius: 10px; background: var(--why); font-size: 14.5px; line-height: 1.5; }
 .ev-qs-why b { color: var(--accent); }
+.ev-qs-other { margin: 0 0 12px; padding: 10px 12px; border-radius: 10px; background: var(--other); font-size: 14.5px; line-height: 1.5; }
+.ev-qs-other b { color: var(--violet-2); }
+.ev-qs-explainer { margin: 0 0 10px; font-size: 14px; }
+.ev-qs-explainer a { font-weight: 800; color: var(--violet-2); }
 .ev-qs-src { margin: 0; font-size: 13px; color: var(--text3); }
 .ev-qs-src a { color: var(--teal-text); font-weight: 800; }
 .ev-ic-sm { width: 15px; height: 15px; color: var(--teal-text); }

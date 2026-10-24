@@ -228,3 +228,6 @@ export function themesOf(s: Pick<Story, "category" | "title" | "themes">) {
 
 /** A story on its edition page: stories are numbered in edition order, matching the #story-N anchors there. */
 export const storyHref = (e: Edition, story: Story) => `/daily/${slugFor(e.date)}#story-${e.stories.indexOf(story) + 1}`;
+
+/** A story's own page (/daily/<edition>/<n>): its explainer graphic, numbers, why it matters and other side. */
+export const storyPageHref = (e: Edition, story: Story) => `/daily/${slugFor(e.date)}/${e.stories.indexOf(story) + 1}`;
