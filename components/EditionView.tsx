@@ -295,6 +295,8 @@ export default function EditionView({
 }) {
   const H = headingLevel;
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
+  // Story graphics; with two or more the edition has a "day in cards" page (app/daily/[slug]/cards).
+  const cards = e.sections.flatMap((sec) => sec.stories).filter((s) => s.image).length;
   const paywalled = e.sections.flatMap((sec) => sec.stories).filter((s) => sourceLinks(s).some((l) => l.paid)).length;
   // "Today in 30 seconds", right under the headline.
   const digest = count > 2 && (
@@ -330,6 +332,17 @@ export default function EditionView({
           <span className="ev-nowrap">
             {count} stories · {e.readingMinutes} min read
           </span>
+          {cards >= 2 && (
+            <>
+              {" "}
+              <span className="ev-sub-sep" aria-hidden>
+                ·
+              </span>{" "}
+              <Link href={`/daily/${slugFor(e.date)}/cards`} prefetch={false} className="ev-cards-link">
+                See the day in {cards} cards →
+              </Link>
+            </>
+          )}
           {showCatchUp && (
             <>
               {" "}
