@@ -365,5 +365,18 @@
         "imageAlt": "KKReckons explainer, Better dogs, by design: Warhound raised $200mn to clone and gene-edit US working dogs, backed by Sequoia, Ark Invest, Lux Capital and In-Q-Tel. Anduril adds armour; ex-Pentagon data chief David Spirk leads."
       }
     }
+  },
+  "2026-10-24": {
+    "artifact": "https://claude.ai/artifact/55cGuDxQar5JBxxm3QVGbN",
+    "stressIndex": {
+      "score": 32,
+      "band": "Elevated",
+      "asOf": "2026-10-23"
+    },
+    "stories": {
+      "Meta's Muse passes 10 million downloads, but costs outrun revenue": {
+        "stressIndex": true
+      }
+    }
   }
 }

@@ -1,0 +1,393 @@
+{
+  "date": "2026-10-24",
+  "slice": "Shells sell. Code cracks. AI plays doctor. Every ledger still needs a reader.",
+  "artifact": "https://claude.ai/artifact/55cGuDxQar5JBxxm3QVGbN",
+  "readingMinutes": 10,
+  "callouts": [
+    {
+      "num": "7.5 lakh",
+      "text": "PHP servers run versions with no patch for the PHP2Shell flaws, out of about 5 million (ET)",
+      "url": "https://m.economictimes.com/opinion/et-commentary/more-bugs-out-there-php2shell-is-just-the-tip-of-the-internets-old-code-iceberg/articleshow/135152174.cms"
+    },
+    {
+      "num": "42%",
+      "text": "lower melanoma relapse risk with a custom mRNA vaccine plus Keytruda, at two years (AP)",
+      "url": "https://apnews.com/article/moderna-cancer-vaccine-melanoma-mrna-intismeran-415ececd79c9411498751246742aafa2"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Defence exports",
+          "tag": "",
+          "title": "India's arms exports to Europe soar on Europe's rearmament",
+          "url": "https://www.bloomberg.com/graphics/2026-india-defense-exports/",
+          "url2": "https://economictimes.indiatimes.com/news/defence/india-became-third-largest-exporter-of-arms-to-europe-defence-secretary-rk-singh/articleshow/135144721.cms",
+          "points": [
+            "Bloomberg's analysis of trade data finds Indian makers have shipped at least $872 million of shells, mortar rounds, propellants and explosives to Europe since Russia invaded Ukraine. India is now the No. 2 supplier to a 13-country East and Central European bloc, behind South Korea.",
+            "The Economic Times reports Defence Secretary Rajesh Kumar Singh saying exports hit a record ₹38,424 crore (about €3.6 billion), reach over 80 countries, and make India the third-largest arms exporter to Europe.",
+            "Bloomberg notes the sales undercut Russia, India's main arms supplier, and some Indian shells have reached Ukraine via European buyers; officials say end-user rules put that on the buyer."
+          ],
+          "numbers": [
+            [
+              "$872m",
+              "Indian ammunition to Europe since 2022 (Bloomberg)"
+            ],
+            [
+              "₹38,424 cr",
+              "record defence exports, per the Defence Secretary"
+            ]
+          ],
+          "why": "Basic ammunition, not missiles, is building India's arms export base, giving state factories scale and New Delhi leverage in Europe. It also ties India's industry to a war it officially stays out of.",
+          "other": "Wartime demand can fade when the war does, and much of what India makes still rests on Russian designs. Shells that reach Ukraine through third countries could cost goodwill in Moscow and invite closer scrutiny.",
+          "also": [],
+          "image": "/figs/2026-10-24-1.jpg",
+          "imageAlt": "Explainer: Indian ammunition shipments to Europe total $872m since 2022 per Bloomberg; India is No. 2 supplier to an East European bloc; the Defence Secretary cites record exports of ₹38,424 crore.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg and The Economic Times",
+          "pay": true,
+          "freeUrl": "https://www.india.com/business/no-tanks-no-missiles-how-indias-defense-exports-soared-1600-in-europe-8538392/",
+          "freeSrc": "India.com",
+          "themes": [
+            "India",
+            "Geopolitics"
+          ],
+          "emailHead": "Europe's war, India's order book",
+          "emailTeaser": "Shells to Europe surge; Defence Secretary claims third place.",
+          "cite": "Indian firms have exported at least $872 million of ammunition to European countries since Russia's 2022 invasion of Ukraine, Bloomberg reported on 21 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1773
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "Opinion",
+          "title": "PHP2Shell flaws expose the old code behind 7 in 10 websites",
+          "url": "https://m.economictimes.com/opinion/et-commentary/more-bugs-out-there-php2shell-is-just-the-tip-of-the-internets-old-code-iceberg/articleshow/135152174.cms",
+          "url2": "",
+          "points": [
+            "Two flaws called PHP2Shell, disclosed on Wednesday, sit in the part of PHP that handles crashes. PHP runs WordPress and about 7 in 10 websites, and the bug opens a server before a site's own code or firewall runs.",
+            "AI found them: security firm Calif, using an OpenAI model, caught the first in August, and Wiz found both two weeks later. Cloudflare saw millions of attack attempts by the night of the announcement.",
+            "Patches exist for PHP 8.2 to 8.5, but about 7.5 lakh of roughly 5 million PHP servers run versions with none. Finland, Wikipedia and Japan's tax agency took services offline. Pravin Kaushal argues the lasting fix is funding PHP's few maintainers."
+          ],
+          "numbers": [
+            [
+              "7.5 lakh",
+              "PHP servers on versions with no patch"
+            ],
+            [
+              "7 in 10",
+              "websites that run on PHP"
+            ]
+          ],
+          "why": "AI now finds deep bugs cheaply, and so can attackers. Unread old code running banks, shops and government portals has turned from a saving into a liability.",
+          "other": "The same AI tools that found PHP2Shell can help defenders audit and patch faster. Funding maintainers helps, but site owners who never update stay exposed however well PHP's team is paid.",
+          "also": [],
+          "image": "/figs/2026-10-24-2.jpg",
+          "imageAlt": "Explainer: about 7.5 lakh of some 5 million PHP servers run versions with no patch for the AI-found PHP2Shell flaws.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "The internet's old-code iceberg",
+          "emailTeaser": "AI found the PHP holes; 7.5 lakh servers can't be patched.",
+          "cite": "About 7.5 lakh of roughly 5 million PHP servers run versions with no patch for the PHP2Shell flaws, ET Commentary reported on 23 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Economy",
+          "tag": "",
+          "title": "India's October PMI hits four-month high as hiring stalls",
+          "url": "https://www.reuters.com/world/india/india-october-business-growth-hits-4-month-high-hiring-stalls-pmi-shows-2026-10-23/",
+          "url2": "",
+          "points": [
+            "HSBC's flash India composite PMI rose to 56.7 in October from 55.9, the fastest growth in four months and above the 56.1 economists expected, led by services at 56.2.",
+            "Employment was unchanged, ending a nine-month hiring streak. Firms said current staff could handle the work, and backlogs fell at the joint-fastest pace in nearly six and a half years.",
+            "Export orders grew at the quickest pace in six months, mostly for goods, while input-cost inflation eased to its lowest in almost a year."
+          ],
+          "numbers": [
+            [
+              "56.7",
+              "flash composite PMI, October"
+            ],
+            [
+              "9 months",
+              "hiring streak that just ended"
+            ]
+          ],
+          "why": "Growth without hiring is the risk for a young country. If firms keep stretching existing teams, output can rise while job-seekers wait.",
+          "other": "One flash reading is a snapshot, not a trend. Falling backlogs mean firms may not need extra hands yet, and hiring often lags demand by a few months.",
+          "also": [],
+          "image": "/figs/2026-10-24-3.jpg",
+          "imageAlt": "Explainer: India's flash composite PMI rose to 56.7 in October, a four-month high, while employment was flat, ending a nine-month hiring run.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Reuters",
+          "pay": false,
+          "themes": [
+            "India",
+            "Jobs & careers"
+          ],
+          "emailHead": "More work, same staff",
+          "emailTeaser": "PMI jumps to 56.7, but a nine-month hiring run ends.",
+          "cite": "HSBC's flash India composite PMI rose to 56.7 in October 2026 from 55.9 in September, Reuters reported on 23 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "IT services",
+          "tag": "",
+          "title": "Tech Mahindra ties up with SpaceX's AI arm to modernise old software",
+          "url": "https://www.reuters.com/business/media-telecom/indias-tech-mahindra-partners-with-spacexsi-ai-powered-software-development-2026-10-22/",
+          "url2": "",
+          "points": [
+            "Tech Mahindra, India's fifth-largest IT firm, has partnered with SpaceXSI, the AI division of SpaceX, to help companies modernise legacy applications and speed up software development.",
+            "It will also use the Grok Build chatbot to create industry-specific tools, starting with technology, telecom, and banking and financial services clients.",
+            "Tech Mahindra already has similar pacts with Google Gemini and Microsoft; Reuters says this is the first time an Indian IT major has teamed up with SpaceX's AI unit."
+          ],
+          "numbers": [],
+          "why": "Indian IT grew by maintaining old systems. Selling AI that rewrites them shows firms embracing the automation that could shrink their own people-heavy model.",
+          "other": "Partnership announcements are cheap, and Tech Mahindra already has similar deals with Google and Microsoft. Revenue, not logos, will show whether clients pay for AI-led modernisation.",
+          "also": [],
+          "image": "/figs/2026-10-24-4.jpg",
+          "imageAlt": "Explainer: Tech Mahindra, India's 5th-largest IT firm, partners with SpaceX's AI arm SpaceXSI to modernise legacy software.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Reuters",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Rocket maker meets code maker",
+          "emailTeaser": "Tech Mahindra adds SpaceX's AI to its Google and Microsoft deals.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Markets",
+          "tag": "",
+          "title": "Hedge funds post broadest losses since Covid as AI stocks slide",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-23/hedge-funds-log-widest-daily-drawdown-since-covid-in-stock-rout",
+          "url2": "https://www.ft.com/content/ce0e9d68-c63f-4666-9909-512b929e6284",
+          "points": [
+            "Bloomberg reports, citing Goldman Sachs's prime brokerage, that Thursday's tech sell-off pushed all three broad equity hedge fund strategies down more than 1% on the same day for the first time since Covid; about two-thirds of funds lost money.",
+            "In FT's Unhedged, Robert Armstrong says Treasuries rallied hard, with the 10-year yield falling to 4.96%, and calls it a fear-driven, risk-off move rather than a bet on lower inflation or rate cuts.",
+            "He notes losses are concentrated in hyperscalers, chipmakers and data-centre builders, while defensives such as consumer staples have rallied; strong consumer spending and earnings still support stocks."
+          ],
+          "numbers": [
+            [
+              "4.96%",
+              "10-year Treasury yield after Thursday's rally (FT)"
+            ],
+            [
+              "2/3",
+              "of hedge funds down on Thursday (Goldman, via Bloomberg)"
+            ]
+          ],
+          "why": "When stock pickers, quants and multi-strategy pods all lose on the same day, diversification fails where it should work. The AI trade has become the market's biggest shared risk.",
+          "other": "Armstrong notes the economy and earnings remain strong, and most S&P 500 stocks are up since early October. One bad day in earnings season may be a rotation, not the start of winter.",
+          "also": [],
+          "image": "/figs/2026-10-24-5.jpg",
+          "imageAlt": "Explainer: two-thirds of hedge funds lost money on Thursday as all three main styles fell over 1%; the 10-year Treasury yield fell to 4.96%.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg and Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.investing.com/news/stock-market-news/hedge-fund-returns-worsen-this-week-as-tech-selloff-deepens-4968502",
+          "freeSrc": "Reuters",
+          "themes": [
+            "Markets",
+            "AI"
+          ],
+          "emailHead": "Winter comes for the AI trade",
+          "emailTeaser": "Hedge funds' broadest drop since Covid as bonds rally.",
+          "cite": "The 10-year US Treasury yield fell to 4.96% on 22 Oct 2026 as tech stocks sold off, the FT's Unhedged reported.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Big Tech",
+          "tag": "Opinion",
+          "title": "Meta's Muse passes 10 million downloads, but costs outrun revenue",
+          "url": "https://www.wsj.com/finance/stocks/metas-muse-is-going-gangbusters-but-where-is-the-payoff-648d310d",
+          "url2": "",
+          "points": [
+            "Zuckerberg said on Meta's earnings call that more than 10 million people in the US and Canada have downloaded Muse, its AI agent app, far faster than ChatGPT's app reached that mark.",
+            "WSJ columnist Asa Fitch argues that even rapid subscriber growth would cover only a slice of Meta's AI spending, which analysts expect to approach $200 billion next year; free cash flow has turned negative and debt has climbed.",
+            "Meta also created a new class of nonvoting shares, seen as a step towards raising equity, and its stock fell sharply on Thursday. Fitch adds that low trust in Meta could limit what users let an agent do."
+          ],
+          "numbers": [
+            [
+              "10m+",
+              "Muse downloads, US and Canada"
+            ],
+            [
+              "~$200bn",
+              "capex analysts expect next year"
+            ]
+          ],
+          "why": "Agents that shop and book for users are the next battleground, and Meta got there first. Being first matters less if users won't hand over passwords while the spending clock keeps running.",
+          "other": "Meta's ad business still grew strongly last quarter, and its reach across Instagram and WhatsApp is unmatched. Heavy early spending is how platforms are won; judging returns six weeks in may be premature.",
+          "also": [],
+          "image": "/figs/2026-10-24-6.jpg",
+          "imageAlt": "Explainer: Meta's Muse topped 10 million downloads in the US and Canada, while analysts expect AI capex near $200bn next year.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "freeUrl": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
+          "freeSrc": "Meta (Q3 2026 results)",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Downloads aren't dollars",
+          "emailTeaser": "Muse booms, but Meta's AI bills grow faster still.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI in medicine",
+          "tag": "",
+          "title": "Microsoft's AI beats doctors on hard cases; AI phage given to patient",
+          "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/microsoft-develops-ai-tool-that-can-diagnose-sequentially-like-doctor-2026-10-23/",
+          "url2": "https://www.independent.co.uk/news/science/ai-virus-humans-injected-phage-startup-b3071922.html",
+          "points": [
+            "Reuters reports that a Microsoft AI tool that works up patients step by step, choosing questions and tests as it goes, was more than twice as accurate as general physicians on over 300 complex cases in a study in Science, and its work-ups cost less.",
+            "The Independent reports that California lab Radical Numerics says it gave phages designed by its Omnii-1 model to a patient with an antibiotic-resistant infection under compassionate use; outcomes are undisclosed and await peer review.",
+            "Microsoft will next test emergency-room triage with Beth Israel Deaconess in Boston."
+          ],
+          "numbers": [
+            [
+              "2x+",
+              "accuracy vs general physicians"
+            ],
+            [
+              "300+",
+              "complex cases tested"
+            ]
+          ],
+          "why": "Medicine's bottlenecks are reaching the right diagnosis and finding a treatment fast. Both stories show AI shortening those steps, which matters most for rare cases and resistant infections.",
+          "other": "Benchmark cases are not hospital wards, and the doctors in the study worked with textbooks and the internet rather than colleagues. The phage claim has no published outcome. Trials and regulators will decide.",
+          "also": [],
+          "image": "/figs/2026-10-24-7.jpg",
+          "imageAlt": "Explainer: Microsoft's AI was more than twice as accurate as general physicians on 300+ hard cases; an AI-designed phage was given to one patient.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Reuters and The Independent",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "Doctor bot, designer virus",
+          "emailTeaser": "AI beat GPs twice over on hard cases; a patient got AI phages.",
+          "cite": "Microsoft's step-by-step diagnostic AI was more than twice as accurate as general physicians on over 300 complex cases, Reuters reported on 22 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Health",
+          "tag": "",
+          "title": "Moderna-Merck mRNA vaccine cuts melanoma relapse risk by 42%",
+          "url": "https://apnews.com/article/moderna-cancer-vaccine-melanoma-mrna-intismeran-415ececd79c9411498751246742aafa2",
+          "url2": "",
+          "points": [
+            "A personalised mRNA vaccine from Moderna and Merck, intismeran, added to Keytruda after surgery cut the risk of high-risk melanoma returning by 42% at two years, in a trial of more than 1,100 patients.",
+            "Each patient's vaccine is built from mutations unique to their tumour and given as nine doses three weeks apart, training the immune system to spot returning cancer cells.",
+            "Similar personalised vaccines are being tested against lung, kidney and pancreatic cancers; experts not involved said the result bolsters the field."
+          ],
+          "numbers": [
+            [
+              "42%",
+              "lower risk of melanoma returning at 2 years"
+            ],
+            [
+              "1,100+",
+              "high-risk patients in the trial"
+            ]
+          ],
+          "why": "This is the biggest trial win yet for tailor-made cancer vaccines, and the same mRNA approach could be adapted to other tumours if the results hold.",
+          "other": "Cutting relapses is not yet proof that patients live longer, and a vaccine made for every patient may be costly and slow to produce at scale.",
+          "also": [],
+          "image": "/figs/2026-10-24-8.jpg",
+          "imageAlt": "Explainer: a custom mRNA vaccine cut the risk of melanoma returning by 42% at two years in a trial of 1,100+ patients.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "AP",
+          "pay": false,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "A vaccine made for your tumour",
+          "emailTeaser": "Melanoma relapse risk falls 42% in a 1,100-patient trial.",
+          "cite": "Moderna and Merck's intismeran cut the risk of melanoma returning by 42% at two years, AP reported on 22 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "Tokenisation",
+          "tag": "Opinion",
+          "title": "Tokenised stocks still need someone to vouch for the ledger, FT argues",
+          "url": "https://www.ft.com/content/e3bd8426-defb-41d0-8680-81ce72948e83",
+          "url2": "",
+          "points": [
+            "Brendan Greeley argues that tokenisation, putting assets such as Treasuries, funds and now stocks on blockchains, speeds up trading but does not fix trust: buyers still need to know what the issuer holds and who stands behind it.",
+            "He notes the SEC in September gave a temporary exemption letting firms make markets in tokenised stocks, and data provider rwa.xyz counts $39bn of tokenised real-world assets.",
+            "Vanderbilt's Morgan Ricks tells him tokenisation is \"just a different ledger\"; regulated players such as BlackRock and JPMorgan carry the same old risks on new plumbing."
+          ],
+          "numbers": [
+            [
+              "$39bn",
+              "tokenised real-world assets (rwa.xyz)"
+            ]
+          ],
+          "why": "Tokenised stocks and deposits are being sold as new finance. Investors should ask the old questions: what backs this, who audits it, and who pays if it fails.",
+          "other": "Round-the-clock settlement and cross-border trading are real gains, and well-regulated issuers can earn trust as they always have. Dismissing the technology risks missing cheaper, faster markets.",
+          "also": [],
+          "image": "/figs/2026-10-24-9.jpg",
+          "imageAlt": "Explainer: $39bn of real-world assets are tokenised per rwa.xyz, but tokenisation does not remove the need to verify what backs a token.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "Same ledger, new paint",
+          "emailTeaser": "Tokens trade around the clock, but trust still needs audits.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Splitting bills and paying friends back (WSJ, Personal Finance)",
+      "url": "https://www.wsj.com/personal-finance/splitting-bills-reimbursement-young-adults-a8a33405",
+      "note": "A WSJ personal-finance read on splitting bills and paying friends back; not summarised here as we could not open it."
+    }
+  ],
+  "takeaway": {
+    "a": "Easy to count.",
+    "b": "Hard to share.",
+    "line": "Output rises, AI diagnoses, hiring stalls. Productivity is simple to measure; sharing its gains with workers, customers and patients is the real test."
+  },
+  "cover": "/figs/2026-10-24-cover.jpg",
+  "coverAlt": "Flat illustration of a cargo ship loaded with artillery shells and containers sailing west, with a dotted arrow pointing towards Europe.",
+  "stressIndex": {
+    "score": 32,
+    "band": "Elevated",
+    "asOf": "2026-10-23"
+  }
+}
