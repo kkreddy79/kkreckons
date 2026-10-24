@@ -24,6 +24,15 @@ export const TOPICS = THEMES.map(({ name }) => {
 
 export const topicBySlug = (slug: string) => TOPICS.find((t) => t.slug === slug);
 
+/** Stories per topic page: each page stays a steady size however long the archive grows. */
+export const TOPIC_PAGE_SIZE = 30;
+
+/** How many pages a topic's stories fill (at least one, so an empty topic still has its page). */
+export const topicPageCount = (name: string) => Math.max(1, Math.ceil(topicStories(name).length / TOPIC_PAGE_SIZE));
+
+/** Page 1 is the topic's own address; later pages are /topics/<slug>/page/<n>. */
+export const topicHref = (slug: string, page = 1) => (page === 1 ? `/topics/${slug}` : `/topics/${slug}/page/${page}`);
+
 const cache = new Map<string, ReturnType<typeof findStories>>();
 
 /** Every story in a theme, newest first, with the summary shown on its edition page. */

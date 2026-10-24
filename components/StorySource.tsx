@@ -1,4 +1,4 @@
-import { isPaywalled, publisherName, sourceName } from "@/lib/editions";
+import { isPaywalled, publisherName, sourceName } from "@/lib/editionFormat";
 import { InfoIcon, LinkIcon, LockIcon } from "@/components/AboutIcons";
 
 /** What the source line and quick summary need from a story. */

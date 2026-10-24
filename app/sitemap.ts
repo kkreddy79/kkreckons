@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { editions, latest, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
-import { TOPICS } from "@/lib/topics";
+import { TOPICS, topicHref, topicPageCount } from "@/lib/topics";
 import { months, monthSlug } from "@/lib/month";
 import { entities } from "@/lib/entities";
 
@@ -12,6 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/quiz`, lastModified: latest.date, changeFrequency: "daily", priority: 0.5 },
     { url: `${SITE_URL}/topics`, lastModified: latest.date, changeFrequency: "daily", priority: 0.7 },
     ...TOPICS.map((t) => ({ url: `${SITE_URL}/topics/${t.slug}`, lastModified: latest.date, changeFrequency: "daily" as const, priority: 0.7 })),
+    // Older topic pages change only when a new story pushes one down a page.
+    ...TOPICS.flatMap((t) =>
+      Array.from({ length: topicPageCount(t.name) - 1 }, (_, i) => ({ url: `${SITE_URL}${topicHref(t.slug, i + 2)}`, changeFrequency: "weekly" as const, priority: 0.4 }))
+    ),
     ...months.map((m) => ({ url: `${SITE_URL}/month/${monthSlug(m)}`, lastModified: editions.find((e) => e.date.startsWith(m))!.date, changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: `${SITE_URL}/coverage`, lastModified: latest.date, changeFrequency: "daily", priority: 0.6 },
     ...entities().map((x) => ({ url: `${SITE_URL}/coverage/${x.slug}`, lastModified: [...x.stories].sort((a, b) => b.date.localeCompare(a.date))[0].date, changeFrequency: "weekly" as const, priority: 0.6 })),

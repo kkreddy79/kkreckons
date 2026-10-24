@@ -22,7 +22,7 @@ const latest = slugFor(editions.at(-1));
 const earlier = slugFor(editions.at(-2) ?? editions.at(-1));
 const month = `${MONTHS[+editions.at(-1).slice(5, 7) - 1]}-${editions.at(-1).slice(0, 4)}`;
 
-const PAGES = ["/", "/daily/", "/daily/?theme=AI", `/daily/${earlier}`, `/daily/${latest}/1`, "/topics", "/topics/ai", "/week", `/month/${month}`, `/feedback/${latest}/somewhat`, "/quiz", "/coverage", "/coverage/openai", "/ai-stress-index", "/about", "/standards", "/contact", "/privacy"];
+const PAGES = ["/", "/daily/", "/daily/?theme=AI", `/daily/${earlier}`, `/daily/${latest}/1`, "/topics", "/topics/ai", "/topics/ai/page/2", "/week", `/month/${month}`, `/feedback/${latest}/somewhat`, "/quiz", "/coverage", "/coverage/openai", "/ai-stress-index", "/about", "/standards", "/contact", "/privacy"];
 const VIEWS = [
   { name: "phone", width: 390, height: 844 },
   { name: "desktop", width: 1280, height: 900 },
