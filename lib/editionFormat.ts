@@ -76,6 +76,7 @@ const PUBLISHERS: Record<string, string> = {
   "theatlantic.com": "The Atlantic",
   "fortune.com": "Fortune",
   "theinformation.com": "The Information",
+  "khaleejtimes.com": "Khaleej Times",
   "everycure.org": "Every Cure",
   "archive.is": "archive.is",
   "finalroundai.com": "Final Round AI",
