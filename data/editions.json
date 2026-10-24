@@ -1,9 +1,134 @@
 [
   {
+    "date": "2026-10-24",
+    "slice": "Shells sell. Code cracks. AI plays doctor. Every ledger still needs a reader.",
+    "artifact": "https://claude.ai/artifact/55cGuDxQar5JBxxm3QVGbN",
+    "readingMinutes": 10,
+    "image": "/figs/2026-10-24-1.jpg",
+    "cover": "/figs/2026-10-24-cover.jpg",
+    "coverAlt": "Flat illustration of a cargo ship loaded with artillery shells and containers sailing west, with a dotted arrow pointing towards Europe.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "India's arms exports to Europe soar on Europe's rearmament",
+        "category": "Defence exports",
+        "tag": "",
+        "url": "https://www.bloomberg.com/graphics/2026-india-defense-exports/",
+        "src": "Bloomberg and The Economic Times",
+        "pay": true,
+        "themes": [
+          "India",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "PHP2Shell flaws expose the old code behind 7 in 10 websites",
+        "category": "Cybersecurity",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/more-bugs-out-there-php2shell-is-just-the-tip-of-the-internets-old-code-iceberg/articleshow/135152174.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's October PMI hits four-month high as hiring stalls",
+        "category": "Economy",
+        "tag": "",
+        "url": "https://www.reuters.com/world/india/india-october-business-growth-hits-4-month-high-hiring-stalls-pmi-shows-2026-10-23/",
+        "src": "Reuters",
+        "pay": false,
+        "themes": [
+          "India",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Tech Mahindra ties up with SpaceX's AI arm to modernise old software",
+        "category": "IT services",
+        "tag": "",
+        "url": "https://www.reuters.com/business/media-telecom/indias-tech-mahindra-partners-with-spacexsi-ai-powered-software-development-2026-10-22/",
+        "src": "Reuters",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Hedge funds post broadest losses since Covid as AI stocks slide",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-23/hedge-funds-log-widest-daily-drawdown-since-covid-in-stock-rout",
+        "src": "Bloomberg and Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Meta's Muse passes 10 million downloads, but costs outrun revenue",
+        "category": "Big Tech",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/finance/stocks/metas-muse-is-going-gangbusters-but-where-is-the-payoff-648d310d",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Microsoft's AI beats doctors on hard cases; AI phage given to patient",
+        "category": "AI in medicine",
+        "tag": "",
+        "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/microsoft-develops-ai-tool-that-can-diagnose-sequentially-like-doctor-2026-10-23/",
+        "src": "Reuters and The Independent",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Moderna-Merck mRNA vaccine cuts melanoma relapse risk by 42%",
+        "category": "Health",
+        "tag": "",
+        "url": "https://apnews.com/article/moderna-cancer-vaccine-melanoma-mrna-intismeran-415ececd79c9411498751246742aafa2",
+        "src": "AP",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Tokenised stocks still need someone to vouch for the ledger, FT argues",
+        "category": "Tokenisation",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/e3bd8426-defb-41d0-8680-81ce72948e83",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-23",
     "slice": "Bots borrow logins, proofs pile up, risk throws a beach party. Trust pays the price.",
     "artifact": "https://claude.ai/artifact/WyUPHZtoRcw7JeJR47MNFT",
-    "readingMinutes": 8,
+    "readingMinutes": 10,
     "image": "/figs/2026-10-23-1.jpg",
     "cover": "/figs/2026-10-23-cover.jpg",
     "coverAlt": "Flat illustration of a robot holding a key card outside a bank with a closed vault door and a red no-entry sign.",
