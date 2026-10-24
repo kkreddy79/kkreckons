@@ -2,7 +2,9 @@
 // full inside the KKReckons Project (~130 KB instead of ~3 MB). Made from the newest edition in newsletters/:
 //  - embedded fonts (~450 KB of base64) become Google Fonts (Poppins, Lora, Roboto Serif) and the device's own
 //    Palatino / Helvetica for the TeX Gyre Pagella / Heros faces, keeping every font-family name in the CSS;
-//  - the edition's data becomes one example story per section with no images, showing every field.
+//  - the edition's data becomes one example story per section with no images, showing every field;
+//  - the story icons ("pics", ~85 KB and growing) move to templates/KKReckons_icons.json, built from every
+//    edition so retired icons stay available; the template keeps only its example stories' icons and a list of names.
 // Usage: node scripts/make-lite-template.mjs [newsletters/<date>.html]
 import fs from "node:fs";
 import path from "node:path";
@@ -49,13 +51,29 @@ const data = {
 };
 html = html.replace(re, (_, open, __, close) => `${open}${JSON.stringify(data, null, 1)}${close}`);
 
-// 3. A note for whoever fills it in.
+// 3. Icons. Every edition's "pics" merged, oldest first, so a later edition's version of an icon wins.
+const picsRe = /(<script[^>]*id="pics"[^>]*>)([\s\S]*?)(<\/script>)/;
+const icons = {};
+for (const f of fs.readdirSync("newsletters").filter((f) => f.endsWith(".html")).sort()) {
+  const m = fs.readFileSync(path.join("newsletters", f), "utf8").match(picsRe);
+  if (m) Object.assign(icons, JSON.parse(m[2]));
+}
+const sorted = Object.fromEntries(Object.keys(icons).sort().map((k) => [k, icons[k]]));
+const used = [...data.pick, ...data.india, ...data.world].map((s) => s.pic).filter((p) => p && icons[p]);
+if (!picsRe.test(html)) throw new Error("no pics script in the newsletter");
+html = html.replace(picsRe, (_, open, __, close) => `${open}${JSON.stringify(Object.fromEntries(used.map((p) => [p, icons[p]])))}${close}`);
+
+// 4. A note for whoever fills it in.
 const NOTE = `<!--
   KKReckons newsletter template (lite). Copy this file and change ONLY the JSON inside the JSON script whose id is data:
   date, slice, takeaway, cover, callout, pick / india / world (stories) and reading. Field reference:
   docs/edition-format.md in the kkreckons repo. Leave the CSS, other scripts and markup as they are.
   Images: "fig" and "cover" take a data:image/...;base64 URL (graphics 1280px wide or more); empty means none.
   Paywalled story: "pay": "paid", plus "free" (link to a free report of the same news) and "freesrc" (its publisher).
+  Icons: a story's "pic" names its icon, whose SVG sits in the JSON script whose id is pics. Put in that script only
+  the icons the day's stories use, copied from KKReckons_icons.json (a separate file: look an icon up by name
+  rather than reading the whole file), or a new SVG in the same 80x80 style. A "pic" with no SVG shows the plain badge.
+  Icons in the library: ${Object.keys(sorted).join(", ")}.
   Fonts load from Google Fonts and the device, so this file stays small enough to read in full.
 -->`;
 html = html.replace(/<head>/, `<head>${NOTE}`);
@@ -64,4 +82,7 @@ html = html.replace(/<title>[^<]*<\/title>/, "<title>KKReckons, Weekday, D Month
 fs.mkdirSync("templates", { recursive: true });
 const out = path.join("templates", "KKReckons_Template_lite.html");
 fs.writeFileSync(out, html);
+const iconsOut = path.join("templates", "KKReckons_icons.json");
+fs.writeFileSync(iconsOut, JSON.stringify(sorted, null, 1) + "\n");
 console.log(`${out}: ${(html.length / 1024).toFixed(0)} KB (from ${src}, ${faces} font faces replaced)`);
+console.log(`${iconsOut}: ${Object.keys(sorted).length} icons, ${(fs.statSync(iconsOut).size / 1024).toFixed(0)} KB`);
