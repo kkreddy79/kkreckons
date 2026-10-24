@@ -6,8 +6,11 @@ export default function Banner({ strap = "A clearer slice of a complex world", c
   return (
     <header className={`ab-top${compact ? " ab-top-sm" : ""}`}>
       <picture className="ab-top-img">
+        {/* AVIF first (about half the size of WebP), then WebP, then JPEG for browsers that support neither. */}
+        <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.avif" type="image/avif" />
         <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.webp" type="image/webp" />
         <source media="(max-width: 700px)" srcSet="/about/two-worlds-mobile.jpg" />
+        <source srcSet="/about/two-worlds.avif" type="image/avif" />
         <source srcSet="/about/two-worlds.webp" type="image/webp" />
         <img
           src="/about/two-worlds.jpg"
