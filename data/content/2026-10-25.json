@@ -1,0 +1,332 @@
+{
+  "date": "2026-10-25",
+  "slice": "Debt wobbles. Hype soars. France strains. Bugs bite. IT trims. Scrap pays. Smell travels.",
+  "artifact": "https://claude.ai/artifact/D3jdyQ2LQFtU8vMVRMWkfv",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$16.8B",
+      "text": "Anthropic Q3 revenue, up 45% on Q2, as its IPO nears (ET)",
+      "url": "https://m.economictimes.com/markets/us-stocks/wall-street-guide/anthropic-ipo-what-should-investors-consider-when-valuing-the-ai-company-aswath-damodaran-explains/articleshow/135162319.cms"
+    },
+    {
+      "num": "$67B",
+      "text": "Anthropic's annual run rate (ARR), a metric Damodaran says needs care",
+      "url": "https://aswathdamodaran.blogspot.com/2026/10/from-eyeballs-to-annual-run-rates-arr.html?m=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI financing",
+          "tag": "",
+          "title": "CoreWeave's debt pile tests whether the AI build-out can be financed",
+          "url": "https://www.theinformation.com/articles/coreweaves-debt-binge-brought-perilous-moment-reckoning",
+          "url2": "",
+          "points": [
+            "CoreWeave, an AI cloud firm built on borrowed money, has become a test of whether the AI build-out can be financed. Investors have been selling its shares and bonds.",
+            "Its model: sign a contract with a big customer such as Microsoft, then borrow against it, with chips as collateral. Other borrowing is repaid from corporate cash, so debt sits on top of debt; the total is $35.4 billion.",
+            "Rising Treasury yields and hot inflation raised borrowing costs, and yields on its existing debt passed 15%. One startup CEO says Goldman bankers could not explain the slide."
+          ],
+          "numbers": [
+            [
+              "$35.4B",
+              "total debt owed"
+            ],
+            [
+              "15%+",
+              "yield on its debt at the peak"
+            ]
+          ],
+          "why": "AI's story is shifting from technology to financing. If credit gets dearer, neoclouds may have to sell shares, and big-customer contracts become the real collateral.",
+          "other": "CoreWeave's CEO calls it a market misunderstanding, Nvidia's Jensen Huang voices confidence, and Goldman's analysts upgraded the stock. Project loans are repaid from customer contracts, so a falling share price is not the same as default.",
+          "also": [],
+          "image": "/figs/2026-10-25-1.jpg",
+          "imageAlt": "Graphic: CoreWeave owes $35.4 billion; it borrows against customer contracts, and yields on its debt topped 15% as borrowing costs rose.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Information",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "CoreWeave's debt reckoning",
+          "emailTeaser": "The AI build-out's financing is under test.",
+          "cite": "CoreWeave owes $35.4 billion as of 30 June 2026, The Information reports (15 October 2026).",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1716
+        },
+        {
+          "category": "AI valuations",
+          "tag": "",
+          "title": "SpaceX-Tesla merger and Anthropic IPO: how investors price AI",
+          "url": "https://www.ft.com/content/70280c68-2ae0-4656-b013-281eb75a197a?syn-25a6b1a6=1",
+          "url2": "https://m.economictimes.com/markets/us-stocks/wall-street-guide/anthropic-ipo-what-should-investors-consider-when-valuing-the-ai-company-aswath-damodaran-explains/articleshow/135162319.cms",
+          "points": [
+            "The FT's Big Read says Elon Musk wants SpaceX and Tesla combined into one AI-led company worth about $3.5tn, with pay awards that could reach $1.7tn.",
+            "Anthropic told investors its third-quarter revenue was $16.8bn, up 45% on the quarter, and profitable on an adjusted basis, with an annual run rate of $67bn, Damodaran notes.",
+            "Damodaran says young, loss-making firms are priced on buzzy metrics, from eyeballs to users to ARR, and warns that ARR can be defined in different ways."
+          ],
+          "numbers": [
+            [
+              "$16.8bn",
+              "Anthropic Q3 revenue (Damodaran)"
+            ],
+            [
+              "$67bn",
+              "Anthropic annual run rate, ARR (Damodaran)"
+            ]
+          ],
+          "why": "Whether it is a mega-merger or an IPO, investors are paying for a story. Metrics like ARR, and pay targets tied to market value, shape how big that story looks.",
+          "other": "Bulls say AI's market is vast and the leaders will take most of it. Bears say compute costs, cheaper open-source rivals and rules could squeeze margins, and critics see the merger as a way to shift attention from a weaker Tesla. Damodaran takes no side until the full prospectus is filed.",
+          "also": [
+            {
+              "title": "Damodaran: From Eyeballs to Annual Run Rates",
+              "url": "https://aswathdamodaran.blogspot.com/2026/10/from-eyeballs-to-annual-run-rates-arr.html?m=1"
+            }
+          ],
+          "image": "/figs/2026-10-25-2.jpg",
+          "imageAlt": "Explainer: Musk's proposed SpaceX-Tesla union and Anthropic's IPO are priced on stories; Anthropic's $67bn annual run rate sits against $16.8bn of Q3 revenue, and ARR definitions vary.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times, The Economic Times and Musings on Markets",
+          "pay": true,
+          "freeUrl": "https://www.khaleejtimes.com/business/elon-musk-says-spacex-tesla-merger-is-a-good-idea-as-companies-form-deal-committees",
+          "freeSrc": "Khaleej Times",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Pricing AI: maths or myth?",
+          "emailTeaser": "Musk's merger and Anthropic's IPO ask what a story is worth.",
+          "cite": "Anthropic reported third-quarter revenue of $16.8bn, up 45% from the second quarter, Aswath Damodaran wrote on 22 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Indian IT",
+          "tag": "",
+          "title": "TCS and Infosys: AI tops 10% of revenue, yet pricing bites",
+          "url": "https://www.moneycontrol.com/news/technology-startup/ai-edge-newsletter/indian-it-s-ai-revenue-puzzle/",
+          "url2": "https://www.moneycontrol.com/news/business/information-technology/ai-driven-cyber-threats-open-up-huge-opportunity-for-infosys-says-ceo-salil-parekh-14058795.html",
+          "points": [
+            "TCS and Infosys both say AI brought in more than 10% of revenue in Q2 FY27, and most of India's top five IT firms widened operating margins.",
+            "Clients want the savings passed on. Infosys cut its FY27 growth guidance to 1-2% in constant currency, from 1.5-3%, and says it will favour profitable deals over growth.",
+            "CEO Salil Parekh sees a big cyber opening as AI models uncover flaws, and says Infosys is already sharing defences with clients, though budgets may not rise much."
+          ],
+          "numbers": [
+            [
+              "10.5%",
+              "Infosys AI share of Q2 revenue"
+            ],
+            [
+              "$3.1B",
+              "TCS annualised AI revenue"
+            ],
+            [
+              "1-2%",
+              "Infosys FY27 growth guide"
+            ]
+          ],
+          "why": "There is no standard way to count AI revenue, so firms are hard to compare. The test is how much of the productivity gain they keep as clients negotiate.",
+          "other": "Less effort need not mean less profit, as HFS Research's Phil Fersht argues, if firms price on outcomes. And clients may fund cyber work by trimming elsewhere.",
+          "also": [],
+          "image": "/figs/2026-10-25-3.jpg",
+          "imageAlt": "Graphic: AI was 10.5% of Infosys's Q2 revenue (about $539 million) and TCS's annualised AI revenue is $3.1 billion, while Infosys cut its FY27 growth guidance to 1-2%.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Moneycontrol",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Indian IT's AI paradox",
+          "emailTeaser": "AI crosses 10% of revenue as clients demand savings back.",
+          "cite": "Infosys said AI was 10.5% of its Q2 FY27 revenue, about $539 million, up 29% sequentially (Moneycontrol, 24 October 2026).",
+          "imageW": 1280,
+          "imageH": 1716
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "France",
+          "tag": "",
+          "title": "France's riots meet a debt squeeze, and youth want the system fixed",
+          "url": "https://www.wsj.com/world/europe/eight-charts-that-show-the-depth-of-frances-financial-crunch-40b31ee6",
+          "url2": "https://www.ft.com/content/62b83fcf-efad-418d-ba6a-569344fa7ecb",
+          "points": [
+            "The WSJ says years of subsidies to cushion prices have left France with one of Europe's biggest deficits, and investors have pushed its 10-year borrowing costs above 5%.",
+            "It adds that stagnant real incomes, a heavy tax burden and pension costs hidden in ministry budgets leave little room for new help.",
+            "The FT's Simon Kuper describes looting in Paris and polls that put Marine Le Pen in line to win next year's election, while a Janan Ganesh column argues the young protesters mostly want a fairer system, not a new one."
+          ],
+          "numbers": [
+            [
+              "5%+",
+              "French 10-year borrowing cost (WSJ)"
+            ]
+          ],
+          "why": "Protests need money to answer them, and markets are now charging France more to borrow it. That narrows the choices for whoever wins next year.",
+          "other": "Kuper notes the French often talk radical but act conservative, and Ganesh reads the protests as a bid to make the existing system work. So the anger may be answerable through budget choices, but the bond market may not wait for them.",
+          "also": [
+            {
+              "title": "FT column: The young are conformists in denial",
+              "url": "https://www.ft.com/content/dfe64d5e-f5f3-444f-a233-a516483fa6f0?syn-25a6b1a6=1"
+            }
+          ],
+          "image": "/figs/2026-10-25-4.jpg",
+          "imageAlt": "Explainer: French 10-year borrowing costs above 5% squeeze a state facing riots; stalled incomes and hidden pension costs limit help, and polls put Marine Le Pen ahead.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal and Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "France runs out of room",
+          "emailTeaser": "Riots, pricey debt and students who want in, not out.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "AI finds bugs faster and attackers follow in 'Black October'",
+          "url": "https://www.wsj.com/tech/ai/ai-hacks-are-coming-thick-and-fast-and-overwhelming-the-internet-4529c26c",
+          "url2": "https://www.reuters.com/legal/litigation/ai-discovered-bugs-may-soon-trigger-fresh-disruptions-cyber-experts-say-2026-10-23/",
+          "points": [
+            "The WSJ reports a wave of attacks using AI agents and hacking tools, adopted by China- and Russia-linked groups and ordinary criminals.",
+            "Reuters spoke to seven cybersecurity professionals who say AI-found flaws will almost certainly cause more outages like this week's PHP-related ones on government sites. VulnCheck says flaws found doubled year on year, with AI a driver.",
+            "Models can scan code round the clock and turn exploits around in hours. Experts split on whether attackers gain: curl's lead developer says AI-found bugs tend to be exotic."
+          ],
+          "numbers": [
+            [
+              "2x",
+              "flaws found, year on year (Reuters)"
+            ],
+            [
+              "70%",
+              "of websites exposed to new bugs (WSJ)"
+            ]
+          ],
+          "why": "Attackers use AI to move faster than people can respond, and patch windows shrink from weeks to hours. Patching speed becomes a core security measure.",
+          "other": "More disclosed flaws do not automatically mean more successful attacks, and AI also helps defenders. A Hunt.io researcher said the criminals he tracked had not yet built a working PHP exploit by Thursday afternoon.",
+          "also": [],
+          "image": "/figs/2026-10-25-5.jpg",
+          "imageAlt": "Graphic: digital flaws found doubled year on year per VulnCheck, AI can turn exploits around in hours, and new web bugs exposed many sites.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal and Reuters",
+          "pay": true,
+          "freeUrl": "https://www.reuters.com/legal/litigation/ai-discovered-bugs-may-soon-trigger-fresh-disruptions-cyber-experts-say-2026-10-23/",
+          "freeSrc": "Reuters",
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Hackers go agentic",
+          "emailTeaser": "Experts expect more fire drills as AI finds flaws faster.",
+          "cite": "AI helped drive a doubling of digital flaws found year on year, says VulnCheck research due out soon (Reuters, 23 October 2026).",
+          "imageW": 1280,
+          "imageH": 1811
+        },
+        {
+          "category": "Critical minerals",
+          "tag": "",
+          "title": "US recyclers harvest rare earths from old wind turbines",
+          "url": "https://www.wsj.com/business/energy-oil/the-rare-earth-vultures-harvesting-metals-from-americas-old-wind-turbines-a22b78db",
+          "url2": "",
+          "points": [
+            "The WSJ says Paladin EnviroTech is pulling rare-earth magnets from retired wind turbines in Iowa, hoping to cut US reliance on China.",
+            "Only a fraction of older turbines carry rare earths, but newer, more powerful ones hold much more, so supply grows as fleets are replaced.",
+            "Dismantling huge parts and separating the metals cheaply are the hard parts; most recyclers so far chased copper instead."
+          ],
+          "numbers": [
+            [
+              "20%",
+              "of replaced Highland turbines hold rare earths (WSJ)"
+            ],
+            [
+              "~500",
+              "turbines Paladin has lined up (WSJ)"
+            ]
+          ],
+          "why": "Recycling is a faster, smaller route than new mines to ease dependence on China for the magnets in motors, drones and scanners, if the economics work.",
+          "other": "Few turbines carry rare earths, and battery-recycling ventures have stumbled before on supply and cost. This can complement new mines, not replace them.",
+          "also": [],
+          "image": "/figs/2026-10-25-6.jpg",
+          "imageAlt": "Explainer: retired wind-turbine generators hold rare-earth magnets; about 20% of replaced Highland turbines have them and Paladin has roughly 500 lined up.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "Wind turbines, reborn as magnets",
+          "emailTeaser": "Paladin targets turbine magnets to loosen China's grip.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Science",
+          "tag": "",
+          "title": "'Scentronic' prototype senses a smell and recreates it far away",
+          "url": "https://www.reuters.com/science/new-scentronic-technology-can-detect-transmit-aromas-remotely-2026-10-23/",
+          "url2": "",
+          "points": [
+            "Ohio State researchers built an e-nose that spots a smell, then tells a small remote device to release a matching scent, at any distance.",
+            "It knows five scents so far: beer, cake, coffee, oranges and red wine. Scent molecules do not travel online; only the odour data does.",
+            "It is a research prototype built without a company. Mixed smells, refills, cost and safety of the mist are open questions."
+          ],
+          "numbers": [
+            [
+              "5",
+              "scents recognised so far"
+            ],
+            [
+              "15 cm",
+              "e-nose diameter"
+            ]
+          ],
+          "why": "Sight and sound already travel digitally; smell is the gap. A real product would need many more scents and reliable sensing of mixtures.",
+          "other": "Recognising a smell and recreating it are separate challenges, the lead author says. Five scents is a demo, not a library.",
+          "also": [],
+          "image": "/figs/2026-10-25-7.jpg",
+          "imageAlt": "Graphic: the Scentronic e-nose recognises five scents (beer, cake, coffee, oranges, red wine) and a remote device recreates them.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Reuters",
+          "pay": false,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "Smell joins remote calls?",
+          "emailTeaser": "A lab prototype senses five scents and recreates them remotely.",
+          "cite": "Researchers say the Scentronic e-nose recognises five scents so far, in a Science Advances study (Reuters, 23 October 2026).",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Big stories.",
+    "b": "Thin cash.",
+    "line": "Metrics flatter young firms and developed economies alike: the headline number arrives first, the cost second. Ask who pays, and when, before you trust it."
+  },
+  "cover": "/figs/2026-10-25-cover.jpg",
+  "coverAlt": "Debt wobbles. Hype soars. France strains. Bugs bite. IT trims. Scrap pays. Smell travels.",
+  "stressIndex": {
+    "score": 32,
+    "band": "Elevated",
+    "asOf": "2026-10-23"
+  }
+}

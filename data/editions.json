@@ -1,5 +1,105 @@
 [
   {
+    "date": "2026-10-25",
+    "slice": "Debt wobbles. Hype soars. France strains. Bugs bite. IT trims. Scrap pays. Smell travels.",
+    "artifact": "https://claude.ai/artifact/D3jdyQ2LQFtU8vMVRMWkfv",
+    "readingMinutes": 7,
+    "image": "/figs/2026-10-25-1.jpg",
+    "cover": "/figs/2026-10-25-cover.jpg",
+    "coverAlt": "Debt wobbles. Hype soars. France strains. Bugs bite. IT trims. Scrap pays. Smell travels.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "CoreWeave's debt pile tests whether the AI build-out can be financed",
+        "category": "AI financing",
+        "tag": "",
+        "url": "https://www.theinformation.com/articles/coreweaves-debt-binge-brought-perilous-moment-reckoning",
+        "src": "The Information",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "SpaceX-Tesla merger and Anthropic IPO: how investors price AI",
+        "category": "AI valuations",
+        "tag": "",
+        "url": "https://www.ft.com/content/70280c68-2ae0-4656-b013-281eb75a197a?syn-25a6b1a6=1",
+        "src": "Financial Times, The Economic Times and Musings on Markets",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "TCS and Infosys: AI tops 10% of revenue, yet pricing bites",
+        "category": "Indian IT",
+        "tag": "",
+        "url": "https://www.moneycontrol.com/news/technology-startup/ai-edge-newsletter/indian-it-s-ai-revenue-puzzle/",
+        "src": "Moneycontrol",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "France's riots meet a debt squeeze, and youth want the system fixed",
+        "category": "France",
+        "tag": "",
+        "url": "https://www.wsj.com/world/europe/eight-charts-that-show-the-depth-of-frances-financial-crunch-40b31ee6",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI finds bugs faster and attackers follow in 'Black October'",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/ai-hacks-are-coming-thick-and-fast-and-overwhelming-the-internet-4529c26c",
+        "src": "The Wall Street Journal and Reuters",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "US recyclers harvest rare earths from old wind turbines",
+        "category": "Critical minerals",
+        "tag": "",
+        "url": "https://www.wsj.com/business/energy-oil/the-rare-earth-vultures-harvesting-metals-from-americas-old-wind-turbines-a22b78db",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "'Scentronic' prototype senses a smell and recreates it far away",
+        "category": "Science",
+        "tag": "",
+        "url": "https://www.reuters.com/science/new-scentronic-technology-can-detect-transmit-aromas-remotely-2026-10-23/",
+        "src": "Reuters",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-24",
     "slice": "Shells sell. Code cracks. AI plays doctor. Every ledger still needs a reader.",
     "artifact": "https://claude.ai/artifact/55cGuDxQar5JBxxm3QVGbN",
