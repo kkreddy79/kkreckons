@@ -39,7 +39,7 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
                 Subscribe free ↗
               </a>
             )}
-            <Link className="ab-btn-ghost" href="/daily/">
+            <Link className="ab-btn-ghost" href="/daily/" prefetch={false}>
               Catch up on past editions
             </Link>
           </>

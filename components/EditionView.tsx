@@ -121,7 +121,7 @@ function StressCard({ si, related, prevScore }: { si?: Reading; related: number[
         </p>
       </div>
       {live && live.trend.length > 1 && <Trend points={live.trend} />}
-      <Link className="ev-sx-cta" href="/ai-stress-index">
+      <Link className="ev-sx-cta" href="/ai-stress-index" prefetch={false}>
         Gauges →
       </Link>
     </section>
@@ -166,7 +166,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
       <div className="ev-meta">
         <span className="ev-num">{n}</span>
         {s.category && (topic ? (
-          <Link href={`/topics/${themeSlug(topic)}`} className="ev-cat" title={`More on ${topic}`}>
+          <Link href={`/topics/${themeSlug(topic)}`} prefetch={false} className="ev-cat" title={`More on ${topic}`}>
             {s.category}
           </Link>
         ) : (
@@ -342,7 +342,7 @@ export default function EditionView({
               <span className="ev-sub-sep" aria-hidden>
                 ·
               </span>{" "}
-              <Link href="/daily/" className="ev-catchup">
+              <Link href="/daily/" prefetch={false} className="ev-catchup">
                 Catch up on past editions →
               </Link>
             </>

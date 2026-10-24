@@ -6,7 +6,7 @@ export default function TopicNav({ current, counts }: { current?: string; counts
   return (
     <nav className="tp-nav" aria-label="Topics">
       {TOPICS.map((t) => (
-        <Link key={t.slug} href={`/topics/${t.slug}`} className={`chip${t.slug === current ? " on" : ""}`} aria-current={t.slug === current ? "page" : undefined}>
+        <Link key={t.slug} href={`/topics/${t.slug}`} prefetch={false} className={`chip${t.slug === current ? " on" : ""}`} aria-current={t.slug === current ? "page" : undefined}>
           {t.name} <span>{counts[t.name] ?? 0}</span>
         </Link>
       ))}
