@@ -236,7 +236,7 @@ rows.push(
     `</td></tr>`,
 );
 
-// Saturdays: the weekly quiz (built on the site from the week's "Quote this" figures).
+// Saturdays: the weekly quiz (built on the site from the week's quotable figures, each story's cite).
 if (when.getUTCDay() === 6) {
   rows.push(
     `<tr><td colspan="2" align="center" style="padding:16px 0 0;font-family:${SANS};font-size:14px;">` +
