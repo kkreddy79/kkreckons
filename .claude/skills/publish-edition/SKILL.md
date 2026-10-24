@@ -63,7 +63,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 
    Problems of these kinds are **editorial**: don't rewrite his text, drop stories or pick a replacement
    article yourself. Report each one with a suggested fix and let him decide.
-   - Publishers listed as "bare domains": add a display name to `PUBLISHERS` in `lib/editions.ts`
+   - Publishers listed as "bare domains": add a display name to `PUBLISHERS` in `lib/editionFormat.ts`
      (and to `PAYWALLED` if the site usually needs a subscription).
    - "ℹ Paywalled, no free version": search for a free report of **the same facts** (Reuters, AP, PTI, the
      company's, regulator's or court's own release, a free outlet quoting the same figures, or a gift link).
