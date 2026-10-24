@@ -259,12 +259,6 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
         </p>
       )}
 
-      {s.cite && (
-        <p className="ev-cite">
-          <b>Quote this</b> {s.cite} <span>(KKReckons, {shortDate(date)} {date.slice(0, 4)})</span>
-        </p>
-      )}
-
       <StorySource s={s} id={id} summary={false} />
       <ShareRow url={storyPageUrl(date, n)} slice={s.emailHead || s.title} image={s.image || undefined} compact />
     </article>
