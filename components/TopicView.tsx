@@ -89,7 +89,8 @@ export default function TopicView({ topic, page }: { topic: Topic; page: number 
                 </div>
                 {full && (
                   <div className="sr-src">
-                    <StorySource s={{ ...full, src: story.src ?? full.src, pay: story.pay ?? full.pay }} id={`tp-qs-${edition.date}-${first + i}`} summary={false} />
+                    {/* "Why it matters" is already shown above, so the Quick summary carries just the points. */}
+                    <StorySource s={{ ...full, why: "", src: story.src ?? full.src, pay: story.pay ?? full.pay }} id={`tp-qs-${edition.date}-${first + i}`} />
                   </div>
                 )}
               </li>

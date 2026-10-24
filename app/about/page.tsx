@@ -68,7 +68,7 @@ export default function About() {
           mainEntity: { ...AUTHOR, worksFor: PUBLISHER },
         }}
       />
-      <Banner />
+      <Banner compact={false} />
 
       <div className="ab-wrap">
         <section className="ab-hero" aria-labelledby="about-title">

@@ -126,6 +126,12 @@ export default function ArchiveBrowser({
     [editions, links, summaries]
   );
 
+  /** Stories in each theme across the archive, shown on its filter chip (the same counts as the topic pages). */
+  const themeCounts = useMemo(
+    () => Object.fromEntries(THEMES.map((t) => [t.name, all.filter((a) => themesOf(a.story).includes(t.name)).length])),
+    [all]
+  );
+
   /** Stories matching the theme and search, before the source filter, so source counts follow them. */
   const q = query.trim().toLowerCase();
   const base = useMemo(
@@ -212,8 +218,13 @@ export default function ArchiveBrowser({
       </div>
       <div className="chips">
         {THEMES.map((t) => (
-          <button key={t.name} className={`chip${theme === t.name ? " on" : ""}`} onClick={() => setTheme(t.name)}>
-            {t.name}
+          <button
+            key={t.name}
+            className={`chip${theme === t.name ? " on" : ""}`}
+            aria-pressed={theme === t.name}
+            onClick={() => setTheme(t.name)}
+          >
+            {t.name} <span>{themeCounts[t.name]}</span>
           </button>
         ))}
         {theme && (

@@ -1,8 +1,8 @@
 /**
- * Two-worlds sunset panorama with the KKReckons wordmark, fading into the page. `compact` is the shorter
- * version for Home, so today's headline and first story sit higher on the screen.
+ * Two-worlds sunset panorama with the KKReckons wordmark, fading into the page. Short by default, so every
+ * page's own heading and content sit high on the screen; About passes compact={false} for the full panorama.
  */
-export default function Banner({ strap = "A clearer slice of a complex world", compact }: { strap?: string; compact?: boolean }) {
+export default function Banner({ strap = "A clearer slice of a complex world", compact = true }: { strap?: string; compact?: boolean }) {
   return (
     <header className={`ab-top${compact ? " ab-top-sm" : ""}`}>
       <picture className="ab-top-img">

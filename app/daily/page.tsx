@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import ArchiveBrowser from "@/components/ArchiveBrowser";
 import Banner from "@/components/Banner";
 import SubscribeBox from "@/components/SubscribeBox";
-import TopicNav from "@/components/TopicNav";
 import { getContent } from "@/lib/content";
 import { editions, totalStories } from "@/lib/editions";
-import { TOPICS, topicStories } from "@/lib/topics";
 import type { ReadingLink, StoryLinks } from "@/components/ArchiveBrowser";
 
 /** Each story's second source link, keyed by "date|title" (it names a publisher, so search and filters need it).
@@ -52,10 +50,6 @@ export default function Archive() {
               <b>{reading.length}</b> further reading links
             </li>
           </ul>
-        </section>
-        <section className="tp-browse" aria-labelledby="tp-browse-t">
-          <h2 id="tp-browse-t">Browse by topic</h2>
-          <TopicNav counts={Object.fromEntries(TOPICS.map((t) => [t.name, topicStories(t.name).length]))} />
         </section>
         <ArchiveBrowser editions={editions} links={storyLinks()} reading={reading} />
         <SubscribeBox />
