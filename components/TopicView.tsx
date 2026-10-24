@@ -4,7 +4,7 @@ import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import StorySource from "@/components/StorySource";
 import SubscribeBox from "@/components/SubscribeBox";
 import TopicNav from "@/components/TopicNav";
-import { longDate, storyHref } from "@/lib/editions";
+import { longDate, storyHref, storyPageHref } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
 import { TOPICS, TOPIC_PAGE_SIZE, topicHref, topicPageCount, topicStories } from "@/lib/topics";
 
@@ -89,8 +89,12 @@ export default function TopicView({ topic, page }: { topic: Topic; page: number 
                 </div>
                 {full && (
                   <div className="sr-src">
-                    {/* "Why it matters" is already shown above, so the Quick summary carries just the points. */}
-                    <StorySource s={{ ...full, why: "", src: story.src ?? full.src, pay: story.pay ?? full.pay }} id={`tp-qs-${edition.date}-${first + i}`} />
+                    {/* "Why it matters" is already shown above, so the Quick summary leaves it out. */}
+                    <StorySource
+                      s={{ ...full, why: "", src: story.src ?? full.src, pay: story.pay ?? full.pay }}
+                      id={`tp-qs-${edition.date}-${first + i}`}
+                      explainer={storyPageHref(edition, story)}
+                    />
                   </div>
                 )}
               </li>
