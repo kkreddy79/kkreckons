@@ -9,7 +9,7 @@ finds the artifact and turns it into a site edition with `npm run editions`.
   The routine finds editions by this title. Other titles are ignored.
 - **Data:** a full HTML page containing one `<script id="data" type="application/json">` block with the JSON
   below. The website rebuilds everything from this JSON in its own design, whatever the newsletter looks like.
-  The site saves the page as `newsletters/YYYY-MM-DD.html` (source only, never served); the artifact's own file name doesn't matter.
+  The site saves the page as `newsletters/YYYY-MM-DD.html` (source only, never served); the artifact's own file name doesn't matter. After publishing, the stored copy has each image swapped for a `kkreckons-fig:/figs/<file>` pointer to the file in `public/figs/`; the artifact keeps the original.
 - **Template:** Start every edition from `templates/KKReckons_Template_lite.html`, not from an earlier edition: a
   finished edition is about 3 MB (embedded images and fonts), too big to read in full, while the template can be. Fill in
   the day's data block and `pics` script; the build replaces the whole data block. Whenever the template changes, upload

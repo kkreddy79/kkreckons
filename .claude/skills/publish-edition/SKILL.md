@@ -1,6 +1,7 @@
 ---
 name: publish-edition
 description: Find the newest KKReckons newsletter artifact that isn't on the website yet, turn it into a site edition, check it, and open a preview for Krishnakanth to approve. Publishes only after he replies "publish". Use when asked to "publish" an edition.
+model: sonnet
 ---
 
 # Publish the day's KKReckons edition
@@ -40,7 +41,8 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    file's existing order (oldest first) and two-space indentation.
 3. `npm ci` (first time in the session), then run every mechanical step with one command:
    `npm run -s publish-edition -- <YYYY-MM-DD>` (add `--allow <date>` only for a correction he asked for).
-   It rebuilds the site data, runs the automatic checks, writes the email thumbnails
+   It rebuilds the site data, stores the new newsletter without its images (they're in `public/figs/` by
+   then; `scripts/strip-newsletter-images.mjs`), runs the automatic checks, writes the email thumbnails
    (`public/email/<YYYY-MM-DD>-<n>.png`, commit them with the edition) and the email JSON
    (`.publish/beehiiv-<YYYY-MM-DD>.json`, used in section 4), builds the site and runs QC, printing only
    a summary or the failing step's output. Only the new date's files should change besides
@@ -98,6 +100,10 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      a per-story override `{ "image": "", "imageAlt": "" }` in `data/edition-meta.json` and re-run
      the publish command (unused images are deleted automatically). List it in your message. Also mention
      any realistic AI-made likeness of a real person, for his decision.
+     **Second opinion for doubtful images only:** when a graphic's `figcredit` is not "Original graphic:
+     KKReckons", or it looks like a photo, a screenshot or a publisher's chart, ask one subagent (`Agent`
+     tool, `model: "opus"`) to judge just those files against the rules above, passing their paths and the
+     rules, not the whole edition. Most days every graphic is his own and no second opinion is needed.
    - **Own words:** for each source you can open (not paywalled), compare the points with the article.
      Flag any sentence copied word for word or with only small word changes. If no source can be opened
      (the session's network may block publisher sites), review the wording by reading it, and say in
@@ -198,23 +204,13 @@ the email draft). If something does need his decision, stop at section 3 and ask
 
 ## Weekly best-of email
 
-When he asks for the weekly email ("draft the weekly", "best of the week"), make a beehiiv **draft** of
-KKReckons Weekly, sent **Friday night**: the week's best stories across different topics from the 7 days
-Saturday to Friday (pass that Friday as the end date). Up to 8 stories, one from every edition, KK's Picks
-first, at most one per topic (two for AI); each links to its story card on the site, plus the week's AI
-Stress Index move and a "Catch up on the week" button. If Friday's edition isn't published yet, build
-it anyway and rebuild after that edition goes live.
-1. `npm run -s weekly-email -- [YYYY-MM-DD] .publish/beehiiv-weekly-<end date>.json`. It prints the week, the
-   picks and the index move; check that each teaser reads on its own (they come from `emailTeaser`, or
-   from "why it matters" when an older edition has none).
-2. As for the daily email: check `list_posts` for slug `kkreckons-weekly-<end date>` first, then `save_post`
-   (`html_content` verbatim), `edit_post` with `email_settings`, `save_post_theme` with `theme`, and
-   re-read with `get_post_content` (`editor_html`) to confirm all the picks' headlines appear.
-3. Reply with the editor link for him to Send or Schedule (Friday night).
+The Friday weekly email has its own skill: `.claude/skills/weekly-email/SKILL.md`.
 
 ## Keeping it light
 
 - Each "Publish" works best in a fresh session: this skill holds every step, so no earlier history is needed.
+- The skill runs on Sonnet (`model: sonnet` above), but that covers only the turn that starts it. Start a
+  publishing session on Sonnet too, so his "publish" reply and the email draft stay on it.
 - Don't print whole files or tool payloads to look at them; grep or slice for what you need.
 - Read the artifact once, look at images once (contact sheet), and trust the publish command's summary.
 
