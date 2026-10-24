@@ -8,7 +8,7 @@ import { LockIcon } from "@/components/AboutIcons";
  * html[data-free]), points headlines at a free version where there is one, and says when a story has
  * none. The choice is kept in localStorage so it holds across editions.
  */
-export default function FreeToggle({ paid }: { paid: number }) {
+export default function FreeToggle({ paid, noFree }: { paid: number; noFree: number }) {
   const [on, setOn] = useState(false);
 
   const apply = (next: boolean) => {
@@ -51,6 +51,10 @@ export default function FreeToggle({ paid }: { paid: number }) {
         <span className="ev-free-knob" aria-hidden />
         Free sources only
       </button>
+      {/* The links it changes sit under each story, far below: say here what changed. */}
+      <span className="ev-free-note" role="status">
+        {on && (paid > noFree ? `${paid - noFree} switched to a free source` : "") + (paid > noFree && noFree ? " · " : "") + (noFree ? `${noFree} summary only, no free source yet` : "")}
+      </span>
     </span>
   );
 }

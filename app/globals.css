@@ -848,8 +848,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .cards-title { display: flex; gap: 10px; align-items: baseline; font-weight: 700; font-size: 15px; line-height: 1.35; color: var(--ink2); }
 .cards-title:hover { color: var(--accent); }
 .cards-n { flex: none; font: 800 13px var(--sans); color: var(--accent); font-variant-numeric: tabular-nums; }
-.ev-cards-link { color: var(--teal-text); white-space: nowrap; }
-.ev-cards-link:hover { text-decoration: underline; }
 @media (max-width: 700px) {
   .cards-grid { grid-template-columns: 1fr; gap: 18px; }
 }
+.ev-free-note { flex-basis: 100%; font-size: 13px; font-weight: 600; color: var(--wa-text); }
+.ev-free-note:empty { position: absolute; width: 1px; height: 1px; overflow: hidden; } /* kept in the tree so the live region announces */
+.ev-jump a.ev-jump-cards { background: var(--ink2); border-color: var(--ink2); color: var(--cream); }
+.ev-jump a.ev-jump-cards:hover { background: var(--accent); border-color: var(--accent); }
