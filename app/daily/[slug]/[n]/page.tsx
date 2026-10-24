@@ -46,7 +46,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const image = story.image
     ? { url: story.image, ...(story.imageW ? { width: story.imageW, height: story.imageH } : {}), alt: story.imageAlt || story.title }
     : { url: edition.cover || edition.image || "/about/two-worlds.jpg" };
-  const description = clip(story.why || story.points[0] || edition.slice, 158);
+  // The story's one quotable sentence (key figure, source and date) where it has one: what search results,
+  // link previews and AI tools show. Otherwise "why it matters".
+  const description = clip(story.cite || story.why || story.points[0] || edition.slice, 158);
   return {
     title: `${story.title} | ${shortDate(edition.date)} ${edition.date.slice(0, 4)}`,
     description,
@@ -80,7 +82,7 @@ export default async function StoryPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "NewsArticle",
             headline: story.title,
-            description: story.why || story.points[0] || "",
+            description: story.cite || story.why || story.points[0] || "",
             datePublished: edition.date,
             dateModified: edition.date,
             url,

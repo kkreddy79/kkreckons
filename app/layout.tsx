@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
+import { preload } from "react-dom";
 import NavLinks from "@/components/NavLinks";
 import ThemeToggle from "@/components/ThemeToggle";
 import Lightbox from "@/components/Lightbox";
@@ -35,12 +36,13 @@ export const viewport: Viewport = {
 const THEME_SCRIPT = `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  // The edition headline's face: fetched with the page instead of after the CSS, so the headline doesn't reflow.
+  // React's preload() emits a single <link rel="preload">; a hand-written one in <head> was output twice.
+  preload("/fonts/playfair-800.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
-        {/* The edition headline's face: fetched with the page instead of after the CSS, so the headline doesn't reflow. */}
-        <link rel="preload" href="/fonts/playfair-800.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {/* In the layout, not metadata, so pages that set their own canonical keep it. */}
         <link rel="alternate" type="application/rss+xml" title="KKReckons daily editions" href="/feed.xml" />
       </head>

@@ -2,20 +2,17 @@ import type { Metadata } from "next";
 import ArchiveBrowser from "@/components/ArchiveBrowser";
 import Banner from "@/components/Banner";
 import SubscribeBox from "@/components/SubscribeBox";
-import TopicNav from "@/components/TopicNav";
 import { getContent } from "@/lib/content";
 import { editions, totalStories } from "@/lib/editions";
-import { TOPICS, topicStories } from "@/lib/topics";
-import type { ReadingLink, StoryDetails } from "@/components/ArchiveBrowser";
+import type { ReadingLink, StoryLinks } from "@/components/ArchiveBrowser";
 
-/** Source links and summary points for each story, keyed by "date|title". */
-function storyDetails(): StoryDetails {
-  const out: StoryDetails = {};
+/** Each story's second source link, keyed by "date|title" (it names a publisher, so search and filters need it).
+ *  The summaries load separately, from /daily/summaries.json. */
+function storyLinks(): StoryLinks {
+  const out: StoryLinks = {};
   for (const e of editions) {
     for (const sec of getContent(e.date).sections) {
-      for (const s of sec.stories) {
-        out[`${e.date}|${s.title}`] = { url2: s.url2, points: s.points.slice(0, 3), why: s.why };
-      }
+      for (const s of sec.stories) if (s.url2) out[`${e.date}|${s.title}`] = s.url2;
     }
   }
   return out;
@@ -54,11 +51,7 @@ export default function Archive() {
             </li>
           </ul>
         </section>
-        <section className="tp-browse" aria-labelledby="tp-browse-t">
-          <h2 id="tp-browse-t">Browse by topic</h2>
-          <TopicNav counts={Object.fromEntries(TOPICS.map((t) => [t.name, topicStories(t.name).length]))} />
-        </section>
-        <ArchiveBrowser editions={editions} details={storyDetails()} reading={reading} />
+        <ArchiveBrowser editions={editions} links={storyLinks()} reading={reading} />
         <SubscribeBox />
       </div>
     </main>

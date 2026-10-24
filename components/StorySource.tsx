@@ -1,4 +1,4 @@
-import { isPaywalled, publisherName, sourceName } from "@/lib/editions";
+import { isPaywalled, publisherName, sourceName } from "@/lib/editionFormat";
 import { InfoIcon, LinkIcon, LockIcon } from "@/components/AboutIcons";
 
 /** What the source line and quick summary need from a story. */
@@ -8,6 +8,8 @@ export type SourceStory = {
   url2: string;
   points: string[];
   why: string;
+  /** "Other side" (or, when it starts "What to watch:", a dated upcoming event). */
+  other?: string;
   /** Publisher name and paywall flag set in the newsletter data, when given. */
   src?: string;
   pay?: boolean;
@@ -51,7 +53,18 @@ export function PaidMark() {
  * "Original source: Publisher ↗" line with a lock on paywalled sources, plus the Quick summary popover where the
  * page shows only the headline (story cards already show the full points).
  */
-export default function StorySource({ s, id, summary = true }: { s: SourceStory; id: string; summary?: boolean }) {
+export default function StorySource({
+  s,
+  id,
+  summary = true,
+  explainer,
+}: {
+  s: SourceStory;
+  id: string;
+  summary?: boolean;
+  /** The story's KKReckons page, linked from the Quick summary where the page lists stories without their graphics. */
+  explainer?: string;
+}) {
   const links = sourceLinks(s);
   if (!links.length) return null;
   const paid = storyPaid(s);
@@ -107,6 +120,17 @@ export default function StorySource({ s, id, summary = true }: { s: SourceStory;
           {s.why && (
             <p className="ev-qs-why">
               <b>Why it matters:</b> {s.why}
+            </p>
+          )}
+          {s.other && (
+            <p className="ev-qs-other">
+              <b>{s.other.startsWith("What to watch") ? "Watch next:" : "Other side:"}</b>{" "}
+              {s.other.replace(/^What to watch:\s*(.)/, (_, c: string) => c.toUpperCase())}
+            </p>
+          )}
+          {explainer && (
+            <p className="ev-qs-explainer">
+              <a href={explainer}>See the KKReckons explainer →</a>
             </p>
           )}
           <p className="ev-qs-src">

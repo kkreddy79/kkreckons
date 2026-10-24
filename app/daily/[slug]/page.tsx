@@ -83,6 +83,15 @@ export default async function EditionPage({ params }: Props) {
       image: images,
       author: AUTHOR,
       publisher: PUBLISHER,
+      // Each story, with its own page and one-sentence description (its quotable sentence where it has one).
+      hasPart: content.sections
+        .flatMap((sec) => sec.stories)
+        .map((s, i) => ({
+          "@type": "NewsArticle",
+          headline: s.title,
+          url: `${url}/${i + 1}`,
+          ...(s.cite || s.why ? { description: s.cite || s.why } : {}),
+        })),
     },
     {
       "@context": "https://schema.org",

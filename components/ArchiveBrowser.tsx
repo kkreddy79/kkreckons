@@ -11,14 +11,19 @@ import {
   publisherName,
   slugFor,
   storyHref,
+  storyPageHref,
   themeSlug,
   themesOf,
   weekday,
-} from "@/lib/editions";
+} from "@/lib/editionFormat";
 import SourcePicker from "@/components/SourcePicker";
 import StorySource, { PaidMark, storyHover, storyPaid } from "@/components/StorySource";
 
-export type StoryDetails = Record<string, { url2: string; points: string[]; why: string }>;
+/** A story's second source link, keyed by "date|title". */
+export type StoryLinks = Record<string, string>;
+
+/** A story's first summary points, "why it matters" and other side, keyed by "date|title" (served by /daily/summaries.json). */
+export type StorySummaries = Record<string, { points: string[]; why: string; other?: string }>;
 
 export type ReadingLink = { date: string; title: string; url: string; note: string };
 
@@ -30,11 +35,11 @@ const countLabel = (stories: number, links: number) => (links ? `${stories} · $
 
 export default function ArchiveBrowser({
   editions,
-  details,
+  links,
   reading,
 }: {
   editions: Edition[];
-  details: StoryDetails;
+  links: StoryLinks;
   reading: ReadingLink[];
 }) {
   // Filters live in the URL (?q=, ?theme=, ?source=, ?free=1) but are read after mount, so the page is fully
@@ -44,6 +49,21 @@ export default function ArchiveBrowser({
   const [source, setSource] = useState("");
   const [free, setFree] = useState(false);
   const [view, setView] = useState<"editions" | "stories">("editions");
+  const [summaries, setSummaries] = useState<StorySummaries | null>(null);
+
+  // The story list's quick summaries load the first time it's shown; until then (or if the fetch fails, in
+  // which case the next visit to the list tries again) each result shows its headline and sources.
+  useEffect(() => {
+    if (view !== "stories" || summaries) return;
+    let live = true;
+    fetch("/daily/summaries.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d: StorySummaries | null) => live && d && setSummaries(d))
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [view, summaries]);
 
   // Arriving from the "/" shortcut on another page (/daily/#search): put the cursor in the search box.
   useEffect(() => {
@@ -97,13 +117,20 @@ export default function ArchiveBrowser({
             url: story.url,
             src: story.src,
             pay: story.pay,
-            ...(details[`${e.date}|${story.title}`] ?? { url2: "", points: [], why: "" }),
+            url2: links[`${e.date}|${story.title}`] ?? "",
+            ...(summaries?.[`${e.date}|${story.title}`] ?? { points: [], why: "" }),
           };
           const pubs = [s.url ? s.src || publisherName(s.url) : "", s.url2 ? publisherName(s.url2) : ""].filter(Boolean);
           return { edition: e, story, s, pubs, paid: storyPaid(s) };
         })
       ),
-    [editions, details]
+    [editions, links, summaries]
+  );
+
+  /** Stories in each theme across the archive, shown on its filter chip (the same counts as the topic pages). */
+  const themeCounts = useMemo(
+    () => Object.fromEntries(THEMES.map((t) => [t.name, all.filter((a) => themesOf(a.story).includes(t.name)).length])),
+    [all]
   );
 
   /** Stories matching the theme and search, before the source filter, so source counts follow them. */
@@ -192,8 +219,13 @@ export default function ArchiveBrowser({
       </div>
       <div className="chips">
         {THEMES.map((t) => (
-          <button key={t.name} className={`chip${theme === t.name ? " on" : ""}`} onClick={() => setTheme(t.name)}>
-            {t.name}
+          <button
+            key={t.name}
+            className={`chip${theme === t.name ? " on" : ""}`}
+            aria-pressed={theme === t.name}
+            onClick={() => setTheme(t.name)}
+          >
+            {t.name} <span>{themeCounts[t.name]}</span>
           </button>
         ))}
         {theme && (
@@ -295,7 +327,7 @@ export default function ArchiveBrowser({
                   )}
                 </div>
                 <div className="sr-src">
-                  <StorySource s={s} id={`sr-qs-${edition.date}-${i}`} />
+                  <StorySource s={s} id={`sr-qs-${edition.date}-${i}`} explainer={storyPageHref(edition, story)} />
                 </div>
               </li>
             ))}
