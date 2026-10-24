@@ -20,7 +20,8 @@ const SIMILAR_TITLE = 0.6;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const index = JSON.parse(fs.readFileSync(path.join(root, "data", "editions.json"), "utf8"));
-const lib = fs.readFileSync(path.join(root, "lib", "editions.ts"), "utf8");
+// Publisher names (PUBLISHERS) and the PAYWALLED list live in lib/editionFormat.ts.
+const lib = fs.readFileSync(path.join(root, "lib", "editionFormat.ts"), "utf8");
 const named = new Set([...lib.matchAll(/^  "([^"]+)": "/gm)].map((m) => m[1]));
 const paywalled = new Set([...(lib.match(/const PAYWALLED = new Set\(\[([^\]]*)\]/)?.[1] || "").matchAll(/"([^"]+)"/g)].map((m) => m[1]));
 const exceptionsFile = path.join(root, "data", "qc-exceptions.json");
@@ -157,7 +158,7 @@ for (const date of dates) {
   for (const k of c.callouts || []) if (k.url && !webLink(k.url)) flag(date, `Number "${k.num}"`, "link", `link isn't an http(s) web address: ${k.url.slice(0, 60)}`);
   console.log(`${date}: ${stories} stories, ${c.reading.length} further reading`);
 }
-if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBLISHERS in lib/editions.ts): ${[...unnamed].join(", ")}`);
+if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBLISHERS in lib/editionFormat.ts): ${[...unnamed].join(", ")}`);
 for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a repeat: ${w}`);
 for (const date of dates) if (content[date].sections.some((sec) => sec.stories.some((s) => s.stressIndex)) && !content[date].stressIndex)
   console.log(`⚠ ${date}: a story links to the AI Stress Index but no reading was saved (index data was unreachable); it shows the link without a number`);
