@@ -1,0 +1,9 @@
+# Secret scanning (gitleaks, run by .github/workflows/security.yml): the default rules, plus the one
+# known false positive below. Add an allowlist here only for a value that is meant to be public.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Financial Times gift links: share tokens the FT issues for publishing a free article link"
+regexTarget = "line"
+regexes = ['''ft\.com/content/[0-9a-f-]+\?accessToken=''']
