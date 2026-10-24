@@ -10,13 +10,18 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 - **Data:** a full HTML page containing one `<script id="data" type="application/json">` block with the JSON
   below. The website rebuilds everything from this JSON in its own design, whatever the newsletter looks like.
   The site saves the page as `newsletters/YYYY-MM-DD.html` (source only, never served); the artifact's own file name doesn't matter.
-- **Template:** Start each edition from the latest final edition: its page is the template plus that day's data, and
-  the build replaces the whole data block. Use `templates/KKReckons_Template_lite.html` instead when the template has
-  changed, or when there is no earlier edition. Whenever the template changes, upload the new copy to the KKReckons
-  Project and tell the Project so; the next edition is built from it. The template (about 140 KB) has the same design,
+- **Template:** Start every edition from `templates/KKReckons_Template_lite.html`, not from an earlier edition: a
+  finished edition is about 3 MB (embedded images and fonts), too big to read in full, while the template can be. Fill in
+  the day's data block and `pics` script; the build replaces the whole data block. Whenever the template changes, upload
+  the new copy to the KKReckons Project and tell the Project so; the next edition is built from it. The template (about 65 KB) has the same design,
   scripts and data format, one example story per section and no images; fonts load from Google Fonts and the device
   instead of being embedded. Rebuild it from the newest edition after a design change with
   `node scripts/make-lite-template.mjs`.
+- **Icons:** the story icons live in `templates/KKReckons_icons.json` (every icon any edition has used, by name), not in
+  the template; upload it to the Project beside the template, and again when it changes. An edition's
+  `<script id="pics">` holds only the icons its stories use: copy each from the library by name (no need to read the
+  whole file; the template's opening note lists the names), or add a new SVG in the same 80×80 style. The same script
+  `node scripts/make-lite-template.mjs` rebuilds the library, so a new icon joins it once its edition is on the site.
 
 ## Top level
 
@@ -40,6 +45,7 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `url2` | – | A second source link. |
 | `cat` | – | Category label, for example `Markets`. |
 | `tag` | – | Small tag such as `Opinion`, `Interview`, `Explainer`. |
+| `pic` | – | Name of the story's icon, for example `chip`. Its SVG must be in the edition's `pics` script (see **Icons** above); without it the story shows a plain badge. |
 | `pts` | yes | Summary points, **at least two**. |
 | `nums` | – | Key numbers: `[["₹7.10L cr", "deficit, April–August"], …]`. |
 | `why` | yes | Why it matters. |
