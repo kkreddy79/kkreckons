@@ -26,7 +26,8 @@ html = html.replace(/@font-face\{font-family:'([^']+)';[^}]*?\}/g, (rule, family
 if (/url\(data:font/.test(html)) throw new Error("an embedded font was left behind");
 const GOOGLE =
   "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Serif:ital,opsz,wdth,wght@0,20,62.5,700;1,20,62.5,700&display=swap";
-html = html.replace(/<style>/, `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="${GOOGLE}"><style>`);
+// Editions started from this template already carry the link (and the note below): add each only once.
+if (!html.includes(GOOGLE)) html = html.replace(/<style>/, `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="${GOOGLE}"><style>`);
 // 'RSC' was Roboto Serif (20pt optical size), extra-condensed, bold: same face from Google Fonts.
 html = html.replace(/font-family:'RSC',/g, "font-stretch:extra-condensed;font-family:'Roboto Serif',");
 
@@ -76,7 +77,7 @@ const NOTE = `<!--
   Icons in the library: ${Object.keys(sorted).join(", ")}.
   Fonts load from Google Fonts and the device, so this file stays small enough to read in full.
 -->`;
-html = html.replace(/<head>/, `<head>${NOTE}`);
+html = html.replace(/<!--\s*KKReckons newsletter template \(lite\)[\s\S]*?-->/g, "").replace(/<head>/, `<head>${NOTE}`);
 html = html.replace(/<title>[^<]*<\/title>/, "<title>KKReckons, Weekday, D Month YYYY</title>");
 
 fs.mkdirSync("templates", { recursive: true });
