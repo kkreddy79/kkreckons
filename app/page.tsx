@@ -41,7 +41,7 @@ export default async function Home() {
           publisher: PUBLISHER,
         }}
       />
-      <Banner compact />
+      <Banner />
       <div className="ev-wrap">
         <EditionView
           e={today}
