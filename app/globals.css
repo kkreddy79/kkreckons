@@ -355,9 +355,6 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-ic { width: 20px; height: 20px; margin-top: 1px; }
 .ev-also { margin: 4px 0 10px; font-size: 14px; color: var(--text3); }
 .ev-also a { color: var(--violet); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.ev-cite { margin: 4px 0 10px; padding-left: 10px; border-left: 3px solid var(--lilac-line); font-size: 14px; line-height: 1.5; color: var(--body); }
-.ev-cite b { margin-right: 6px; font: 800 12px var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft-violet-2); }
-.ev-cite span { color: var(--muted-2); }
 .ev-body { flex: 1; }
 .ev-has-img { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); column-gap: 28px; align-content: start; }
 .ev-has-img > * { grid-column: 2; }

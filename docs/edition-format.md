@@ -58,7 +58,7 @@ finds the artifact and turns it into a site edition with `npm run editions`.
 | `free` | – | For a paywalled story: a link to a **free version of the same news** (wire copy such as Reuters or AP, the company's or regulator's own release, a free outlet reporting the same facts, or a gift/share link). Shown as "Free version: <publisher>" beside the original, and used by the "Free sources only" switch. Leave it out when nothing free covers the same facts; never point it at another paywalled site. |
 | `freesrc` | – | Publisher name for `free`, for example `Reuters`. If left out, the site names it from the link. |
 | `ehead` | – | For the subscriber email: a short headline, about 6 words (`"A top degree, no job offer"`). If left out, the email uses `title`. |
-| `cite` | – | Optional. One self-contained sentence with the story's key figure, written to be quoted (`"CoreWeave's 5-year CDS hit a record 1,194.5 bp on 15 Oct 2026."`). Shown under the story as "Quote this", with the edition date. |
+| `cite` | – | Optional. One self-contained sentence with the story's key figure, written to be quoted (`"CoreWeave's 5-year CDS hit a record 1,194.5 bp on 15 Oct 2026."`). Not shown on the page: it becomes the story page's search and link-preview description and its structured-data description (what search engines and AI tools read), and feeds the weekly quiz. Keep it under 160 characters. |
 | `eteaser` | – | For the subscriber email: a one-line teaser, about 10 words (`"2,300 applications later, the hiring freeze still wins."`). If left out, the email uses the first sentence of `why`. |
 | `stressindex` | – | `true` to link the story to the AI Stress Index. The edition then shows the index once (a card in "Today in 30 seconds" on the website, with an "Index" tag on each linked story, and one line under the story list in the email), showing the index reading at the last close before the edition (saved once, so old editions keep their dated number; readings from before the index went live on 15 October 2026 are marked back-calculated). Use it for stories about AI debt, AI financing or credit stress; it's an editorial choice. It can also be set afterwards with a `{ "stressIndex": true }` story override in `data/edition-meta.json`. |
 | `themes` | – | Catch up themes, any of: `AI`, `Markets`, `Banking`, `India`, `Jobs & careers`, `Geopolitics`, `Personal finance`, `Health & science`. Unknown names are ignored. If left out (or none match), the site picks themes from the category and title. |
@@ -72,7 +72,8 @@ finds the artifact and turns it into a site edition with `npm run editions`.
   results ("<title> + 7 more | 22 Oct 2026"). Make it plain and searchable: names, numbers, the actual news,
   not wordplay. Keep the wit in `slice`, which shared links still show.
 - **Quotable facts.** Where a story has a headline figure, add `cite`: one self-contained sentence with the
-  figure and its date.
+  figure, its source and its date, under 160 characters. Readers don't see it; it is the story's description in
+  search results, link previews and structured data, and a weekly quiz question.
 - **AI Stress Index.** The day's reading appears on every edition automatically. Set `stressindex: true` only on
   stories that are mainly about AI debt, AI financing or credit stress.
 - **Email copy.** Keep `ehead`, `eteaser` and `takeaway` on every edition: they write the subscriber email.
