@@ -11,22 +11,30 @@ concurrency:
   group: checks-${{ github.ref }}
   cancel-in-progress: true
 
+# Read-only token: these jobs only check out code and run checks.
+permissions:
+  contents: read
+
 jobs:
   site:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
 
       - name: Install
         run: npm ci
+
+      # Fails on a high or critical advisory in a package the site ships (not dev tools).
+      - name: Dependency audit
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Content check (sources, summaries, quotes, image credits, alt text)
         run: npm run -s check
