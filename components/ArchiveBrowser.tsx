@@ -263,7 +263,7 @@ export default function ArchiveBrowser({
             {theme && (
               <>
                 {" "}
-                · <Link href={`/topics/${themeSlug(theme)}`}>All {theme} stories on one page →</Link>
+                · <Link href={`/topics/${themeSlug(theme)}`} prefetch={false}>All {theme} stories on one page →</Link>
               </>
             )}
           </p>
