@@ -649,7 +649,6 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .rf-steps { display: grid; gap: 10px; margin: 0; padding-left: 22px; font-size: 16px; line-height: 1.55; color: var(--text2); }
 .rf-steps b { color: var(--ink2); }
 .ev-30s li.is-read a > span:not(.ev-mark) { opacity: 0.7; }
-.ev-30s li.is-read .ev-30s-n::after { content: " ✓"; color: var(--wa-text); }
 .ev-missed { margin: 14px 0 0; padding: 10px 14px; border-radius: 14px; background: var(--wa); border: 1px solid var(--wa-line); color: var(--ink2); font-size: 14.5px; font-weight: 600; }
 .ev-missed a { color: var(--wa-text); font-weight: 800; }
 .qz-list { list-style: none; counter-reset: qz; display: grid; gap: 14px; margin: 0; padding: 0; }
