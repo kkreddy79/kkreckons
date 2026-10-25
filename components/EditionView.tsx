@@ -308,7 +308,7 @@ export default function EditionView({
   const cards = e.sections.flatMap((sec) => sec.stories).filter((s) => s.image).length;
   // "Today in 30 seconds", right under the headline.
   const digest = count > 2 && (
-    <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
+    <nav className="ev-30s" id={`digest-${e.date}`} aria-labelledby={`t30-${e.date}`}>
       <div className="ev-30s-head">
         <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
         {/* Key to the icon at the end of each row; the rows carry their own labels for screen readers. */}
@@ -335,7 +335,6 @@ export default function EditionView({
               <a href={`#story-${i + 1}`}>
                 <span className="ev-30s-n">{String(i + 1).padStart(2, "0")}</span>
                 <span>
-                  {s.category && <small>{s.category}</small>}
                   {s.emailHead || s.title}
                   {s.stressIndex && <em className="ev-30s-tag">Index</em>}
                 </span>
@@ -352,6 +351,18 @@ export default function EditionView({
             </li>
           ))}
       </ol>
+      {cards >= 2 && (
+        <Link href={`/daily/${slugFor(e.date)}/cards`} prefetch={false} className="ev-30s-cards">
+          <CardsIcon />
+          <span>
+            <b>See today as visual cards</b>
+            <small>One picture explainer per story</small>
+          </span>
+          <span className="ev-30s-go" aria-hidden>
+            →
+          </span>
+        </Link>
+      )}
     </nav>
   );
   const tracked = e.sections.flatMap((sec) => sec.stories).flatMap((s, i) => (s.stressIndex ? [i + 1] : []));
@@ -362,27 +373,12 @@ export default function EditionView({
       <section className="ev-head">
         {showDate && <p className="ev-kicker">{longDate(e.date)}</p>}
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
-        {(e.sections.length > 1 || cards >= 2) && (
-          <nav className="ev-jump" id={`jump-${e.date}`} aria-label="Sections">
-            {cards >= 2 && (
-              <Link href={`/daily/${slugFor(e.date)}/cards`} prefetch={false} className="ev-jump-cards">
-                <CardsIcon /> View as cards
-              </Link>
-            )}
-            {e.sections.length > 1 && e.sections.map((s) => (
-              <a key={s.name} href={`#${sectionId(s.name)}`}>
-                {s.name} <span>{s.stories.length}</span>
-              </a>
-            ))}
-            {e.sections.length > 1 && e.reading.length > 0 && <a href="#further-reading">Further reading</a>}
-          </nav>
-        )}
         <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
         {signup}
       </section>
       {e.sections.length > 1 && (
         <SectionBar
-          watch={`jump-${e.date}`}
+          watch={`digest-${e.date}`}
           items={[
             ...e.sections.map((s) => ({ id: sectionId(s.name), label: s.name, count: s.stories.length })),
             ...(e.reading.length > 0 ? [{ id: "further-reading", label: "Further reading" }] : []),
