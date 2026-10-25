@@ -4,7 +4,7 @@ import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, sh
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
-import { LockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
+import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { PaidMark, sourceLinks, storyPaid } from "@/components/StorySource";
 import FreeToggle from "@/components/FreeToggle";
 import { Glossed } from "@/components/Glossary";
@@ -327,11 +327,13 @@ export default function EditionView({
                   {s.category && <small>{s.category}</small>}
                   {s.emailHead || s.title}
                   {s.stressIndex && <em className="ev-30s-tag">Index</em>}
-                  {/* Shown while "Free sources only" is on (CSS keyed on html[data-free]). */}
-                  <em className="ev-30s-tag ev-30s-free">Free link</em>
-                  <em className="ev-30s-tag ev-30s-paid">
-                    <LockIcon className="ev-lock-ic" /> Summary only
-                  </em>
+                </span>
+                {/* Shown while "Free sources only" is on (CSS keyed on html[data-free]); explained by the key under the switch. */}
+                <span className="ev-mark ev-mark-free" role="img" aria-label="Free link" title="Free link">
+                  <OpenLockIcon />
+                </span>
+                <span className="ev-mark ev-mark-paid" role="img" aria-label="Summary only, no free source" title="Summary only, no free source">
+                  <LockIcon />
                 </span>
               </a>
             </li>

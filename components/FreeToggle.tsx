@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LockIcon } from "@/components/AboutIcons";
+import { LockIcon, OpenLockIcon } from "@/components/AboutIcons";
 
 /**
  * "Free sources only" switch on an edition: hides paywalled source links (CSS keyed on
@@ -51,9 +51,29 @@ export default function FreeToggle({ paid, noFree }: { paid: number; noFree: num
         <span className="ev-free-knob" aria-hidden />
         Free sources only
       </button>
-      {/* The links it changes sit under each story, far below: say here what changed. */}
+      {/* The links it changes sit under each story, far below: this key explains the marks the switch adds to the list. */}
       <span className="ev-free-note" role="status">
-        {on && (paid > noFree ? `${paid - noFree} switched to a free source` : "") + (paid > noFree && noFree ? " · " : "") + (noFree ? `${noFree} summary only, no free source yet` : "")}
+        {on && (
+          <>
+            {paid > noFree && (
+              <span className="ev-free-key">
+                <span className="ev-mark ev-mark-free" aria-hidden>
+                  <OpenLockIcon />
+                </span>
+                {paid - noFree} free {paid - noFree === 1 ? "link" : "links"}
+              </span>
+            )}
+            {paid > noFree && noFree > 0 && " "}
+            {noFree > 0 && (
+              <span className="ev-free-key">
+                <span className="ev-mark ev-mark-paid" aria-hidden>
+                  <LockIcon />
+                </span>
+                {noFree} summary only
+              </span>
+            )}
+          </>
+        )}
       </span>
     </span>
   );
