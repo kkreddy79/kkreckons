@@ -38,6 +38,11 @@ export default function PrivacyPage() {
             The site uses <b>Vercel Web Analytics</b> to count visits: pages viewed, the referring site, and country and
             device type. It uses no cookies and does not identify you.
           </li>
+          <li>
+            It also uses <b>Umami</b>, a privacy-focused analytics service, to see how long visits last and which links and
+            buttons are tapped (for example, which story sources are opened most). Umami uses no cookies, does not identify
+            you and does not track you across other sites.
+          </li>
           <li>There are no ads and no advertising trackers.</li>
           <li>
             The AI Stress Index page loads its daily data from GitHub, which sees your request in the same way any website

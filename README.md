@@ -69,6 +69,13 @@ The email boxes on Home, after each edition's Pick of the day and in the closing
 leaving the site. They need a beehiiv API key set as `BEEHIIV_API_KEY` in Vercel (Production and Preview),
 then a redeploy. Without it, those spots stay links to beehiiv's sign-up page.
 
+## Analytics
+Vercel Web Analytics counts visits. Umami Cloud (free Hobby plan, no cookies) adds visit duration and a named
+event for every link or button tapped (`Out: <site>` for sources, `Go: <path>` for pages here, `Tap: <label>`
+for buttons, `Subscribe` for an on-page sign-up), from `components/Umami.tsx`. It is off until
+`NEXT_PUBLIC_UMAMI_WEBSITE_ID` (the website ID from Umami's dashboard) is set in Vercel for Production, then a
+redeploy. It counts only www.kkreckons.com, so previews and local runs don't add to the numbers.
+
 ## Develop
 ```
 npm install

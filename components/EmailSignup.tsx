@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/components/Umami";
 import { SUBSCRIBE_URL } from "@/lib/site";
 
 /**
@@ -21,8 +22,10 @@ export default function EmailSignup({ placement, tone = "light" }: { placement: 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, website, placement, page: window.location.pathname }),
       });
-      if (res.ok) setState("done");
-      else setState(res.status === 400 ? "invalid" : "failed");
+      if (res.ok) {
+        setState("done");
+        track("Subscribe", { placement, from: window.location.pathname });
+      } else setState(res.status === 400 ? "invalid" : "failed");
     } catch {
       setState("failed");
     }
