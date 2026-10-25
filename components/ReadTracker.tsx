@@ -22,7 +22,7 @@ function save(read: Set<string>) {
 
 /**
  * Remembers, in this browser only, which stories a reader has seen: a story counts as read after its card has
- * been mostly on screen for two seconds, or its own page was opened. Read stories are ticked and dimmed in
+ * been mostly on screen for two seconds, or its own page was opened. Read stories are dimmed in
  * "Today in 30 seconds". On Home, a returning reader who has missed editions gets a link to catch up.
  * `story` marks a story page; `editions` (Home only) is every edition date, for the "missed" count.
  */
