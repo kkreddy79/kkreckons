@@ -317,13 +317,13 @@ export default function EditionView({
             <span className="ev-mark ev-mark-free ev-mark-sm">
               <OpenLockIcon />
             </span>
-            Free to read
+            Source is free
           </span>
           <span>
             <span className="ev-mark ev-mark-paid ev-mark-sm">
               <LockIcon />
             </span>
-            Paywalled
+            Source is paywalled
           </span>
         </p>
       </div>
@@ -340,11 +340,11 @@ export default function EditionView({
                   {s.stressIndex && <em className="ev-30s-tag">Index</em>}
                 </span>
                 {storyPaid(s) ? (
-                  <span className="ev-mark ev-mark-paid" role="img" aria-label="Paywalled: the summary has the gist" title="Paywalled: the summary has the gist">
+                  <span className="ev-mark ev-mark-paid" role="img" aria-label="The original article is behind the publisher's paywall. The KKReckons summary is free." title="The original article is behind the publisher's paywall. The KKReckons summary is free.">
                     <LockIcon />
                   </span>
                 ) : (
-                  <span className="ev-mark ev-mark-free" role="img" aria-label="Free to read" title="Free to read">
+                  <span className="ev-mark ev-mark-free" role="img" aria-label="The original article is free to read." title="The original article is free to read.">
                     <OpenLockIcon />
                   </span>
                 )}
