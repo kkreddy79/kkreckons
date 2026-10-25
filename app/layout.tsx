@@ -6,6 +6,7 @@ import NavLinks from "@/components/NavLinks";
 import ThemeToggle from "@/components/ThemeToggle";
 import Lightbox from "@/components/Lightbox";
 import SearchKey from "@/components/SearchKey";
+import Umami from "@/components/Umami";
 import { PROFILES, SUBSCRIBE_URL } from "@/lib/site";
 import { months, monthSlug } from "@/lib/month";
 import "./globals.css";
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </footer>
         <Lightbox />
         <Analytics />
+        <Umami />
       </body>
     </html>
   );

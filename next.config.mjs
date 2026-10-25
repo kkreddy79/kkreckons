@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 // Content-Security-Policy: everything comes from this site, except the AI Stress Index data the page re-fetches
-// from GitHub (lib/stress.ts STRESS_BASES) and the Vercel Toolbar on preview deployments (vercel.live, Pusher).
+// from GitHub (lib/stress.ts STRESS_BASES), Umami's cloud analytics (components/Umami.tsx) and the Vercel Toolbar on preview deployments (vercel.live, Pusher).
 // Scripts and styles keep 'unsafe-inline': Next.js inlines its page data and the theme script, and per-request
 // nonces would make every page dynamic. The policy still blocks scripts, frames and objects from anywhere else,
 // <base> hijacking and forms posting off-site.
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vercel.live",
+  "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://cloud.umami.is https://vercel.live",
   "style-src 'self' 'unsafe-inline' https://vercel.live",
   "img-src 'self' data: blob: https://vercel.live https://vercel.com",
   "font-src 'self' https://vercel.live https://assets.vercel.com",
-  "connect-src 'self' https://kkreddy79.github.io https://raw.githubusercontent.com https://vercel.live wss://ws-us3.pusher.com",
+  "connect-src 'self' https://kkreddy79.github.io https://raw.githubusercontent.com https://cloud.umami.is https://api-gateway.umami.dev https://vercel.live wss://ws-us3.pusher.com",
   "frame-src 'self' https://vercel.live",
   "frame-ancestors 'none'",
   "object-src 'none'",
