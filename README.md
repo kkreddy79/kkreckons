@@ -13,6 +13,8 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `/` — today's edition, followed by earlier editions
 - `/daily/` — archive: every edition by month, plus search and theme filters across all stories
 - `/daily/<month>-<day>-<year>` — one edition (for example `/daily/october-9-2026`), with previous/next navigation
+- `/daily/<month>-<day>-<year>/cards` — the day in cards: every story's explainer graphic in one grid (built for editions with two or more graphics; linked from the "Today in 30 seconds" card, not in the sitemap)
+- `/daily/<month>-<day>-<year>/<n>` — one story of an edition on its own page
 - `/topics` and `/topics/<topic>` — every story in each archive theme (for example `/topics/ai`), newest first
 - `/about` — about the briefing
 - `/api/subscribe` — adds a reader to the beehiiv list from the on-page email form
