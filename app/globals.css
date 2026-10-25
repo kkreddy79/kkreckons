@@ -273,11 +273,6 @@ button { font: inherit; cursor: pointer; }
 .ev-kicker { display: flex; align-items: center; gap: 16px; margin: 0 0 14px; font: 800 12px var(--sans); letter-spacing: 0.24em; text-transform: uppercase; color: var(--violet); }
 .ev-kicker::before { content: ""; width: 34px; height: 3px; border-radius: 2px; background: var(--ev-orange); flex: none; }
 .ev-slice { margin: 0 0 12px; max-width: 900px; font-size: clamp(30px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; color: var(--ev-ink); }
-.ev-sub { margin: 0; font-size: 14px; font-weight: 700; color: var(--text3); }
-.ev-sub-sep { margin: 0 2px; }
-.ev-nowrap { white-space: nowrap; }
-.ev-catchup { color: var(--teal-text); white-space: nowrap; }
-.ev-catchup:hover { text-decoration: underline; }
 .ev-30s { margin: 0 0 22px; padding: 16px 20px 10px; border-radius: 18px; background: var(--card); border: 1px solid var(--line-2); }
 .ev-30s h2 { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
 .ev-30s ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); column-gap: 24px; }
@@ -381,18 +376,7 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-lock-ic { width: 12px; height: 12px; }
 .ev-free { display: inline-flex; align-items: center; gap: 6px; }
 .ev-free-tag { padding: 1px 7px; border-radius: 999px; background: var(--wa); color: var(--wa-text); font-size: 11px; letter-spacing: 0.03em; }
-.ev-nofree { display: none; font-weight: 600; color: var(--text3); }
 /* "Free sources only": hide paywalled links and say when a story has no free version. */
-:root[data-free="1"] .ev-src a[data-paid], :root[data-free="1"] .ev-reading li[data-paid] { display: none; }
-:root[data-free="1"] .ev-src-paid .ev-nofree { display: inline; }
-.ev-freebar { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-.ev-freebar-n { display: inline-flex; align-items: center; gap: 4px; color: var(--paid-text); }
-.ev-free-switch { display: inline-flex; align-items: center; gap: 7px; min-height: 28px; padding: 2px 10px 2px 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text2); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
-.ev-free-knob { position: relative; width: 26px; height: 16px; border-radius: 999px; background: var(--line-3); transition: background 0.15s; }
-.ev-free-knob::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--card); transition: transform 0.15s; }
-.ev-free-switch[aria-checked="true"] { border-color: var(--wa-line); color: var(--wa-text); }
-.ev-free-switch[aria-checked="true"] .ev-free-knob { background: var(--wa-text); }
-.ev-free-switch[aria-checked="true"] .ev-free-knob::after { transform: translateX(10px); }
 .ev-qs-btn { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--lilac-line-b); background: var(--lilac-b); color: var(--violet); font: 800 12.5px var(--sans); cursor: pointer; }
 .ev-qs-btn:hover { background: var(--lilac-2); }
 .ev-qs-btn .ev-ic-sm { color: var(--violet); }
@@ -670,7 +654,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .tm figcaption span { font-weight: 400; }
 .rf-steps { display: grid; gap: 10px; margin: 0; padding-left: 22px; font-size: 16px; line-height: 1.55; color: var(--text2); }
 .rf-steps b { color: var(--ink2); }
-.ev-30s li.is-read a { opacity: 0.7; }
+.ev-30s li.is-read a > span:not(.ev-mark) { opacity: 0.7; }
 .ev-30s li.is-read .ev-30s-n::after { content: " ✓"; color: var(--wa-text); }
 .ev-missed { margin: 14px 0 0; padding: 10px 14px; border-radius: 14px; background: var(--wa); border: 1px solid var(--wa-line); color: var(--ink2); font-size: 14.5px; font-weight: 600; }
 .ev-missed a { color: var(--wa-text); font-weight: 800; }
@@ -851,12 +835,16 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 @media (max-width: 700px) {
   .cards-grid { grid-template-columns: 1fr; gap: 18px; }
 }
-.ev-free-note { flex-basis: 100%; font-size: 13px; font-weight: 600; color: var(--wa-text); }
-.ev-free-note:empty { position: absolute; width: 1px; height: 1px; overflow: hidden; } /* kept in the tree so the live region announces */
 .ev-jump a.ev-jump-cards { background: var(--ink2); border-color: var(--ink2); color: var(--cream); }
 .ev-jump a.ev-jump-cards:hover { background: var(--accent); border-color: var(--accent); }
-/* "Free sources only" on: tag each story in "Today in 30 seconds" so the switch shows its effect at the top. */
-.ev-30s-free, .ev-30s-paid { display: none; }
-:root[data-free="1"] .ev-30s li[data-src="freed"] .ev-30s-free { display: inline-block; background: var(--wa); border-color: var(--wa-line); color: var(--wa-text); }
-:root[data-free="1"] .ev-30s li[data-src="paid"] .ev-30s-paid { display: inline-flex; align-items: center; gap: 3px; background: var(--paid); border-color: var(--warm-line); color: var(--paid-text); }
-:root[data-free="1"] .ev-30s li[data-src="paid"] a { color: var(--text3); }
+.ev-mark { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; border: 1px solid; }
+.ev-mark svg { width: 12px; height: 12px; }
+.ev-mark-free { background: var(--wa); border-color: var(--wa-line); color: var(--wa-text); }
+.ev-mark-paid { background: var(--paid); border-color: var(--warm-line); color: var(--paid-text); }
+.ev-30s a .ev-mark { margin-left: auto; align-self: center; }
+.ev-mark-sm { width: 18px; height: 18px; }
+.ev-mark-sm svg { width: 10px; height: 10px; }
+.ev-30s-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px; margin: 0 0 6px; }
+.ev-30s-head h2 { margin: 0; }
+.ev-30s-key { display: flex; gap: 14px; margin: 0; font-size: 12px; font-weight: 700; color: var(--text3); }
+.ev-30s-key > span { display: inline-flex; align-items: center; gap: 6px; }
