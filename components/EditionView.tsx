@@ -336,7 +336,6 @@ export default function EditionView({
                 <span className="ev-30s-n">{String(i + 1).padStart(2, "0")}</span>
                 <span>
                   {s.emailHead || s.title}
-                  {s.stressIndex && <em className="ev-30s-tag">Index</em>}
                 </span>
                 {storyPaid(s) ? (
                   <span className="ev-mark ev-mark-paid" role="img" aria-label="The original article is behind the publisher's paywall. The KKReckons summary is free." title="The original article is behind the publisher's paywall. The KKReckons summary is free.">
