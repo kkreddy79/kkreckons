@@ -855,3 +855,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .ev-free-note:empty { position: absolute; width: 1px; height: 1px; overflow: hidden; } /* kept in the tree so the live region announces */
 .ev-jump a.ev-jump-cards { background: var(--ink2); border-color: var(--ink2); color: var(--cream); }
 .ev-jump a.ev-jump-cards:hover { background: var(--accent); border-color: var(--accent); }
+/* "Free sources only" on: tag each story in "Today in 30 seconds" so the switch shows its effect at the top. */
+.ev-30s-free, .ev-30s-paid { display: none; }
+:root[data-free="1"] .ev-30s li[data-src="freed"] .ev-30s-free { display: inline-block; background: var(--wa); border-color: var(--wa-line); color: var(--wa-text); }
+:root[data-free="1"] .ev-30s li[data-src="paid"] .ev-30s-paid { display: inline-flex; align-items: center; gap: 3px; background: var(--paid); border-color: var(--warm-line); color: var(--paid-text); }
+:root[data-free="1"] .ev-30s li[data-src="paid"] a { color: var(--text3); }

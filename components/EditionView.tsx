@@ -4,7 +4,7 @@ import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, sh
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
-import { ScalesIcon, SunIcon } from "@/components/AboutIcons";
+import { LockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { PaidMark, sourceLinks, storyPaid } from "@/components/StorySource";
 import FreeToggle from "@/components/FreeToggle";
 import { Glossed } from "@/components/Glossary";
@@ -320,13 +320,18 @@ export default function EditionView({
         {e.sections
           .flatMap((sec) => sec.stories)
           .map((s, i) => (
-            <li key={s.title}>
+            <li key={s.title} data-src={storyPaid(s) ? "paid" : sourceLinks(s).some((l) => l.paid) ? "freed" : undefined}>
               <a href={`#story-${i + 1}`}>
                 <span className="ev-30s-n">{String(i + 1).padStart(2, "0")}</span>
                 <span>
                   {s.category && <small>{s.category}</small>}
                   {s.emailHead || s.title}
                   {s.stressIndex && <em className="ev-30s-tag">Index</em>}
+                  {/* Shown while "Free sources only" is on (CSS keyed on html[data-free]). */}
+                  <em className="ev-30s-tag ev-30s-free">Free link</em>
+                  <em className="ev-30s-tag ev-30s-paid">
+                    <LockIcon className="ev-lock-ic" /> Summary only
+                  </em>
                 </span>
               </a>
             </li>
