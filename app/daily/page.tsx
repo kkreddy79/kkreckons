@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import ArchiveBrowser from "@/components/ArchiveBrowser";
 import Banner from "@/components/Banner";
+import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
-import { editions, totalStories } from "@/lib/editions";
+import { editions, longDate, slugFor, totalStories } from "@/lib/editions";
+import { SITE_URL } from "@/lib/site";
 import type { ReadingLink, StoryLinks } from "@/components/ArchiveBrowser";
 
 /** Each story's second source link, keyed by "date|title" (it names a publisher, so search and filters need it).
@@ -33,6 +35,26 @@ export default function Archive() {
   const reading = readingLinks();
   return (
     <main className="cu">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Catch up: every daily briefing · KKReckons",
+          description: metadata.description,
+          url: `${SITE_URL}/daily`,
+          publisher: PUBLISHER,
+          mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: editions.length,
+            itemListElement: editions.map((e, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: longDate(e.date),
+              url: `${SITE_URL}/daily/${slugFor(e.date)}`,
+            })),
+          },
+        }}
+      />
       <Banner />
       <div className="cu-wrap">
         <section className="cu-hero" aria-labelledby="cu-title">
