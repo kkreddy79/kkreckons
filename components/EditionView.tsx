@@ -5,8 +5,7 @@ import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_
 import type { Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource, { PaidMark, sourceLinks, storyPaid } from "@/components/StorySource";
-import FreeToggle from "@/components/FreeToggle";
+import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
 import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
@@ -139,8 +138,6 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const topic = themesOf(s)[0];
   const seen = new Set<string>();
-  const links = sourceLinks(s);
-  const freeHref = links[0]?.paid ? links.find((l) => !l.paid)?.href : undefined;
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title}>
       {s.imageW ? (
@@ -176,7 +173,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
       </div>
       <H>
         {s.url ? (
-          <a href={s.url} target="_blank" rel="noreferrer" data-free-href={freeHref}>
+          <a href={s.url} target="_blank" rel="noreferrer">
             {s.title}
             <span className="ev-ext" aria-hidden>
               {" "}↗
@@ -293,7 +290,7 @@ export default function EditionView({
   headingLevel?: "h1" | "h2";
   /** Off where the page already shows the date (edition pages have it in the breadcrumb). */
   showDate?: boolean;
-  /** Adds a "Catch up on past editions" link to the meta line (Home, where new visitors land). */
+  /** Home: lets the reader's browser count the editions they have missed ("Welcome back" note). */
   showCatchUp?: boolean;
   /** Earlier or later stories naming the same companies, people or policies (see lib/related.ts). */
   related?: Related[];
@@ -309,18 +306,32 @@ export default function EditionView({
   const count = e.sections.reduce((n, s) => n + s.stories.length, 0);
   // Story graphics; with two or more the edition has a "day in cards" page (app/daily/[slug]/cards).
   const cards = e.sections.flatMap((sec) => sec.stories).filter((s) => s.image).length;
-  const paywalled = e.sections.flatMap((sec) => sec.stories).filter((s) => sourceLinks(s).some((l) => l.paid)).length;
-  // Paywalled stories with no free source at all: with "Free sources only" on they keep just the summary.
-  const noFree = e.sections.flatMap((sec) => sec.stories).filter(storyPaid).length;
   // "Today in 30 seconds", right under the headline.
   const digest = count > 2 && (
     <nav className="ev-30s" aria-labelledby={`t30-${e.date}`}>
-      <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
+      <div className="ev-30s-head">
+        <h2 id={`t30-${e.date}`}>Today in 30 seconds</h2>
+        {/* Key to the icon at the end of each row; the rows carry their own labels for screen readers. */}
+        <p className="ev-30s-key" aria-hidden>
+          <span>
+            <span className="ev-mark ev-mark-free ev-mark-sm">
+              <OpenLockIcon />
+            </span>
+            Free to read
+          </span>
+          <span>
+            <span className="ev-mark ev-mark-paid ev-mark-sm">
+              <LockIcon />
+            </span>
+            Paywalled
+          </span>
+        </p>
+      </div>
       <ol>
         {e.sections
           .flatMap((sec) => sec.stories)
           .map((s, i) => (
-            <li key={s.title} data-src={storyPaid(s) ? "paid" : sourceLinks(s).some((l) => l.paid) ? "freed" : undefined}>
+            <li key={s.title}>
               <a href={`#story-${i + 1}`}>
                 <span className="ev-30s-n">{String(i + 1).padStart(2, "0")}</span>
                 <span>
@@ -328,13 +339,15 @@ export default function EditionView({
                   {s.emailHead || s.title}
                   {s.stressIndex && <em className="ev-30s-tag">Index</em>}
                 </span>
-                {/* Shown while "Free sources only" is on (CSS keyed on html[data-free]); explained by the key under the switch. */}
-                <span className="ev-mark ev-mark-free" role="img" aria-label="Free link" title="Free link">
-                  <OpenLockIcon />
-                </span>
-                <span className="ev-mark ev-mark-paid" role="img" aria-label="Summary only, no free source" title="Summary only, no free source">
-                  <LockIcon />
-                </span>
+                {storyPaid(s) ? (
+                  <span className="ev-mark ev-mark-paid" role="img" aria-label="Paywalled: the summary has the gist" title="Paywalled: the summary has the gist">
+                    <LockIcon />
+                  </span>
+                ) : (
+                  <span className="ev-mark ev-mark-free" role="img" aria-label="Free to read" title="Free to read">
+                    <OpenLockIcon />
+                  </span>
+                )}
               </a>
             </li>
           ))}
@@ -349,31 +362,6 @@ export default function EditionView({
       <section className="ev-head">
         {showDate && <p className="ev-kicker">{longDate(e.date)}</p>}
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
-        <p className="ev-sub">
-          <span className="ev-nowrap">
-            {count} stories · {e.readingMinutes} min read
-          </span>
-          {showCatchUp && (
-            <>
-              {" "}
-              <span className="ev-sub-sep" aria-hidden>
-                ·
-              </span>{" "}
-              <Link href="/daily/" prefetch={false} className="ev-catchup">
-                Catch up on past editions →
-              </Link>
-            </>
-          )}
-          {paywalled > 0 && (
-            <>
-              {" "}
-              <span className="ev-sub-sep" aria-hidden>
-                ·
-              </span>{" "}
-              <FreeToggle paid={paywalled} noFree={noFree} />
-            </>
-          )}
-        </p>
         {(e.sections.length > 1 || cards >= 2) && (
           <nav className="ev-jump" id={`jump-${e.date}`} aria-label="Sections">
             {cards >= 2 && (
@@ -487,7 +475,7 @@ export default function EditionView({
             <h2 id="fr-t">Further reading</h2>
             <ul>
               {e.reading.map((r) => (
-                <li key={r.url + r.title} data-paid={isPaywalled(r.url) ? "" : undefined}>
+                <li key={r.url + r.title}>
                   <a href={r.url} target="_blank" rel="noreferrer">
                     {r.title} <span aria-hidden>↗</span>
                   </a>

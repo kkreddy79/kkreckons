@@ -81,13 +81,12 @@ export default function StorySource({
               <span className="ev-free-tag">Free version</span> {l.name} ↗
             </a>
           ) : (
-            <a key={l.href} href={l.href} target="_blank" rel="noreferrer" title={hover} data-paid={l.paid ? "" : undefined}>
+            <a key={l.href} href={l.href} target="_blank" rel="noreferrer" title={hover}>
               {l.name}
               {l.paid && <PaidMark />} ↗
             </a>
           ),
         )}
-        {paid && <span className="ev-nofree">Paywalled source, no free version yet. The summary above has the gist.</span>}
         {summary && (
           <button type="button" className="ev-qs-btn" popoverTarget={id}>
             <InfoIcon className="ev-ic-sm" /> Quick summary
