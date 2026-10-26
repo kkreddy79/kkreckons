@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { getContent } from "@/lib/content";
+import { watchList } from "@/lib/watch";
 import { editions, slugFor } from "@/lib/editions";
 import { pickWeek, teaserFrom, weekOf } from "@/lib/weekly-picks.mjs";
 
@@ -60,4 +61,23 @@ export function stressWeek(days: string[]) {
   const first = readings[0];
   const last = readings[readings.length - 1];
   return { from: readings.length > 1 ? first.score : null, fromDate: first.asOf, to: last.score, band: last.band, asOf: last.asOf };
+}
+
+/** Each market number at the end of the week, with the close it moved from: the first edition's saved close
+ *  (or, with only one edition, that edition's own week-earlier close). Null when no edition has a strip. */
+export function marketsWeek(days: string[]) {
+  const snaps = days.map((d) => getContent(d).markets).filter((m): m is NonNullable<typeof m> => Boolean(m?.assets.length));
+  if (!snaps.length) return null;
+  const first = snaps[0];
+  const last = snaps[snaps.length - 1];
+  const asOf = last.assets.map((a) => a.asOf).sort().at(-1)!;
+  return {
+    asOf,
+    assets: last.assets.map((a) => ({ ...a, week: snaps.length > 1 ? first.assets.find((f) => f.id === a.id)?.close : a.week })),
+  };
+}
+
+/** The "What would change our mind" signs, flagging any whose mark changed during the week (a first mark is not a change). */
+export function watchWeek(start: string, end: string) {
+  return watchList().map((t) => ({ ...t, conditions: t.conditions.map((c) => ({ ...c, changed: c.history.length > 0 && c.since >= start && c.since <= end })) }));
 }

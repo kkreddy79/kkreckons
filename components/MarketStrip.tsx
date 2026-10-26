@@ -2,10 +2,10 @@ import type { EditionContent, MarketAsset } from "@/lib/content";
 import { shortDate } from "@/lib/editions";
 
 // Names short enough for a three-column phone layout (the full name shows as a tooltip).
-const SHORT: Record<string, string> = { us10y: "US 10-yr yield" };
+export const SHORT: Record<string, string> = { us10y: "US 10-yr yield" };
 
 /** "24,612", "5.00%", "$103.27", "₹88.45" */
-function value(a: MarketAsset) {
+export function marketValue(a: MarketAsset) {
   const n = (v: number, d: number) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
   if (a.unit === "yield") return `${n(a.close, 2)}%`;
   if (a.unit === "fx") return `₹${n(a.close, 2)}`;
@@ -14,7 +14,7 @@ function value(a: MarketAsset) {
 }
 
 /** A move from `from` to the close: basis points for a yield, per cent otherwise. Null when there's nothing to compare. */
-function move(a: MarketAsset, from: number | undefined) {
+export function marketMove(a: MarketAsset, from: number | undefined) {
   if (from == null || !from) return null;
   const d = a.unit === "yield" ? Math.round((a.close - from) * 100) : ((a.close - from) / from) * 100;
   const text = a.unit === "yield" ? `${Math.abs(d)} bp` : `${Math.abs(d).toFixed(Math.abs(d) < 10 ? 2 : 1)}%`;
@@ -48,14 +48,14 @@ export default function MarketStrip({ m }: { m: NonNullable<EditionContent["mark
       </h2>
       <ul className="mk-list">
         {m.assets.map((a) => {
-          const day = move(a, a.prev);
-          const week = move(a, a.week);
+          const day = marketMove(a, a.prev);
+          const week = marketMove(a, a.week);
           return (
             <li key={a.id}>
               <span className="mk-name" title={a.name}>
                 {SHORT[a.id] ?? a.name}
               </span>
-              <b className="mk-val">{value(a)}</b>
+              <b className="mk-val">{marketValue(a)}</b>
               {day && (
                 <span className={`mk-chg mk-${day.dir}`}>
                   <span aria-hidden>{day.dir === "up" ? "▲" : day.dir === "down" ? "▼" : "■"} </span>
