@@ -700,6 +700,8 @@ function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | nul
       </section>
       {otherNotes.map((n) => <p key={n} className={s.note}><b>Data note:</b> {n}</p>)}
 
+      {watch.length > 0 && <WatchList watch={watch} />}
+
       <h2 className={s.h2}>Where is the pressure?</h2>
       <section className={s.pillars}>
         {PILLAR_KEYS.map((p) => {
@@ -764,8 +766,6 @@ function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | nul
           <p className={s.small}>Each alert needs the index and specific gauges to stay high for 5 trading days in a row. The four alerts are independent tripwires, not a staircase: Systemic Dislocation can fire before Broad Correction, and Financing Strain can be skipped. Stress Watch and Financing Strain are the early warnings; the other two confirm damage already under way.</p>
         </div>
       </details>
-
-      {watch.length > 0 && <WatchList watch={watch} />}
 
       <section className={s.meaning} id="meaning" aria-labelledby="meaning-title">
         <h2 id="meaning-title">What this score means</h2>
