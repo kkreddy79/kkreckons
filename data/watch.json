@@ -1,0 +1,54 @@
+{
+  "theses": [
+    {
+      "id": "ai-build-out",
+      "thesis": "The AI build-out is breaking",
+      "intro": "Four signs would show the money behind AI data centres running short. Each is marked from KKReckons stories, and changes only when the evidence does.",
+      "conditions": [
+        {
+          "id": "funding",
+          "label": "Funding on harder terms",
+          "test": "An AI-infrastructure borrower can't refinance, or pays sharply more to borrow.",
+          "state": "partly",
+          "since": "2026-10-21",
+          "evidence": "Yields on CoreWeave's 2031 notes passed 16% and its five-year default insurance hit a record 1,194.5 basis points on 15 October. No one has forecast a default; it reports results in November.",
+          "links": [
+            { "href": "/daily/october-21-2026/2", "date": "2026-10-21" },
+            { "href": "/daily/october-25-2026/1", "date": "2026-10-25" }
+          ],
+          "history": []
+        },
+        {
+          "id": "capex",
+          "label": "A hyperscaler cuts capex",
+          "test": "Alphabet, Microsoft, Amazon or Meta lowers its AI spending plans.",
+          "state": "not-met",
+          "since": "2026-10-26",
+          "evidence": "None has lowered its spending plans. Alphabet, Microsoft and Amazon report results this week.",
+          "links": [],
+          "history": []
+        },
+        {
+          "id": "compute-prices",
+          "label": "Chip and GPU rental prices fall",
+          "test": "The price of renting AI chips, or of the memory they use, turns down.",
+          "state": "not-met",
+          "since": "2026-10-22",
+          "evidence": "No fall reported. CME plans futures on H100 and B200 rental prices, which would give this a public price to watch.",
+          "links": [{ "href": "/daily/october-22-2026/4", "date": "2026-10-22" }],
+          "history": []
+        },
+        {
+          "id": "bank-offload",
+          "label": "Banks can't offload AI loans",
+          "test": "Lenders are left holding data-centre debt they meant to sell on.",
+          "state": "not-met",
+          "since": "2026-10-12",
+          "evidence": "Banks are still trying: a group including JPMorgan and MUFG has spent over six months placing $38bn of Oracle-leased project debt, and some lenders will sell at a discount.",
+          "links": [{ "href": "/daily/october-12-2026/1", "date": "2026-10-12" }],
+          "history": []
+        }
+      ]
+    }
+  ]
+}

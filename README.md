@@ -31,6 +31,14 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `data/weekly/YYYY-MM-DD.json` — the written parts of a weekly issue (`oneMinute`, `history`, `andFinally`), dated the
   week's last day. With one, `/week` and the Friday email become a numbered issue (the week in one minute, the best
   stories, the AI Stress Index move, this week in history, and finally); without one, `/week` is the plain list.
+- `data/markets/YYYY-MM-DD.json` — the edition's market strip (Nifty 50, S&P 500, US 10-year yield, Brent, gold, USD/INR at
+  the last close before its date), saved once by `npm run editions` from the AI Stress Index job's `markets.json`. Editions
+  from 27 Oct 2026 have one; commit it with the edition. If the data was unreachable the edition shows no strip.
+- `data/watch.json` — "What would change our mind", hand-edited: the signs that would show a thesis breaking ("The AI
+  build-out is breaking"), each marked `met`, `partly` or `not-met` with the date it began, one evidence line and the
+  stories behind it. Shown on `/ai-stress-index#watching`, tallied on Home's Stress Index card. To change a mark, move the
+  old `state`/`since` to the front of `history`, then set the new `state`, `since`, `evidence` and `links`;
+  `npm run check` validates it.
 
 Every edition is rendered in the same KKReckons design from its content JSON, whatever the original newsletter looked like.
 

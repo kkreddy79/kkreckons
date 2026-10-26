@@ -198,6 +198,24 @@ if (si || related.length) {
   );
 }
 
+// One line of market numbers saved with the edition (components/MarketStrip.tsx shows the same on the site).
+if (ed.markets?.assets?.length) {
+  const fmt = (v, d) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const val = (m) => (m.unit === "yield" ? `${fmt(m.close, 2)}%` : m.unit === "fx" ? `₹${fmt(m.close, 2)}` : `${m.unit === "usd" ? "$" : ""}${fmt(m.close, m.close >= 1000 ? 0 : 2)}`);
+  const chg = (m) => {
+    if (!m.prev) return "";
+    const d = m.unit === "yield" ? Math.round((m.close - m.prev) * 100) : ((m.close - m.prev) / m.prev) * 100;
+    return ` ${d > 0 ? "&#9650;" : d < 0 ? "&#9660;" : ""}${m.unit === "yield" ? `${Math.abs(d)}bp` : `${Math.abs(d).toFixed(1)}%`}`;
+  };
+  const asOf = ed.markets.assets.map((m) => m.asOf).sort().at(-1);
+  rows.push(
+    `<tr><td colspan="2" style="padding:6px 0 0;font-family:${SANS};font-size:12px;line-height:1.45;color:${E.muted};">` +
+      `<b>Markets</b> (${+asOf.slice(8)} ${new Date(`${asOf}T00:00:00Z`).toLocaleString("en-GB", { month: "short", timeZone: "UTC" })} close): ` +
+      ed.markets.assets.map((m) => `${esc(m.name)} ${val(m)}${chg(m)}`).join(" · ") +
+      `</td></tr>`,
+  );
+}
+
 // 3. By the numbers.
 const nums = (ed.callouts || []).slice(0, 2);
 if (nums.length) {

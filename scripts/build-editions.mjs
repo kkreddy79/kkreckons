@@ -56,6 +56,36 @@ async function stressSnapshot(date) {
   if (!last) return null;
   return { score: last.score, band: stressBand(last.score), asOf: last.date, ...(last.date < STRESS_LIVE_SINCE ? { backCalculated: true } : {}) };
 }
+// The market strip (components/MarketStrip.tsx): six numbers from the index's daily job (docs/markets.json),
+// cut at the last close before the edition's date and saved once to data/markets/<date>.json, so every rebuild
+// shows the same dated numbers. Editions before MARKETS_FROM have none.
+const MARKETS_SOURCES = STRESS_SOURCES.map((u) => u.replace(/data\.json$/, "markets.json"));
+const MARKETS_FROM = "2026-10-27";
+const marketsDir = path.join(root, "data", "markets");
+let marketsData;
+async function marketsSnapshot(date) {
+  for (const url of marketsData ? [] : MARKETS_SOURCES) {
+    try {
+      const r = await fetch(`${url}?t=${Date.now()}`, { cache: "no-store" });
+      if (r.ok) {
+        marketsData = await r.json();
+        break;
+      }
+    } catch {}
+  }
+  const day = (d) => new Date(`${d}T00:00:00Z`).getTime();
+  const assets = (marketsData?.assets || []).flatMap((a) => {
+    // Yahoo has quoted the 10-year yield both as 4.25 and as 42.5; show it in per cent either way.
+    const raw = (a.closes || []).filter(([d, v]) => d < date && Number.isFinite(v));
+    const k = a.unit === "yield" && raw.at(-1)?.[1] > 20 ? 0.1 : 1;
+    const closes = raw.map(([d, v]) => [d, +(v * k).toFixed(4)]);
+    if (closes.length < 2) return [];
+    const [asOf, close] = closes.at(-1);
+    const week = closes.filter(([d]) => day(d) <= day(asOf) - 7 * 864e5).at(-1);
+    return [{ id: a.id, name: a.name, unit: a.unit, close, asOf, prev: closes.at(-2)[1], ...(week ? { week: week[1] } : {}), spark: closes.slice(-30).map(([, v]) => v) }];
+  });
+  return assets.length ? { source: marketsData.source || "Yahoo Finance daily closes", assets } : null;
+}
 fs.mkdirSync(figsDir, { recursive: true });
 fs.mkdirSync(contentDir, { recursive: true });
 
@@ -225,6 +255,9 @@ function fromEmbedded(date, d) {
       ...(clean(s.cite) ? { cite: clean(s.cite) } : {}),
       // Editorial choice: link this story to the AI Stress Index (site card + email line).
       ...(s.stressindex === true || /^(yes|true)$/i.test(String(s.stressindex ?? "")) ? { stressIndex: true } : {}),
+      // Editorial link to the earlier story this one updates ("/daily/<month>-<day>-<year>/<n>"), and what changed.
+      ...(clean(s.follows) ? { follows: clean(s.follows) } : {}),
+      ...(clean(s.update) ? { update: clean(s.update) } : {}),
     };
   };
   const sections = [
@@ -396,6 +429,16 @@ for (const file of files) {
       console.log(`${date}: AI Stress Index reading saved (${snap.score}/100, ${snap.band}, as of ${snap.asOf}${snap.backCalculated ? ", back-calculated" : ""})`);
     } else console.log(`${date}: AI Stress Index data unreachable; the edition shows the link without a number`);
   }
+  const marketsFile = path.join(marketsDir, `${date}.json`);
+  if (date >= MARKETS_FROM && !fs.existsSync(marketsFile)) {
+    const snap = await marketsSnapshot(date);
+    if (snap) {
+      fs.mkdirSync(marketsDir, { recursive: true });
+      fs.writeFileSync(marketsFile, JSON.stringify(snap, null, 1) + "\n");
+      console.log(`${date}: market strip saved (${snap.assets.map((a) => `${a.name} ${a.close}`).join(", ")})`);
+    } else console.log(`${date}: market data unreachable; the edition shows no market strip`);
+  }
+  const markets = fs.existsSync(marketsFile) ? JSON.parse(fs.readFileSync(marketsFile, "utf8")) : null;
   // Cover image (see saveCover); `"cover": ""` in edition-meta hides it.
   const cover = m.cover === "" ? "" : content.coverData ? await saveCover(date, content.coverData) : "";
   const stress = meta[date]?.stressIndex;
@@ -411,6 +454,7 @@ for (const file of files) {
     ...(content.takeaway ? { takeaway: content.takeaway } : {}),
     ...(cover ? { cover, coverAlt: content.coverAlt || content.slice } : {}),
     ...(stress && showStress ? { stressIndex: stress } : {}),
+    ...(markets ? { markets } : {}),
   };
   fs.writeFileSync(path.join(contentDir, `${date}.json`), JSON.stringify(record, null, 2) + "\n");
 

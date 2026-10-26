@@ -43,7 +43,8 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    `npm run -s publish-edition -- <YYYY-MM-DD>` (add `--allow <date>` only for a correction he asked for).
    It rebuilds the site data, stores the new newsletter without its images (they're in `public/figs/` by
    then; `scripts/strip-newsletter-images.mjs`), runs the automatic checks, writes the email thumbnails
-   (`public/email/<YYYY-MM-DD>-<n>.png`, commit them with the edition) and the email JSON
+   (`public/email/<YYYY-MM-DD>-<n>.png`, commit them with the edition), the market strip
+   (`data/markets/<YYYY-MM-DD>.json`, commit it too; if the build says market data was unreachable, mention it) and the email JSON
    (`.publish/beehiiv-<YYYY-MM-DD>.json`, used in section 4), builds the site and runs QC, printing only
    a summary or the failing step's output. Only the new date's files should change besides
    `data/editions.json`; investigate any other diffs. Ignore "Removed unused image public/figs/<other date>-…"
@@ -57,9 +58,13 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    - a source link, at least two summary points and a "why it matters";
    - an article not already used in this edition or **any earlier edition** (same link, including
      further reading). Similar-headline warnings (⚠) must be looked at and mentioned in your message;
+     when the new story updates the earlier one, suggest the `follows` (and an `update` line) the warning prints,
+     for him to confirm; never add it yourself;
    - a summary of at most 120 words of points, so it doesn't replace reading the original;
    - no quoted passage over 25 words;
    - for any image, a declared origin (`figcredit`) and alt text (`figalt`).
+   - **"What would change our mind"** (`data/watch.json`): if a new story bears on one of the signs there, say so
+     in your message and suggest the new mark and evidence line. Don't change `data/watch.json` unless he agrees.
 
    Problems of these kinds are **editorial**: don't rewrite his text, drop stories or pick a replacement
    article yourself. Report each one with a suggested fix and let him decide.

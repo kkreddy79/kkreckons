@@ -34,6 +34,10 @@ export type FullStory = {
   cite?: string;
   /** Editorial choice: show a link to the AI Stress Index under this story. */
   stressIndex?: boolean;
+  /** The earlier story this one updates, as its page path ("/daily/october-21-2026/3"). Both stories link to each other. */
+  follows?: string;
+  /** One line on what changed since that earlier story, shown on the earlier story's "What happened next". */
+  update?: string;
 };
 
 export type EditionContent = {
@@ -46,6 +50,22 @@ export type EditionContent = {
   reading: { title: string; url: string; note: string }[];
   /** AI Stress Index reading taken when the edition was published (only when a story links to it). */
   stressIndex?: { score: number; band: string; asOf: string; backCalculated?: boolean };
+  /** Six market numbers at the last close before the edition (data/markets/<date>.json; from 27 Oct 2026). */
+  markets?: { source: string; assets: MarketAsset[] };
+};
+
+/** One number in the market strip: `prev` is the close before `asOf`, `week` the last close at least 7 days earlier. */
+export type MarketAsset = {
+  id: string;
+  name: string;
+  /** "index" points, "yield" per cent, "usd" dollars, "fx" rupees per dollar. */
+  unit: "index" | "yield" | "usd" | "fx";
+  close: number;
+  asOf: string;
+  prev: number;
+  week?: number;
+  /** Up to 30 closes, oldest first. */
+  spark: number[];
 };
 
 

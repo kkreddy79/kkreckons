@@ -2,8 +2,9 @@ import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
-import type { Related } from "@/lib/related";
+import { followLinks, type Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
+import { watchSummary } from "@/lib/watch";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
@@ -11,6 +12,7 @@ import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
 import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
+import MarketStrip from "@/components/MarketStrip";
 import PrintImages from "@/components/PrintImages";
 import SectionBar from "@/components/SectionBar";
 
@@ -118,12 +120,24 @@ function StressCard({ si, related, prevScore }: { si?: Reading; related: number[
             </>
           )}
         </p>
+        {live && <WatchLine />}
       </div>
       {live && live.trend.length > 1 && <Trend points={live.trend} />}
       <Link className="ev-sx-cta" href="/ai-stress-index" prefetch={false}>
         Gauges →
       </Link>
     </section>
+  );
+}
+
+/** Home only (today's state, not a dated reading): "Watching 4 signs the AI build-out is breaking · 1 partly met". */
+function WatchLine() {
+  const w = watchSummary();
+  const marked = [w.met && `${w.met} met`, w.partly && `${w.partly} partly met`].filter(Boolean).join(", ") || "none met";
+  return (
+    <Link className="ev-sx-watch" href="/ai-stress-index#watching" prefetch={false}>
+      Watching {w.total} signs {w.thesis.charAt(0).toLowerCase() + w.thesis.slice(1)}: <b>{marked}</b> →
+    </Link>
   );
 }
 
@@ -138,6 +152,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const topic = themesOf(s)[0];
   const seen = new Set<string>();
+  const follow = followLinks(date, n, s);
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title}>
       {s.imageW ? (
@@ -184,6 +199,11 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
           s.title
         )}
       </H>
+      {follow.before && (
+        <p className="ev-follow">
+          Follow-up to <Link href={follow.before.href}>{follow.before.title}</Link> <small>· {shortDate(follow.before.date)}</small>
+        </p>
+      )}
 
       {s.image && (
         <figure className="ev-fig">
@@ -254,6 +274,20 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
             </span>
           ))}
         </p>
+      )}
+
+      {follow.after.length > 0 && (
+        <div className="ev-next">
+          <b>What happened next</b>
+          <ul>
+            {follow.after.map((f) => (
+              <li key={f.href}>
+                <Link href={f.href}>{f.title}</Link> <small>· {shortDate(f.date)}</small>
+                {f.update && <span>{f.update}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       <StorySource s={s} id={id} summary={false} />
@@ -390,6 +424,7 @@ export default function EditionView({
       {digest}
 
       {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} />}
+      {e.markets && e.markets.assets.length > 0 && <MarketStrip m={e.markets} />}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">

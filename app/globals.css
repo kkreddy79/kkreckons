@@ -284,6 +284,25 @@ a.sr-date { padding-block: 5px; margin-block: -5px; }
 .ev-30s-n { flex: none; font: 800 13px var(--sans); color: var(--accent); font-variant-numeric: tabular-nums; }
 .ev-story { scroll-margin-top: 120px; }
 
+/* Market strip (components/MarketStrip.tsx): six numbers saved with the edition. Up/down carry an arrow and
+   words for screen readers, so colour is never the only signal. */
+.mk { margin: 4px 0 22px; padding: 14px 16px 10px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); --mk-up: #15803d; --mk-down: #b91c1c; }
+:root[data-theme="dark"] .mk { --mk-up: #4ade80; --mk-down: #f87171; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mk { --mk-up: #4ade80; --mk-down: #f87171; } }
+.ev .mk-head { margin: 0 0 10px; font: 800 12px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--text3); }
+.ev .mk-head small { font-weight: 600; letter-spacing: 0; text-transform: none; font-size: 12.5px; }
+.mk-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px 14px; }
+.mk-list li { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.mk-name { font-size: 12.5px; font-weight: 700; color: var(--text3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-val { font: 800 18px var(--sans); color: var(--ink); font-variant-numeric: tabular-nums; }
+.mk-chg { font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.mk-up { color: var(--mk-up); }
+.mk-down { color: var(--mk-down); }
+.mk-flat { color: var(--text3); }
+.mk-week, .mk-stale { font-size: 12px; color: var(--text3); font-variant-numeric: tabular-nums; }
+.mk-spark { width: 100%; height: 22px; margin-top: 4px; color: var(--text3); }
+.mk-src { margin: 8px 0 0; font-size: 12px; color: var(--text3); }
+@media (max-width: 760px) { .mk-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .ev-callouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px; }
 .ev-call { display: grid; gap: 6px; padding: 22px 24px; border-radius: 18px; color: #fff; box-shadow: 0 14px 34px rgba(36, 18, 63, 0.16); transition: transform 0.15s; }
 a.ev-call:hover { transform: translateY(-2px); }
@@ -337,6 +356,10 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-sx-note a { display: inline-block; margin: -3px 0 -3px 4px; padding: 4px 7px; border-radius: 6px; background: rgba(255, 255, 255, 0.14); color: #fff; font-weight: 800; font-variant-numeric: tabular-nums; }
 .ev-sx-note a:hover { background: rgba(255, 255, 255, 0.24); }
 .ev-sx-spark { flex: 0 1 140px; width: 140px; min-width: 70px; height: 34px; opacity: 0.9; }
+/* Home only: the "What would change our mind" tracker's tally (components/EditionView.tsx WatchLine). */
+.ev-sx-watch { display: inline-block; margin-top: 6px; padding-block: 3px; font-size: 13.5px; color: rgba(255, 255, 255, 0.88); text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.4); text-underline-offset: 3px; }
+.ev-sx-watch b { color: #FBBF24; }
+.ev-sx-watch:hover { color: #fff; }
 .ev-sx-cta { flex: none; padding: 8px 14px; border-radius: 999px; background: #fff; color: #24123f; font-size: 13.5px; font-weight: 800; white-space: nowrap; }
 .ev-sx-cta:hover { background: #f3ecff; }
 .ev-other { background: var(--other); }
@@ -346,6 +369,16 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-ic { width: 20px; height: 20px; margin-top: 1px; }
 .ev-also { margin: 4px 0 10px; font-size: 14px; color: var(--text3); }
 .ev-also a { color: var(--violet); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+/* Editorial follow-ups (`follows`): under the headline "Follow-up to …", and on the earlier story "What happened next". */
+.ev-follow { margin: -2px 0 12px; font-size: 14px; color: var(--text3); }
+.ev-follow a, .ev-next a { color: var(--violet); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.ev-follow small, .ev-next small { font-size: 12.5px; white-space: nowrap; }
+.ev-next { margin: 4px 0 12px; padding: 10px 14px; border-left: 3px solid var(--violet); border-radius: 0 10px 10px 0; background: var(--other); font-size: 14px; }
+.ev-next b { display: block; margin-bottom: 4px; color: var(--violet); font: 800 12px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; }
+.ev-next ul { margin: 0; padding: 0; list-style: none; }
+.ev-next li + li { margin-top: 6px; }
+.ev-next li span { display: block; color: var(--text2); }
+.ev-has-img > .ev-next { grid-column: 1 / -1; }
 .ev-body { flex: 1; }
 .ev-has-img { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); column-gap: 28px; align-content: start; }
 .ev-has-img > * { grid-column: 2; }
