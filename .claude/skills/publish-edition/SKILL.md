@@ -58,9 +58,13 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    - a source link, at least two summary points and a "why it matters";
    - an article not already used in this edition or **any earlier edition** (same link, including
      further reading). Similar-headline warnings (⚠) must be looked at and mentioned in your message;
+     when the new story updates the earlier one, suggest the `follows` (and an `update` line) the warning prints,
+     for him to confirm; never add it yourself;
    - a summary of at most 120 words of points, so it doesn't replace reading the original;
    - no quoted passage over 25 words;
    - for any image, a declared origin (`figcredit`) and alt text (`figalt`).
+   - **"What would change our mind"** (`data/watch.json`): if a new story bears on one of the signs there, say so
+     in your message and suggest the new mark and evidence line. Don't change `data/watch.json` unless he agrees.
 
    Problems of these kinds are **editorial**: don't rewrite his text, drop stories or pick a replacement
    article yourself. Report each one with a suggested fix and let him decide.

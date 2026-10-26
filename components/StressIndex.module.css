@@ -235,3 +235,23 @@
 .markNote { margin: 6px 0 0; font-size: 13px; text-align: center; color: var(--si-text); }
 .markNote a { color: var(--si-link); font-weight: 700; }
 .markKey { width: 0 !important; height: 0 !important; border-radius: 0 !important; background: none !important; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--si-mark, #E8590C); }
+
+/* ---------- "What would change our mind" (components/WatchList.tsx, data/watch.json) ---------- */
+.watch { scroll-margin-top: 84px; }
+.watchThesis { margin: 0; font-size: 15.5px; color: var(--si-text); }
+.watchThesis b { color: var(--si-ink); }
+.watchList { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.watchList li { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.watchList p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--si-text); }
+.watchHead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; }
+.watchHead b { font-size: 16px; color: var(--si-ink); }
+.wState { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 800; white-space: nowrap; }
+.wState small { font-weight: 600; }
+.wMet { background: var(--si-bad-bg); color: var(--si-bad); }
+.wPartly { background: var(--si-warn-bg); color: var(--si-warn); }
+.wNotMet { background: var(--si-ok-bg); color: var(--si-ok); }
+.watchList .watchTest { font-size: 13px; color: var(--muted2); }
+.watchLinks { display: flex; flex-direction: column; gap: 4px; }
+.watchLinks a { color: var(--si-link); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; padding-block: 3px; }
+.watchLinks small { font-weight: 600; white-space: nowrap; }
+@media (max-width: 700px) { .watchList { grid-template-columns: minmax(0, 1fr); } }

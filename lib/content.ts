@@ -34,6 +34,10 @@ export type FullStory = {
   cite?: string;
   /** Editorial choice: show a link to the AI Stress Index under this story. */
   stressIndex?: boolean;
+  /** The earlier story this one updates, as its page path ("/daily/october-21-2026/3"). Both stories link to each other. */
+  follows?: string;
+  /** One line on what changed since that earlier story, shown on the earlier story's "What happened next". */
+  update?: string;
 };
 
 export type EditionContent = {
