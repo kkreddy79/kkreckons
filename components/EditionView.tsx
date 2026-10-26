@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
-import type { Related } from "@/lib/related";
+import { followLinks, type Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
@@ -138,6 +138,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
   const tall = Boolean(s.imageW && s.imageH && s.imageH / s.imageW > TALL);
   const topic = themesOf(s)[0];
   const seen = new Set<string>();
+  const follow = followLinks(date, n, s);
   const pic = s.image && (
     <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title}>
       {s.imageW ? (
@@ -184,6 +185,11 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
           s.title
         )}
       </H>
+      {follow.before && (
+        <p className="ev-follow">
+          Follow-up to <Link href={follow.before.href}>{follow.before.title}</Link> <small>· {shortDate(follow.before.date)}</small>
+        </p>
+      )}
 
       {s.image && (
         <figure className="ev-fig">
@@ -254,6 +260,20 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
             </span>
           ))}
         </p>
+      )}
+
+      {follow.after.length > 0 && (
+        <div className="ev-next">
+          <b>What happened next</b>
+          <ul>
+            {follow.after.map((f) => (
+              <li key={f.href}>
+                <Link href={f.href}>{f.title}</Link> <small>· {shortDate(f.date)}</small>
+                {f.update && <span>{f.update}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       <StorySource s={s} id={id} summary={false} />

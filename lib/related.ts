@@ -69,6 +69,37 @@ export function relatedForStory(date: string, n: number, limit = 3): Related[] {
   }));
 }
 
+/** A story linked by an editorial follow-up: the one a story updates, or a later one that updates it. */
+export type FollowLink = { date: string; title: string; href: string; update?: string };
+
+// Each story's page path, and the later stories that name it in `follows` (built once, like `index`).
+let follows: { path: Map<string, FollowLink>; next: Map<string, FollowLink[]> } | null = null;
+
+function buildFollows() {
+  const path = new Map<string, FollowLink>();
+  const next = new Map<string, FollowLink[]>();
+  for (const e of [...editions].reverse()) {
+    getContent(e.date)
+      .sections.flatMap((sec) => sec.stories)
+      .forEach((s, i) => {
+        const href = `/daily/${slugFor(e.date)}/${i + 1}`;
+        path.set(href, { date: e.date, title: s.title, href });
+        if (s.follows) next.set(s.follows, [...(next.get(s.follows) || []), { date: e.date, title: s.title, href, ...(s.update ? { update: s.update } : {}) }]);
+      });
+  }
+  follows = { path, next };
+}
+
+/** The earlier story this one follows up (from its `follows` field), and later stories that follow it up, oldest first. */
+export function followLinks(date: string, n: number, s: { follows?: string }): { before: FollowLink | null; after: FollowLink[] } {
+  if (!follows) buildFollows();
+  const before = s.follows ? follows!.path.get(s.follows) ?? null : null;
+  return {
+    before: before && before.date < date ? before : null,
+    after: (follows!.next.get(`/daily/${slugFor(date)}/${n}`) || []).filter((f) => f.date > date),
+  };
+}
+
 /** Up to `limit` stories from other editions that name the same things as this edition's stories: one per edition, spread across this edition's stories first. */
 export function relatedFor(date: string, limit = 3): Related[] {
   if (!index) build();

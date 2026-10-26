@@ -4,7 +4,8 @@
 //   - a summary short enough not to replace the original (≤ MAX_SUMMARY_WORDS words of points);
 //   - no long quotation (any quoted passage ≤ MAX_QUOTE_WORDS words);
 //   - for any image, a declared origin (`figcredit` in the newsletter data);
-//   - only http(s) links (sources, further reading, numbers of the day).
+//   - only http(s) links (sources, further reading, numbers of the day);
+//   - a `follows` (follow-up) that points to an earlier story that exists.
 // Headlines that look like an earlier story, and images without alt text, are listed for review (warning only).
 //
 // Usage: npm run check                (all editions)
@@ -62,6 +63,8 @@ if (only.length && !dates.length) {
   console.error(`No edition found for ${only.join(", ")}. Did "npm run editions" run?`);
   process.exit(1);
 }
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+const slugFor = (d) => `${MONTHS[+d.slice(5, 7) - 1]}-${+d.slice(8, 10)}-${d.slice(0, 4)}`;
 const content = Object.fromEntries(sorted.map((d) => [d, JSON.parse(fs.readFileSync(path.join(root, "data", "content", `${d}.json`), "utf8"))]));
 
 let problems = 0;
@@ -98,7 +101,10 @@ for (const date of dates) {
     }
     for (const r of content[d].reading) if (r.url) used.set(articleKey(r.url), `${d} further reading "${r.title}"`);
   }
-  const earlierTitles = sorted.filter((x) => x < date).flatMap((d) => content[d].sections.flatMap((sec) => sec.stories.map((s) => [d, s.title])));
+  const earlierTitles = sorted
+    .filter((x) => x < date)
+    .flatMap((d) => content[d].sections.flatMap((sec) => sec.stories).map((s, i) => [d, s.title, `/daily/${slugFor(d)}/${i + 1}`]));
+  const earlierPages = new Set(earlierTitles.map(([, , href]) => href));
 
   let stories = 0;
   for (const sec of c.sections) {
@@ -114,10 +120,12 @@ for (const date of dates) {
         if (used.has(u)) flag(date, s.title, "duplicate", `repeats an article already used in ${used.get(u)}`);
         else used.set(u, `${date} "${s.title}"`);
       }
-      for (const [d, t] of earlierTitles) {
-        if (t !== s.title && similarity(t, s.title) >= SIMILAR_TITLE && !excused(date, s.title, "similar"))
-          warnings.push(`${date} "${s.title}" looks like ${d} "${t}"`);
+      for (const [d, t, href] of earlierTitles) {
+        if (t !== s.title && href !== s.follows && similarity(t, s.title) >= SIMILAR_TITLE && !excused(date, s.title, "similar"))
+          warnings.push(`${date} "${s.title}" looks like ${d} "${t}" (if it updates that story, add "follows": "${href}")`);
       }
+      if (s.follows && !earlierPages.has(s.follows))
+        flag(date, s.title, "follows", `"follows" must be an earlier story's page, like /daily/${slugFor(sorted[0])}/1; no earlier story at ${s.follows}`);
 
       const summary = s.points.reduce((n, p) => n + words(p), 0);
       if (summary > MAX_SUMMARY_WORDS)
@@ -159,7 +167,7 @@ for (const date of dates) {
   console.log(`${date}: ${stories} stories, ${c.reading.length} further reading`);
 }
 if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBLISHERS in lib/editionFormat.ts): ${[...unnamed].join(", ")}`);
-for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a repeat: ${w}`);
+for (const w of warnings) console.log(`⚠ Similar headline, check it isn't a repeat or a follow-up: ${w}`);
 for (const date of dates) if (content[date].sections.some((sec) => sec.stories.some((s) => s.stressIndex)) && !content[date].stressIndex)
   console.log(`⚠ ${date}: a story links to the AI Stress Index but no reading was saved (index data was unreachable); it shows the link without a number`);
 for (const v of vague) console.log(`⚠ Further reading needs a real title (it only names the platform): ${v}`);
