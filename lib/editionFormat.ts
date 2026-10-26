@@ -56,6 +56,8 @@ const PUBLISHERS: Record<string, string> = {
   "startupfortune.com": "Startup Fortune",
   "axios.com": "Axios",
   "imf.org": "International Monetary Fund",
+  "brookings.edu": "Brookings",
+  "abcnews.com": "ABC News",
   "jpmorgan.com": "J.P. Morgan",
   "404media.co": "404 Media",
   "api.sci.gov.in": "Supreme Court of India",

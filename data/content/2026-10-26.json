@@ -1,0 +1,356 @@
+{
+  "date": "2026-10-26",
+  "slice": "Paris owes, China discounts, India builds, AI bills us all. Ambulances fly first.",
+  "artifact": "https://claude.ai/artifact/2dFjXn45LKMgzq1aZmHcWz",
+  "readingMinutes": 9,
+  "callouts": [
+    {
+      "num": "3%",
+      "text": "India's share of global data-centre capacity, against nearly 20% of the world's data.",
+      "url": "https://www.livemint.com/ai/artificial-intelligence/india-ai-data-centre-boom-11792919781691.html"
+    },
+    {
+      "num": "$3.5tn",
+      "text": "Wiped off Chinese stocks since May, as price wars eat corporate profits.",
+      "url": "https://www.moneycontrol.com/news/business/sinking-profits-turn-china-s-3-5-trillion-stock-rout-into-trap-14059302.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Deeptech",
+          "tag": "",
+          "title": "IIT Madras's ePlane plans electric air ambulances before air taxis",
+          "url": "https://yourstory.com/2026/10/why-indias-flying-taxi-revolution-begins-with-electric-air-ambulances",
+          "url2": "",
+          "points": [
+            "IIT Madras professor Satya Chakravarthy told YourStory's TechSparks 2026 that his ePlane Company will sell electric air ambulances before flying air taxis. Ambulances earn high margins at low volumes, bringing in cash while production scales.",
+            "Cargo and city taxis come later. He pitches a five-to-eightfold cut in travel time for roughly twice an Uber fare.",
+            "The design skips tilt-rotors, which add single points of failure, for a redundant multi-rotor that is easier to certify and small enough for hospital helipads and rooftops. Commercial launch is targeted for 2028."
+          ],
+          "numbers": [
+            [
+              "2028",
+              "Commercial launch target"
+            ],
+            [
+              "5–8x",
+              "Faster than road, he says"
+            ]
+          ],
+          "why": "Most flying-taxi dreams die chasing a mass market before the cash shows up. Starting where buyers already pay a premium, emergency care, is the rare deeptech plan that puts revenue ahead of the demo.",
+          "other": "Air ambulances are a small, regulated market; a few hospital contracts may not cover a certification bill this large, and aviation launch dates tend to slip. He himself calls patient capital an oxymoron.",
+          "also": [],
+          "image": "/figs/2026-10-26-1.jpg",
+          "imageAlt": "Explainer: ePlane targets a 2028 launch, starting with high-margin electric air ambulances before cargo and air taxis that promise five-to-eightfold faster trips at about twice an Uber fare.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "YourStory",
+          "pay": false,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "Ambulances first, taxis later",
+          "emailTeaser": "Why ePlane's 2028 plan starts with emergency flights",
+          "cite": "The ePlane Company targets commercial launch of its electric aircraft in 2028, founder Satya Chakravarthy said at TechSparks 2026 (YourStory, October 2026).",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Investment",
+          "tag": "",
+          "title": "India's private capex pipeline hits ₹99.7 lakh crore, up 39%",
+          "url": "https://m.economictimes.com/news/economy/finance/indias-private-capex-pipeline-surges-39-to-rs-99-7-lakh-crore-risks-rise-report/articleshow/135186243.cms",
+          "url2": "",
+          "points": [
+            "A Union Bank of India report puts India's outstanding private capex pipeline at ₹99.7 lakh crore in September 2026, up 39% in a year and 4.1 times its March 2014 level.",
+            "Projects are getting bigger rather than more numerous: the count rose only 50%, to 5,311, while the average project grew 2.7 times. Manufacturing and electricity hold 74%; services grew fastest.",
+            "Maharashtra alone holds 29%, up from 9% in 2014, and the top five states 68%. The bank warns announcements may outrun execution, and transmission lags generation."
+          ],
+          "numbers": [
+            [
+              "₹99.7L cr",
+              "Private capex pipeline"
+            ],
+            [
+              "29%",
+              "Share in Maharashtra"
+            ]
+          ],
+          "why": "India's investment revival is finally showing up in private order books, but on a narrow base. Lenders should watch where the money goes: fewer, larger bets, one state, two sectors.",
+          "other": "A pipeline is a list of intentions, not spending. Big tickets in power and IT services may simply follow demand, and states that already have land, power and ports will naturally draw more.",
+          "also": [],
+          "image": "/figs/2026-10-26-2.jpg",
+          "imageAlt": "Explainer: India's private capex pipeline rose 39% to ₹99.7 lakh crore; manufacturing and electricity hold 74% and Maharashtra 29%, raising concentration and execution risks.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India",
+            "Banking"
+          ],
+          "emailHead": "Bigger bets, fewer baskets",
+          "emailTeaser": "₹99.7 lakh crore of plans, concentrated in a few states",
+          "imageW": 1280,
+          "imageH": 1762
+        },
+        {
+          "category": "AI infrastructure",
+          "tag": "",
+          "title": "India makes 20% of the world's data but hosts 3% of data centres",
+          "url": "https://www.livemint.com/ai/artificial-intelligence/india-ai-data-centre-boom-11792919781691.html",
+          "url2": "",
+          "points": [
+            "India generates nearly 20% of the world's data but holds about 3% of global data-centre capacity, Mint reports, citing BCG. Google ($15bn, including a Visakhapatnam hub), Microsoft ($20.5bn) and AWS (over $21bn for 2026–2030) are moving to close the gap.",
+            "AI racks draw 100–250 kW, against 5–10 kW for older servers, so new sites are built differently. Indian operators such as CtrlS and CapitaLand India Trust are adding capacity too.",
+            "Mint argues hosting AI is not creating it: India's edge may lie in small local-language models for farming, health and finance."
+          ],
+          "numbers": [
+            [
+              "20%",
+              "Share of world data"
+            ],
+            [
+              "3%",
+              "Share of data-centre capacity"
+            ]
+          ],
+          "why": "Data centres decide where AI runs and who collects the rent. Owning the buildings without the models or chips could make India a landlord rather than an owner of its own AI economy.",
+          "other": "Local compute cuts latency and cost for Indian startups, which is how ecosystems begin. And India may not need frontier-scale models to use AI well, as Mint itself argues.",
+          "also": [],
+          "image": "/figs/2026-10-26-3.jpg",
+          "imageAlt": "Explainer: India holds about 3% of global data-centre capacity against nearly 20% of the world's data; Google, Microsoft and AWS are investing $15bn, $20.5bn and over $21bn.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "India's data, someone else's servers",
+          "emailTeaser": "20% of the world's data, 3% of its capacity",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Euro debt",
+          "tag": "",
+          "title": "France's 10-year bond yield tops 5% as investors weigh euro contagion",
+          "url": "https://www.wsj.com/world/europe/how-france-became-the-poster-child-for-debt-woes-08c64b3d",
+          "url2": "https://www.cnbc.com/2026/10/23/france-debt-euro-zone-contagion.html",
+          "points": [
+            "France's 10-year yield rose above 5% for the first time since 2002, CNBC reports, and its premium over Germany is the widest since the euro crisis. The euro is down almost 5% against the dollar this year, and 2026 growth is forecast at 0.5%.",
+            "A WSJ column by James Mackintosh calls France the weakest link in a world of higher rates: a deficit near 5% of GDP against nominal growth of 3% at best, taxes already near their limit, and voters refusing cuts.",
+            "Most analysts CNBC spoke to see contagion as limited: stronger banks, ECB tools and trusted statistics, unlike Greece in 2009."
+          ],
+          "numbers": [
+            [
+              "5%+",
+              "10-year yield, first since 2002"
+            ],
+            [
+              "119%",
+              "Debt to GDP, Q2 2026"
+            ],
+            [
+              "0.5%",
+              "2026 growth forecast"
+            ]
+          ],
+          "why": "This is a political crisis in a bond-market costume. The maths is fixable; the politics is not, because the older voters who hold most of the wealth and turn out most also defend the pensions that make the sums hard.",
+          "other": "A 5% yield is not panic territory, and the ECB would likely step in long before Italy-style spreads. If a credible spending plan emerges after the next election, today's sell-off could look like a buying opportunity.",
+          "also": [],
+          "image": "/figs/2026-10-26-4.jpg",
+          "imageAlt": "Visual explainer: France's 10-year yield passed 5%, debt is 119% of GDP and growth is forecast at 0.5%; a deficit near 5% against 3% growth feeds a debt spiral, while over-60s, who hold 60% of wealth, resist pension cuts. Analysts see limited contagion.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal and CNBC",
+          "pay": true,
+          "freeUrl": "https://www.cnbc.com/2026/10/23/france-debt-euro-zone-contagion.html",
+          "freeSrc": "CNBC",
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "Paris pays the price",
+          "emailTeaser": "Why France became the bond market's weakest link",
+          "cite": "France's 10-year government bond yield rose above 5% for the first time since 2002 in the week to 23 October 2026, CNBC reported.",
+          "imageW": 1280,
+          "imageH": 2453
+        },
+        {
+          "category": "Jobs & AI",
+          "tag": "",
+          "title": "Young US graduates fear AI is shutting them out of entry-level jobs",
+          "url": "https://www.ft.com/content/0a86d4f5-6046-4c1c-89e9-90583cff33f9?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "In Pennsylvania's Lehigh Valley, the FT meets young graduates who say AI is closing the door to first jobs. A 2022 computer-science graduate says almost every interview now asks whether he is needed at all.",
+            "Stanford research finds employment of software developers aged 22 to 25 down 19%, with customer service hit similarly, while jobs AI cannot do, such as health aides, are growing.",
+            "There are no mass AI lay-offs yet; the squeeze is in hiring. One Lehigh student chose a master's degree over a job hunt to stay ahead of the machines."
+          ],
+          "numbers": [
+            [
+              "−19%",
+              "Software developers aged 22–25"
+            ]
+          ],
+          "why": "The first AI casualty is not the job you have but the one you never get. Cut the bottom rung and a generation loses the training that turns graduates into seniors.",
+          "other": "Hiring freezes also follow rate rises and post-pandemic over-hiring, and the data show slower hiring, not firing. Earlier technology shifts also killed entry roles before creating new ones.",
+          "also": [],
+          "image": "/figs/2026-10-26-5.jpg",
+          "imageAlt": "Explainer: Stanford research finds employment of US software developers aged 22 to 25 down 19%; customer service is similar while health-aide jobs grow, and there are no mass AI lay-offs yet.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "AI"
+          ],
+          "emailHead": "The missing first rung",
+          "emailTeaser": "Stanford finds young coders' employment down 19%",
+          "imageW": 1280,
+          "imageH": 1727
+        },
+        {
+          "category": "AI financing",
+          "tag": "Opinion",
+          "title": "Who's paying for the AI build-out? Savers, pensions and insurers",
+          "url": "https://www.ft.com/content/09f56730-4702-446d-9986-f7c93ffe6bf0?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "FT columnist Robert Armstrong argues that almost every big pool of capital in the rich world is now funding AI data centres, so anyone with savings is exposed.",
+            "He cites a Brookings estimate that the US build-out will cost $10.3tn through 2032, more each year than the railroad and interstate booms combined. Hyperscalers are spending all their cash flow, chipmakers are buying stakes in AI labs, and debt is piling up.",
+            "Most of that debt is rated investment grade, thanks to hyperscaler guarantees or chips as collateral, which lets it into pensions, annuities and life insurance."
+          ],
+          "numbers": [
+            [
+              "$10.3tn",
+              "US AI build-out to 2032 (Brookings)"
+            ]
+          ],
+          "why": "AI risk no longer sits only with tech shareholders. When the guarantors and the spenders are the same companies, a demand miss would travel through retirement accounts, not just stock tickers.",
+          "other": "Investment-grade ratings reflect borrowers that are among the most profitable firms on earth, and booms that looked reckless, like the railroads, still left valuable assets behind. The risk is timing, not ruin.",
+          "also": [],
+          "image": "/figs/2026-10-26-6.jpg",
+          "imageAlt": "Explainer: Brookings estimates the US AI build-out at $10.3tn through 2032, funded by hyperscaler cash flow, chipmaker stakes and investment-grade debt that ends up in pensions, annuities and insurance.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.brookings.edu/articles/the-10-trillion-question-financing-the-ai-buildout/",
+          "freeSrc": "Brookings",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Your pension owns a data centre",
+          "emailTeaser": "A $10.3tn build-out, funded by everyone's savings",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "China economy",
+          "tag": "",
+          "title": "China's stocks lose $3.5 trillion as weak demand squeezes profits",
+          "url": "https://www.moneycontrol.com/news/business/sinking-profits-turn-china-s-3-5-trillion-stock-rout-into-trap-14059302.html",
+          "url2": "https://www.livemint.com/opinion/online-views/how-china-s-industrial-strength-is-testing-its-growth-model-11792922179046.html",
+          "points": [
+            "Chinese stocks have shed $3.5tn since a May peak, Bloomberg data in Moneycontrol show, pushing the CSI 300 into a bear market. Reporting MSCI China firms have missed forecasts by 9% on average, led by CATL, while cash-hungry tech giants sell shares.",
+            "A Mint column by IIM Indore's G. Venkat Raman explains why: in September exports jumped 36.3% and industrial output 5.5%, but retail sales rose just 1.1%. Beijing calls it strong supply, weak demand.",
+            "Property gloom and job worries keep households saving, and local rivalry breeds price wars. With growth on target at 4.5%, big stimulus looks unlikely."
+          ],
+          "numbers": [
+            [
+              "$3.5tn",
+              "Stock value lost since May"
+            ],
+            [
+              "+36.3%",
+              "September exports"
+            ],
+            [
+              "+1.1%",
+              "September retail sales"
+            ]
+          ],
+          "why": "China shows that winning on production does not mean winning on profits. The surplus it cannot sell at home lands abroad as cheap goods, so Europe, America and India all inherit China's demand problem.",
+          "other": "Low valuations, state buying and low bond yields can pull money back fast, and Bridgewater's China arm is cautiously optimistic. A credible push on household incomes from the Fifth Plenum would change the story.",
+          "also": [],
+          "image": "/figs/2026-10-26-7.jpg",
+          "imageAlt": "Visual explainer: Chinese stocks lost $3.5tn since May as September exports rose 36.3% and industrial output 5.5% but retail sales just 1.1% and fixed-asset investment fell 7.2%; price wars squeeze profits and households keep saving.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Moneycontrol and Mint",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "China makes more, earns less",
+          "emailTeaser": "Exports up 36%, retail sales up 1%, stocks down $3.5tn",
+          "imageW": 1280,
+          "imageH": 2391
+        },
+        {
+          "category": "Retail & AI",
+          "tag": "",
+          "title": "Why US shoppers suspect retailers use AI to raise prices",
+          "url": "https://www.wsj.com/business/retail/why-so-many-shoppers-think-retailers-are-using-ai-to-jack-up-prices-d77cd4eb",
+          "url2": "",
+          "points": [
+            "American shoppers increasingly believe stores, restaurants and ride-hailing apps use AI and personal data to charge them more, the WSJ reports. One Walmart app user saw a hard drive listed $110 cheaper on his wife's phone; Walmart blamed a since-fixed error.",
+            "Walmart, Kroger and McDonald's deny pricing by who is buying. Walmart's chief executive wrote: \"We price the product, not the person.\"",
+            "Lawmakers are moving anyway. New York requires disclosure of algorithmic pricing, Maryland, Connecticut and New Jersey restrict data-driven pricing, and the FTC has proposed penalising deceptive personalised prices."
+          ],
+          "numbers": [
+            [
+              "$110",
+              "Price gap between two phones"
+            ]
+          ],
+          "why": "Pricing runs on trust. Even if no retailer is doing it, the patents, data and digital shelf tags make it possible, and shoppers squeezed by inflation are ready to assume the worst.",
+          "other": "Studies of digital shelf labels in the US and Europe find they mostly enable markdowns on food near expiry, not surge pricing. Colorado's governor vetoed a ban because it would also have outlawed targeted discounts.",
+          "also": [],
+          "image": "/figs/2026-10-26-8.jpg",
+          "imageAlt": "Explainer: a Walmart app user saw a $110 price gap between two phones, which Walmart blamed on an error; retailers deny personalised pricing while New York and three other states regulate it.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Personal finance"
+          ],
+          "emailHead": "Is your phone setting your price?",
+          "emailTeaser": "Why AI pricing fears are outrunning the evidence",
+          "freeUrl": "https://abcnews.com/Business/wireStory/consumer-apprehension-grows-us-retailers-adopt-ai-assisted-137357979",
+          "freeSrc": "AP",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Big bills.",
+    "b": "Patient wallets.",
+    "line": "From French bonds to Indian data centres, today's projects lean on someone willing to wait; the winners line up revenue before the hype."
+  },
+  "cover": "/figs/2026-10-26-cover.jpg",
+  "coverAlt": "Paris owes, China discounts, India builds, AI bills us all. Ambulances fly first.",
+  "stressIndex": {
+    "score": 32,
+    "band": "Elevated",
+    "asOf": "2026-10-23"
+  }
+}
