@@ -7,13 +7,17 @@ import SubscribeBox from "@/components/SubscribeBox";
 import { monthLabel, shortDate, weekday } from "@/lib/editions";
 import { months, monthSlug } from "@/lib/month";
 import { SITE_URL } from "@/lib/site";
-import { stressWeek, thisWeek, weeklyExtras } from "@/lib/week";
+import { marketsWeek, stressWeek, thisWeek, watchWeek, weeklyExtras } from "@/lib/week";
+import { marketMove, marketValue, SHORT } from "@/components/MarketStrip";
 
 const week = thisWeek();
 const range = `${shortDate(week.start)}–${shortDate(week.end)}`;
 // With a weekly file (data/weekly/<date>.json) the page is a numbered issue; without one, just the list.
 const extras = weeklyExtras(week.start, week.end);
 const stress = stressWeek(week.days);
+const markets = marketsWeek(week.days);
+const watch = watchWeek(week.start, week.end);
+const STATE_LABEL = { met: "Met", partly: "Partly met", "not-met": "Not met" } as const;
 
 export const metadata: Metadata = {
   title: `The week in ${week.picks.length} stories, ${range}`,
@@ -93,6 +97,34 @@ function Issue({ list }: { list: ReactNode }) {
   const sections: [string, string, ReactNode][] = [];
   if (extras?.oneMinute) sections.push(["one-minute", "The week in one minute", <p className="wk-para">{extras.oneMinute}</p>]);
   sections.push(["best", `The best ${week.picks.length} stories`, list]);
+  if (markets)
+    sections.push([
+      "markets",
+      "Markets this week",
+      <>
+        <ul className="mk-list wk-mk">
+          {markets.assets.map((a) => {
+            const m = marketMove(a, a.week);
+            return (
+              <li key={a.id}>
+                <span className="mk-name" title={a.name}>
+                  {SHORT[a.id] ?? a.name}
+                </span>
+                <b className="mk-val">{marketValue(a)}</b>
+                {m && (
+                  <span className={`mk-chg mk-${m.dir}`}>
+                    <span aria-hidden>{m.dir === "up" ? "▲" : m.dir === "down" ? "▼" : "■"} </span>
+                    <span className="sr-only">Over the week, {m.words}. </span>
+                    <span aria-hidden>{m.text} on the week</span>
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        <p className="wk-note">Closes up to {shortDate(markets.asOf)}, against the close before the week&rsquo;s first edition. Yahoo Finance daily closes.</p>
+      </>,
+    ]);
   if (stress)
     sections.push([
       "stress",
@@ -103,6 +135,30 @@ function Issue({ list }: { list: ReactNode }) {
         </b>{" "}
         at the {shortDate(stress.asOf)} close{stressMove(stress)}. <Link href="/ai-stress-index">See the gauges →</Link>
       </p>,
+    ]);
+  for (const t of watch)
+    sections.push([
+      "watching",
+      "What we’re watching",
+      <>
+        <p className="wk-para">
+          Thesis to test: <b>{t.thesis}</b>
+        </p>
+        <ul className="wk-watch">
+          {t.conditions.map((c) => (
+            <li key={c.id}>
+              <span>{c.label}</span>
+              <em className={`wk-state wk-${c.state}`}>
+                {STATE_LABEL[c.state]}
+                {c.changed && <> · changed {shortDate(c.since)}</>}
+              </em>
+            </li>
+          ))}
+        </ul>
+        <p className="wk-note">
+          <Link href="/ai-stress-index#watching">The evidence behind each mark →</Link>
+        </p>
+      </>,
     ]);
   if (extras?.history)
     sections.push([

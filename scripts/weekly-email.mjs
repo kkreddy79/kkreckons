@@ -132,6 +132,30 @@ picks.forEach((p, i) => {
   );
 });
 
+// Markets this week: the closes saved with the week's last edition, against those saved with its first
+// (or that edition's own week-earlier close when the week has one strip), as on /week.
+const strips = week.map((d) => JSON.parse(fs.readFileSync(path.join("data", "content", `${d}.json`), "utf8")).markets).filter((m) => m?.assets?.length);
+if (strips.length) {
+  const first = strips[0];
+  const last = strips[strips.length - 1];
+  const fmt = (v, d) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const val = (m) => (m.unit === "yield" ? `${fmt(m.close, 2)}%` : m.unit === "fx" ? `₹${fmt(m.close, 2)}` : `${m.unit === "usd" ? "$" : ""}${fmt(m.close, m.close >= 1000 ? 0 : 2)}`);
+  const chg = (m, from) => {
+    if (!from) return "";
+    const d = m.unit === "yield" ? Math.round((m.close - from) * 100) : ((m.close - from) / from) * 100;
+    const t = m.unit === "yield" ? `${Math.abs(d)} bp` : `${Math.abs(d).toFixed(1)}%`;
+    return ` <span style="color:${d > 0 ? "#15803D" : d < 0 ? "#B91C1C" : E.muted};font-weight:700;">${d > 0 ? "&#9650;" : d < 0 ? "&#9660;" : ""} ${t}</span>`;
+  };
+  rows.push(section("MARKETS THIS WEEK"));
+  rows.push(
+    para(
+      last.assets
+        .map((m) => `${esc(m.name)} <b>${val(m)}</b>${chg(m, strips.length > 1 ? first.assets.find((f) => f.id === m.id)?.close : m.week)}`)
+        .join(" &nbsp;·&nbsp; "),
+    ),
+  );
+}
+
 if (si) {
   const move = si.from == null ? "" : si.to === si.from ? `, unchanged on the week` : `, ${si.to > si.from ? "up" : "down"} from ${si.from} a week earlier`;
   rows.push(section("AI STRESS INDEX THIS WEEK"));
@@ -141,6 +165,26 @@ if (si) {
       a(`${SITE}/ai-stress-index`, "See the gauges &rarr;", "color:#7048E8;font-weight:700;") +
       `</td></tr>`,
   );
+}
+
+// What we're watching: the "What would change our mind" signs (data/watch.json), flagging any changed this week.
+{
+  const watchFile = path.join("data", "watch.json");
+  const theses = fs.existsSync(watchFile) ? JSON.parse(fs.readFileSync(watchFile, "utf8")).theses : [];
+  const LABEL = { met: "Met", partly: "Partly met", "not-met": "Not met" };
+  const COLOUR = { met: "#B91C1C", partly: "#B45309", "not-met": "#15803D" };
+  for (const t of theses) {
+    rows.push(section("WHAT WE’RE WATCHING"));
+    rows.push(
+      para(
+        `Thesis to test: <b>${esc(t.thesis)}</b><br>` +
+          t.conditions
+            .map((c) => `${esc(c.label)}: <b style="color:${COLOUR[c.state]};">${LABEL[c.state]}</b>${c.history?.length && c.since >= start && c.since <= end ? ` (changed ${short(c.since)})` : ""}`)
+            .join("<br>") +
+          `<br>${a(`${SITE}/ai-stress-index#watching`, "The evidence behind each mark &rarr;", `color:${E.coral};font-weight:700;`)}`,
+      ),
+    );
+  }
 }
 
 if (extras.history) {

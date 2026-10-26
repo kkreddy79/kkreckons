@@ -843,6 +843,17 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .wk-n { font: 800 13px var(--sans); letter-spacing: 0.08em; color: var(--accent); font-variant-numeric: tabular-nums; }
 .wk-para { margin: 0; max-width: 68ch; font-size: 16.5px; line-height: 1.65; color: var(--text2); }
 .wk-para a { color: var(--violet); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.wk-mk { padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); --mk-up: #15803d; --mk-down: #b91c1c; }
+:root[data-theme="dark"] .wk-mk { --mk-up: #4ade80; --mk-down: #f87171; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .wk-mk { --mk-up: #4ade80; --mk-down: #f87171; } }
+.wk-note { margin: 8px 0 0; font-size: 13px; color: var(--text3); }
+.wk-note a { color: var(--violet); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; padding-block: 4px; }
+.wk-watch { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; max-width: 68ch; }
+.wk-watch li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 12px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); font-weight: 700; color: var(--ink); }
+.wk-state { padding: 3px 10px; border-radius: 999px; font: 800 12.5px var(--sans); font-style: normal; white-space: nowrap; }
+.wk-not-met { background: #dcfce7; color: #166534; } .wk-partly { background: #fef3c7; color: #92400e; } .wk-met { background: #fee2e2; color: #991b1b; }
+:root[data-theme="dark"] .wk-not-met { background: #133d24; color: #86efac; } :root[data-theme="dark"] .wk-partly { background: #3d2e0f; color: #fcd34d; } :root[data-theme="dark"] .wk-met { background: #4a1d1d; color: #fca5a5; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .wk-not-met { background: #133d24; color: #86efac; } :root:not([data-theme="light"]) .wk-partly { background: #3d2e0f; color: #fcd34d; } :root:not([data-theme="light"]) .wk-met { background: #4a1d1d; color: #fca5a5; } }
 .wk-list { list-style: none; display: grid; gap: 12px; margin: 0; padding: 0; counter-reset: wk; }
 .wk-list a { display: flex; gap: 16px; align-items: flex-start; padding: 14px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); color: var(--ink2); text-decoration: none; }
 .wk-list a:hover { border-color: var(--lilac-line-2); }
