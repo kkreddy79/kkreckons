@@ -11,6 +11,7 @@ import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
 import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
+import MarketStrip from "@/components/MarketStrip";
 import PrintImages from "@/components/PrintImages";
 import SectionBar from "@/components/SectionBar";
 
@@ -390,6 +391,7 @@ export default function EditionView({
       {digest}
 
       {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} />}
+      {e.markets && e.markets.assets.length > 0 && <MarketStrip m={e.markets} />}
 
       {e.callouts.length > 0 && (
         <section className="ev-callouts" aria-label="Numbers of the day">
