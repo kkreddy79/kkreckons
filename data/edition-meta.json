@@ -386,5 +386,19 @@
       "band": "Elevated",
       "asOf": "2026-10-23"
     }
+  },
+  "2026-10-26": {
+    "artifact": "https://claude.ai/artifact/2dFjXn45LKMgzq1aZmHcWz",
+    "stressIndex": {
+      "score": 32,
+      "band": "Elevated",
+      "asOf": "2026-10-23"
+    },
+    "stories": {
+      "Why US shoppers suspect retailers use AI to raise prices": {
+        "freeUrl": "https://abcnews.com/Business/wireStory/consumer-apprehension-grows-us-retailers-adopt-ai-assisted-137357979",
+        "freeSrc": "AP"
+      }
+    }
   }
 }

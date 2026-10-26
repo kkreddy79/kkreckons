@@ -1,5 +1,119 @@
 [
   {
+    "date": "2026-10-26",
+    "slice": "Paris owes, China discounts, India builds, AI bills us all. Ambulances fly first.",
+    "artifact": "https://claude.ai/artifact/2dFjXn45LKMgzq1aZmHcWz",
+    "readingMinutes": 9,
+    "image": "/figs/2026-10-26-1.jpg",
+    "cover": "/figs/2026-10-26-cover.jpg",
+    "coverAlt": "Paris owes, China discounts, India builds, AI bills us all. Ambulances fly first.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "IIT Madras's ePlane plans electric air ambulances before air taxis",
+        "category": "Deeptech",
+        "tag": "",
+        "url": "https://yourstory.com/2026/10/why-indias-flying-taxi-revolution-begins-with-electric-air-ambulances",
+        "src": "YourStory",
+        "pay": false,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's private capex pipeline hits ₹99.7 lakh crore, up 39%",
+        "category": "Investment",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/economy/finance/indias-private-capex-pipeline-surges-39-to-rs-99-7-lakh-crore-risks-rise-report/articleshow/135186243.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India makes 20% of the world's data but hosts 3% of data centres",
+        "category": "AI infrastructure",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/artificial-intelligence/india-ai-data-centre-boom-11792919781691.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "France's 10-year bond yield tops 5% as investors weigh euro contagion",
+        "category": "Euro debt",
+        "tag": "",
+        "url": "https://www.wsj.com/world/europe/how-france-became-the-poster-child-for-debt-woes-08c64b3d",
+        "src": "The Wall Street Journal and CNBC",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Young US graduates fear AI is shutting them out of entry-level jobs",
+        "category": "Jobs & AI",
+        "tag": "",
+        "url": "https://www.ft.com/content/0a86d4f5-6046-4c1c-89e9-90583cff33f9?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Who's paying for the AI build-out? Savers, pensions and insurers",
+        "category": "AI financing",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/09f56730-4702-446d-9986-f7c93ffe6bf0?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "China's stocks lose $3.5 trillion as weak demand squeezes profits",
+        "category": "China economy",
+        "tag": "",
+        "url": "https://www.moneycontrol.com/news/business/sinking-profits-turn-china-s-3-5-trillion-stock-rout-into-trap-14059302.html",
+        "src": "Moneycontrol and Mint",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why US shoppers suspect retailers use AI to raise prices",
+        "category": "Retail & AI",
+        "tag": "",
+        "url": "https://www.wsj.com/business/retail/why-so-many-shoppers-think-retailers-are-using-ai-to-jack-up-prices-d77cd4eb",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Personal finance"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-25",
     "slice": "Debt wobbles. Hype soars. France strains. Bugs bite. IT trims. Scrap pays. Smell travels.",
     "artifact": "https://claude.ai/artifact/D3jdyQ2LQFtU8vMVRMWkfv",
