@@ -764,6 +764,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 
 /* Per-story share row (end of each story card) and story pages (/daily/<edition>/<n>) */
 .ev-share-sm { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line-2); font-size: 12.5px; }
+/* A story card's last line: the original source on the left, sharing on the right, under one rule. */
+.ev-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line-2); }
+.ev-foot > .ev-src, .ev-foot > .ev-share-sm { margin: 0; padding: 0; border: 0; }
+.ev-has-img > .ev-foot { grid-column: 1 / -1; }
 .ev-share-sm a, .ev-share-sm button { min-height: 30px; padding: 3px 11px; font-size: 12.5px; }
 .st-page .ev-story { margin-top: 6px; }
 .st-more { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
