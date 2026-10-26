@@ -82,6 +82,7 @@ for (const d of baseDates) {
   const files = [
     [`data/content/${d}.json`, `data/content/${d}.json`],
     [`newsletters/${d}.html`, `public/editions/${d}.html`],
+    [`data/markets/${d}.json`, `data/markets/${d}.json`],
   ];
   for (const [f, old] of files) {
     const before = atBase(f) || atBase(old);
@@ -103,7 +104,7 @@ const changed = git("diff", "--name-only", `${base}...HEAD`).toString().split("\
 const uncommitted = git("status", "--porcelain").toString().split("\n").filter(Boolean).map((l) => l.slice(3));
 const editionFile = (f) => {
   if (["data/editions.json", "data/edition-meta.json", "lib/editions.ts", "lib/editionFormat.ts"].includes(f)) return true;
-  const m = /^(?:newsletters|data\/content|public\/figs|public\/email)\/(\d{4}-\d{2}-\d{2})/.exec(f);
+  const m = /^(?:newsletters|data\/content|data\/markets|public\/figs|public\/email)\/(\d{4}-\d{2}-\d{2})/.exec(f);
   return Boolean(m && (added.includes(m[1]) || allowed.has(m[1])));
 };
 for (const f of siteChange ? [] : new Set([...changed, ...uncommitted])) {

@@ -28,6 +28,9 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `data/editions.json` — the index used by the archive and home page, generated
 - `public/figs/` — story images pulled out of the newsletters, generated
 - `data/edition-meta.json` — hand-edited extras per date: `artifact` (link to the interactive version) and an optional `slice` override
+- `data/markets/YYYY-MM-DD.json` — the edition's market strip (Nifty 50, S&P 500, US 10-year yield, Brent, gold, USD/INR at
+  the last close before its date), saved once by `npm run editions` from the AI Stress Index job's `markets.json`. Editions
+  from 27 Oct 2026 have one; commit it with the edition. If the data was unreachable the edition shows no strip.
 - `data/watch.json` — "What would change our mind", hand-edited: the signs that would show a thesis breaking ("The AI
   build-out is breaking"), each marked `met`, `partly` or `not-met` with the date it began, one evidence line and the
   stories behind it. Shown on `/ai-stress-index#watching`, tallied on Home's Stress Index card. To change a mark, move the
