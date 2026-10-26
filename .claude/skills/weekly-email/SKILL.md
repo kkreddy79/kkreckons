@@ -12,9 +12,21 @@ edition, KK's Picks first, at most one per topic (two for AI); each links to its
 the week's AI Stress Index move and a "Catch up on the week" button. If Friday's edition isn't published yet,
 build it anyway and rebuild after that edition goes live.
 
+0. **The issue's written parts.** Draft `data/weekly/<end date>.json` (shown on `/week` and in this email as
+   numbered sections; any part can be left out):
+   - `oneMinute`: "The week in one minute", 60–90 words in his voice, built **only** from facts in that week's
+     stories (headlines, numbers, why it matters). No outside facts, no opinions he didn't write.
+   - `history`: `{ "text", "url", "src" }`, "This week in history": one dated event from the same calendar week
+     in an earlier year that connects to a story of the week, in one or two sentences, from a reliable source
+     (an encyclopaedia, a central bank, a major newspaper's archive). Check the date against the source.
+   - `andFinally`: `{ "text", "url", "src"? }`, "And finally": a light closer, preferably one of the week's own
+     lighter stories (its page path as `url`, for example `/daily/october-26-2026/8`).
+   Commit it on a branch `weekly/<end date>` and open a draft pull request; show him the three texts in your
+   reply. It goes live only when he approves (he merges, or replies "publish").
 1. `npm ci` (first time in the session), then
    `npm run -s weekly-email -- [YYYY-MM-DD] .publish/beehiiv-weekly-<end date>.json`. It prints the week, the
-   picks and the index move; check that each teaser reads on its own (they come from `emailTeaser`, or from
+   picks and the index move, and uses the step 0 file when it's there (build the draft after writing it);
+   check that each teaser reads on its own (they come from `emailTeaser`, or from
    "why it matters" when an older edition has none).
 2. In beehiiv, use the KKReckons publication (`list_publications`). Check `list_posts` for slug
    `kkreckons-weekly-<end date>`; if it exists, don't create another, just link it.

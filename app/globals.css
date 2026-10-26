@@ -800,6 +800,12 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .nf-topics .chip { text-decoration: none; }
 
 /* This week (/week) */
+/* The weekly issue (/week with a data/weekly file): numbered sections, as in a printed weekly. */
+.wk-sec { margin: 0 0 30px; scroll-margin-top: 84px; }
+.wk-sec h2 { display: flex; align-items: baseline; gap: 12px; margin: 0 0 12px; padding-top: 12px; border-top: 2px solid var(--line); font: 700 24px/1.2 "Playfair Display", Georgia, serif; color: var(--ink); }
+.wk-n { font: 800 13px var(--sans); letter-spacing: 0.08em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.wk-para { margin: 0; max-width: 68ch; font-size: 16.5px; line-height: 1.65; color: var(--text2); }
+.wk-para a { color: var(--violet); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 .wk-list { list-style: none; display: grid; gap: 12px; margin: 0; padding: 0; counter-reset: wk; }
 .wk-list a { display: flex; gap: 16px; align-items: flex-start; padding: 14px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); color: var(--ink2); text-decoration: none; }
 .wk-list a:hover { border-color: var(--lilac-line-2); }

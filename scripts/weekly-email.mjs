@@ -69,6 +69,16 @@ async function stressMove() {
   return null;
 }
 const si = await stressMove();
+// The written parts of the issue (data/weekly/<date>.json, dated inside the week), shared with /week.
+const weeklyDir = path.join("data", "weekly");
+const weeklyFile = fs.existsSync(weeklyDir)
+  ? fs.readdirSync(weeklyDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0, 10) >= start && f.slice(0, 10) <= end).sort().at(-1)
+  : null;
+const extras = weeklyFile ? JSON.parse(fs.readFileSync(path.join(weeklyDir, weeklyFile), "utf8")) : {};
+// Section labels are numbered when the issue has its written parts, as on /week.
+let sectionNo = 0;
+const section = (text, top) => label(weeklyFile ? `${String(++sectionNo).padStart(2, "0")} · ${text}` : text, top);
+const para = (html) => `<tr><td colspan="2" style="padding:8px 0 0;font-family:${SANS};font-size:14px;line-height:1.5;color:${E.body};">${html}</td></tr>`;
 const band = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elevated" : "Normal");
 
 // KKReckons email palette (as in the daily email).
@@ -104,7 +114,11 @@ rows.push(
     `<tr><td colspan="2" style="padding:0 0 2px;font-family:${SANS};font-size:13px;line-height:1.4;color:${E.body};">Missed a day? The week’s best stories, one per topic.</td></tr>`,
 );
 
-rows.push(label("BEST OF THE WEEK", 14));
+if (extras.oneMinute) {
+  rows.push(section("THE WEEK IN ONE MINUTE", 14));
+  rows.push(para(esc(extras.oneMinute)));
+}
+rows.push(section("BEST OF THE WEEK", 14));
 picks.forEach((p, i) => {
   const line = i === picks.length - 1 ? "" : `border-bottom:1px solid ${E.rule};`;
   const thumb = p.thumb ? a(p.url, `<img src="${p.thumb}" width="44" height="44" alt="" style="display:block;width:44px;height:44px;border:0;">`) : "";
@@ -120,13 +134,24 @@ picks.forEach((p, i) => {
 
 if (si) {
   const move = si.from == null ? "" : si.to === si.from ? `, unchanged on the week` : `, ${si.to > si.from ? "up" : "down"} from ${si.from} a week earlier`;
-  rows.push(label("AI STRESS INDEX THIS WEEK"));
+  rows.push(section("AI STRESS INDEX THIS WEEK"));
   rows.push(
     `<tr><td colspan="2" style="padding:8px 0 0;font-family:${SANS};font-size:14px;line-height:1.4;color:${E.body};">` +
       `<b style="color:#7048E8;">${si.to}/100, ${band(si.to)}</b> at the ${short(si.asOf)} close${move}. ` +
       a(`${SITE}/ai-stress-index`, "See the gauges &rarr;", "color:#7048E8;font-weight:700;") +
       `</td></tr>`,
   );
+}
+
+if (extras.history) {
+  rows.push(section("THIS WEEK IN HISTORY"));
+  rows.push(para(`${esc(extras.history.text)} ${a(extras.history.url, `${esc(extras.history.src)} &rarr;`, `color:${E.coral};font-weight:700;`)}`));
+}
+if (extras.andFinally) {
+  const f = extras.andFinally;
+  const url = f.url.startsWith("/") ? `${SITE}${f.url}` : f.url;
+  rows.push(section("AND FINALLY"));
+  rows.push(para(`${esc(f.text)} ${a(url, `${esc(f.src || "Read it")} &rarr;`, `color:${E.coral};font-weight:700;`)}`));
 }
 
 rows.push(

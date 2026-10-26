@@ -28,6 +28,9 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `data/editions.json` — the index used by the archive and home page, generated
 - `public/figs/` — story images pulled out of the newsletters, generated
 - `data/edition-meta.json` — hand-edited extras per date: `artifact` (link to the interactive version) and an optional `slice` override
+- `data/weekly/YYYY-MM-DD.json` — the written parts of a weekly issue (`oneMinute`, `history`, `andFinally`), dated the
+  week's last day. With one, `/week` and the Friday email become a numbered issue (the week in one minute, the best
+  stories, the AI Stress Index move, this week in history, and finally); without one, `/week` is the plain list.
 
 Every edition is rendered in the same KKReckons design from its content JSON, whatever the original newsletter looked like.
 
