@@ -28,6 +28,9 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `data/editions.json` — the index used by the archive and home page, generated
 - `public/figs/` — story images pulled out of the newsletters, generated
 - `data/edition-meta.json` — hand-edited extras per date: `artifact` (link to the interactive version) and an optional `slice` override
+- `data/weekly/YYYY-MM-DD.json` — the written parts of a weekly issue (`oneMinute`, `history`, `andFinally`), dated the
+  week's last day. With one, `/week` and the Friday email become a numbered issue (the week in one minute, the best
+  stories, the AI Stress Index move, this week in history, and finally); without one, `/week` is the plain list.
 - `data/markets/YYYY-MM-DD.json` — the edition's market strip (Nifty 50, S&P 500, US 10-year yield, Brent, gold, USD/INR at
   the last close before its date), saved once by `npm run editions` from the AI Stress Index job's `markets.json`. Editions
   from 27 Oct 2026 have one; commit it with the edition. If the data was unreachable the edition shows no strip.
