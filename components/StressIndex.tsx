@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "react";
+import WatchList from "@/components/WatchList";
+import type { Watch } from "@/lib/watch";
 import s from "./StressIndex.module.css";
 import { LIMITED, STRESS_BASES } from "@/lib/stress";
 
@@ -598,7 +600,7 @@ function EmbedBox() {
 /** A KKReckons story about AI debt or credit stress, marked on the trend chart. */
 export type Mark = { date: string; title: string; href: string };
 
-export default function StressIndex({ initial = null, initialBt = null, marks = [] }: { initial?: Data | null; initialBt?: Backtest | null; marks?: Mark[] }) {
+export default function StressIndex({ initial = null, initialBt = null, marks = [], watch = [] }: { initial?: Data | null; initialBt?: Backtest | null; marks?: Mark[]; watch?: Watch[] }) {
   const [d, setD] = useState<Data | null>(initial);
   const [bt, setBt] = useState<Backtest | null>(initialBt);
   const [err, setErr] = useState<string | null>(null);
@@ -615,12 +617,12 @@ export default function StressIndex({ initial = null, initialBt = null, marks = 
       <Banner />
       {err ? <div className={`container ${s.page}`}><p className={s.err}>The latest index data couldn’t be loaded ({err}). Please try again shortly.</p></div>
         : !d ? <div className={`container ${s.page}`}><p className={s.loading}>Loading today’s index…</p></div>
-        : <Report d={d} bt={bt} marks={marks} />}
+        : <Report d={d} bt={bt} marks={marks} watch={watch} />}
     </main>
   );
 }
 
-function Report({ d, bt, marks = [] }: { d: Data; bt: Backtest | null; marks?: Mark[] }) {
+function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | null; marks?: Mark[]; watch?: Watch[] }) {
   const h = hook(d);
   const sorted = [...d.factors].sort((a, b) => b.stress - a.stress);
   const signal = sorted[0] && sorted[0].stress >= 0.5 ? sorted[0] : null;
@@ -762,6 +764,8 @@ function Report({ d, bt, marks = [] }: { d: Data; bt: Backtest | null; marks?: M
           <p className={s.small}>Each alert needs the index and specific gauges to stay high for 5 trading days in a row. The four alerts are independent tripwires, not a staircase: Systemic Dislocation can fire before Broad Correction, and Financing Strain can be skipped. Stress Watch and Financing Strain are the early warnings; the other two confirm damage already under way.</p>
         </div>
       </details>
+
+      {watch.length > 0 && <WatchList watch={watch} />}
 
       <section className={s.meaning} id="meaning" aria-labelledby="meaning-title">
         <h2 id="meaning-title">What this score means</h2>

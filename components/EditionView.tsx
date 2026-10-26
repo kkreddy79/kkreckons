@@ -4,6 +4,7 @@ import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, sh
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import type { Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
+import { watchSummary } from "@/lib/watch";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
@@ -118,12 +119,24 @@ function StressCard({ si, related, prevScore }: { si?: Reading; related: number[
             </>
           )}
         </p>
+        {live && <WatchLine />}
       </div>
       {live && live.trend.length > 1 && <Trend points={live.trend} />}
       <Link className="ev-sx-cta" href="/ai-stress-index" prefetch={false}>
         Gauges →
       </Link>
     </section>
+  );
+}
+
+/** Home only (today's state, not a dated reading): "Watching 4 signs the AI build-out is breaking · 1 partly met". */
+function WatchLine() {
+  const w = watchSummary();
+  const marked = [w.met && `${w.met} met`, w.partly && `${w.partly} partly met`].filter(Boolean).join(", ") || "none met";
+  return (
+    <Link className="ev-sx-watch" href="/ai-stress-index#watching" prefetch={false}>
+      Watching {w.total} signs {w.thesis.charAt(0).toLowerCase() + w.thesis.slice(1)}: <b>{marked}</b> →
+    </Link>
   );
 }
 

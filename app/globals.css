@@ -337,6 +337,10 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-sx-note a { display: inline-block; margin: -3px 0 -3px 4px; padding: 4px 7px; border-radius: 6px; background: rgba(255, 255, 255, 0.14); color: #fff; font-weight: 800; font-variant-numeric: tabular-nums; }
 .ev-sx-note a:hover { background: rgba(255, 255, 255, 0.24); }
 .ev-sx-spark { flex: 0 1 140px; width: 140px; min-width: 70px; height: 34px; opacity: 0.9; }
+/* Home only: the "What would change our mind" tracker's tally (components/EditionView.tsx WatchLine). */
+.ev-sx-watch { display: inline-block; margin-top: 6px; padding-block: 3px; font-size: 13.5px; color: rgba(255, 255, 255, 0.88); text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.4); text-underline-offset: 3px; }
+.ev-sx-watch b { color: #FBBF24; }
+.ev-sx-watch:hover { color: #fff; }
 .ev-sx-cta { flex: none; padding: 8px 14px; border-radius: 999px; background: #fff; color: #24123f; font-size: 13.5px; font-weight: 800; white-space: nowrap; }
 .ev-sx-cta:hover { background: #f3ecff; }
 .ev-other { background: var(--other); }

@@ -5,6 +5,7 @@ import { loadStressFile } from "@/lib/stress";
 import { getContent } from "@/lib/content";
 import { editions, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
+import { watchList } from "@/lib/watch";
 
 const TITLE = "AI Market Stress Index: an experimental daily AI-bubble stress gauge";
 const DESCRIPTION =
@@ -56,7 +57,7 @@ export default async function AiStressIndexPage() {
           }}
         />
       )}
-      <StressIndex initial={d} initialBt={bt} marks={marks} />
+      <StressIndex initial={d} initialBt={bt} marks={marks} watch={watchList()} />
     </>
   );
 }

@@ -28,6 +28,11 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `data/editions.json` — the index used by the archive and home page, generated
 - `public/figs/` — story images pulled out of the newsletters, generated
 - `data/edition-meta.json` — hand-edited extras per date: `artifact` (link to the interactive version) and an optional `slice` override
+- `data/watch.json` — "What would change our mind", hand-edited: the signs that would show a thesis breaking ("The AI
+  build-out is breaking"), each marked `met`, `partly` or `not-met` with the date it began, one evidence line and the
+  stories behind it. Shown on `/ai-stress-index#watching`, tallied on Home's Stress Index card. To change a mark, move the
+  old `state`/`since` to the front of `history`, then set the new `state`, `since`, `evidence` and `links`;
+  `npm run check` validates it.
 
 Every edition is rendered in the same KKReckons design from its content JSON, whatever the original newsletter looked like.
 
