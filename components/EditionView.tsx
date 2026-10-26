@@ -290,8 +290,11 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
         </div>
       )}
 
-      <StorySource s={s} id={id} summary={false} />
-      <ShareRow url={storyPageUrl(date, n)} slice={s.emailHead || s.title} image={s.image || undefined} compact />
+      {/* Source and sharing share one line (they wrap only when the card is too narrow). */}
+      <div className="ev-foot">
+        <StorySource s={s} id={id} summary={false} short />
+        <ShareRow url={storyPageUrl(date, n)} slice={s.emailHead || s.title} image={s.image || undefined} compact />
+      </div>
     </article>
   );
 }

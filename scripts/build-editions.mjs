@@ -58,9 +58,8 @@ async function stressSnapshot(date) {
 }
 // The market strip (components/MarketStrip.tsx): six numbers from the index's daily job (docs/markets.json),
 // cut at the last close before the edition's date and saved once to data/markets/<date>.json, so every rebuild
-// shows the same dated numbers. Editions before MARKETS_FROM have none.
+// shows the same dated numbers. Every edition has one (the job keeps 45 closes, back to 24 Aug 2026).
 const MARKETS_SOURCES = STRESS_SOURCES.map((u) => u.replace(/data\.json$/, "markets.json"));
-const MARKETS_FROM = "2026-10-27";
 const marketsDir = path.join(root, "data", "markets");
 let marketsData;
 async function marketsSnapshot(date) {
@@ -430,7 +429,7 @@ for (const file of files) {
     } else console.log(`${date}: AI Stress Index data unreachable; the edition shows the link without a number`);
   }
   const marketsFile = path.join(marketsDir, `${date}.json`);
-  if (date >= MARKETS_FROM && !fs.existsSync(marketsFile)) {
+  if (!fs.existsSync(marketsFile)) {
     const snap = await marketsSnapshot(date);
     if (snap) {
       fs.mkdirSync(marketsDir, { recursive: true });

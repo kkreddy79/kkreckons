@@ -76,6 +76,17 @@ const previous = baseDates.slice().sort().at(-1);
 
 for (const d of baseDates) if (!dates.has(d)) fail(`Edition ${d} was live but is missing now.`);
 
+// An earlier edition may gain a market strip it didn't have (data/markets/<date>.json, saved by npm run editions);
+// its content may then differ only by the added `markets`. Anything else still needs --allow.
+const gainedMarkets = (f, before) => {
+  if (!f.startsWith("data/content/")) return false;
+  const was = JSON.parse(before);
+  const now = JSON.parse(read(f));
+  if (was.markets || !now.markets) return false;
+  delete now.markets;
+  return JSON.stringify(was) === JSON.stringify(now);
+};
+
 for (const d of baseDates) {
   if (!dates.has(d) || allowed.has(d)) continue;
   // Original newsletters moved from public/editions/ to newsletters/ (not served by the site).
@@ -86,7 +97,7 @@ for (const d of baseDates) {
   ];
   for (const [f, old] of files) {
     const before = atBase(f) || atBase(old);
-    if (before && (!fs.existsSync(path.join(root, f)) || !before.equals(read(f)))) fail(`${f} changed (an earlier edition). Use --allow ${d} if this is a deliberate correction.`);
+    if (before && (!fs.existsSync(path.join(root, f)) || !before.equals(read(f))) && !gainedMarkets(f, before)) fail(`${f} changed (an earlier edition). Use --allow ${d} if this is a deliberate correction.`);
   }
   const was = JSON.stringify(baseIndex.find((e) => e.date === d));
   const now = JSON.stringify(index.find((e) => e.date === d));

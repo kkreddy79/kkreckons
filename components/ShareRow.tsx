@@ -36,13 +36,13 @@ export default function ShareRow({ url, slice, image, compact }: { url: string; 
   };
   return (
     <div className={`ev-share${compact ? " ev-share-sm" : ""}${open ? " ev-share-open" : ""}`}>
-      <button type="button" className="ev-share-one" onClick={share} aria-expanded={open}>
+      <button type="button" className="ev-share-one" onClick={share} aria-expanded={open} aria-label={compact ? "Share this story" : undefined}>
         <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
           <path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        {compact ? "Share this story" : "Share"}
+        Share
       </button>
-      <span className="ev-share-label">{compact ? "Share this story:" : "Share:"}</span>
+      <span className="ev-share-label">Share:</span>
       <a className="ev-wa" href={`https://wa.me/?text=${enc(`${text}\n${tagged(url, "whatsapp")}`)}`} target="_blank" rel="noreferrer">
         WhatsApp
       </a>

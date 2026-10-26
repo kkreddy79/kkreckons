@@ -58,12 +58,15 @@ export default function StorySource({
   id,
   summary = true,
   explainer,
+  short = false,
 }: {
   s: SourceStory;
   id: string;
   summary?: boolean;
   /** The story's KKReckons page, linked from the Quick summary where the page lists stories without their graphics. */
   explainer?: string;
+  /** "Source:" instead of "Original source:", where it shares a line with the share buttons. */
+  short?: boolean;
 }) {
   const links = sourceLinks(s);
   if (!links.length) return null;
@@ -74,7 +77,7 @@ export default function StorySource({
     <>
       <p className={`ev-src${paid ? " ev-src-paid" : ""}`}>
         <LinkIcon className="ev-ic-sm" />
-        <span className="ev-src-label">Original source:</span>
+        <span className="ev-src-label">{short ? "Source:" : "Original source:"}</span>
         {links.map((l) =>
           l.free ? (
             <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="ev-free" title="Free to read">
