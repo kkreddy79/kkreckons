@@ -50,7 +50,7 @@ export type EditionContent = {
   reading: { title: string; url: string; note: string }[];
   /** AI Stress Index reading taken when the edition was published (only when a story links to it). */
   stressIndex?: { score: number; band: string; asOf: string; backCalculated?: boolean };
-  /** Six market numbers at the last close before the edition (data/markets/<date>.json; from 27 Oct 2026). */
+  /** Six market numbers at the last close before the edition (data/markets/<date>.json). */
   markets?: { source: string; assets: MarketAsset[] };
 };
 
