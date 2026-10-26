@@ -177,5 +177,21 @@ for (const x of suggested) console.log(`ℹ Possible AI Stress Index link (AI de
   const newest = [...dates].sort().pop();
   if (newest && !content[newest].cover) console.log(`ℹ ${newest}: no 1600×900 cover (newsletter "cover"); link previews and Google Discover use the first story graphic`);
 }
+// "What would change our mind" (data/watch.json): valid states and dates, and every linked story exists.
+{
+  const MON = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+  const pages = new Set(sorted.flatMap((d) => content[d].sections.flatMap((sec) => sec.stories).map((_, i) => `/daily/${MON[+d.slice(5, 7) - 1]}-${+d.slice(8, 10)}-${d.slice(0, 4)}/${i + 1}`)));
+  const STATES = new Set(["met", "partly", "not-met"]);
+  const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s || "");
+  const watch = JSON.parse(fs.readFileSync(path.join(root, "data", "watch.json"), "utf8"));
+  for (const t of watch.theses)
+    for (const c of t.conditions) {
+      const where = `Watch "${c.label}"`;
+      if (!STATES.has(c.state) || (c.history || []).some((h) => !STATES.has(h.state))) flag("data/watch.json", where, "watch", `state must be one of ${[...STATES].join(", ")}`);
+      if (!isDate(c.since) || (c.history || []).some((h) => !isDate(h.since))) flag("data/watch.json", where, "watch", `"since" must be a YYYY-MM-DD date`);
+      if (!c.evidence) flag("data/watch.json", where, "watch", "no evidence line");
+      for (const l of c.links || []) if (!pages.has(l.href)) flag("data/watch.json", where, "watch", `links to ${l.href}, which isn't a story page`);
+    }
+}
 console.log(problems ? `${problems} problem(s) found.` : "All checks passed.");
 process.exit(problems ? 1 : 0);
