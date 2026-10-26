@@ -225,6 +225,9 @@ function fromEmbedded(date, d) {
       ...(clean(s.cite) ? { cite: clean(s.cite) } : {}),
       // Editorial choice: link this story to the AI Stress Index (site card + email line).
       ...(s.stressindex === true || /^(yes|true)$/i.test(String(s.stressindex ?? "")) ? { stressIndex: true } : {}),
+      // Editorial link to the earlier story this one updates ("/daily/<month>-<day>-<year>/<n>"), and what changed.
+      ...(clean(s.follows) ? { follows: clean(s.follows) } : {}),
+      ...(clean(s.update) ? { update: clean(s.update) } : {}),
     };
   };
   const sections = [
