@@ -1,5 +1,133 @@
 [
   {
+    "date": "2026-10-27",
+    "slice": "Doom lists, Meta sells, debt piles, swaps stall. Staff walk, bots get cops. Who pays?",
+    "artifact": "https://claude.ai/artifact/Ub3g8s5FtNcoUVZ5WfKYAd",
+    "readingMinutes": 10,
+    "image": "/figs/2026-10-27-1.jpg",
+    "cover": "/figs/2026-10-27-cover.jpg",
+    "coverAlt": "Doom lists, Meta sells, debt piles, swaps stall. Staff walk, bots get cops. Who pays?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Anthropic IPO filing: $800bn compute bill, founders keep control",
+        "category": "AI · IPO",
+        "tag": "",
+        "url": "https://www.ft.com/content/a6c43402-719e-4295-ae5f-541edb0aeb29?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Indian IT firms pitch tools to police rogue AI agents",
+        "category": "IT services · AI",
+        "tag": "",
+        "url": "https://www.livemint.com/industry/infotech/indian-it-companies-see-business-in-policing-ai-agents-11792937073756.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Banks pull back from dollar swap trade, sensing RBI disapproval",
+        "category": "Banking · Forex",
+        "tag": "",
+        "url": "https://m.economictimes.com/industry/banking/finance/banking/wary-of-rbi-banks-back-off-from-forex-deals/articleshow/135218946.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Meta plans $95bn share sale, with Nvidia, AMD, Broadcom as anchors",
+        "category": "Big Tech · Funding",
+        "tag": "",
+        "url": "https://www.ft.com/content/94e5a0ae-874d-447a-bbfc-cd465a1a7555?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Broadcom CEO rescued $63bn debt deal to lease chips to Anthropic",
+        "category": "AI debt",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/broadcom-ceo-intervened-to-seal-63-billion-anthropic-debt-deal-c807754f",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Anthropic's S-1 pitches a $40tn market and warns of catastrophe",
+        "category": "AI · IPO",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/anthropic-ipo-s1-report-takeaways-6eebd721",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Microsoft offers buyouts to up to 60,000 staff as AI costs climb",
+        "category": "Jobs · Big Tech",
+        "tag": "",
+        "url": "https://www.ft.com/content/2ef29406-f2f8-413f-81f6-5ae098c97569?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Private equity faces $300bn debt wall from 2028, a third in software",
+        "category": "Private equity",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/a-300-billion-debt-wall-is-looming-over-private-equity-backed-companies-d6359497",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Borrowing against shares grows into a $5.4tn market, Deloitte finds",
+        "category": "Wealth · Lending",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/the-buy-borrow-and-die-wealth-strategy-has-become-a-5-trillion-market-d9149a9d",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Banking"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-26",
     "slice": "Paris owes, China discounts, India builds, AI bills us all. Ambulances fly first.",
     "artifact": "https://claude.ai/artifact/2dFjXn45LKMgzq1aZmHcWz",

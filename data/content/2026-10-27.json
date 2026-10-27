@@ -1,0 +1,640 @@
+{
+  "date": "2026-10-27",
+  "slice": "Doom lists, Meta sells, debt piles, swaps stall. Staff walk, bots get cops. Who pays?",
+  "artifact": "https://claude.ai/artifact/Ub3g8s5FtNcoUVZ5WfKYAd",
+  "readingMinutes": 10,
+  "callouts": [
+    {
+      "num": "$95bn",
+      "text": "Meta's planned share sales to fund AI data centres, with chipmakers as anchors.",
+      "url": "https://www.ft.com/content/94e5a0ae-874d-447a-bbfc-cd465a1a7555?syn-25a6b1a6=1"
+    },
+    {
+      "num": "$132bn",
+      "text": "FCNR deposits swapped with the RBI left Indian banks flush with rupees.",
+      "url": "https://m.economictimes.com/industry/banking/finance/banking/wary-of-rbi-banks-back-off-from-forex-deals/articleshow/135218946.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI · IPO",
+          "tag": "",
+          "title": "Anthropic IPO filing: $800bn compute bill, founders keep control",
+          "url": "https://www.ft.com/content/a6c43402-719e-4295-ae5f-541edb0aeb29?syn-25a6b1a6=1",
+          "url2": "https://www.ft.com/content/d2faa674-766b-4699-83d0-d1f9ed65edbf?syn-25a6b1a6=1",
+          "points": [
+            "Anthropic's S-1 sets up a Nasdaq listing under the ticker ANT as soon as next month. The FT says revenue has soared, though growth slowed in the third quarter, and a few big customers bring in a large share.",
+            "It has signed compute deals worth more than $800bn, some running to 2045, with Broadcom, the big clouds, SpaceX, AMD and smaller providers. The founders call the approach bold but sane.",
+            "A Long-Term Benefit Trust picks most of the board and the seven founders hold 50.1% of the vote. A Lex column says the past numbers tell investors little; ordinary holders should expect to be powerless."
+          ],
+          "numbers": [
+            [
+              "$800bn+",
+              "compute commitments"
+            ],
+            [
+              "50.1%",
+              "founders' share of the vote"
+            ]
+          ],
+          "why": "The biggest AI listing yet asks public investors to fund a frontier lab while giving them almost no say. How it prices will set the bar for every lab that follows.",
+          "other": "A locked-in founder group and a mission trust can shield long-term bets from short-term traders, which some investors will welcome. But the filing itself warns growth may reflect early adoption; if demand cools, the compute bill does not.",
+          "also": [],
+          "image": "/figs/2026-10-27-1.jpg",
+          "imageAlt": "Explainer on Anthropic's IPO filing: more than $800bn in computing commitments, founders keeping 50.1% of the vote and a trust naming most of the board.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Anthropic opens its books",
+          "emailTeaser": "An $800bn compute bill, and the founders keep the vote",
+          "cite": "Anthropic's S-1, filed on 26 October 2026, shows computing commitments of more than $800bn stretching to 2045, the FT reports.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "IT services · AI",
+          "tag": "",
+          "title": "Indian IT firms pitch tools to police rogue AI agents",
+          "url": "https://www.livemint.com/industry/infotech/indian-it-companies-see-business-in-policing-ai-agents-11792937073756.html",
+          "url2": "",
+          "points": [
+            "Companies that let AI agents book meetings, fix code and pitch clients now fear the bots could go rogue or reach data beyond their remit. TCS, Cognizant, HCLTech and Tech Mahindra all call managing and governing agents a new business line.",
+            "TCS and Tech Mahindra are building software to coordinate agents and cap what they can do; HCLTech plans to buy Croatia's Robotiq.ai; Cognizant launched AI Nexus on 23 October, giving each agent its own ID and permissions and logging every task.",
+            "HFS Research's Phil Fersht says the test is whether Indian firms can own a view on governance rather than resell a hyperscaler's stack."
+          ],
+          "numbers": [
+            [
+              "4",
+              "IT majors pitching agent control"
+            ],
+            [
+              "$7.64bn",
+              "TCS September-quarter revenue"
+            ]
+          ],
+          "why": "Agents threaten the headcount model Indian IT was built on. Selling the guardrails turns that threat into a fee, and plays to the process and industry know-how these firms already have.",
+          "other": "Hyperscalers and AI labs build their own controls, so Indian firms risk becoming resellers again. Governance tools also tend to shrink into a feature once platforms mature, which would cap the fees.",
+          "also": [],
+          "image": "/figs/2026-10-27-2.jpg",
+          "imageAlt": "Explainer on Indian IT firms selling AI agent governance: four majors, TCS and Tech Mahindra building control software, HCLTech buying Robotiq.ai and Cognizant launching AI Nexus.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Who polices the bots?",
+          "emailTeaser": "India's IT giants want to sell guardrails for AI agents",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Banking · Forex",
+          "tag": "",
+          "title": "Banks pull back from dollar swap trade, sensing RBI disapproval",
+          "url": "https://m.economictimes.com/industry/banking/finance/banking/wary-of-rbi-banks-back-off-from-forex-deals/articleshow/135218946.cms",
+          "url2": "",
+          "points": [
+            "Flush with rupees after $132bn of FCNR deposits were swapped with the RBI, some large banks bought dollars spot, sold them forward and parked the money in US Treasury bills.",
+            "A banker put the gross return near 9%: a forward premium above 4.5% plus T-bill yields around 4.4%. Some banks got feelers that the RBI, which bears the currency risk, would rather the rupees were lent at home; the RBI did not reply to ET.",
+            "A private-bank official says swaps that fund trade finance, or very short placements abroad, may still be fine. The RBI curbed similar deals by foreign banks in 2008."
+          ],
+          "numbers": [
+            [
+              "$132bn",
+              "FCNR deposits mobilised"
+            ],
+            [
+              "~9%",
+              "gross return on the trade"
+            ]
+          ],
+          "why": "The RBI absorbed the hedging cost to bring in diaspora dollars. If banks send those dollars back out for a spread, the subsidy funds an arbitrage rather than Indian credit.",
+          "other": "The forward selling also softened premiums and cut hedging costs for importers, and the high premium was partly the RBI's own doing through its sell-buy swaps. Nothing official has been said yet.",
+          "also": [],
+          "image": "/figs/2026-10-27-3.jpg",
+          "imageAlt": "Explainer on banks' dollar swap trade: $132bn of FCNR deposits swapped with the RBI, a forward premium above 4.5% plus T-bill yields near 4.4%, shelved after RBI feelers.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ],
+          "emailHead": "RBI frowns, banks fold",
+          "emailTeaser": "A 9% dollar trade shelved on a regulator's hint",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Big Tech · Funding",
+          "tag": "",
+          "title": "Meta plans $95bn share sale, with Nvidia, AMD, Broadcom as anchors",
+          "url": "https://www.ft.com/content/94e5a0ae-874d-447a-bbfc-cd465a1a7555?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Meta plans about $35bn of underwritten share offerings and a further $60bn at-the-market programme, one of the biggest equity raises on record, to pay for AI data centres. The FT says the second part is expected to start in early 2027.",
+            "Nvidia, AMD and Broadcom, which all sell it chips and gear, have shown non-binding interest in buying up to $5bn as cornerstone investors.",
+            "A new share structure lets Meta sell stock without diluting Zuckerberg's control, which could meet shareholder pushback. The FT puts it in a wider rush to equity after Alphabet's raise and SpaceX's listing, with Anthropic next."
+          ],
+          "numbers": [
+            [
+              "$35bn",
+              "underwritten offerings"
+            ],
+            [
+              "$60bn",
+              "planned at-the-market sales"
+            ]
+          ],
+          "why": "When one of the richest ad businesses needs outside equity, AI spending has outgrown even Big Tech cash flows. Suppliers buying the stock tightens the loop between who spends and who sells.",
+          "other": "Selling shares is a safer cushion than piling on more debt, and Meta says AI already lifts engagement and ad returns. The open question is whether shareholders accept dilution while their say is held down.",
+          "also": [],
+          "image": "/figs/2026-10-27-4.jpg",
+          "imageAlt": "Explainer on Meta's equity raise: about $35bn of underwritten offerings, a planned $60bn at-the-market programme and up to $5bn of interest from Nvidia, AMD and Broadcom.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.sec.gov/Archives/edgar/data/0001326801/000119312526431036/d116268dfwp.htm",
+          "freeSrc": "Meta (SEC filing)",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Meta passes the hat",
+          "emailTeaser": "$95bn in new shares, with chipmakers chipping in",
+          "cite": "Meta said on 26 October 2026 it plans about $35bn of underwritten public offerings and a further $60bn at-the-market programme.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "AI debt",
+          "tag": "",
+          "title": "Broadcom CEO rescued $63bn debt deal to lease chips to Anthropic",
+          "url": "https://www.wsj.com/finance/broadcom-ceo-intervened-to-seal-63-billion-anthropic-debt-deal-c807754f",
+          "url2": "",
+          "points": [
+            "A shell company will borrow $63bn to buy TPU chips Broadcom co-designs with Google and lease them to Anthropic, whose payments repay the loans. WSJ calls it the biggest AI infrastructure financing yet.",
+            "As rates rose, some lenders wanted out. Hock Tan held weekend talks, agreed higher interest and firmer Broadcom guarantees to keep Bank of America, Citi and Morgan Stanley in; Blackstone funds part of a riskier, unguaranteed slice.",
+            "Banks plan to sell half their share to bond investors only once the chips arrive next year, a risk if rates jump."
+          ],
+          "numbers": [
+            [
+              "$63bn",
+              "debt raised for chip leases"
+            ]
+          ],
+          "why": "Broadcom is supplier, guarantor and dealmaker at once. Its balance sheet, not Anthropic's, got the loans done, which shows how tightly AI's winners are tied together.",
+          "other": "If Anthropic keeps paying, the guarantee never bites and lenders earn more for the trouble. But banks demanding higher pay to touch AI risk is a warning sign that matters more than the headline size.",
+          "also": [],
+          "image": "/figs/2026-10-27-5.jpg",
+          "imageAlt": "Explainer on Project North Star: $63bn of debt through a shell company buying TPU chips leased to Anthropic, guaranteed by Broadcom.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Hock Tan saves the deal",
+          "emailTeaser": "A $63bn loan built on Anthropic's lease payments",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "AI · IPO",
+          "tag": "",
+          "title": "Anthropic's S-1 pitches a $40tn market and warns of catastrophe",
+          "url": "https://www.wsj.com/tech/ai/anthropic-ipo-s1-report-takeaways-6eebd721",
+          "url2": "https://www.wsj.com/opinion/anthropic-ipo-investors-regulation-dario-amodei-c7339185",
+          "points": [
+            "WSJ reporters say the filing effectively sizes the prize at $40tn, the value of the world's knowledge work, and shows first-half revenue of $16.3bn. A huge net loss is mostly an accounting charge; the core business eked out a second-quarter operating profit.",
+            "It warns models can try to avoid being shut down and that a catastrophe might be uninsurable. Goldman Sachs and Morgan Stanley lead the deal.",
+            "The Journal's editorial board says the risk list reads like an effort to scare buyers, flags open-weight rivals and regulators, and suspects insiders want to cash out while the boom lasts."
+          ],
+          "numbers": [
+            [
+              "$40tn",
+              "market Anthropic effectively claims"
+            ],
+            [
+              "$16.3bn",
+              "first-half revenue"
+            ]
+          ],
+          "why": "Few issuers spell out that their product could be catastrophic. That candour is also legal armour, and buyers have to price the upside and the warning together.",
+          "other": "The cash-out theory is the editorial board's guess, not something the filing says. Long risk lists are standard legal protection, and a lab sitting on a large cash cushion is hardly a forced seller.",
+          "also": [],
+          "image": "/figs/2026-10-27-6.jpg",
+          "imageAlt": "Explainer on Anthropic's prospectus: a $40tn market claim and $16.3bn of first-half revenue, set against warnings about models resisting shutdown and uninsurable catastrophe.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Save the world, or end it?",
+          "emailTeaser": "A $40tn pitch wrapped in catastrophic warnings",
+          "imageW": 1280,
+          "imageH": 1727
+        },
+        {
+          "category": "Jobs · Big Tech",
+          "tag": "",
+          "title": "Microsoft offers buyouts to up to 60,000 staff as AI costs climb",
+          "url": "https://www.ft.com/content/2ef29406-f2f8-413f-81f6-5ae098c97569?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Staff at vice-president level or below in some divisions in the US, Canada, UK and India can apply for severance, per a memo from people chief Amy Coleman. Xbox, Windows and Copilot are in; sales, security, data centres and quantum are out, a source told the FT.",
+            "Unlike a July retirement offer to older staff, there is no bonus on top of standard severance, so take-up is expected to be low.",
+            "Microsoft plans up to $175bn of AI infrastructure spending this year and free cash flow has fallen; a source says the offer reflects fast-changing work, not capex."
+          ],
+          "numbers": [
+            [
+              "60,000",
+              "staff offered buyouts"
+            ],
+            [
+              "$175bn",
+              "AI capex this year"
+            ]
+          ],
+          "why": "This is a quieter way to reshape a workforce than layoffs, and it lets AI spending set the size of the rest of the company. Staff in India are in scope.",
+          "other": "Voluntary exits keep goodwill and let people who already want out leave on their own terms. But the staff with the best options often take the money first, and Microsoft is still hiring in key areas.",
+          "also": [],
+          "image": "/figs/2026-10-27-7.jpg",
+          "imageAlt": "Explainer on Microsoft's buyouts: up to 60,000 staff at VP level and below can apply, as AI infrastructure spending reaches up to $175bn this year.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "AI"
+          ],
+          "emailHead": "Microsoft opens the exit door",
+          "emailTeaser": "Up to 60,000 staff can take a severance package",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Private equity",
+          "tag": "",
+          "title": "Private equity faces $300bn debt wall from 2028, a third in software",
+          "url": "https://www.wsj.com/finance/investing/a-300-billion-debt-wall-is-looming-over-private-equity-backed-companies-d6359497",
+          "url2": "",
+          "points": [
+            "Risky loans owed by buyout-backed firms bunch up in 2028 and 2029, far above the usual load, per PitchBook data cited by WSJ. Much was borrowed in the cheap-money buyout boom of 2021 on seven-year terms.",
+            "Software makers owe about a third, and many face disruption from AI labs. Higher rates make refinancing dearer and exits harder, so firms are racing to negotiate extensions.",
+            "Some sweeten talks with fresh fund cash: Clearlake put money into symplr so lenders would push its maturities to 2030 and 2031."
+          ],
+          "numbers": [
+            [
+              "$300bn",
+              "PE-backed debt due from 2028"
+            ],
+            [
+              "1/3",
+              "owed by software firms"
+            ]
+          ],
+          "why": "If extensions fail, lenders take the keys and pensions and insurers earn less. AI is turning into a credit risk for the software it may replace.",
+          "other": "Two years leaves time to amend and extend, as lenders did with symplr, and a forced loss rarely suits anyone. A clear fall in rates would shrink the wall quickly.",
+          "also": [],
+          "image": "/figs/2026-10-27-8.jpg",
+          "imageAlt": "Explainer on the private-equity debt wall: $300bn of risky loans due in 2028 and 2029, about a third owed by software firms.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Banking"
+          ],
+          "emailHead": "Buyout debt hits a wall",
+          "emailTeaser": "$300bn due from 2028, with software most exposed",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Wealth · Lending",
+          "tag": "",
+          "title": "Borrowing against shares grows into a $5.4tn market, Deloitte finds",
+          "url": "https://www.wsj.com/finance/the-buy-borrow-and-die-wealth-strategy-has-become-a-5-trillion-market-d9149a9d",
+          "url2": "",
+          "points": [
+            "A Deloitte survey of big private banks and lenders, seen by WSJ, sizes securities-based credit lines at about $5.4tn, though actual borrowing is likely far lower.",
+            "The rich pledge shares rather than sell, avoiding tax and keeping voting power. Lenders like it: approval is fast, losses are rare and the collateral sells quickly.",
+            "Brokerages now offer it to the merely affluent, some approving loans in minutes, and a UK bank pitches a billionaire mindset to people with modest portfolios."
+          ],
+          "numbers": [
+            [
+              "$5.4tn",
+              "securities-based credit lines"
+            ]
+          ],
+          "why": "A product built for billionaires is going mass market. In a sharp sell-off, forced sales of pledged shares could speed the fall.",
+          "other": "With cautious loan limits and quick liquidation, lenders rarely lose, and borrowers get cheap credit without a taxable sale. The risk sits with borrowers who misjudge a margin call.",
+          "also": [],
+          "image": "/figs/2026-10-27-9.jpg",
+          "imageAlt": "Explainer on securities-based lending: about $5.4tn of credit lines, Deloitte estimates, popular because borrowers avoid tax and lenders rarely lose.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Banking"
+          ],
+          "emailHead": "Buy, borrow, die goes retail",
+          "emailTeaser": "A $5.4tn credit habit spreads beyond billionaires",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Big raises.",
+    "b": "Little say.",
+    "line": "From Anthropic's founder-held vote to Meta's control-friendly share class, today's money asks more of the people putting it in and gives them fewer rights."
+  },
+  "cover": "/figs/2026-10-27-cover.jpg",
+  "coverAlt": "Doom lists, Meta sells, debt piles, swaps stall. Staff walk, bots get cops. Who pays?",
+  "stressIndex": {
+    "score": 30,
+    "band": "Elevated",
+    "asOf": "2026-10-26"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 22600,
+        "asOf": "2026-10-23",
+        "prev": 22687.6504,
+        "week": 23146.1504,
+        "spark": [
+          23431.5,
+          23477.8008,
+          23398.0996,
+          23118.5996,
+          23217.5996,
+          23270.5996,
+          23346.4004,
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7676.77,
+        "asOf": "2026-10-26",
+        "prev": 7623.6802,
+        "week": 7690.73,
+        "spark": [
+          7585.73,
+          7551.8101,
+          7637.7598,
+          7650.5,
+          7764.7002,
+          7764.6401,
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.986,
+        "asOf": "2026-10-26",
+        "prev": 4.988,
+        "week": 5.136,
+        "spark": [
+          4.996,
+          5.006,
+          4.947,
+          4.998,
+          4.963,
+          4.968,
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 110.24,
+        "asOf": "2026-10-26",
+        "prev": 116.72,
+        "week": 109.55,
+        "spark": [
+          108.75,
+          105.83,
+          104.82,
+          103.87,
+          100.34,
+          99.25,
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          110.24
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4025.8,
+        "asOf": "2026-10-26",
+        "prev": 4007.8999,
+        "week": 4160.1001,
+        "spark": [
+          4332.7998,
+          4387.5,
+          4399.7002,
+          4424.8999,
+          4383.8999,
+          4376.3999,
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4025.8
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 95.175,
+        "asOf": "2026-10-26",
+        "prev": 94.7113,
+        "week": 94.9936,
+        "spark": [
+          95.8354,
+          95.9927,
+          96.1323,
+          95.7992,
+          96.0131,
+          95.712,
+          95.6898,
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          95.175
+        ]
+      }
+    ]
+  }
+}

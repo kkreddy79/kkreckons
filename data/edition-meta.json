@@ -400,5 +400,13 @@
         "freeSrc": "AP"
       }
     }
+  },
+  "2026-10-27": {
+    "artifact": "https://claude.ai/artifact/Ub3g8s5FtNcoUVZ5WfKYAd",
+    "stressIndex": {
+      "score": 30,
+      "band": "Elevated",
+      "asOf": "2026-10-26"
+    }
   }
 }
