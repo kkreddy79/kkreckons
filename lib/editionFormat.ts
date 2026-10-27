@@ -26,6 +26,7 @@ export type Edition = {
 };
 
 const PUBLISHERS: Record<string, string> = {
+  "sec.gov": "SEC",
   "securityweek.com": "SecurityWeek",
   "pingcap.com": "PingCAP",
   "nber.org": "NBER",
