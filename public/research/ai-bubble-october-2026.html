@@ -12,7 +12,11 @@
 <meta property="og:title" content="Popped or leaking? The AI bubble, a KKReckons research brief">
 <meta property="og:description" content="KKReckons research brief, 28 October 2026: China's AI stocks have crashed while America's AI boom leaks through credit. Neocloud debt, Gartner's $4.9tn revenue gap, history, hedges and the India angle, with every figure sourced.">
 <meta property="og:url" content="https://www.kkreckons.com/research/ai-bubble-october-2026">
-<meta property="og:image" content="https://www.kkreckons.com/figs/2026-10-28-cover.jpg">
+<meta property="og:image" content="https://www.kkreckons.com/research/ai-bubble-october-2026.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="900">
+<meta property="og:image:alt" content="China popped. America is leaking. A burst bubble marked China equities minus 40%, and a leaking bubble holding IOUs marked US credit 1,148bp.">
+<meta name="twitter:image" content="https://www.kkreckons.com/research/ai-bubble-october-2026.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="author" content="KK Reddy">
 <!-- Research brief by KK Reddy, first published as a claude.ai artifact on 28 October 2026. Self-contained: system fonts, no scripts. -->
@@ -57,7 +61,8 @@ p{margin:0}
 .dek{font-size:clamp(17px,2.2vw,19px);line-height:1.55;max-width:60ch;margin-top:16px;color:#EDE4D6}
 .byline{margin-top:18px;font-size:14px;color:#D8CBBB}
 .byline b{color:#FFF8EE;font-weight:600}
-.skyline{display:block;width:100%;height:110px;margin-top:26px}
+.hero-art{max-width:900px;margin:22px auto 0;padding:0 16px 64px}
+.hero-art svg{display:block;width:100%;height:auto}
 .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:-56px;position:relative;z-index:2}
 .tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 8px 24px rgba(22,35,58,.12)}
 .tile .n{font:700 clamp(30px,4.6vw,42px)/1 var(--display);color:var(--red)}
@@ -209,10 +214,79 @@ footer b{font-family:var(--display);font-size:18px;color:var(--ink)}
     <p class="dek">The AI boom is being tested in two very different ways. China's AI shares have crashed. In the US, the strain is showing up in the debt of the most heavily borrowed builders, while the biggest spenders keep spending. This brief checks the numbers behind this week's headlines and sets out what to watch.</p>
     <p class="byline">By <b>KK Reddy</b> · Research companion to the <a href="/daily/october-28-2026" style="color:#F5C77E">28 October edition</a></p>
   </div>
-  <svg class="skyline" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
-    <path fill="#0F1830" fill-opacity=".55" d="M0 110V70h40V52h26v18h30V40h22v30h34V60h18V30h30v40h24V58h40v52zM330 110V64h28V44h34v20h20V28h12V14h8v14h12v36h26V50h40v60zM560 110V58h36V36h24v22h30V48h46V22h28v48h22V60h34v50zM850 110V54h22V34h40v20h18V44h28V18h20v40h26V62h36v48zM1060 110V60h30V40h32v24h26V50h52v60z"/>
-    <path fill="#0B1226" d="M0 110V88h1200v22z"/>
-  </svg>
+  <div class="hero-art"><svg viewBox="0 0 1200 560" role="img" aria-label="Two bubbles: China's has burst into shards, marked minus 40 percent; America's is still whole but leaking air through a puncture, marked 1,148 basis points.">
+  <defs>
+    <radialGradient id="bubUS" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/>
+      <stop offset=".35" stop-color="#9FD8E0" stop-opacity=".28"/>
+      <stop offset=".8" stop-color="#5FC3CF" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#F5C77E" stop-opacity=".55"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5C77E"/><stop offset=".5" stop-color="#5FC3CF"/><stop offset="1" stop-color="#E0835A"/>
+    </linearGradient>
+    <linearGradient id="shard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB4A2"/><stop offset="1" stop-color="#C0392B"/>
+    </linearGradient>
+    <radialGradient id="glowR"><stop offset="0" stop-color="#F07A6A" stop-opacity=".55"/><stop offset="1" stop-color="#F07A6A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowT"><stop offset="0" stop-color="#5FC3CF" stop-opacity=".45"/><stop offset="1" stop-color="#5FC3CF" stop-opacity="0"/></radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <!-- ground line -->
+  <path d="M40 500 H1160" stroke="#F6F1E9" stroke-opacity=".25" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>
+
+  <!-- CHINA: burst bubble -->
+  <circle cx="300" cy="270" r="230" fill="url(#glowR)"/>
+  <!-- ghost outline of where the bubble was -->
+  <circle cx="300" cy="270" r="165" fill="none" stroke="#F6F1E9" stroke-opacity=".28" stroke-width="2" stroke-dasharray="4 12"/>
+  <!-- burst star -->
+  <path d="M300 205 L318 250 L366 236 L334 272 L372 302 L322 300 L314 348 L294 306 L250 330 L272 290 L230 262 L280 258 Z" fill="#F5C77E" opacity=".95"/>
+  <path d="M300 232 L310 258 L338 252 L318 274 L340 292 L312 290 L306 318 L294 294 L268 306 L282 284 L258 266 L288 264 Z" fill="#FFF8EE"/>
+  <!-- flying shards (curved fragments of the old skin) -->
+  <g fill="url(#shard)" stroke="#FFF8EE" stroke-opacity=".7" stroke-width="1.5">
+    <path d="M168 150 q30 -40 78 -52 l6 18 q-40 12 -66 46z"/>
+    <path d="M392 108 q48 18 74 58 l-16 10 q-24 -34 -64 -50z"/>
+    <path d="M478 300 q-4 50 -36 86 l-14 -12 q28 -30 32 -74z"/>
+    <path d="M150 360 q22 44 66 66 l-8 16 q-50 -24 -74 -74z"/>
+    <path d="M300 470 q-30 2 -56 -8 l6 -16 q24 8 50 6z"/>
+    <path d="M110 250 q-2 -30 10 -58 l16 6 q-10 24 -8 50z"/>
+  </g>
+  <!-- small sparks -->
+  <g stroke="#F5C77E" stroke-width="4" stroke-linecap="round">
+    <path d="M222 168 l-26 -26"/><path d="M402 190 l30 -22"/><path d="M412 360 l28 18"/><path d="M200 392 l-24 22"/><path d="M300 150 v-34"/>
+  </g>
+  <g fill="#F6F1E9" opacity=".8"><circle cx="520" cy="210" r="5"/><circle cx="84" cy="320" r="4"/><circle cx="460" cy="440" r="4"/><circle cx="140" cy="120" r="3"/></g>
+
+
+  <!-- US: whole bubble, leaking -->
+  <circle cx="870" cy="260" r="240" fill="url(#glowT)"/>
+  <circle cx="870" cy="262" r="182" fill="url(#bubUS)" stroke="url(#rim)" stroke-width="4"/>
+  <!-- highlight -->
+  <path d="M760 190 q30 -70 110 -86" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="752" cy="228" r="7" fill="#FFFFFF" opacity=".75"/>
+  <!-- inside: a fan of IOUs / bonds -->
+  <g transform="translate(870 300)">
+    <g transform="rotate(-14)"><rect x="-70" y="-44" width="140" height="88" rx="8" fill="#FFF4D6" fill-opacity=".85" stroke="#C08B2C" stroke-width="2"/></g>
+    <g transform="rotate(8)"><rect x="-70" y="-44" width="140" height="88" rx="8" fill="#FFF4D6" fill-opacity=".9" stroke="#C08B2C" stroke-width="2"/></g>
+    <rect x="-70" y="-44" width="140" height="88" rx="8" fill="#FFF8EE" stroke="#C08B2C" stroke-width="2"/>
+    <rect x="-60" y="-34" width="120" height="68" rx="5" fill="none" stroke="#C08B2C" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="0" y="-6" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="22" fill="#7A4E12">IOU</text>
+    <path d="M-36 14 h72 M-26 24 h52" stroke="#C08B2C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- puncture + escaping air -->
+  <circle cx="1020" cy="160" r="9" fill="#16233A" stroke="#F5C77E" stroke-width="3"/>
+  <g fill="none" stroke="#F6F1E9" stroke-width="4" stroke-linecap="round" opacity=".85">
+    <path d="M1032 150 q30 -14 46 -40 q14 -22 40 -26"/>
+    <path d="M1036 164 q36 2 60 -14 q22 -14 46 -8"/>
+    <path d="M1030 176 q26 20 54 18"/>
+  </g>
+  <g fill="#F6F1E9" opacity=".7"><circle cx="1128" cy="80" r="8"/><circle cx="1150" cy="140" r="6"/><circle cx="1100" cy="198" r="5"/></g>
+  <!-- string down to a bond tag -->
+  <path d="M870 444 q-10 26 6 50" fill="none" stroke="#F6F1E9" stroke-opacity=".7" stroke-width="2.5"/>
+  <!-- drips: basis points leaking -->
+  <g fill="#F5C77E"><path d="M1062 222 q8 14 0 20 q-8 -6 0 -20z"/><path d="M1084 262 q8 14 0 20 q-8 -6 0 -20z"/><path d="M1060 306 q8 14 0 20 q-8 -6 0 -20z"/></g>
+</svg></div>
 </header>
 
 <div class="wrap">
