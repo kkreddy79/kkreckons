@@ -76,7 +76,10 @@ iPhone, tablet and laptop sizes when it is installed (CI installs it). It fails 
 throws a script error, scrolls sideways, crops a cover or share image (they carry their own headline), clips
 text at the edge of its box, or has a serious accessibility problem (axe), and lists tap targets under 40px on
 touch screens. `SITE_CHECK_PAGES=/special,/about` checks just those pages; `SITE_CHECK_SHOTS=<dir>` saves a
-screenshot of every page on every device to look at by eye.
+screenshot of every page on every device to look at by eye. `SITE_CHECK_BASE=http://localhost:3200` (or a URL
+after `--`) checks a site served elsewhere. Several devices are checked at once, Chromium and WebKit side by side:
+`SITE_CHECK_CONCURRENCY` sets how many (default: the number of CPU cores, from 2 to 4; `1` checks one at a time).
+The report comes out in the same order however many run at once.
 
 Every pull request runs all of these on GitHub Actions (`.github/workflows/checks.yml`): the content check,
 the build, QC (`--site-change` for anything that isn't an `edition/*` branch, which skips only the
