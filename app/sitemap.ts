@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 import { TOPICS, topicHref, topicPageCount } from "@/lib/topics";
 import { months, monthSlug } from "@/lib/month";
 import { entities } from "@/lib/entities";
+import { RESEARCH } from "@/lib/research";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/coverage`, lastModified: latest.date, changeFrequency: "daily", priority: 0.6 },
     ...entities().map((x) => ({ url: `${SITE_URL}/coverage/${x.slug}`, lastModified: [...x.stories].sort((a, b) => b.date.localeCompare(a.date))[0].date, changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: `${SITE_URL}/ai-stress-index`, changeFrequency: "daily", priority: 0.7 },
+    ...RESEARCH.map((r) => ({ url: `${SITE_URL}/research/${r.slug}`, lastModified: r.date, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/standards`, changeFrequency: "monthly", priority: 0.4 },
     { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.2 },

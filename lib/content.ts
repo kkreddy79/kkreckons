@@ -47,7 +47,8 @@ export type EditionContent = {
   readingMinutes: number;
   callouts: { num: string; text: string; url: string }[];
   sections: { name: string; stories: FullStory[] }[];
-  reading: { title: string; url: string; note: string }[];
+  /** `special`: KKReckons' own research brief for the day, teased at the top of the edition and the email. */
+  reading: { title: string; url: string; note: string; special?: boolean }[];
   /** AI Stress Index reading taken when the edition was published (only when a story links to it). */
   stressIndex?: { score: number; band: string; asOf: string; backCalculated?: boolean };
   /** Six market numbers at the last close before the edition (data/markets/<date>.json). */
