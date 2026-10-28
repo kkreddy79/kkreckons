@@ -1,0 +1,114 @@
+/* Special Reports (/special, /special/<slug>): the long-read brand. Navy, brick, ochre and teal on cream;
+   Lora headlines, Poppins labels (both self-hosted, SIL Open Font License, latin subsets from Google Fonts).
+   Loaded only on these routes (app/special/layout.tsx). */
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/fonts/lora.woff2) format("woff2"); }
+@font-face { font-family: "Lora"; font-style: italic; font-weight: 400 700; font-display: swap; src: url(/fonts/lora-italic.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/poppins-400.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/poppins-500.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/poppins-600.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/poppins-700.woff2) format("woff2"); }
+
+.sp {
+  --sp-paper: #FAF6EE; --sp-card: #fff; --sp-ink: #1D2B3A; --sp-text: #2C3345; --sp-mute: #55606B; --sp-line: #E3D8C6;
+  --sp-brick: #B83A2E; --sp-ochre: #C88A14; --sp-teal: #2C6B78; --sp-sand: #F1E7D4; --sp-blush: #F6E6DF; --sp-mint: #E1ECEA;
+  --sp-hero1: #16222F; --sp-hero2: #2B3550; --sp-hero3: #7A4A52; --sp-gold: #F0B840; --sp-onhero: #F3F1EC; --sp-onhero2: #C9CED6;
+  --sp-serif: "Lora", Georgia, "Times New Roman", serif; --sp-sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  background: var(--sp-paper); color: var(--sp-text); font-family: var(--sp-sans);
+}
+:root[data-theme="dark"] .sp { --sp-paper: #121A23; --sp-card: #1B2633; --sp-ink: #ECE7DC; --sp-text: #DCD8D0; --sp-mute: #A6AFB9; --sp-line: #2E3B4A; --sp-brick: #E0725F; --sp-ochre: #E6B04A; --sp-teal: #6FB3BF; --sp-sand: #26303B; --sp-blush: #2E2628; --sp-mint: #1F3134; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sp { --sp-paper: #121A23; --sp-card: #1B2633; --sp-ink: #ECE7DC; --sp-text: #DCD8D0; --sp-mute: #A6AFB9; --sp-line: #2E3B4A; --sp-brick: #E0725F; --sp-ochre: #E6B04A; --sp-teal: #6FB3BF; --sp-sand: #26303B; --sp-blush: #2E2628; --sp-mint: #1F3134; }
+}
+.sp h1, .sp h2, .sp h3 { font-family: var(--sp-serif); color: var(--sp-ink); margin: 0; text-wrap: balance; }
+.sp-wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.sp-lab { font: 600 12px/1.3 var(--sp-sans); letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* Hub hero: the same navy-to-dusk band as a report's hero, with the skyline at its foot. */
+.sp-hero { position: relative; overflow: hidden; background: linear-gradient(160deg, var(--sp-hero1) 0%, var(--sp-hero2) 55%, var(--sp-hero3) 100%); color: var(--sp-onhero); }
+.sp-hero .sp-wrap { position: relative; z-index: 1; padding-top: 40px; padding-bottom: 150px; }
+.sp-hero .sp-lab { color: var(--sp-gold); }
+.sp-hero h1 { margin: 12px 0 14px; max-width: 18ch; font-size: clamp(36px, 6.4vw, 68px); line-height: 1.02; letter-spacing: -0.01em; color: #FFF8EE; }
+.sp-hero h1 em { font-style: italic; font-weight: 500; color: var(--sp-gold); }
+.sp-stand { margin: 0; max-width: 58ch; font-size: clamp(16.5px, 2vw, 19px); line-height: 1.55; color: var(--sp-onhero2); }
+.sp-sky { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 140px; z-index: 0; }
+
+/* The latest report, as a large card overlapping the band's foot. */
+.sp-feature { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); margin-top: -110px; border-radius: 18px; overflow: hidden; background: var(--sp-card); border: 1px solid var(--sp-line); box-shadow: 0 18px 50px rgba(20, 30, 45, 0.18); color: inherit; text-decoration: none; }
+.sp-feature:hover .sp-go, .sp-card:hover .sp-go { text-decoration: underline; text-underline-offset: 3px; }
+.sp-feature img, .sp-card img { display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.sp-feature-body { display: flex; flex-direction: column; gap: 10px; padding: 26px 28px 24px; }
+.sp-start { color: var(--sp-brick); }
+.sp-kicker { color: var(--sp-teal); }
+.sp-feature h2 { font-size: clamp(26px, 3.4vw, 38px); line-height: 1.1; }
+.sp-feature p { margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--sp-text); }
+.sp-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0; padding: 0; list-style: none; font-size: 13px; color: var(--sp-mute); }
+.sp-meta li { display: inline-flex; align-items: center; }
+.sp-meta li + li::before { content: "·"; margin-right: 10px; color: var(--sp-line); }
+.sp-theme { padding: 3px 10px; border-radius: 999px; background: var(--sp-mint); color: var(--sp-teal); font-weight: 600; font-size: 12.5px; }
+.sp-go { margin-top: auto; align-self: flex-start; padding: 11px 18px; border-radius: 999px; background: var(--sp-gold); color: #1D2B3A; font: 600 14px/1 var(--sp-sans); }
+
+/* Why read them: four short reasons as tinted tiles. */
+.sp-section { padding: 44px 0 0; }
+.sp-section > .sp-lab { color: var(--sp-teal); }
+.sp-section > h2 { margin: 6px 0 18px; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.12; }
+.sp-why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.sp-why li { padding: 18px 20px; border-radius: 14px; background: var(--sp-sand); font-size: 15.5px; line-height: 1.5; }
+.sp-why li:nth-child(2) { background: var(--sp-blush); }
+.sp-why li:nth-child(3) { background: var(--sp-mint); }
+.sp-why li:nth-child(4) { background: var(--sp-card); border: 1px solid var(--sp-line); }
+.sp-why b { display: block; margin-bottom: 4px; font: 700 19px/1.25 var(--sp-serif); color: var(--sp-ink); }
+.sp-honest { display: flex; gap: 14px; align-items: flex-start; margin: 22px 0 0; padding: 16px 18px; border-radius: 12px; border-left: 4px solid var(--sp-ochre); background: var(--sp-card); border-top: 1px solid var(--sp-line); border-right: 1px solid var(--sp-line); border-bottom: 1px solid var(--sp-line); font-size: 15.5px; line-height: 1.55; }
+.sp-honest b { display: block; margin-bottom: 2px; font: 600 12.5px/1.3 var(--sp-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--sp-brick); }
+
+/* All reports, newest first. */
+.sp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.sp-card { display: flex; flex-direction: column; height: 100%; border-radius: 16px; overflow: hidden; background: var(--sp-card); border: 1px solid var(--sp-line); color: inherit; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
+.sp-card:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(20, 30, 45, 0.12); }
+.sp-card-body { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 18px; flex: 1; }
+.sp-card h3, .sp-card h2 { font-size: 22px; line-height: 1.2; }
+.sp-card p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--sp-text); }
+.sp-card .sp-meta { margin-top: auto; padding-top: 8px; }
+.sp-card .sp-go { margin-top: 6px; background: transparent; padding: 6px 0; color: var(--sp-brick); font-weight: 600; }
+.sp-foot { margin: 36px 0 0; padding: 18px 0 0; border-top: 1px solid var(--sp-line); font-size: 15px; color: var(--sp-mute); }
+.sp-foot a { color: var(--sp-teal); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.sp .ab-join { margin-top: 32px; }
+.sp .ab-join h2 { color: #fff; }
+.sp-end { padding-bottom: 40px; }
+
+/* Report pages: a slim bar above the report (where it sits, share, listen) and the "More special reports" strip below. */
+.sp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 10px 0; font-size: 13.5px; color: var(--sp-mute); }
+.sp-bar .crumbs { font-size: 13.5px; color: var(--sp-mute); }
+.sp-bar .crumbs a { color: var(--sp-teal); font-weight: 600; }
+.sp-bar .crumbs span { margin: 0 6px; }
+.sp-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.sp .ev-share { margin-top: 0; }
+.sp-more { margin-top: 8px; }
+.sp-more .sp-lab { color: var(--sp-teal); }
+.sp-more h2 { margin: 6px 0 16px; font-size: clamp(24px, 3vw, 32px); }
+
+/* A report's own markup lives inside .sp-report with its stylesheet scoped to it (lib/special.ts scopeCss). A few
+   site-wide rules have to be undone so they don't bleed into it. */
+.sp-report a { text-decoration: underline; text-underline-offset: 3px; }
+.sp-report .hero { padding: 0; }
+.sp-report .hero h1, .sp-report .hero p { letter-spacing: normal; }
+.sp-report img { display: inline-block; }
+.sp-report main { display: block; }
+/* Small ochre and brick labels in a report fall just under 4.5:1 on their tints; deepened here, not in the report file. */
+.sp-report p.watch > b { color: #8F6200; }
+:root[data-theme="dark"] .sp-report .watch b { color: #E6B04A; }
+:root[data-theme="dark"] .sp-report .note b { color: #F08A78; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sp-report .watch b { color: #E6B04A; }
+  :root:not([data-theme="light"]) .sp-report .note b { color: #F08A78; }
+}
+
+@media (max-width: 760px) {
+  .sp-hero .sp-wrap { padding-top: 26px; padding-bottom: 120px; }
+  .sp-sky { height: 110px; }
+  .sp-feature { grid-template-columns: 1fr; margin-top: -84px; }
+  .sp-feature-body { padding: 20px 18px 20px; gap: 8px; }
+  .sp-section { padding-top: 34px; }
+  .sp-why { grid-template-columns: 1fr; gap: 10px; }
+  .sp-why li { padding: 16px; }
+  .sp-go { align-self: stretch; text-align: center; padding: 13px 18px; }
+}

@@ -15,6 +15,7 @@ import FigClamp from "@/components/FigClamp";
 import MarketStrip from "@/components/MarketStrip";
 import PrintImages from "@/components/PrintImages";
 import SectionBar from "@/components/SectionBar";
+import Listen from "@/components/Listen";
 
 const SECTION_NOTE: Record<string, string> = {
   "Pick of the day": "One story worth slowing down for",
@@ -332,6 +333,27 @@ function SpecialReport({ r }: { r: EditionContent["reading"][number] }) {
   );
 }
 
+/** The edition's special report, pointed at from the newsletter data (`special`): after the numbers of the day, before the stories. */
+function SpecialPointer({ sp }: { sp: NonNullable<EditionContent["special"]> }) {
+  const href = readingHref(sp.url);
+  const own = href.startsWith("/");
+  const ext = own ? {} : { target: "_blank", rel: "noreferrer" };
+  return (
+    <aside className="ev-sp" aria-labelledby="ev-sp-title">
+      <p className="ev-sp-kicker">{sp.kicker}</p>
+      <h2 id="ev-sp-title">
+        <a href={href} {...ext}>
+          {sp.title}
+        </a>
+      </h2>
+      {sp.intro && <p className="ev-sp-intro">{sp.intro}</p>}
+      <a className="ev-sp-cta" href={href} {...ext}>
+        {sp.cta} <span aria-hidden>→</span>
+      </a>
+    </aside>
+  );
+}
+
 /** An edition in the KKReckons design: slice, key numbers, sections of stories, further reading. */
 export default function EditionView({
   e,
@@ -427,7 +449,7 @@ export default function EditionView({
   let n = 0;
 
   return (
-    <div className="ev">
+    <div className="ev" id={`ev-${e.date}`}>
       <section className="ev-head">
         <p className={`ev-kicker${showDate ? "" : " ev-kicker-size"}`}>
           {showDate && longDate(e.date)}
@@ -436,7 +458,10 @@ export default function EditionView({
           </span>
         </p>
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
-        <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
+        <div className="ev-tools">
+          <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
+          <Listen rootId={`ev-${e.date}`} minutes={e.readingMinutes} />
+        </div>
         {signup}
       </section>
       {e.sections.length > 1 && (
@@ -478,6 +503,8 @@ export default function EditionView({
           })}
         </section>
       )}
+
+      {e.special && <SpecialPointer sp={e.special} />}
 
       {e.sections.map((sec) => (
         <section

@@ -53,7 +53,12 @@ export type EditionContent = {
   stressIndex?: { score: number; band: string; asOf: string; backCalculated?: boolean };
   /** Six market numbers at the last close before the edition (data/markets/<date>.json). */
   markets?: { source: string; assets: MarketAsset[] };
+  /** A pointer to a KKReckons special report (/special/<slug>): a banner after the numbers of the day, and one line in the email.
+   *  Not a news link, so it may appear in more than one edition and isn't counted as a used article. */
+  special?: SpecialPointer;
 };
+
+export type SpecialPointer = { kicker: string; title: string; intro: string; url: string; cta: string };
 
 /** One number in the market strip: `prev` is the close before `asOf`, `week` the last close at least 7 days earlier. */
 export type MarketAsset = {

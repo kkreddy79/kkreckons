@@ -271,6 +271,10 @@ function fromEmbedded(date, d) {
     callouts: (d.callout || []).map((c) => ({ num: clean(c.num), text: clean(`${c.lead || ""}${c.rest || ""}`), url: c.url || "" })),
     sections,
     reading: (d.reading || []).map((r) => ({ title: clean(r.title), url: r.url || "", note: clean(r.note || r.src || ""), ...(r.special ? { special: true } : {}) })),
+    // Pointer to a special report (docs/edition-format.md): shown after the numbers of the day and in the email.
+    ...(d.special && clean(d.special.title) && /^https?:\/\//.test(d.special.url || "")
+      ? { special: { kicker: clean(d.special.kicker) || "Special report", title: clean(d.special.title), intro: clean(d.special.intro), url: d.special.url, cta: clean(d.special.cta) || "Read the special report" } }
+      : {}),
     ...(typeof d.cover === "string" && d.cover ? { coverData: d.cover } : {}),
     ...(d.cover && typeof d.cover === "object" && d.cover.src ? { coverData: d.cover.src, coverAlt: clean(d.cover.alt) } : {}),
     ...(d.takeaway && clean(d.takeaway.line)
@@ -408,6 +412,8 @@ for (const file of files) {
 
   const m = meta[date] || {};
   if (m.slice) content.slice = m.slice;
+  // `special` in edition-meta adds or replaces the edition's special-report pointer (`"special": null` removes it).
+  if ("special" in m) content.special = m.special || undefined;
   // Per-story fixes (missing source links, fuller summaries), keyed by story title.
   // `{ "remove": "<reason>" }` drops a story (for example a repeat of an article used before).
   for (const sec of content.sections) {
@@ -451,6 +457,7 @@ for (const file of files) {
     sections: content.sections,
     reading: content.reading,
     ...(content.takeaway ? { takeaway: content.takeaway } : {}),
+    ...(content.special ? { special: content.special } : {}),
     ...(cover ? { cover, coverAlt: content.coverAlt || content.slice } : {}),
     ...(stress && showStress ? { stressIndex: stress } : {}),
     ...(markets ? { markets } : {}),

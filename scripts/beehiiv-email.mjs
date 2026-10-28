@@ -141,6 +141,13 @@ rows.push(
     : `<tr><td colspan="2" style="padding:4px 0 2px 12px;border-left:4px solid ${E.coral};font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;color:${E.ink};">${esc(ed.slice)}</td></tr>`,
 );
 
+// The edition's special report (`special` in the newsletter data): one line under the slice, wherever the slice sits
+// (at the top without a takeaway, else above the button at the end). Not a news link, so it isn't tracked as one.
+const specialLine = ed.special
+  ? `<div style="margin-top:6px;font-family:${SANS};font-size:13.5px;line-height:1.4;">${a(ed.special.url, `<span style="color:#B7791F;font-weight:700;">Special report:</span> <span style="color:${E.ink};font-weight:700;">${esc(ed.special.title)} &rarr;</span>`)}</div>`
+  : "";
+if (specialLine && !hasTakeaway) rows.push(`<tr><td colspan="2" style="padding:0 0 0 12px;">${specialLine}</td></tr>`);
+
 // The day's research brief, if any, right under the takeaway: otherwise it only appears in Further reading.
 const special = (ed.reading || []).find((r) => r.special);
 if (special) {
@@ -258,7 +265,7 @@ if (ed.reading?.length) {
 rows.push(
   `<tr><td colspan="2" align="center" style="padding:20px 0 0;">` +
     (hasTakeaway && ed.slice
-      ? `<div style="max-width:480px;margin:0 auto 12px;font-family:${SERIF};font-size:16px;line-height:1.3;font-weight:700;color:${E.ink};">${esc(ed.slice)}</div>`
+      ? `<div style="max-width:480px;margin:0 auto 12px;font-family:${SERIF};font-size:16px;line-height:1.3;font-weight:700;color:${E.ink};">${esc(ed.slice)}${specialLine}</div>`
       : "") +
     `<table cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="border:2px solid ${E.coral};border-radius:24px;background-color:#FFF7EE;">` +
     a(pageUrl, "Read the full edition →", `display:block;padding:10px 26px;font-family:${SANS};font-size:15px;font-weight:700;color:${E.coral};`) +
