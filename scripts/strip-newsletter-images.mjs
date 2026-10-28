@@ -31,7 +31,9 @@ const pointer = (dataUrl, name) => {
   const m = /^data:image\/(png|jpe?g|webp);base64,/.exec(typeof dataUrl === "string" ? dataUrl : "");
   if (!m) return null;
   const target = name(EXT[m[1]]);
-  if (!fs.existsSync(path.join(figsDir, target))) throw new Error(`public/figs/${target} is missing; run npm run editions first`);
+  // An image hidden with an override lives in newsletters/figs-kept/ instead (build-editions.mjs).
+  const kept = path.join(root, "newsletters", "figs-kept", target);
+  if (!fs.existsSync(path.join(figsDir, target)) && !fs.existsSync(kept)) throw new Error(`public/figs/${target} is missing; run npm run editions first`);
   return `kkreckons-fig:/figs/${target}`;
 };
 
@@ -54,6 +56,7 @@ if (!stripped) {
   console.log(`${date}: newsletter already stored without images`);
   process.exit(0);
 }
-const out = html.replace(re, (_, open, __, close) => `${open}${JSON.stringify(d)}${close}`);
+// Escape "<" so text such as "</script>" can't end the data block early.
+const out = html.replace(re, (_, open, __, close) => `${open}${JSON.stringify(d).replace(/</g, "\\u003c")}${close}`);
 fs.writeFileSync(file, out);
 console.log(`${date}: stored without its ${stripped} images (${(html.length / 1048576).toFixed(1)} MB → ${(out.length / 1048576).toFixed(1)} MB)`);

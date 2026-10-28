@@ -13,6 +13,7 @@
 
 import { chromium } from "playwright";
 import sharp from "sharp";
+import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -45,7 +46,7 @@ const stressBand = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ?
 async function stressSnapshot(date) {
   for (const url of stressHistory ? [] : STRESS_SOURCES) {
     try {
-      const r = await fetch(`${url}?t=${Date.now()}`, { cache: "no-store" });
+      const r = await fetch(`${url}?t=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(15000) });
       if (r.ok) {
         stressHistory = (await r.json()).history.filter((h) => h.score != null);
         break;
@@ -61,11 +62,20 @@ async function stressSnapshot(date) {
 // shows the same dated numbers. Every edition has one (the job keeps 45 closes, back to 24 Aug 2026).
 const MARKETS_SOURCES = STRESS_SOURCES.map((u) => u.replace(/data\.json$/, "markets.json"));
 const marketsDir = path.join(root, "data", "markets");
+// Whether git tracks a file (outside a git checkout, treat everything as committed).
+const committed = (file) => {
+  try {
+    execFileSync("git", ["ls-files", "--error-unmatch", path.relative(root, file)], { cwd: root, stdio: "ignore" });
+    return true;
+  } catch (e) {
+    return e.code === "ENOENT";
+  }
+};
 let marketsData;
 async function marketsSnapshot(date) {
   for (const url of marketsData ? [] : MARKETS_SOURCES) {
     try {
-      const r = await fetch(`${url}?t=${Date.now()}`, { cache: "no-store" });
+      const r = await fetch(`${url}?t=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(15000) });
       if (r.ok) {
         marketsData = await r.json();
         break;
@@ -107,12 +117,24 @@ function normalise(html) {
 
 // Newsletters published from 25 Oct 2026 are stored without their images (scripts/strip-newsletter-images.mjs):
 // each "fig" and "cover" then holds a pointer, "kkreckons-fig:/figs/<file>", to the copy already in public/figs.
-// The claude.ai artifact keeps the original. A pointer to a missing file is reported and leaves no image.
+// The claude.ai artifact keeps the original. An image hidden with an edition-meta override is moved out of the site
+// to newsletters/figs-kept/ (see the clean-up at the end) and comes back from there when the override goes. A pointer
+// to a file in neither place is an error: the image would be lost.
+const keptDir = path.join(root, "newsletters", "figs-kept");
+const pointed = new Set();
+let missingStored = 0;
 function storedFig(ref) {
   const m = /^kkreckons-fig:(\/figs\/[\w.-]+)$/.exec(ref || "");
   if (!m) return null;
-  if (fs.existsSync(path.join(figsDir, path.basename(m[1])))) return m[1];
-  console.warn(`Missing stored image ${m[1]}: the newsletter points to it, but public/figs has no such file.`);
+  const name = path.basename(m[1]);
+  pointed.add(name);
+  if (fs.existsSync(path.join(figsDir, name))) return m[1];
+  if (fs.existsSync(path.join(keptDir, name))) {
+    fs.copyFileSync(path.join(keptDir, name), path.join(figsDir, name));
+    return m[1];
+  }
+  console.error(`Missing stored image ${m[1]}: the newsletter points to it, but neither public/figs nor newsletters/figs-kept has it.`);
+  missingStored += 1;
   return "";
 }
 
@@ -400,7 +422,13 @@ for (const file of files) {
   let content;
   const embedded = /<script[^>]*id=["']?data["']?[^>]*>([\s\S]*?)<\/script>/i.exec(html);
   if (embedded) {
-    content = fromEmbedded(date, JSON.parse(embedded[1]));
+    let data;
+    try {
+      data = JSON.parse(embedded[1]);
+    } catch (e) {
+      throw new Error(`newsletters/${file}: its data block isn't valid JSON (${e.message})`);
+    }
+    content = fromEmbedded(date, data);
   } else {
     browser ??= await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
     const page = await browser.newPage({ viewport: { width: 430, height: 900 } });
@@ -435,13 +463,20 @@ for (const file of files) {
     } else console.log(`${date}: AI Stress Index data unreachable; the edition shows the link without a number`);
   }
   const marketsFile = path.join(marketsDir, `${date}.json`);
-  if (!fs.existsSync(marketsFile)) {
+  // A snapshot not yet committed is taken again on each run, so a close that reached the source late still gets in
+  // before the edition is published; once committed it never changes.
+  if (!fs.existsSync(marketsFile) || !committed(marketsFile)) {
     const snap = await marketsSnapshot(date);
     if (snap) {
       fs.mkdirSync(marketsDir, { recursive: true });
       fs.writeFileSync(marketsFile, JSON.stringify(snap, null, 1) + "\n");
       console.log(`${date}: market strip saved (${snap.assets.map((a) => `${a.name} ${a.close}`).join(", ")})`);
-    } else console.log(`${date}: market data unreachable; the edition shows no market strip`);
+      // A market whose last close is older than the others' may just be on holiday, or its close may not have
+      // reached the source yet: say so, so it can be checked before publishing.
+      const newest = snap.assets.map((a) => a.asOf).sort().at(-1);
+      const behind = snap.assets.filter((a) => a.asOf < newest);
+      if (behind.length) console.log(`${date}: check the market strip: ${behind.map((a) => `${a.name} is as of ${a.asOf}`).join(", ")}; the others are as of ${newest}`);
+    } else if (!fs.existsSync(marketsFile)) console.log(`${date}: market data unreachable; the edition shows no market strip`);
   }
   const markets = fs.existsSync(marketsFile) ? JSON.parse(fs.readFileSync(marketsFile, "utf8")) : null;
   // Cover image (see saveCover); `"cover": ""` in edition-meta hides it.
@@ -505,9 +540,22 @@ const usedFigs = new Set([
   ...allContent.flatMap((c) => (c.cover ? [path.basename(c.cover)] : [])),
 ]);
 for (const f of fs.readdirSync(figsDir)) {
-  if (!usedFigs.has(f)) {
+  if (usedFigs.has(f)) continue;
+  // A stored newsletter's only copy of an image: keep it off the site but in the repo, so lifting the override
+  // brings it back.
+  if (pointed.has(f)) {
+    fs.mkdirSync(keptDir, { recursive: true });
+    fs.renameSync(path.join(figsDir, f), path.join(keptDir, f));
+    console.log(`Moved hidden image public/figs/${f} to newsletters/figs-kept/`);
+  } else {
     fs.unlinkSync(path.join(figsDir, f));
     console.log(`Removed unused image public/figs/${f}`);
   }
 }
+// Kept originals whose override has gone were copied back above; drop the spare copy.
+for (const f of fs.existsSync(keptDir) ? fs.readdirSync(keptDir) : []) if (usedFigs.has(f)) fs.unlinkSync(path.join(keptDir, f));
 console.log(`Wrote ${index.length} editions`);
+if (missingStored) {
+  console.error(`${missingStored} stored image(s) missing; see above. Restore them from the claude.ai artifact or git history.`);
+  process.exit(1);
+}

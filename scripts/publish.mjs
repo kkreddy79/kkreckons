@@ -52,7 +52,7 @@ for (const [name, cmd, argv] of steps) {
   }
   const lines = output.split("\n");
   const keep = {
-    editions: lines.filter((l) => l.startsWith(date) || /Removed|Wrote|Missing stored image/.test(l)),
+    editions: lines.filter((l) => l.startsWith(date) || /Removed|Moved|Wrote|Missing stored image/.test(l)),
     store: lines,
     check: lines.filter((l) => !/^\s*$/.test(l)),
     email: [`email written to ${email}`, ...lines.filter((l) => /^\d{2} · /.test(l))],

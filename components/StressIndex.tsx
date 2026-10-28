@@ -606,11 +606,11 @@ export default function StressIndex({ initial = null, initialBt = null, marks = 
   const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
-    if (initial) return; // already rendered on the server
+    // Load in the browser whichever file the server couldn't fetch.
     const t = Date.now();
-    loadJson<Data>("data.json", t).then(setD).catch((e: Error) => setErr(e.message));
-    loadJson<Backtest>("backtest.json", t).then(setBt).catch(() => setBt(null));
-  }, [initial]);
+    if (!initial) loadJson<Data>("data.json", t).then(setD).catch((e: Error) => setErr(e.message));
+    if (!initialBt) loadJson<Backtest>("backtest.json", t).then(setBt).catch(() => setBt(null));
+  }, [initial, initialBt]);
 
   return (
     <main className={s.main}>

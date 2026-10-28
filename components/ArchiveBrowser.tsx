@@ -65,7 +65,7 @@ export default function ArchiveBrowser({
     };
   }, [view, summaries]);
 
-  // Arriving from the "/" shortcut on another page (/daily/#search): put the cursor in the search box.
+  // Arriving from the "/" shortcut on another page (/daily#search): put the cursor in the search box.
   useEffect(() => {
     if (location.hash === "#search") document.getElementById("archive-search")?.focus();
   }, []);
@@ -84,15 +84,28 @@ export default function ArchiveBrowser({
     if (s === "free") {
       p.delete("source");
       p.set("free", "1");
-      window.history.replaceState(null, "", `/daily/?${p}`);
+      window.history.replaceState(null, "", `/daily?${p}`);
     }
   }, []);
+
+  // The search text goes into the URL too (?q=), half a second after typing stops, so a search can be shared.
+  useEffect(() => {
+    const id = setTimeout(() => {
+      const next = new URLSearchParams(window.location.search);
+      const q = query.trim();
+      if ((next.get("q") ?? "") === q) return;
+      if (q) next.set("q", q);
+      else next.delete("q");
+      window.history.replaceState(null, "", `/daily${next.size ? `?${next}` : ""}${window.location.hash}`);
+    }, 500);
+    return () => clearTimeout(id);
+  }, [query]);
 
   const setParam = (key: "theme" | "source" | "free", value: string) => {
     const next = new URLSearchParams(window.location.search);
     if (value) next.set(key, value);
     else next.delete(key);
-    window.history.replaceState(null, "", `/daily/${next.size ? `?${next}` : ""}`);
+    window.history.replaceState(null, "", `/daily${next.size ? `?${next}` : ""}`);
     if (key === "theme") setThemeState(value);
     else if (key === "free") setFree(!!value);
     else setSource(value);
