@@ -32,25 +32,34 @@
 .sp-hero h1 { margin: 12px 0 14px; max-width: 18ch; font-size: clamp(36px, 6.4vw, 68px); line-height: 1.02; letter-spacing: -0.01em; color: #FFF8EE; }
 .sp-hero h1 em { font-style: italic; font-weight: 500; color: var(--sp-gold); }
 .sp-stand { margin: 0; max-width: 58ch; font-size: clamp(16.5px, 2vw, 19px); line-height: 1.55; color: var(--sp-onhero2); }
+/* Wide screens: the headline on the left and the standfirst beside it, as in a report's section heads, rather than a
+   two-line headline over an empty right half. */
+@media (min-width: 900px) {
+  .sp-hero .sp-wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); column-gap: 48px; align-items: end; }
+  .sp-hero .sp-wrap > :not(.sp-stand) { grid-column: 1; }
+  .sp-hero h1 { max-width: none; margin-bottom: 0; }
+  .sp-hero .sp-stand { grid-column: 2; grid-row: 1 / span 2; align-self: end; padding: 0 0 6px 20px; border-left: 2px solid rgba(240, 184, 64, 0.45); }
+}
 .sp-sky { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 140px; z-index: 0; }
 
 /* The latest report, as a large card overlapping the band's foot. */
-.sp-feature { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); margin-top: -110px; border-radius: 18px; overflow: hidden; background: var(--sp-card); border: 1px solid var(--sp-line); box-shadow: 0 18px 50px rgba(20, 30, 45, 0.18); color: inherit; text-decoration: none; }
+.sp-feature { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); margin-top: -110px; border-radius: 18px; overflow: hidden; background: var(--sp-card); border: 1px solid var(--sp-line); box-shadow: 0 18px 50px rgba(20, 30, 45, 0.18); color: inherit; text-decoration: none; }
 .sp-feature:hover .sp-go, .sp-card:hover .sp-go { text-decoration: underline; text-underline-offset: 3px; }
 /* Covers carry their own headline near the edges, so they are never cropped: the card image keeps its 16:9 frame,
    and beside a taller text column the feature image is letterboxed in the cover's own navy (object-fit: contain). */
 .sp-card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #141e2b; }
 /* Beside a taller text column the cover sits at the top of its box; the band left below it is the colour of the
    covers' skyline foot, so it reads as part of the picture. */
-.sp-feature img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; object-position: top; background: #0b131c; }
+.sp-feature img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; object-position: center; background: linear-gradient(180deg, #1a2433 0%, #0b131c 100%); }
 .sp-feature-body { display: flex; flex-direction: column; gap: 10px; padding: 26px 28px 24px; }
 .sp-start { color: var(--sp-brick); }
 .sp-kicker { color: var(--sp-teal); }
-.sp-feature h2 { font-size: clamp(26px, 3.4vw, 38px); line-height: 1.1; }
+.sp-feature h2 { font-size: clamp(24px, 2.6vw, 32px); line-height: 1.12; }
 .sp-feature p { margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--sp-text); }
 .sp-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0; padding: 0; list-style: none; font-size: 13px; color: var(--sp-mute); }
 .sp-meta li { display: inline-flex; align-items: center; }
 .sp-meta li + li::before { content: "·"; margin-right: 10px; color: var(--sp-line); }
+.sp-meta li:has(> .sp-theme)::before { content: none; }
 .sp-theme { padding: 3px 10px; border-radius: 999px; background: var(--sp-mint); color: var(--sp-teal); font-weight: 600; font-size: 12.5px; }
 .sp-go { margin-top: auto; align-self: flex-start; padding: 11px 18px; border-radius: 999px; background: var(--sp-gold); color: #1D2B3A; font: 600 14px/1 var(--sp-sans); }
 
@@ -76,6 +85,13 @@
 .sp-card p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--sp-text); }
 .sp-card .sp-meta { margin-top: auto; padding-top: 8px; }
 .sp-card .sp-go { margin-top: 6px; background: transparent; padding: 6px 0; color: var(--sp-brick); font-weight: 600; }
+@media (min-width: 761px) {
+  .sp-grid:has(> li:only-child) { grid-template-columns: minmax(0, 1fr); }
+  .sp-grid > li:only-child .sp-card { flex-direction: row; }
+  .sp-grid > li:only-child .sp-card img { flex: 0 0 48%; width: 48%; height: auto; align-self: center; }
+  .sp-grid > li:only-child .sp-card-body { padding: 22px 26px; justify-content: center; }
+  .sp-grid > li:only-child .sp-card :is(h2, h3) { font-size: clamp(22px, 2.4vw, 28px); }
+}
 .sp-foot { margin: 36px 0 0; padding: 18px 0 0; border-top: 1px solid var(--sp-line); font-size: 15px; color: var(--sp-mute); }
 .sp-foot a { color: var(--sp-teal); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .sp .ab-join { margin-top: 32px; }
@@ -107,6 +123,28 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .sp-report .watch b { color: #E6B04A; }
   :root:not([data-theme="light"]) .sp-report .note b { color: #F08A78; }
+}
+
+/* House layout for reports (the classes of the KKReckons report template; docs/special-reports.md). These win over a
+   report's own scoped rules, so every report, past and future, gets them.
+   Section heads: with a standfirst, the label and headline take the left and the standfirst sits beside them on the
+   right, so a two-line headline doesn't leave half the row empty; without one, the headline has the full width. */
+@media (min-width: 900px) {
+  .sp .sp-report .sec-head { max-width: none; }
+  .sp .sp-report .sec-head:has(> p) { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); column-gap: 48px; row-gap: 6px; align-items: end; }
+  .sp .sp-report .sec-head:has(> p) > :not(p) { grid-column: 1; }
+  .sp .sp-report .sec-head:has(> p) > p { grid-column: 2; grid-row: 1 / span 2; align-self: end; margin: 0; padding: 2px 0 4px 20px; border-left: 2px solid var(--line); font-size: 16px; line-height: 1.55; }
+}
+/* The takeaway: a pull quote across the full width, with a gold quotation mark, rather than a short paragraph in
+   the left half of a dark box. */
+.sp .sp-report .take { position: relative; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 26px; align-items: start; padding: 34px 40px 36px; border: 1px solid rgba(240, 184, 64, 0.28); background: radial-gradient(120% 140% at 100% 0%, rgba(240, 184, 64, 0.16) 0%, transparent 55%), linear-gradient(120deg, var(--hero1) 0%, var(--hero2) 65%, var(--hero3) 130%); box-shadow: 0 18px 44px rgba(20, 30, 45, 0.22); }
+.sp .sp-report .take::before { content: "\201C"; grid-row: 1 / span 2; font: italic 700 120px/0.75 var(--serif); color: var(--gold); }
+.sp .sp-report .take > * { grid-column: 2; }
+.sp .sp-report .take .lab { letter-spacing: 0.16em; }
+.sp .sp-report .take p { max-width: none; margin: 10px 0 0; font-size: clamp(22px, 2.7vw, 33px); line-height: 1.3; text-wrap: pretty; }
+@media (max-width: 760px) {
+  .sp .sp-report .take { padding: 24px 20px 26px; column-gap: 14px; }
+  .sp .sp-report .take::before { font-size: 72px; }
 }
 
 /* Tablets in portrait: side by side, the cover would be small with a tall band under it; stack instead. */

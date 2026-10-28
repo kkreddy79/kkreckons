@@ -14,6 +14,12 @@
 //   - a cover or share image (they carry their own headline) is cropped by more than 3%;
 //   - text is clipped by the box that holds it (cut off at a card's edge, say), outside scrolling strips and ellipses;
 //   - a short button or navigation label wraps onto two lines;
+//   - a large headline or pull quote wraps onto two or more lines while 35% or more of its row stays empty beside it
+//     (a narrow max-width on a wide screen: the space looks wasted, and a balanced two-liner should be one line or sit
+//     beside its standfirst);
+//   - a grid laid out for several cards holds just one, which then stands in a third of the row;
+//   - text is set in a bare system serif (Georgia, Times) instead of the site's fonts, or in a web font that never loaded;
+//   - Share and Listen sit side by side but not level (a caption wrapping under one of them pushes it up);
 //   - axe finds a serious or critical accessibility problem (phone and laptop, light and dark).
 // Lists, without failing: lesser axe findings, and tap targets under 40px on touch devices.
 //
@@ -66,9 +72,10 @@ const DEVICES = [
 const DARK = ["iPhone 390", "laptop 1280"];
 const WEBKIT = ["iPhone 390", "tablet 768", "laptop 1280"];
 
-/** Measured in the page: cropped covers, clipped text and small tap targets. */
-function inspect({ touch }) {
-  const out = { cropped: [], clipped: [], wrapped: [], small: [] };
+/** Measured in the page: cropped covers, clipped text, wasted width, lone cards, stray fonts, uneven tools and small tap
+ * targets. */
+function inspect({ touch, wide }) {
+  const out = { cropped: [], clipped: [], wrapped: [], wasted: [], lone: [], fonts: [], uneven: [], small: [] };
   const visible = (el) => {
     const r = el.getBoundingClientRect();
     return r.width > 0 && r.height > 0 && getComputedStyle(el).visibility !== "hidden" && !el.closest("[hidden], [aria-hidden='true'], dialog:not([open]), .sr-only, .ev-bar:not(.on)");
@@ -110,15 +117,11 @@ function inspect({ touch }) {
     }
   }
 
-  // Short labels on buttons and navigation must stay on one line ("Special / Reports" stacked in the header is a
-  // layout that ran out of room).
-  for (const el of document.querySelectorAll(".site-header a, .site-header button, a.chip, button.chip, .ev-share a, .ev-share button, .hdr-sub, .ab-btn, .sp-go, .ev-sx-cta, .ev-sp-cta, .ev-listen button")) {
-    const text = (el.textContent || "").trim();
-    if (!visible(el) || !text || text.split(/\s+/).length > 4) continue;
-    // Lines of text only (an icon beside the label is not a second line). A text box starts a new line when its top is
-    // more than half a line below the current line's top, so a smaller count beside a label ("AI 101") is one line.
-    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  // Text lines of an element, for line counts and the width the text really uses. A text box starts a new line when its
+  // top is more than half a line below the current line's top.
+  const textLines = (el) => {
     const boxes = [];
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       if (!n.textContent.trim()) continue;
       const range = document.createRange();
@@ -136,7 +139,100 @@ function inspect({ touch }) {
         half = r.height / 2;
       }
     }
-    if (lines > 1) out.wrapped.push(label(el));
+    return { lines, left: Math.min(...boxes.map((r) => r.left)), right: Math.max(...boxes.map((r) => r.right)) };
+  };
+
+  // Fonts: every line of text is in one of the site's own faces (or the system sans the site asks for). Georgia or
+  // Times means a rule asked for a serif the site doesn't serve; a web font that never loaded falls back the same way.
+  const faces = new Set([...document.fonts].filter((f) => f.status === "loaded").map((f) => `${f.family.replace(/"/g, "")}|${f.style}`));
+  const webFonts = new Set([...document.fonts].map((f) => f.family.replace(/"/g, "")));
+  const badFonts = new Map();
+  for (const el of textEls) {
+    const s = getComputedStyle(el);
+    const first = s.fontFamily.split(",")[0].replace(/["']/g, "").trim();
+    let why = "";
+    if (/^(georgia|times new roman|times|serif)$/i.test(first)) why = `${first} (a system serif)`;
+    else if (webFonts.has(first) && !faces.has(`${first}|${s.fontStyle === "normal" ? "normal" : "italic"}`)) why = `${first} ${s.fontStyle}, which never loaded`;
+    if (why && !badFonts.has(why)) badFonts.set(why, label(el));
+  }
+  for (const [why, where] of badFonts) out.fonts.push(`${why}, e.g. ${where}`);
+
+  // Wasted width (screens from 1024px): a headline or pull quote (22px and up) that wraps although 35% or more of the
+  // column it sits in is empty beside it. The column is the nearest box clearly wider than the text; the band to the
+  // right of the text counts as empty when no other text, image or control overlaps it.
+  if (wide) {
+    for (const el of document.querySelectorAll("h1, h2, h3, p, blockquote, li")) {
+      if (!visible(el) || parseFloat(getComputedStyle(el).fontSize) < 22 || el.querySelector("h1, h2, h3, p, li")) continue;
+      const t = textLines(el);
+      if (t.lines < 2) continue;
+      // The column is the nearest box clearly wider than the text that isn't itself held narrow inside its parent: a
+      // max-width block pinned to the left (a section head capped at 62ch) is measured against the column it sits in,
+      // while a centred page wrap (max-width with equal margins) is the column.
+      const pinned = (a) => {
+        if (getComputedStyle(a).maxWidth === "none" || !a.parentElement) return false;
+        const r = a.getBoundingClientRect();
+        const P = a.parentElement.getBoundingClientRect();
+        return P.right - r.right - (r.left - P.left) > 40;
+      };
+      let col = el.parentElement;
+      while (col && col !== document.body && (col.getBoundingClientRect().width < t.right - t.left + 40 || pinned(col))) col = col.parentElement;
+      if (!col) continue;
+      const cs = getComputedStyle(col);
+      const C = col.getBoundingClientRect();
+      const cLeft = C.left + parseFloat(cs.paddingLeft) + parseFloat(cs.borderLeftWidth);
+      const cRight = C.right - parseFloat(cs.paddingRight) - parseFloat(cs.borderRightWidth);
+      const width = cRight - cLeft;
+      const free = cRight - t.right;
+      if (width < 560 || free < 0.35 * width) continue;
+      const E = el.getBoundingClientRect();
+      const band = { left: t.right + 16, right: cRight, top: E.top, bottom: E.bottom };
+      const used = [...col.querySelectorAll("*")].some((o) => {
+        if (o.contains(el) || el.contains(o) || !visible(o)) return false;
+        const r = o.getBoundingClientRect();
+        if (r.right <= band.left || r.left >= band.right || r.bottom <= band.top || r.top >= band.bottom) return false;
+        return /^(IMG|SVG|VIDEO|CANVAS|IFRAME|INPUT|BUTTON|SELECT|PICTURE)$/i.test(o.tagName) || [...o.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
+      });
+      // A picture beside the text fills the band too, decorative art included (it may sit outside the column, as the
+      // AI Stress Index's hero illustration does).
+      const art = [...document.querySelectorAll("img, picture, video, canvas")].some((o) => {
+        const r = o.getBoundingClientRect();
+        return r.width > 40 && getComputedStyle(o).visibility !== "hidden" && !(r.right <= band.left || r.left >= band.right || r.bottom <= band.top || r.top >= band.bottom);
+      });
+      if (!used && !art) out.wasted.push(`${label(el)} wraps onto ${t.lines} lines with ${Math.round((free / width) * 100)}% of its ${Math.round(width)}px row empty`);
+    }
+
+    // A grid laid out for several columns holding a single card.
+    for (const el of document.querySelectorAll("*")) {
+      const s = getComputedStyle(el);
+      if (s.display !== "grid" || !visible(el)) continue;
+      const kids = [...el.children].filter(visible);
+      const tracks = s.gridTemplateColumns.split(" ").filter((x) => parseFloat(x) > 0).length;
+      if (kids.length !== 1 || tracks < 2 || el.getBoundingClientRect().width < 600) continue;
+      const k = kids[0].getBoundingClientRect();
+      if (k.width < 0.55 * el.getBoundingClientRect().width) out.lone.push(`${label(el).split(" ")[0]} has one item in ${tracks} columns (${label(kids[0])})`);
+    }
+  }
+
+  // Share and Listen side by side must be level.
+  for (const share of document.querySelectorAll(".ev-share-one")) {
+    const tools = share.closest(".ev-tools, .sp-tools, .st-tools");
+    const listen = tools?.querySelector(".ev-listen button");
+    if (!listen || !visible(share) || !visible(listen)) continue;
+    const a = share.getBoundingClientRect();
+    const b = listen.getBoundingClientRect();
+    if (a.bottom <= b.top || b.bottom <= a.top) continue; // on different rows (a phone stacking them) is fine
+    const off = Math.abs(a.top + a.height / 2 - (b.top + b.height / 2));
+    if (off > 3) out.uneven.push(`Share and Listen are ${Math.round(off)}px out of line`);
+  }
+
+  // Short labels on buttons and navigation must stay on one line ("Special / Reports" stacked in the header is a
+  // layout that ran out of room).
+  for (const el of document.querySelectorAll(".site-header a, .site-header button, a.chip, button.chip, .ev-share a, .ev-share button, .hdr-sub, .ab-btn, .sp-go, .ev-sx-cta, .ev-sp-cta, .ev-listen button")) {
+    const text = (el.textContent || "").trim();
+    if (!visible(el) || !text || text.split(/\s+/).length > 4) continue;
+    // Lines of text only (an icon beside the label is not a second line); a smaller count beside a label ("AI 101")
+    // is on the same line.
+    if (textLines(el).lines > 1) out.wrapped.push(label(el));
   }
 
   // Tap targets on touch screens. Links inside running text are exempt (WCAG 2.5.8 inline exception).
@@ -222,10 +318,16 @@ async function checkContext(browser, engineName, device, scheme, axe) {
     });
     if (wide > 1) out.failures.push(`${where}: scrolls sideways by ${wide}px${culprits.length ? `; past the edge: ${culprits.join("; ")}` : ""}`);
     for (const e of errors) out.failures.push(`${where}: script error: ${e}`);
-    const found = await page.evaluate(inspect, { touch: Boolean(opts.hasTouch) });
+    // Measure with the page's own fonts in place (a face still loading would read as a fallback).
+    await page.evaluate(() => document.fonts.ready);
+    const found = await page.evaluate(inspect, { touch: Boolean(opts.hasTouch), wide: width >= 1024 });
     for (const c of found.cropped) out.failures.push(`${where}: cover image cropped: ${c}`);
     for (const c of [...new Set(found.clipped)].slice(0, 5)) out.failures.push(`${where}: text clipped: ${c}`);
     if (found.wrapped.length) out.failures.push(`${where}: label wraps onto two lines: ${found.wrapped.slice(0, 5).join("; ")}`);
+    for (const w of found.wasted.slice(0, 3)) out.failures.push(`${where}: wasted width: ${w}`);
+    for (const l of found.lone.slice(0, 3)) out.failures.push(`${where}: lone card: ${l}`);
+    for (const f of found.fonts.slice(0, 3)) out.failures.push(`${where}: wrong font: ${f}`);
+    for (const u of found.uneven) out.failures.push(`${where}: ${u}`);
     if (found.small.length) out.small.push([`${p} · ${engineName === "Chromium" ? "" : engineName + " "}${name}`, found.small]);
     if (shots && scheme === "light") {
       const file = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "home"}--${engineName.toLowerCase()}-${name.replace(/\s+/g, "-")}.png`;

@@ -1,6 +1,9 @@
 /* Playfair Display (SIL Open Font License), self-hosted and cut down to Latin, punctuation, ₹ and € (made with pyftsubset). */
 @font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/playfair-700.woff2) format("woff2"); }
 @font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/playfair-800.woff2) format("woff2"); }
+/* Lora italic (SIL Open Font License, also used by the special reports), for the few italic serif lines; a browser
+   only downloads it on a page that uses it. */
+@font-face { font-family: "Lora"; font-style: italic; font-weight: 400 700; font-display: swap; src: url(/fonts/lora-italic.woff2) format("woff2"); }
 :root {
   --ink: #16151b;
   --muted: #686873;
@@ -11,7 +14,10 @@
   --orange: #ef7447;
   --teal: #0c8d86;
   --line: #e9e4dc;
-  --serif: Georgia, "Times New Roman", serif;
+  /* Headlines everywhere are Playfair Display; Georgia only while it loads. A bare system serif (Times on Windows,
+     DejaVu or Noto on Linux and Android) never shows. */
+  --serif: "Playfair Display", Georgia, serif;
+  --serif-italic: "Lora", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   --shadow: 0 16px 50px rgba(45, 35, 20, 0.08);
   /* Surfaces and text, redefined for dark mode below. */
