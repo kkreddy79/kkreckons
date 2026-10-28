@@ -1,6 +1,8 @@
 import Link from "@/components/Link";
 import Banner from "@/components/Banner";
 import JsonLd, { PUBLISHER } from "@/components/JsonLd";
+import Listen from "@/components/Listen";
+import ShareRow from "@/components/ShareRow";
 import StorySource from "@/components/StorySource";
 import SubscribeBox from "@/components/SubscribeBox";
 import TopicNav from "@/components/TopicNav";
@@ -41,7 +43,7 @@ export default function TopicView({ topic, page }: { topic: Topic; page: number 
         }}
       />
       <Banner />
-      <div className="cu-wrap">
+      <div className="cu-wrap" id="tp-read">
         <section className="cu-hero" aria-labelledby="tp-title">
           <p className="ab-kicker">
             <Link href="/topics">Topics</Link>
@@ -66,6 +68,10 @@ export default function TopicView({ topic, page }: { topic: Topic; page: number 
               </li>
             )}
           </ul>
+          <div className="ev-tools">
+            <ShareRow url={url} slice={`${topic.name} news, explained`} />
+            <Listen rootId="tp-read" minutes={Math.max(1, Math.round(stories.length * 0.3))} />
+          </div>
         </section>
         <TopicNav current={topic.slug} counts={counts} />
         <section className="story-results tp-results">
