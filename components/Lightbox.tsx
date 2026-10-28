@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Opens story graphics in a full-screen viewer instead of a new tab. Any link marked
- * data-lightbox (the graphic itself and "View full size") opens here; the links still work
+ * data-lightbox (the graphic itself, and "View full size" under graphics that aren't tall) opens here; the links still work
  * as plain links without JavaScript, and Ctrl/Cmd-click still opens a new tab.
  * Tap the image to switch between fit-to-screen and full size (scroll to pan); phones can also pinch.
  */
