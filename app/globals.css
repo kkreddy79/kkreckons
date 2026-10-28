@@ -914,7 +914,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 
 /* ---------- Special report pointer in an edition (EditionView SpecialPointer) ----------
    The same navy-to-dusk band and gold kicker as the newsletter's own banner, after the numbers of the day. */
-.ev-sp { display: grid; gap: 6px; margin: 22px 0 0; padding: 20px 22px; border-radius: 18px; color: #F3F1EC; background: linear-gradient(110deg, #1D2B3A, #33405E 60%, #7A4A52); box-shadow: 0 10px 26px rgba(29, 43, 58, 0.22); }
+.ev-sp { display: grid; gap: 6px; margin: 22px 0 0; padding: 20px 22px; border-radius: 18px; color: #F3F1EC; background: linear-gradient(110deg, #1D2B3A, #33405E 60%, #6E3F46); box-shadow: 0 10px 26px rgba(29, 43, 58, 0.22); }
 .ev-sp-kicker { margin: 0; font: 800 11.5px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: #F0B840; }
 .ev .ev-sp h2 { margin: 0; font-size: clamp(21px, 2.6vw, 27px); line-height: 1.2; color: #FFF8EE; }
 .ev-sp h2 a:hover { text-decoration: underline; text-decoration-color: #F0B840; text-underline-offset: 4px; }
