@@ -1,0 +1,56 @@
+name: Delete merged branches
+
+# Deletes branches whose pull request is already merged or closed. Never touches main, a branch with
+# an open pull request, a branch that never had a pull request, or the branches listed in KEEP.
+# Runs by itself every Monday (deleting), and by hand (listing first unless "Only list" is unticked).
+# Merged pull requests already delete their own branch (repository setting); this catches the rest,
+# such as pull requests closed without merging. Every branch can be restored from its pull request
+# page ("Restore branch").
+on:
+  schedule:
+    - cron: '17 3 * * 1' # Mondays 03:17 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only list, don't delete
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run }}
+      KEEP: 'main'
+    steps:
+      - name: Delete branches of merged or closed pull requests
+        run: |
+          set -euo pipefail
+          gh api --paginate "repos/$REPO/branches?per_page=100" --jq '.[].name' | sort > branches.txt
+          gh api --paginate "repos/$REPO/pulls?state=all&per_page=100" \
+            --jq '.[] | select(.head.repo.full_name == env.REPO) | "\(.head.ref)\t\(.state)"' > prs.tsv
+          cut -f1 prs.tsv | sort -u > with_pr.txt
+          awk -F'\t' '$2=="open"{print $1}' prs.tsv | sort -u > open.txt
+          comm -12 branches.txt with_pr.txt | comm -23 - open.txt > candidates.txt
+          deleted=0; failed=0
+          while read -r b; do
+            if [[ " $KEEP " == *" $b "* ]]; then continue; fi
+            if [[ "$DRY_RUN" == "true" ]]; then
+              echo "would delete: $b"; deleted=$((deleted+1))
+            elif gh api -X DELETE "repos/$REPO/git/refs/heads/$b" >/dev/null; then
+              echo "deleted: $b"; deleted=$((deleted+1))
+            else
+              echo "could not delete: $b"; failed=$((failed+1))
+            fi
+          done < candidates.txt
+          {
+            echo "## Delete merged branches"
+            if [[ "$DRY_RUN" == "true" ]]; then echo "Only listed (nothing deleted): $deleted branches."; else echo "Deleted $deleted branches; $failed could not be deleted."; fi
+            echo "Kept on purpose: $KEEP. Branches with open pull requests or none were not touched."
+          } >> "$GITHUB_STEP_SUMMARY"
