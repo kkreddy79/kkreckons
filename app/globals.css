@@ -947,8 +947,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 /* ---------- Tablets and other in-between widths ----------
    Five nav links, the theme toggle and Subscribe stop fitting on one row below about 940px: the header uses the
    phone pattern (wordmark, toggle and Subscribe on top; the links on their own row, scrolling sideways if needed)
-   instead of wrapping "Special / Reports" onto two lines. */
-.site-header nav a { white-space: nowrap; }
+   instead of wrapping "Special / Reports" onto two lines. Chips and footer links are short labels too: a chip at the
+   end of a line moves down whole rather than leaving its count ("Amazon / 5") on the next line. */
+.site-header nav a, a.chip, button.chip, .foot-links a { white-space: nowrap; }
 @media (min-width: 701px) and (max-width: 940px) {
   .site-header { height: auto; flex-wrap: wrap; row-gap: 2px; padding: 10px 24px 0; }
   .site-header nav { order: 3; width: 100%; margin-left: 0; gap: 26px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
