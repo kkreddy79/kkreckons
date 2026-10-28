@@ -66,6 +66,8 @@ if (only.length && !dates.length) {
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 const slugFor = (d) => `${MONTHS[+d.slice(5, 7) - 1]}-${+d.slice(8, 10)}-${d.slice(0, 4)}`;
 const content = Object.fromEntries(sorted.map((d) => [d, JSON.parse(fs.readFileSync(path.join(root, "data", "content", `${d}.json`), "utf8"))]));
+// Special reports that exist on the site (data/special.json): slugs served at /special/<slug>, or listed with their own href.
+const specialSlugs = new Set(JSON.parse(fs.readFileSync(path.join(root, "data", "special.json"), "utf8")).filter((r) => r.file || r.href).map((r) => r.slug));
 
 let problems = 0;
 const warnings = [];
@@ -164,6 +166,13 @@ for (const date of dates) {
     if (!named.has(host(r.url))) unnamed.add(host(r.url));
   }
   for (const k of c.callouts || []) if (k.url && !webLink(k.url)) flag(date, `Number "${k.num}"`, "link", `link isn't an http(s) web address: ${k.url.slice(0, 60)}`);
+  // The special-report pointer: a real link, and when it points at /special/<slug> here, a report that exists (the banner must never 404).
+  if (c.special) {
+    const sp = c.special;
+    if (!sp.title || !webLink(sp.url)) flag(date, `Special report "${sp.title || ""}"`, "special", "needs a title and an http(s) url");
+    const m = /^https?:\/\/(?:www\.)?kkreckons\.com\/special\/([a-z0-9-]+)\/?$/.exec(sp.url || "");
+    if (m && !specialSlugs.has(m[1])) flag(date, `Special report "${sp.title}"`, "special", `points at /special/${m[1]}, but data/special.json has no report with that slug (add it, or drop the "special" block for this edition)`);
+  }
   console.log(`${date}: ${stories} stories, ${c.reading.length} further reading`);
 }
 if (unnamed.size) console.log(`ℹ Publishers shown as bare domains (add to PUBLISHERS in lib/editionFormat.ts): ${[...unnamed].join(", ")}`);

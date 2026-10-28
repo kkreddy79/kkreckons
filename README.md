@@ -16,6 +16,11 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 - `/daily/<month>-<day>-<year>/cards` — the day in cards: every story's explainer graphic in one grid (built for editions with two or more graphics; linked from the "Today in 30 seconds" card, not in the sitemap)
 - `/daily/<month>-<day>-<year>/<n>` — one story of an edition on its own page
 - `/topics` and `/topics/<topic>` — every story in each archive theme (for example `/topics/ai`), newest first
+- `/special` — Special Reports hub: every long read, newest first; `/special/<slug>` — one report (a self-contained HTML
+  file KK supplies, kept in `special/<slug>.html`, served inside the site header and footer with its own stylesheet scoped to
+  the report). The registry is `data/special.json`: one entry per report (slug, title, kicker, dek, date, themes, reading time,
+  `file` or `href` for a report that lives elsewhere on the site, 1600×900 `cover`, sources). An edition can point at a report
+  with a top-level `special` object in its data (see `docs/edition-format.md`).
 - `/about` — about the briefing
 - `/api/subscribe` — adds a reader to the beehiiv list from the on-page email form
 

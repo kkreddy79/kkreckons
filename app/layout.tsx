@@ -82,6 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/topics" prefetch={false}>
               Topics
             </Link>
+            <Link href="/special">Special reports</Link>
             <Link href="/coverage">In the news</Link>
             <Link href="/week">This week</Link>
             <Link href="/quiz">Weekly quiz</Link>
