@@ -39,14 +39,14 @@ export default function SourcePicker({ value, options, onChange }: { value: stri
     if (!o) return;
     onChange(o.value);
     setOpen(false);
-    root.current?.querySelector<HTMLButtonElement>(".sp-btn")?.focus();
+    root.current?.querySelector<HTMLButtonElement>(".srcpick-btn")?.focus();
   };
 
   return (
-    <div className="sp" ref={root}>
+    <div className="srcpick" ref={root}>
       <button
         type="button"
-        className="sp-btn"
+        className="srcpick-btn"
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => {
@@ -61,7 +61,7 @@ export default function SourcePicker({ value, options, onChange }: { value: stri
         {current.label} <span>({current.count})</span>
       </button>
       {open && (
-        <div className="sp-panel">
+        <div className="srcpick-panel">
           <input
             ref={input}
             type="search"
@@ -80,7 +80,7 @@ export default function SourcePicker({ value, options, onChange }: { value: stri
               if (ev.key === "ArrowDown") (ev.preventDefault(), setHi((h) => Math.min(h + 1, shown.length - 1)));
               else if (ev.key === "ArrowUp") (ev.preventDefault(), setHi((h) => Math.max(h - 1, 0)));
               else if (ev.key === "Enter") (ev.preventDefault(), pick(shown[hi]));
-              else if (ev.key === "Escape") (ev.preventDefault(), setOpen(false), root.current?.querySelector<HTMLButtonElement>(".sp-btn")?.focus());
+              else if (ev.key === "Escape") (ev.preventDefault(), setOpen(false), root.current?.querySelector<HTMLButtonElement>(".srcpick-btn")?.focus());
             }}
           />
           <ul ref={list} id={`${id}-list`} role="listbox" aria-label="Sources">
@@ -99,7 +99,7 @@ export default function SourcePicker({ value, options, onChange }: { value: stri
                 {o.label} <span>{o.count}</span>
               </li>
             ))}
-            {shown.length === 0 && <li className="sp-none">No source matches “{q.trim()}”</li>}
+            {shown.length === 0 && <li className="srcpick-none">No source matches “{q.trim()}”</li>}
           </ul>
         </div>
       )}

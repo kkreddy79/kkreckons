@@ -81,6 +81,9 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
   const [ok, setOk] = useState(false);
   const [state, setState] = useState<"idle" | "playing" | "paused">("idle");
   const [rate, setRate] = useState(1);
+  // The speed every next sentence uses (the state above only drives the button label), so a change made while
+  // paused still applies.
+  const rateRef = useRef(1);
   const [where, setWhere] = useState("");
   const queue = useRef<Part[]>([]);
   const at = useRef(0);
@@ -104,7 +107,7 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
     return voices.find((v) => v.lang.toLowerCase() === want && v.default) || voices.find((v) => v.lang.toLowerCase() === want) || voices.find((v) => v.default) || voices[0] || null;
   };
 
-  const speakNext = (r: number) => {
+  const speakNext = () => {
     const part = queue.current[at.current];
     if (!part) {
       highlight(null);
@@ -117,16 +120,16 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
     const v = voice();
     if (v) u.voice = v;
     u.lang = v?.lang || "en-US";
-    u.rate = r;
+    u.rate = rateRef.current;
     u.onend = () => {
       live.current = live.current.filter((x) => x !== u);
       at.current += 1;
-      speakNext(r);
+      speakNext();
     };
     u.onerror = (e) => {
       if (e.error === "interrupted" || e.error === "canceled") return;
       at.current += 1;
-      speakNext(r);
+      speakNext();
     };
     live.current.push(u);
     // "Story 3 of 7" while a story is being read (editions only).
@@ -145,7 +148,7 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
     queue.current = parts;
     at.current = 0;
     setState("playing");
-    speakNext(rate);
+    speakNext();
   };
 
   const pause = () => {
@@ -153,8 +156,15 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
     setState("paused");
   };
   const resume = () => {
-    window.speechSynthesis.resume();
     setState("playing");
+    // Speed changed while paused: say the current sentence again at the new speed.
+    if (live.current.at(-1)?.rate !== rateRef.current) {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.resume();
+      speakNext();
+      return;
+    }
+    window.speechSynthesis.resume();
   };
   const stop = () => {
     window.speechSynthesis.cancel();
@@ -166,10 +176,11 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
   const faster = () => {
     const next = RATES[(RATES.indexOf(rate) + 1) % RATES.length];
     setRate(next);
+    rateRef.current = next;
     if (state === "playing") {
       // Restart the current sentence at the new speed.
       window.speechSynthesis.cancel();
-      speakNext(next);
+      speakNext();
     }
   };
 
