@@ -52,7 +52,7 @@ function editionParts(root: Element): Part[] {
 
 function genericParts(root: Element): Part[] {
   const parts: Part[] = [];
-  const skip = "nav, button, figcaption, footer, .sources, .filters, .count, .scale, .sp-bar, .sp-more, .ab-join, .ev-tools, .tp-more, [aria-hidden='true']";
+  const skip = "nav, button, figcaption, footer, .sources, .filters, .count, .scale, .sp-bar, .sp-more, .ab-join, .ev-tools, .tp-more, .ev-src, .ev-qs, [aria-hidden='true']";
   for (const el of root.querySelectorAll("h1, h2, h3, h4, p, li, dt, dd")) {
     if (el.closest(skip) || (el as HTMLElement).hidden || el.closest("[hidden]")) continue;
     if (el.querySelector("p, li, h1, h2, h3, h4")) continue; // read the leaves, not their containers
