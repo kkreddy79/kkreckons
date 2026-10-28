@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import Banner from "@/components/Banner";
 import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
+import Listen from "@/components/Listen";
+import ShareRow from "@/components/ShareRow";
 import { entities, entityBySlug } from "@/lib/entities";
 import { longDate } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
@@ -47,7 +49,7 @@ export default async function Coverage({ params }: Props) {
         }}
       />
       <Banner />
-      <div className="cu-wrap">
+      <div className="cu-wrap" id="cv-read">
         <section className="cu-hero" aria-labelledby="cv-title">
           <p className="ab-kicker">
             <Link href="/coverage">In the news</Link> · {x.kind}
@@ -62,6 +64,10 @@ export default async function Coverage({ params }: Props) {
               latest <b>{longDate(stories[0].date).replace(/^\w+, /, "")}</b>
             </li>
           </ul>
+          <div className="ev-tools">
+            <ShareRow url={`${SITE_URL}/coverage/${x.slug}`} slice={`${x.name} news, explained`} />
+            <Listen rootId="cv-read" minutes={Math.max(1, Math.round(stories.length * 0.3))} />
+          </div>
         </section>
         <section className="story-results tp-results">
           <ul>
