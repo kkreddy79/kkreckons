@@ -65,9 +65,15 @@ shows all of its data, and that the edition Home replaces moves to Catch up.
 `npm run check` (or `npm run check -- YYYY-MM-DD`) confirms every story has a source link, at least two
 summary points, a "why it matters" and alt text for every graphic.
 
-`npm run site-check` (with the built site running: `npx next start -p 3000`) opens every page type at phone
-and desktop width, in light and dark mode, and fails on a page that doesn't load, throws a script error,
-scrolls sideways, or has a serious accessibility problem (axe).
+`npm run site-check` (with the built site running: `npx next start -p 3000`) opens every page type on eight
+device sizes: small Android phone (360px), iPhone (390px), large phone (430px), tablet portrait (768px) and
+landscape (1024px), a laptop at Windows' 150% scaling (1280px), a common laptop (1366px) and a wide desktop
+(1920px), phones and tablets with touch; dark mode on a phone and a laptop; and Safari's engine (WebKit) on
+iPhone, tablet and laptop sizes when it is installed (CI installs it). It fails on a page that doesn't load,
+throws a script error, scrolls sideways, crops a cover or share image (they carry their own headline), clips
+text at the edge of its box, or has a serious accessibility problem (axe), and lists tap targets under 40px on
+touch screens. `SITE_CHECK_PAGES=/special,/about` checks just those pages; `SITE_CHECK_SHOTS=<dir>` saves a
+screenshot of every page on every device to look at by eye.
 
 Every pull request runs all of these on GitHub Actions (`.github/workflows/checks.yml`): the content check,
 the build, QC (`--site-change` for anything that isn't an `edition/*` branch, which skips only the

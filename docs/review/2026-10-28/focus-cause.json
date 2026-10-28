@@ -1,0 +1,38 @@
+{
+  "/ normal": {
+    "selectionBeforeTab": {
+      "rangeCount": 0,
+      "type": "None",
+      "anchor": null,
+      "scrollY": 0
+    },
+    "firstTabLandsOn": "a.ev-special \"SPECIAL REPORT TODAY Popped or\""
+  },
+  "/ scrollIntoView-noop": {
+    "selectionBeforeTab": {
+      "rangeCount": 0,
+      "type": "None",
+      "anchor": null,
+      "scrollY": 0
+    },
+    "firstTabLandsOn": "a.skip-link \"Skip to content\""
+  },
+  "/daily/october-28-2026 normal": {
+    "selectionBeforeTab": {
+      "rangeCount": 0,
+      "type": "None",
+      "anchor": null,
+      "scrollY": 0
+    },
+    "firstTabLandsOn": "a.ev-special \"SPECIAL REPORT TODAY Popped or\""
+  },
+  "/daily/october-28-2026 scrollIntoView-noop": {
+    "selectionBeforeTab": {
+      "rangeCount": 0,
+      "type": "None",
+      "anchor": null,
+      "scrollY": 0
+    },
+    "firstTabLandsOn": "a.skip-link \"Skip to content\""
+  }
+}
