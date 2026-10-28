@@ -18,14 +18,20 @@
 // Lists, without failing: lesser axe findings, and tap targets under 40px on touch devices.
 //
 // SITE_CHECK_PAGES=<path>,<path> checks only those pages. SITE_CHECK_SHOTS=<dir> also saves a screenshot of the top of every page on every device, for a look by eye.
+// SITE_CHECK_BASE=<url> checks a site served elsewhere (a URL argument wins). SITE_CHECK_CONCURRENCY=<n> sets how many
+// device/scheme contexts run at once (default: CPU cores, 2 to 4), Chromium and WebKit side by side; results print in
+// the same order as a one-at-a-time run.
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium, webkit } from "playwright";
 import AxeBuilder from "@axe-core/playwright";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const base = (process.argv[2] || "http://localhost:3000").replace(/\/$/, "");
+const base = (process.argv[2] || process.env.SITE_CHECK_BASE || "http://localhost:3000").replace(/\/$/, "");
+// Browser contexts (one device size in one colour scheme) checked at the same time. Each loads its pages one by one.
+const CONCURRENCY = Math.max(1, Math.floor(Number(process.env.SITE_CHECK_CONCURRENCY)) || Math.min(4, Math.max(2, os.availableParallelism())));
 const shots = process.env.SITE_CHECK_SHOTS;
 if (shots) fs.mkdirSync(shots, { recursive: true });
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
@@ -147,114 +153,140 @@ function inspect({ touch }) {
   return out;
 }
 
-const failures = [];
-const notes = new Map();
-const smallTargets = new Map();
+/** Loads every page in one browser context (one device size in one colour scheme) and returns what it found. Contexts
+ * run side by side, so each keeps its own results; they are merged in device and page order afterwards. */
+async function checkContext(browser, engineName, device, scheme, axe) {
+  const out = { failures: [], notes: [], small: [], loads: 0 };
+  const { name, axe: runAxe, width, height, ...opts } = device;
+  const context = await browser.newContext({ viewport: { width, height }, colorScheme: scheme, deviceScaleFactor: 1, ...opts });
+  if (engineName === "WebKit") {
+    // The CSP's upgrade-insecure-requests sends WebKit to https://localhost for every stylesheet, script and
+    // image (Chromium exempts localhost), so pages would be checked unstyled. On the live https site it does
+    // nothing, so drop just that directive from page responses here; the rest of the policy still applies.
+    await context.route("**/*", async (route) => {
+      if (route.request().resourceType() !== "document") return route.continue();
+      const res = await route.fetch();
+      const headers = res.headers();
+      if (headers["content-security-policy"]) headers["content-security-policy"] = headers["content-security-policy"].replace(/;\s*upgrade-insecure-requests/, "");
+      await route.fulfill({ response: res, headers });
+    });
+  }
+  const page = await context.newPage();
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  for (const p of PAGES) {
+    const where = `${p} (${engineName === "Chromium" ? "" : engineName + " "}${name}, ${scheme})`;
+    // Leave the previous page first: WebKit reports a background prefetch cut off by the navigation as a script
+    // error ("…?_rsc=… due to access control checks"), which would otherwise be blamed on this page.
+    await page.goto("about:blank").catch(() => {});
+    errors.length = 0;
+    // networkidle, not load: the archive filter (/daily/?theme=…) fetches its stories after the load event, and they
+    // must be on the page when it is measured (with load, ~100 of its links were never checked).
+    const res = await page.goto(base + p, { waitUntil: "networkidle" }).catch((e) => ({ status: () => e.message }));
+    out.loads += 1;
+    if (res?.status() !== 200) {
+      out.failures.push(`${where}: loaded with ${res?.status()}`);
+      continue;
+    }
+    // The site's stylesheet sets the body margin to 0; the browser default is 8px. A page without its CSS would
+    // otherwise show up as dozens of layout failures.
+    if ((await page.evaluate(() => getComputedStyle(document.body).marginLeft)) !== "0px") {
+      out.failures.push(`${where}: rendered without the site's stylesheet`);
+      continue;
+    }
+    // Let lazy images in the first screen arrive, so covers can be measured.
+    await page.evaluate(() =>
+      Promise.all([...document.images].filter((i) => !i.complete && i.getBoundingClientRect().top < innerHeight).map((i) => new Promise((ok) => ((i.onload = i.onerror = ok), setTimeout(ok, 3000)))))
+    );
+    // Name what sticks out: the innermost elements past the right edge, so the fix is obvious from the log.
+    const { wide, culprits } = await page.evaluate(() => {
+      const wide = document.documentElement.scrollWidth - window.innerWidth;
+      if (wide <= 1) return { wide, culprits: [] };
+      // Anything inside a scrolling or clipping box (the phone nav row) cannot widen the page.
+      const contained = (el) => {
+        for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) if (getComputedStyle(a).overflowX !== "visible") return true;
+        return false;
+      };
+      const past = [...document.body.querySelectorAll("*")].filter((el) => el.getBoundingClientRect().right > innerWidth + 1 && !contained(el));
+      const inner = past.filter((el) => !past.some((c) => c !== el && el.contains(c)));
+      const name = (el) => `${el.tagName.toLowerCase()}${typeof el.className === "string" && el.className.trim() ? "." + el.className.trim().split(/\s+/).join(".") : ""}`;
+      return {
+        wide,
+        culprits: inner.slice(0, 3).map((el) => {
+          const r = el.getBoundingClientRect();
+          const path = [];
+          for (let a = el; a && a !== document.body && path.length < 4; a = a.parentElement) path.unshift(name(a));
+          return `${path.join(" > ")} (x ${Math.round(r.left)}–${Math.round(r.right)}, "${(el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 30)}")`;
+        }),
+      };
+    });
+    if (wide > 1) out.failures.push(`${where}: scrolls sideways by ${wide}px${culprits.length ? `; past the edge: ${culprits.join("; ")}` : ""}`);
+    for (const e of errors) out.failures.push(`${where}: script error: ${e}`);
+    const found = await page.evaluate(inspect, { touch: Boolean(opts.hasTouch) });
+    for (const c of found.cropped) out.failures.push(`${where}: cover image cropped: ${c}`);
+    for (const c of [...new Set(found.clipped)].slice(0, 5)) out.failures.push(`${where}: text clipped: ${c}`);
+    if (found.wrapped.length) out.failures.push(`${where}: label wraps onto two lines: ${found.wrapped.slice(0, 5).join("; ")}`);
+    if (found.small.length) out.small.push([`${p} · ${engineName === "Chromium" ? "" : engineName + " "}${name}`, found.small]);
+    if (shots && scheme === "light") {
+      const file = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "home"}--${engineName.toLowerCase()}-${name.replace(/\s+/g, "-")}.png`;
+      await page.screenshot({ path: path.join(shots, file) });
+    }
+    // Accessibility: on a phone and a laptop, light and dark (colour contrast differs by theme).
+    if (axe && runAxe) {
+      const { violations } = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
+      for (const v of violations) {
+        const line = `${v.id}: ${v.help} (${v.nodes.length}×, e.g. ${v.nodes[0]?.target.join(" ")})`;
+        if (v.impact === "serious" || v.impact === "critical") out.failures.push(`${where}: ${line}`);
+        else out.notes.push([`${p} ${scheme}: ${v.id}`, `${where}: ${line}`]);
+      }
+    }
+  }
+  await context.close();
+  return out;
+}
 
-async function run(engine, engineName, devices, { schemes, axe }) {
-  let browser;
+async function launch(engine, engineName) {
   try {
-    browser = await (engineName === "Chromium" && process.env.CHROMIUM_PATH ? engine.launch({ executablePath: process.env.CHROMIUM_PATH }) : engine.launch());
+    return await (engineName === "Chromium" && process.env.CHROMIUM_PATH ? engine.launch({ executablePath: process.env.CHROMIUM_PATH }) : engine.launch());
   } catch (e) {
     if (engineName === "Chromium") throw e;
     console.log(`ℹ ${engineName} isn't installed here, so Safari's engine was not checked (npx playwright install ${engineName.toLowerCase()}).`);
-    return 0;
+    return null;
   }
-  let loads = 0;
-  for (const device of devices) {
-    for (const scheme of schemes(device)) {
-      const { name, axe: runAxe, width, height, ...opts } = device;
-      const context = await browser.newContext({ viewport: { width, height }, colorScheme: scheme, deviceScaleFactor: 1, ...opts });
-      if (engineName === "WebKit") {
-        // The CSP's upgrade-insecure-requests sends WebKit to https://localhost for every stylesheet, script and
-        // image (Chromium exempts localhost), so pages would be checked unstyled. On the live https site it does
-        // nothing, so drop just that directive from page responses here; the rest of the policy still applies.
-        await context.route("**/*", async (route) => {
-          if (route.request().resourceType() !== "document") return route.continue();
-          const res = await route.fetch();
-          const headers = res.headers();
-          if (headers["content-security-policy"]) headers["content-security-policy"] = headers["content-security-policy"].replace(/;\s*upgrade-insecure-requests/, "");
-          await route.fulfill({ response: res, headers });
-        });
-      }
-      const page = await context.newPage();
-      const errors = [];
-      page.on("pageerror", (e) => errors.push(e.message));
-      for (const p of PAGES) {
-        const where = `${p} (${engineName === "Chromium" ? "" : engineName + " "}${name}, ${scheme})`;
-        // Leave the previous page first: WebKit reports a background prefetch cut off by the navigation as a script
-        // error ("…?_rsc=… due to access control checks"), which would otherwise be blamed on this page.
-        await page.goto("about:blank").catch(() => {});
-        errors.length = 0;
-        const res = await page.goto(base + p, { waitUntil: "networkidle" }).catch((e) => ({ status: () => e.message }));
-        loads += 1;
-        if (res?.status() !== 200) {
-          failures.push(`${where}: loaded with ${res?.status()}`);
-          continue;
-        }
-        // The site's stylesheet sets the body margin to 0; the browser default is 8px. A page without its CSS would
-        // otherwise show up as dozens of layout failures.
-        if ((await page.evaluate(() => getComputedStyle(document.body).marginLeft)) !== "0px") {
-          failures.push(`${where}: rendered without the site's stylesheet`);
-          continue;
-        }
-        // Let lazy images in the first screen arrive, so covers can be measured.
-        await page.evaluate(() =>
-          Promise.all([...document.images].filter((i) => !i.complete && i.getBoundingClientRect().top < innerHeight).map((i) => new Promise((ok) => ((i.onload = i.onerror = ok), setTimeout(ok, 3000)))))
-        );
-        // Name what sticks out: the innermost elements past the right edge, so the fix is obvious from the log.
-        const { wide, culprits } = await page.evaluate(() => {
-          const wide = document.documentElement.scrollWidth - window.innerWidth;
-          if (wide <= 1) return { wide, culprits: [] };
-          // Anything inside a scrolling or clipping box (the phone nav row) cannot widen the page.
-          const contained = (el) => {
-            for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) if (getComputedStyle(a).overflowX !== "visible") return true;
-            return false;
-          };
-          const past = [...document.body.querySelectorAll("*")].filter((el) => el.getBoundingClientRect().right > innerWidth + 1 && !contained(el));
-          const inner = past.filter((el) => !past.some((c) => c !== el && el.contains(c)));
-          const name = (el) => `${el.tagName.toLowerCase()}${typeof el.className === "string" && el.className.trim() ? "." + el.className.trim().split(/\s+/).join(".") : ""}`;
-          return {
-            wide,
-            culprits: inner.slice(0, 3).map((el) => {
-              const r = el.getBoundingClientRect();
-              const path = [];
-              for (let a = el; a && a !== document.body && path.length < 4; a = a.parentElement) path.unshift(name(a));
-              return `${path.join(" > ")} (x ${Math.round(r.left)}–${Math.round(r.right)}, "${(el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 30)}")`;
-            }),
-          };
-        });
-        if (wide > 1) failures.push(`${where}: scrolls sideways by ${wide}px${culprits.length ? `; past the edge: ${culprits.join("; ")}` : ""}`);
-        for (const e of errors) failures.push(`${where}: script error: ${e}`);
-        const found = await page.evaluate(inspect, { touch: Boolean(opts.hasTouch) });
-        for (const c of found.cropped) failures.push(`${where}: cover image cropped: ${c}`);
-        for (const c of [...new Set(found.clipped)].slice(0, 5)) failures.push(`${where}: text clipped: ${c}`);
-        if (found.wrapped.length) failures.push(`${where}: label wraps onto two lines: ${found.wrapped.slice(0, 5).join("; ")}`);
-        if (found.small.length) smallTargets.set(`${p} · ${engineName === "Chromium" ? "" : engineName + " "}${name}`, found.small);
-        if (shots && scheme === "light") {
-          const file = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "home"}--${engineName.toLowerCase()}-${name.replace(/\s+/g, "-")}.png`;
-          await page.screenshot({ path: path.join(shots, file) });
-        }
-        // Accessibility: on a phone and a laptop, light and dark (colour contrast differs by theme).
-        if (axe && runAxe) {
-          const { violations } = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
-          for (const v of violations) {
-            const line = `${v.id}: ${v.help} (${v.nodes.length}×, e.g. ${v.nodes[0]?.target.join(" ")})`;
-            if (v.impact === "serious" || v.impact === "critical") failures.push(`${where}: ${line}`);
-            else notes.set(`${p} ${scheme}: ${v.id}`, `${where}: ${line}`);
-          }
-        }
-      }
-      await context.close();
-    }
-  }
-  await browser.close();
-  return loads;
 }
 
 const started = Date.now();
-let loads = await run(chromium, "Chromium", DEVICES, { schemes: (d) => (DARK.includes(d.name) ? ["light", "dark"] : ["light"]), axe: true });
-loads += await run(webkit, "WebKit", DEVICES.filter((d) => WEBKIT.includes(d.name)), { schemes: () => ["light"], axe: false });
+// Chromium and WebKit are separate browsers, launched together; their contexts share one pool of workers.
+const [chromiumBrowser, webkitBrowser] = await Promise.all([launch(chromium, "Chromium"), launch(webkit, "WebKit")]);
+// Every context in report order: Chromium's devices (light, then dark where configured), then WebKit's.
+const tasks = [];
+for (const device of DEVICES) for (const scheme of DARK.includes(device.name) ? ["light", "dark"] : ["light"]) tasks.push({ browser: chromiumBrowser, engineName: "Chromium", device, scheme, axe: true });
+if (webkitBrowser) for (const device of DEVICES.filter((d) => WEBKIT.includes(d.name))) tasks.push({ browser: webkitBrowser, engineName: "WebKit", device, scheme: "light", axe: false });
+// The slowest contexts (WebKit, then Chromium with axe) start first, so the workers finish at about the same time.
+const cost = (t) => (t.engineName === "WebKit" ? 2 : t.axe && t.device.axe ? 1 : 0);
+const queue = tasks.map((t, i) => i).sort((a, b) => cost(tasks[b]) - cost(tasks[a]) || a - b);
+const results = new Array(tasks.length);
+await Promise.all(
+  Array.from({ length: Math.min(CONCURRENCY, tasks.length) }, async () => {
+    for (let i = queue.shift(); i !== undefined; i = queue.shift()) {
+      const t = tasks[i];
+      results[i] = await checkContext(t.browser, t.engineName, t.device, t.scheme, t.axe);
+    }
+  })
+);
+await Promise.all([chromiumBrowser.close(), webkitBrowser?.close()]);
+
+// Merge in report order, exactly as a one-context-at-a-time run would have filled these.
+const failures = [];
+const notes = new Map();
+const smallTargets = new Map();
+let loads = 0;
+for (const r of results) {
+  failures.push(...r.failures);
+  for (const [k, v] of r.notes) notes.set(k, v);
+  for (const [k, v] of r.small) smallTargets.set(k, v);
+  loads += r.loads;
+}
 
 for (const n of notes.values()) console.log(`ℹ ${n}`);
 if (smallTargets.size) {
