@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { thumbOf } from "@/lib/figs";
 import path from "node:path";
 import { getContent } from "@/lib/content";
 import { watchList } from "@/lib/watch";
@@ -26,14 +27,14 @@ export function thisWeek() {
     title: s.title,
     teaser: teaserFrom(s.why),
     // Newer graphics have small WebP copies beside them (see FullStory.imageW); older ones only the original.
-    thumb: s.image ? (s.imageW ? s.image.replace(/\.[a-z]+$/, "-th.webp") : s.image) : "",
+    thumb: thumbOf(s),
     href: `/daily/${slugFor(s.date)}/${s.n}`,
   }));
   return { start, end, days, editions: days.length, picks };
 }
 
 /** The written parts of a weekly issue (data/weekly/<end date>.json), drafted with the weekly email; all optional. */
-export type WeeklyExtras = {
+type WeeklyExtras = {
   /** "The week in one minute": one paragraph, facts only from that week's stories. */
   oneMinute?: string;
   /** "This week in history": one dated fact, with its source. */

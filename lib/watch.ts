@@ -5,7 +5,7 @@ import { getEdition } from "@/lib/editions";
 export type WatchState = "met" | "partly" | "not-met";
 
 /** One sign a thesis is breaking, marked from KKReckons stories (data/watch.json, edited by hand). */
-export type WatchCondition = {
+type WatchCondition = {
   id: string;
   label: string;
   /** What would count as this sign happening. */

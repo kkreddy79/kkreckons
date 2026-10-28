@@ -14,6 +14,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { slugFor } from "../lib/dates.mjs";
 
 const MAX_SUMMARY_WORDS = 120;
 const MAX_QUOTE_WORDS = 25;
@@ -63,8 +64,6 @@ if (only.length && !dates.length) {
   console.error(`No edition found for ${only.join(", ")}. Did "npm run editions" run?`);
   process.exit(1);
 }
-const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-const slugFor = (d) => `${MONTHS[+d.slice(5, 7) - 1]}-${+d.slice(8, 10)}-${d.slice(0, 4)}`;
 const content = Object.fromEntries(sorted.map((d) => [d, JSON.parse(fs.readFileSync(path.join(root, "data", "content", `${d}.json`), "utf8"))]));
 // Special reports that exist on the site (data/special.json): slugs served at /special/<slug>, or listed with their own href.
 const specialSlugs = new Set(JSON.parse(fs.readFileSync(path.join(root, "data", "special.json"), "utf8")).filter((r) => r.file || r.href).map((r) => r.slug));

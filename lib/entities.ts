@@ -33,7 +33,7 @@ const LIST: { name: string; kind: "Company" | "Institution" | "Person"; match: R
 ];
 const MIN_STORIES = 3;
 
-export const entitySlug = (name: string) => name.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const entitySlug = (name: string) => name.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 type Hit = { date: string; n: number; title: string; why: string; href: string };
 let built: { name: string; slug: string; kind: string; about: string; stories: Hit[] }[] | null = null;

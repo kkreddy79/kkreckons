@@ -13,6 +13,7 @@
 
 import { chromium } from "playwright";
 import sharp from "sharp";
+import { bandName } from "../lib/stressBands.mjs";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
@@ -42,7 +43,6 @@ const STRESS_LIVE_SINCE = "2026-10-15";
 // From this edition on, every edition shows the day's reading, whether or not a story is linked to it.
 const STRESS_DAILY_FROM = "2026-10-22";
 let stressHistory;
-const stressBand = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elevated" : "Normal");
 async function stressSnapshot(date) {
   for (const url of stressHistory ? [] : STRESS_SOURCES) {
     try {
@@ -55,7 +55,7 @@ async function stressSnapshot(date) {
   }
   const last = stressHistory?.filter((h) => h.date < date).at(-1);
   if (!last) return null;
-  return { score: last.score, band: stressBand(last.score), asOf: last.date, ...(last.date < STRESS_LIVE_SINCE ? { backCalculated: true } : {}) };
+  return { score: last.score, band: bandName(last.score), asOf: last.date, ...(last.date < STRESS_LIVE_SINCE ? { backCalculated: true } : {}) };
 }
 // The market strip (components/MarketStrip.tsx): six numbers from the index's daily job (docs/markets.json),
 // cut at the last close before the edition's date and saved once to data/markets/<date>.json, so every rebuild
@@ -421,8 +421,9 @@ const index = [];
 for (const file of files) {
   const date = file.replace(".html", "");
   const full = path.join(editionsDir, file);
-  const html = normalise(fs.readFileSync(full, "utf8"));
-  fs.writeFileSync(full, html);
+  const raw = fs.readFileSync(full, "utf8");
+  const html = normalise(raw);
+  if (html !== raw) fs.writeFileSync(full, html);
 
   let content;
   const embedded = /<script[^>]*id=["']?data["']?[^>]*>([\s\S]*?)<\/script>/i.exec(html);

@@ -1,4 +1,6 @@
 import Link from "@/components/Link";
+import { figVariant, webpSrcSet } from "@/lib/figs";
+import { stressBand } from "@/lib/stressBand";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
@@ -44,14 +46,11 @@ function loneStories(stories: FullStory[]) {
   return lone;
 }
 
-// AI Stress Index bands: [name, lower bound, fill colour bright enough to read on the dark card].
-const BANDS: [string, number, string][] = [
-  ["Normal", 0, "#4ADE80"],
-  ["Elevated", 25, "#FBBF24"],
-  ["Severe", 50, "#FB923C"],
-  ["Critical", 75, "#F87171"],
-];
-const bandOf = (score: number) => [...BANDS].reverse().find(([, lo]) => score >= lo)!;
+// AI Stress Index bands, with the fill bright enough to read on the dark card.
+const bandOf = (score: number) => {
+  const [name, lo, , , darkFill] = stressBand(score);
+  return [name, lo, darkFill] as const;
+};
 
 /** A reading for the card: the one saved with the edition, or on Home the latest one (with its change and trend). */
 type Reading = NonNullable<EditionContent["stressIndex"]> | (LiveStress & { backCalculated?: undefined });
@@ -155,16 +154,12 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
   const seen = new Set<string>();
   const follow = followLinks(date, n, s);
   const pic = s.image && (
-    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? s.image.replace(/\.[a-z]+$/, "-lg.webp") : undefined}>
+    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? figVariant(s.image, "lg") : undefined}>
       {s.imageW ? (
         <picture>
           <source
             type="image/webp"
-            srcSet={["sm 640", "md 860", `lg ${Math.min(s.imageW, 1600)}`]
-              .map((v) => v.split(" "))
-              .filter(([, w]) => +w <= Math.min(s.imageW!, 1600))
-              .map(([tag, w]) => `${s.image.replace(/\.[a-z]+$/, `-${tag}.webp`)} ${w}w`)
-              .join(", ")}
+            srcSet={webpSrcSet(s.image, s.imageW)}
             sizes={wide ? "(max-width: 700px) 100vw, 560px" : "(max-width: 700px) 100vw, 480px"}
           />
           <img src={s.image} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" />

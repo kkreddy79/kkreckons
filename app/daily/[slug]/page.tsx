@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { clip } from "@/lib/editionFormat";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import EditionView from "@/components/EditionView";
@@ -52,10 +53,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /** Cut at a word boundary so search snippets end cleanly. */
-function clip(s: string, max: number) {
-  if (s.length <= max) return s;
-  return s.slice(0, s.lastIndexOf(" ", max - 1)).replace(/[;,:·]$/, "").trim() + "…";
-}
 
 export default async function EditionPage({ params }: Props) {
   const found = getEdition((await params).slug);
