@@ -1,0 +1,2360 @@
+{
+  "tabOrder": {
+    "/": {
+      "withJS": {
+        "js": true,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=487",
+          "a \"01 China pops, America leaks\" y=757",
+          "a \"02 India Inc's zombies thin ou\" y=798",
+          "a \"03 Markets may decide December\" y=809",
+          "a \"04 Thinner customers, pricier \" y=815",
+          "a \"05 Tech parents unplug the cla\" y=799",
+          "a.ev-30s-cards \"See today as visual cards One \" y=788",
+          "a \"01\" y=883",
+          "a.ev-sx-watch \"Watching 4 signs the AI build-\" y=838",
+          "a.ev-sx-cta \"Gauges →\" y=813",
+          "a.ev-call \"40% China's STAR50 AI and chip\" y=1063",
+          "a.ev-call \"14.2% of listed Indian firms s\" y=1142"
+        ],
+        "shiftTabBack": [
+          "a.ev-call \"40% China's STAR50 AI and chip\" y=911",
+          "a.ev-sx-cta \"Gauges →\" y=184",
+          "a.ev-sx-watch \"Watching 4 signs the AI build-\" y=1",
+          "a \"01\" y=-13",
+          "a.ev-30s-cards \"See today as visual cards One \" y=-28",
+          "a \"05 Tech parents unplug the cla\" y=-19",
+          "a \"04 Thinner customers, pricier \" y=-1",
+          "a \"03 Markets may decide December\" y=37",
+          "a \"02 India Inc's zombies thin ou\" y=3",
+          "a \"01 China pops, America leaks\" y=-6",
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=-243",
+          "button.ev-share-one \"Share\" y=-231",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [
+            {
+              "el": "a.skip-link",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -200,
+                40
+              ]
+            },
+            {
+              "el": "a.wordmark",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                11,
+                27
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "button.theme-toggle",
+              "tabIndex": 0,
+              "display": "grid",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                9,
+                30
+              ]
+            },
+            {
+              "el": "a.hdr-sub",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                8,
+                32
+              ]
+            },
+            {
+              "el": "div.",
+              "tabIndex": -1,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -54,
+                12109
+              ]
+            },
+            {
+              "el": "button.ev-share-one",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                295,
+                32
+              ]
+            },
+            {
+              "el": "a.ev-wa",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "button.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            }
+          ],
+          "inertElements": [
+            "nav.ev-bar inert="
+          ],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      },
+      "withoutJS": {
+        "js": false,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.on \"Home\" y=42",
+          "a \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.ev-share-one \"Share\" y=435",
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=487",
+          "a \"01 China pops, America leaks\" y=757",
+          "a \"02 India Inc's zombies thin ou\" y=798"
+        ],
+        "shiftTabBack": [
+          "a \"01 China pops, America leaks\" y=757",
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=487",
+          "button.ev-share-one \"Share\" y=435",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"Catch up\" y=42",
+          "a.on \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=10",
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a \"X\" y=12341",
+          "a \"LinkedIn\" y=12057"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [
+            {
+              "el": "a.skip-link",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -399,
+                40
+              ]
+            },
+            {
+              "el": "a.wordmark",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                11,
+                27
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "button.theme-toggle",
+              "tabIndex": 0,
+              "display": "grid",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                9,
+                30
+              ]
+            },
+            {
+              "el": "a.hdr-sub",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                8,
+                32
+              ]
+            },
+            {
+              "el": "div.",
+              "tabIndex": -1,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -253,
+                12109
+              ]
+            },
+            {
+              "el": "button.ev-share-one",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                96,
+                32
+              ]
+            },
+            {
+              "el": "a.ev-wa",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "button.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            }
+          ],
+          "inertElements": [
+            "nav.ev-bar inert="
+          ],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      }
+    },
+    "/daily/october-28-2026": {
+      "withJS": {
+        "js": true,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=332",
+          "a \"01 China pops, America leaks\" y=602",
+          "a \"02 India Inc's zombies thin ou\" y=643",
+          "a \"03 Markets may decide December\" y=684",
+          "a \"04 Thinner customers, pricier \" y=725",
+          "a \"05 Tech parents unplug the cla\" y=784",
+          "a.ev-30s-cards \"See today as visual cards One \" y=819",
+          "a \"01\" y=836",
+          "a.ev-sx-cta \"Gauges →\" y=544",
+          "a.ev-call \"40% China's STAR50 AI and chip\" y=898",
+          "a.ev-call \"14.2% of listed Indian firms s\" y=899",
+          "a.ev-cat \"AI · MARKETS\" y=1111"
+        ],
+        "shiftTabBack": [
+          "a.ev-call \"14.2% of listed Indian firms s\" y=751",
+          "a.ev-call \"40% China's STAR50 AI and chip\" y=587",
+          "a.ev-sx-cta \"Gauges →\" y=163",
+          "a \"01\" y=194",
+          "a.ev-30s-cards \"See today as visual cards One \" y=23",
+          "a \"05 Tech parents unplug the cla\" y=-8",
+          "a \"04 Thinner customers, pricier \" y=-31",
+          "a \"03 Markets may decide December\" y=11",
+          "a \"02 India Inc's zombies thin ou\" y=-5",
+          "a \"01 China pops, America leaks\" y=-11",
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=-207",
+          "button.ev-share-one \"Share\" y=-191",
+          "a \"Catch up\" y=-100",
+          "a.hdr-sub \"Subscribe\" y=8"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [
+            {
+              "el": "a.skip-link",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -117,
+                40
+              ]
+            },
+            {
+              "el": "a.wordmark",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                11,
+                27
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "button.theme-toggle",
+              "tabIndex": 0,
+              "display": "grid",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                9,
+                30
+              ]
+            },
+            {
+              "el": "a.hdr-sub",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                8,
+                32
+              ]
+            },
+            {
+              "el": "div.",
+              "tabIndex": -1,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                29,
+                12019
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "inline",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                41,
+                24
+              ]
+            },
+            {
+              "el": "button.ev-share-one",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                223,
+                32
+              ]
+            },
+            {
+              "el": "a.ev-wa",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "button.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                48,
+                26
+              ]
+            }
+          ],
+          "inertElements": [
+            "nav.ev-bar inert="
+          ],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      },
+      "withoutJS": {
+        "js": false,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a \"Home\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "a \"Catch up\" y=98",
+          "button.ev-share-one \"Share\" y=280",
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=332",
+          "a \"01 China pops, America leaks\" y=602"
+        ],
+        "shiftTabBack": [
+          "a.ev-special \"SPECIAL REPORT TODAY Popped or\" y=332",
+          "button.ev-share-one \"Share\" y=280",
+          "a \"Catch up\" y=98",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=10",
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a \"X\" y=12252",
+          "a \"LinkedIn\" y=12052"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [
+            {
+              "el": "a.skip-link",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -314,
+                40
+              ]
+            },
+            {
+              "el": "a.wordmark",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                11,
+                27
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                42,
+                37
+              ]
+            },
+            {
+              "el": "button.theme-toggle",
+              "tabIndex": 0,
+              "display": "grid",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                9,
+                30
+              ]
+            },
+            {
+              "el": "a.hdr-sub",
+              "tabIndex": 0,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                8,
+                32
+              ]
+            },
+            {
+              "el": "div.",
+              "tabIndex": -1,
+              "display": "block",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -168,
+                12019
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "inline",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                -156,
+                24
+              ]
+            },
+            {
+              "el": "button.ev-share-one",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                26,
+                32
+              ]
+            },
+            {
+              "el": "a.ev-wa",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "button.",
+              "tabIndex": 0,
+              "display": "none",
+              "visibility": "visible",
+              "inert": false,
+              "ariaHidden": false,
+              "rect": [
+                0,
+                0
+              ]
+            },
+            {
+              "el": "a.on",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            },
+            {
+              "el": "a.",
+              "tabIndex": 0,
+              "display": "flex",
+              "visibility": "visible",
+              "inert": true,
+              "ariaHidden": true,
+              "rect": [
+                30,
+                26
+              ]
+            }
+          ],
+          "inertElements": [
+            "nav.ev-bar inert="
+          ],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      }
+    },
+    "/daily/october-28-2026/1": {
+      "withJS": {
+        "js": true,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a \"Home\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "a \"Catch up\" y=98",
+          "a \"Wednesday, 28 October 2026\" y=98",
+          "a.ev-cat \"AI · MARKETS\" y=158",
+          "a \"China's AI stocks crash 40% as\" y=194"
+        ],
+        "shiftTabBack": [
+          "a.ev-cat \"AI · MARKETS\" y=158",
+          "a \"Wednesday, 28 October 2026\" y=98",
+          "a \"Catch up\" y=98",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=10",
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a \"X\" y=3569",
+          "a \"LinkedIn\" y=3371"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [],
+          "inertElements": [],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      },
+      "withoutJS": {
+        "js": false,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a \"Home\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "a \"Catch up\" y=98",
+          "a \"Wednesday, 28 October 2026\" y=98",
+          "a.ev-cat \"AI · MARKETS\" y=158",
+          "a \"China's AI stocks crash 40% as\" y=194"
+        ],
+        "shiftTabBack": [
+          "a.ev-cat \"AI · MARKETS\" y=158",
+          "a \"Wednesday, 28 October 2026\" y=98",
+          "a \"Catch up\" y=98",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=10",
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a \"X\" y=3569",
+          "a \"LinkedIn\" y=3371"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [],
+          "inertElements": [],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      }
+    },
+    "/daily": {
+      "withJS": {
+        "js": true,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a \"Home\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "input \"Search stories\" y=557",
+          "button \"By edition\" y=624",
+          "button \"All stories\" y=624",
+          "button.chip \"AI 101\" y=679"
+        ],
+        "shiftTabBack": [
+          "button \"All stories\" y=624",
+          "button \"By edition\" y=624",
+          "input \"Search stories\" y=557",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=10",
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a \"X\" y=9049",
+          "a \"LinkedIn\" y=8869"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [],
+          "inertElements": [],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      },
+      "withoutJS": {
+        "js": false,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a \"Home\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "input \"Search stories\" y=557",
+          "button \"By edition\" y=624",
+          "button \"All stories\" y=624",
+          "button.chip \"AI 101\" y=679"
+        ],
+        "shiftTabBack": [
+          "button \"All stories\" y=624",
+          "button \"By edition\" y=624",
+          "input \"Search stories\" y=557",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a.on \"Catch up\" y=42",
+          "a \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=10",
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a \"X\" y=9073",
+          "a \"LinkedIn\" y=8869"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [],
+          "inertElements": [],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      }
+    },
+    "/about": {
+      "withJS": {
+        "js": true,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a \"Home\" y=42",
+          "a \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a.on \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "a \"email us\" y=3083",
+          "a.ab-btn \"Read Today’s Edition →\" y=3359",
+          "a.ab-btn-ghost \"Get it by email ↗\" y=3361",
+          "a \"Privacy\" y=3330"
+        ],
+        "shiftTabBack": [
+          "a.ab-btn-ghost \"Get it by email ↗\" y=2757",
+          "a.ab-btn \"Read Today’s Edition →\" y=2467",
+          "a \"email us\" y=2087",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.on \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"Catch up\" y=42",
+          "a \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=-2634",
+          "body \"Skip to content KKReckons Home\" y=-2497",
+          "a \"X\" y=1531",
+          "a \"LinkedIn\" y=1237"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [],
+          "inertElements": [],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      },
+      "withoutJS": {
+        "js": false,
+        "first13": [
+          "body \"Skip to content KKReckons Home\" y=0",
+          "a.skip-link \"Skip to content\" y=10",
+          "a.wordmark \"KKReckons\" y=11",
+          "a \"Home\" y=42",
+          "a \"Catch up\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a.on \"About\" y=42",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "a \"email us\" y=3062",
+          "a.ab-btn \"Read Today’s Edition →\" y=3346",
+          "a.ab-btn-ghost \"Get it by email ↗\" y=3361",
+          "a \"Privacy\" y=3330"
+        ],
+        "shiftTabBack": [
+          "a.ab-btn-ghost \"Get it by email ↗\" y=2757",
+          "a.ab-btn \"Read Today’s Edition →\" y=2467",
+          "a \"email us\" y=2065",
+          "a.hdr-sub \"Subscribe\" y=8",
+          "button.theme-toggle \"Switch to dark mode\" y=9",
+          "a.on \"About\" y=42",
+          "a \"AI Stress Index\" y=42",
+          "a \"Catch up\" y=42",
+          "a \"Home\" y=42",
+          "a.wordmark \"KKReckons\" y=11",
+          "a.skip-link \"Skip to content\" y=-2640",
+          "body \"Skip to content KKReckons Home\" y=-2503",
+          "a \"X\" y=1524",
+          "a \"LinkedIn\" y=1229"
+        ],
+        "facts": {
+          "focusableBeforeSpecial": [],
+          "inertElements": [],
+          "autofocus": 0,
+          "dialogs": [
+            "lb open=false"
+          ]
+        }
+      }
+    }
+  },
+  "gradientCards": {
+    "light": [
+      {
+        "card": ".ev-call-0",
+        "element": "b.",
+        "text": "40%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#ffffff",
+        "ratio": 10.96,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-0",
+        "element": "b.",
+        "text": "40%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop darkest #24123f",
+        "fg": "#ffffff",
+        "ratio": 17.03,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-0",
+        "element": "span.",
+        "text": "China's STAR50 AI and chip index fall in",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#f1eef4",
+        "ratio": 9.54,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-0",
+        "element": "span.",
+        "text": "China's STAR50 AI and chip index fall in",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop darkest #24123f",
+        "fg": "#edecf0",
+        "ratio": 14.49,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "b.",
+        "text": "14.2%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop lightest #b8471d",
+        "fg": "#ffffff",
+        "ratio": 5.31,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "b.",
+        "text": "14.2%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop darkest #93321a",
+        "fg": "#ffffff",
+        "ratio": 7.74,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "span.",
+        "text": "of listed Indian firms stressed or zombi",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop lightest #b8471d",
+        "fg": "#f9f0ed",
+        "ratio": 4.74,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "span.",
+        "text": "of listed Indian firms stressed or zombi",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop darkest #93321a",
+        "fg": "#f6efed",
+        "ratio": 6.8,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-kicker",
+        "text": "AI STRESS INDEX",
+        "fontSize": 11.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#d2cadd",
+        "ratio": 6.91,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-kicker",
+        "text": "AI STRESS INDEX",
+        "fontSize": 11.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#c7c3cd",
+        "ratio": 10.32,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "b.",
+        "text": "25",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#fbbf24",
+        "ratio": 6.57,
+        "aa": "pass",
+        "xFracInCard": 0.09,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "b.",
+        "text": "25",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#fbbf24",
+        "ratio": 10.73,
+        "aa": "pass",
+        "xFracInCard": 0.09,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "span.",
+        "text": "/100",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#c9bfd7",
+        "ratio": 6.24,
+        "aa": "pass",
+        "xFracInCard": 0.19,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "span.",
+        "text": "/100",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#bbb7c2",
+        "ratio": 9.11,
+        "aa": "pass",
+        "xFracInCard": 0.19,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "em.",
+        "text": "ELEVATED",
+        "fontSize": 11.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "own: #fbbf24 (em., inline style)",
+        "fg": "#1d0f35",
+        "ratio": 10.73,
+        "aa": "pass",
+        "xFracInCard": 0.39
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-note",
+        "text": "27 Oct close · Story 01",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#dfd9e7",
+        "ratio": 7.93,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-note",
+        "text": "27 Oct close · Story 01",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#d6d4db",
+        "ratio": 12.19,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "a.",
+        "text": "01",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#ffffff",
+        "ratio": 10.96,
+        "aa": "pass",
+        "xFracInCard": 0.46,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "a.",
+        "text": "01",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#ffffff",
+        "ratio": 17.92,
+        "aa": "pass",
+        "xFracInCard": 0.46,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "a.ev-sx-cta",
+        "text": "Gauges →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "own: #ffffff (a.ev-sx-cta)",
+        "fg": "#24123f",
+        "ratio": 17.03,
+        "aa": "pass",
+        "xFracInCard": 0.83
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-tag",
+        "text": "SPECIAL REPORT TODAY",
+        "fontSize": 10.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "own: #f5c77e (span.ev-special-tag)",
+        "fg": "#1b2747",
+        "ratio": 9.35,
+        "aa": "pass",
+        "xFracInCard": 0.3
+      },
+      {
+        "card": ".ev-special",
+        "element": "b.",
+        "text": "Popped or leaking? A KKReckons research ",
+        "fontSize": 19,
+        "fontWeight": 700,
+        "large": true,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#fff8ee",
+        "ratio": 13.95,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "b.",
+        "text": "Popped or leaking? A KKReckons research ",
+        "fontSize": 19,
+        "fontWeight": 700,
+        "large": true,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#fff8ee",
+        "ratio": 8.75,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "b.",
+        "text": "Popped or leaking? A KKReckons research ",
+        "fontSize": 19,
+        "fontWeight": 700,
+        "large": true,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#fff8ee",
+        "ratio": 4.16,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "small.",
+        "text": "Our deeper dive behind today's lead: Chi",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#e6dccd",
+        "ratio": 10.84,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "small.",
+        "text": "Our deeper dive behind today's lead: Chi",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#e6dccd",
+        "ratio": 6.81,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "small.",
+        "text": "Our deeper dive behind today's lead: Chi",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#e6dccd",
+        "ratio": 3.24,
+        "aa": "FAIL",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-go",
+        "text": "Read the report →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#f5c77e",
+        "ratio": 9.35,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-go",
+        "text": "Read the report →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#f5c77e",
+        "ratio": 5.87,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-go",
+        "text": "Read the report →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#f5c77e",
+        "ratio": 2.79,
+        "aa": "FAIL",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.",
+        "text": "→",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#f5c77e",
+        "ratio": 9.35,
+        "aa": "pass",
+        "xFracInCard": 0.36,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.",
+        "text": "→",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#f5c77e",
+        "ratio": 5.87,
+        "aa": "pass",
+        "xFracInCard": 0.36,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.",
+        "text": "→",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#f5c77e",
+        "ratio": 2.79,
+        "aa": "FAIL",
+        "xFracInCard": 0.36,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "dark": [
+      {
+        "card": ".ev-call-0",
+        "element": "b.",
+        "text": "40%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#ffffff",
+        "ratio": 10.96,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-0",
+        "element": "b.",
+        "text": "40%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop darkest #24123f",
+        "fg": "#ffffff",
+        "ratio": 17.03,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-0",
+        "element": "span.",
+        "text": "China's STAR50 AI and chip index fall in",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#f1eef4",
+        "ratio": 9.54,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-0",
+        "element": "span.",
+        "text": "China's STAR50 AI and chip index fall in",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop darkest #24123f",
+        "fg": "#edecf0",
+        "ratio": 14.49,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "b.",
+        "text": "14.2%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop lightest #b8471d",
+        "fg": "#ffffff",
+        "ratio": 5.31,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "b.",
+        "text": "14.2%",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop darkest #93321a",
+        "fg": "#ffffff",
+        "ratio": 7.74,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "span.",
+        "text": "of listed Indian firms stressed or zombi",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop lightest #b8471d",
+        "fg": "#f9f0ed",
+        "ratio": 4.74,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-call-1",
+        "element": "span.",
+        "text": "of listed Indian firms stressed or zombi",
+        "fontSize": 15.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop darkest #93321a",
+        "fg": "#f6efed",
+        "ratio": 6.8,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-kicker",
+        "text": "AI STRESS INDEX",
+        "fontSize": 11.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#d2cadd",
+        "ratio": 6.91,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-kicker",
+        "text": "AI STRESS INDEX",
+        "fontSize": 11.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#c7c3cd",
+        "ratio": 10.32,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "b.",
+        "text": "25",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#fbbf24",
+        "ratio": 6.57,
+        "aa": "pass",
+        "xFracInCard": 0.09,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "b.",
+        "text": "25",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "large": true,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#fbbf24",
+        "ratio": 10.73,
+        "aa": "pass",
+        "xFracInCard": 0.09,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "span.",
+        "text": "/100",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#c9bfd7",
+        "ratio": 6.24,
+        "aa": "pass",
+        "xFracInCard": 0.19,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "span.",
+        "text": "/100",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#bbb7c2",
+        "ratio": 9.11,
+        "aa": "pass",
+        "xFracInCard": 0.19,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "em.",
+        "text": "ELEVATED",
+        "fontSize": 11.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "own: #fbbf24 (em., inline style)",
+        "fg": "#1d0f35",
+        "ratio": 10.73,
+        "aa": "pass",
+        "xFracInCard": 0.39
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-note",
+        "text": "27 Oct close · Story 01",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#dfd9e7",
+        "ratio": 7.93,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "p.ev-sx-note",
+        "text": "27 Oct close · Story 01",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#d6d4db",
+        "ratio": 12.19,
+        "aa": "pass",
+        "xFracInCard": 0.35,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "a.",
+        "text": "01",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop lightest #4b2b78",
+        "fg": "#ffffff",
+        "ratio": 10.96,
+        "aa": "pass",
+        "xFracInCard": 0.46,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "a.",
+        "text": "01",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop darkest #1d0f35",
+        "fg": "#ffffff",
+        "ratio": 17.92,
+        "aa": "pass",
+        "xFracInCard": 0.46,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-sx",
+        "element": "a.ev-sx-cta",
+        "text": "Gauges →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "own: #ffffff (a.ev-sx-cta)",
+        "fg": "#24123f",
+        "ratio": 17.03,
+        "aa": "pass",
+        "xFracInCard": 0.83
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-tag",
+        "text": "SPECIAL REPORT TODAY",
+        "fontSize": 10.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "own: #f5c77e (span.ev-special-tag)",
+        "fg": "#1b2747",
+        "ratio": 9.35,
+        "aa": "pass",
+        "xFracInCard": 0.3
+      },
+      {
+        "card": ".ev-special",
+        "element": "b.",
+        "text": "Popped or leaking? A KKReckons research ",
+        "fontSize": 19,
+        "fontWeight": 700,
+        "large": true,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#fff8ee",
+        "ratio": 13.95,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "b.",
+        "text": "Popped or leaking? A KKReckons research ",
+        "fontSize": 19,
+        "fontWeight": 700,
+        "large": true,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#fff8ee",
+        "ratio": 8.75,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "b.",
+        "text": "Popped or leaking? A KKReckons research ",
+        "fontSize": 19,
+        "fontWeight": 700,
+        "large": true,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#fff8ee",
+        "ratio": 4.16,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "small.",
+        "text": "Our deeper dive behind today's lead: Chi",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#e6dccd",
+        "ratio": 10.84,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "small.",
+        "text": "Our deeper dive behind today's lead: Chi",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#e6dccd",
+        "ratio": 6.81,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "small.",
+        "text": "Our deeper dive behind today's lead: Chi",
+        "fontSize": 13.5,
+        "fontWeight": 400,
+        "large": false,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#e6dccd",
+        "ratio": 3.24,
+        "aa": "FAIL",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-go",
+        "text": "Read the report →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#f5c77e",
+        "ratio": 9.35,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-go",
+        "text": "Read the report →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#f5c77e",
+        "ratio": 5.87,
+        "aa": "pass",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.ev-special-go",
+        "text": "Read the report →",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#f5c77e",
+        "ratio": 2.79,
+        "aa": "FAIL",
+        "xFracInCard": 0.5,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.",
+        "text": "→",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop start (darkest) #1B2747 #1B2747",
+        "fg": "#f5c77e",
+        "ratio": 9.35,
+        "aa": "pass",
+        "xFracInCard": 0.36,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.",
+        "text": "→",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop mid #5B3A6E #5B3A6E",
+        "fg": "#f5c77e",
+        "ratio": 5.87,
+        "aa": "pass",
+        "xFracInCard": 0.36,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "card": ".ev-special",
+        "element": "span.",
+        "text": "→",
+        "fontSize": 13.5,
+        "fontWeight": 800,
+        "large": false,
+        "background": "gradient stop end (lightest) #B8603F #B8603F",
+        "fg": "#f5c77e",
+        "ratio": 2.79,
+        "aa": "FAIL",
+        "xFracInCard": 0.36,
+        "cardBgColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  "misc": {
+    "light": {
+      "evSxBandPill": {
+        "fontSize": "11.5px",
+        "color": "rgb(29, 15, 53)",
+        "background": "rgb(251, 191, 36)",
+        "text": "ELEVATED"
+      },
+      "evSxCta": {
+        "fontSize": "13.5px",
+        "color": "rgb(36, 18, 63)",
+        "background": "rgb(255, 255, 255)",
+        "text": "Gauges →"
+      },
+      "evSpecialTag": {
+        "fontSize": "10.5px",
+        "color": "rgb(27, 39, 71)",
+        "background": "rgb(245, 199, 126)",
+        "text": "SPECIAL REPORT TODAY"
+      },
+      "evFreeTag": {
+        "fontSize": "11px",
+        "color": "rgb(15, 92, 46)",
+        "background": "rgb(231, 246, 236)",
+        "text": "Free version"
+      },
+      "evBarSpan": {
+        "fontSize": "11.5px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "1"
+      },
+      "hdrSub": {
+        "fontSize": "13px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(36, 18, 63)",
+        "text": "Subscribe"
+      }
+    },
+    "dark": {
+      "evSxBandPill": {
+        "fontSize": "11.5px",
+        "color": "rgb(29, 15, 53)",
+        "background": "rgb(251, 191, 36)",
+        "text": "ELEVATED"
+      },
+      "evSxCta": {
+        "fontSize": "13.5px",
+        "color": "rgb(36, 18, 63)",
+        "background": "rgb(255, 255, 255)",
+        "text": "Gauges →"
+      },
+      "evSpecialTag": {
+        "fontSize": "10.5px",
+        "color": "rgb(27, 39, 71)",
+        "background": "rgb(245, 199, 126)",
+        "text": "SPECIAL REPORT TODAY"
+      },
+      "evFreeTag": {
+        "fontSize": "11px",
+        "color": "rgb(143, 224, 173)",
+        "background": "rgb(22, 48, 31)",
+        "text": "Free version"
+      },
+      "evBarSpan": {
+        "fontSize": "11.5px",
+        "color": "rgb(20, 17, 27)",
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "1"
+      },
+      "hdrSub": {
+        "fontSize": "13px",
+        "color": "rgb(26, 18, 34)",
+        "background": "rgb(240, 136, 90)",
+        "text": "Subscribe"
+      }
+    },
+    "abStrap@390": {
+      "text": "A CLEARER SLICE OF A COMPLEX WORLD",
+      "fontSize": "9px",
+      "color": "rgb(43, 29, 64)",
+      "letterSpacing": "3.06px",
+      "rect": [
+        142,
+        11
+      ],
+      "parentBgImage": "none",
+      "overImage": true
+    },
+    "abStrap@1440": {
+      "text": "A CLEARER SLICE OF A COMPLEX WORLD",
+      "fontSize": "13px",
+      "color": "rgb(43, 29, 64)",
+      "letterSpacing": "4.42px",
+      "rect": [
+        164,
+        16
+      ],
+      "parentBgImage": "none",
+      "overImage": true
+    }
+  }
+}

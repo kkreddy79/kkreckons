@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: "/special" },
   openGraph: { title: TITLE, description: DESCRIPTION, url: "/special", ...(SPECIAL[0]?.cover ? { images: [{ url: SPECIAL[0].cover, width: 1600, height: 900, alt: SPECIAL[0].cover_alt || SPECIAL[0].title }] } : {}) },
+  // Set with openGraph, or X previews fall back to the site-wide banner.
+  twitter: { card: "summary_large_image", creator: "@kkreddy78", ...(SPECIAL[0]?.cover ? { images: [SPECIAL[0].cover] } : {}) },
 };
 
 const WHY = [

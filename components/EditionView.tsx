@@ -451,7 +451,12 @@ export default function EditionView({
   return (
     <div className="ev" id={`ev-${e.date}`}>
       <section className="ev-head">
-        {showDate && <p className="ev-kicker">{longDate(e.date)}</p>}
+        <p className={`ev-kicker${showDate ? "" : " ev-kicker-size"}`}>
+          {showDate && longDate(e.date)}
+          <span className="ev-size">
+            {count} {count === 1 ? "story" : "stories"} · {e.readingMinutes} min read
+          </span>
+        </p>
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
         <div className="ev-tools">
           <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />

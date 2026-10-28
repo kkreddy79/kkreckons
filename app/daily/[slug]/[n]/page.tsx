@@ -107,8 +107,8 @@ export default async function StoryPage({ params }: Props) {
       />
       {/* Where the story sits, with Listen and Share on the same line (as on special reports). */}
       <div className="st-bar">
-        <nav className="crumbs">
-          <Link href="/daily/">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
+        <nav className="crumbs" aria-label="Breadcrumb">
+          <Link href="/daily">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
         </nav>
         <div className="ev-tools st-tools">
           <Listen rootId="st-read" minutes={Math.max(1, Math.round(edition.readingMinutes / edition.stories.length))} />
@@ -122,7 +122,7 @@ export default async function StoryPage({ params }: Props) {
           <Link className="button" href={`${editionUrl}#story-${n}`}>
             Read the full {shortDate(edition.date)} edition →
           </Link>
-          <Link className="button alt" href="/daily/">
+          <Link className="button alt" href="/daily">
             Catch up on past editions
           </Link>
         </p>
