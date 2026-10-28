@@ -1,5 +1,6 @@
 import { editions, latest, longDate, slugFor } from "@/lib/editions";
 import { PROFILES, SITE_URL } from "@/lib/site";
+import { SPECIAL, specialHref } from "@/lib/special";
 
 export const dynamic = "force-static";
 
@@ -17,6 +18,7 @@ Editions are published at ${SITE_URL}/daily/<month>-<day>-<year> (for example ${
 - [Latest edition: ${longDate(latest.date)}](${SITE_URL}/daily/${slugFor(latest.date)}): ${latest.slice}
 - [All past editions](${SITE_URL}/daily): searchable archive of every edition and story
 - [AI Market Stress Index](${SITE_URL}/ai-stress-index): an experimental daily 0–100 composite stress score for AI equities, AI financing and credit markets (six of nine gauges are broad-market proxies). A monitoring dashboard, not a probability or forecast. Full methodology, sources and backtest with misses and false alarms ([how it works](${SITE_URL}/ai-stress-index#methodology); live data as JSON: ${SITE_URL}/ai-stress-index/data.json)
+- [Special Reports](${SITE_URL}/special): long reads that take one big story and stay with it, built from primary documents, with original graphics and a section on what the evidence does not show
 - [About](${SITE_URL}/about): who curates KKReckons
 - [Editorial standards & corrections](${SITE_URL}/standards): labels, sourcing, image rights and how errors are corrected
 - [Contact](${SITE_URL}/contact)
@@ -25,6 +27,10 @@ Editions are published at ${SITE_URL}/daily/<month>-<day>-<year> (for example ${
 ## Recent editions
 
 ${recent.map((e) => `- [${longDate(e.date)}](${SITE_URL}/daily/${slugFor(e.date)}): ${e.slice}`).join("\n")}
+
+## Special reports
+
+${SPECIAL.map((r) => `- [${r.title}](${SITE_URL}${specialHref(r)}) (${r.date}): ${r.dek}`).join("\n")}
 
 ## Optional
 

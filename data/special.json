@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "claude-at-work",
+    "title": "Claude at work: the receipts",
+    "kicker": "AI at work",
+    "dek": "26 Claude use cases from Anthropic's S-1, the measured gains, and the evidence that cuts the other way.",
+    "blurb": "Anthropic's IPO filing shows Claude inside 26 organisations, from AIG's underwriters to a Boston brunch kitchen. What it saved, where the gains are biggest, and what the numbers can't tell you.",
+    "date": "2026-10-29",
+    "themes": ["AI", "Markets"],
+    "reading_minutes": 9,
+    "file": "special/claude-at-work.html",
+    "cover": "/special/claude-at-work.jpg",
+    "cover_alt": "Claude at work: the receipts. A navy-to-dusk sky over a city skyline, with the KKReckons special report kicker.",
+    "sources": [
+      "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+      "https://www.anthropic.com/news/s1-sec",
+      "https://www.anthropic.com/research/early-progress-drug-development",
+      "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "https://digitaleconomy.stanford.edu/news/canariesaug26/",
+      "https://www.legalcheek.com/2026/06/us-judge-stops-case-after-lawyers-on-both-sides-cite-ai-fabricated-cases/",
+      "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says"
+    ]
+  },
+  {
+    "slug": "ai-bubble-october-2026",
+    "title": "Popped or leaking? The AI bubble in October 2026",
+    "kicker": "AI & markets",
+    "dek": "China's AI shares have crashed while America's boom leaks through credit: neocloud debt, Gartner's $4.9tn revenue gap, history, hedges and the India angle.",
+    "date": "2026-10-28",
+    "themes": ["AI", "Markets"],
+    "reading_minutes": 8,
+    "file": null,
+    "href": "/research/ai-bubble-october-2026",
+    "cover": "/research/ai-bubble-october-2026.jpg",
+    "cover_alt": "China popped. America is leaking. A burst bubble marked China equities minus 40%, and a leaking bubble holding IOUs marked US credit 1,148bp.",
+    "sources": [
+      "https://www.reuters.com/world/china/china-ai-bubble-has-already-burst-2026-10-26/",
+      "https://www.gartner.com/en/newsroom/press-releases/2026-10-14-gartner-says-over-us-dollars-three-and-a-half-trillion-of-artificial-intelligence-infrastructure-spending-could-be-exposed-to-impairment-by-the-end-of-2030",
+      "https://libertystreeteconomics.newyorkfed.org/2026/10/has-the-ai-boom-impacted-the-u-s-current-account/",
+      "https://www.bis.org/publ/arpdf/ar2026e.pdf"
+    ]
+  }
+]

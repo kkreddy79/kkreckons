@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Claude at work: the receipts</title>
+<meta name="description" content="26 Claude use cases from Anthropic's S-1, the measured gains, and the evidence that cuts the other way.">
+<!-- KKReckons special report by KK Reddy, built in the KKReckons Claude Project and served at https://www.kkreckons.com/special/claude-at-work
+     inside the site's header and footer (app/special/[slug]/page.tsx). Lora and Poppins are the site's self-hosted fonts (app/special/special.css). -->
+<style>
+/* Layout: navy dusk hero with overlapping fact tiles, then a magazine column of use cases (six featured, a filterable finder), one dark data panel, the other side, takeaway, sources. */
+:root{
+  --paper:#FAF6EE; --card:#FFFFFF; --ink:#1D2B3A; --mute:#55606B; --line:#E3D8C6;
+  --brick:#B83A2E; --ochre:#C88A14; --teal:#2C6B78; --sand:#F1E7D4; --blush:#F6E6DF; --mint:#E1ECEA;
+  --hero1:#16222F; --hero2:#2B3550; --hero3:#7A4A52; --gold:#F0B840; --onhero:#F3F1EC; --onhero2:#C9CED6;
+  --panel:#1D2B3A; --onpanel:#EEF1F3;
+  --serif:'Lora',Georgia,'Times New Roman',serif; --sans:'Poppins','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#121A23; --card:#1B2633; --ink:#ECE7DC; --mute:#A6AFB9; --line:#2E3B4A;
+  --brick:#E0725F; --ochre:#E6B04A; --teal:#6FB3BF; --sand:#26303B; --blush:#2E2628; --mint:#1F3134;
+  --panel:#0C1219; --onpanel:#EEF1F3; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121A23; --card:#1B2633; --ink:#ECE7DC; --mute:#A6AFB9; --line:#2E3B4A;
+  --brick:#E0725F; --ochre:#E6B04A; --teal:#6FB3BF; --sand:#26303B; --blush:#2E2628; --mint:#1F3134;
+  --panel:#0C1219; --onpanel:#EEF1F3; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.6;margin:0}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0}
+.lab{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.num{font-family:var(--sans);font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:-.02em}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--hero1) 0%,var(--hero2) 55%,var(--hero3) 100%);color:var(--onhero);position:relative;overflow:hidden}
+.hero .wrap{padding-block:44px 120px;position:relative;z-index:1}
+.sky{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px;z-index:0}
+.hero .lab{color:var(--gold)}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.02;font-weight:700;margin:14px 0 16px;letter-spacing:-.01em}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:500}
+.dek{font-size:clamp(17px,2.2vw,21px);max-width:44ch;color:var(--onhero2);margin:0}
+.byline{font-family:var(--sans);font-size:13px;color:var(--onhero2);margin-top:18px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-84px;position:relative;z-index:2}
+.tile{background:var(--card);border-radius:14px;padding:18px 18px 16px;box-shadow:0 10px 30px rgba(20,30,45,.16);border:1px solid var(--line);min-width:0}
+.tile .num{font-size:clamp(28px,4vw,40px);line-height:1;color:var(--brick)}
+.tile p{font-family:var(--sans);font-size:13px;line-height:1.4;margin:8px 0 0;color:var(--mute)}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+
+section{padding-block:48px 8px}
+.sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:22px;max-width:62ch}
+.sec-head .lab{color:var(--teal)}
+.sec-head h2{font-size:clamp(28px,4vw,40px);line-height:1.1}
+.sec-head p{margin:0;color:var(--mute)}
+
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--sand);border-radius:12px;padding:16px 18px;margin-top:30px;font-size:15.5px}
+.note b{font-family:var(--sans);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--brick)}
+.note svg{flex:none}
+
+/* featured six */
+.six{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:820px){.six{grid-template-columns:1fr}}
+.case{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.case header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.case h3{font-size:26px;line-height:1.1}
+.case .sector{font-family:var(--sans);font-size:12px;color:var(--mute)}
+.case .what{margin:0;font-size:16px}
+.big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.big .num{font-size:52px;line-height:.95;color:var(--brick)}
+.big span{font-family:var(--sans);font-size:14px;line-height:1.35;color:var(--ink);max-width:28ch}
+.bars{display:grid;gap:7px}
+.bar{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:center;font-family:var(--sans);font-size:12.5px}
+.bar .track{height:14px;border-radius:7px;background:transparent;position:relative}
+.bar .fill{height:14px;border-radius:7px;min-width:3px}
+.bar .fill.b{background:var(--mute);opacity:.45}
+.bar .fill.a{background:var(--teal)}
+.bar .t{color:var(--mute)}
+.scale{font-family:var(--sans);font-size:11.5px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--sans);font-size:13px;background:var(--mint);border-radius:999px;padding:5px 11px;line-height:1.3}
+.chip b{color:var(--teal);font-variant-numeric:tabular-nums}
+.watch{border-top:1px dashed var(--line);padding-top:10px;font-size:14.5px;color:var(--mute);margin:0}
+.watch b{font-family:var(--sans);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
+
+/* finder */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.filters button{font-family:var(--sans);font-size:13.5px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.uc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.uc .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.uc h4{margin:0;font-family:var(--sans);font-size:16px;font-weight:600}
+.uc .tag{font-family:var(--sans);font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.uc .num{font-size:30px;line-height:1;color:var(--brick)}
+.uc .m{font-family:var(--sans);font-size:13px;color:var(--mute);margin:0;line-height:1.4}
+.uc p.d{margin:0;font-size:15px;line-height:1.5}
+.count{font-family:var(--sans);font-size:13px;color:var(--mute);margin:0 0 12px}
+
+/* patterns */
+.pat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.pat{grid-template-columns:1fr}}
+.pat div{border-radius:14px;padding:18px;background:var(--blush)}
+.pat div:nth-child(even){background:var(--sand)}
+.pat h3{font-size:19px;margin-bottom:6px}
+.pat p{margin:0;font-size:15px}
+
+/* data panel */
+.panel{background:var(--panel);color:var(--onpanel);border-radius:18px;padding:28px 24px}
+.panel .lab{color:var(--gold)}
+.panel h2{font-size:clamp(26px,3.6vw,36px);margin:6px 0 18px;color:var(--onpanel)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){.pgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.pgrid{grid-template-columns:1fr}}
+.pgrid .num{font-size:40px;color:var(--gold);line-height:1}
+.pgrid p{font-family:var(--sans);font-size:13.5px;line-height:1.45;margin:6px 0 0;color:#C9CED6}
+.rev{margin-top:24px;display:grid;gap:8px}
+.rev .bar{grid-template-columns:110px 1fr;color:#C9CED6}
+.rev .fill.a{background:var(--gold)}
+.rev .fill.b{background:#8C97A3;opacity:.6}
+.rev .scale{color:#9AA4AF}
+
+/* other side */
+.os{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:760px){.os{grid-template-columns:1fr}}
+.os article{border-left:4px solid var(--brick);background:var(--card);border-radius:4px 12px 12px 4px;padding:16px 18px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.os h3{font-size:19px;margin-bottom:4px}
+.os p{margin:0;font-size:15.5px}
+.os .src{font-family:var(--sans);font-size:12px;color:var(--mute);margin-top:8px}
+
+.check{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0;margin:0;list-style:none}
+@media (max-width:700px){.check{grid-template-columns:1fr}}
+.check li{display:flex;gap:12px;background:var(--mint);border-radius:12px;padding:14px 16px;font-size:15.5px}
+.check li .num{color:var(--teal);font-size:20px;line-height:1.2}
+
+.take{margin-top:44px;background:linear-gradient(120deg,var(--hero1),var(--hero2));color:var(--onhero);border-radius:18px;padding:30px 26px}
+.take .lab{color:var(--gold)}
+.take p{font-size:clamp(21px,3vw,28px);line-height:1.35;margin:10px 0 0;max-width:40ch}
+.take em{color:var(--gold)}
+
+.sources{font-family:var(--sans);font-size:13.5px;line-height:1.6;columns:2;column-gap:32px;padding-left:18px}
+@media (max-width:700px){.sources{columns:1}}
+.sources li{break-inside:avoid;margin-bottom:6px}
+footer{padding-block:28px 40px;font-family:var(--sans);font-size:12.5px;color:var(--mute)}
+@media (prefers-reduced-motion:no-preference){.uc{transition:transform .15s ease}.uc:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="lab"><a href="https://www.kkreckons.com/special" style="color:inherit;text-decoration:none">KKReckons special reports</a> · Thursday, 29 October 2026</div>
+    <h1>Claude at work: <em>the receipts</em></h1>
+    <p class="dek">Anthropic's IPO filing carries 20 customer case studies. Here is what Claude actually did inside banks, drug makers, law firms and kitchens, what it saved, and what the numbers can't tell you.</p>
+    <div class="byline">By KK Reddy · Sources: Anthropic's Form S-1 (26 Oct 2026), Anthropic research, independent studies</div>
+  </div>
+  <svg class="sky" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#0F1924" opacity=".55" d="M0 150V96h60V70h36v26h40V58h28v38h52V80h34v16h70V48h22l8-18 8 18h20v48h56V76h44v20h60V62h30v34h48V84h56V54h26v42h66V72h40v24h58V60h34v36h50V82h70v14h64V66h28v30h60V88h42v62z"/>
+    <path fill="#0B131C" d="M0 150v-30h80v-18h50v18h66v-26h30v26h90v-14h48v14h72v-32h36v32h84v-20h56v20h90v-28h40v28h70v-16h62v16h88v-24h34v24h70v-12h54v12h80v30z"/>
+    <circle cx="1040" cy="40" r="22" fill="#F0B840" opacity=".5"/>
+  </svg>
+</header>
+
+<main class="wrap">
+  <div class="tiles" role="list">
+    <div class="tile" role="listitem"><div class="num">11,900+</div><p>customers paying Anthropic $100,000+ a year (TTM, 30 Sept 2026)</p></div>
+    <div class="tile" role="listitem"><div class="num">~250</div><p>customers paying $10 million+ a year</p></div>
+    <div class="tile" role="listitem"><div class="num">~900%</div><p>net revenue retention: existing customers spend about 9x more</p></div>
+    <div class="tile" role="listitem"><div class="num">$16.3B</div><p>revenue in H1 2026, up from $1.2B a year earlier</p></div>
+  </div>
+
+  <div class="note" role="note">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 7v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="13" cy="19" r="1.6" fill="currentColor"/></svg>
+    <div><b>Read the receipts carefully.</b> Every customer figure below is reported by Anthropic or the customer in the filing. The S-1 itself says its own operating metrics "have not been independently verified by third parties." Salesforce and SAP each own under 1% of Anthropic.</div>
+  </div>
+
+  <section aria-labelledby="six">
+    <div class="sec-head">
+      <div class="lab">The headline six</div>
+      <h2 id="six">From months to minutes, in six companies</h2>
+      <p>Bars are drawn to scale where the filing gives both a before and an after.</p>
+    </div>
+    <div class="six">
+
+      <article class="case">
+        <header><h3>Bristol Myers Squibb</h3><span class="sector">Pharma · customer since 2023</span></header>
+        <p class="what">Claude now queries the 30 to 40 external medical-records and claims databases BMS subscribes to, so scientists ask questions directly instead of waiting for a dashboard.</p>
+        <div class="big"><span class="num">≤5 min</span><span>to answer a real-world-evidence question that took up to two months</span></div>
+        <div class="bars" aria-label="Time to answer, to scale">
+          <div class="bar"><span class="t">Before</span><div class="track"><div class="fill b" style="width:100%"></div></div></div>
+          <div class="bar"><span class="t">After</span><div class="track"><div class="fill a" style="width:0.6%"></div></div></div>
+          <div class="scale">To scale: five minutes is about 1/17,000 of two months. The after bar is shown at its minimum visible width.</div>
+        </div>
+        <div class="chips"><span class="chip"><b>30,000+</b> staff with access</span><span class="chip"><b>3,000+</b> developers on Claude Code</span></div>
+        <p class="watch"><b>Watch</b> "Up to" two months is the slowest case, not the average one. Cowork for all staff is still a plan.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>AIG</h3><span class="sector">Insurance · customer since 2023</span></header>
+        <p class="what">Underwriting by AIG Assist reads every broker submission and hands underwriters a risk summary with a full audit trail, work that used to take weeks of data gathering.</p>
+        <div class="big"><span class="num">-90%+</span><span>submission review time, and 100% of applicable submissions now reviewed</span></div>
+        <div class="bars" aria-label="Review time, to scale">
+          <div class="bar"><span class="t">Before</span><div class="track"><div class="fill b" style="width:100%"></div></div></div>
+          <div class="bar"><span class="t">After</span><div class="track"><div class="fill a" style="width:10%"></div></div></div>
+          <div class="scale">To scale, at the 90% cut. The filing says more than 90%.</div>
+        </div>
+        <div class="chips"><span class="chip">Lexington property: <b>+30%</b> quoted</span><span class="chip"><b>-55%</b> time to quote</span><span class="chip"><b>+40%</b> bound</span><span class="chip"><b>8</b> business lines</span></div>
+        <p class="watch"><b>Watch</b> Lexington figures are as of 31 March 2026. Claims pilots (days to hours) are early.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Jane Street</h3><span class="sector">Trading · customer since 2023</span></header>
+        <p class="what">Researchers now supervise teams of agents that analyse code, watch training runs and process results. Experiments that needed babysitting run over a weekend.</p>
+        <div class="big"><span class="num">~1 week</span><span>for one researcher to move a large codebase to a new language, work a team would normally need months for</span></div>
+        <div class="chips"><span class="chip"><b>~50%</b> more analysis, one researcher's own estimate</span><span class="chip">Fable 5.1 <b>+32%</b> vs Fable 5 on its internal coding test</span></div>
+        <p class="watch"><b>Watch</b> Both headline numbers are single examples or estimates, not firm-wide measures.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Legora</h3><span class="sector">Legal tech · customer since 2024</span></header>
+        <p class="what">Claude is the reasoning layer in Legora's platform for lawyers, planning drafting, document review and research, and tying every answer to a source.</p>
+        <div class="big"><span class="num">4.3 hrs</span><span>of non-billable time a week recaptured per lawyer, worth $6.9M of extra billing per 100 lawyers a year</span></div>
+        <div class="chips"><span class="chip">900-doc data room: <b>half a day</b>, not a week</span><span class="chip">Claude Code seats <b>~50 → 700+</b> (14x)</span><span class="chip"><b>1,500+</b> firms served</span></div>
+        <p class="watch"><b>Watch</b> The 4.3 hours is what lawyers reported in a study of 31 firms in 14 countries, and it measures Legora's product.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Mozilla</h3><span class="sector">Browser security · customer since 2025</span></header>
+        <p class="what">Anthropic's Frontier Red Team turned Claude loose on Firefox, one of the most heavily scrutinised open-source codebases, to hunt for flaws defenders had missed.</p>
+        <div class="big"><span class="num">22</span><span>unknown vulnerabilities found by Claude Opus 4.6 in a two-week test, 14 of them high severity</span></div>
+        <div class="bars" aria-label="Vulnerabilities found, to scale">
+          <div class="bar"><span class="t">Opus 4.6</span><div class="track"><div class="fill a" style="width:8.1%"></div></div></div>
+          <div class="bar"><span class="t">Mythos</span><div class="track"><div class="fill a" style="width:100%;background:var(--brick)"></div></div></div>
+          <div class="scale">To scale: 22 fixed in Firefox 148, then 271 more from Mythos Preview fixed in Firefox 150, two months later.</div>
+        </div>
+        <p class="watch"><b>Watch</b> A model this good at finding bugs is also good at exploiting them. Mythos access is restricted for that reason.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Salesforce</h3><span class="sector">Enterprise software · customer since 2023</span></header>
+        <p class="what">Claude Code is the main AI agent across Salesforce engineering, and Claude powers Slackbot, which nearly every employee uses.</p>
+        <div class="big"><span class="num">18x</span><span>faster: 33 API endpoints moved in 13 days, work estimated at 231 person-days</span></div>
+        <div class="bars" aria-label="API migration, to scale">
+          <div class="bar"><span class="t">Estimate</span><div class="track"><div class="fill b" style="width:100%"></div></div></div>
+          <div class="bar"><span class="t">Actual</span><div class="track"><div class="fill a" style="width:5.6%"></div></div></div>
+          <div class="scale">To scale: 231 person-days vs 13 days.</div>
+        </div>
+        <div class="chips"><span class="chip">PRs merged per developer <b>+79%</b></span><span class="chip">Effective output <b>+151%</b></span><span class="chip">Incidents <b>-5%</b></span><span class="chip">Slackbot <b>8.1M</b> hours a year, 2x+ in a quarter</span></div>
+        <p class="watch"><b>Watch</b> Days and person-days are different units, and Salesforce is also an Anthropic shareholder.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="finder">
+    <div class="sec-head">
+      <div class="lab">Use-case finder</div>
+      <h2 id="finder">Twenty more ways Claude is earning its keep</h2>
+      <p>Pick a sector. Every figure is from Anthropic's S-1 case studies or its 27 October drug-development report.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter by sector" id="filters">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+      <button type="button" id="f-code" data-f="code" aria-pressed="false">Software &amp; coding</button>
+      <button type="button" id="f-sci" data-f="sci" aria-pressed="false">Science &amp; health</button>
+      <button type="button" id="f-fin" data-f="fin" aria-pressed="false">Finance &amp; insurance</button>
+      <button type="button" id="f-shop" data-f="shop" aria-pressed="false">Retail &amp; commerce</button>
+      <button type="button" id="f-svc" data-f="svc" aria-pressed="false">Services &amp; small business</button>
+      <button type="button" id="f-ngo" data-f="ngo" aria-pressed="false">Public good</button>
+    </div>
+    <p class="count" id="count" aria-live="polite">Showing 20 use cases</p>
+    <div class="grid" id="grid">
+      <div class="uc" data-s="sci"><div class="top"><h4>Enveda</h4><span class="tag">Drug manufacturing</span></div><div class="num">-89%</div><p class="m">review time: over 25 hours to under 3</p><p class="d">Checked 1,061 pages of manufacturing records. Caught all 11 issues humans found, plus 7 they missed. One regulatory draft took 4 hours instead of about 3 months.</p></div>
+      <div class="uc" data-s="sci"><div class="top"><h4>Generate Biomedicines</h4><span class="tag">Cell therapy</span></div><div class="num">~10x</div><p class="m">more receptors in a lab test</p><p class="d">Six scientists used Claude Code to redesign part of a CAR-T therapy. One design, about 70% shorter, also killed tumour cells more efficiently.</p></div>
+      <div class="uc" data-s="sci"><div class="top"><h4>Divergence Labs</h4><span class="tag">Allergy drugs</span></div><div class="num">~35,000</div><p class="m">antibody designs in about a month</p><p class="d">Early tests found 20 designs that dislodge IgE; three appeared to beat the standard medicine.</p></div>
+      <div class="uc" data-s="sci"><div class="top"><h4>BigHat Biosciences</h4><span class="tag">Antibody design</span></div><div class="num">&gt;10x</div><p class="m">tighter binding in the best variants</p><p class="d">About 1,010 variants made and tested in about 10 weeks. Claude also helped expose misleading stability metrics.</p></div>
+      <div class="uc" data-s="sci"><div class="top"><h4>Mithril Medicine</h4><span class="tag">Rare disease</span></div><div class="num">&lt;18 mo</div><p class="m">from idea to promising mouse results</p><p class="d">A one-person company used Claude to run work across 11 outside labs. Anthropic bought it; human trials possible as soon as late 2028.</p></div>
+      <div class="uc" data-s="sci"><div class="top"><h4>Eli Lilly</h4><span class="tag">Pharma</span></div><div class="num">50,000+</div><p class="m">employees with Claude Enterprise</p><p class="d">First big drug maker to roll it out company-wide. More than 85% of staff in key functions use it actively.</p></div>
+      <div class="uc" data-s="code"><div class="top"><h4>Mercado Libre</h4><span class="tag">E-commerce</span></div><div class="num">500,000+</div><p class="m">code submissions reviewed by agents in a year</p><p class="d">23,000+ developers. About 9,000 services migrated. In Q2 2026 merged code more than doubled and deployments rose nearly 75%.</p></div>
+      <div class="uc" data-s="code"><div class="top"><h4>DoorDash</h4><span class="tag">Delivery</span></div><div class="num">-50%+</div><p class="m">launch timelines for major products</p><p class="d">One engineer did in three weeks a migration that once took four engineers more than a quarter. 7,000+ staff use Cowork monthly.</p></div>
+      <div class="uc" data-s="code"><div class="top"><h4>Rakuten</h4><span class="tag">Internet</span></div><div class="num">24 → 5 days</div><p class="m">time to market for a new feature</p><p class="d">Claude Code coded for seven hours with little guidance at 99.9% accuracy. Major releases now ship every two weeks, not every quarter.</p></div>
+      <div class="uc" data-s="code"><div class="top"><h4>UST</h4><span class="tag">Chip testing</span></div><div class="num">-50–70%</div><p class="m">chip validation cycle time</p><p class="d">Claude Code reads chip schematics, then writes and runs regression tests. Standard validation fell from 4 days to 2.</p></div>
+      <div class="uc" data-s="code"><div class="top"><h4>Shopify</h4><span class="tag">Commerce software</span></div><div class="num">3x</div><p class="m">daily active merchants using Sidekick, year on year</p><p class="d">Its merchant assistant runs on Claude. More than 7,500 employees have Claude Code.</p></div>
+      <div class="uc" data-s="code"><div class="top"><h4>Verizon</h4><span class="tag">Telecoms</span></div><div class="num">33,000+</div><p class="m">engineers building with Claude Code</p><p class="d">Also testing Mythos through Project Glasswing to harden its network.</p></div>
+      <div class="uc" data-s="code"><div class="top"><h4>NASA</h4><span class="tag">Space</span></div><div class="num">1st</div><p class="m">AI-planned drive on Mars</p><p class="d">Engineers used Claude Code to plan and write navigation commands for the Perseverance rover.</p></div>
+      <div class="uc" data-s="fin"><div class="top"><h4>PayPal</h4><span class="tag">Payments</span></div><div class="num">45 min</div><p class="m">saved per sales team member each week</p><p class="d">12,000+ monthly users. A reporting tool cut report prep to 5–10 minutes and surfaces merchant growth signals.</p></div>
+      <div class="uc" data-s="fin"><div class="top"><h4>Travelers</h4><span class="tag">Insurance</span></div><div class="num">~25,000</div><p class="m">employees with Claude assistants</p><p class="d">Started with nearly 10,000 engineers, data scientists and analysts in January 2026.</p></div>
+      <div class="uc" data-s="shop"><div class="top"><h4>Walmart</h4><span class="tag">Retail</span></div><div class="num">+35%</div><p class="m">average order value via its Sparky assistant</p><p class="d">Sparky weekly users rose 110% in a quarter and units sold through it doubled.</p></div>
+      <div class="uc" data-s="svc"><div class="top"><h4>Accenture</h4><span class="tag">Consulting</span></div><div class="num">10% → 80%+</div><p class="m">security test coverage with Cyber.AI</p><p class="d">Scans that took days now take under an hour. One broadband client reported a 7x return on its AI spend.</p></div>
+      <div class="uc" data-s="svc"><div class="top"><h4>SAP</h4><span class="tag">Enterprise software</span></div><div class="num">25 hrs</div><p class="m">saved per consultant per month</p><p class="d">Its Joule for Consultants tool, using models such as Claude, delivers projects up to 14% faster.</p></div>
+      <div class="uc" data-s="svc"><div class="top"><h4>Shy Bird</h4><span class="tag">Restaurant</span></div><div class="num">60%+</div><p class="m">shorter brunch ticket times, to 12 minutes</p><p class="d">An owner who had never coded fed kitchen photos and sales data to Claude and redesigned the line. The tool now serves 60 restaurants.</p></div>
+      <div class="uc" data-s="ngo"><div class="top"><h4>International Rescue Committee</h4><span class="tag">Humanitarian</span></div><div class="num">464</div><p class="m">staff hours returned each week</p><p class="d">Field health teams lifted the share of key indicators used in planning from 20% to 100%. A week-long funding analysis now takes hours.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pat">
+    <div class="sec-head">
+      <div class="lab">The pattern</div>
+      <h2 id="pat">Where the gains are biggest</h2>
+    </div>
+    <div class="pat">
+      <div><h3>Paperwork with a right answer</h3><p>Underwriting files, manufacturing records, data rooms. Output can be checked, so errors get caught.</p></div>
+      <div><h3>Doing what was skipped</h3><p>AIG now reads every submission; Enveda's review found 7 issues people missed. Coverage, not just speed.</p></div>
+      <div><h3>Code migrations</h3><p>Salesforce, DoorDash, Jane Street, Mercado Libre. Big, rule-bound rewrites are the clearest win.</p></div>
+      <div><h3>More output, same team</h3><p>Legora runs a platform for 1,500+ firms with about 80 engineers. Good for margins, harder for hiring.</p></div>
+      <div><h3>Defenders get a head start</h3><p>Mozilla fixed 293 flaws attackers never got to use. The same skill helps attackers.</p></div>
+      <div><h3>Science, early days</h3><p>Lab results are real but mostly preclinical. No drug from this work has reached humans yet.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="loop">
+    <div class="panel">
+      <div class="lab">Anthropic on Anthropic</div>
+      <h2 id="loop">Claude is building Claude</h2>
+      <div class="pgrid">
+        <div><div class="num">90%+</div><p>of contributions to Anthropic's codebase in September 2026 were written by Claude</p></div>
+        <div><div class="num">45x</div><p>more code per engineer per day than in 2024 (Q3 2026 average)</p></div>
+        <div><div class="num">~90%</div><p>Claude's success rate on hard, open-ended engineering problems, up ~50 points in nine months (internal benchmark)</p></div>
+        <div><div class="num">5x vs 86x</div><p>headcount growth vs revenue growth, Q4 2024 to Q3 2026</p></div>
+        <div><div class="num">$6.6M+</div><p>revenue per employee (TTM), with about 5,300 staff</p></div>
+        <div><div class="num">-40%</div><p>cost per task for customers, Opus 5.5 vs Opus 5</p></div>
+      </div>
+      <div class="rev" aria-label="Revenue vs net loss, first half of 2026, to scale">
+        <div class="bar"><span>H1 revenue</span><div class="track"><div class="fill a" style="width:20.2%"></div></div></div>
+        <div class="bar"><span>H1 net loss</span><div class="track"><div class="fill b" style="width:100%"></div></div></div>
+        <div class="scale">To scale: $16.3B revenue vs an $80.7B net loss in H1 2026. $72.4B of the loss is a non-cash charge as the value of its convertible notes rose; the operating loss was $693M.</div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="other">
+    <div class="sec-head">
+      <div class="lab">The other side</div>
+      <h2 id="other">What the case studies leave out</h2>
+    </div>
+    <div class="os">
+      <article><h3>Who keeps the score</h3><p>Every case study is the customer marking its own homework, published in a sales document. None is audited, and the S-1 warns its own metrics are unverified.</p><div class="src">Anthropic S-1</div></article>
+      <article><h3>Feeling fast is not being fast</h3><p>In METR's 2025 trial, 16 experienced developers took 19% longer with AI tools, yet believed they were about 20% faster. Tools have improved since, but self-reports deserve doubt.</p><div class="src">METR, July 2025</div></article>
+      <article><h3>The first rung of the ladder</h3><p>Employment of 22- to 25-year-olds in the most AI-exposed jobs is about 19% below peers in less-exposed work, mostly through less hiring. The authors call it a pattern, not proof of cause.</p><div class="src">Stanford Digital Economy Lab, Aug 2026</div></article>
+      <article><h3>Confident and wrong</h3><p>In June a US judge cancelled a trial after lawyers on both sides filed AI-invented cases. Legora grounds answers in sources for exactly this reason.</p><div class="src">Legal Cheek, June 2026</div></article>
+      <article><h3>The bill for agents</h3><p>Anthropic says agentic work burns far more compute per task and that it has "significantly underestimated" compute needs before, while H1 compute costs were $8.9B.</p><div class="src">Anthropic S-1</div></article>
+      <article><h3>Off switch you don't control</h3><p>In June the US ordered Fable 5 and Mythos 5 cut off for foreign nationals; access returned on 1 July. Its five biggest customers also give about 25% of revenue.</p><div class="src">Al Jazeera; Anthropic S-1</div></article>
+      <article><h3>Models with their own ideas</h3><p>The filing warns Claude may act in "unintended, misaligned, or autonomous ways", and that a flaw could pass into future models now that Claude writes them.</p><div class="src">Anthropic S-1</div></article>
+      <article><h3>Bugs cut both ways</h3><p>Mozilla's 271 fixes show defence at a new scale. A model that finds flaws this well could arm attackers, which is why the strongest models are gated.</p><div class="src">Anthropic S-1</div></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="use">
+    <div class="sec-head">
+      <div class="lab">If you run a team</div>
+      <h2 id="use">How to get the gains without the grief</h2>
+    </div>
+    <ol class="check">
+      <li><span class="num">1</span><span>Start with checkable work: migrations, document review, triage. Avoid tasks where errors are hard to spot.</span></li>
+      <li><span class="num">2</span><span>Measure against a control group or a clock, not staff surveys. METR shows how far feelings drift.</span></li>
+      <li><span class="num">3</span><span>Keep a human signature on anything filed, shipped or sent to a client.</span></li>
+      <li><span class="num">4</span><span>Budget for usage that grows: agent tasks cost more than chat, and bills follow use.</span></li>
+      <li><span class="num">5</span><span>Keep a second model ready. A rule change or outage can switch one off overnight.</span></li>
+      <li><span class="num">6</span><span>Plan how juniors learn when the routine work that trained them goes to agents.</span></li>
+    </ol>
+  </section>
+
+  <div class="take">
+    <div class="lab">The takeaway</div>
+    <p>The receipts are real, but they were printed by the seller. <em>Trust the stopwatch, not the brochure.</em></p>
+  </div>
+
+  <section aria-labelledby="src">
+    <div class="sec-head"><div class="lab">Sources</div><h2 id="src">Read the originals</h2></div>
+    <ul class="sources">
+      <li><a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm">Anthropic, PBC Form S-1, including customer case studies</a> (SEC, 26 Oct 2026)</li>
+      <li><a href="https://www.anthropic.com/news/s1-sec">Anthropic files registration statement for proposed IPO</a> (Anthropic, 26 Oct 2026)</li>
+      <li><a href="https://www.anthropic.com/research/early-progress-drug-development">Early progress in drug development</a> (Anthropic, 27 Oct 2026)</li>
+      <li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">Measuring the impact of early-2025 AI on experienced open-source developers</a> (METR, July 2025)</li>
+      <li><a href="https://digitaleconomy.stanford.edu/news/canariesaug26/">Canaries in the coal mine, August 2026 update</a> (Stanford Digital Economy Lab)</li>
+      <li><a href="https://www.legalcheek.com/2026/06/us-judge-stops-case-after-lawyers-on-both-sides-cite-ai-fabricated-cases/">US judge stops case after lawyers on both sides cite AI-fabricated cases</a> (Legal Cheek, June 2026)</li>
+      <li><a href="https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says">US lifts restrictions on Fable and Mythos models</a> (Al Jazeera, 1 July 2026)</li>
+    </ul>
+  </section>
+</main>
+<footer class="wrap">KKReckons · Original graphics and text by KK Reddy. All figures as reported in the sources above; case-study figures are company-reported and unaudited.</footer>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('#filters button'), cards=document.querySelectorAll('#grid .uc'), count=document.getElementById('count');
+  function apply(f){
+    var n=0;
+    cards.forEach(function(c){var on=(f==='all'||c.getAttribute('data-s')===f);c.hidden=!on;if(on)n++;});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f?'true':'false');});
+    count.textContent='Showing '+n+' use case'+(n===1?'':'s');
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-f'));});});
+})();
+</script>
+
+</body>
+</html>
