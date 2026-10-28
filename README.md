@@ -20,7 +20,8 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
   file KK supplies, kept in `special/<slug>.html`, served inside the site header and footer with its own stylesheet scoped to
   the report). The registry is `data/special.json`: one entry per report (slug, title, kicker, dek, date, themes, reading time,
   `file` or `href` for a report that lives elsewhere on the site, 1600×900 `cover`, sources). An edition can point at a report
-  with a top-level `special` object in its data (see `docs/edition-format.md`).
+  with a top-level `special` object in its data (see `docs/edition-format.md`). Build reports on the template's house
+  layout (`docs/special-reports.md`): section heads, the takeaway, fonts and the width rules the site check enforces.
 - `/about` — about the briefing
 - `/api/subscribe` — adds a reader to the beehiiv list from the on-page email form
 
@@ -74,7 +75,10 @@ landscape (1024px), a laptop at Windows' 150% scaling (1280px), a common laptop 
 (1920px), phones and tablets with touch; dark mode on a phone and a laptop; and Safari's engine (WebKit) on
 iPhone, tablet and laptop sizes when it is installed (CI installs it). It fails on a page that doesn't load,
 throws a script error, scrolls sideways, crops a cover or share image (they carry their own headline), clips
-text at the edge of its box, or has a serious accessibility problem (axe), and lists tap targets under 40px on
+text at the edge of its box, or has a serious accessibility problem (axe). On screens 1024px and wider it also
+fails a headline or pull quote that wraps while 35% or more of its row is empty, and a grid built for several cards
+that holds only one. On every screen it fails text set in a bare system serif (Georgia, Times) or in a web font
+that never loaded, and Share and Listen that sit side by side but not level. It lists tap targets under 40px on
 touch screens. `SITE_CHECK_PAGES=/special,/about` checks just those pages; `SITE_CHECK_SHOTS=<dir>` saves a
 screenshot of every page on every device to look at by eye. `SITE_CHECK_BASE=http://localhost:3200` (or a URL
 after `--`) checks a site served elsewhere. Several devices are checked at once, Chromium and WebKit side by side:
