@@ -41,7 +41,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    file's existing order (oldest first) and two-space indentation.
 3. `npm ci` (first time in the session), then run every mechanical step with one command:
    `npm run -s publish-edition -- <YYYY-MM-DD>` (add `--allow <date>` only for a correction he asked for).
-   It rebuilds the site data, stores the new newsletter without its images (they're in `public/figs/` by
+   It rebuilds the site data, stores the new newsletter without its images and embedded fonts (the images are in `public/figs/` by
    then; `scripts/strip-newsletter-images.mjs`), runs the automatic checks, writes the email thumbnails
    (`public/email/<YYYY-MM-DD>-<n>.png`, commit them with the edition), the market strip
    (`data/markets/<YYYY-MM-DD>.json`, commit it too; if the build says market data was unreachable, mention it) and the email JSON

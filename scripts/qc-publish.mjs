@@ -75,6 +75,15 @@ const onlyBackfilled = (was, now) => {
   for (const k of BACKFILL) if (!(k in was) && k in rest) delete rest[k];
   return JSON.stringify(was) === JSON.stringify(rest);
 };
+// An earlier newsletter stored again without its images and fonts (scripts/strip-newsletter-images.mjs): fine
+// as long as it shrank and the edition's data, which is all the site uses from it, is byte for byte the same.
+const strippedOnly = (f, before) => {
+  const d = /^newsletters\/(\d{4}-\d{2}-\d{2})\.html$/.exec(f)?.[1];
+  if (!d || !fs.existsSync(path.join(root, f)) || read(f).length >= before.length) return false;
+  const content = `data/content/${d}.json`;
+  const was = atBase(content);
+  return Boolean(was && fs.existsSync(path.join(root, content)) && was.equals(read(content)));
+};
 const gainedSnapshot = (f, before) => f.startsWith("data/content/") && fs.existsSync(path.join(root, f)) && onlyBackfilled(JSON.parse(before), JSON.parse(read(f)));
 
 for (const d of baseDates) {
@@ -87,7 +96,7 @@ for (const d of baseDates) {
   ];
   for (const [f, old] of files) {
     const before = atBase(f) || atBase(old);
-    if (before && (!fs.existsSync(path.join(root, f)) || !before.equals(read(f))) && !gainedSnapshot(f, before)) fail(`${f} changed (an earlier edition). Use --allow ${d} if this is a deliberate correction.`);
+    if (before && (!fs.existsSync(path.join(root, f)) || !before.equals(read(f))) && !gainedSnapshot(f, before) && !strippedOnly(f, before)) fail(`${f} changed (an earlier edition). Use --allow ${d} if this is a deliberate correction.`);
   }
   const was = JSON.stringify(baseIndex.find((e) => e.date === d));
   const now = JSON.stringify(index.find((e) => e.date === d));
@@ -105,7 +114,7 @@ const changed = git("diff", "--name-only", `${base}...HEAD`).toString().split("\
 const uncommitted = git("status", "--porcelain").toString().split("\n").filter(Boolean).map((l) => l.slice(3));
 const editionFile = (f) => {
   if (["data/editions.json", "data/edition-meta.json", "lib/editions.ts", "lib/editionFormat.ts"].includes(f)) return true;
-  const m = /^(?:newsletters|data\/content|data\/markets|public\/figs|public\/email)\/(\d{4}-\d{2}-\d{2})/.exec(f);
+  const m = /^(?:newsletters(?:\/figs-kept)?|data\/content|data\/markets|public\/figs|public\/email)\/(\d{4}-\d{2}-\d{2})/.exec(f);
   if (!m) return false;
   if (added.includes(m[1]) || allowed.has(m[1])) return true;
   // A snapshot filled in late for an earlier edition (see BACKFILL above).
