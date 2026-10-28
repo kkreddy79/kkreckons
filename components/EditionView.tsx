@@ -311,6 +311,27 @@ function CardsIcon() {
   );
 }
 
+/** Links to this site open in the same tab, as site paths (so previews link to their own copy). */
+function readingHref(url: string) {
+  return url.startsWith(SITE_URL + "/") ? url.slice(SITE_URL.length) : url;
+}
+
+/** The day's research brief, teased at the top: readers otherwise only meet it at the very end. */
+function SpecialReport({ r }: { r: EditionContent["reading"][number] }) {
+  const href = readingHref(r.url);
+  const own = href.startsWith("/");
+  return (
+    <a className="ev-special" href={href} {...(own ? {} : { target: "_blank", rel: "noreferrer" })}>
+      <span className="ev-special-tag">Special report today</span>
+      <b>{r.title}</b>
+      {r.note && <small>{r.note}</small>}
+      <span className="ev-special-go">
+        Read the report <span aria-hidden>→</span>
+      </span>
+    </a>
+  );
+}
+
 /** An edition in the KKReckons design: slice, key numbers, sections of stories, further reading. */
 export default function EditionView({
   e,
@@ -402,6 +423,7 @@ export default function EditionView({
     </nav>
   );
   const tracked = e.sections.flatMap((sec) => sec.stories).flatMap((s, i) => (s.stressIndex ? [i + 1] : []));
+  const special = e.reading.find((r) => r.special);
   let n = 0;
 
   return (
@@ -424,6 +446,7 @@ export default function EditionView({
       <PrintImages />
 
       <ReadTracker date={e.date} editions={showCatchUp ? editions.map((x) => x.date) : undefined} />
+      {special && <SpecialReport r={special} />}
       {digest}
 
       {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} />}
@@ -508,10 +531,17 @@ export default function EditionView({
             <h2 id="fr-t">Further reading</h2>
             <ul>
               {e.reading.map((r) => (
-                <li key={r.url + r.title}>
-                  <a href={r.url} target="_blank" rel="noreferrer">
-                    {r.title} <span aria-hidden>↗</span>
-                  </a>
+                <li key={r.url + r.title} className={r.special ? "ev-reading-special" : undefined}>
+                  {r.special && <span className="ev-special-tag">Special report</span>}
+                  {readingHref(r.url).startsWith("/") ? (
+                    <a href={readingHref(r.url)}>
+                      {r.title} <span aria-hidden>→</span>
+                    </a>
+                  ) : (
+                    <a href={r.url} target="_blank" rel="noreferrer">
+                      {r.title} <span aria-hidden>↗</span>
+                    </a>
+                  )}
                   {(r.note || publisherName(r.url)) && (
                     <small>
                       {r.note || publisherName(r.url)}

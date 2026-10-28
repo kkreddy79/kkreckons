@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Popped or leaking? The AI bubble, a KKReckons research brief</title>
+<meta name="description" content="KKReckons research brief, 28 October 2026: China's AI stocks have crashed while America's AI boom leaks through credit. Neocloud debt, Gartner's $4.9tn revenue gap, history, hedges and the India angle, with every figure sourced.">
+<link rel="canonical" href="https://www.kkreckons.com/research/ai-bubble-october-2026">
+<link rel="icon" href="/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KKReckons">
+<meta property="og:title" content="Popped or leaking? The AI bubble, a KKReckons research brief">
+<meta property="og:description" content="KKReckons research brief, 28 October 2026: China's AI stocks have crashed while America's AI boom leaks through credit. Neocloud debt, Gartner's $4.9tn revenue gap, history, hedges and the India angle, with every figure sourced.">
+<meta property="og:url" content="https://www.kkreckons.com/research/ai-bubble-october-2026">
+<meta property="og:image" content="https://www.kkreckons.com/figs/2026-10-28-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="KK Reddy">
+<!-- Research brief by KK Reddy, first published as a claude.ai artifact on 28 October 2026. Self-contained: system fonts, no scripts. -->
+<style>
+/* Layout: a long-read research dossier. Dusk hero band, one reading column, figures break out wider. Pressure readings (bp, %, x) are the recurring motif. */
+:root{
+  --paper:#FBF7F1; --card:#FFFFFF; --ink:#16233A; --text:#2C3345; --mute:#5E6474; --line:#E6DCCD;
+  --red:#C0392B; --teal:#1F7A86; --gold:#E2A23B; --sand:#F3E9D8; --blush:#F8E4DE; --mint:#DDEDEB;
+  --navy:#16233A; --hero1:#1B2747; --hero2:#5B3A6E; --hero3:#E0835A; --onhero:#F6F1E9;
+  --chip-ok:#D9EFE4; --chip-ok-t:#1E6B45; --chip-warn:#FCEBC9; --chip-warn-t:#8A5A00; --chip-no:#F7DAD5; --chip-no-t:#9B2C20;
+  --display:'Lora',Georgia,'Times New Roman',serif; --body:'Poppins','Helvetica Neue',Arial,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11151F; --card:#1A2030; --ink:#F2EEE6; --text:#DCD8D0; --mute:#A3A7B3; --line:#2C3446;
+  --red:#F07A6A; --teal:#5FC3CF; --gold:#F2BC5E; --sand:#2A2620; --blush:#33221F; --mint:#16302F;
+  --navy:#0C111B; --onhero:#F6F1E9;
+  --chip-ok:#173A2B; --chip-ok-t:#8FE0B5; --chip-warn:#3A2E14; --chip-warn-t:#F6CF7A; --chip-no:#3E1D19; --chip-no-t:#F7A99D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11151F; --card:#1A2030; --ink:#F2EEE6; --text:#DCD8D0; --mute:#A3A7B3; --line:#2C3446;
+  --red:#F07A6A; --teal:#5FC3CF; --gold:#F2BC5E; --sand:#2A2620; --blush:#33221F; --mint:#16302F;
+  --navy:#0C111B; --onhero:#F6F1E9;
+  --chip-ok:#173A2B; --chip-ok-t:#8FE0B5; --chip-warn:#3A2E14; --chip-warn-t:#F6CF7A; --chip-no:#3E1D19; --chip-no-t:#F7A99D; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--text);font:400 16.5px/1.65 var(--body);margin:0}
+a{color:var(--teal);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.col{max-width:720px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);color:var(--ink);text-wrap:balance;margin:0}
+h2{font-size:clamp(26px,4vw,34px);line-height:1.15}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--hero1) 0%,var(--hero2) 62%,var(--hero3) 100%);color:var(--onhero);position:relative;overflow:hidden}
+.hero .wrap{padding-block:40px 0;position:relative;z-index:1}
+.eyebrow{font:600 12.5px/1.2 var(--body);letter-spacing:.16em;text-transform:uppercase}
+.hero .eyebrow{color:#F5C77E}
+.hero h1{color:#FFF8EE;font-size:clamp(38px,7vw,68px);line-height:1.02;margin-top:14px;max-width:16ch}
+.hero h1 em{font-style:italic;color:#F5C77E}
+.dek{font-size:clamp(17px,2.2vw,19px);line-height:1.55;max-width:60ch;margin-top:16px;color:#EDE4D6}
+.byline{margin-top:18px;font-size:14px;color:#D8CBBB}
+.byline b{color:#FFF8EE;font-weight:600}
+.skyline{display:block;width:100%;height:110px;margin-top:26px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:-56px;position:relative;z-index:2}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 8px 24px rgba(22,35,58,.12)}
+.tile .n{font:700 clamp(30px,4.6vw,42px)/1 var(--display);color:var(--red)}
+.tile .n.t{color:var(--teal)}.tile .n.g{color:var(--gold)}
+.tile p{font-size:14px;line-height:1.4;margin-top:8px;color:var(--mute)}
+.tile p b{color:var(--ink);font-weight:600}
+
+/* sections */
+section{padding-block:48px 8px}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.sec-head .eyebrow{color:var(--teal)}
+.lede{font-size:18px;line-height:1.6;color:var(--text)}
+.prose{display:flex;flex-direction:column;gap:14px}
+.prose ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.verdict{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.vcard{border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.vcard .k{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase}
+.vcard h3{font-size:22px}
+.vcard p{font-size:15px;line-height:1.5}
+.v1{background:var(--blush)}.v1 .k{color:var(--red)}
+.v2{background:var(--sand)}.v2 .k{color:var(--gold)}
+.v3{background:var(--mint)}.v3 .k{color:var(--teal)}
+
+/* figures */
+.fig{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;margin-top:18px}
+.fig h3{font-size:19px}
+.fig .sub{font-size:13.5px;color:var(--mute);margin-top:4px}
+.bars{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.br{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) auto;gap:12px;align-items:center}
+.br .l{font-size:14px;line-height:1.3}
+.br .l small{display:block;color:var(--mute);font-size:12px}
+.br .track{height:16px;border-radius:4px;background:color-mix(in srgb,var(--line) 55%,transparent);overflow:hidden}
+.br .track i{display:block;height:100%;border-radius:4px}
+.br .v{font:600 14px/1 var(--mono);color:var(--ink);min-width:62px;text-align:right}
+.note{font-size:12.5px;color:var(--mute);margin-top:12px;line-height:1.5}
+.c-red{background:var(--red)}.c-teal{background:var(--teal)}.c-gold{background:var(--gold)}.c-ink{background:var(--ink)}.c-mute{background:var(--mute)}
+
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.panel{border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.panel h3{font-size:19px}
+.panel ul{margin:0;padding-left:18px;font-size:15px;line-height:1.55;display:flex;flex-direction:column;gap:6px}
+.p-sand{background:var(--sand)}.p-blush{background:var(--blush)}.p-mint{background:var(--mint)}
+.p-dark{background:var(--navy);color:#E9E4DA}.p-dark h3{color:#F5C77E}
+
+/* gap chart */
+.gap{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.gaprow{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:12px;align-items:center}
+.gaprow .l{font-size:14px;line-height:1.3}
+.gbar{height:40px;border-radius:6px;display:flex;align-items:center;padding-inline:12px;color:#fff;font:600 15px/1 var(--mono);white-space:nowrap}
+.gap-callout{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-top:6px;padding-top:12px;border-top:1px dashed var(--line)}
+.gap-callout .n{font:700 34px/1 var(--display);color:var(--red)}
+.measures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+.measure{border:1px solid var(--line);border-radius:12px;padding:14px}
+.measure .n{font:700 26px/1 var(--display);color:var(--ink)}
+.measure p{font-size:13.5px;line-height:1.45;margin-top:6px;color:var(--mute)}
+
+/* table */
+.tablewrap{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);background:color-mix(in srgb,var(--sand) 60%,var(--card))}
+tr:last-child td{border-bottom:none}
+.chip{display:inline-block;font:600 12px/1 var(--body);padding:5px 9px;border-radius:999px;white-space:nowrap}
+.ok{background:var(--chip-ok);color:var(--chip-ok-t)}.warn{background:var(--chip-warn);color:var(--chip-warn-t)}.no{background:var(--chip-no);color:var(--chip-no-t)}
+
+/* timeline */
+.tl{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:86px 18px minmax(0,1fr);gap:12px;align-items:start}
+.tl .d{font:600 13.5px/1.6 var(--mono);color:var(--teal);text-align:right}
+.tl .dot{position:relative;height:100%}
+.tl .dot::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl .dot::after{content:"";position:absolute;left:3px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2.5px solid var(--red)}
+.tl .e{padding-bottom:16px;font-size:15px;line-height:1.5}
+.tl .e b{color:var(--ink)}
+
+/* gauges */
+.gauges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.gauge{border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;background:var(--card)}
+.gauge svg{width:100%;max-width:220px;height:auto}
+.gauge .n{font:700 34px/1 var(--display);color:var(--ink);margin-top:-6px}
+.gauge p{font-size:13.5px;color:var(--mute);margin-top:6px}
+.trig{margin-top:14px}
+.scale{position:relative;height:22px;border-radius:5px;background:color-mix(in srgb,var(--line) 55%,transparent);margin-top:28px}
+.scale i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--gold)}
+.scale .mk{position:absolute;top:-22px;transform:translateX(-50%);font:600 11.5px/1 var(--mono);color:var(--mute);white-space:nowrap}
+.scale .tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--red)}
+.scale .ax{position:absolute;top:28px;font:500 11px/1 var(--mono);color:var(--mute);transform:translateX(-50%)}
+
+/* quotes */
+.voices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.voice{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.voice q{font:500 italic 19px/1.35 var(--display);color:var(--ink);quotes:"\201C" "\201D"}
+.voice .who{font-size:13px;color:var(--mute)}
+.voice .who b{color:var(--text);font-weight:600}
+
+/* history */
+.history{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.era{border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.era .yr{font:600 12px/1 var(--mono);letter-spacing:.08em;color:var(--mute)}
+.era .n{font:700 28px/1 var(--display);color:var(--red)}
+.era p{font-size:14.5px;line-height:1.5}
+
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:16px}
+.day{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:12px;padding:14px}
+.day .d{font:700 20px/1 var(--display);color:var(--ink)}
+.day p{font-size:13.5px;line-height:1.45;margin-top:8px}
+
+.other{background:var(--navy);color:#E9E4DA;border-radius:18px;padding:26px 24px;margin-top:18px}
+.other h2{color:#FFF8EE}
+.other .eyebrow{color:#F5C77E}
+.other p{font-size:16.5px;line-height:1.65;margin-top:12px;max-width:66ch}
+.take{margin-top:16px;padding:14px 16px;border-left:4px solid #F5C77E;background:rgba(255,255,255,.06);border-radius:0 10px 10px 0;font:500 italic 18px/1.5 var(--display);color:#FFF8EE}
+
+.sources{columns:2 300px;column-gap:28px;font-size:13.5px;line-height:1.5;margin-top:14px;padding-left:18px}
+.sources li{break-inside:avoid;margin-bottom:6px}
+footer{margin-top:48px;border-top:1px solid var(--line)}
+footer .wrap{padding-block:26px 40px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--mute)}
+footer b{font-family:var(--display);font-size:18px;color:var(--ink)}
+
+@media (max-width:760px){
+  .tiles,.verdict,.measures,.history{grid-template-columns:1fr}
+  .duo,.voices,.gauges{grid-template-columns:1fr}
+  .tiles{margin-top:-40px}
+  .br{grid-template-columns:minmax(0,1fr) auto;}
+  .br .track{grid-column:1/-1;order:3}
+  .gaprow{grid-template-columns:1fr}
+  .tl li{grid-template-columns:70px 18px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){
+  .br .track i,.gbar{animation:grow .9s ease-out both}
+  @keyframes grow{from{transform:scaleX(.02);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+}
+</style>
+
+<style>
+.kk-bar{background:#0C111B;color:#E9E4DA;font:600 13.5px/1.3 'Helvetica Neue',Arial,sans-serif}
+.kk-bar .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;align-items:center;padding-block:10px}
+.kk-bar a{color:#F5C77E;text-decoration:none}.kk-bar a:hover{text-decoration:underline}
+.kk-bar b{font-family:Georgia,'Times New Roman',serif;font-size:17px;color:#FFF8EE}
+</style>
+</head>
+<body>
+<nav class="kk-bar" aria-label="KKReckons"><div class="wrap"><a href="/"><b>KKReckons</b></a><span><a href="/daily/october-28-2026">&larr; Back to the 28 October edition</a></span></div></nav>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">KKReckons research brief · 28 October 2026</div>
+    <h1>China <em>popped</em>. America is leaking.</h1>
+    <p class="dek">The AI boom is being tested in two very different ways. China's AI shares have crashed. In the US, the strain is showing up in the debt of the most heavily borrowed builders, while the biggest spenders keep spending. This brief checks the numbers behind this week's headlines and sets out what to watch.</p>
+    <p class="byline">By <b>KK Reddy</b> · Research companion to the <a href="/daily/october-28-2026" style="color:#F5C77E">28 October edition</a></p>
+  </div>
+  <svg class="skyline" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#0F1830" fill-opacity=".55" d="M0 110V70h40V52h26v18h30V40h22v30h34V60h18V30h30v40h24V58h40v52zM330 110V64h28V44h34v20h20V28h12V14h8v14h12v36h26V50h40v60zM560 110V58h36V36h24v22h30V48h46V22h28v48h22V60h34v50zM850 110V54h22V34h40v20h18V44h28V18h20v40h26V62h36v48zM1060 110V60h30V40h32v24h26V50h52v60z"/>
+    <path fill="#0B1226" d="M0 110V88h1200v22z"/>
+  </svg>
+</header>
+
+<div class="wrap">
+  <div class="tiles">
+    <div class="tile"><div class="n">–40%</div><p><b>China's STAR50</b> AI and chip index in under four months, about $480bn erased</p></div>
+    <div class="tile"><div class="n t mono">1,148bp</div><p><b>CoreWeave's</b> five-year default insurance, against 63bp for US investment grade</p></div>
+    <div class="tile"><div class="n g">$8.5tn</div><p><b>Gartner's</b> estimate of revenue AI data centres need by 2030, against at most $3.6tn they may earn</p></div>
+  </div>
+
+  <!-- 30 seconds -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">The verdict in 30 seconds</div><h2>Three markets, three readings</h2></div>
+    </div>
+    <div class="verdict">
+      <div class="vcard v1"><div class="k">China · equities</div><h3>Burst</h3><p>The STAR50 is down 40% and still trades near 100 times past earnings. Retail investors bore the losses.</p></div>
+      <div class="vcard v2"><div class="k">US · credit</div><h3>Leaking</h3><p>Neocloud and Oracle debt is pricing real default risk. No neocloud has defaulted yet.</p></div>
+      <div class="vcard v3"><div class="k">US · Big Tech</div><h3>Still spending</h3><p>Amazon, Microsoft and Alphabet plan up to about $600bn of capex this year on growing cloud backlogs.</p></div>
+    </div>
+  </section>
+
+  <!-- China -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">1 · China</div><h2>The bubble that already burst</h2></div>
+      <div class="prose">
+        <p class="lede">Reuters reports that China's AI rally ran higher than any in the West and has now unwound fast. AI stocks make up 42% of China's market value and 57% of turnover, Goldman Sachs estimates, so few small investors escaped.</p>
+        <p>Traders named no single trigger. They pointed to stretched prices, tax bills and the threat of US and other bans on Chinese equipment in data centres. Beijing's 9 October guidelines on high-tech growth told officials to avoid bubbles and herd-like investment. The securities regulator has announced no rescue.</p>
+      </div>
+    </div>
+    <div class="fig">
+      <h3>How far the darlings fell</h3>
+      <p class="sub">Approximate falls from recent highs, to scale. Time windows differ, as labelled. Source: Reuters, 26 Oct 2026.</p>
+      <div class="bars">
+        <div class="br"><div class="l">Innolight, Eoptolink<small>optical parts, since Jun–Jul</small></div><div class="track"><i class="c-red" style="width:100%"></i></div><div class="v">~60%</div></div>
+        <div class="br"><div class="l">Unitree<small>robots, since August listing</small></div><div class="track"><i class="c-red" style="width:83.3%"></i></div><div class="v">~50%</div></div>
+        <div class="br"><div class="l">MetaX, Moore Threads<small>chipmakers, since July</small></div><div class="track"><i class="c-red" style="width:83.3%"></i></div><div class="v">~50%</div></div>
+        <div class="br"><div class="l">STAR50 index<small>under four months</small></div><div class="track"><i class="c-ink" style="width:66.7%"></i></div><div class="v">40%</div></div>
+        <div class="br"><div class="l">CXMT<small>memory chips, past month</small></div><div class="track"><i class="c-gold" style="width:41.7%"></i></div><div class="v">&gt;25%</div></div>
+        <div class="br"><div class="l">CSI300 blue chips<small>since June highs</small></div><div class="track"><i class="c-mute" style="width:33.3%"></i></div><div class="v">~20%</div></div>
+        <div class="br"><div class="l">Nasdaq, for contrast<small>from record three weeks earlier</small></div><div class="track"><i class="c-teal" style="width:10%"></i></div><div class="v">6%</div></div>
+      </div>
+      <p class="note">Even after the fall, the STAR50 trades at about 100 times trailing earnings (down from nearly 250), against about 30 for the Nasdaq 100.</p>
+    </div>
+  </section>
+
+  <!-- US credit -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">2 · US credit</div><h2>Where the air is getting out</h2></div>
+      <div class="prose">
+        <p class="lede">Neoclouds rent out GPU capacity they bought with borrowed money. When rates rise, their sums get worse even if customers keep coming. That is why the stress shows first in their bonds and credit default swaps (CDS), the price of insuring their debt.</p>
+      </div>
+    </div>
+    <div class="fig">
+      <h3>The cost of insuring AI debt</h3>
+      <p class="sub">Five-year CDS spreads in basis points (100bp = 1% a year), to scale. 26 Oct unless noted.</p>
+      <div class="bars">
+        <div class="br"><div class="l">CoreWeave<small>neocloud</small></div><div class="track"><i class="c-red" style="width:95.7%"></i></div><div class="v">1,148</div></div>
+        <div class="br"><div class="l">Oracle<small>19 Oct, a record</small></div><div class="track"><i class="c-gold" style="width:26.3%"></i></div><div class="v">315</div></div>
+        <div class="br"><div class="l">Nvidia</div><div class="track"><i class="c-ink" style="width:10.6%"></i></div><div class="v">127</div></div>
+        <div class="br"><div class="l">Meta</div><div class="track"><i class="c-ink" style="width:9.9%"></i></div><div class="v">119</div></div>
+        <div class="br"><div class="l">US investment-grade index<small>CDX benchmark</small></div><div class="track"><i class="c-teal" style="width:5.3%"></i></div><div class="v">63</div></div>
+      </div>
+      <p class="note">Sources: S&amp;P Global Market Intelligence via Benzinga (26 Oct); CNBC (Oracle, 19 Oct). Above 1,000bp is generally read as distress. Default odds implied by CDS depend on assumed recoveries, so treat them as rough.</p>
+    </div>
+    <div class="col">
+      <ol class="tl">
+        <li><span class="d">14 Oct</span><span class="dot"></span><div class="e"><b>CoreWeave's 2032 bonds slip below 80 cents</b> on the dollar, the usual distress line (Bloomberg).</div></li>
+        <li><span class="d">15 Oct</span><span class="dot"></span><div class="e"><b>CoreWeave CDS hits 1,194.5bp intraday;</b> Oracle's sets a record 288bp.</div></li>
+        <li><span class="d">22 Oct</span><span class="dot"></span><div class="e"><b>Jensen Huang says neocloud demand is "off the charts"</b>, and in the same breath that capital is scarcer than demand.</div></li>
+        <li><span class="d">25 Oct</span><span class="dot"></span><div class="e"><b>Elon Musk predicts "guppy-level death and consolidation"</b> among 200-plus neoclouds and says SpaceX won't buy any.</div></li>
+        <li><span class="d">26 Oct</span><span class="dot"></span><div class="e"><b>CoreWeave, Nebius and IREN fall</b> before rebounding; Meta announces a $95bn share sale to fund AI.</div></li>
+        <li><span class="d">27 Oct</span><span class="dot"></span><div class="e"><b>No neocloud default so far.</b> Short sellers made about $6bn of paper profit on the group in October (ORTEX, via Reuters).</div></li>
+      </ol>
+      <p class="note">Musk competes with neoclouds (SpaceX sells compute); Nvidia supplies and invests in them. Read both quotes with that in mind.</p>
+    </div>
+  </section>
+
+  <!-- revenue gap -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">3 · The maths</div><h2>A $4.9tn hole, on Gartner's model</h2></div>
+      <div class="prose"><p class="lede">Gartner estimates data-centre owners need $8.5tn of cumulative revenue by 2030 to cover announced investment, financing costs and a 12% return on capital. It sees revenue attributable to AI data centres reaching no more than $3.6tn.</p></div>
+    </div>
+    <div class="fig">
+      <h3>Revenue needed vs revenue expected, through 2030</h3>
+      <p class="sub">To scale. Gartner, 14 Oct 2026. These are model estimates, not results.</p>
+      <div class="gap">
+        <div class="gaprow"><div class="l">Revenue needed</div><div><div class="gbar c-ink" style="width:100%">$8.5tn</div></div></div>
+        <div class="gaprow"><div class="l">AI data-centre revenue, at most</div><div><div class="gbar c-gold" style="width:42.4%">$3.6tn</div></div></div>
+        <div class="gap-callout"><span class="n">$4.9tn</span><span>shortfall, the difference between the two bars. Gartner says more than $3.5tn of spending could face write-downs by 2030, and over 80% of neoclouds may stop operating independently.</span></div>
+      </div>
+    </div>
+    <div class="fig">
+      <h3>One boom, three different spending figures</h3>
+      <p class="sub">They measure different things, so they don't contradict each other. Always say which one you mean.</p>
+      <div class="measures">
+        <div class="measure"><div class="n">~$1tn</div><p>All AI infrastructure spending by AI providers in 2026, including neoclouds and labs (Gartner).</p></div>
+        <div class="measure"><div class="n">~$800bn</div><p>Hyperscaler capex expected in 2026, as cited by Neeraj Kaushal. Not all of it is AI.</p></div>
+        <div class="measure"><div class="n">up to $600bn</div><p>Amazon, Microsoft and Alphabet combined in 2026, from company guidance (Reuters).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- leak or burst -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">4 · Leak or burst?</div><h2>Ed Yardeni's slow-puncture thesis</h2></div>
+      <div class="prose">
+        <p class="lede">The veteran strategist told CNBC that air is coming out of the bubble without it bursting. His case: the bond market is rationing money to weak borrowers faster than rating agencies, so weak players fail or sell while stronger ones carry on.</p>
+      </div>
+    </div>
+    <div class="fig">
+      <h3>Yardeni's AI Bubble Meter, 21 Oct</h3>
+      <p class="sub">Two dials out of 100. Conditions for a bubble are high; the triggers that usually pop one are not yet.</p>
+      <div class="gauges">
+        <div class="gauge">
+          <svg viewBox="0 0 200 116" role="img" aria-label="Conditions dial at 83 of 100">
+            <path d="M20 100A80 80 0 0 1 180 100" fill="none" stroke="var(--line)" stroke-width="16" stroke-linecap="round"/>
+            <path d="M20 100A80 80 0 0 1 180 100" fill="none" stroke="var(--red)" stroke-width="16" stroke-linecap="round" stroke-dasharray="208.6 251.3"/>
+          </svg>
+          <div class="n">83</div><p>Conditions</p>
+        </div>
+        <div class="gauge">
+          <svg viewBox="0 0 200 116" role="img" aria-label="Triggers dial at 34 of 100">
+            <path d="M20 100A80 80 0 0 1 180 100" fill="none" stroke="var(--line)" stroke-width="16" stroke-linecap="round"/>
+            <path d="M20 100A80 80 0 0 1 180 100" fill="none" stroke="var(--gold)" stroke-width="16" stroke-linecap="round" stroke-dasharray="85.4 251.3"/>
+          </svg>
+          <div class="n">34</div><p>Triggers</p>
+        </div>
+      </div>
+      <div class="trig">
+        <h3>The one trigger in play: the two-year Treasury yield</h3>
+        <p class="sub">Rise from its December low, to scale (0–400bp). Red marks show the rises before the 2000 and 2006 busts.</p>
+        <div class="scale" role="img" aria-label="115 basis points so far, against 200 to 350 before past busts">
+          <i style="width:28.75%"></i>
+          <span class="tick" style="left:50%"></span><span class="tick" style="left:87.5%"></span>
+          <span class="mk" style="left:28.75%">now +115bp</span><span class="mk" style="left:50%">200bp</span><span class="mk" style="left:87.5%">350bp</span>
+        </div>
+        <div style="height:22px"></div>
+      </div>
+    </div>
+    <div class="voices">
+      <div class="voice"><q>air is coming out of the bubble without the bubble bursting</q><div class="who"><b>Ed Yardeni</b>, CNBC, 26 Oct</div></div>
+      <div class="voice"><q>guppy-level death and consolidation</q><div class="who"><b>Elon Musk</b>, on X, 25 Oct, about 200-plus neoclouds</div></div>
+      <div class="voice"><q>off the charts</q><div class="who"><b>Jensen Huang</b>, on neocloud demand, 22 Oct</div></div>
+      <div class="voice"><q>a protracted investment bust</q><div class="who"><b>BIS</b>, Annual Economic Report, June 2026, as a risk if returns disappoint</div></div>
+    </div>
+    <div class="duo">
+      <div class="panel p-mint"><h3>Why it might stay a slow leak</h3><ul><li>The biggest spenders fund most capex from cash flow.</li><li>Cloud backlogs keep growing: nearly $1.7tn at the big three.</li><li>Stronger firms can buy weak ones' assets cheaply.</li></ul></div>
+      <div class="panel p-blush"><h3>Why it could still burst</h3><ul><li>Credit is where past bubbles broke.</li><li>A December Fed hike would push the trigger dial up.</li><li>If Big Tech trims spending, neocloud debts get harder to pay, and chipmakers feel it next.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- history -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">5 · History</div><h2>Investors lose; the rails stay</h2>
+      <p class="lede">Past infrastructure manias destroyed capital but left assets that were used later. GPUs may be the exception.</p></div>
+    </div>
+    <div class="history">
+      <div class="era p-sand"><div class="yr">UK · 1840s</div><h3>Railway mania</h3><div class="n">~1/3</div><p>of about £200m invested (roughly 40% of GDP) was lost to investors, Andrew Odlyzko estimates. The network was built and used.</p></div>
+      <div class="era p-blush"><div class="yr">US · 1996–2002</div><h3>Telecom fibre</h3><div class="n">~95%</div><p>of laid fibre was reported dark in 2001. Global Crossing went bankrupt with $12.4bn of debt. Much of the fibre was lit later.</p></div>
+      <div class="era p-mint"><div class="yr">Now</div><h3>AI data centres</h3><div class="n">3–5 yrs</div><p>is roughly how long a GPU stays competitive. Unlike fibre, stranded chips may age out before a second life. This is our inference.</p></div>
+    </div>
+  </section>
+
+  <!-- crowding out -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">6 · The wider economy</div><h2>Is AI crowding out other investment?</h2></div>
+      <div class="prose"><p class="lede">Paul Krugman says it is. Columbia's Neeraj Kaushal points out that total US investment has barely moved, so AI may be reshuffling capital rather than starving the rest.</p></div>
+    </div>
+    <div class="fig">
+      <h3>US gross domestic investment, share of GDP</h3>
+      <p class="sub">New York Fed, 14 Oct 2026. Bars start at zero, to scale.</p>
+      <div class="bars">
+        <div class="br"><div class="l">Five years before Covid</div><div class="track"><i class="c-mute" style="width:85.2%"></i></div><div class="v">21.3%</div></div>
+        <div class="br"><div class="l">2023 to Q1 2026</div><div class="track"><i class="c-ink" style="width:86%"></i></div><div class="v">21.5%</div></div>
+        <div class="br"><div class="l">Latest four quarters</div><div class="track"><i class="c-gold" style="width:84.4%"></i></div><div class="v">21.1%</div></div>
+      </div>
+      <p class="note">Scale 0–25%. The NY Fed finds investment was reallocated rather than expanded: factories, other buildings and housing weakened as AI rose. Kaushal's column dates the later period from 2022; the NY Fed post uses 2023 to Q1 2026.</p>
+    </div>
+    <div class="duo">
+      <div class="panel p-sand"><h3>Signs of crowding out</h3><ul><li>Non-AI business investment fell as AI rose.</li><li>Data centres compete for power, land and builders; the BIS flags higher electricity costs.</li><li>Heavy borrowing adds to pressure on rates.</li></ul></div>
+      <div class="panel p-mint"><h3>Signs it isn't</h3><ul><li>The overall investment rate is flat.</li><li>Business saving has held up because the spenders are cash-rich.</li><li>Foreign capital can flow in, as Kaushal notes.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- hedging -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">7 · Protection</div><h2>Hedging AI is getting harder</h2>
+      <p class="lede">An FT editorial argues the bigger the boom grows, the fewer places there are to hide. Here is how the usual hedges look now.</p></div>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Hedge</th><th>Status</th><th>The catch</th></tr></thead>
+        <tbody>
+          <tr><td><b>Credit default swaps</b></td><td><span class="chip warn">Costly</span></td><td>Insuring CoreWeave costs about 11.5% a year; protection on Amazon, Alphabet, Meta and Nvidia hit record prices too.</td></tr>
+          <tr><td><b>GPU rental futures</b></td><td><span class="chip no">Not trading</span></td><td>CME and Silicon Data contracts were still under regulatory review on 26 Oct. They track chip scarcity, not share prices.</td></tr>
+          <tr><td><b>Treasuries</b></td><td><span class="chip warn">Mixed</span></td><td>They help in a slowdown, but not if the threat is a Fed hike. The 10-year yield is near 5%.</td></tr>
+          <tr><td><b>Gold</b></td><td><span class="chip warn">Volatile</span></td><td>Near $4,000 an ounce; it has swung hard this year.</td></tr>
+          <tr><td><b>Value stocks, Apple</b></td><td><span class="chip ok">Partial</span></td><td>Lighter on AI capex, but Apple sits in the same mega-cap indices.</td></tr>
+          <tr><td><b>Cash</b></td><td><span class="chip warn">Eroding</span></td><td>Inflation near 3.7% eats into real returns.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Market levels are approximate quotes from 27 Oct and will have moved. Not investment advice.</p>
+  </section>
+
+  <!-- India -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">8 · The India angle</div><h2>For India, AI has been a bystander trade</h2>
+      <p class="lede">Foreign investors have pulled money from India to chase AI and chip stocks in the US, Taiwan and Korea. When AI sold off, Indian IT briefly became the place to hide.</p></div>
+    </div>
+    <div class="fig">
+      <h3>First half of October</h3>
+      <p class="sub">Index gains, 1–15 Oct, to scale. SBI Securities via Business Standard.</p>
+      <div class="bars">
+        <div class="br"><div class="l">Nifty IT</div><div class="track"><i class="c-teal" style="width:100%"></i></div><div class="v">+10.9%</div></div>
+        <div class="br"><div class="l">Nifty 50</div><div class="track"><i class="c-mute" style="width:15.4%"></i></div><div class="v">+1.7%</div></div>
+      </div>
+      <p class="note">IT was the only large sector with foreign inflows (₹2,599 crore) while foreign investors sold ₹47,955 crore overall. Year-to-date foreign outflows reached a record ₹3.08 lakh crore by 12 Oct. The IT rally faded on 26 Oct.</p>
+    </div>
+    <div class="duo">
+      <div class="panel p-blush"><h3>The real risk for Indian IT</h3><ul><li>AI is pushing prices down: HCLTech's CEO says the industry is in the early phases of deflation.</li><li>Infosys cut its growth guidance to 1.5–3%, even as AI reached 10.5% of revenue.</li></ul></div>
+      <div class="panel p-sand"><h3>The lesson from China</h3><ul><li>The danger is retail money piling into a theme officials seem to bless.</li><li>India's closest parallels are small and mid-caps and AI data-centre listings, not the Nifty.</li><li>Goldman's basket of 42 Indian AI enablers is up about 60%.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- calendar -->
+  <section>
+    <div class="col"><div class="sec-head"><div class="eyebrow">9 · What to watch</div><h2>The next six weeks</h2></div></div>
+    <div class="cal">
+      <div class="day"><div class="d">28 Oct</div><p>Fed decision, 2pm ET (11:30pm IST); a hold is expected. Microsoft and Alphabet report after the close.</p></div>
+      <div class="day"><div class="d">29 Oct</div><p>Amazon results, with heavy capex expected. US GDP and PCE inflation data.</p></div>
+      <div class="day"><div class="d">3 Nov</div><p>US midterm elections, with data centres a local issue.</p></div>
+      <div class="day"><div class="d">Week of 16 Nov</div><p>Anthropic shares reported to start trading on Nasdaq as ANT.</p></div>
+      <div class="day"><div class="d">8–9 Dec</div><p>Fed meeting. Markets price roughly 73–80% odds of a hike, depending on the day.</p></div>
+    </div>
+  </section>
+
+  <!-- other side -->
+  <section>
+    <div class="other">
+      <div class="eyebrow">The other side</div>
+      <h2>The bull case is not foolish</h2>
+      <p>The spenders are among the most cash-generative companies ever, and unlike in 2000, business saving has not collapsed. Cloud backlogs keep growing, and Anthropic's revenue rose roughly 14-fold in the first half. Gartner's ceiling is a model that bulls dispute. Even in the bear case, history says the infrastructure gets used and the losses fall on leveraged early financiers rather than the whole economy.</p>
+      <div class="take">KKReckons' read: a credit event at the edges, not yet a systemic bust. But credit is exactly where past manias turned, which is why the run from 28 October to 9 December matters.</div>
+    </div>
+  </section>
+
+  <!-- caveats & sources -->
+  <section>
+    <div class="col">
+      <div class="sec-head"><div class="eyebrow">Method and caveats</div><h2>How we checked</h2></div>
+      <div class="prose">
+        <p>This brief starts from four pieces KK shared (Reuters, two Economic Times articles and an FT editorial) and checks their numbers against primary sources where possible. Figures are attributed and dated; estimates and forecasts are labelled.</p>
+        <ul>
+          <li>Not independently verified: Goldman's 42% and 57% shares (seen only via Reuters), the chip index's 12% monthly fall and Morgan Stanley's quarter-point estimate (Barron's only), and talk of an OpenAI listing next year.</li>
+          <li>Fed odds moved daily in October, between about 73% and 90%.</li>
+          <li>Several CDS readings come from outlets citing S&amp;P Global or Bloomberg data.</li>
+          <li>The GPU shelf-life point and the India read are KKReckons' analysis.</li>
+        </ul>
+      </div>
+      <h3 style="margin-top:28px">Sources</h3>
+      <ul class="sources">
+        <li><a href="https://www.reuters.com/world/china/china-ai-bubble-has-already-burst-2026-10-26/">Reuters: In China, the AI bubble has already burst (26 Oct)</a></li>
+        <li><a href="https://m.economictimes.com/news/company/corporate-trends/elon-musk-ai-bubble-neocloud-coreweave-data-centres-private-credit-nvidia-gartner-forecast/articleshow/135238118.cms">The Economic Times: AI bubble bursting or just letting out air? (27 Oct)</a></li>
+        <li><a href="https://m.economictimes.com/transforming-steel-procurement-through-digital-innovation-exclusively-with-anumalisetty-ravi-kumar/articleshow/135225738.cms">The Economic Times: Neeraj Kaushal on AI and capital (27 Oct)</a></li>
+        <li><a href="https://www.ft.com/content/0b0ae366-c1e0-4c35-8cad-c924a23d33e7?syn-25a6b1a6=1">Financial Times: The limits of hedging the AI boom (27 Oct)</a></li>
+        <li><a href="https://www.gartner.com/en/newsroom/press-releases/2026-10-14-gartner-says-over-us-dollars-three-and-a-half-trillion-of-artificial-intelligence-infrastructure-spending-could-be-exposed-to-impairment-by-the-end-of-2030">Gartner press release (14 Oct)</a></li>
+        <li><a href="https://www.benzinga.com/markets/bonds/26/10/62623350/nvidia-credit-risk-cds-tripled-passes-meta-coreweave">Benzinga: CDS readings via S&amp;P Global (26 Oct)</a></li>
+        <li><a href="https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html">CNBC: CoreWeave CDS at distress levels (15 Oct)</a></li>
+        <li><a href="https://www.cnbc.com/2026/10/19/coreweave-oracle-ai-credit-stress.html">CNBC: CoreWeave and Oracle credit stress (19 Oct)</a></li>
+        <li><a href="https://www.cnbc.com/2026/10/22/nvidia-jensen-huang-neocloud-demand-capital.html">CNBC: Huang on neocloud demand (22 Oct)</a></li>
+        <li><a href="https://www.cnbc.com/2026/10/26/neocloud-stocks-today-coreweave-nebius-iren-elon-musk.html">CNBC: Neocloud stocks after Musk's post (26 Oct)</a></li>
+        <li><a href="https://www.benzinga.com/markets/tech/26/10/62611924/ed-yardeni-says-ai-bubble-is-deflating-without-bursting-amid-increasing-funding-scrutiny-around-crwv-nbis-the-bond-market-is-going-to-regulate">Benzinga: Yardeni on a deflating bubble (27 Oct)</a></li>
+        <li><a href="https://libertystreeteconomics.newyorkfed.org/2026/10/has-the-ai-boom-impacted-the-u-s-current-account/">New York Fed, Liberty Street Economics (14 Oct)</a></li>
+        <li><a href="https://www.bis.org/publ/arpdf/ar2026e.pdf">BIS Annual Economic Report 2026 (June)</a></li>
+        <li><a href="https://www-users.cse.umn.edu/~odlyzko/doc/mania04.pdf">Andrew Odlyzko on the railway mania</a></li>
+        <li><a href="https://www.cmegroup.com/media-room/press-releases/2026/8/11/cme_group_and_silicondatatolaunchcomputefuturesonoctober5tounloc.html">CME Group: compute futures plan (11 Aug)</a></li>
+        <li><a href="https://www.cnbc.com/2026/10/26/gpu-futures-ai-hedge-hyperbolic.html">CNBC: GPU futures as an AI hedge (26 Oct)</a></li>
+        <li><a href="https://www.business-standard.com/amp/markets/news/48-000-crore-fpi-retreat-leaves-tech-stocks-as-lone-bright-spot-126102201471_1.html">Business Standard: FPI flows and IT stocks (22 Oct)</a></li>
+        <li><a href="https://www.business-standard.com/amp/markets/news/india-s-anti-ai-tag-challenged-as-42-ai-enablers-surge-60-goldman-sachs-126091800544_1.html">Business Standard: Goldman's Indian AI enablers (18 Sep)</a></li>
+        <li><a href="https://www.livemint.com/economy/this-week-could-help-decide-fed-raises-interest-rates-in-december-11793062472223.html">Barron's via Mint: the Fed's December decision (27 Oct)</a></li>
+        <li><a href="https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html">CNBC: Meta's $95bn stock offering (26 Oct)</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span><b>KKReckons</b> · Research brief by KK Reddy</span>
+    <span>For information only, not investment advice. Figures as of 27 October 2026.</span>
+  </div>
+</footer>
+
+
+</body>
+</html>

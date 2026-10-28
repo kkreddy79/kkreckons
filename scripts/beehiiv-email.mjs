@@ -141,6 +141,19 @@ rows.push(
     : `<tr><td colspan="2" style="padding:4px 0 2px 12px;border-left:4px solid ${E.coral};font-family:${SERIF};font-size:20px;line-height:1.25;font-weight:700;color:${E.ink};">${esc(ed.slice)}</td></tr>`,
 );
 
+// The day's research brief, if any, right under the takeaway: otherwise it only appears in Further reading.
+const special = (ed.reading || []).find((r) => r.special);
+if (special) {
+  rows.push(
+    `<tr><td colspan="2" style="padding:10px 0 0;font-family:${SANS};">` +
+      `<div style="padding:8px 12px;border:2px solid #E2A23B;border-radius:8px;">` +
+      `<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:#B7791F;">★ SPECIAL REPORT TODAY</div>` +
+      `<div style="margin-top:2px;font-size:15px;line-height:1.3;font-weight:700;">${a(special.url, `${esc(special.title)} &rarr;`, `color:${E.ink};`)}</div>` +
+      (special.note ? `<div style="margin-top:2px;font-size:12.5px;line-height:1.35;color:${E.body};">${esc(special.note)}</div>` : "") +
+      `</div></td></tr>`,
+  );
+}
+
 // One AI Stress Index line under the story list, with the reading saved at publication (and the linked stories, if any).
 const si = ed.stressIndex;
 const siDate = si ? `${+si.asOf.slice(8)} ${new Date(`${si.asOf}T00:00:00Z`).toLocaleString("en-GB", { month: "short", timeZone: "UTC" })}` : "";
@@ -236,7 +249,7 @@ if (ed.reading?.length) {
   rows.push(label([0, 6].includes(when.getUTCDay()) ? "WORTH YOUR WEEKEND" : "FURTHER READING"));
   rows.push(
     `<tr><td colspan="2" style="padding:4px 0 0;font-family:${SANS};font-size:14px;line-height:1.45;">` +
-      ed.reading.map((r) => `<div style="padding:3px 0;">→ ${a(r.url, esc(r.title), `color:${E.coral};font-weight:700;`)}</div>`).join("") +
+      ed.reading.map((r) => `<div style="padding:3px 0;">${r.special ? "★" : "→"} ${a(r.url, esc(r.title), `color:${E.coral};font-weight:700;`)}${r.special ? ` <span style="font-size:11px;font-weight:700;color:#B7791F;">SPECIAL REPORT</span>` : ""}</div>`).join("") +
       `</td></tr>`,
   );
 }
