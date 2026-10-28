@@ -697,7 +697,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .tm figcaption span { font-weight: 400; }
 .rf-steps { display: grid; gap: 10px; margin: 0; padding-left: 22px; font-size: 16px; line-height: 1.55; color: var(--text2); }
 .rf-steps b { color: var(--ink2); }
-.ev-30s li.is-read a > span:not(.ev-mark) { opacity: 0.7; }
+/* Read rows go grey rather than translucent: 70% opacity took the coral number below 4.5:1. */
+.ev-30s li.is-read a > span:not(.ev-mark) { color: var(--muted); }
 .ev-missed { margin: 14px 0 0; padding: 10px 14px; border-radius: 14px; background: var(--wa); border: 1px solid var(--wa-line); color: var(--ink2); font-size: 14.5px; font-weight: 600; }
 .ev-missed a { color: var(--wa-text); font-weight: 800; }
 .qz-list { list-style: none; counter-reset: qz; display: grid; gap: 14px; margin: 0; padding: 0; }

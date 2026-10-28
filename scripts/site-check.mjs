@@ -182,6 +182,9 @@ async function run(engine, engineName, devices, { schemes, axe }) {
       page.on("pageerror", (e) => errors.push(e.message));
       for (const p of PAGES) {
         const where = `${p} (${engineName === "Chromium" ? "" : engineName + " "}${name}, ${scheme})`;
+        // Leave the previous page first: WebKit reports a background prefetch cut off by the navigation as a script
+        // error ("…?_rsc=… due to access control checks"), which would otherwise be blamed on this page.
+        await page.goto("about:blank").catch(() => {});
         errors.length = 0;
         const res = await page.goto(base + p, { waitUntil: "networkidle" }).catch((e) => ({ status: () => e.message }));
         loads += 1;
