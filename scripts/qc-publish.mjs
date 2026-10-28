@@ -16,6 +16,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { longDate, slugFor } from "../lib/dates.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -41,19 +42,6 @@ const atBase = (p) => {
   }
 };
 
-// Same slug and date formats as lib/editions.ts.
-const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const parts = (d) => d.split("-").map(Number);
-const slugFor = (d) => {
-  const [y, m, day] = parts(d);
-  return `${MONTHS[m - 1]}-${day}-${y}`;
-};
-const longDate = (d) => {
-  const [y, m, day] = parts(d);
-  const wd = WEEKDAYS[new Date(Date.UTC(y, m - 1, day)).getUTCDay()];
-  return `${wd}, ${day} ${MONTHS[m - 1][0].toUpperCase()}${MONTHS[m - 1].slice(1)} ${y}`;
-};
 // React's HTML escaping, so text can be found in the built pages.
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
 const count = (html, needle) => html.split(needle).length - 1;
@@ -76,16 +64,18 @@ const previous = baseDates.slice().sort().at(-1);
 
 for (const d of baseDates) if (!dates.has(d)) fail(`Edition ${d} was live but is missing now.`);
 
-// An earlier edition may gain a market strip it didn't have (data/markets/<date>.json, saved by npm run editions);
-// its content may then differ only by the added `markets`. Anything else still needs --allow.
-const gainedMarkets = (f, before) => {
-  if (!f.startsWith("data/content/")) return false;
-  const was = JSON.parse(before);
-  const now = JSON.parse(read(f));
-  if (was.markets || !now.markets) return false;
-  delete now.markets;
-  return JSON.stringify(was) === JSON.stringify(now);
+// A snapshot missed on publish day (data unreachable) is filled in by a later run of npm run editions: an earlier
+// edition may gain a market strip (data/markets/<date>.json) or an AI Stress Index reading (`stressIndex` in its
+// edition-meta entry). Its content and meta entry may then differ only by those added keys; anything else still
+// needs --allow.
+const BACKFILL = ["markets", "stressIndex"];
+const onlyBackfilled = (was, now) => {
+  if (!was || !now) return false;
+  const rest = { ...now };
+  for (const k of BACKFILL) if (!(k in was) && k in rest) delete rest[k];
+  return JSON.stringify(was) === JSON.stringify(rest);
 };
+const gainedSnapshot = (f, before) => f.startsWith("data/content/") && fs.existsSync(path.join(root, f)) && onlyBackfilled(JSON.parse(before), JSON.parse(read(f)));
 
 for (const d of baseDates) {
   if (!dates.has(d) || allowed.has(d)) continue;
@@ -97,7 +87,7 @@ for (const d of baseDates) {
   ];
   for (const [f, old] of files) {
     const before = atBase(f) || atBase(old);
-    if (before && (!fs.existsSync(path.join(root, f)) || !before.equals(read(f))) && !gainedMarkets(f, before)) fail(`${f} changed (an earlier edition). Use --allow ${d} if this is a deliberate correction.`);
+    if (before && (!fs.existsSync(path.join(root, f)) || !before.equals(read(f))) && !gainedSnapshot(f, before)) fail(`${f} changed (an earlier edition). Use --allow ${d} if this is a deliberate correction.`);
   }
   const was = JSON.stringify(baseIndex.find((e) => e.date === d));
   const now = JSON.stringify(index.find((e) => e.date === d));
@@ -108,7 +98,7 @@ const baseMeta = JSON.parse(atBase("data/edition-meta.json") || "{}");
 const meta = JSON.parse(read("data/edition-meta.json"));
 for (const [d, m] of Object.entries(baseMeta)) {
   if (allowed.has(d)) continue;
-  if (JSON.stringify(meta[d]) !== JSON.stringify(m)) fail(`data/edition-meta.json entry for ${d} changed. Use --allow ${d} if deliberate.`);
+  if (JSON.stringify(meta[d]) !== JSON.stringify(m) && !onlyBackfilled(m, meta[d])) fail(`data/edition-meta.json entry for ${d} changed. Use --allow ${d} if deliberate.`);
 }
 
 const changed = git("diff", "--name-only", `${base}...HEAD`).toString().split("\n").filter(Boolean);
@@ -116,7 +106,12 @@ const uncommitted = git("status", "--porcelain").toString().split("\n").filter(B
 const editionFile = (f) => {
   if (["data/editions.json", "data/edition-meta.json", "lib/editions.ts", "lib/editionFormat.ts"].includes(f)) return true;
   const m = /^(?:newsletters|data\/content|data\/markets|public\/figs|public\/email)\/(\d{4}-\d{2}-\d{2})/.exec(f);
-  return Boolean(m && (added.includes(m[1]) || allowed.has(m[1])));
+  if (!m) return false;
+  if (added.includes(m[1]) || allowed.has(m[1])) return true;
+  // A snapshot filled in late for an earlier edition (see BACKFILL above).
+  if (f.startsWith("data/markets/")) return !atBase(f);
+  const before = f.startsWith("data/content/") && atBase(f);
+  return Boolean(before && gainedSnapshot(f, before));
 };
 for (const f of siteChange ? [] : new Set([...changed, ...uncommitted])) {
   if (!editionFile(f)) fail(`Unexpected file in an edition update: ${f}. Edition pull requests should only add edition files.`);

@@ -12,7 +12,7 @@ declare global {
 
 /** Umami's free cloud analytics: visits, time on site, and one named event per link or button tapped.
  *  Off unless NEXT_PUBLIC_UMAMI_WEBSITE_ID is set, and counts only the live domain (not previews or localhost). */
-export const UMAMI_ID = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
+const UMAMI_ID = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
 
 /** Sends one custom event, if the tracker has loaded. Names are cut to Umami's 50-character limit. */
 export function track(name: string, data?: Record<string, string>) {

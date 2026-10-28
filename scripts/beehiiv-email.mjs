@@ -14,13 +14,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
+import { MONTHS, WEEKDAYS, cap, longDate as longDateOf, slugFor } from "../lib/dates.mjs";
+import { STRESS_BANDS } from "../lib/stressBands.mjs";
 
 const SITE = "https://www.kkreckons.com";
-const MONTHS = [
-  "january", "february", "march", "april", "may", "june",
-  "july", "august", "september", "october", "november", "december",
-];
-const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 
 const argv = process.argv.slice(2);
@@ -42,9 +39,9 @@ const ed = JSON.parse(fs.readFileSync(file, "utf8"));
 
 const [y, m, d] = date.split("-").map(Number);
 const when = new Date(Date.UTC(y, m - 1, d));
-const monthName = MONTHS[m - 1][0].toUpperCase() + MONTHS[m - 1].slice(1);
-const longDate = `${DAYS[when.getUTCDay()]}, ${d} ${monthName} ${y}`;
-const pageUrl = `${SITE}/daily/${MONTHS[m - 1]}-${d}-${y}`;
+const monthName = cap(MONTHS[m - 1]);
+const longDate = longDateOf(date);
+const pageUrl = `${SITE}/daily/${slugFor(date)}`;
 
 /** Cut the circle illustration (top right of every explainer graphic) into a 160px square. */
 async function thumbnail(src, dest) {
@@ -121,7 +118,7 @@ rows.push(
     `</tr></table></td></tr>`,
 );
 // Name and date on the left, size on the right: one line instead of a separate title.
-const shortDate = `${DAYS[when.getUTCDay()].slice(0, 3)} ${d} ${monthName.slice(0, 3)} ${y}`.toUpperCase();
+const shortDate = `${WEEKDAYS[when.getUTCDay()].slice(0, 3)} ${d} ${monthName.slice(0, 3)} ${y}`.toUpperCase();
 rows.push(
   `<tr><td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
     `<td style="font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:1px;color:${E.coral};white-space:nowrap;">KKRECKONS <span style="color:${E.ink};">· ${shortDate}</span></td>` +
@@ -166,7 +163,7 @@ const si = ed.stressIndex;
 const siDate = si ? `${+si.asOf.slice(8)} ${new Date(`${si.asOf}T00:00:00Z`).toLocaleString("en-GB", { month: "short", timeZone: "UTC" })}` : "";
 const related = stories.flatMap((s, i) => (s.stressIndex ? [String(i + 1).padStart(2, "0")] : []));
 // A move into a new band since the previous edition's saved reading is the news: the line calls it out.
-const BAND_ORDER = ["Normal", "Elevated", "Severe", "Critical"];
+const BAND_ORDER = STRESS_BANDS.map(([name]) => name);
 const prevSi = fs
   .readdirSync(path.join("data", "content"))
   .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0, 10) < date)
@@ -285,7 +282,7 @@ if (when.getUTCDay() === 6) {
 
 // 6. One-tap feedback: each answer is its own page on the site, so beehiiv's click report and Vercel's
 // page views both count the votes (no form or database needed).
-const vote = (v, label) => a(`${SITE}/feedback/${MONTHS[m - 1]}-${d}-${y}/${v}`, label, `display:inline-block;margin:0 4px;padding:5px 12px;border:1px solid #E7E1D6;border-radius:16px;font-family:${SANS};font-size:13px;font-weight:700;color:${E.ink};`);
+const vote = (v, label) => a(`${SITE}/feedback/${slugFor(date)}/${v}`, label, `display:inline-block;margin:0 4px;padding:5px 12px;border:1px solid #E7E1D6;border-radius:16px;font-family:${SANS};font-size:13px;font-weight:700;color:${E.ink};`);
 rows.push(
   `<tr><td colspan="2" align="center" style="padding:18px 0 0;font-family:${SANS};font-size:13px;color:${E.muted};">` +
     `Was today’s briefing useful?<div style="margin-top:6px;">${vote("yes", "Yes")}${vote("somewhat", "Somewhat")}${vote("no", "Not really")}</div>` +

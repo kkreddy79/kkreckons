@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { track } from "@/components/Umami";
-import { SUBSCRIBE_URL } from "@/lib/site";
+import { SUBSCRIBE_URL } from "@/lib/links";
 
 /**
  * Email box that signs readers up without leaving the page (through /api/subscribe). If that fails,

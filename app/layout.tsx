@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { preload } from "react-dom";
 import NavLinks from "@/components/NavLinks";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -37,8 +37,10 @@ export const viewport: Viewport = {
 const THEME_SCRIPT = `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  // The edition headline's face: fetched with the page instead of after the CSS, so the headline doesn't reflow.
-  // React's preload() emits a single <link rel="preload">; a hand-written one in <head> was output twice.
+  // The header wordmark's and the edition headline's faces (Playfair 700 and 800, both on every page): fetched with
+  // the page instead of after the CSS, so the text doesn't reflow. React's preload() emits a single <link
+  // rel="preload">; a hand-written one in <head> was output twice.
+  preload("/fonts/playfair-700.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   preload("/fonts/playfair-800.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
     <html lang="en" suppressHydrationWarning>

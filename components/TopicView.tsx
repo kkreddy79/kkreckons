@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import Banner from "@/components/Banner";
 import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import StorySource from "@/components/StorySource";
@@ -123,7 +123,7 @@ export default function TopicView({ topic, page }: { topic: Topic; page: number 
           </nav>
         )}
         <p className="tp-more">
-          Want to narrow it down? <Link href={`/daily/?theme=${encodeURIComponent(topic.name)}`}>Search {topic.name} stories in Catch up →</Link>
+          Want to narrow it down? <Link href={`/daily?theme=${encodeURIComponent(topic.name)}`}>Search {topic.name} stories in Catch up →</Link>
           {" · "}
           <a href={`/topics/${topic.slug}/feed.xml`}>RSS feed for {topic.name}</a>
         </p>

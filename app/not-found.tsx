@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import { latest } from "@/lib/editions";
 import { TOPICS } from "@/lib/topics";
 

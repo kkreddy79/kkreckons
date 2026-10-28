@@ -14,7 +14,7 @@ export default function SearchKey() {
       if (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return;
       ev.preventDefault();
       if (document.getElementById("archive-search")) focus();
-      else router.push("/daily/#search");
+      else router.push("/daily#search");
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);

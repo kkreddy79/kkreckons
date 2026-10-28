@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { bandName, stressBand } from "@/lib/stressBand";
 import WatchList from "@/components/WatchList";
 import type { Watch } from "@/lib/watch";
 import s from "./StressIndex.module.css";
@@ -9,12 +10,11 @@ import { LIMITED, STRESS_BASES } from "@/lib/stress";
 /* Live data published every weekday after the US close by github.com/kkreddy79/ai-implosion.
    The page is normally rendered on the server with this data (see app/ai-stress-index/page.tsx);
    the browser only fetches it when the server couldn't. */
-const BASES = STRESS_BASES;
 
 /* Tries each source in turn and returns the first JSON that loads; throws the first error if none do. */
 async function loadJson<T>(file: string, t: number): Promise<T> {
   let first: Error | null = null;
-  for (const base of BASES) {
+  for (const base of STRESS_BASES) {
     try {
       const r = await fetch(`${base}/${file}?t=${t}`, { cache: "no-store" });
       if (!r.ok) throw new Error(String(r.status));
@@ -105,18 +105,18 @@ const num = (v: number, dp = 2) => v.toLocaleString("en-US", { minimumFractionDi
 const pct = (v: number, dp = 0) => `${(v * 100).toFixed(dp)}%`;
 const s100 = (x: number) => Math.round(x * 100); // gauge stress as a 0–100 score
 // Stress bands describe the index reading (0–100).
-const band = (v: number | null) => (v == null ? "—" : v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elevated" : "Normal");
+const band = (v: number | null) => (v == null ? "—" : bandName(v));
 // One colour scale for every reading: the index and each gauge's 0–100 stress score.
-const bandColor = (v: number | null) => (v == null ? C.slate : v >= 75 ? C.red : v >= 50 ? C.orangeRed : v >= 25 ? C.amber : C.green);
+const bandColor = (v: number | null) => (v == null ? C.slate : stressBand(v)[2]);
 const stressColor = (x: number) => bandColor(x * 100);
 // Darker shades of the same bands for text and white-on-colour badges: the fill colours above fall
 // below WCAG AA contrast (4.5:1) as text on white. Fills (bars, swatches, chart) keep the bright shades.
 // In dark mode these switch to lighter shades of the same bands (StressIndex.module.css).
 const TEXT = { red: "var(--si-band-red)", orangeRed: "var(--si-band-orange)", green: "var(--si-band-green)", amber: "var(--si-band-amber)" };
-// White-on-colour badges keep the darker shades in both themes.
-const BADGE = { red: "#B91C1C", orangeRed: "#C2410C", green: "#15803D", amber: "#B45309" };
-const badgeBg = (v: number | null) => (v == null ? "#1E293B" : v >= 75 ? BADGE.red : v >= 50 ? BADGE.orangeRed : v >= 25 ? BADGE.amber : BADGE.green);
-const bandText = (v: number | null) => (v == null ? C.slate : v >= 75 ? TEXT.red : v >= 50 ? TEXT.orangeRed : v >= 25 ? TEXT.amber : TEXT.green);
+// White-on-colour badges keep the darker shades (lib/stressBands.mjs) in both themes.
+const badgeBg = (v: number | null) => (v == null ? "#1E293B" : stressBand(v)[3]);
+const BAND_TEXT: Record<string, string> = { Critical: TEXT.red, Severe: TEXT.orangeRed, Elevated: TEXT.amber, Normal: TEXT.green };
+const bandText = (v: number | null) => (v == null ? C.slate : BAND_TEXT[bandName(v)]);
 const stressText = (x: number) => bandText(x * 100);
 // The same bands label the index and every gauge score.
 const gaugeWord = (x: number) => band(s100(x));
@@ -606,11 +606,11 @@ export default function StressIndex({ initial = null, initialBt = null, marks = 
   const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
-    if (initial) return; // already rendered on the server
+    // Load in the browser whichever file the server couldn't fetch.
     const t = Date.now();
-    loadJson<Data>("data.json", t).then(setD).catch((e: Error) => setErr(e.message));
-    loadJson<Backtest>("backtest.json", t).then(setBt).catch(() => setBt(null));
-  }, [initial]);
+    if (!initial) loadJson<Data>("data.json", t).then(setD).catch((e: Error) => setErr(e.message));
+    if (!initialBt) loadJson<Backtest>("backtest.json", t).then(setBt).catch(() => setBt(null));
+  }, [initial, initialBt]);
 
   return (
     <main className={s.main}>

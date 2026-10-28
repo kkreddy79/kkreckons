@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Banner from "@/components/Banner";
 import SubscribeBox from "@/components/SubscribeBox";
 import EditorialStandards from "@/components/EditorialStandards";

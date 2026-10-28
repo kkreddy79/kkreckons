@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import s from "@/components/StressIndex.module.css";
 import type { Watch, WatchState } from "@/lib/watch";
 

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import { MailIcon, SunIcon } from "@/components/AboutIcons";
 import { editions, totalStories } from "@/lib/editions";
 import EmailSignup from "@/components/EmailSignup";

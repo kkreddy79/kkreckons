@@ -9,7 +9,9 @@
 // reuses the daily email's thumbnail (public/email/<date>-<n>.png) when there is one.
 // Prints (or writes) { title, subtitle, email_settings, web_settings, theme, html_content } for
 // beehiiv's save_post. Sending stays a human action in beehiiv.
+import { shortDate, slugFor, weekday } from "../lib/dates.mjs";
 import { pickWeek, teaserFrom } from "../lib/weekly-picks.mjs";
+import { bandName } from "../lib/stressBands.mjs";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -18,8 +20,6 @@ const STRESS_DATA = [
   "https://kkreddy79.github.io/ai-implosion/data.json",
   "https://raw.githubusercontent.com/kkreddy79/ai-implosion/main/docs/data.json",
 ];
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const args = process.argv.slice(2);
 const dates = JSON.parse(fs.readFileSync(path.join("data", "editions.json"), "utf8")).map((e) => e.date).sort();
@@ -34,9 +34,9 @@ if (!week.length) {
   process.exit(1);
 }
 
-const short = (s) => `${day(s).getUTCDate()} ${MONTHS[day(s).getUTCMonth()].slice(0, 3)}`;
-const dow = (s) => DAYS[day(s).getUTCDay()].slice(0, 3);
-const slug = (s) => `${MONTHS[day(s).getUTCMonth()].toLowerCase()}-${day(s).getUTCDate()}-${day(s).getUTCFullYear()}`;
+const short = shortDate;
+const dow = (s) => weekday(s).slice(0, 3);
+const slug = slugFor;
 const range = `${short(start)}–${short(end)}`;
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const stories = week.flatMap((d) => {
@@ -79,7 +79,7 @@ const extras = weeklyFile ? JSON.parse(fs.readFileSync(path.join(weeklyDir, week
 let sectionNo = 0;
 const section = (text, top) => label(weeklyFile ? `${String(++sectionNo).padStart(2, "0")} · ${text}` : text, top);
 const para = (html) => `<tr><td colspan="2" style="padding:8px 0 0;font-family:${SANS};font-size:14px;line-height:1.5;color:${E.body};">${html}</td></tr>`;
-const band = (v) => (v >= 75 ? "Critical" : v >= 50 ? "Severe" : v >= 25 ? "Elevated" : "Normal");
+const band = bandName;
 
 // KKReckons email palette (as in the daily email).
 const E = { ink: "#1B2636", body: "#3B4452", muted: "#6B7482", coral: "#C4553B", rule: "#E6E0D6" };
