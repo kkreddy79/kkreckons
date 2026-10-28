@@ -8,7 +8,7 @@ const LINKS = [
   // Edition pages live under /daily/, so they count as Catch up too.
   // Catch up and the AI Stress Index are the heaviest pages (the archive's search data, the index's history),
   // so they load on click rather than being prefetched from every page's header.
-  { href: "/daily/", label: "Catch up", match: (p: string) => p.startsWith("/daily"), prefetch: false },
+  { href: "/daily", label: "Catch up", match: (p: string) => p.startsWith("/daily"), prefetch: false },
   { href: "/ai-stress-index", label: "AI Stress Index", match: (p: string) => p.startsWith("/ai-stress-index"), prefetch: false },
   { href: "/about", label: "About", match: (p: string) => p.startsWith("/about") },
 ];

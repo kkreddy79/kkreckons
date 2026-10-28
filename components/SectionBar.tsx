@@ -42,10 +42,13 @@ export default function SectionBar({ items, watch }: { items: { id: string; labe
     };
   }, [items, watch]);
 
-  // Keep the active link in view when the bar scrolls sideways on phones.
+  // Keep the active link in view when the bar scrolls sideways on phones. Only while the bar is showing: scrolling a
+  // link in the hidden bar into view moved the browser's keyboard focus start past the skip link and header, so the
+  // first Tab on a fresh page landed in the middle of the edition.
   useEffect(() => {
+    if (!show) return;
     bar.current?.querySelector<HTMLElement>(`a[href="#${active}"]`)?.scrollIntoView({ block: "nearest", inline: "nearest" });
-  }, [active]);
+  }, [active, show]);
 
   return (
     <nav ref={bar} className={`ev-bar${show ? " on" : ""}`} style={{ top }} aria-label="Sections" aria-hidden={!show} inert={!show || undefined}>

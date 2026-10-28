@@ -10,7 +10,7 @@ export default function NotFound() {
         <h1>That page isn’t here.</h1>
         <p>The link may be old or mistyped. Search every story, or pick up from today’s edition.</p>
         {/* Catch up reads ?q= and opens its story search with it. */}
-        <form className="nf-search" action="/daily/" method="get" role="search">
+        <form className="nf-search" action="/daily" method="get" role="search">
           <label htmlFor="nf-q" className="sr-only">
             Search every story
           </label>
@@ -21,7 +21,7 @@ export default function NotFound() {
           <Link className="button" href="/">
             Today’s edition{latest.slice ? `: ${latest.slice.length > 48 ? `${latest.slice.slice(0, 46).trimEnd()}…` : latest.slice}` : ""}
           </Link>
-          <Link className="button alt" href="/daily/">
+          <Link className="button alt" href="/daily">
             Catch up on every edition
           </Link>
         </div>

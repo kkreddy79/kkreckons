@@ -8,6 +8,7 @@ import { RESEARCH } from "@/lib/research";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    { url: `${SITE_URL}/`, lastModified: latest.date, changeFrequency: "daily", priority: 1 },
     { url: `${SITE_URL}/daily`, lastModified: latest.date, changeFrequency: "daily", priority: 0.8 },
     { url: `${SITE_URL}/week`, lastModified: latest.date, changeFrequency: "daily", priority: 0.7 },
     { url: `${SITE_URL}/quiz`, lastModified: latest.date, changeFrequency: "daily", priority: 0.5 },

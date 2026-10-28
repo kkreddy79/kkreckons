@@ -76,7 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <nav className="foot-links" aria-label="Footer">
             <Link href="/about">About</Link>
-            <Link href="/daily/" prefetch={false}>
+            <Link href="/daily" prefetch={false}>
               Past editions
             </Link>
             <Link href="/topics" prefetch={false}>
