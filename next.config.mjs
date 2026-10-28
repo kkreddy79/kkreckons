@@ -33,7 +33,11 @@ const nextConfig = {
   // The AI Stress Index data, published by its own pipeline on GitHub Pages, is also served from this
   // domain, so citations and dataset listings credit kkreckons.com.
   async rewrites() {
-    return [{ source: "/ai-stress-index/:file(data|backtest).json", destination: "https://kkreddy79.github.io/ai-implosion/:file.json" }];
+    return [
+      { source: "/ai-stress-index/:file(data|backtest).json", destination: "https://kkreddy79.github.io/ai-implosion/:file.json" },
+      // Research briefs are self-contained pages (public/research/<slug>.html), served at /research/<slug>.
+      { source: "/research/:slug([a-z0-9-]+)", destination: "/research/:slug.html" },
+    ];
   },
   async headers() {
     return [

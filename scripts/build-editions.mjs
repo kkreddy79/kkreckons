@@ -270,7 +270,7 @@ function fromEmbedded(date, d) {
     slice: clean(d.slice),
     callouts: (d.callout || []).map((c) => ({ num: clean(c.num), text: clean(`${c.lead || ""}${c.rest || ""}`), url: c.url || "" })),
     sections,
-    reading: (d.reading || []).map((r) => ({ title: clean(r.title), url: r.url || "", note: clean(r.note || r.src || "") })),
+    reading: (d.reading || []).map((r) => ({ title: clean(r.title), url: r.url || "", note: clean(r.note || r.src || ""), ...(r.special ? { special: true } : {}) })),
     ...(typeof d.cover === "string" && d.cover ? { coverData: d.cover } : {}),
     ...(d.cover && typeof d.cover === "object" && d.cover.src ? { coverData: d.cover.src, coverAlt: clean(d.cover.alt) } : {}),
     ...(d.takeaway && clean(d.takeaway.line)
