@@ -16,6 +16,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { longDate, slugFor } from "../lib/dates.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -41,19 +42,6 @@ const atBase = (p) => {
   }
 };
 
-// Same slug and date formats as lib/editions.ts.
-const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const parts = (d) => d.split("-").map(Number);
-const slugFor = (d) => {
-  const [y, m, day] = parts(d);
-  return `${MONTHS[m - 1]}-${day}-${y}`;
-};
-const longDate = (d) => {
-  const [y, m, day] = parts(d);
-  const wd = WEEKDAYS[new Date(Date.UTC(y, m - 1, day)).getUTCDay()];
-  return `${wd}, ${day} ${MONTHS[m - 1][0].toUpperCase()}${MONTHS[m - 1].slice(1)} ${y}`;
-};
 // React's HTML escaping, so text can be found in the built pages.
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
 const count = (html, needle) => html.split(needle).length - 1;

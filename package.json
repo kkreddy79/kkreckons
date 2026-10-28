@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "editions": "node scripts/build-editions.mjs",
     "check": "node scripts/check-editions.mjs",
     "qc": "node scripts/qc-publish.mjs",

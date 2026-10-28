@@ -76,7 +76,23 @@ export type MarketAsset = {
 
 
 /** Full content for one edition (read at build time). */
+// Each page build reads many editions (an edition page reads every earlier one for related stories), so each file
+// is parsed once. The cached copy is frozen: a caller that tried to change it would throw rather than alter what
+// every later page sees.
+const cache = new Map<string, EditionContent>();
+const freeze = <T,>(o: T): T => {
+  if (o && typeof o === "object" && !Object.isFrozen(o)) {
+    Object.freeze(o);
+    for (const v of Object.values(o)) freeze(v);
+  }
+  return o;
+};
 export function getContent(date: string): EditionContent {
-  const file = path.join(process.cwd(), "data", "content", `${date}.json`);
-  return JSON.parse(fs.readFileSync(file, "utf8"));
+  let c = cache.get(date);
+  if (!c) {
+    const file = path.join(process.cwd(), "data", "content", `${date}.json`);
+    c = freeze(JSON.parse(fs.readFileSync(file, "utf8")) as EditionContent);
+    cache.set(date, c);
+  }
+  return c;
 }

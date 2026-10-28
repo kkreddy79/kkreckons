@@ -70,7 +70,7 @@ export function relatedForStory(date: string, n: number, limit = 3): Related[] {
 }
 
 /** A story linked by an editorial follow-up: the one a story updates, or a later one that updates it. */
-export type FollowLink = { date: string; title: string; href: string; update?: string };
+type FollowLink = { date: string; title: string; href: string; update?: string };
 
 // Each story's page path, and the later stories that name it in `follows` (built once, like `index`).
 let follows: { path: Map<string, FollowLink>; next: Map<string, FollowLink[]> } | null = null;
