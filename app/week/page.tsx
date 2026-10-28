@@ -4,6 +4,8 @@ import Link from "@/components/Link";
 import Banner from "@/components/Banner";
 import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
+import Listen from "@/components/Listen";
+import ShareRow from "@/components/ShareRow";
 import { monthLabel, shortDate, weekday } from "@/lib/editions";
 import { months, monthSlug } from "@/lib/month";
 import { SITE_URL } from "@/lib/site";
@@ -42,13 +44,17 @@ export default function Week() {
         }}
       />
       <Banner />
-      <div className="cu-wrap">
+      <div className="cu-wrap" id="wk-read">
         <section className="cu-hero" aria-labelledby="wk-title">
           <p className="ab-kicker">This week · {range}</p>
           <h1 id="wk-title">The week in {week.picks.length} stories.</h1>
           <p className="cu-lede">
             The best of {week.editions} daily briefings, one or two from each day and no more than one per topic. Short on time? Start here.
           </p>
+          <div className="ev-tools">
+            <ShareRow url={`${SITE_URL}/week`} slice={`The week in ${week.picks.length} stories, ${range}`} />
+            <Listen rootId="wk-read" minutes={Math.max(1, Math.round(week.picks.length * 0.4))} />
+          </div>
         </section>
         {extras ? <Issue list={<List />} /> : <List />}
         <p className="tp-more">

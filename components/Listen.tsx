@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
  * is that voice quality depends on the reader's phone or browser, and there is no MP3 to download. The button
  * stays hidden where the browser can't speak.
  *
- * What is read: for an edition (`.ev` inside `rootId`), the headline, the numbers of the day, then each story's
+ * What is read: for an edition or a story page (`.ev` at or inside `rootId`), the headline, the numbers of the day, then each story's
  * number, headline, points, key numbers, "why it matters" and "other side"; for any other page, its headings,
  * paragraphs and list items in order, skipping navigation, buttons, captions and source lists.
  */
@@ -30,8 +30,10 @@ function editionParts(root: Element): Part[] {
   const calls = [...root.querySelectorAll(".ev-call")];
   if (calls.length) add("Numbers of the day.");
   for (const c of calls) add(`${cleanText(c.querySelector("b") || c)}: ${cleanText(c.querySelector("span") || c)}`, c);
-  for (const sec of root.querySelectorAll(".ev-section")) {
-    const h = sec.querySelector("h2");
+  // A story page has its one story card and no sections: read it as a section without a heading.
+  const sections = [...root.querySelectorAll(".ev-section")];
+  for (const sec of sections.length ? sections : [root]) {
+    const h = sections.length ? sec.querySelector("h2") : null;
     if (h) add(cleanText(h), h);
     for (const a of sec.querySelectorAll("article.ev-story")) {
       const n = cleanText(a.querySelector(".ev-num") || a);
@@ -50,7 +52,7 @@ function editionParts(root: Element): Part[] {
 
 function genericParts(root: Element): Part[] {
   const parts: Part[] = [];
-  const skip = "nav, button, figcaption, footer, .sources, .filters, .count, .scale, .sp-bar, .sp-more, .ab-join, [aria-hidden='true']";
+  const skip = "nav, button, figcaption, footer, .sources, .filters, .count, .scale, .sp-bar, .sp-more, .ab-join, .ev-tools, .tp-more, [aria-hidden='true']";
   for (const el of root.querySelectorAll("h1, h2, h3, h4, p, li, dt, dd")) {
     if (el.closest(skip) || (el as HTMLElement).hidden || el.closest("[hidden]")) continue;
     if (el.querySelector("p, li, h1, h2, h3, h4")) continue; // read the leaves, not their containers
@@ -142,7 +144,7 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
   const start = () => {
     const root = document.getElementById(rootId);
     if (!root) return;
-    const parts = (root.querySelector(".ev") ? editionParts(root) : genericParts(root)).flatMap((p) => chunks(p.text).map((t) => ({ text: t, el: p.el })));
+    const parts = (root.matches(".ev") || root.querySelector(".ev") ? editionParts(root) : genericParts(root)).flatMap((p) => chunks(p.text).map((t) => ({ text: t, el: p.el })));
     if (!parts.length) return;
     window.speechSynthesis.cancel();
     queue.current = parts;
@@ -189,7 +191,7 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
   return (
     <div className={`ev-listen${state !== "idle" ? " ev-listen-on" : ""}`} role="group" aria-label="Listen to this page">
       {state === "idle" ? (
-        <button type="button" onClick={start} title="Read aloud by your device's own voice">
+        <button type="button" className="ev-listen-go" onClick={start} title="Read aloud by your device's own voice">
           <SpeakerIcon />
           Listen{spoken ? <span> · ~{spoken} min</span> : null}
         </button>
@@ -217,10 +219,17 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
 }
 
 function SpeakerIcon() {
+  // Headphones with a little equaliser between the ear cups; the bars dance on hover (CSS, .ev-eq).
   return (
-    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 10v4h3l4 3V7L7 10H4z" />
-      <path d="M15 9.5a3.5 3.5 0 0 1 0 5M17.5 7a7 7 0 0 1 0 10" />
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3.5 17v-4.5a8.5 8.5 0 0 1 17 0V17" />
+      <rect x="2.5" y="14" width="4" height="6.5" rx="1.6" fill="currentColor" stroke="none" />
+      <rect x="17.5" y="14" width="4" height="6.5" rx="1.6" fill="currentColor" stroke="none" />
+      <g className="ev-eq" strokeWidth="1.8">
+        <path d="M10 15.5v3" />
+        <path d="M12 13.5v7" />
+        <path d="M14 15v4" />
+      </g>
     </svg>
   );
 }

@@ -102,17 +102,18 @@ button { font: inherit; cursor: pointer; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: flex-start; }
 .foot-links a { display: inline-flex; align-items: center; min-height: 40px; color: var(--muted); font-weight: 600; padding: 4px 8px; margin-inline: -8px; }
 .foot-links a:hover { color: var(--ink); }
-.ev-share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; font-size: 13px; }
-.ev-share-label { font-weight: 700; color: var(--muted); margin-right: 2px; }
-.ev-share a, .ev-share button { display: inline-flex; align-items: center; min-height: 40px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink2); font-weight: 700; font-size: 13px; }
+.ev-share { position: relative; display: inline-flex; align-items: center; font-size: 13px; }
+.ev-share a, .ev-share button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 4px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink2); font: 700 13px var(--sans); white-space: nowrap; }
 .ev-share a:hover, .ev-share button:hover { border-color: var(--lilac-line-2); }
-.ev-share .ev-wa { background: var(--wa); border-color: var(--wa-line); color: var(--wa-text); }
-/* Phones: one Share button (the phone's share sheet) instead of a row of five; the row unfolds where there's no sheet. */
-.ev-share .ev-share-one { display: none; gap: 6px; }
-@media (max-width: 700px) {
-  .ev-share:not(.ev-share-open) > :not(.ev-share-one) { display: none; }
-  .ev-share:not(.ev-share-open) > .ev-share-one { display: inline-flex; }
-}
+.ev-share .ev-share-one svg { transition: transform 0.25s ease; }
+.ev-share .ev-share-one:hover svg, .ev-share-open .ev-share-one svg { transform: rotate(-12deg) scale(1.1); }
+/* The menu behind the Share button (desktops, or phones without a share sheet). */
+.ev-share-menu { position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; display: grid; gap: 2px; min-width: 190px; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); box-shadow: 0 12px 32px rgba(20, 10, 40, 0.16); }
+.ev-share-sm .ev-share-menu { left: auto; right: 0; }
+.ev-share .ev-share-menu a, .ev-share .ev-share-menu button { justify-content: flex-start; gap: 10px; width: 100%; min-height: 40px; padding: 6px 10px; border: 0; border-radius: 9px; background: none; text-align: left; cursor: pointer; }
+.ev-share .ev-share-menu a:hover, .ev-share .ev-share-menu button:hover { background: var(--lilac-2); }
+.ev-share-menu svg { flex: none; width: 18px; color: var(--muted); }
+.ev-share-menu .ev-wa svg { color: #25d366; }
 .site-header nav a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px; border-radius: 2px; background: #e8622f; }
 
 .site-footer {
@@ -739,13 +740,17 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 
 /* Per-story share row (end of each story card) and story pages (/daily/<edition>/<n>) */
-.ev-share-sm { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line-2); font-size: 12.5px; }
+.ev-share-sm { display: flex; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line-2); font-size: 12.5px; }
 /* A story card's last line: the original source on the left, sharing on the right, under one rule. */
 .ev-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line-2); }
 .ev-foot > .ev-src, .ev-foot > .ev-share-sm { margin: 0; padding: 0; border: 0; }
 .ev-has-img > .ev-foot { grid-column: 1 / -1; }
-.ev-share-sm a, .ev-share-sm button { min-height: 40px; padding: 3px 12px; font-size: 12.5px; }
+.ev-share-sm .ev-share-one { min-height: 40px; padding: 3px 12px; font-size: 12.5px; }
 .st-page .ev-story { margin-top: 6px; }
+.st-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 16px; }
+.st-bar .crumbs { margin: 0; }
+.st-bar .st-tools { margin-top: 0; }
+.st-tools .ev-share-sm { margin: 0; padding: 0; border: 0; }
 .st-more { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
 .st-list { margin: 26px 0 0; padding: 16px 20px 6px; border-radius: 18px; background: var(--card); border: 1px solid var(--line-2); }
 .st-list h2 { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
@@ -895,18 +900,27 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 
 /* ---------- Listen (components/Listen.tsx): read aloud by the device's own voice ---------- */
-.ev-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
-.ev-listen { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-top: 12px; font-size: 13px; }
-.ev-listen button { display: inline-flex; align-items: center; white-space: nowrap; gap: 6px; min-height: 32px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--lilac-line-b); background: var(--lilac-b); color: var(--violet); font: 700 13px var(--sans); }
+.ev-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 14px; }
+.ev-listen { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 13px; }
+.ev-listen button { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 4px 14px; border-radius: 999px; border: 1px solid var(--lilac-line-b); background: var(--lilac-b); color: var(--violet); font: 700 13px var(--sans); white-space: nowrap; }
 .ev-listen button:hover { background: var(--lilac-2); }
 .ev-listen button span { font-weight: 600; opacity: 0.8; }
-.ev-listen small { flex-basis: 100%; font-size: 11.5px; color: var(--text3); }
+.ev-listen small { font-size: 11.5px; color: var(--text3); }
+/* The equaliser in the headphones: bars bounce while the pointer is on Listen. */
+.ev-eq path { transform-box: fill-box; transform-origin: center bottom; }
+.ev-listen-go:hover .ev-eq path { animation: ev-eq 0.7s ease-in-out infinite alternate; }
+.ev-listen-go:hover .ev-eq path:nth-child(2) { animation-delay: -0.35s; }
+.ev-listen-go:hover .ev-eq path:nth-child(3) { animation-delay: -0.2s; }
+@keyframes ev-eq { from { transform: scaleY(0.4); } to { transform: scaleY(1.15); } }
+@media (prefers-reduced-motion: reduce) { .ev-listen-go:hover .ev-eq path, .ev-share .ev-share-one svg { animation: none; transition: none; } }
 .ev-listen-where { font-weight: 700; color: var(--text3); }
 .ev-story.is-reading { outline: 3px solid var(--purple); outline-offset: 3px; }
-.sp .ev-listen { margin-top: 0; }
 .sp .ev-listen small { flex-basis: auto; }
 @media (max-width: 700px) {
   .ev-listen small { font-size: 11px; }
+  /* Phones: Share and Listen side by side, the voice note on its own line under them. */
+  .ev-tools .ev-listen { display: contents; }
+  .ev-tools .ev-listen small { flex-basis: 100%; order: 1; margin-top: -4px; }
 }
 
 /* ---------- Tablets and other in-between widths ----------
