@@ -33,8 +33,13 @@ function lines(text, max) {
   if (cur) out.push(cur);
   return out;
 }
-const title = lines(r.title, 22);
-const size = title.length > 2 ? 104 : 124;
+// A two-sentence title ("Claude cut months to minutes. Who checked?") breaks at the full stop, with the second
+// sentence in gold, as on the page; anything else wraps at 22 characters. Type is sized so the longest line fits
+// the 1,380px text column (DejaVu Serif Bold averages about 0.62 em per character).
+const sentences = r.title.match(/[^.!?]+[.!?]+/g)?.map((x) => x.trim());
+const split = sentences?.length === 2 && sentences.join(" ") === r.title.trim();
+const title = split ? sentences : lines(r.title, 22);
+const size = Math.min(title.length > 2 ? 104 : 124, Math.floor(1380 / (Math.max(...title.map((l) => l.length)) * 0.62)));
 const top = 330 - (title.length - 2) * 40;
 const dek = lines(r.dek, 70).slice(0, 2);
 
@@ -51,7 +56,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" v
   <path fill="#0B131C" d="M0 150v-30h80v-18h50v18h66v-26h30v26h90v-14h48v14h72v-32h36v32h84v-20h56v20h90v-28h40v28h70v-16h62v16h88v-24h34v24h70v-12h54v12h80v30z"/>
 </g>
 <text x="110" y="150" font-family="Inter, DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="30" letter-spacing="5" fill="#F0B840">KKRECKONS SPECIAL REPORT · ${esc(r.kicker.toUpperCase())}</text>
-${title.map((l, i) => `<text x="106" y="${top + i * (size + 14)}" font-family="DejaVu Serif, Georgia, serif" font-weight="700" font-size="${size}" fill="#FFF8EE">${esc(l)}</text>`).join("\n")}
+${title.map((l, i) => `<text x="106" y="${top + i * (size + 14)}" font-family="DejaVu Serif, Georgia, serif" font-weight="700" font-size="${size}" fill="${split && i === 1 ? "#F0B840" : "#FFF8EE"}">${esc(l)}</text>`).join("\n")}
 ${dek.map((l, i) => `<text x="110" y="${top + title.length * (size + 14) + 20 + i * 44}" font-family="Inter, DejaVu Sans, Arial, sans-serif" font-size="32" fill="#C9CED6">${esc(l)}</text>`).join("\n")}
 <text x="110" y="840" font-family="DejaVu Serif, Georgia, serif" font-weight="700" font-size="40" fill="#FFF8EE">KK<tspan fill="#F0B840">Reckons</tspan></text>
 <text x="1490" y="840" text-anchor="end" font-family="Inter, DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="26" fill="#C9CED6">kkreckons.com/special</text>
