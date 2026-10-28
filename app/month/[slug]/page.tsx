@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import Banner from "@/components/Banner";
 import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
+import Listen from "@/components/Listen";
+import ShareRow from "@/components/ShareRow";
 import { shortDate, themeSlug, weekday } from "@/lib/editions";
 import { monthBySlug, monthRoundup, months, monthSlug } from "@/lib/month";
 import { SITE_URL } from "@/lib/site";
@@ -47,13 +49,17 @@ export default async function Month({ params }: { params: Promise<{ slug: string
         }}
       />
       <Banner />
-      <div className="cu-wrap">
+      <div className="cu-wrap" id="mo-read">
         <section className="cu-hero" aria-labelledby="mo-title">
           <p className="ab-kicker">Monthly roundup · {r.label}</p>
           <h1 id="mo-title">Best of {r.label}.</h1>
           <p className="cu-lede">
             {r.days.length} briefings and {r.stories} stories, boiled down to the one story picked each day as most worth slowing down for.
           </p>
+          <div className="ev-tools">
+            <ShareRow url={`${SITE_URL}/month/${monthSlug(ym)}`} slice={`Best of ${r.label}: ${r.picks.length} stories worth your time`} />
+            <Listen rootId="mo-read" minutes={Math.max(1, Math.round(r.picks.length * 0.4))} />
+          </div>
         </section>
 
         <div className="mo-facts">
