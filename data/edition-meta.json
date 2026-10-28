@@ -408,5 +408,19 @@
       "band": "Elevated",
       "asOf": "2026-10-26"
     }
+  },
+  "2026-10-28": {
+    "artifact": "https://claude.ai/artifact/W21SrNjwzayBoQSwhQStEQ",
+    "stressIndex": {
+      "score": 25,
+      "band": "Elevated",
+      "asOf": "2026-10-27"
+    },
+    "reading": {
+      "https://claude.ai/artifact/HqG2Af9qsxX1Jrd7eGcc77": {
+        "url": "https://www.kkreckons.com/research/ai-bubble-october-2026",
+        "special": true
+      }
+    }
   }
 }
