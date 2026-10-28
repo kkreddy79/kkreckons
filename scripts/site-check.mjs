@@ -181,8 +181,29 @@ async function run(engine, engineName, devices, { schemes, axe }) {
         await page.evaluate(() =>
           Promise.all([...document.images].filter((i) => !i.complete && i.getBoundingClientRect().top < innerHeight).map((i) => new Promise((ok) => ((i.onload = i.onerror = ok), setTimeout(ok, 3000)))))
         );
-        const wide = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-        if (wide > 1) failures.push(`${where}: scrolls sideways by ${wide}px`);
+        // Name what sticks out: the innermost elements past the right edge, so the fix is obvious from the log.
+        const { wide, culprits } = await page.evaluate(() => {
+          const wide = document.documentElement.scrollWidth - window.innerWidth;
+          if (wide <= 1) return { wide, culprits: [] };
+          // Anything inside a scrolling or clipping box (the phone nav row) cannot widen the page.
+          const contained = (el) => {
+            for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) if (getComputedStyle(a).overflowX !== "visible") return true;
+            return false;
+          };
+          const past = [...document.body.querySelectorAll("*")].filter((el) => el.getBoundingClientRect().right > innerWidth + 1 && !contained(el));
+          const inner = past.filter((el) => !past.some((c) => c !== el && el.contains(c)));
+          const name = (el) => `${el.tagName.toLowerCase()}${typeof el.className === "string" && el.className.trim() ? "." + el.className.trim().split(/\s+/).join(".") : ""}`;
+          return {
+            wide,
+            culprits: inner.slice(0, 3).map((el) => {
+              const r = el.getBoundingClientRect();
+              const path = [];
+              for (let a = el; a && a !== document.body && path.length < 4; a = a.parentElement) path.unshift(name(a));
+              return `${path.join(" > ")} (x ${Math.round(r.left)}–${Math.round(r.right)}, "${(el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 30)}")`;
+            }),
+          };
+        });
+        if (wide > 1) failures.push(`${where}: scrolls sideways by ${wide}px${culprits.length ? `; past the edge: ${culprits.join("; ")}` : ""}`);
         for (const e of errors) failures.push(`${where}: script error: ${e}`);
         const found = await page.evaluate(inspect, { touch: Boolean(opts.hasTouch) });
         for (const c of found.cropped) failures.push(`${where}: cover image cropped: ${c}`);
