@@ -261,7 +261,15 @@ a.sr-date { padding-block: 5px; margin-block: -5px; }
 .ev-kicker .ev-size { margin-left: auto; letter-spacing: 0.08em; color: var(--text3); white-space: nowrap; }
 .ev-kicker-size { justify-content: flex-start; }
 .ev-kicker-size::before { display: none; }
-.ev-slice { margin: 0 0 12px; max-width: 900px; font-size: clamp(30px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.02em; color: var(--ev-ink); }
+/* Phones: the date keeps one line and the story count drops under it, instead of both squeezing into three lines. */
+@media (max-width: 560px) {
+  .ev-kicker:not(.ev-kicker-size) { flex-wrap: wrap; row-gap: 6px; }
+  .ev-kicker:not(.ev-kicker-size) .ev-size { flex-basis: 100%; margin-left: 50px; }
+}
+/* The day's headline: a wordplay line, so it is set large but not shouting (two lines on a laptop rather than three),
+   with the plain-English takeaway under it for context. */
+.ev-slice { margin: 0; max-width: 1000px; font-size: clamp(26px, 3.5vw, 46px); line-height: 1.1; letter-spacing: -0.015em; color: var(--ev-ink); text-wrap: balance; }
+.ev-dek { margin: 12px 0 0; max-width: 760px; font-size: clamp(16.5px, 1.5vw, 19px); line-height: 1.5; color: var(--text2); text-wrap: pretty; }
 .ev-30s { margin: 0 0 22px; padding: 16px 20px 10px; border-radius: 18px; background: var(--card); border: 1px solid var(--line-2); }
 .ev-30s h2 { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
 .ev-30s ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); column-gap: 24px; }
