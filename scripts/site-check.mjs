@@ -165,6 +165,18 @@ async function run(engine, engineName, devices, { schemes, axe }) {
     for (const scheme of schemes(device)) {
       const { name, axe: runAxe, width, height, ...opts } = device;
       const context = await browser.newContext({ viewport: { width, height }, colorScheme: scheme, deviceScaleFactor: 1, ...opts });
+      if (engineName === "WebKit") {
+        // The CSP's upgrade-insecure-requests sends WebKit to https://localhost for every stylesheet, script and
+        // image (Chromium exempts localhost), so pages would be checked unstyled. On the live https site it does
+        // nothing, so drop just that directive from page responses here; the rest of the policy still applies.
+        await context.route("**/*", async (route) => {
+          if (route.request().resourceType() !== "document") return route.continue();
+          const res = await route.fetch();
+          const headers = res.headers();
+          if (headers["content-security-policy"]) headers["content-security-policy"] = headers["content-security-policy"].replace(/;\s*upgrade-insecure-requests/, "");
+          await route.fulfill({ response: res, headers });
+        });
+      }
       const page = await context.newPage();
       const errors = [];
       page.on("pageerror", (e) => errors.push(e.message));
@@ -175,6 +187,12 @@ async function run(engine, engineName, devices, { schemes, axe }) {
         loads += 1;
         if (res?.status() !== 200) {
           failures.push(`${where}: loaded with ${res?.status()}`);
+          continue;
+        }
+        // The site's stylesheet sets the body margin to 0; the browser default is 8px. A page without its CSS would
+        // otherwise show up as dozens of layout failures.
+        if ((await page.evaluate(() => getComputedStyle(document.body).marginLeft)) !== "0px") {
+          failures.push(`${where}: rendered without the site's stylesheet`);
           continue;
         }
         // Let lazy images in the first screen arrive, so covers can be measured.
