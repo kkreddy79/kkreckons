@@ -26,7 +26,7 @@ export function monthRoundup(ym: string) {
       head: s.emailHead || s.title,
       title: s.title,
       teaser: teaserFrom(s.why),
-      thumb: s.image ? (s.imageW ? s.image.replace(/\.[a-z]+$/, "-sm.webp") : s.image) : "",
+      thumb: s.image ? (s.imageW ? s.image.replace(/\.[a-z]+$/, "-th.webp") : s.image) : "",
       href: `/daily/${slugFor(e.date)}/${i + 1}`,
       slice: e.slice,
     };

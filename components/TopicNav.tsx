@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import { TOPICS } from "@/lib/topics";
 
 /** Plain links to every topic page, rendered on the server so crawlers can follow them. */

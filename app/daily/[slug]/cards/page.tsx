@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent, type FullStory } from "@/lib/content";
@@ -78,7 +78,7 @@ export default async function CardsPage({ params }: Props) {
       <ol className="cards-grid">
         {cards.map(({ s, n }, i) => (
           <li key={n} className="cards-item">
-            <a href={s.image} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} aria-label={`Open the card for “${s.title}” full size`}>
+            <a href={s.image} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? s.image!.replace(/\.[a-z]+$/, "-lg.webp") : undefined} aria-label={`Open the card for “${s.title}” full size`}>
               <CardImage s={s} eager={i < 2} />
             </a>
             <Link href={`${editionUrl}/${n}`} className="cards-title">

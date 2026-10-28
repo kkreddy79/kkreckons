@@ -30,6 +30,17 @@ export const metadata: Metadata = {
    the page falls back to loading it in the browser. */
 export const revalidate = 3600;
 
+/* Only the fields the page reads go to the browser (they are serialised into the HTML), with long decimals
+   rounded: data.json and backtest.json also carry the model's working (timelines, correlations, proxies),
+   which more than doubled the page. */
+const DATA_KEYS = ["asOf", "generatedAt", "score", "factorCount", "prevDate", "prevScore", "pillars", "prevPillars", "levels", "shock", "scoreRange", "exitRule", "factors", "history", "weekly", "notes", "editorNote", "model"] as const satisfies readonly (keyof Data)[];
+const BACKTEST_KEYS = ["dataStart", "dataEnd", "firstScored", "scoredDays", "episodes", "outsideEpisodes", "comparison", "alertOutcomes", "nasdaqDeclines", "alertEpisodes", "shockEpisodes", "episodeRule", "ladderBreaks", "outOfSample", "spreadStandIn", "spliceStability", "outcomeRule", "sensitivity"] as const satisfies readonly (keyof Backtest)[];
+const round = (v: unknown): unknown =>
+  typeof v === "number" ? (Number.isInteger(v) ? v : Math.round(v * 1e4) / 1e4) : Array.isArray(v) ? v.map(round) : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, round(x)])) : v;
+function trim<T extends object>(o: T, keys: readonly (keyof T)[]): T {
+  return Object.fromEntries(keys.filter((k) => k in o).map((k) => [k, round(o[k])])) as T;
+}
+
 export default async function AiStressIndexPage() {
   const [d, bt] = await Promise.all([loadStressFile<Data>("data.json"), loadStressFile<Backtest>("backtest.json")]);
   const hist = d?.history.filter((h) => h.score != null) ?? [];
@@ -57,7 +68,7 @@ export default async function AiStressIndexPage() {
           }}
         />
       )}
-      <StressIndex initial={d} initialBt={bt} marks={marks} watch={watchList()} />
+      <StressIndex initial={d && trim(d, DATA_KEYS)} initialBt={bt && trim(bt, BACKTEST_KEYS)} marks={marks} watch={watchList()} />
     </>
   );
 }

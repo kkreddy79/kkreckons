@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
@@ -155,7 +155,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
   const seen = new Set<string>();
   const follow = followLinks(date, n, s);
   const pic = s.image && (
-    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title}>
+    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? s.image.replace(/\.[a-z]+$/, "-lg.webp") : undefined}>
       {s.imageW ? (
         <picture>
           <source

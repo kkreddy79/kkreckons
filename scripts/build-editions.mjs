@@ -226,6 +226,8 @@ async function creditStrip(file) {
 // reserve the space before the image loads.
 const VARIANTS = [["sm", 640], ["md", 860], ["lg", 1600]];
 const variantName = (file, tag) => file.replace(/\.[a-z]+$/, `-${tag}.webp`);
+// A small top-cropped copy for the 92×120 thumbnails on /week and /month (184×240 covers them at 2×).
+const THUMB = ["th", 184, 240];
 async function figVariants(image) {
   const file = path.join(figsDir, path.basename(image));
   if (!fs.existsSync(file)) return {};
@@ -235,6 +237,9 @@ async function figVariants(image) {
     const out = variantName(file, tag);
     if (fresh || !fs.existsSync(out)) await sharp(file).resize({ width: Math.min(max, width), withoutEnlargement: true }).withExif({ IFD0: { Copyright: COPYRIGHT } }).webp({ quality: 72, effort: 6 }).toFile(out);
   }
+  const [tag, tw, th] = THUMB;
+  const thumb = variantName(file, tag);
+  if (fresh || !fs.existsSync(thumb)) await sharp(file).resize({ width: tw, height: th, fit: "cover", position: "top" }).withExif({ IFD0: { Copyright: COPYRIGHT } }).webp({ quality: 74, effort: 6 }).toFile(thumb);
   return { imageW: width, imageH: height };
 }
 
@@ -536,7 +541,7 @@ const allContent = fs
 const usedFigs = new Set([
   ...allContent
     .flatMap((c) => c.sections)
-    .flatMap((sec) => sec.stories.flatMap((s) => (s.image ? [s.image, ...VARIANTS.map(([tag]) => variantName(s.image, tag))].map((f) => path.basename(f)) : []))),
+    .flatMap((sec) => sec.stories.flatMap((s) => (s.image ? [s.image, ...[...VARIANTS, THUMB].map(([tag]) => variantName(s.image, tag))].map((f) => path.basename(f)) : []))),
   ...allContent.flatMap((c) => (c.cover ? [path.basename(c.cover)] : [])),
 ]);
 for (const f of fs.readdirSync(figsDir)) {
