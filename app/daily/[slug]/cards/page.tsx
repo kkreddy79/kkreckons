@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SubscribeBox from "@/components/SubscribeBox";
+import Listen from "@/components/Listen";
+import ShareRow from "@/components/ShareRow";
 import { getContent, type FullStory } from "@/lib/content";
 import { editions, getEdition, longDate, shortDate, slugFor } from "@/lib/editions";
+import { SITE_URL } from "@/lib/site";
 
 // The day in cards: every story's explainer graphic in one grid, for a read in a few seconds.
 // Each card opens full size in the lightbox; its headline links to the story's own page.
@@ -66,28 +69,38 @@ export default async function CardsPage({ params }: Props) {
   const cards = stories.map((s, i) => ({ s, n: i + 1 })).filter(({ s }) => s.image);
   return (
     <main className="ev-wrap ev-page">
-      <nav className="crumbs" aria-label="Breadcrumb">
-        <Link href="/daily">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Cards
-      </nav>
-      <header className="cards-head">
-        <h1>The day in {cards.length} cards</h1>
-        <p>
-          {edition.slice && <>{edition.slice.replace(/[.\s]+$/, "")}. </>}Tap a card to see it full size, or a headline for the whole story.
-        </p>
-      </header>
-      <ol className="cards-grid">
-        {cards.map(({ s, n }, i) => (
-          <li key={n} className="cards-item">
-            <a href={s.image} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} aria-label={`Open the card for “${s.title}” full size`}>
-              <CardImage s={s} eager={i < 2} />
-            </a>
-            <Link href={`${editionUrl}/${n}`} className="cards-title">
-              <span className="cards-n">{String(n).padStart(2, "0")}</span>
-              {s.emailHead || s.title}
-            </Link>
-          </li>
-        ))}
-      </ol>
+      {/* Where the cards sit, with Listen and Share on the same line (as on story pages and special reports). */}
+      <div className="st-bar">
+        <nav className="crumbs" aria-label="Breadcrumb">
+          <Link href="/daily">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Cards
+        </nav>
+        <div className="ev-tools st-tools">
+          {/* Listen reads the heading, the line under it and each card's headline. */}
+          <Listen rootId="cards-read" minutes={1} />
+          <ShareRow url={`${SITE_URL}${editionUrl}/cards`} slice={`${edition.slice || longDate(edition.date)}: the day in cards`} image={edition.cover || undefined} compact />
+        </div>
+      </div>
+      <div id="cards-read">
+        <header className="cards-head">
+          <h1>The day in {cards.length} cards</h1>
+          <p>
+            {edition.slice && <>{edition.slice.replace(/[.\s]+$/, "")}. </>}Tap a card to see it full size, or a headline for the whole story.
+          </p>
+        </header>
+        <ol className="cards-grid">
+          {cards.map(({ s, n }, i) => (
+            <li key={n} className="cards-item">
+              <a href={s.image} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} aria-label={`Open the card for “${s.title}” full size`}>
+                <CardImage s={s} eager={i < 2} />
+              </a>
+              <Link href={`${editionUrl}/${n}`} className="cards-title">
+                <span className="cards-n">{String(n).padStart(2, "0")}</span>
+                {s.emailHead || s.title}
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </div>
       <p className="st-more">
         <Link className="button" href={editionUrl}>
           Read the full {shortDate(edition.date)} edition →
