@@ -2,8 +2,8 @@ import Link from "@/components/Link";
 import { figVariant, webpSrcSet } from "@/lib/figs";
 import { stressBand } from "@/lib/stressBand";
 import type { EditionContent, FullStory } from "@/lib/content";
-import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor, totalStories } from "@/lib/editions";
-import { CORRECTIONS_EMAIL, correctionsHref, INLINE_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
+import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor } from "@/lib/editions";
+import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL } from "@/lib/site";
 import { followLinks, type Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
 import { watchSummary } from "@/lib/watch";
@@ -12,7 +12,6 @@ import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
 import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
-import EmailSignup from "@/components/EmailSignup";
 import FigClamp from "@/components/FigClamp";
 import MarketStrip from "@/components/MarketStrip";
 import PrintImages from "@/components/PrintImages";
@@ -536,23 +535,6 @@ export default function EditionView({
               });
             })()}
           </div>
-          {sec.name === "Pick of the day" && (
-            <div className={`ev-signup${INLINE_SIGNUP ? " ev-signup-form" : ""}`}>
-              <span>
-                One visual briefing a day. Free, unsubscribe anytime.
-                <small>
-                  {editions.length} editions and {totalStories} stories so far
-                </small>
-              </span>
-              {INLINE_SIGNUP ? (
-                <EmailSignup placement="after-pick" />
-              ) : (
-                <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-                  Get it by email ↗
-                </a>
-              )}
-            </div>
-          )}
         </section>
       ))}
 

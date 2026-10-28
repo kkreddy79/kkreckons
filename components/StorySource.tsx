@@ -1,5 +1,5 @@
 import { isPaywalled, publisherName, sourceName } from "@/lib/editionFormat";
-import { InfoIcon, LinkIcon, LockIcon } from "@/components/AboutIcons";
+import { InfoIcon, LinkIcon, LockIcon, OpenLockIcon } from "@/components/AboutIcons";
 
 /** What the source line and quick summary need from a story. */
 export type SourceStory = {
@@ -39,6 +39,21 @@ export function storyPaid(s: SourceStory) {
   return links.some((l) => l.paid) && !links.some((l) => !l.paid);
 }
 
+/** Open or closed lock after a publisher name, as in "Today in 30 seconds": free to read, or may need a subscription. */
+function SourceMark({ paid }: { paid: boolean }) {
+  return paid ? (
+    <span className="ev-mark ev-mark-paid ev-mark-sm" title="May need a subscription">
+      <LockIcon />
+      <span className="sr-only"> (may need a subscription)</span>
+    </span>
+  ) : (
+    <span className="ev-mark ev-mark-free ev-mark-sm" title="Free to read">
+      <OpenLockIcon />
+      <span className="sr-only"> (free to read)</span>
+    </span>
+  );
+}
+
 /** Small lock after a publisher name: the source may need a subscription. Free sources carry no mark. */
 export function PaidMark() {
   return (
@@ -50,7 +65,7 @@ export function PaidMark() {
 }
 
 /**
- * "Original source: Publisher ↗" line with a lock on paywalled sources, plus the Quick summary popover where the
+ * "Original source: Publisher ↗" line with an open or closed lock on each source, plus the Quick summary popover where the
  * page shows only the headline (story cards already show the full points).
  */
 export default function StorySource({
@@ -78,18 +93,13 @@ export default function StorySource({
       <p className={`ev-src${paid ? " ev-src-paid" : ""}`}>
         <LinkIcon className="ev-ic-sm" />
         <span className="ev-src-label">{short ? "Source:" : "Original source:"}</span>
-        {links.map((l) =>
-          l.free ? (
-            <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="ev-free" title="Free to read">
-              <span className="ev-free-tag">Free version</span> {l.name} ↗
-            </a>
-          ) : (
-            <a key={l.href} href={l.href} target="_blank" rel="noreferrer" title={hover}>
-              {l.name}
-              {l.paid && <PaidMark />} ↗
-            </a>
-          ),
-        )}
+        {links.map((l) => (
+          <a key={l.href} href={l.href} target="_blank" rel="noreferrer" title={l.free ? "A free copy of the story" : hover}>
+            {l.name}
+            {l.free && " (free version)"}
+            <SourceMark paid={l.paid} /> ↗
+          </a>
+        ))}
         {summary && (
           <button type="button" className="ev-qs-btn" popoverTarget={id}>
             <InfoIcon className="ev-ic-sm" /> Quick summary
