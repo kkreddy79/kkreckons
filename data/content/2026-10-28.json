@@ -1,0 +1,514 @@
+{
+  "date": "2026-10-28",
+  "slice": "China pops, credit wheezes, zombies nap, waists shrink, kids unplug. Capex keeps eating.",
+  "artifact": "https://claude.ai/artifact/W21SrNjwzayBoQSwhQStEQ",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "40%",
+      "text": "China's STAR50 AI and chip index fall in under four months, about $480bn erased",
+      "url": "https://www.reuters.com/world/china/china-ai-bubble-has-already-burst-2026-10-26/"
+    },
+    {
+      "num": "14.2%",
+      "text": "of listed Indian firms stressed or zombie in 2025, the lowest in a D&B study",
+      "url": "https://www.livemint.com/economy/zombie-firms-india-inc-interest-coverage-ratio-corporate-debt-stressed-companies-dun-and-bradstreet-11792948783730.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI · Markets",
+          "tag": "",
+          "title": "China's AI stocks crash 40% as US neocloud debt stress spreads",
+          "url": "https://www.reuters.com/world/china/china-ai-bubble-has-already-burst-2026-10-26/",
+          "url2": "https://m.economictimes.com/news/company/corporate-trends/elon-musk-ai-bubble-neocloud-coreweave-data-centres-private-credit-nvidia-gartner-forecast/articleshow/135238118.cms",
+          "points": [
+            "Reuters reports China's STAR50 index of AI and chip leaders has fallen 40% in under four months, erasing about $480bn; AI stocks are 42% of China's market value, per Goldman Sachs. The Nasdaq has slipped only 6%.",
+            "In the US the strain shows in credit. ET says CoreWeave's 2032 bonds trade below 80 cents, Musk predicts a die-off among 200-plus neoclouds, and Gartner sees $8.5tn of revenue needed by 2030 against at most $3.6tn.",
+            "Ed Yardeni says air is leaking without a burst. An FT editorial warns hedges are getting dearer; Columbia's Neeraj Kaushal argues AI can transform the economy and still destroy capital."
+          ],
+          "numbers": [
+            [
+              "40%",
+              "STAR50 fall in under four months"
+            ],
+            [
+              "$8.5tn",
+              "revenue needed by 2030 vs $3.6tn (Gartner)"
+            ]
+          ],
+          "why": "Two kinds of deflation are under way at once: a retail-driven equity crash in China and a slow squeeze on America's most indebted builders. Whether the US stays on the slow path depends on Big Tech's own earnings paying for the build-out.",
+          "other": "The biggest spenders are among the most cash-rich firms ever, and overbuilt railways and fibre were later put to use. Gartner's gap is a model, not a measurement, so losses may stay with leveraged lenders rather than the wider economy.",
+          "also": [
+            {
+              "title": "The limits of hedging the AI boom (FT editorial)",
+              "url": "https://www.ft.com/content/0b0ae366-c1e0-4c35-8cad-c924a23d33e7?syn-25a6b1a6=1"
+            },
+            {
+              "title": "The AI boom may transform the economy and still destroy capital (ET, Neeraj Kaushal)",
+              "url": "https://m.economictimes.com/transforming-steel-procurement-through-digital-innovation-exclusively-with-anumalisetty-ravi-kumar/articleshow/135225738.cms"
+            },
+            {
+              "title": "CoreWeave, Nvidia and Meta credit default swaps (Benzinga)",
+              "url": "https://www.benzinga.com/markets/bonds/26/10/62623350/nvidia-credit-risk-cds-tripled-passes-meta-coreweave"
+            }
+          ],
+          "image": "/figs/2026-10-28-1.jpg",
+          "imageAlt": "Explainer on the AI bubble: China's STAR50 down 40% against 6% for the Nasdaq, CoreWeave's CDS at 1,148bp against 63bp for investment grade, and Gartner's $8.5tn revenue need against $3.6tn.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Reuters, The Economic Times and Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.gartner.com/en/newsroom/press-releases/2026-10-14-gartner-says-over-us-dollars-three-and-a-half-trillion-of-artificial-intelligence-infrastructure-spending-could-be-exposed-to-impairment-by-the-end-of-2030",
+          "freeSrc": "Gartner",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "China pops, America leaks",
+          "emailTeaser": "A 40% crash in China, a slow credit squeeze in the US",
+          "cite": "China's STAR50 index of AI and chip stocks fell 40% in under four months, erasing about $480bn, Reuters reported on 26 Oct 2026.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 3778
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Corporate debt",
+          "tag": "",
+          "title": "India's zombie firms drop to 14.2% of listed companies, D&B finds",
+          "url": "https://www.livemint.com/economy/zombie-firms-india-inc-interest-coverage-ratio-corporate-debt-stressed-companies-dun-and-bradstreet-11792948783730.html",
+          "url2": "",
+          "points": [
+            "A Dun & Bradstreet study of about 6,000 listed firms, reported by Mint, calls a company stressed when its operating profit falls short of its interest bill, and a zombie after three such years. The share stressed or zombie fell to 14.2% in 2025 from 23.5% in 2020.",
+            "Of 971 firms that were zombies at some point since 2015, about 43% had fully or partly recovered by 2025, but a quarter were still zombies.",
+            "A BIS paper ranks India second of 10 Asian economies for zombie firms and blames weak banks that keep rolling over bad loans."
+          ],
+          "numbers": [
+            [
+              "14.2%",
+              "stressed or zombie firms in 2025"
+            ],
+            [
+              "971",
+              "firms classed as zombies since 2015"
+            ]
+          ],
+          "why": "Zombies hold on to credit and staff that healthier firms could use; the BIS estimates the drag at about 0.2 percentage points a year on growth and inflation. For investors, an interest-cover ratio below 1 is an early warning worth checking.",
+          "other": "The study covers only listed firms and drops the tag after two good years, so it may flatter recovery; the BIS's stricter test finds more. Some firms, like Bharti Airtel, were sound businesses that recovered, so the label alone is no verdict.",
+          "also": [],
+          "image": "/figs/2026-10-28-2.jpg",
+          "imageAlt": "Explainer on India's zombie firms: 14.2% of listed firms stressed or zombie in 2025, down from 23.5% in 2020; 43% of past zombies recovered, a quarter still stuck.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "India",
+            "Banking"
+          ],
+          "emailHead": "India Inc's zombies thin out",
+          "emailTeaser": "Fewer firms can't pay interest, but a quarter stay stuck",
+          "cite": "The share of listed Indian firms classed as stressed or zombie fell to 14.2% in 2025, a Dun & Bradstreet study reported by Mint on 27 Oct 2026 found.",
+          "imageW": 1280,
+          "imageH": 1733
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Fed · Rates",
+          "tag": "",
+          "title": "Fed expected to hold as markets see 73% odds of a December rate hike",
+          "url": "https://www.barrons.com/articles/fed-interest-rates-stocks-earnings-3b723c51",
+          "url2": "",
+          "points": [
+            "The Fed is expected to hold rates this week, so attention shifts to its 8–9 December meeting, where CME's FedWatch tool puts the odds of a rise at 73%, Barron's reports. Inflation is above target and an oil shock is spreading.",
+            "This week's Microsoft, Alphabet and Amazon results matter because AI spending has propped up growth and depends on borrowing that gets dearer as rates rise.",
+            "Citigroup economists warn a deeper stock slide could end the hiking cycle. Chair Kevin Warsh wants to drop forward guidance, leaving markets to read the signals."
+          ],
+          "numbers": [
+            [
+              "73%",
+              "odds of a December hike (CME FedWatch)"
+            ]
+          ],
+          "why": "Markets are already doing some of the Fed's work: falling stocks and wider credit spreads tighten conditions without a vote. That turns AI earnings into a quiet input to US interest rates, and so to borrowing costs well beyond America.",
+          "other": "What to watch: Warsh's press conference on Wednesday and the 8–9 December decision. Dearer energy could keep inflation high even as growth slows, which would push the Fed to hike despite a sell-off.",
+          "also": [],
+          "image": "/figs/2026-10-28-3.jpg",
+          "imageAlt": "Explainer on the Fed's December decision: a 73% chance of a hike per CME FedWatch, with inflation and oil arguing for it and strained stocks and slowing hiring arguing to wait.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Barron's",
+          "pay": true,
+          "freeUrl": "https://www.livemint.com/economy/this-week-could-help-decide-fed-raises-interest-rates-in-december-11793062472223.html",
+          "freeSrc": "Mint",
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "Markets may decide December",
+          "emailTeaser": "AI earnings and oil now steer the Fed's next move",
+          "cite": "CME Group's FedWatch tool showed a 73% chance of a December Fed rate increase, Barron's reported on 27 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Consumer · Health",
+          "tag": "",
+          "title": "Weight-loss drugs reshape spending as 1 in 10 Americans take GLP-1s",
+          "url": "https://www.ft.com/content/2f1667a8-ef1b-46a0-bc95-6061ec85fb8e?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "An FT Big Read finds people on GLP-1 drugs, now about one in 10 Americans, are changing what they eat, buy and do. Gyms are giving more floor space to strength training, and supplement and skincare makers are gaining customers.",
+            "Snacks, fast food and plus-size clothing are losing out: Macy's calls its plus-size business very soft, and brands are pushing smaller, pricier, protein-rich portions.",
+            "More than 200 listed companies outside healthcare discussed the drugs on earnings calls last quarter. Pills and cheaper generics after patents lapse in the early 2030s could widen use."
+          ],
+          "numbers": [
+            [
+              "1 in 10",
+              "Americans taking GLP-1s"
+            ],
+            [
+              "200+",
+              "non-health firms citing them on earnings calls"
+            ]
+          ],
+          "why": "The drugs undercut the volume model behind packaged food and fast food: sell more for less. Consumer investors may need to sort brands by whether they can win on quality and price rather than quantity.",
+          "other": "Drinking and nights out have barely dipped, so the hit is narrower than feared. Some users regain weight or stop, and so far the clearest effects come from early, wealthier adopters, which may not hold as use widens.",
+          "also": [],
+          "image": "/figs/2026-10-28-4.jpg",
+          "imageAlt": "Explainer on the weight-loss economy: about one in 10 Americans on GLP-1 drugs; gyms, supplements and clothing gain while snacks, fast food and plus-size ranges lose.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Health & science",
+            "Markets"
+          ],
+          "emailHead": "Thinner customers, pricier portions",
+          "emailTeaser": "GLP-1s shrink snack baskets and fill gyms",
+          "cite": "About one in 10 Americans now take GLP-1 weight-loss drugs, the Financial Times reported on 26 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Education · Tech",
+          "tag": "",
+          "title": "Silicon Valley parents push schools to cut back on classroom tech",
+          "url": "https://www.theguardian.com/us-news/ng-interactive/2026/oct/27/silicon-valley-schools-education-tech",
+          "url2": "",
+          "points": [
+            "Bay Area tech workers are paying for screen-light schooling, the Guardian reports: San Francisco Waldorf, two miles from Anthropic's headquarters, charges $40,000 a year for kindergarten, and many new families work in tech.",
+            "Parents are pushing public districts too. San Mateo has stopped sending Chromebooks home with pupils up to second grade and bans high schoolers' phones; Mountain View is moving away from the i-Ready program and Palo Alto bans smart glasses.",
+            "Experts warn poorer districts may keep the screens richer ones drop, while school-choice vouchers move public money to private schools."
+          ],
+          "numbers": [
+            [
+              "$40,000",
+              "yearly kindergarten fee, SF Waldorf"
+            ],
+            [
+              "81%",
+              "teachers say pupils get screens by kindergarten (NYT survey, 2025)"
+            ]
+          ],
+          "why": "The people who build the platforms are opting out for their own children, a strong signal about what the tech does well and badly. The risk is two tiers: human-led teaching for families who can pay or push, screens standing in for staff everywhere else.",
+          "other": "Good tools can personalise practice and fill gaps where teachers are scarce, and the parents' main ask is evidence and vetting, not a blanket ban. A few wealthy districts may not speak for families who rely on school devices.",
+          "also": [],
+          "image": "/figs/2026-10-28-5.jpg",
+          "imageAlt": "Explainer on screens in schools: $40,000 a year for a screen-free San Francisco kindergarten; San Mateo, Mountain View and Palo Alto curb classroom tech; poorer districts may be left with screens.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Guardian",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "Tech parents unplug the classroom",
+          "emailTeaser": "The people who build the apps want them out of school",
+          "cite": "Kindergarten at San Francisco Waldorf, a screen-free private school, costs $40,000 a year, the Guardian reported on 27 Oct 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Popped or leaking? A KKReckons research brief on the AI bubble",
+      "url": "https://www.kkreckons.com/research/ai-bubble-october-2026",
+      "note": "Our deeper dive behind today's lead: China's crash, neocloud credit, Gartner's revenue gap, history, hedges and the India angle, with every figure sourced.",
+      "special": true
+    }
+  ],
+  "takeaway": {
+    "a": "Less air.",
+    "b": "More bill.",
+    "line": "China's AI bubble popped; America's is hissing out through bond prices, while the Fed weighs one more hike and diet drugs quietly shrink the snack aisle."
+  },
+  "cover": "/figs/2026-10-28-cover.jpg",
+  "coverAlt": "China pops, credit wheezes, zombies nap, waists shrink, kids unplug. Capex keeps eating.",
+  "stressIndex": {
+    "score": 25,
+    "band": "Elevated",
+    "asOf": "2026-10-27"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 22753.1992,
+        "asOf": "2026-10-26",
+        "prev": 22600,
+        "week": 22888.9492,
+        "spark": [
+          23477.8008,
+          23398.0996,
+          23118.5996,
+          23217.5996,
+          23270.5996,
+          23346.4004,
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7722.6001,
+        "asOf": "2026-10-27",
+        "prev": 7676.77,
+        "week": 7712.5698,
+        "spark": [
+          7551.8101,
+          7637.7598,
+          7650.5,
+          7764.7002,
+          7764.6401,
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.993,
+        "asOf": "2026-10-27",
+        "prev": 4.986,
+        "week": 5.117,
+        "spark": [
+          5.006,
+          4.947,
+          4.998,
+          4.963,
+          4.968,
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 109.44,
+        "asOf": "2026-10-27",
+        "prev": 115.81,
+        "week": 108.79,
+        "spark": [
+          105.83,
+          104.82,
+          103.87,
+          100.34,
+          99.25,
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          109.44
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4075.2,
+        "asOf": "2026-10-27",
+        "prev": 4038.3999,
+        "week": 4142.6001,
+        "spark": [
+          4387.5,
+          4399.7002,
+          4424.8999,
+          4383.8999,
+          4376.3999,
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4075.2
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 95.105,
+        "asOf": "2026-10-27",
+        "prev": 94.938,
+        "week": 94.7164,
+        "spark": [
+          95.9927,
+          96.1323,
+          95.7992,
+          96.0131,
+          95.712,
+          95.6898,
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.105
+        ]
+      }
+    ]
+  }
+}

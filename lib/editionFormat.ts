@@ -78,6 +78,9 @@ const PUBLISHERS: Record<string, string> = {
   "nytimes.com": "The New York Times",
   "theatlantic.com": "The Atlantic",
   "fortune.com": "Fortune",
+  "gartner.com": "Gartner",
+  "kkreckons.com": "KKReckons",
+  "barrons.com": "Barron's",
   "theinformation.com": "The Information",
   "khaleejtimes.com": "Khaleej Times",
   "everycure.org": "Every Cure",
@@ -125,6 +128,7 @@ export function publisherName(url: string) {
 
 const PAYWALLED = new Set([
   "ft.com",
+  "barrons.com",
   "wsj.com",
   "economist.com",
   "bloomberg.com",

@@ -1,5 +1,80 @@
 [
   {
+    "date": "2026-10-28",
+    "slice": "China pops, credit wheezes, zombies nap, waists shrink, kids unplug. Capex keeps eating.",
+    "artifact": "https://claude.ai/artifact/W21SrNjwzayBoQSwhQStEQ",
+    "readingMinutes": 7,
+    "image": "/figs/2026-10-28-1.jpg",
+    "cover": "/figs/2026-10-28-cover.jpg",
+    "coverAlt": "China pops, credit wheezes, zombies nap, waists shrink, kids unplug. Capex keeps eating.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "China's AI stocks crash 40% as US neocloud debt stress spreads",
+        "category": "AI · Markets",
+        "tag": "",
+        "url": "https://www.reuters.com/world/china/china-ai-bubble-has-already-burst-2026-10-26/",
+        "src": "Reuters, The Economic Times and Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's zombie firms drop to 14.2% of listed companies, D&B finds",
+        "category": "Corporate debt",
+        "tag": "",
+        "url": "https://www.livemint.com/economy/zombie-firms-india-inc-interest-coverage-ratio-corporate-debt-stressed-companies-dun-and-bradstreet-11792948783730.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Fed expected to hold as markets see 73% odds of a December rate hike",
+        "category": "Fed · Rates",
+        "tag": "",
+        "url": "https://www.barrons.com/articles/fed-interest-rates-stocks-earnings-3b723c51",
+        "src": "Barron's",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Weight-loss drugs reshape spending as 1 in 10 Americans take GLP-1s",
+        "category": "Consumer · Health",
+        "tag": "",
+        "url": "https://www.ft.com/content/2f1667a8-ef1b-46a0-bc95-6061ec85fb8e?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Health & science",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Silicon Valley parents push schools to cut back on classroom tech",
+        "category": "Education · Tech",
+        "tag": "",
+        "url": "https://www.theguardian.com/us-news/ng-interactive/2026/oct/27/silicon-valley-schools-education-tech",
+        "src": "The Guardian",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-27",
     "slice": "Doom lists, Meta sells, debt piles, swaps stall. Staff walk, bots get cops. Who pays?",
     "artifact": "https://claude.ai/artifact/Ub3g8s5FtNcoUVZ5WfKYAd",
