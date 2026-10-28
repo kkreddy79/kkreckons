@@ -203,14 +203,18 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
 
       {s.image && (
         <figure className="ev-fig">
-          {/* Graphics are tall and detailed: link to the full-size file so phone readers can zoom in. */}
+          {/* One control per graphic: tall ones get "Expand full graphic", the rest "View full size". Tapping the graphic opens the viewer either way. */}
           {tall ? <FigClamp>{pic}</FigClamp> : pic}
-          <figcaption>
-            {s.imageCredit && <span>{s.imageCredit}</span>}
-            <a href={s.image} target="_blank" rel="noreferrer" data-lightbox={s.imageAlt || s.title}>
-              View full size ↗
-            </a>
-          </figcaption>
+          {(s.imageCredit || !tall) && (
+            <figcaption>
+              {s.imageCredit && <span>{s.imageCredit}</span>}
+              {!tall && (
+                <a href={s.image} target="_blank" rel="noreferrer" data-lightbox={s.imageAlt || s.title}>
+                  View full size ↗
+                </a>
+              )}
+            </figcaption>
+          )}
         </figure>
       )}
 
