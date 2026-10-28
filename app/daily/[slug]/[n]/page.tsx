@@ -8,6 +8,8 @@ import { getContent } from "@/lib/content";
 import { relatedForStory } from "@/lib/related";
 import { entitiesForStory } from "@/lib/entities";
 import ReadTracker from "@/components/ReadTracker";
+import Listen from "@/components/Listen";
+import ShareRow from "@/components/ShareRow";
 import { topicStories } from "@/lib/topics";
 import { editions, getEdition, longDate, shortDate, slugFor, storyHref, themesOf } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
@@ -103,11 +105,18 @@ export default async function StoryPage({ params }: Props) {
           },
         ]}
       />
-      <nav className="crumbs">
-        <Link href="/daily/">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
-      </nav>
+      {/* Where the story sits, with Listen and Share on the same line (as on special reports). */}
+      <div className="st-bar">
+        <nav className="crumbs">
+          <Link href="/daily/">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
+        </nav>
+        <div className="ev-tools st-tools">
+          <Listen rootId="st-read" minutes={Math.max(1, Math.round(edition.readingMinutes / edition.stories.length))} />
+          <ShareRow url={url} slice={story.emailHead || story.title} image={story.image || undefined} compact />
+        </div>
+      </div>
       <ReadTracker date={edition.date} story={n} />
-      <div className="ev">
+      <div className="ev" id="st-read">
         <StoryCard s={story} n={n} wide full as="h1" priority id={`st-qs-${edition.date}-${n}`} date={edition.date} />
         <p className="st-more">
           <Link className="button" href={`${editionUrl}#story-${n}`}>

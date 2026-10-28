@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
  * is that voice quality depends on the reader's phone or browser, and there is no MP3 to download. The button
  * stays hidden where the browser can't speak.
  *
- * What is read: for an edition (`.ev` inside `rootId`), the headline, the numbers of the day, then each story's
+ * What is read: for an edition or a story page (`.ev` at or inside `rootId`), the headline, the numbers of the day, then each story's
  * number, headline, points, key numbers, "why it matters" and "other side"; for any other page, its headings,
  * paragraphs and list items in order, skipping navigation, buttons, captions and source lists.
  */
@@ -30,8 +30,10 @@ function editionParts(root: Element): Part[] {
   const calls = [...root.querySelectorAll(".ev-call")];
   if (calls.length) add("Numbers of the day.");
   for (const c of calls) add(`${cleanText(c.querySelector("b") || c)}: ${cleanText(c.querySelector("span") || c)}`, c);
-  for (const sec of root.querySelectorAll(".ev-section")) {
-    const h = sec.querySelector("h2");
+  // A story page has its one story card and no sections: read it as a section without a heading.
+  const sections = [...root.querySelectorAll(".ev-section")];
+  for (const sec of sections.length ? sections : [root]) {
+    const h = sections.length ? sec.querySelector("h2") : null;
     if (h) add(cleanText(h), h);
     for (const a of sec.querySelectorAll("article.ev-story")) {
       const n = cleanText(a.querySelector(".ev-num") || a);
@@ -139,7 +141,7 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
   const start = () => {
     const root = document.getElementById(rootId);
     if (!root) return;
-    const parts = (root.querySelector(".ev") ? editionParts(root) : genericParts(root)).flatMap((p) => chunks(p.text).map((t) => ({ text: t, el: p.el })));
+    const parts = (root.matches(".ev") || root.querySelector(".ev") ? editionParts(root) : genericParts(root)).flatMap((p) => chunks(p.text).map((t) => ({ text: t, el: p.el })));
     if (!parts.length) return;
     window.speechSynthesis.cancel();
     queue.current = parts;

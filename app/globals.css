@@ -780,6 +780,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .ev-has-img > .ev-foot { grid-column: 1 / -1; }
 .ev-share-sm .ev-share-one { min-height: 30px; padding: 3px 12px; font-size: 12.5px; }
 .st-page .ev-story { margin-top: 6px; }
+.st-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 16px; }
+.st-bar .crumbs { margin: 0; }
+.st-bar .st-tools { margin-top: 0; }
+.st-tools .ev-share-sm { margin: 0; padding: 0; border: 0; }
 .st-more { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
 .st-list { margin: 26px 0 0; padding: 16px 20px 6px; border-radius: 18px; background: var(--card); border: 1px solid var(--line-2); }
 .st-list h2 { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
