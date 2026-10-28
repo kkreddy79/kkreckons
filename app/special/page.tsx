@@ -81,6 +81,18 @@ export default function SpecialHub() {
           </Link>
         )}
 
+        {rest.length > 0 && (
+          <section className="sp-section" aria-labelledby="sp-all">
+            <p className="sp-lab">All reports</p>
+            <h2 id="sp-all">Newest first</h2>
+            <ul className="sp-grid">
+              {rest.map((r) => (
+                <SpecialCard key={r.slug} r={r} />
+              ))}
+            </ul>
+          </section>
+        )}
+
         <section className="sp-section" aria-labelledby="sp-why">
           <p className="sp-lab">Why read them</p>
           <h2 id="sp-why">Four promises, every report</h2>
@@ -99,18 +111,6 @@ export default function SpecialHub() {
             </span>
           </p>
         </section>
-
-        {rest.length > 0 && (
-          <section className="sp-section" aria-labelledby="sp-all">
-            <p className="sp-lab">All reports</p>
-            <h2 id="sp-all">Newest first</h2>
-            <ul className="sp-grid">
-              {rest.map((r) => (
-                <SpecialCard key={r.slug} r={r} />
-              ))}
-            </ul>
-          </section>
-        )}
 
         <p className="sp-foot">
           New special reports arrive in the daily edition first.{" "}

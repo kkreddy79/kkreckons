@@ -18,7 +18,7 @@ permissions:
 jobs:
   site:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -49,9 +49,11 @@ jobs:
           git fetch -q origin main
           if [[ "${{ github.head_ref }}" == edition/* ]]; then npm run -s qc; else npm run -s qc -- --site-change; fi
 
-      - name: Browser and accessibility check
+      # Every page on eight device sizes (phones, tablets, laptops, desktop) in Chromium, plus iPhone, tablet and
+      # laptop sizes in WebKit, the engine behind Safari on every iPhone and iPad.
+      - name: Browser, device and accessibility check
         run: |
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium webkit
           npx next start -p 3000 &
           timeout 60 bash -c 'until curl -s -o /dev/null http://localhost:3000; do sleep 1; done'
           npm run -s site-check
