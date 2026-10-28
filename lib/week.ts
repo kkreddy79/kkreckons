@@ -26,7 +26,7 @@ export function thisWeek() {
     title: s.title,
     teaser: teaserFrom(s.why),
     // Newer graphics have small WebP copies beside them (see FullStory.imageW); older ones only the original.
-    thumb: s.image ? (s.imageW ? s.image.replace(/\.[a-z]+$/, "-sm.webp") : s.image) : "",
+    thumb: s.image ? (s.imageW ? s.image.replace(/\.[a-z]+$/, "-th.webp") : s.image) : "",
     href: `/daily/${slugFor(s.date)}/${s.n}`,
   }));
   return { start, end, days, editions: days.length, picks };

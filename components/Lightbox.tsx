@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
  */
 export default function Lightbox() {
   const ref = useRef<HTMLDialogElement>(null);
-  const [img, setImg] = useState<{ src: string; alt: string } | null>(null);
+  const [img, setImg] = useState<{ src: string; original: string; alt: string } | null>(null);
   const [zoom, setZoom] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,9 @@ export default function Lightbox() {
       const a = (ev.target as Element).closest?.("a[data-lightbox]") as HTMLAnchorElement | null;
       if (!a) return;
       ev.preventDefault();
-      setImg({ src: a.getAttribute("href")!, alt: a.dataset.lightbox || "" });
+      // Show the 1600px WebP where there is one (data-lightbox-src); "Open in new tab" keeps the original.
+      const original = a.getAttribute("href")!;
+      setImg({ src: a.dataset.lightboxSrc || original, original, alt: a.dataset.lightbox || "" });
       setZoom(false);
     };
     document.addEventListener("click", onClick);
@@ -44,7 +46,7 @@ export default function Lightbox() {
             <button type="button" onClick={() => setZoom(!zoom)}>
               {zoom ? "Fit to screen" : "Zoom in"}
             </button>
-            <a href={img.src} target="_blank" rel="noreferrer">
+            <a href={img.original} target="_blank" rel="noreferrer">
               Open in new tab ↗
             </a>
             <button type="button" className="lb-close" onClick={() => ref.current?.close()} aria-label="Close">

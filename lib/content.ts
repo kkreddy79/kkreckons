@@ -14,7 +14,7 @@ export type FullStory = {
   other: string;
   also: { title: string; url: string }[];
   image: string;
-  /** Original size of `image`; WebP copies sit beside it as `-sm.webp` (640px), `-md.webp` (860px) and `-lg.webp` (full width). */
+  /** Original size of `image`; WebP copies sit beside it as `-sm.webp` (640px), `-md.webp` (860px) and `-lg.webp` (full width), plus a 184×240 thumbnail, `-th.webp`. */
   imageW?: number;
   imageH?: number;
   imageAlt: string;
