@@ -56,6 +56,9 @@ export type EditionContent = {
   /** A pointer to a KKReckons special report (/special/<slug>): a banner after the numbers of the day, and one line in the email.
    *  Not a news link, so it may appear in more than one edition and isn't counted as a used article. */
   special?: SpecialPointer;
+  /** KK's takeaway for the day: two short beats for the email ("Less air." / "More bill.") and one plain sentence that
+   *  says what the day's headline is about, shown under it on the site. */
+  takeaway?: { a: string; b: string; line: string };
 };
 
 export type SpecialPointer = { kicker: string; title: string; intro: string; url: string; cta: string };

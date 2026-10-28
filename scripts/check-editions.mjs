@@ -6,6 +6,9 @@
 //   - for any image, a declared origin (`figcredit` in the newsletter data);
 //   - only http(s) links (sources, further reading, numbers of the day);
 //   - a `follows` (follow-up) that points to an earlier story that exists.
+// Each edition (from CONTEXT_FROM) needs a headline (`slice`) of at most MAX_SLICE_CHARS characters, so it sets in two
+// lines on a laptop, and a takeaway `line` of at most MAX_CONTEXT_WORDS words: the plain sentence shown under the
+// headline that says what the wordplay is about.
 // Headlines that look like an earlier story, and images without alt text, are listed for review (warning only).
 //
 // Usage: npm run check                (all editions)
@@ -81,6 +84,9 @@ const stressCandidate = (s) => {
 const suggested = [];
 // Paywalled stories with no free version (info only; editions from when the `free` field arrived).
 const FREE_FROM = "2026-10-24";
+const CONTEXT_FROM = "2026-10-26";
+const MAX_SLICE_CHARS = 110;
+const MAX_CONTEXT_WORDS = 40;
 const noFree = [];
 const vague = [];
 // Further-reading titles that only name a platform or format ("Video (YouTube)", "Link") tell readers nothing.
@@ -163,6 +169,12 @@ for (const date of dates) {
     if (used.has(k)) flag(date, `Further reading "${r.title}"`, "duplicate", `repeats an article already used in ${used.get(k)}`);
     else used.set(k, `${date} further reading "${r.title}"`);
     if (!named.has(host(r.url))) unnamed.add(host(r.url));
+  }
+  if (date >= CONTEXT_FROM) {
+    if ((c.slice || "").length > MAX_SLICE_CHARS) flag(date, "Headline", "headline", `the slice is ${c.slice.length} characters (limit ${MAX_SLICE_CHARS}), more than two lines on a laptop`);
+    const line = c.takeaway?.line || "";
+    if (!line) flag(date, "Headline", "headline", "needs a takeaway line: the plain sentence under the headline that gives it context");
+    else if (words(line) > MAX_CONTEXT_WORDS) flag(date, "Headline", "headline", `the takeaway line is ${words(line)} words (limit ${MAX_CONTEXT_WORDS})`);
   }
   for (const k of c.callouts || []) if (k.url && !webLink(k.url)) flag(date, `Number "${k.num}"`, "link", `link isn't an http(s) web address: ${k.url.slice(0, 60)}`);
   // The special-report pointer: a real link, and when it points at /special/<slug> here, a report that exists (the banner must never 404).

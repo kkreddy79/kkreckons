@@ -27,6 +27,8 @@ function editionParts(root: Element): Part[] {
   const add = (text: string, el: Element | null = null) => text && parts.push({ text, el });
   const slice = root.querySelector(".ev-slice");
   if (slice) add(cleanText(slice), slice);
+  const dek = root.querySelector(".ev-dek");
+  if (dek) add(cleanText(dek), dek);
   const calls = [...root.querySelectorAll(".ev-call")];
   if (calls.length) add("Numbers of the day.");
   for (const c of calls) add(`${cleanText(c.querySelector("b") || c)}: ${cleanText(c.querySelector("span") || c)}`, c);

@@ -453,6 +453,8 @@ export default function EditionView({
           </span>
         </p>
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
+        {/* The slice is a wordplay line; the takeaway sentence under it says plainly what the day is about. */}
+        {e.takeaway?.line && <p className="ev-dek">{e.takeaway.line}</p>}
         <div className="ev-tools">
           <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
           <Listen rootId={`ev-${e.date}`} minutes={e.readingMinutes} />
