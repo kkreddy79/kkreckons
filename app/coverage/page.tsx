@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Banner from "@/components/Banner";
 import SubscribeBox from "@/components/SubscribeBox";
+import Listen from "@/components/Listen";
+import ShareRow from "@/components/ShareRow";
 import { entities } from "@/lib/entities";
 import { longDate } from "@/lib/editions";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "In the news: companies, institutions and people",
@@ -22,11 +25,15 @@ export default function CoverageIndex() {
   return (
     <main className="cu">
       <Banner />
-      <div className="cu-wrap">
+      <div className="cu-wrap" id="cv-read">
         <section className="cu-hero" aria-labelledby="cvi-title">
           <p className="ab-kicker">In the news</p>
           <h1 id="cvi-title">The names behind the stories.</h1>
           <p className="cu-lede">Companies, institutions and people that keep coming up, each with every story that mentions them.</p>
+          <div className="ev-tools">
+            <ShareRow url={`${SITE_URL}/coverage`} slice="KKReckons: the names behind the stories" />
+            <Listen rootId="cv-read" minutes={Math.max(1, Math.round(all.length * 0.3))} />
+          </div>
         </section>
         {KINDS.map(([kind, label]) => {
           const list = all.filter((x) => x.kind === kind);
