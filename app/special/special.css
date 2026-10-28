@@ -88,7 +88,7 @@
 .sp-bar .crumbs a { color: var(--sp-teal); font-weight: 600; }
 .sp-bar .crumbs span { margin: 0 6px; }
 .sp-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.sp .ev-share { margin-top: 0; }
+.sp .ev-share { margin: 0; padding: 0; border: 0; }
 .sp-more { margin-top: 8px; }
 .sp-more .sp-lab { color: var(--sp-teal); }
 .sp-more h2 { margin: 6px 0 16px; font-size: clamp(24px, 3vw, 32px); }

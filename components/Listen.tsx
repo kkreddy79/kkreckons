@@ -178,7 +178,7 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
   return (
     <div className={`ev-listen${state !== "idle" ? " ev-listen-on" : ""}`} role="group" aria-label="Listen to this page">
       {state === "idle" ? (
-        <button type="button" onClick={start} title="Read aloud by your device's own voice">
+        <button type="button" className="ev-listen-go" onClick={start} title="Read aloud by your device's own voice">
           <SpeakerIcon />
           Listen{spoken ? <span> · ~{spoken} min</span> : null}
         </button>
@@ -206,10 +206,17 @@ export default function Listen({ rootId, minutes }: { rootId: string; minutes?: 
 }
 
 function SpeakerIcon() {
+  // Headphones with a little equaliser between the ear cups; the bars dance on hover (CSS, .ev-eq).
   return (
-    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 10v4h3l4 3V7L7 10H4z" />
-      <path d="M15 9.5a3.5 3.5 0 0 1 0 5M17.5 7a7 7 0 0 1 0 10" />
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3.5 17v-4.5a8.5 8.5 0 0 1 17 0V17" />
+      <rect x="2.5" y="14" width="4" height="6.5" rx="1.6" fill="currentColor" stroke="none" />
+      <rect x="17.5" y="14" width="4" height="6.5" rx="1.6" fill="currentColor" stroke="none" />
+      <g className="ev-eq" strokeWidth="1.8">
+        <path d="M10 15.5v3" />
+        <path d="M12 13.5v7" />
+        <path d="M14 15v4" />
+      </g>
     </svg>
   );
 }
