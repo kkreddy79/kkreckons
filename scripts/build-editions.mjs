@@ -122,6 +122,7 @@ function normalise(html) {
 // to a file in neither place is an error: the image would be lost.
 const keptDir = path.join(root, "newsletters", "figs-kept");
 const pointed = new Set();
+const restored = new Set();
 let missingStored = 0;
 function storedFig(ref) {
   const m = /^kkreckons-fig:(\/figs\/[\w.-]+)$/.exec(ref || "");
@@ -131,6 +132,7 @@ function storedFig(ref) {
   if (fs.existsSync(path.join(figsDir, name))) return m[1];
   if (fs.existsSync(path.join(keptDir, name))) {
     fs.copyFileSync(path.join(keptDir, name), path.join(figsDir, name));
+    restored.add(name);
     return m[1];
   }
   console.error(`Missing stored image ${m[1]}: the newsletter points to it, but neither public/figs nor newsletters/figs-kept has it.`);
@@ -192,10 +194,14 @@ function fileHead(file) {
   fs.closeSync(fd);
   return buf.subarray(0, n).toString("latin1");
 }
+const MAX_ORIGINAL = 1600;
 async function creditStrip(file) {
   if (isCredited(file)) return false;
-  const src = fs.readFileSync(file);
-  const hash = sourceHash(src);
+  const raw = fs.readFileSync(file);
+  const hash = sourceHash(raw);
+  // Stored at most 1600px wide (the largest size the site shows; graphics arrive 2160px wide). Images credited
+  // before this cap stay as they are: their URLs are in sent emails.
+  const src = (await sharp(raw).metadata()).width > MAX_ORIGINAL ? await sharp(raw).resize({ width: MAX_ORIGINAL }).toBuffer() : raw;
   const { width, height } = await sharp(src).metadata();
   const h = Math.max(30, Math.round(width * 0.04));
   const size = Math.round(h * 0.42);
@@ -215,7 +221,7 @@ async function creditStrip(file) {
     .composite([{ input: src, top: 0, left: 0 }, { input: Buffer.from(svg), top: height, left: 0 }])
     .withExif({ IFD0: { Copyright: COPYRIGHT, Artist: "KKReckons (kkreckons.com)", ImageDescription: `src:${hash}` } });
   const ext = path.extname(file).toLowerCase();
-  const buf = await (ext === ".png" ? out.png({ compressionLevel: 9 }) : ext === ".webp" ? out.webp({ quality: 90 }) : out.jpeg({ quality: 88, mozjpeg: true })).toBuffer();
+  const buf = await (ext === ".png" ? out.png({ compressionLevel: 9 }) : ext === ".webp" ? out.webp({ quality: 90 }) : out.jpeg({ quality: 82, mozjpeg: true })).toBuffer();
   fs.writeFileSync(file, buf);
   return true;
 }
@@ -549,7 +555,10 @@ for (const f of fs.readdirSync(figsDir)) {
   if (usedFigs.has(f)) continue;
   // A stored newsletter's only copy of an image: keep it off the site but in the repo, so lifting the override
   // brings it back.
-  if (pointed.has(f)) {
+  if (restored.has(f)) {
+    // Still hidden: the kept copy is already there.
+    fs.unlinkSync(path.join(figsDir, f));
+  } else if (pointed.has(f)) {
     fs.mkdirSync(keptDir, { recursive: true });
     fs.renameSync(path.join(figsDir, f), path.join(keptDir, f));
     console.log(`Moved hidden image public/figs/${f} to newsletters/figs-kept/`);

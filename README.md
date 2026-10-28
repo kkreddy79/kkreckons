@@ -26,12 +26,15 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
 
 ## How editions are stored
 - `newsletters/YYYY-MM-DD.html` — the original newsletter HTML, kept as the source only (not served on the site).
-  From 25 Oct 2026 each is stored without its images: once `npm run editions` has saved them to `public/figs/`,
-  the publish command swaps each one for a `kkreckons-fig:/figs/<file>` pointer (about 2.7 MB → 0.1 MB a day).
-  Earlier newsletters stay as published; the claude.ai artifact keeps every original.
+  Each is stored without its images and embedded fonts: once `npm run editions` has saved the images to
+  `public/figs/`, the publish command swaps each one for a `kkreckons-fig:/figs/<file>` pointer (about 2.7 MB → 0.1 MB
+  a day; the newsletters up to 24 Oct were stripped the same way on 28 Oct). The claude.ai artifact keeps every
+  original. An image hidden or removed with an edition-meta override is kept off the site in `newsletters/figs-kept/`,
+  so lifting the override brings it back.
 - `data/content/YYYY-MM-DD.json` — each edition's stories, numbers, why it matters, other side, sources and further reading, generated
 - `data/editions.json` — the index used by the archive and home page, generated
-- `public/figs/` — story images pulled out of the newsletters, generated
+- `public/figs/` — story images pulled out of the newsletters (stored at most 1600px wide from 28 Oct), with WebP
+  copies (`-sm`, `-md`, `-lg`) and a 184×240 list thumbnail (`-th`), generated
 - `data/edition-meta.json` — hand-edited extras per date: `artifact` (link to the interactive version) and an optional `slice` override
 - `data/weekly/YYYY-MM-DD.json` — the written parts of a weekly issue (`oneMinute`, `history`, `andFinally`), dated the
   week's last day. With one, `/week` and the Friday email become a numbered issue (the week in one minute, the best

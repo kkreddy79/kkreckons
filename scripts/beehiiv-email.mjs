@@ -43,17 +43,18 @@ const monthName = cap(MONTHS[m - 1]);
 const longDate = longDateOf(date);
 const pageUrl = `${SITE}/daily/${slugFor(date)}`;
 
-/** Cut the circle illustration (top right of every explainer graphic) into a 160px square. */
+/** Cut the circle illustration (top right of every explainer graphic) into an 88px square. */
 async function thumbnail(src, dest) {
   const img = sharp(src);
   const { width } = await img.metadata();
-  const k = width / 2160; // graphics are laid out on a 2160px-wide canvas
+  const k = width / 2160; // graphics are laid out on a 2160px-wide canvas (stored at up to 1600px; the box scales)
   const box = { left: Math.round(1463 * k), top: Math.round(87 * k), width: Math.round(617 * k), height: Math.round(617 * k) };
-  // Round with transparent corners, so it sits cleanly on any card or page colour.
-  const mask = Buffer.from('<svg width="160" height="160"><circle cx="80" cy="80" r="79" fill="#fff"/></svg>');
+  // Round with transparent corners, so it sits cleanly on any card or page colour. 88px: shown at 44px, twice
+  // that for sharp phone screens.
+  const mask = Buffer.from('<svg width="88" height="88"><circle cx="44" cy="44" r="43.5" fill="#fff"/></svg>');
   await img
     .extract(box)
-    .resize(160, 160)
+    .resize(88, 88)
     .composite([{ input: mask, blend: "dest-in" }])
     .png({ compressionLevel: 9, palette: true })
     .toFile(dest);
