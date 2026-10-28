@@ -66,8 +66,8 @@ export default async function CardsPage({ params }: Props) {
   const cards = stories.map((s, i) => ({ s, n: i + 1 })).filter(({ s }) => s.image);
   return (
     <main className="ev-wrap ev-page">
-      <nav className="crumbs">
-        <Link href="/daily/">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Cards
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <Link href="/daily">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Cards
       </nav>
       <header className="cards-head">
         <h1>The day in {cards.length} cards</h1>
@@ -92,7 +92,7 @@ export default async function CardsPage({ params }: Props) {
         <Link className="button" href={editionUrl}>
           Read the full {shortDate(edition.date)} edition →
         </Link>
-        <Link className="button alt" href="/daily/">
+        <Link className="button alt" href="/daily">
           Catch up on past editions
         </Link>
       </p>

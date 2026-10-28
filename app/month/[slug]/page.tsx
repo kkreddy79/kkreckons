@@ -104,7 +104,7 @@ export default async function Month({ params }: { params: Promise<{ slug: string
           {newer && <Link href={`/month/${monthSlug(newer)}`}>Best of {monthRoundup(newer).label} →</Link>}
         </nav>
         <p className="tp-more">
-          Want everything? <Link href="/daily/">Catch up on every edition →</Link>
+          Want everything? <Link href="/daily">Catch up on every edition →</Link>
         </p>
         <SubscribeBox />
       </div>

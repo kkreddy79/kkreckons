@@ -103,8 +103,8 @@ export default async function StoryPage({ params }: Props) {
           },
         ]}
       />
-      <nav className="crumbs">
-        <Link href="/daily/">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <Link href="/daily">Catch up</Link> <span>/</span> <Link href={editionUrl}>{longDate(edition.date)}</Link> <span>/</span> Story {n}
       </nav>
       <ReadTracker date={edition.date} story={n} />
       <div className="ev">
@@ -113,7 +113,7 @@ export default async function StoryPage({ params }: Props) {
           <Link className="button" href={`${editionUrl}#story-${n}`}>
             Read the full {shortDate(edition.date)} edition →
           </Link>
-          <Link className="button alt" href="/daily/">
+          <Link className="button alt" href="/daily">
             Catch up on past editions
           </Link>
         </p>

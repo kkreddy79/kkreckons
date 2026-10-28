@@ -103,7 +103,7 @@ export default function ArchiveBrowser({
     setThemeState("");
     setSource("");
     setFree(false);
-    window.history.replaceState(null, "", "/daily/");
+    window.history.replaceState(null, "", "/daily");
   };
   const setTheme = (t: string) => setParam("theme", t !== theme ? t : "");
 

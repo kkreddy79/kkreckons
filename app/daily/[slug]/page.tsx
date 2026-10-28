@@ -106,8 +106,8 @@ export default async function EditionPage({ params }: Props) {
   return (
     <main className="ev-wrap ev-page">
       <JsonLd data={ld} />
-      <nav className="crumbs">
-        <Link href="/daily/">Catch up</Link> <span>/</span> {longDate(edition.date)}
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <Link href="/daily">Catch up</Link> <span>/</span> {longDate(edition.date)}
       </nav>
 
       <EditionView e={content} showDate={false} related={relatedFor(edition.date)} prevStressScore={prevStressScore} />
