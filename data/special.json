@@ -1,7 +1,7 @@
 [
   {
     "slug": "claude-at-work",
-    "title": "Claude at work: the receipts",
+    "title": "From trading desks to brunch kitchens: Claude's 26 receipts",
     "kicker": "AI at work",
     "dek": "26 Claude use cases from Anthropic's S-1, the measured gains, and the evidence that cuts the other way.",
     "blurb": "Anthropic's IPO filing shows Claude inside 26 organisations, from AIG's underwriters to a Boston brunch kitchen. What it saved, where the gains are biggest, and what the numbers can't tell you.",
@@ -10,7 +10,7 @@
     "reading_minutes": 9,
     "file": "special/claude-at-work.html",
     "cover": "/special/claude-at-work.jpg",
-    "cover_alt": "Claude at work: the receipts. A navy-to-dusk sky over a city skyline, with the KKReckons special report kicker.",
+    "cover_alt": "From trading desks to brunch kitchens: Claude's 26 receipts. A navy-to-dusk sky over a city skyline, with the KKReckons special report kicker.",
     "sources": [
       "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
       "https://www.anthropic.com/news/s1-sec",

@@ -19,7 +19,9 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .sp { --sp-paper: #121A23; --sp-card: #1B2633; --sp-ink: #ECE7DC; --sp-text: #DCD8D0; --sp-mute: #A6AFB9; --sp-line: #2E3B4A; --sp-brick: #E0725F; --sp-ochre: #E6B04A; --sp-teal: #6FB3BF; --sp-sand: #26303B; --sp-blush: #2E2628; --sp-mint: #1F3134; }
 }
-.sp h1, .sp h2, .sp h3 { font-family: var(--sp-serif); color: var(--sp-ink); margin: 0; text-wrap: balance; }
+/* The hub's and the page chrome's headings only: a report styles its own (a light headline on its dark hero would
+   otherwise take this dark ink and vanish). */
+:where(.sp :is(h1, h2, h3):not(.sp-report *)) { font-family: var(--sp-serif); color: var(--sp-ink); margin: 0; text-wrap: balance; }
 .sp-wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .sp-lab { font: 600 12px/1.3 var(--sp-sans); letter-spacing: 0.12em; text-transform: uppercase; }
 
