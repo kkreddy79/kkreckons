@@ -158,55 +158,15 @@ export function sourceName(url: string) {
   }
 }
 
-const MONTHS = [
-  "january", "february", "march", "april", "may", "june",
-  "july", "august", "september", "october", "november", "december",
-];
-const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+import { slugFor, longDate, shortDate, weekday, monthLabel } from "@/lib/dates.mjs";
 
-function parts(date: string) {
-  const [y, m, d] = date.split("-").map(Number);
-  return { y, m, d, weekday: WEEKDAYS[new Date(Date.UTC(y, m - 1, d)).getUTCDay()] };
-}
+// The date helpers live in lib/dates.mjs so the scripts use the same slugs and formats.
+export { slugFor, longDate, shortDate, weekday, monthLabel };
 
-const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
-
-/** 2026-09-30 → september-30-2026 */
-export function slugFor(date: string) {
-  const { y, m, d } = parts(date);
-  return `${MONTHS[m - 1]}-${d}-${y}`;
-}
-
-/** 2026-09-30 → Wednesday, 30 September 2026 */
-export function longDate(date: string) {
-  const { y, m, d, weekday } = parts(date);
-  return `${weekday}, ${d} ${cap(MONTHS[m - 1])} ${y}`;
-}
-
-/** 2026-09-30 → 30 Sep */
-export function shortDate(date: string) {
-  const { m, d } = parts(date);
-  return `${d} ${cap(MONTHS[m - 1]).slice(0, 3)}`;
-}
-
-export function weekday(date: string) {
-  return parts(date).weekday;
-}
-
-/** 2026-09-30 → September 2026 */
-export function monthLabel(date: string) {
-  const { y, m } = parts(date);
-  return `${cap(MONTHS[m - 1])} ${y}`;
-}
-
-export function sectionsOf(e: Edition) {
-  const out: { name: string; stories: Story[] }[] = [];
-  for (const s of e.stories) {
-    const last = out[out.length - 1];
-    if (last && last.name === s.section) last.stories.push(s);
-    else out.push({ name: s.section, stories: [s] });
-  }
-  return out;
+/** Cut text to at most `max` characters at a word break, with an ellipsis. */
+export function clip(s: string, max: number) {
+  if (s.length <= max) return s;
+  return s.slice(0, s.lastIndexOf(" ", max - 1)).replace(/[;,:·]$/, "").trim() + "…";
 }
 
 /** Broad themes for browsing, matched against story categories and titles. */

@@ -1,9 +1,11 @@
 import { getContent } from "@/lib/content";
+import { thumbOf } from "@/lib/figs";
 import { editions, monthLabel, slugFor, themesOf } from "@/lib/editions";
 import { teaserFrom } from "@/lib/weekly-picks.mjs";
+import { monthSlug } from "@/lib/dates.mjs";
 
 /** "2026-10" → "october-2026" */
-export const monthSlug = (ym: string) => monthLabel(`${ym}-01`).toLowerCase().replace(" ", "-");
+export { monthSlug };
 
 /** Months with at least one edition, newest first, as "YYYY-MM". */
 export const months = [...new Set(editions.map((e) => e.date.slice(0, 7)))];
@@ -26,7 +28,7 @@ export function monthRoundup(ym: string) {
       head: s.emailHead || s.title,
       title: s.title,
       teaser: teaserFrom(s.why),
-      thumb: s.image ? (s.imageW ? s.image.replace(/\.[a-z]+$/, "-sm.webp") : s.image) : "",
+      thumb: thumbOf(s),
       href: `/daily/${slugFor(e.date)}/${i + 1}`,
       slice: e.slice,
     };

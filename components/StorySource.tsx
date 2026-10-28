@@ -25,7 +25,7 @@ export function storyHover(s: SourceStory) {
 }
 
 /** The story's source links, each marked paid or free. A free version, when given, comes last. */
-export function sourceLinks(s: SourceStory) {
+function sourceLinks(s: SourceStory) {
   const links: { href: string; name: string; paid: boolean; free?: boolean }[] = [];
   if (s.url && sourceName(s.url)) links.push({ href: s.url, name: s.src || publisherName(s.url), paid: s.pay ?? isPaywalled(s.url) });
   if (s.url2) links.push({ href: s.url2, name: publisherName(s.url2), paid: links.length ? isPaywalled(s.url2) : (s.pay ?? isPaywalled(s.url2)) });

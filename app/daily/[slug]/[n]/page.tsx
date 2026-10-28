@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { clip } from "@/lib/editionFormat";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { StoryCard, storyPageUrl } from "@/components/EditionView";
 import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
@@ -34,10 +35,6 @@ async function find(params: Props["params"]) {
 }
 
 /** Cut at a word boundary so search snippets end cleanly. */
-function clip(s: string, max: number) {
-  if (s.length <= max) return s;
-  return s.slice(0, s.lastIndexOf(" ", max - 1)).replace(/[;,:·]$/, "").trim() + "…";
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const f = await find(params);

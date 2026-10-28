@@ -29,7 +29,9 @@ if (!date) {
 }
 const email = opt("--email") || path.join(".publish", `beehiiv-${date}.json`);
 const allow = args.flatMap((a, i) => (args[i - 1] === "--allow" ? ["--allow", a] : []));
-const env = { ...process.env, CHROMIUM_PATH: process.env.CHROMIUM_PATH || "/opt/pw-browsers/chromium" };
+// The cloud container's Chromium, where there is one; elsewhere Playwright's own.
+const CLOUD_CHROMIUM = "/opt/pw-browsers/chromium";
+const env = { ...process.env, ...(!process.env.CHROMIUM_PATH && fs.existsSync(CLOUD_CHROMIUM) ? { CHROMIUM_PATH: CLOUD_CHROMIUM } : {}) };
 
 const steps = [
   ["editions", "npm", ["run", "-s", "editions"]],
@@ -41,7 +43,9 @@ const steps = [
 ];
 
 fs.mkdirSync(path.dirname(path.resolve(root, email)), { recursive: true });
-fs.rmSync(path.join(root, ".next"), { recursive: true, force: true });
+// A clean build, but keep Next's compile cache (.next/cache), which a full delete threw away every time.
+const nextDir = path.join(root, ".next");
+for (const f of fs.existsSync(nextDir) ? fs.readdirSync(nextDir) : []) if (f !== "cache") fs.rmSync(path.join(nextDir, f), { recursive: true, force: true });
 
 for (const [name, cmd, argv] of steps) {
   const r = spawnSync(cmd, argv, { cwd: root, env, encoding: "utf8", maxBuffer: 1 << 26 });
@@ -52,7 +56,7 @@ for (const [name, cmd, argv] of steps) {
   }
   const lines = output.split("\n");
   const keep = {
-    editions: lines.filter((l) => l.startsWith(date) || /Removed|Wrote|Missing stored image/.test(l)),
+    editions: lines.filter((l) => l.startsWith(date) || /Removed|Moved|Wrote|Missing stored image/.test(l)),
     store: lines,
     check: lines.filter((l) => !/^\s*$/.test(l)),
     email: [`email written to ${email}`, ...lines.filter((l) => /^\d{2} · /.test(l))],

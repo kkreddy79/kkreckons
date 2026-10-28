@@ -1,10 +1,6 @@
-export const SITE_URL = "https://www.kkreckons.com";
-
-/** Krishnakanth Reddy's public profiles: linked in the footer and listed as sameAs in structured data. */
-export const PROFILES = { linkedin: "https://www.linkedin.com/in/krishnakanthreddy", x: "https://x.com/kkreddy78" };
-
-/** beehiiv's hosted sign-up page for the KKReckons publication. */
-export const SUBSCRIBE_URL = "https://kkreckons.beehiiv.com/subscribe";
+// Public links live in lib/links.ts, which browser components import without pulling in this file's
+// server settings (environment variables).
+export { PROFILES, SITE_URL, SUBSCRIBE_URL } from "@/lib/links";
 
 /** The KKReckons publication on beehiiv (an ID, not a secret), used by /api/subscribe. */
 export const BEEHIIV_PUBLICATION_ID = "pub_8ac4375a-ab66-4eff-8d3e-d8029c985186";

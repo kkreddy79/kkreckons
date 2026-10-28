@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { figVariant, webpSrcSet } from "@/lib/figs";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent, type FullStory } from "@/lib/content";
@@ -38,17 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function CardImage({ s, eager }: { s: FullStory; eager: boolean }) {
   const loading = eager ? "eager" : "lazy";
   if (!s.imageW) return <img src={s.image} alt={s.imageAlt || s.title} loading={loading} decoding="async" />;
-  const max = Math.min(s.imageW, 1600);
-  const srcSet = (
-    [
-      ["sm", 640],
-      ["md", 860],
-      ["lg", max],
-    ] as const
-  )
-    .filter(([, w]) => w <= max)
-    .map(([tag, w]) => `${s.image.replace(/\.[a-z]+$/, `-${tag}.webp`)} ${w}w`)
-    .join(", ");
+  const srcSet = webpSrcSet(s.image!, s.imageW);
   return (
     <picture>
       <source type="image/webp" srcSet={srcSet} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 520px" />
@@ -78,7 +69,7 @@ export default async function CardsPage({ params }: Props) {
       <ol className="cards-grid">
         {cards.map(({ s, n }, i) => (
           <li key={n} className="cards-item">
-            <a href={s.image} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} aria-label={`Open the card for “${s.title}” full size`}>
+            <a href={s.image} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? figVariant(s.image!, "lg") : undefined} aria-label={`Open the card for “${s.title}” full size`}>
               <CardImage s={s} eager={i < 2} />
             </a>
             <Link href={`${editionUrl}/${n}`} className="cards-title">

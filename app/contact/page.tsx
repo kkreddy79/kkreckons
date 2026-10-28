@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { CORRECTIONS_EMAIL, SUBSCRIBE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
