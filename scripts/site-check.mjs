@@ -109,16 +109,28 @@ function inspect({ touch }) {
   for (const el of document.querySelectorAll(".site-header a, .site-header button, a.chip, button.chip, .ev-share a, .ev-share button, .hdr-sub, .ab-btn, .sp-go, .ev-sx-cta, .ev-sp-cta, .ev-listen button")) {
     const text = (el.textContent || "").trim();
     if (!visible(el) || !text || text.split(/\s+/).length > 4) continue;
-    // Lines of text only (an icon beside the label is not a second line).
+    // Lines of text only (an icon beside the label is not a second line). A text box starts a new line when its top is
+    // more than half a line below the current line's top, so a smaller count beside a label ("AI 101") is one line.
     const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-    const lines = new Set();
+    const boxes = [];
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       if (!n.textContent.trim()) continue;
       const range = document.createRange();
       range.selectNodeContents(n);
-      for (const r of range.getClientRects()) if (r.width > 1) lines.add(Math.round((r.top + r.bottom) / 2 / 6));
+      for (const r of range.getClientRects()) if (r.width > 1) boxes.push(r);
     }
-    if (lines.size > 1) out.wrapped.push(label(el));
+    boxes.sort((a, b) => a.top - b.top);
+    let lines = 0;
+    let top = -Infinity;
+    let half = 0;
+    for (const r of boxes) {
+      if (r.top > top + half) {
+        lines += 1;
+        top = r.top;
+        half = r.height / 2;
+      }
+    }
+    if (lines > 1) out.wrapped.push(label(el));
   }
 
   // Tap targets on touch screens. Links inside running text are exempt (WCAG 2.5.8 inline exception).
