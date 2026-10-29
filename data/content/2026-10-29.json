@@ -166,7 +166,7 @@
           "other": "He is not a neutral observer: Snowflake sells data and AI services. And contract-backed cash flows that lenders treat as safe are only as strong as the labs signing them.",
           "also": [],
           "image": "/figs/2026-10-29-4.jpg",
-          "imageAlt": "Explainer: in Ramaswamy's example a 30% revenue miss shrinks a $50 spread to $5; Anthropic's compute cost fell from 201% to 55% of sales, as cited in his thread.",
+          "imageAlt": "Explainer, \"Buy compute for years. Sell it by the token.\": in Ramaswamy's example a 30% revenue miss shrinks a $50 spread to $5; Anthropic's compute cost fell from 201% to 55% of sales, as cited in his thread.",
           "imageCredit": "Original graphic: KKReckons",
           "src": "Sridhar Ramaswamy on X",
           "pay": false,
@@ -178,8 +178,8 @@
           "emailTeaser": "Why a 30% miss turns $50 into $5 for AI labs",
           "cite": "Sridhar Ramaswamy wrote on 27 October 2026 that Anthropic's compute expense was 55% of sales, against 201% a year earlier.",
           "stressIndex": true,
-          "imageW": 1280,
-          "imageH": 1710
+          "imageW": 1600,
+          "imageH": 2908
         },
         {
           "category": "Fed and markets",
