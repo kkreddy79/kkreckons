@@ -395,8 +395,6 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-src { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 12px 0 0; padding-top: 12px; border-top: 1px solid var(--line-2); font-size: 13px; font-weight: 800; }
 .ev-src a { color: var(--teal-text); display: inline-block; padding-block: 12px; margin-block: -7px; } /* ≥24px tap target */
 .ev-src a:hover { text-decoration: underline; }
-.ev-lock { display: inline-flex; vertical-align: -1px; margin-left: 4px; color: var(--paid-text); }
-.ev-lock-ic { width: 12px; height: 12px; }
 /* "Free sources only": hide paywalled links and say when a story has no free version. */
 .ev-qs-btn { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--lilac-line-b); background: var(--lilac-b); color: var(--violet); font: 800 12.5px var(--sans); cursor: pointer; }
 .ev-qs-btn:hover { background: var(--lilac-2); }
@@ -879,7 +877,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .ev-30s a .ev-mark { margin-left: auto; align-self: center; }
 .ev-mark-sm { width: 18px; height: 18px; }
 .ev-mark-sm svg { width: 10px; height: 10px; }
-.ev-src a .ev-mark { margin-left: 5px; vertical-align: middle; }
+.ev-src a .ev-mark, .ev-reading small .ev-mark { margin-left: 5px; vertical-align: middle; }
 .ev-30s-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px; margin: 0 0 6px; }
 .ev-30s-head h2 { margin: 0; }
 .ev-30s-key { display: flex; gap: 14px; margin: 0; font-size: 12.5px; font-weight: 700; color: var(--text3); }
