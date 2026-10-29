@@ -422,5 +422,19 @@
         "special": true
       }
     }
+  },
+  "2026-10-29": {
+    "artifact": "https://claude.ai/artifact/T1n5SUS4MuirWCoqhZtHmu",
+    "stressIndex": {
+      "score": 23,
+      "band": "Normal",
+      "asOf": "2026-10-28"
+    },
+    "stories": {
+      "Fed holds rates steady; markets read Warsh as wary of more hikes": {
+        "freeUrl": "https://www.axios.com/2026/10/28/fed-warsh-interest-rates-cook",
+        "freeSrc": "Axios"
+      }
+    }
   }
 }
