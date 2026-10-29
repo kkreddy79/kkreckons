@@ -27,6 +27,8 @@ export type Edition = {
 
 const PUBLISHERS: Record<string, string> = {
   "sec.gov": "SEC",
+  "thenightly.com.au": "The Nightly",
+  "anthropic.com": "Anthropic",
   "securityweek.com": "SecurityWeek",
   "pingcap.com": "PingCAP",
   "nber.org": "NBER",

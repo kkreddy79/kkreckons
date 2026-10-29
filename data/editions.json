@@ -1,5 +1,93 @@
 [
   {
+    "date": "2026-10-29",
+    "slice": "Labs lease chips, bots brew drugs, Fed waits, China chills, Norway frets. Oddballs win.",
+    "artifact": "https://claude.ai/artifact/T1n5SUS4MuirWCoqhZtHmu",
+    "readingMinutes": 7,
+    "image": "/figs/2026-10-29-1.jpg",
+    "cover": "/figs/2026-10-29-cover.jpg",
+    "coverAlt": "Labs lease chips, bots brew drugs, Fed waits, China chills, Norway frets. Oddballs win.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "What makes a great investor: luck and an unusual temperament",
+        "category": "Investing",
+        "tag": "Opinion",
+        "url": "https://www.economist.com/finance-and-economics/2026/08/25/what-makes-a-great-investor",
+        "src": "The Economist",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Norway weighs if its $2.3tn oil fund can drop Big Tech on ethics",
+        "category": "Sovereign wealth",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/b0e32e1b-20f2-46f1-a931-6b1acfeb242e?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Anthropic says Claude drafted 35,000 antibody designs in a month",
+        "category": "AI in drug discovery",
+        "tag": "",
+        "url": "https://www.anthropic.com/research/early-progress-drug-development",
+        "src": "Anthropic",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Snowflake CEO: AI labs risk a capacity bust, not a bank run",
+        "category": "AI economics",
+        "tag": "Opinion",
+        "url": "https://x.com/ramaswmysridhar/status/2115159277887435023",
+        "src": "Sridhar Ramaswamy on X",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Fed holds rates steady; markets read Warsh as wary of more hikes",
+        "category": "Fed and markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/the-fed-held-steady-on-rates-leaving-investors-to-sit-tight-too-9c77723b",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "China's inflation stays low as an energy shock lifts prices elsewhere",
+        "category": "China economy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/economy/china-inflation-weak-demand-property-crisis-global-economy-11793163994046.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-28",
     "slice": "China pops, credit wheezes, zombies nap, waists shrink, kids unplug. Capex keeps eating.",
     "artifact": "https://claude.ai/artifact/W21SrNjwzayBoQSwhQStEQ",

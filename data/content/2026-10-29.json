@@ -1,0 +1,538 @@
+{
+  "date": "2026-10-29",
+  "slice": "Labs lease chips, bots brew drugs, Fed waits, China chills, Norway frets. Oddballs win.",
+  "artifact": "https://claude.ai/artifact/T1n5SUS4MuirWCoqhZtHmu",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "35,000",
+      "text": "antibody designs drafted by Claude in about a month for a food-allergy drug",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development"
+    },
+    {
+      "num": "0.9%",
+      "text": "China's inflation in September, against 5.5% in India and 3.7% in the US",
+      "url": "https://www.livemint.com/economy/china-inflation-weak-demand-property-crisis-global-economy-11793163994046.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Investing",
+          "tag": "Opinion",
+          "title": "What makes a great investor: luck and an unusual temperament",
+          "url": "https://www.economist.com/finance-and-economics/2026/08/25/what-makes-a-great-investor",
+          "url2": "",
+          "points": [
+            "The Economist's Buttonwood column revisits the 1992 bet against the pound, when George Soros told Stanley Druckenmiller to double a $5.5bn position, and argues luck mattered as much as nerve: other traders could have sided with the Bank of England.",
+            "It notes analysts can be wrong often and still look excellent, and styles such as value investing fall out of favour for years; Cliff Asness stuck with his quant strategies until they worked again.",
+            "Its verdict: greatness needs stubbornness plus the oddity to change your mind, a rare mix, so most savers may do better with an index fund."
+          ],
+          "numbers": [
+            [
+              "$5.5bn",
+              "pound bet Soros wanted doubled, 1992"
+            ]
+          ],
+          "why": "Track records reward the survivors we hear about; telling skill from luck is the key question before paying any manager a premium fee.",
+          "other": "Calling winners lucky can be too easy: decades of success, like Soros's, point to judgement and risk control, not just dice.",
+          "also": [],
+          "image": "/figs/2026-10-29-1.jpg",
+          "imageAlt": "Explainer: great investors need luck and an odd temperament, as the $5.5bn 1992 bet on the pound shows.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economist",
+          "pay": true,
+          "freeUrl": "https://thenightly.com.au/business/the-economist-what-makes-a-great-investor-luck-nerve-and-a-distinctly-weird-personality-help-c-22777681",
+          "freeSrc": "The Nightly",
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "Lucky, odd and rich",
+          "emailTeaser": "Why great investors need luck and a strange temperament",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Sovereign wealth",
+          "tag": "Opinion",
+          "title": "Norway weighs if its $2.3tn oil fund can drop Big Tech on ethics",
+          "url": "https://www.ft.com/content/b0e32e1b-20f2-46f1-a931-6b1acfeb242e?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "An FT column says Norway is drafting proposals on how its oil fund should handle ethics, after its exit from Caterpillar over links to Israel's alleged violations angered US politicians close to President Trump.",
+            "An expert group suggested allowing investment in nuclear-weapons makers in the US, UK and France, and weighing diversification before any exclusion. Central bank research found dropping Alphabet, Amazon, Meta and Microsoft would have cut returns by about a quarter from 2012 to 2025.",
+            "Critics say that gives the biggest firms a lower ethical bar. A government proposal is due in spring, with a parliamentary debate next summer."
+          ],
+          "numbers": [
+            [
+              "$2.3tn",
+              "fund assets"
+            ]
+          ],
+          "why": "Many investors copy the fund's exclusion lists, so if Norway decides some firms are too big to drop, ethical investing elsewhere may quietly shift too.",
+          "other": "Supporters argue it is consistent: Norway relies on NATO's nuclear umbrella, and a fund held for future generations cannot ignore what exclusions cost it.",
+          "also": [],
+          "image": "/figs/2026-10-29-2.jpg",
+          "imageAlt": "Explainer: Norway's $2.3tn fund is reviewing its ethics rules; dropping four US tech giants would have cut returns by about a quarter.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "Too big to blacklist?",
+          "emailTeaser": "Norway's giant fund weighs ethics against Big Tech returns",
+          "imageW": 1280,
+          "imageH": 1732
+        },
+        {
+          "category": "AI in drug discovery",
+          "tag": "",
+          "title": "Anthropic says Claude drafted 35,000 antibody designs in a month",
+          "url": "https://www.anthropic.com/research/early-progress-drug-development",
+          "url2": "",
+          "points": [
+            "Anthropic says it spent months working with six drug developers, including Bristol Myers Squibb and Generate Biomedicines. For Divergence Labs, Claude produced about 35,000 antibody designs for a food-allergy drug in roughly a month; in early tests, three of the 20 that dislodged IgE did better than the standard medicine.",
+            "At Enveda, Claude checked 1,061 pages of manufacturing paperwork, caught all 11 issues human reviewers found plus seven more, and cut review time by 89%. BigHat's best antibody variants bound more than 10 times more tightly.",
+            "In Anthropic's own muscular dystrophy programme, a candidate went from idea to promising mouse results in under 18 months; human trials could start in late 2028 if results hold."
+          ],
+          "numbers": [
+            [
+              "35,000",
+              "antibody designs in about a month"
+            ],
+            [
+              "89%",
+              "less human review time at Enveda"
+            ],
+            [
+              "<18 mo",
+              "from idea to promising mouse data"
+            ]
+          ],
+          "why": "Drug discovery is slow because each loop of design, testing and paperwork takes months; if AI shortens every loop, the cost of trying a new medicine, and who can afford to try, could change.",
+          "other": "Almost all of this is preclinical and reported by the vendor and its partners. Most drug candidates fail in human trials, so speed at the start says little yet about cures.",
+          "also": [],
+          "image": "/figs/2026-10-29-3.jpg",
+          "imageAlt": "Explainer: Claude drafted about 35,000 antibody designs in a month, cut Enveda's review time by 89%, and helped a muscular dystrophy candidate reach mouse results in under 18 months.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Anthropic",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "Claude goes to the drug lab",
+          "emailTeaser": "35,000 antibody designs in a month, no human tests yet",
+          "cite": "Anthropic said on 27 October 2026 that Claude generated roughly 35,000 antibody designs in about a month for a food-allergy drug programme.",
+          "imageW": 1280,
+          "imageH": 1830
+        },
+        {
+          "category": "AI economics",
+          "tag": "Opinion",
+          "title": "Snowflake CEO: AI labs risk a capacity bust, not a bank run",
+          "url": "https://x.com/ramaswmysridhar/status/2115159277887435023",
+          "url2": "",
+          "points": [
+            "Snowflake CEO Sridhar Ramaswamy argues in a thread on X that AI labs commit to compute for years while selling usage customers can cut tomorrow. In his hypothetical, $100 of capacity against $150 of expected revenue leaves $50; a 30% revenue miss cuts that to $5.",
+            "He draws lessons from banks, commodity traders, airlines, utilities and cloud giants, and warns that clouds which invest in labs and also sell them compute can make one promise look like several revenue streams.",
+            "Citing Anthropic's S-1, he says compute cost fell to 55% of first-half sales of $16.3bn, from 201% a year earlier."
+          ],
+          "numbers": [
+            [
+              "$50 to $5",
+              "spread after a 30% revenue miss"
+            ],
+            [
+              "55%",
+              "Anthropic compute cost to sales, H1, as cited"
+            ],
+            [
+              "$265.6bn",
+              "future purchase commitments, as cited"
+            ]
+          ],
+          "why": "As AI firms head for public markets, investors must judge whether long compute contracts are a moat or a trap; his three gauges, paid GPU use, unit prices and firm obligations, make a practical checklist.",
+          "other": "He is not a neutral observer: Snowflake sells data and AI services. And contract-backed cash flows that lenders treat as safe are only as strong as the labs signing them.",
+          "also": [],
+          "image": "/figs/2026-10-29-4.jpg",
+          "imageAlt": "Explainer: in Ramaswamy's example a 30% revenue miss shrinks a $50 spread to $5; Anthropic's compute cost fell from 201% to 55% of sales, as cited in his thread.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Sridhar Ramaswamy on X",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Rent chips long, sell short",
+          "emailTeaser": "Why a 30% miss turns $50 into $5 for AI labs",
+          "cite": "Sridhar Ramaswamy wrote on 27 October 2026 that Anthropic's compute expense was 55% of sales, against 201% a year earlier.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Fed and markets",
+          "tag": "",
+          "title": "Fed holds rates steady; markets read Warsh as wary of more hikes",
+          "url": "https://www.wsj.com/finance/investing/the-fed-held-steady-on-rates-leaving-investors-to-sit-tight-too-9c77723b",
+          "url2": "",
+          "points": [
+            "The Wall Street Journal reports the Federal Reserve held rates on Wednesday, a month after raising them. Chairman Kevin Warsh said tighter financial conditions showed policy was already working, which investors took as a sign that a fast run of hikes is unlikely; stocks edged up and longer-term yields rose.",
+            "Two officials dissented in favour of a hike, among them Governor Lisa Cook, who had never voted against a Fed decision. Futures still put the chance of a December rise at about 85%.",
+            "The paper notes Anthropic's IPO filing helped tech shares bounce this week, while high oil prices keep inflation worries alive."
+          ],
+          "numbers": [
+            [
+              "85%",
+              "futures odds of a December hike"
+            ],
+            [
+              "2",
+              "officials voted for a hike"
+            ]
+          ],
+          "why": "Markets now hinge on whether the Fed treats AI-driven spending as a reason to keep tightening; a cautious chair buys stocks time but leaves inflation risk with bond investors.",
+          "other": "Long-term yields rising while short-term ones fell suggests some investors think the Fed is too relaxed. If inflation stays hot, the calm could turn quickly.",
+          "also": [
+            {
+              "title": "The Fed's AI Puzzle: Will High Rates Slow the Boom? (The Wall Street Journal)",
+              "url": "https://www.wsj.com/economy/central-banking/the-feds-ai-puzzle-will-high-rates-slow-the-boom-c9c43ce2"
+            }
+          ],
+          "image": "/figs/2026-10-29-5.jpg",
+          "imageAlt": "Explainer: the Fed held rates; two officials wanted a hike and futures price about an 85% chance of a December rise.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "The Fed pauses, for now",
+          "emailTeaser": "Rates on hold, yet traders see 85% odds of a December rise",
+          "freeUrl": "https://www.axios.com/2026/10/28/fed-warsh-interest-rates-cook",
+          "freeSrc": "Axios",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "China economy",
+          "tag": "Opinion",
+          "title": "China's inflation stays low as an energy shock lifts prices elsewhere",
+          "url": "https://www.livemint.com/economy/china-inflation-weak-demand-property-crisis-global-economy-11793163994046.html",
+          "url2": "",
+          "points": [
+            "In a Mint column, economists Puneet Kumar Arora and Jaydeep Mukherjee note China's retail inflation was just 0.9% in September 2026, against 3.7% in the US, 3.8% in the eurozone and 5.5% in India, despite the West Asia energy shock.",
+            "Oil reserves and the shift to electric cars helped, but they argue weak demand matters more: housing is about 70% of household assets, and while factory-gate prices rose 5%, core consumer inflation stayed at 1%.",
+            "With retail sales up 1.1% and exports up 14.6% this year, they warn China may export its disinflation, easing prices abroad but stoking trade fights."
+          ],
+          "numbers": [
+            [
+              "0.9%",
+              "China retail inflation, Sept 2026"
+            ],
+            [
+              "5%",
+              "factory-gate inflation, Sept"
+            ],
+            [
+              "70%",
+              "of household assets in housing"
+            ]
+          ],
+          "why": "Cheap Chinese goods can soften inflation for India and the US, but they also squeeze local manufacturers and invite tariffs.",
+          "other": "Factory-gate prices are already climbing fast; if energy stays dear, those costs could reach Chinese shoppers and turn exported disinflation into exported inflation.",
+          "also": [],
+          "image": "/figs/2026-10-29-6.jpg",
+          "imageAlt": "Explainer: China's retail inflation was 0.9% in September 2026; housing is about 70% of household assets and exports rose 14.6%.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "China's cold price puzzle",
+          "emailTeaser": "0.9% inflation while the world pays more for energy",
+          "cite": "China's retail inflation stood at 0.9% in September 2026, against 5.5% in India, according to a Mint column.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Patience priced in.",
+    "b": "Principles priced out.",
+    "line": "From a central bank to a $2.3tn fund to a lab running on AI, the hard call today is the same: when to wait, and when to act."
+  },
+  "cover": "/figs/2026-10-29-cover.jpg",
+  "coverAlt": "Labs lease chips, bots brew drugs, Fed waits, China chills, Norway frets. Oddballs win.",
+  "stressIndex": {
+    "score": 23,
+    "band": "Normal",
+    "asOf": "2026-10-28"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 22749.75,
+        "asOf": "2026-10-27",
+        "prev": 22753.1992,
+        "week": 22888.9492,
+        "spark": [
+          23398.0996,
+          23118.5996,
+          23217.5996,
+          23270.5996,
+          23346.4004,
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7743.98,
+        "asOf": "2026-10-28",
+        "prev": 7722.6001,
+        "week": 7757.1699,
+        "spark": [
+          7637.7598,
+          7650.5,
+          7764.7002,
+          7764.6401,
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.045,
+        "asOf": "2026-10-28",
+        "prev": 4.993,
+        "week": 5.146,
+        "spark": [
+          4.947,
+          4.998,
+          4.963,
+          4.968,
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 110.59,
+        "asOf": "2026-10-28",
+        "prev": 113.88,
+        "week": 108.82,
+        "spark": [
+          104.82,
+          103.87,
+          100.34,
+          99.25,
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          110.59
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4069.1001,
+        "asOf": "2026-10-28",
+        "prev": 4074.6001,
+        "week": 4150,
+        "spark": [
+          4399.7002,
+          4424.8999,
+          4383.8999,
+          4376.3999,
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4069.1001
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 95.21,
+        "asOf": "2026-10-28",
+        "prev": 95.187,
+        "week": 94.3123,
+        "spark": [
+          96.1323,
+          95.7992,
+          96.0131,
+          95.712,
+          95.6898,
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.21
+        ]
+      }
+    ]
+  }
+}
