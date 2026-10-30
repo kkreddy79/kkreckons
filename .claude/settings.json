@@ -1,0 +1,6 @@
+{
+  "extraKnownMarketplaces": {
+    "kk-plugins": { "source": { "source": "github", "repo": "kkreddy79/kkreckons" } }
+  },
+  "enabledPlugins": { "design-stack-pro@kk-plugins": true }
+}
