@@ -24,7 +24,7 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
   layout (`docs/special-reports.md`): section heads, the takeaway, fonts and the width rules the site check enforces.
 - `/about` — about the briefing
 - `/api/subscribe` — adds a reader to the beehiiv list from the on-page email form
-- `/api/revalidate` — rebuilds Home, `/ai-stress-index` and its badge straight away when the AI Stress Index publishes a
+- `/api/revalidate` — rebuilds Home, `/ai-stress-index`, its badge and the embed card straight away when the AI Stress Index publishes a
   new reading (POSTed by the ai-implosion update workflow with `Authorization: Bearer $REVALIDATE_SECRET`)
 
 ## How editions are stored
