@@ -1,0 +1,469 @@
+{
+  "date": "2026-10-30",
+  "slice": "Poor climb, labs beg, vendors pledge. Ads fade, IPOs swell, coins vanish. Grip tight.",
+  "artifact": "https://claude.ai/artifact/QoGGPz6pUNFqMnoCSQtxhw",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "496M",
+      "text": "Indians lifted above the $4.20-a-day poverty line, 2011 to 2023",
+      "url": "https://documents1.worldbank.org/curated/en/099722104222534584/pdf/IDU-25f34333-d3a3-44ae-8268-86830e3bc5a5.pdf"
+    },
+    {
+      "num": "~57%",
+      "text": "of India's poor live in a belt from Uttar Pradesh to West Bengal",
+      "url": "https://documents1.worldbank.org/curated/en/099722104222534584/pdf/IDU-25f34333-d3a3-44ae-8268-86830e3bc5a5.pdf"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Poverty & jobs",
+          "tag": "",
+          "title": "World Bank: 496 million Indians left poverty between 2011 and 2023",
+          "url": "https://documents1.worldbank.org/curated/en/099722104222534584/pdf/IDU-25f34333-d3a3-44ae-8268-86830e3bc5a5.pdf",
+          "url2": "",
+          "points": [
+            "The World Bank's new India brief says the share living under $4.20 a day fell from 57.7% in 2011 to 16.1% in 2023, about 496 million people. Extreme poverty, at $3 a day, fell from 27.1% to 2.6%.",
+            "Behind it: stronger consumption, about 134 million more jobs in 2017 to 2023 (many rural women entering paid work) and wider transfers such as food subsidies. It projects 12.1% by 2028.",
+            "The remaining poor are concentrated: rural poverty is 19.3% against 8.6% in towns, and the Uttar Pradesh to West Bengal belt holds about 57%. Youth unemployment rose to 15.9%."
+          ],
+          "numbers": [
+            [
+              "496M",
+              "lifted out of poverty"
+            ],
+            [
+              "2.6%",
+              "extreme poverty, 2023"
+            ],
+            [
+              "80%",
+              "still below $8.30 a day"
+            ]
+          ],
+          "why": "India's poverty fight is shifting from keeping people fed to getting them productive work. The next gains depend on jobs in a few eastern states, not on national averages.",
+          "other": "The Bank itself says the jump between the 2022-23 and 2023-24 surveys partly reflects better measurement, and that richer households are likely undercounted. How much of the fall is statistics rather than living standards?",
+          "also": [],
+          "image": "/figs/2026-10-30-1.jpg",
+          "imageAlt": "KKReckons visual explainer: India's $4.20-a-day poverty rate fell from 57.7% in 2011 to 16.1% in 2023, about 496 million people; extreme poverty fell from 27.1% to 2.6%, and about 57% of the poor live in the Uttar Pradesh to West Bengal belt.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "World Bank",
+          "pay": false,
+          "themes": [
+            "India",
+            "Jobs & careers"
+          ],
+          "emailHead": "Half a billion out of poverty",
+          "emailTeaser": "Extreme poverty at 2.6%; the poor now cluster in the east",
+          "cite": "The World Bank estimates that 496 million Indians rose above the $4.20-a-day poverty line between 2011 and 2023 (Poverty & Equity Brief, October 2026).",
+          "imageW": 1280,
+          "imageH": 2327
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "R&D & startups",
+          "tag": "Opinion",
+          "title": "India's deep-tech push needs labs, postdocs and buyers, not just cash",
+          "url": "https://www.livemint.com/opinion/online-views/rd-imperative-why-india-must-create-a-deep-tech-ecosystem-of-its-own-11793274193111.html",
+          "url2": "https://www.livemint.com/opinion/online-views/how-the-government-can-help-deep-tech-startups-reach-their-full-potential-11793112830534.html",
+          "points": [
+            "A Mint editorial says the ₹1 trillion Research, Development and Innovation Fund now backs startups directly, but asks what India gains if foreign rivals later buy them. It wants research labs co-developing products with private firms.",
+            "A Mint column by Narayan Ramachandran argues the bigger gap is people: top postdocs leave and labs sit apart from universities, so he would fold CSIR's labs into the university system, as China did.",
+            "In a Mint op-ed, Niti Aayog's Abhay Karandikar and Aditya Sinha say capital makes products, not markets, and call for an innovation-buying chapter in government purchase rules, with paid pilots."
+          ],
+          "numbers": [
+            [
+              "₹1trn",
+              "RDI Fund corpus"
+            ]
+          ],
+          "why": "All three agree on the diagnosis: India now has money for deep tech, but not the people, links or first customers that turn prototypes into companies that stay Indian. The fix is plumbing, not bigger cheques.",
+          "other": "Merging labs and steering state purchases could add a new layer of bureaucracy, and government as first buyer can slide into protection, which the op-ed itself warns against. Can reforms this deep move faster than startups burn cash?",
+          "also": [
+            {
+              "title": "India's research and development ecosystem is in need a major overhaul. Here's why",
+              "url": "https://www.livemint.com/opinion/online-views/indias-research-and-development-r-d-institutes-universities-ai-anusandhan-national-research-foundation-csir-11785011691865.html"
+            }
+          ],
+          "image": "/figs/2026-10-30-2.jpg",
+          "imageAlt": "Explainer: India spends under 1% of GDP on R&D, Mint notes, beside a ₹1 trillion fund; Mint writers urge lab-industry links, postdoc reform and outcome-based state buying.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "Deep tech needs buyers too",
+          "emailTeaser": "Three Mint pieces on labs, postdocs and state buying",
+          "imageW": 1280,
+          "imageH": 1870
+        },
+        {
+          "category": "Fintech & cyber",
+          "tag": "",
+          "title": "Fintech body UFF drafts a code for tech vendors after cyberattacks",
+          "url": "https://m.economictimes.com/industry/banking/finance/fintechs-to-lay-out-a-code-for-technology-vendors-amid-rising-cyberthreats-and-security-risks/articleshow/135329528.cms",
+          "url2": "",
+          "points": [
+            "The Unified Fintech Forum, the RBI-recognised self-regulatory body for fintechs, is drafting a code of conduct for technology and RegTech vendors covering governance, cyber readiness, resilience and accountability, ET reports.",
+            "Fintechs and regulated lenders are likely to favour vendors that register, so sign-up could become a de facto accreditation. The trigger is a run of cyberattacks that exposed weak third-party systems and payment APIs.",
+            "Many of these vendors run KYC, credit checks, loan systems and collections, yet are not directly regulated by the RBI."
+          ],
+          "numbers": [],
+          "why": "Lenders have outsourced the plumbing of digital credit to firms the regulator does not watch. A voluntary badge is the cheapest way to start pricing that hidden risk.",
+          "other": "A code with no penalties may become a sticker that big vendors collect and small ones struggle to afford. Who audits compliance, and what happens when a badge-holder is breached?",
+          "also": [],
+          "image": "/figs/2026-10-30-3.jpg",
+          "imageAlt": "Explainer: the RBI-recognised Unified Fintech Forum is drafting a code for tech vendors covering governance, cyber readiness, resilience and accountability, after attacks exposed third-party weaknesses.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ],
+          "emailHead": "A trust badge for vendors",
+          "emailTeaser": "Signing UFF's code could become a de facto licence",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI & Big Tech",
+          "tag": "Opinion",
+          "title": "Alphabet's ad slowdown and Anthropic's IPO test the AI money machine",
+          "url": "https://www.ft.com/content/245107d8-ef54-4b30-a75a-538d055bc6d7?syn-25a6b1a6=1",
+          "url2": "https://www.ft.com/content/9fd6faa4-0e06-4b2b-975a-3e6d3a7f3d7f?syn-25a6b1a6=1",
+          "points": [
+            "The FT's Lex column says Alphabet lost nearly half a trillion dollars of market value after ad sales slowed unexpectedly: AI answers leave less room for ads, and data-centre spending is outrunning cash. Lex still thinks the AI lead can be won back.",
+            "A John Thornhill column says Anthropic's IPO pits fear of missing out against fear of messing up. The filing shows first-half revenue of $16.3bn and an $80.7bn net loss, mostly non-cash, Xinhua reports, plus large non-cancellable compute deals."
+          ],
+          "numbers": [],
+          "why": "Two worries meet: AI may eat the ad profits that pay for AI, and the newest labs fund their build-out with promises to pay for chips later. Public markets now have to price both.",
+          "other": "Both columns concede the upside: AI leadership has flipped quickly before, and Anthropic's revenue growth is remarkable. A sharp share drop or a pricey IPO is not proof the boom is a bust.",
+          "also": [],
+          "image": "/figs/2026-10-30-4.jpg",
+          "imageAlt": "Explainer: Alphabet lost nearly half a trillion dollars of value as AI squeezed search ads; Anthropic's IPO filing shows $16.3bn first-half revenue and an $80.7bn mostly non-cash loss.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.thestar.com.my/news/world/2026/10/27/anthropic-files-for-ipo-reveals-soaring-revenue-massive-net-losses",
+          "freeSrc": "Xinhua",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Ads shrink, AI bills grow",
+          "emailTeaser": "Alphabet's bad day meets Anthropic's $16.3bn-revenue IPO filing",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1779
+        },
+        {
+          "category": "Crypto & cyber",
+          "tag": "",
+          "title": "Binance halts transactions after a hack that may be the biggest ever",
+          "url": "https://www.wsj.com/finance/currencies/binance-founder-says-exchange-may-be-victim-of-biggest-ever-crypto-heist-24a82e5f",
+          "url2": "",
+          "points": [
+            "Binance suspended all deposits and withdrawals after hackers appeared to take at least $3bn, which would be the largest crypto theft on record, the WSJ reports. The exchange says user funds are safe and users will be made whole.",
+            "Tether and Circle froze part of the stolen stablecoins, and analysts at TRM Labs and Pangolin Intelligence blame a North Korean hacking group. Some trackers put the haul far higher; Binance's US arm says it is unaffected."
+          ],
+          "numbers": [],
+          "why": "Exchanges that hold customers' coins are vaults with a public address; one breach can dwarf any bank robbery. The quick freezes also show stablecoin issuers acting like crypto's central banks.",
+          "other": "Early tallies swing by billions, and freezes plus Binance's insurance fund may shrink the final loss. And issuers that can freeze a hacker's coins can freeze anyone's.",
+          "also": [],
+          "image": "/figs/2026-10-30-5.jpg",
+          "imageAlt": "Explainer: Binance suspended deposits and withdrawals after a hack of at least $3bn, possibly the largest crypto theft; Tether and Circle froze some funds and analysts blame North Korean hackers.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "The biggest crypto heist yet?",
+          "emailTeaser": "At least $3bn gone; Binance freezes deposits and withdrawals",
+          "freeUrl": "https://www.cnbc.com/2026/10/29/circle-tether-freeze-funds-impacted-by-potential-binance-security-issue.html",
+          "freeSrc": "CNBC",
+          "imageW": 1280,
+          "imageH": 1730
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Big gains.",
+    "b": "Thin walls.",
+    "line": "From poverty data to crypto vaults, today's wins look solid until you check what protects them."
+  },
+  "cover": "/figs/2026-10-30-cover.jpg",
+  "coverAlt": "Poor climb, labs beg, vendors pledge. Ads fade, IPOs swell, coins vanish. Grip tight.",
+  "stressIndex": {
+    "score": 24,
+    "band": "Normal",
+    "asOf": "2026-10-29"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 22698.8496,
+        "asOf": "2026-10-28",
+        "prev": 22749.75,
+        "week": 22811.3496,
+        "spark": [
+          23118.5996,
+          23217.5996,
+          23270.5996,
+          23346.4004,
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7720.3901,
+        "asOf": "2026-10-29",
+        "prev": 7743.98,
+        "week": 7663.4302,
+        "spark": [
+          7650.5,
+          7764.7002,
+          7764.6401,
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.989,
+        "asOf": "2026-10-29",
+        "prev": 5.045,
+        "week": 4.953,
+        "spark": [
+          4.998,
+          4.963,
+          4.968,
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 111.52,
+        "asOf": "2026-10-29",
+        "prev": 115.32,
+        "week": 113.17,
+        "spark": [
+          103.87,
+          100.34,
+          99.25,
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          111.52
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4033.7,
+        "asOf": "2026-10-29",
+        "prev": 4051.6001,
+        "week": 4060.3999,
+        "spark": [
+          4424.8999,
+          4383.8999,
+          4376.3999,
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4033.7
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 95.21,
+        "asOf": "2026-10-29",
+        "prev": 95.1778,
+        "week": 94.7113,
+        "spark": [
+          95.7992,
+          96.0131,
+          95.712,
+          95.6898,
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.21
+        ]
+      }
+    ]
+  }
+}

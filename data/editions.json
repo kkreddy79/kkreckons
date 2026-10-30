@@ -1,5 +1,79 @@
 [
   {
+    "date": "2026-10-30",
+    "slice": "Poor climb, labs beg, vendors pledge. Ads fade, IPOs swell, coins vanish. Grip tight.",
+    "artifact": "https://claude.ai/artifact/QoGGPz6pUNFqMnoCSQtxhw",
+    "readingMinutes": 5,
+    "image": "/figs/2026-10-30-1.jpg",
+    "cover": "/figs/2026-10-30-cover.jpg",
+    "coverAlt": "Poor climb, labs beg, vendors pledge. Ads fade, IPOs swell, coins vanish. Grip tight.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "World Bank: 496 million Indians left poverty between 2011 and 2023",
+        "category": "Poverty & jobs",
+        "tag": "",
+        "url": "https://documents1.worldbank.org/curated/en/099722104222534584/pdf/IDU-25f34333-d3a3-44ae-8268-86830e3bc5a5.pdf",
+        "src": "World Bank",
+        "pay": false,
+        "themes": [
+          "India",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's deep-tech push needs labs, postdocs and buyers, not just cash",
+        "category": "R&D & startups",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/rd-imperative-why-india-must-create-a-deep-tech-ecosystem-of-its-own-11793274193111.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Fintech body UFF drafts a code for tech vendors after cyberattacks",
+        "category": "Fintech & cyber",
+        "tag": "",
+        "url": "https://m.economictimes.com/industry/banking/finance/fintechs-to-lay-out-a-code-for-technology-vendors-amid-rising-cyberthreats-and-security-risks/articleshow/135329528.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Alphabet's ad slowdown and Anthropic's IPO test the AI money machine",
+        "category": "AI & Big Tech",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/245107d8-ef54-4b30-a75a-538d055bc6d7?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Binance halts transactions after a hack that may be the biggest ever",
+        "category": "Crypto & cyber",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/currencies/binance-founder-says-exchange-may-be-victim-of-biggest-ever-crypto-heist-24a82e5f",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-29",
     "slice": "Labs lease chips, bots brew drugs, Fed waits, China chills, Norway frets. Oddballs win.",
     "artifact": "https://claude.ai/artifact/T1n5SUS4MuirWCoqhZtHmu",
