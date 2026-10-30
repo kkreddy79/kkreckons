@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "@vercel/functions": "^3.10.5",
     "next": "16.4.3",
     "react": "19.3.1",
     "react-dom": "19.3.1"
