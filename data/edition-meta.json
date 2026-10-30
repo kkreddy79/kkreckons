@@ -439,5 +439,22 @@
         "imageAlt": "Explainer, \"Buy compute for years. Sell it by the token.\": in Ramaswamy's example a 30% revenue miss shrinks a $50 spread to $5; Anthropic's compute cost fell from 201% to 55% of sales, as cited in his thread."
       }
     }
+  },
+  "2026-10-30": {
+    "artifact": "https://claude.ai/artifact/QoGGPz6pUNFqMnoCSQtxhw",
+    "stressIndex": {
+      "score": 24,
+      "band": "Normal",
+      "asOf": "2026-10-29"
+    },
+    "stories": {
+      "Alphabet's ad slowdown and Anthropic's IPO test the AI money machine": {
+        "stressIndex": true
+      },
+      "Binance halts transactions after a hack that may be the biggest ever": {
+        "freeUrl": "https://www.cnbc.com/2026/10/29/circle-tether-freeze-funds-impacted-by-potential-binance-security-issue.html",
+        "freeSrc": "CNBC"
+      }
+    }
   }
 }
