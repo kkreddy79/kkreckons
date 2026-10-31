@@ -1,11 +1,15 @@
 import { timingSafeEqual } from "node:crypto";
+import { dangerouslyDeleteByTag } from "@vercel/functions";
 import { revalidatePath } from "next/cache";
+import { EMBED_CACHE_TAG } from "@/lib/stress";
 
 // Rebuilds the pages that show the live AI Stress Index as soon as a new reading is published, instead of
 // waiting out their hourly cache (which let Home and /ai-stress-index show different days for up to an hour).
 // Called by the "Update dashboard data" workflow in github.com/kkreddy79/ai-implosion once GitHub Pages serves
 // the new docs/data.json, with `Authorization: Bearer <REVALIDATE_SECRET>`. The same value is set as
 // REVALIDATE_SECRET on Vercel and as the KKRECKONS_REVALIDATE_SECRET secret in that repository.
+// The embed card isn't a cached page but a response the CDN holds, so it's cleared by its cache tag instead:
+// deleted rather than marked stale, so the next viewer gets the new reading, not the old one once more.
 
 const PATHS = ["/", "/ai-stress-index", "/ai-stress-index/badge.svg"];
 
@@ -22,5 +26,6 @@ export async function POST(req: Request) {
   if (!secret) return json(503, { error: "not_configured" });
   if (!authorized(req, secret)) return json(401, { error: "unauthorized" });
   for (const p of PATHS) revalidatePath(p);
-  return json(200, { revalidated: PATHS });
+  await dangerouslyDeleteByTag(EMBED_CACHE_TAG);
+  return json(200, { revalidated: [...PATHS, "/ai-stress-index/embed"] });
 }
