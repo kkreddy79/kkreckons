@@ -45,6 +45,8 @@ const PUBLISHERS: Record<string, string> = {
   "inc42.com": "Inc42",
   "moneycontrol.com": "Moneycontrol",
   "cnbc.com": "CNBC",
+  "cnn.com": "CNN",
+  "decrypt.co": "Decrypt",
   "economist.com": "The Economist",
   "bbc.com": "BBC",
   "businessinsider.com": "Business Insider",

@@ -1,5 +1,117 @@
 [
   {
+    "date": "2026-10-31",
+    "slice": "Hackers loot, Intel sinks, AI builds AI, watches nag, Vizag frets. Who minds the gate?",
+    "artifact": "https://claude.ai/artifact/35rHDC441NAffsGVHiP17T",
+    "readingMinutes": 8,
+    "image": "/figs/2026-10-31-1.jpg",
+    "cover": "/figs/2026-10-31-cover.jpg",
+    "coverAlt": "Hackers loot, Intel sinks, AI builds AI, watches nag, Vizag frets. Who minds the gate?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "North Korea-linked hackers steal $6.3bn from Binance in record heist",
+        "category": "Crypto / Cybercrime",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/currencies/behind-the-scenes-of-cryptos-biggest-nightmare-a-record-breaking-cyber-heist-ffe1d9a3",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India saw 369 million cyber incidents in a year. Is it AI-ready?",
+        "category": "Cybersecurity / AI",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/is-india-prepared-to-tackle-369-million-cybersecurity-incidents-and-ai-challenges-ahead/articleshow/135373464.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "From Vizag to Thane, data centres meet local pushback",
+        "category": "Data centres",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/see-data-centres-less-as-energy-sucking-private-warehouses-and-more-as-quasi-public-utilities/articleshow/135372738.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Intel's record crash caps a week when the AI trade cracked",
+        "category": "Markets / Big Tech",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/stocks/the-week-the-cracks-in-the-ai-trade-grew-deeper-9e25b20f",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How North Korea turned hacking into a state income machine",
+        "category": "Geopolitics / Cyber",
+        "tag": "Explainer",
+        "url": "https://www.ft.com/content/46c03338-63d5-43fc-a946-ebcbe9e1c07a?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Apollo lends as OpenAI-backed Thrive buys ADT for $15bn",
+        "category": "Private equity",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/95480c09-5018-4400-b9c1-f2d53373a47c?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI now leads a quarter of AI research at Anthropic, company data show",
+        "category": "AI / Research",
+        "tag": "Explainer",
+        "url": "https://www.wsj.com/tech/ai/ai-anthropic-rsi-recursive-self-improvement-bff4e815",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Biomedical engineering is booming, but can health care keep up?",
+        "category": "Health / Tech",
+        "tag": "",
+        "url": "https://www.nature.com/articles/d41586-026-03202-z",
+        "src": "Nature",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-30",
     "slice": "Poor climb, labs beg, vendors pledge. Ads fade, IPOs swell, coins vanish. Grip tight.",
     "artifact": "https://claude.ai/artifact/QoGGPz6pUNFqMnoCSQtxhw",
