@@ -1,0 +1,560 @@
+{
+  "date": "2026-11-01",
+  "slice": "India wins messily. Jobs, loans, grids, wards strain; bots rank, shop. Trust barometers.",
+  "artifact": "https://claude.ai/artifact/6bEc9v6abhH6Jkxx45GjqY",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "24.5B",
+      "text": "UPI transactions in August 2026, up from 1.6B a month in August 2020 (Hemant Mohapatra)",
+      "url": "https://x.com/MohapatraHemant/status/2116532318940889175"
+    },
+    {
+      "num": "$655B",
+      "text": "AI-linked US corporate debt issued this year to mid-October, per Bank of America (WSJ)",
+      "url": "https://www.wsj.com/finance/the-new-bottleneck-in-americas-ai-build-out-a-shortage-of-cheap-money-0c14c84d"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "India growth",
+          "tag": "Opinion",
+          "title": "Hemant Mohapatra: India misses targets but its rise is inevitable",
+          "url": "https://x.com/MohapatraHemant/status/2116532318940889175",
+          "url2": "",
+          "points": [
+            "Lightspeed VC Hemant Mohapatra argues India sets big, round targets, people game them, and outcomes lag: Skill India trained 16.4M people with weak placement, and Ujjwala's 103M gas connections go to homes buying about 4.7 refills a year.",
+            "Read like a VC portfolio, the misses fund the hits. PLI fell short in most sectors, yet iPhone exports grew to about Rs 2 lakh crore, and Jan Dhan accounts became the rails for UPI.",
+            "His test: keep the bounty but change what it pays for, moving targets from engineers trained to wafers shipped, connections to refills, and accounts to money actually moving."
+          ],
+          "numbers": [
+            [
+              "24.5B",
+              "UPI transactions, Aug 2026"
+            ],
+            [
+              "103M",
+              "Ujjwala LPG connections"
+            ],
+            [
+              "5.3%",
+              "in extreme poverty, 2022-23"
+            ]
+          ],
+          "why": "It swaps the scheme-by-scheme report card for a better question: not whether India hit a number, but whether each new target sits closer to a real outcome.",
+          "other": "Portfolio logic forgives misses after the fact, since winners can be picked to fit the story. Some costs are real: subsidised refills cut on low usage, and a manufacturing share of GDP that fell during PLI.",
+          "also": [],
+          "image": "/figs/2026-11-01-1.jpg",
+          "imageAlt": "KKReckons visual explainer: India's scheme report card (Skill India, Ujjwala, Jan Dhan, PLI) against its big wins (iPhone exports, UPI, poverty)",
+          "imageCredit": "Original graphic: KKReckons (visual explainer by KK Reddy)",
+          "src": "Hemant Mohapatra on X",
+          "pay": false,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "Broadly right, specifically wrong",
+          "emailTeaser": "Why India's missed targets still add up",
+          "cite": "Hemant Mohapatra wrote on 31 October 2026 that UPI went from 1.6B transactions a month in August 2020 to 24.5B in August 2026.",
+          "imageW": 1280,
+          "imageH": 2327
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Health and AI",
+          "tag": "Opinion",
+          "title": "AI could plug hospitals' money leaks, if boards measure it",
+          "url": "https://m.economictimes.com/small-biz/security-tech/technology/hospital-balance-sheet-how-ai-could-cut-costs-and-improve-efficiency/articleshow/135389846.cms",
+          "url2": "",
+          "points": [
+            "Rajendra Pratap Gupta argues AI must become a balance-sheet strategy for hospitals, starting with claims and billing. IRDAI data for FY2024-25 show Rs 1,32,488 crore in health claims, of which Rs 94,248 crore was paid.",
+            "Evidence is mixed: in a UCLA trial of 238 physicians, one AI scribe cut note-writing time by 9.5% while another showed no significant benefit. Bigger gains may come from predicting discharges and using beds and theatres better.",
+            "Apollo Hospitals reports 20 clinical AI algorithms. Gupta urges boards to set baselines, test three use cases and tie vendor pay to independently measured results."
+          ],
+          "numbers": [
+            [
+              "9.5%",
+              "less note-writing time, one AI scribe"
+            ],
+            [
+              "20",
+              "clinical AI algorithms at Apollo"
+            ]
+          ],
+          "why": "With nearly a quarter of claim value going unpaid in India, small gains in coding and documentation move hospital finances. The column also warns that better collections must not mean inappropriate billing.",
+          "other": "Expectations are running ahead of evidence: forecast savings are not realised savings, and integration, cybersecurity and model upkeep eat into returns. If insurers deploy AI too, claims could become a costly bot-versus-bot contest.",
+          "also": [],
+          "image": "/figs/2026-11-01-2.jpg",
+          "imageAlt": "Explainer: where hospitals leak money and how boards should test AI fixes",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Health & science",
+            "India"
+          ],
+          "emailHead": "AI on the hospital balance sheet",
+          "emailTeaser": "Where AI can stop hospitals leaking money",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI financing",
+          "tag": "",
+          "title": "Wall Street gets choosier about funding the AI build-out",
+          "url": "https://www.wsj.com/finance/the-new-bottleneck-in-americas-ai-build-out-a-shortage-of-cheap-money-0c14c84d",
+          "url2": "",
+          "points": [
+            "Lenders and investors who funded AI with few questions now demand tougher terms. Neoclouds such as CoreWeave, Nebius and Nscale have effectively been shut out of the bond market, and one CoreWeave bond now yields above 15%.",
+            "Strong borrowers feel it too: hyperscaler bonds trade at discounts, Broadcom sweetened terms for banks, OpenAI's round has fallen short of its goal, Lambda cut its target valuation and Nscale is pushing back its IPO.",
+            "Worries include local pushback against data centres, AI profits arriving late and investors overloaded on one theme. Nebius is leaning on customer prepayments."
+          ],
+          "numbers": [],
+          "why": "When money gets dear, the AI race turns on who can fund chips and power, not just who has the best model. Debt-heavy players feel it first.",
+          "other": "Money is choosier, not gone: creditworthy firms still closed giant chip financings this week. A pause that weeds out shaky projects could leave the build-out on firmer ground.",
+          "also": [],
+          "image": "/figs/2026-11-01-3.jpg",
+          "imageAlt": "Explainer: who is feeling the AI funding squeeze and why lenders are balking",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "AI money gets picky",
+          "emailTeaser": "Lenders want proof before funding more data centres",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1727
+        },
+        {
+          "category": "AI and jobs",
+          "tag": "Opinion",
+          "title": "AI's job hit so far looks like a Big Tech story, not an economy one",
+          "url": "https://www.ft.com/content/7f27aa5f-5994-4f82-aed8-1cade18fb487?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "A US analysis found productivity jumping in heavy AI-adopting sectors, and a Goldman Sachs note tied higher AI use to steeper job losses. John Burn-Murdoch says the picture blurs once you widen the lens.",
+            "Outside the US, and in finance and professional services, the link largely fades. The gap between output and headcount is mostly a tech story, and it opened in 2022, when AI meant chatbots, not agents.",
+            "His reading: rate hikes and uncertainty made firms stop hiring, and Big Tech cut deepest, long before production-ready AI."
+          ],
+          "numbers": [],
+          "why": "If the cause is misread, the fix will be too. Blaming AI for a hiring freeze driven by rates points policy and careers at the wrong problem.",
+          "other": "If firms now believe AI lets them do more with fewer people, a pause that began with rate hikes could harden into lasting AI-driven cuts. Does the original cause matter once the jobs don't return?",
+          "also": [],
+          "image": "/figs/2026-11-01-4.jpg",
+          "imageAlt": "Explainer: why the AI-jobs link looks strong in US tech but fades elsewhere",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "AI layoffs? Check the calendar",
+          "emailTeaser": "Tech's job split began before agents existed",
+          "imageW": 1280,
+          "imageH": 1767
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "New malware uses AI chatbots to profile and rank its victims",
+          "url": "https://www.wired.com/story/kernel-panic-volta-autodoxer-ai-infostealer-malware/",
+          "url2": "",
+          "points": [
+            "Cisco Talos found an infostealer, dubbed Volta-Autodoxer, that grabs passwords, tokens, cookies, cards, crypto seed phrases and gaming and chat sessions, then digs through email for receipts and order history.",
+            "It bundles the haul into a dossier and asks an AI model for an analyst-style assessment of the victim, to rank who is worth targeting first. If a model refuses, it falls back to more permissive ones.",
+            "Talos did not track whether it has been used in the wild, and the malware works without the AI step. Clues suggest it was built for sale to many attackers."
+          ],
+          "numbers": [],
+          "why": "Stolen tokens expire and passwords get changed; AI triage helps attackers cash in on the best targets first. It puts advanced tradecraft in low-skill hands.",
+          "other": "The AI layer is an add-on to an ordinary stealer, and its first-choice model may refuse. Basic habits, like not saving passwords in browsers, still blunt the core attack.",
+          "also": [],
+          "image": "/figs/2026-11-01-5.jpg",
+          "imageAlt": "Explainer: what the Volta-Autodoxer infostealer takes and how it uses AI to rank victims",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Malware gets an AI analyst",
+          "emailTeaser": "A stealer that ranks victims by what they're worth",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI agents",
+          "tag": "",
+          "title": "AI agents get better, but businesses see barely any agent orders",
+          "url": "https://www.wired.com/story/metas-muse-could-upend-all-kinds-of-businesses-it-hasnt-yet/",
+          "url2": "https://www.wired.com/story/i-tested-every-major-ai-agent-for-a-day-heres-the-best-one/",
+          "points": [
+            "Wired reports Meta says over 10 million people in the US and Canada have activated its Muse agent, with shopping the top task. Yet most firms on recent earnings calls, from DoorDash to Hilton, saw little agent activity.",
+            "Some are preparing anyway: Chipotle is fixing its site so agents can check out, and Meta plans a fee on agent sales. Amazon softened its stance after blocking Muse; Insurify reversed its block.",
+            "In a separate Wired test of six agents over a day, OpenAI's Dots scored best and Muse came a close second as the easiest to set up. All still made mistakes."
+          ],
+          "numbers": [],
+          "why": "If agents end up choosing what to buy, brands lose the shelf and may pay a toll to whoever owns the agent. The time to adapt is before volumes grow.",
+          "other": "Low numbers may say more about early days than demand, and one reporter's day of tests is a small sample. Price-comparing agents could also help shoppers more than they hurt sellers.",
+          "also": [],
+          "image": "/figs/2026-11-01-6.jpg",
+          "imageAlt": "Explainer: Meta's Muse uptake against the trickle of agent orders companies report, plus a six-agent test",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Agents arrive, buyers lag",
+          "emailTeaser": "Meta's Muse is everywhere except the order books",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI and truth",
+          "tag": "Opinion",
+          "title": "Why the D-Day weatherman is a warning for the AI age",
+          "url": "https://m.economictimes.com/opinion/et-commentary/only-a-weatherman-knows-which-way-the-wind-blows-why-science-and-truth-matter-in-an-ai-driven-world/articleshow/135407233.cms",
+          "url2": "",
+          "points": [
+            "An ET column uses the film Pressure to retell how the Allies settled the D-Day date: British meteorologist James Stagg built his forecast from fresh readings and the jet stream, while American Irving Krick extrapolated from historical charts. Stagg, who admitted uncertainty, was right.",
+            "The lesson, the writer argues, is that causes come before correlations: numbers and statistics are facts, not truth, in weather as in language, behaviour and markets.",
+            "The worry is commercial hype that thinking and creativity can be handed to AI's pattern matching, costing truth first, then reasoning and the scientific temper."
+          ],
+          "numbers": [],
+          "why": "Many AI systems predict from past patterns, much as Krick did. The column asks readers to prize methods that explain why, above all where the stakes are high.",
+          "other": "Stagg relied on data too, so the line between reasoning and pattern-matching is blurrier than the parable suggests. The real risk may be blind trust in any forecast, human or machine.",
+          "also": [],
+          "image": "/figs/2026-11-01-7.jpg",
+          "imageAlt": "Explainer: Stagg's cause-based forecast versus Krick's pattern-based one before D-Day",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Better meteorologists win wars",
+          "emailTeaser": "What a D-Day forecast says about trusting AI",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI and energy",
+          "tag": "Opinion",
+          "title": "AI's power bill means data centres must be designed as energy assets",
+          "url": "https://m.economictimes.com/small-biz/security-tech/technology/the-future-of-ai-depends-on-how-we-design-the-energy-infrastructure-that-powers-it/articleshow/135162471.cms",
+          "url2": "",
+          "points": [
+            "Flipspaces founder Kunal Sharma notes data centres used about 415 TWh of power in 2024, and the IEA expects that to more than double to roughly 945 TWh by 2030. In the US they could drive nearly half of electricity demand growth.",
+            "He argues energy must shape the building itself: site, rack density, cooling routes and power distribution planned together, so facilities can take denser chips without costly redesigns.",
+            "Waste heat can become a resource: Microsoft projects in Denmark feed surplus heat into district heating networks."
+          ],
+          "numbers": [
+            [
+              "415 TWh",
+              "data-centre power use, 2024"
+            ],
+            [
+              "945 TWh",
+              "IEA outlook for 2030"
+            ]
+          ],
+          "why": "Where AI loads land on already tight grids, someone pays through new investment or higher bills. Designing for efficiency up front decides how much of that falls on neighbours.",
+          "other": "Better design trims waste but cannot create electricity; generation and transmission remain the real bottleneck. Heat reuse also needs nearby homes or businesses to take it, which remote sites may lack.",
+          "also": [],
+          "image": "/figs/2026-11-01-8.jpg",
+          "imageAlt": "Explainer: data-centre power demand to 2030 and the design fixes the column proposes",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Design data centres for power",
+          "emailTeaser": "Why AI's energy fix starts with the building",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Scores mislead.",
+    "b": "Direction tells.",
+    "line": "Missed targets, nervous lenders, agents few people buy through: early numbers rarely settle a big bet. Judge each by whether the next measure points closer to real outcomes."
+  },
+  "cover": "/figs/2026-11-01-cover.jpg",
+  "coverAlt": "India wins messily. Jobs, loans, grids, wards strain; bots rank, shop. Trust barometers.",
+  "stressIndex": {
+    "score": 33,
+    "band": "Elevated",
+    "asOf": "2026-10-30"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 23053.0996,
+        "asOf": "2026-10-30",
+        "prev": 22936.75,
+        "week": 22600,
+        "spark": [
+          23270.5996,
+          23346.4004,
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7580.0698,
+        "asOf": "2026-10-30",
+        "prev": 7720.3901,
+        "week": 7623.6802,
+        "spark": [
+          7764.7002,
+          7764.6401,
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.929,
+        "asOf": "2026-10-30",
+        "prev": 4.989,
+        "week": 4.988,
+        "spark": [
+          4.963,
+          4.968,
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 117.64,
+        "asOf": "2026-10-30",
+        "prev": 114.88,
+        "week": 116.72,
+        "spark": [
+          100.34,
+          99.25,
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3898.8999,
+        "asOf": "2026-10-30",
+        "prev": 4031.3999,
+        "week": 4007.8999,
+        "spark": [
+          4383.8999,
+          4376.3999,
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.95,
+        "asOf": "2026-10-31",
+        "prev": 95.1524,
+        "week": 94.7113,
+        "spark": [
+          95.712,
+          95.6898,
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95
+        ]
+      }
+    ]
+  }
+}

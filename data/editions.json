@@ -1,5 +1,116 @@
 [
   {
+    "date": "2026-11-01",
+    "slice": "India wins messily. Jobs, loans, grids, wards strain; bots rank, shop. Trust barometers.",
+    "artifact": "https://claude.ai/artifact/6bEc9v6abhH6Jkxx45GjqY",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-01-1.jpg",
+    "cover": "/figs/2026-11-01-cover.jpg",
+    "coverAlt": "India wins messily. Jobs, loans, grids, wards strain; bots rank, shop. Trust barometers.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Hemant Mohapatra: India misses targets but its rise is inevitable",
+        "category": "India growth",
+        "tag": "Opinion",
+        "url": "https://x.com/MohapatraHemant/status/2116532318940889175",
+        "src": "Hemant Mohapatra on X",
+        "pay": false,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI could plug hospitals' money leaks, if boards measure it",
+        "category": "Health and AI",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/small-biz/security-tech/technology/hospital-balance-sheet-how-ai-could-cut-costs-and-improve-efficiency/articleshow/135389846.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Health & science",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Wall Street gets choosier about funding the AI build-out",
+        "category": "AI financing",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/the-new-bottleneck-in-americas-ai-build-out-a-shortage-of-cheap-money-0c14c84d",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI's job hit so far looks like a Big Tech story, not an economy one",
+        "category": "AI and jobs",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/7f27aa5f-5994-4f82-aed8-1cade18fb487?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "New malware uses AI chatbots to profile and rank its victims",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wired.com/story/kernel-panic-volta-autodoxer-ai-infostealer-malware/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents get better, but businesses see barely any agent orders",
+        "category": "AI agents",
+        "tag": "",
+        "url": "https://www.wired.com/story/metas-muse-could-upend-all-kinds-of-businesses-it-hasnt-yet/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why the D-Day weatherman is a warning for the AI age",
+        "category": "AI and truth",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/only-a-weatherman-knows-which-way-the-wind-blows-why-science-and-truth-matter-in-an-ai-driven-world/articleshow/135407233.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI's power bill means data centres must be designed as energy assets",
+        "category": "AI and energy",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/small-biz/security-tech/technology/the-future-of-ai-depends-on-how-we-design-the-energy-infrastructure-that-powers-it/articleshow/135162471.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-31",
     "slice": "Hackers loot, Intel sinks, AI builds AI, watches nag, Vizag frets. Who minds the gate?",
     "artifact": "https://claude.ai/artifact/35rHDC441NAffsGVHiP17T",
