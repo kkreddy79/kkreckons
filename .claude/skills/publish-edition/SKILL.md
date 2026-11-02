@@ -9,7 +9,8 @@ model: sonnet
 Runs when he asks ("Publish", "Publish Friday edition"). There is no nightly run.
 
 Krishnakanth writes each edition in his Claude Project and publishes it as a claude.ai artifact titled
-`KKReckons, <Weekday>, <D> <Month> <YYYY>` (for example `KKReckons, Friday, 9 October 2026`).
+`KKReckons, <Weekday>, <D> <Month> <YYYY>` or `KKReckons draft, <Weekday>, <D> <Month> <YYYY>`
+(for example `KKReckons draft, Monday, 2 November 2026`). Both are editions; "draft" doesn't mean unfinished.
 The data it must contain is described in `docs/edition-format.md`.
 This skill moves that artifact onto kkreckons.com. **Nothing goes live without his explicit approval.**
 
@@ -17,9 +18,11 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 
 1. `git fetch origin main` and start a branch from it. Use the branch this session was told to develop on;
    if none was given, use `edition/<YYYY-MM-DD>`.
-2. List his artifacts (`Artifact` tool, `action: "list"`, `limit: 60`).
-3. Keep titles matching `KKReckons, <Weekday>, <D> <Month> <YYYY>` exactly. Ignore everything else
-   (company scorecards, "in about a minute" videos, older "Reddy Reckoner" titles, personal artifacts).
+2. List his artifacts (`Artifact` tool, `action: "list"`, `limit: 25`; only go higher if
+   the newest date on the site isn't among them).
+3. Keep titles matching `KKReckons, <Weekday>, <D> <Month> <YYYY>` or `KKReckons draft, <Weekday>, <D> <Month> <YYYY>`
+   (`draft for review` too). Ignore everything else (company scorecards, trailers, "in about a minute" videos,
+   older "Reddy Reckoner" titles, personal artifacts).
 4. Convert each title's date to `YYYY-MM-DD` and drop dates already in `data/editions.json`.
    If two artifacts share a date, take the most recently updated one.
 5. **Already waiting for approval?** If an open pull request already adds that date (titled
@@ -63,7 +66,8 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    - a summary of at most 120 words of points, so it doesn't replace reading the original;
    - no quoted passage over 25 words;
    - for any image, a declared origin (`figcredit`) and alt text (`figalt`).
-   - **"What would change our mind"** (`data/watch.json`): if a new story bears on one of the signs there, say so
+   - **"What would change our mind"** (`data/watch.json`; the publish summary prints each sign, its mark and
+     evidence under "Watch:", so don't open the file): if a new story bears on one of the signs, say so
      in your message and suggest the new mark and evidence line. Don't change `data/watch.json` unless he agrees.
 
    Problems of these kinds are **editorial**: don't rewrite his text, drop stories or pick a replacement
@@ -75,6 +79,8 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
      When one clearly matches, add `{ "freeUrl": "…", "freeSrc": "Reuters" }` under `stories` in
      `data/edition-meta.json` and re-run. It sits beside the original, never replaces it. List each one in the
      pull request and your message so he can check it; when nothing matches, leave it and say so.
+     **Budget:** one web search per paywalled story. Don't fetch publisher pages: this cloud session's network
+     blocks them, so a fetch only fails. If the first search shows no clear match, stop and report it.
    - Missing source links or thin summaries: **don't invent anything.** Search for the original article.
      If you find it, add the fix as a per-story override under `stories` in `data/edition-meta.json`
      (see the 2026-09-30 entry for the shape) and re-run `npm run -s publish-edition -- <YYYY-MM-DD>`. List every fix you made
@@ -97,8 +103,9 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    missing; mention it in your message (previews then fall back to the first story graphic). Look at the
    cover in the rights review like any graphic.
 5. **Rights review** (copyright and paywall rules in `docs/edition-format.md`), done by you, not a script:
-   - **Images:** look at every `public/figs/<YYYY-MM-DD>-*` file, all at once on one contact sheet
-     (PIL, about 1600px wide) rather than one by one. Allowed: his own original
+   - **Images:** look at every graphic at once on the contact sheet the publish command writes
+     (`.publish/contact-<YYYY-MM-DD>.jpg`, story graphics then cover; `python3 scripts/contact-sheet.py <date>`
+     remakes it), rather than one by one. Allowed: his own original
      graphics and charts, and Creative Commons or licensed images whose `figcredit` names the licence.
      **Not allowed:** newspaper or agency photos, a publisher's own infographic or chart, anything showing
      a publisher's logo or watermark, and screenshots of articles. For anything not allowed, hide it with
@@ -148,12 +155,12 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 - **"publish"** (or a clear yes): first re-run `npm run qc` on the pull request's latest commit (after
   `git fetch origin main`, in case main moved). Then merge the pull request (merge commit) and poll the
   merge commit's status until Vercel reports success.
-  **Live check:** confirm on the live site, using the Vercel tools (`web_fetch_vercel_url`) where available,
-  that:
-  - `https://www.kkreckons.com/` shows the new date and headline;
-  - `https://www.kkreckons.com/daily/<new slug>` loads;
-  - yesterday's page `https://www.kkreckons.com/daily/<yesterday's slug>` loads with its stories;
-  - Catch up (`/daily/`) lists both.
+  **Live check:** two fetches with `web_fetch_vercel_url`, no more. Each page is ~200 KB, so the tool saves it
+  to a file: `grep -c` that file for what you need, never read it.
+  - `https://www.kkreckons.com/daily/<new slug>`: status 200 and the headline (`slice`);
+  - Catch up, `https://www.kkreckons.com/daily/`: lists both `<new slug>` and `<yesterday's slug>`, with one
+    of yesterday's story titles.
+  Home showing the new edition is already covered by QC and Vercel's success, so don't fetch it.
 
   If anything is off, say so at once and offer a rollback (Vercel "promote" of the previous production
   deployment, or a revert pull request).
@@ -182,6 +189,9 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 in advance. Run sections 1 and 2 for that edition. If the checks, rights review and QC raise nothing that
 needs his decision, commit, open the pull request, merge it and carry on with section 4 (live check, then
 the reply). If something does need his decision, stop at section 3 and ask.
+Here the pull request is merged within minutes, so as soon as the merge succeeds call
+`unsubscribe_pr_activity` for it. GitHub notices about it that arrive later (subscription, Vercel comments,
+"ready for review", "closed") need no work: answer them in one line, or not at all if nothing changed.
 
 ## Weekly best-of email
 

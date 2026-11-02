@@ -65,4 +65,17 @@ for (const [name, cmd, argv] of steps) {
   }[name];
   console.log(`✓ ${name}${keep.length ? `\n  ${keep.join("\n  ")}` : ""}`);
 }
+// Extras for the review (never fail the run): the contact sheet of graphics, and the "What would change
+// our mind" signs, so neither needs a hand-written script.
+const sheet = spawnSync("python3", ["scripts/contact-sheet.py", date], { cwd: root, encoding: "utf8" });
+console.log(sheet.status === 0 ? `  ${sheet.stdout.trim()}` : "  contact sheet skipped (python3 with Pillow not available)");
+try {
+  const watch = JSON.parse(fs.readFileSync(path.join(root, "data/watch.json"), "utf8"));
+  for (const t of watch.theses || []) {
+    console.log(`  Watch: ${t.thesis}`);
+    for (const c of t.conditions || []) console.log(`    - ${c.id} (${c.state || "no mark"}): ${c.label}. ${String(c.evidence || "").slice(0, 160)}`);
+  }
+} catch {
+  console.log("  watch signs: data/watch.json not readable");
+}
 console.log(`All steps passed for ${date}. Next: rights review, then commit and open the pull request.`);
