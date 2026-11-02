@@ -45,7 +45,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
    then; `scripts/strip-newsletter-images.mjs`), runs the automatic checks, writes the email thumbnails
    (`public/email/<YYYY-MM-DD>-<n>.png`, commit them with the edition), the market strip
    (`data/markets/<YYYY-MM-DD>.json`, commit it too; if the build says market data was unreachable, mention it) and the email JSON
-   (`.publish/beehiiv-<YYYY-MM-DD>.json`, used in section 4), builds the site and runs QC, printing only
+   (`.publish/beehiiv-<YYYY-MM-DD>.json`, no longer used), builds the site and runs QC, printing only
    a summary or the failing step's output. Only the new date's files should change besides
    `data/editions.json`; investigate any other diffs. Ignore "Removed unused image public/figs/<other date>-…"
    lines for older dates: they are untracked leftovers and change nothing in git.
@@ -156,43 +156,19 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
   - Catch up (`/daily/`) lists both.
 
   If anything is off, say so at once and offer a rollback (Vercel "promote" of the previous production
-  deployment, or a revert pull request), and don't draft the email.
+  deployment, or a revert pull request).
 
   **If the live site can't be reached** (the session's network blocks kkreckons.com and
   `web_fetch_vercel_url` is refused): treat Vercel's `success` on the merge commit plus the passing QC
-  as enough, carry on with the email draft, and tell him plainly that the live pages weren't checked by
+  as enough, carry on, and tell him plainly that the live pages weren't checked by
   hand and he should open the link once.
 
-  **Email draft (beehiiv, free plan):** every "publish" to the website also prepares the subscriber email,
-  in the same run, without being asked. The beehiiv account is on the free (Launch) plan, which has no
-  automatic sending (no RSS to Send, recurring series, automations or Send API), so the flow is: the
-  draft is made here, and he presses Send or Schedule in beehiiv. Once the live check passes (the email
-  links to the site's pages and thumbnails):
-  1. Use `.publish/beehiiv-<YYYY-MM-DD>.json` from section 2 (re-run the publish command if it's missing). It has the
-     title, subtitle, email settings, slug, theme and body built from `data/content/<YYYY-MM-DD>.json`.
-     The email is one compact table (an HTML snippet): KK's takeaway at the top, the headline once near the end (beehiiv's own title, subtitle,
-     byline and "Read online" are hidden; the subject line has the name and date), one tight row per story
-     (thumbnail, kicker, short headline, one-line teaser), the numbers of the day, KK's takeaway, further
-     reading titles and a "Read the full edition" button. Colour sits in text and borders, not backgrounds,
-     so it reads the same where a mail app or printer drops backgrounds. Don't add blocks around it.
-  2. Use the KKReckons publication (`list_publications`). Check `list_posts` for a post with the same
-     title or slug `kkreckons-<YYYY-MM-DD>`; if one exists, don't create another, just link it.
-  3. Otherwise call `save_post` with the JSON's fields (`html_content` verbatim, not `theme`), then
-     `edit_post` with its `email_settings` again (`save_post` ignores `display_byline_in_email`), then
-     `save_post_theme` with its `theme`. This makes a **draft** only.
-  4. Re-read it with `get_post_content` (`format: "editor_html"`, ~15KB; not `text`, which omits the HTML
-     snippet and shows only the "read online" line, and never `html`, which is ~70KB) and confirm the
-     title and that every story's short headline (listed under "✓ email" in the publish summary) appears once.
-  5. Also check `list_posts` for an older KKReckons post still in `draft`; mention it in one line so an
-     unsent edition doesn't go unnoticed.
-  6. Reply in this shape (and send a push notification if that tool is available):
+  **No subscriber email (since 2 November 2026).** He has stopped the beehiiv email: drafts need a paid
+  plan and he isn't upgrading. Don't call any beehiiv tool, don't create or mention an email draft, and
+  ignore `.publish/beehiiv-<YYYY-MM-DD>.json` (the publish command still writes it; that's harmless).
+  Once the live check passes, reply in this shape (and send a push notification if that tool is available):
 
      > **<Weekday, D Month YYYY> is live:** <live link>. <yesterday> is now on Catch up.
-     > **Email to subscribers:** draft ready, tap **Send** (or **Schedule**, e.g. for 6am IST):
-     > <editor_url from save_post>
-
-     If the draft can't be created (tool missing or permission denied), say so plainly, so he knows
-     subscribers won't get this edition until it's made.
 
      Then add a **WhatsApp post**, ready to paste into the KKReckons channel or a group, in a code block so it copies cleanly:
      the headline (`slice`), the three most interesting short headlines (`ehead`, else `title`) as "•" lines, and the
@@ -205,7 +181,7 @@ This skill moves that artifact onto kkreckons.com. **Nothing goes live without h
 **"Publish" with no pull request waiting** (for example "Publish Friday edition"): that is his approval
 in advance. Run sections 1 and 2 for that edition. If the checks, rights review and QC raise nothing that
 needs his decision, commit, open the pull request, merge it and carry on with section 4 (live check, then
-the email draft). If something does need his decision, stop at section 3 and ask.
+the reply). If something does need his decision, stop at section 3 and ask.
 
 ## Weekly best-of email
 
@@ -215,7 +191,7 @@ The Friday weekly email has its own skill: `.claude/skills/weekly-email/SKILL.md
 
 - Each "Publish" works best in a fresh session: this skill holds every step, so no earlier history is needed.
 - The skill runs on Sonnet (`model: sonnet` above), but that covers only the turn that starts it. Start a
-  publishing session on Sonnet too, so his "publish" reply and the email draft stay on it.
+  publishing session on Sonnet too, so his "publish" reply stays on it.
 - Don't print whole files or tool payloads to look at them; grep or slice for what you need.
 - Read the artifact once, look at images once (contact sheet), and trust the publish command's summary.
 
@@ -224,5 +200,4 @@ The Friday weekly email has its own skill: `.claude/skills/weekly-email/SKILL.md
 - Never change an edition's facts, numbers or wording beyond what he asks for, or a sourced fix you list.
 - Never publish an edition with open problems unless he says to publish anyway.
 - Keep commits and pull requests free of model names.
-- Never send or schedule a beehiiv email; only create drafts for him to send. (On the free plan the
-  tools can't send anyway; if the account is ever upgraded, ask him before automating sends.)
+- No beehiiv emails (daily or weekly) unless he asks to bring them back.
