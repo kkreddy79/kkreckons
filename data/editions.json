@@ -1,5 +1,93 @@
 [
   {
+    "date": "2026-11-02",
+    "slice": "Bots do maths, errands and discounts. Junk and pensions do damage. Hard hats on.",
+    "artifact": "https://claude.ai/artifact/QkLkNn33WANQYggozh7h2x",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-02-1.jpg",
+    "cover": "/figs/2026-11-02-cover.jpg",
+    "coverAlt": "Bots do maths, errands and discounts. Junk and pensions do damage. Hard hats on.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Europe's pension systems strain; UK welfare bill forecast at £431.3bn",
+        "category": "Welfare states",
+        "tag": "",
+        "url": "https://www.wsj.com/world/europe/panic-and-anger-spread-as-europes-great-pension-covenant-unravels-69a94ed7",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Junk debt rout hits CCC borrowers and the funds that bet on them",
+        "category": "Credit markets",
+        "tag": "",
+        "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "OpenAI and Anthropic say AI disproved the exponential time hypothesis",
+        "category": "AI and science",
+        "tag": "",
+        "url": "https://www.wired.com/story/ai-made-decades-of-computer-science-research-irrelevant/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "OpenAI's discounts lure customers from Anthropic before its IPO",
+        "category": "AI business",
+        "tag": "",
+        "url": "https://www.theinformation.com/articles/anthropics-margin-openais-opportunity",
+        "src": "The Information",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents widen what workers attempt, not just how fast they work",
+        "category": "AI at work",
+        "tag": "",
+        "url": "https://hbr.org/2026/07/research-how-ai-agents-broaden-the-scope-of-knowledge-work",
+        "src": "Harvard Business Review",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Companies court women to fill skilled trade jobs",
+        "category": "Work",
+        "tag": "",
+        "url": "https://www.wsj.com/economy/jobs/companies-have-a-solution-for-the-skilled-trade-shortage-more-women-37851f46",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-01",
     "slice": "India wins messily. Jobs, loans, grids, wards strain; bots rank, shop. Trust barometers.",
     "artifact": "https://claude.ai/artifact/6bEc9v6abhH6Jkxx45GjqY",
