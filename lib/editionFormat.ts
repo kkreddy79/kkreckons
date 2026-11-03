@@ -36,6 +36,7 @@ const PUBLISHERS: Record<string, string> = {
   "youtu.be": "YouTube",
   "youtube.com": "YouTube",
   "hbr.org": "Harvard Business Review",
+  "zerodhavarsity.substack.com": "Zerodha Varsity",
   "hedgeweek.com": "Hedgeweek",
   "kuwaittimes.com": "Kuwait Times",
   "research.perplexity.ai": "Perplexity Research",
