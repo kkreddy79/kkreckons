@@ -1,5 +1,91 @@
 [
   {
+    "date": "2026-11-03",
+    "slice": "Stats lag. India ages and juggles. Markets wobble, crypto cracks, staff coast. Who works?",
+    "artifact": "https://claude.ai/artifact/6ESR4CnmsxjA38zhDzTB2S",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-03-1.jpg",
+    "cover": "/figs/2026-11-03-cover.jpg",
+    "coverAlt": "Stats lag. India ages and juggles. Markets wobble, crypto cracks, staff coast. Who works?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Why AI is not yet showing up in productivity data",
+        "category": "AI and productivity",
+        "tag": "Explainer",
+        "url": "https://zerodhavarsity.substack.com/p/why-isnt-ai-showing-up-in-productivity",
+        "src": "Zerodha Varsity",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's ageing shift needs a three-track policy reset",
+        "category": "Demographics",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/economy/policy-priority-reset-india-population-demographic-shift-11793623835105.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's three trade-offs: fuel prices, rates and foreign money",
+        "category": "Economy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/economy/india-economic-policy-monetary-policy-fiscal-policy-inflation-fuel-prices-west-asia-war-foreign-portfolio-investors-11793548163541.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Elliott warns of FOGO as bear-market alarm bells ring",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/hedge-fund-elliott-warns-of-fogo-fear-of-getting-obliterated-in-the-market-a2cc7027",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "What caused the Binance hack? Eswar Prasad blames crypto's middlemen",
+        "category": "Crypto",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/aee842a2-2949-4746-8742-03c0397f0391",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "UK workers less willing to go the extra mile, survey shows",
+        "category": "UK jobs",
+        "tag": "",
+        "url": "https://www.ft.com/content/d629be83-a1d5-4a08-aa69-93910ce50aa7?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-02",
     "slice": "Bots do maths, errands and discounts. Junk and pensions do damage. Hard hats on.",
     "artifact": "https://claude.ai/artifact/QkLkNn33WANQYggozh7h2x",

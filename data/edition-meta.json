@@ -499,5 +499,18 @@
       "band": "Elevated",
       "asOf": "2026-10-30"
     }
+  },
+  "2026-11-03": {
+    "artifact": "https://claude.ai/artifact/6ESR4CnmsxjA38zhDzTB2S",
+    "stressIndex": {
+      "score": 36,
+      "band": "Elevated",
+      "asOf": "2026-11-02"
+    },
+    "stories": {
+      "Elliott warns of FOGO as bear-market alarm bells ring": {
+        "stressIndex": true
+      }
+    }
   }
 }

@@ -1,0 +1,487 @@
+{
+  "date": "2026-11-03",
+  "slice": "Stats lag. India ages and juggles. Markets wobble, crypto cracks, staff coast. Who works?",
+  "artifact": "https://claude.ai/artifact/6ESR4CnmsxjA38zhDzTB2S",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "<1%",
+      "text": "Acemoglu's estimate of AI's 10-year productivity boost; Goldman sees 1.5 points a year.",
+      "url": "https://zerodhavarsity.substack.com/p/why-isnt-ai-showing-up-in-productivity"
+    },
+    {
+      "num": "55%",
+      "text": "of UK workers now say they will work harder than required, down from 69% in 2015.",
+      "url": "https://www.ft.com/content/d629be83-a1d5-4a08-aa69-93910ce50aa7?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI and productivity",
+          "tag": "Explainer",
+          "title": "Why AI is not yet showing up in productivity data",
+          "url": "https://zerodhavarsity.substack.com/p/why-isnt-ai-showing-up-in-productivity",
+          "url2": "",
+          "points": [
+            "Zerodha Varsity revisits Robert Solow's 1987 quip that computers were visible everywhere except the productivity statistics; US trend labour productivity growth had slid from 3.8% in 1948 to 1.2%.",
+            "History shows a lag: factories gained from electricity only after redesigning around individual motors, lifting manufacturing productivity 5.3% a year in the 1920s. Computers paid off in the late 1990s.",
+            "AI forecasts diverge: Daron Acemoglu sees under 1% over a decade, assuming about 5% of tasks shift to AI; Goldman Sachs sees about 1.5 points a year, assuming about 25%."
+          ],
+          "numbers": [
+            [
+              "<1%",
+              "Acemoglu: boost over 10 years"
+            ],
+            [
+              "+1.5 pts",
+              "Goldman: a year, once adopted"
+            ],
+            [
+              "5.3%",
+              "1920s factory productivity"
+            ]
+          ],
+          "why": "Firms bolting chatbots onto old workflows may be repeating factory owners who swapped one steam engine for one big motor; the payoff depends on redesigning the work itself.",
+          "other": "The J-curve is a hypothesis, not a promise: if the gains never arrive, today's AI spending looks less like early investment and more like overbuilding.",
+          "also": [],
+          "image": "/figs/2026-11-03-1.jpg",
+          "imageAlt": "Explainer on why AI has not yet lifted productivity: Acemoglu estimates under 1% over 10 years, Goldman Sachs about 1.5 points a year, and electricity's gains came only after factory redesign.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Zerodha Varsity",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Where are AI's productivity gains?",
+          "emailTeaser": "Electricity took nearly four decades to pay off. AI's clock is running.",
+          "cite": "Zerodha Varsity wrote on 2 November 2026 that Daron Acemoglu estimates AI's total productivity boost at under 1% over 10 years.",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Demographics",
+          "tag": "Opinion",
+          "title": "India's ageing shift needs a three-track policy reset",
+          "url": "https://www.livemint.com/economy/policy-priority-reset-india-population-demographic-shift-11793623835105.html",
+          "url2": "",
+          "points": [
+            "A howindialives.com piece in Mint says India is still young, but the share of people aged 60 and over, about 10% now, is projected to double in two decades, while the working-age share peaks around 2031.",
+            "Fertility in eight states has slipped below the level demographers link to a low-fertility trap, yet family planning still rewards sterilisation. It urges rebalancing, not control.",
+            "For older adults it proposes trained, better-paid caregivers, Keralam-style day-care centres and ASHA workers retrained for geriatric care; for workers, cities young families want to live in."
+          ],
+          "numbers": [],
+          "why": "India's growth story leans on its working-age bulge; building care systems and family-friendly cities now is cheaper than scrambling after that bulge peaks.",
+          "other": "Pro-natal incentives have done little in rich countries, and with the workforce still growing, scarce public money may do more for jobs today than for births tomorrow.",
+          "also": [],
+          "image": "/figs/2026-11-03-2.jpg",
+          "imageAlt": "Explainer on India's demographic reset: the 60-plus share, about 10% today, is projected to double in two decades, prompting three policy tracks for fertility, the elderly and workers.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "Young India is ageing fast",
+          "emailTeaser": "The elderly share is set to double; policy still fears a boom.",
+          "imageW": 1280,
+          "imageH": 1765
+        },
+        {
+          "category": "Economy",
+          "tag": "Opinion",
+          "title": "India's three trade-offs: fuel prices, rates and foreign money",
+          "url": "https://www.livemint.com/economy/india-economic-policy-monetary-policy-fiscal-policy-inflation-fuel-prices-west-asia-war-foreign-portfolio-investors-11793548163541.html",
+          "url2": "",
+          "points": [
+            "Deepa Vasudevan writes in Mint that the West Asia war has sharpened three balances for India: cheap fuel versus market prices, savers versus borrowers, and foreign money versus fiscal health.",
+            "Holding pump prices down only delays inflation. With wholesale inflation at 11.4%, either the RBI keeps raising rates or retail fuel prices rise, possibly after Diwali.",
+            "Net capital inflows that averaged $50bn a year until 2023-24 have nearly dried up. Tax breaks for foreign investors might help, but would cost revenue as the deficit risks overshooting."
+          ],
+          "numbers": [],
+          "why": "Every lever helps one group and hurts another; the real danger is pulling several at once, such as cutting taxes for foreign investors just as subsidies and borrowing climb.",
+          "other": "These trade-offs can ease on their own: if crude prices fall, fuel, inflation and rate pressures soften together and the hardest choices fade.",
+          "also": [],
+          "image": "/figs/2026-11-03-3.jpg",
+          "imageAlt": "Explainer on India's three policy trade-offs over fuel, interest rates and foreign capital, with wholesale inflation at 11.4%.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "India's three-way policy squeeze",
+          "emailTeaser": "Fuel, rates and the rupee pull in different directions.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Markets",
+          "tag": "",
+          "title": "Elliott warns of FOGO as bear-market alarm bells ring",
+          "url": "https://www.wsj.com/finance/investing/hedge-fund-elliott-warns-of-fogo-fear-of-getting-obliterated-in-the-market-a2cc7027",
+          "url2": "",
+          "points": [
+            "In an October investor letter seen by the WSJ, Paul Singer's Elliott likens today's debt-fuelled, hype-driven market to the Roaring '20s and says almost every bear-market warning is flashing.",
+            "It lists US deficits, sticky inflation, private credit, AI hype and circular AI deals, plus gambling-like trading, and warns the mood could flip from FOMO to fear of getting obliterated.",
+            "Elliott itself has lagged, gaining under 2% in the first nine months of 2026 against nearly 13% for the S&P 500, and is keeping capital ready for forced sellers."
+          ],
+          "numbers": [],
+          "why": "When a famously cautious fund trails the market, its warning also defends its own positioning; readers should weigh the list of risks more than the timing.",
+          "other": "Elliott's letters are known for gloom, and frothy markets can run for years; being early on a crash can cost nearly as much as missing it.",
+          "also": [],
+          "image": "/figs/2026-11-03-4.jpg",
+          "imageAlt": "Explainer on Elliott's warning of a bear market: it gained under 2% in the first nine months of 2026 against nearly 13% for the S&P 500, and lists deficits, private credit and AI hype as risks.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "AI"
+          ],
+          "emailHead": "Elliott: from FOMO to FOGO",
+          "emailTeaser": "A cautious fund says nearly every bear-market alarm is ringing.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Crypto",
+          "tag": "Opinion",
+          "title": "What caused the Binance hack? Eswar Prasad blames crypto's middlemen",
+          "url": "https://www.ft.com/content/aee842a2-2949-4746-8742-03c0397f0391",
+          "url2": "",
+          "points": [
+            "Cornell economist Eswar Prasad argues the $6.3bn hack of Binance shows how crypto's promise of decentralisation has been undercut by big centralised exchanges.",
+            "The blockchains were not breached, he says; the weak points lie in the ecosystem around them, from exchanges to oracle software, plus human error such as an apparently compromised laptop.",
+            "He warns AI is helping hackers, including from North Korea, find subtle flaws, and urges regulators to stop a loss of trust spilling into mainstream finance."
+          ],
+          "numbers": [],
+          "why": "Investors park coins on exchanges for convenience, recreating the single point of failure crypto was built to remove; that trade-off now carries a record price tag.",
+          "other": "Banks get hacked too, and exchanges offer customers the reassurance that losses can be fixed, something a pure self-custody world would not.",
+          "also": [],
+          "image": "/figs/2026-11-03-5.jpg",
+          "imageAlt": "Explainer on the $6.3bn Binance hack: the blockchain held, but exchanges, a compromised laptop and AI-assisted hackers were the weak points, argues Eswar Prasad.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://aljazeera.com/news/2026/10/30/binance-says-6-3bn-stolen-in-biggest-crypto-heist-in-history-what-we-know",
+          "freeSrc": "Al Jazeera",
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "One laptop, a record crypto heist",
+          "emailTeaser": "Prasad says exchanges, not blockchains, are crypto's weak spot.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "UK jobs",
+          "tag": "",
+          "title": "UK workers less willing to go the extra mile, survey shows",
+          "url": "https://www.ft.com/content/d629be83-a1d5-4a08-aa69-93910ce50aa7?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "A Resolution Foundation analysis of the British Social Attitudes Survey finds UK workers more disengaged than a decade ago, with job satisfaction the gloomiest in the survey's history.",
+            "The share willing to work harder than required fell from 69% in 2015 to 55% in 2025; managers and professionals pulled back most, and men cooled more than women.",
+            "The think tank points to post-pandemic priorities, remote work, heavier demands and fewer chances to advance, and says the shift could help explain weak UK productivity."
+          ],
+          "numbers": [],
+          "why": "If effort, not just hours or capital, is slipping, part of Britain's productivity problem lies in management and job design, which investment alone won't fix.",
+          "other": "The survey measures stated willingness, not output; staff who already feel always on may say they do less extra while working just as hard.",
+          "also": [],
+          "image": "/figs/2026-11-03-6.jpg",
+          "imageAlt": "Explainer on UK quiet quitting: 55% of workers were willing to work harder than required in 2025, down from 69% in 2015, with managers and men pulling back most.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ],
+          "emailHead": "Britain stops going the extra mile",
+          "emailTeaser": "Fewer staff will do more than required; productivity may pay.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Big promises.",
+    "b": "Weak links.",
+    "line": "From crypto vaults to ageing states, systems tend to fail at their weakest point, not their flashiest one."
+  },
+  "cover": "/figs/2026-11-03-cover.jpg",
+  "coverAlt": "Stats lag. India ages and juggles. Markets wobble, crypto cracks, staff coast. Who works?",
+  "stressIndex": {
+    "score": 36,
+    "band": "Elevated",
+    "asOf": "2026-11-02"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 23440.8008,
+        "asOf": "2026-11-02",
+        "prev": 23053.0996,
+        "week": 22753.1992,
+        "spark": [
+          23346.4004,
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7541.3999,
+        "asOf": "2026-11-02",
+        "prev": 7580.0698,
+        "week": 7676.77,
+        "spark": [
+          7764.6401,
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.894,
+        "asOf": "2026-11-02",
+        "prev": 4.929,
+        "week": 4.986,
+        "spark": [
+          4.968,
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 104.77,
+        "asOf": "2026-11-02",
+        "prev": 117.64,
+        "week": 115.81,
+        "spark": [
+          99.25,
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3969.6001,
+        "asOf": "2026-11-02",
+        "prev": 3898.8999,
+        "week": 4038.3999,
+        "spark": [
+          4376.3999,
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.905,
+        "asOf": "2026-11-02",
+        "prev": 94.95,
+        "week": 94.938,
+        "spark": [
+          95.6898,
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905
+        ]
+      }
+    ]
+  }
+}
