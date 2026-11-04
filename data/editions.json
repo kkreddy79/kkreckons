@@ -1,5 +1,106 @@
 [
   {
+    "date": "2026-11-04",
+    "slice": "Fake hires, hot freezers, dear bonds, shaky G7, proud China. Kids get stock. Grads don't.",
+    "artifact": "https://claude.ai/artifact/RExZ4kg8nErLHxExY7u4S7",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-04-1.jpg",
+    "cover": "/figs/2026-11-04-cover.jpg",
+    "coverAlt": "Fake hires, hot freezers, dear bonds, shaky G7, proud China. Kids get stock. Grads don't.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Binance says fake job interviews opened the door to its $6.3bn heist",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.ft.com/content/1ed838c0-a525-49bb-b494-15e4d1296791?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI's borrowing bill is rising as bond buyers demand more",
+        "category": "AI finance",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/5f08f1fb-4948-4420-8fe4-3c8c8cc492ef?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Europe's supermarket freezer hacks: what we know so far",
+        "category": "Cyber warfare",
+        "tag": "Explainer",
+        "url": "https://www.ft.com/content/90e63a7f-45d7-4e7a-940d-6d5145d51941?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI is shutting the door on new hires, not pushing workers out",
+        "category": "Jobs",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/cf6fd711-cfa5-49f9-9958-3aec32369286?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The new Fragile Five are rich nations, a Mint column argues",
+        "category": "Global economy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/make-way-for-a-new-fragile-five-france-italy-germany-the-uk-and-the-us-11793535550176.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Is 'Made in China' heading for its 'Made in Japan' moment?",
+        "category": "Brands",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/is-china-soon-going-to-have-its-own-made-in-japan-moment-11793535476331.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Bank Hapoalim says free shares made new investors, backing Musk",
+        "category": "Investing",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/elon-musk-will-turn-kids-into-capitalists-396c4fcf",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-03",
     "slice": "Stats lag. India ages and juggles. Markets wobble, crypto cracks, staff coast. Who works?",
     "artifact": "https://claude.ai/artifact/6ESR4CnmsxjA38zhDzTB2S",
