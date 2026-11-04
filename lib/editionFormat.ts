@@ -82,6 +82,8 @@ const PUBLISHERS: Record<string, string> = {
   "ndtv.com": "NDTV",
   "theverge.com": "The Verge",
   "wired.com": "Wired",
+  "coindesk.com": "CoinDesk",
+  "facilitiesdive.com": "Facilities Dive",
   "theguardian.com": "The Guardian",
   "nytimes.com": "The New York Times",
   "theatlantic.com": "The Atlantic",
