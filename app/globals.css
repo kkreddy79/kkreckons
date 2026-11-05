@@ -166,6 +166,8 @@ button { font: inherit; cursor: pointer; }
 .chip:hover { border-color: var(--purple); }
 .chip.on { background: var(--purple); color: #fff; border-color: var(--purple); }
 .chip.clear { color: var(--accent); }
+/* Special reports bring their own .chip styles; keep the site's filter-chip layout (inline-flex drops the space before a <b>) out of them. */
+.sp-report .chip { display: inline-block; min-height: 0; border: 0; font-weight: 400; color: inherit; }
 .src-filter { position: relative; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 14px; }
 .src-filter .src-label, .src-filter .chip { flex: none; }
 .src-filter .src-label { font-size: 13px; font-weight: 800; color: var(--control); }
