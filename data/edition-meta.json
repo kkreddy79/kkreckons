@@ -520,5 +520,19 @@
       "band": "Elevated",
       "asOf": "2026-11-03"
     }
+  },
+  "2026-11-05": {
+    "artifact": "https://claude.ai/artifact/5N4ZC8Ygeu9b82rZAHQM5n",
+    "stressIndex": {
+      "score": 35,
+      "band": "Elevated",
+      "asOf": "2026-11-04"
+    },
+    "stories": {
+      "AI is speeding up hacks. Are banks in India and abroad ready?": {
+        "freeUrl": "https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html",
+        "freeSrc": "The Hacker News"
+      }
+    }
   }
 }

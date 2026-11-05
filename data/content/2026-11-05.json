@@ -1,0 +1,439 @@
+{
+  "date": "2026-11-05",
+  "slice": "Servers borrow, voters balk, orbit beckons, hackers sprint. Who checks the honesty box?",
+  "artifact": "https://claude.ai/artifact/5N4ZC8Ygeu9b82rZAHQM5n",
+  "readingMinutes": 4,
+  "callouts": [
+    {
+      "num": "3.6%",
+      "text": "of US GDP a year projected for the AI buildout, bigger than the railway boom",
+      "url": "https://www.ft.com/content/b954b99c-b71e-4334-9789-18e2b69de76d?syn-25a6b1a6=1"
+    },
+    {
+      "num": "95%",
+      "text": "fewer parking violations once New York pulled UN diplomats' plates",
+      "url": "https://www.ft.com/content/ece62af0-f953-43e9-bbbc-d3f54b26c8c6?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI bust risk",
+          "tag": "Opinion",
+          "title": "Martin Wolf: AI buildout at 3.6% of US GDP raises the risk of a bust",
+          "url": "https://www.ft.com/content/b954b99c-b71e-4334-9789-18e2b69de76d?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Martin Wolf draws on a new Brookings paper by Columbia's Stijn Van Nieuwerburgh, which projects US spending on the AI buildout at 3.6% of GDP a year to 2032, a bigger sector boom than the railways of the late 1800s.",
+            "Big Tech's spending is now outrunning its cash flow, he notes, so data-centre developers, infrastructure funds and private credit are filling the gap, much of it through loans outsiders can barely see.",
+            "His bigger worry is stocks: US valuations sit where they have historically come before crashes, and the longer the boom and the financial engineering run, the harder the landing."
+          ],
+          "numbers": [
+            [
+              "3.6%",
+              "of US GDP a year on the AI buildout, 2025-32"
+            ]
+          ],
+          "why": "When one theme props up growth, profits and share prices at once, a stall hits jobs, lenders and portfolios together, including Indians who hold US tech through global funds.",
+          "other": "Booms that end in busts often leave useful infrastructure behind, and if AI profits arrive fast enough today's spending will look prudent. Wolf himself grants AI may still prove transformative.",
+          "also": [],
+          "image": "/figs/2026-11-05-1.jpg",
+          "imageAlt": "Explainer: the US AI buildout is projected at 3.6% of GDP a year to 2032, financed increasingly by opaque lending, with stock valuations near historic crash levels.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.brookings.edu/articles/financing-the-ai-buildout/",
+          "freeSrc": "Brookings",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Is the AI boom a bubble?",
+          "emailTeaser": "Martin Wolf weighs what an AI bust would cost",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Bank cyber risk",
+          "tag": "Opinion",
+          "title": "AI is speeding up hacks. Are banks in India and abroad ready?",
+          "url": "https://m.economictimes.com/prime/ai-is-speeding-up-cyberattacks-how-prepared-are-indian-banks/primearticleshow/135535941.cms",
+          "url2": "https://www.ft.com/content/41f0e298-42f9-4bb5-8a48-090db4d493ef?syn-25a6b1a6=1",
+          "points": [
+            "An ET Prime analysis notes that India's CERT-In, in an October 15 advisory, saw attackers using AI agents go from first access to impact within hours, exploiting familiar gaps such as exposed credentials and excessive permissions.",
+            "It argues bank boards should judge how fast they can spot and shut a breach, and tightly limit what fintech and payment partners can instruct.",
+            "In the FT, Chicago Booth's Anil Kashyap calls the Binance hack a warning shot: an AI-aided breach of a major bank is a matter of when, and lightly overseen crypto could be the weak link."
+          ],
+          "numbers": [
+            [
+              "Hours",
+              "from first access to impact, per CERT-In"
+            ]
+          ],
+          "why": "As UPI, fintech apps and payment partners plug into banks, a lender's real defence is its slowest link and its slowest decision. That is invisible on a balance sheet, so depositors and shareholders rely on what banks choose to disclose.",
+          "other": "Banks are among the most watched and best-guarded firms, and AI strengthens defenders too. Years of warnings have passed without a crippling bank breach, so 'when, not if' may overstate the near-term odds.",
+          "also": [],
+          "image": "/figs/2026-11-05-2.jpg",
+          "imageAlt": "Explainer: CERT-In says AI-agent attacks moved from access to impact within hours; banks are urged to speed up response and limit partner access.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times and Financial Times",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "AI"
+          ],
+          "emailHead": "Can banks outrun AI hackers?",
+          "emailTeaser": "Attacks now take hours; are bank defences that quick?",
+          "freeUrl": "https://thehackernews.com/2026/10/cert-in-warns-ai-agents-accessed.html",
+          "freeSrc": "The Hacker News",
+          "imageW": 1280,
+          "imageH": 1777
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Data centre politics",
+          "tag": "",
+          "title": "After a blue wave, data centre fans look to space",
+          "url": "https://www.wired.com/story/the-blue-wave-has-tech-bros-scrambling-for-data-centers-in-space/",
+          "url2": "",
+          "points": [
+            "Democrats won widely on Tuesday, taking the US House and Senate and doing well in Texas, a data-centre hot spot, with many winners campaigning against the industry, Wired reports.",
+            "Elon Musk, who spent more than $400 million backing Republicans who all lost, posted that data centres in space now look appealing; investors, researchers and fans joined the chorus.",
+            "Experts told Wired change in Texas may be limited: Republicans still hold the state senate, developers' permits carry strong vested rights, and counties lack zoning power over data centres."
+          ],
+          "numbers": [
+            [
+              "$400m+",
+              "Musk spent on Republicans who lost"
+            ]
+          ],
+          "why": "Local anger over power, water and land has become a vote-winner, and it will shape where AI capacity gets built. Indian states courting data centres should note that welcome can turn quickly.",
+          "other": "Orbit is no quick escape: Wired notes space data centres cost far more, cannot reach hyperscale size and depend on launches. With a split Texas legislature, change may be slower than either side expects.",
+          "also": [],
+          "image": "/figs/2026-11-05-3.jpg",
+          "imageAlt": "Explainer: after Democratic wins, tech voices pitched space data centres; Musk spent more than $400 million on losing Republicans, but Texas change faces limits.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Data centres eye orbit after vote",
+          "emailTeaser": "Voters sour on server farms; tech fans look skyward",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Economics of honesty",
+          "tag": "Opinion",
+          "title": "Tim Harford on what stolen sweets and parking fines say about cheats",
+          "url": "https://www.ft.com/content/ece62af0-f953-43e9-bbbc-d3f54b26c8c6?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Tim Harford cheers this year's Ig Nobel economics winners, who found upper-class people more likely to take sweets from children, and says the spoof prize shows what makes economists tick.",
+            "He recalls classic cheating studies: a bagel seller's honesty box paid best in small offices with well-liked bosses, and UN diplomats' unpaid parking tickets tracked corruption at home until New York pulled plates and violations fell 95%.",
+            "His darkest example is a 2012 paper on signing forms honestly, retracted after data sleuths flagged manipulated data; both researchers who supervised the questioned studies deny wrongdoing."
+          ],
+          "numbers": [
+            [
+              "95%",
+              "drop in UN diplomats' parking violations"
+            ]
+          ],
+          "why": "Honour systems, from office tea funds to self-assessed tax returns, work better when someone occasionally checks. And if research on honesty can itself be faked, a single striking study deserves caution.",
+          "other": "Laughing at cheats can hide how rare outright fraud is; most research is honest, and the parking link is a correlation, not proof that any one diplomat or country is dishonest.",
+          "also": [],
+          "image": "/figs/2026-11-05-4.jpg",
+          "imageAlt": "Explainer: studies of honesty boxes and diplomats' parking tickets show culture and rules both shape cheating; violations fell 95% once enforcement arrived.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "What cheats teach economists",
+          "emailTeaser": "Sweets, bagels and parking tickets measure our honesty",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Fast money.",
+    "b": "Slow guardrails.",
+    "line": "Spending, hacking and politics are all outrunning the safeguards meant to catch them. The winners will be whoever builds the brakes in time."
+  },
+  "cover": "/figs/2026-11-05-cover.jpg",
+  "coverAlt": "Servers borrow, voters balk, orbit beckons, hackers sprint. Who checks the honesty box?",
+  "stressIndex": {
+    "score": 35,
+    "band": "Elevated",
+    "asOf": "2026-11-04"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 23960.5996,
+        "asOf": "2026-11-04",
+        "prev": 23810.8496,
+        "week": 22698.8496,
+        "spark": [
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7688.6201,
+        "asOf": "2026-11-04",
+        "prev": 7568.9199,
+        "week": 7743.98,
+        "spark": [
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.894,
+        "asOf": "2026-11-04",
+        "prev": 4.952,
+        "week": 5.045,
+        "spark": [
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 103.6,
+        "asOf": "2026-11-03",
+        "prev": 104.77,
+        "week": 113.88,
+        "spark": [
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4073,
+        "asOf": "2026-11-04",
+        "prev": 3940.3999,
+        "week": 4051.6001,
+        "spark": [
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.7484,
+        "asOf": "2026-11-04",
+        "prev": 94.7254,
+        "week": 95.1778,
+        "spark": [
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484
+        ]
+      }
+    ]
+  }
+}
