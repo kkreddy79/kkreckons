@@ -1,5 +1,67 @@
 [
   {
+    "date": "2026-11-05",
+    "slice": "Servers borrow, voters balk, orbit beckons, hackers sprint. Who checks the honesty box?",
+    "artifact": "https://claude.ai/artifact/5N4ZC8Ygeu9b82rZAHQM5n",
+    "readingMinutes": 4,
+    "image": "/figs/2026-11-05-1.jpg",
+    "cover": "/figs/2026-11-05-cover.jpg",
+    "coverAlt": "Servers borrow, voters balk, orbit beckons, hackers sprint. Who checks the honesty box?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Martin Wolf: AI buildout at 3.6% of US GDP raises the risk of a bust",
+        "category": "AI bust risk",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/b954b99c-b71e-4334-9789-18e2b69de76d?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI is speeding up hacks. Are banks in India and abroad ready?",
+        "category": "Bank cyber risk",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/prime/ai-is-speeding-up-cyberattacks-how-prepared-are-indian-banks/primearticleshow/135535941.cms",
+        "src": "The Economic Times and Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "After a blue wave, data centre fans look to space",
+        "category": "Data centre politics",
+        "tag": "",
+        "url": "https://www.wired.com/story/the-blue-wave-has-tech-bros-scrambling-for-data-centers-in-space/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Tim Harford on what stolen sweets and parking fines say about cheats",
+        "category": "Economics of honesty",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/ece62af0-f953-43e9-bbbc-d3f54b26c8c6?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-04",
     "slice": "Fake hires, hot freezers, dear bonds, shaky G7, proud China. Kids get stock. Grads don't.",
     "artifact": "https://claude.ai/artifact/RExZ4kg8nErLHxExY7u4S7",
