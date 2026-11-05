@@ -1,5 +1,27 @@
 [
   {
+    "slug": "india-next-unicorns",
+    "title": "Lift-off, with turbulence: India's next 161 unicorns",
+    "kicker": "India startups",
+    "dek": "161 Indian startups on the runway to $1 billion: the jobs, the deep tech, the money behind them and the failures.",
+    "blurb": "India now has 161 startups on the runway to $1 billion, and more of them make rockets, chips and solar modules than apps. The jobs, the government's ₹1 lakh crore RDI fund and the investors backing them, the collapses that say not all will make it, and a watchlist of 70 deep-tech startups.",
+    "date": "2026-11-05",
+    "themes": ["India", "Startups", "Markets"],
+    "reading_minutes": 13,
+    "file": "special/india-next-unicorns.html",
+    "cover": "/special/india-next-unicorns.jpg",
+    "cover_alt": "Lift-off, with turbulence: India's next 161 unicorns. A navy-to-dusk sky over a city skyline, with the KKReckons special report kicker.",
+    "sources": [
+      "https://www.business-standard.com/amp/companies/start-ups/india-overtakes-uk-to-rank-third-in-hurun-gazelle-index-with-51-firms-126110301790_1.html",
+      "https://www.thehansindia.com/business/market-compass/indias-startup-pipeline-expands-to-110-cheetahs-in-2026-ask-hurun-1119503",
+      "https://w.tracxn.com/report-releases/india-tech-annual-funding-report-2025",
+      "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2253019&reg=3&lang=2",
+      "https://www.cnbc.com/2026/10/28/jio-ipo-india-listing-.html",
+      "https://techcrunch.com/2026/11/03/indias-eloelo-nabs-80m-from-nbc-universal-to-bet-on-the-countrys-rising-microdrama-market/",
+      "https://spectrum.ieee.org/skyroot-aerospace-vikram-1-launch"
+    ]
+  },
+  {
     "slug": "claude-at-work",
     "title": "Wall Street to brunch: Claude's wins, on Anthropic's word. Who checked?",
     "kicker": "AI at work",
