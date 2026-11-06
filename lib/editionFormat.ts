@@ -26,6 +26,10 @@ export type Edition = {
 };
 
 const PUBLISHERS: Record<string, string> = {
+  "jamescrabtree.substack.com": "James Crabtree",
+  "fred.stlouisfed.org": "St. Louis Fed (FRED)",
+  "digitalbureaucracyandgeopolitics.substack.com": "Technology, Geopolitics, and Bureaucracy",
+  "contraptions.venkateshrao.com": "Contraptions (Venkatesh Rao)",
   "sec.gov": "SEC",
   "thenightly.com.au": "The Nightly",
   "anthropic.com": "Anthropic",

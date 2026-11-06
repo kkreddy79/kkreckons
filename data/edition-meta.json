@@ -534,5 +534,20 @@
         "freeSrc": "The Hacker News"
       }
     }
+  },
+  "2026-11-06": {
+    "artifact": "https://claude.ai/artifact/STtuXbK7mRc2AVuyprwPin",
+    "special": {
+      "kicker": "Special report",
+      "title": "Lift-off, with turbulence: India's next 161 unicorns",
+      "intro": "161 Indian startups on the runway to $1 billion: the jobs, the deep tech, the money behind them and the failures.",
+      "url": "https://www.kkreckons.com/special/india-next-unicorns",
+      "cta": "Read the special report"
+    },
+    "stressIndex": {
+      "score": 48,
+      "band": "Elevated",
+      "asOf": "2026-11-05"
+    }
   }
 }

@@ -1,5 +1,107 @@
 [
   {
+    "date": "2026-11-06",
+    "slice": "China splits, stocks crush homes, junk hits 18%, hackers test with ₹1. AI profits? Still buffering.",
+    "artifact": "https://claude.ai/artifact/STtuXbK7mRc2AVuyprwPin",
+    "readingMinutes": 9,
+    "image": "/figs/2026-11-06-1.jpg",
+    "cover": "/figs/2026-11-06-cover.jpg",
+    "coverAlt": "China splits, stocks crush homes, junk hits 18%, hackers test with ₹1. AI profits? Still buffering.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Stocks beat home prices in every US state over 40 years, after tax, a WSJ study finds",
+        "category": "Home vs stocks",
+        "tag": "Analysis",
+        "url": "https://www.wsj.com/finance/investing/home-vs-stock-market-investment-6783607f",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "China's K-shaped economy: world-class tech on top, weak jobs and demand below, James Crabtree finds",
+        "category": "China economy",
+        "tag": "Analysis",
+        "url": "https://jamescrabtree.substack.com/p/i-deliver-thoughts-from-beijing",
+        "src": "James Crabtree (Substack)",
+        "pay": false,
+        "themes": [
+          "Geopolitics",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "CERT-In flags 'critical' AI-driven attacks on Indian banks, NBFCs and fintechs",
+        "category": "Bank cyber risk",
+        "tag": "Explainer",
+        "url": "https://www.livemint.com/ai/artificial-intelligence/mint-explainer-how-ai-driven-cyberattacks-are-targeting-indias-financial-sector-11793854055822.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Yields on CCC junk bonds hit 18%, up from 12.5% in January",
+        "category": "Credit stress",
+        "tag": "Analysis",
+        "url": "https://m.economictimes.com/prime/junk-bonds-are-cracking-at-the-bottom-will-the-noise-get-loud-enough-to-make-junk-bond-a-household-term-again/primearticleshow/135581611.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "88% of US firms use AI vs 26% in Japan, but depth beats speed, HBR authors argue",
+        "category": "AI adoption",
+        "tag": "Analysis",
+        "url": "https://m.economictimes.com/hbr/ai-at-work/u-s-and-japanese-companies-struggle-with-different-parts-of-ai-adoptionand-offer-different-lessons-for-making-it-work/articleshow/135533612.cms",
+        "src": "Harvard Business Review (via The Economic Times)",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "John Thornhill: will AI's 'cognitive capitalism' spread wealth or concentrate it?",
+        "category": "AI and wealth",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/dd91306a-f3cf-43cc-baf2-9a9134fb92c4?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Europe is falling behind on AI and tech, and Britain must chart its own path, says Keegan McBride",
+        "category": "Tech geopolitics",
+        "tag": "Opinion",
+        "url": "https://digitalbureaucracyandgeopolitics.substack.com/p/technology-geopolitics-and-the-new",
+        "src": "Technology, Geopolitics, and Bureaucracy (Substack)",
+        "pay": false,
+        "themes": [
+          "Geopolitics",
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-05",
     "slice": "Servers borrow, voters balk, orbit beckons, hackers sprint. Who checks the honesty box?",
     "artifact": "https://claude.ai/artifact/5N4ZC8Ygeu9b82rZAHQM5n",
