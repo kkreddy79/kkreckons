@@ -1,0 +1,532 @@
+{
+  "date": "2026-11-07",
+  "slice": "Bubbles are bets. Privacy sells, old emails too. Banks bankroll yuan. AI hacks 73%. A yes needs eye contact.",
+  "artifact": "https://claude.ai/artifact/7m6FuYoAgNWk47jbenVSiE",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "73%",
+      "text": "DeepSeek's score on mock-network hacking tasks, close to OpenAI's gated Daybreak",
+      "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/"
+    },
+    {
+      "num": "3rd",
+      "text": "Offshore yuan's rank as a funding currency for global banks, now ahead of the pound",
+      "url": "https://www.livemint.com/opinion/online-views/andy-mukherjee-how-wall-street-is-helping-china-build-a-global-yuan-11793952325395.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Markets column",
+          "tag": "Opinion",
+          "title": "Jeff Yass: There is no such thing as a stock-market bubble, even in AI",
+          "url": "https://www.wsj.com/opinion/theres-no-such-thing-as-a-stock-market-bubble-159ea117",
+          "url2": "",
+          "points": [
+            "Susquehanna co-founder Jeff Yass argues a high price is not a delusion but the market's best guess: every possible future weighted by its odds, set by people risking their own money.",
+            "His 1999 example: a stock with a 15% shot at a tenfold payoff is a sensible buy even if it ends at zero. The bet was fair; the likelier outcome simply arrived. Even Amazon looked like a bubble after its crash.",
+            "His dare to AI bubble callers: buy put options. If you won't, don't call the market irrational when it falls."
+          ],
+          "numbers": [
+            [
+              "15%",
+              "Odds that can justify a long-shot bet"
+            ]
+          ],
+          "why": "If he is right, an AI sell-off would mean long-shot bets missed, not that buyers were fools. That is a useful test for your own portfolio: judge a decision by the odds you faced, not only by how it turned out.",
+          "other": "Odds can only be checked after the fact, so 'it was priced in' is hard to disprove. Herding, leverage and fund managers paid to chase rallies can push prices past any sober estimate, and a trading-firm founder is not a neutral judge of markets.",
+          "also": [],
+          "image": "/figs/2026-11-07-1.jpg",
+          "imageAlt": "Explainer: Jeff Yass argues prices are probability-weighted bets, so a fall is uncertainty resolving, not a bubble bursting",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "AI"
+          ],
+          "emailHead": "No such thing as a bubble?",
+          "emailTeaser": "A trading-firm founder says AI prices are bets, not delusions",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Private AI",
+          "tag": "Explainer",
+          "title": "Private AI rises: Eternal's Dark.ai and the startups selling privacy",
+          "url": "https://inc42.com/features/inside-the-new-wave-of-private-ai/",
+          "url2": "",
+          "points": [
+            "Eternal launched Dark.ai in October, a privacy-focused assistant built on open-weight models and pitched around end-to-end encryption. Brave Leo, Duck.ai and Proton Lumo make similar promises abroad.",
+            "There is no single fix: firms keep data on the device, mask identities, encrypt chats, keep no logs or run AI offline. Lexlegis.ai's founder says some legal clients won't let files leave their own systems.",
+            "Founders and investors say privacy wins buyers only when the product is already useful, and it adds security and compliance costs, including under India's DPDP rules."
+          ],
+          "numbers": [
+            [
+              "6",
+              "Approaches firms use to keep AI private"
+            ]
+          ],
+          "why": "For law firms, lenders and anyone handling confidential records, a credible private option could decide whether AI is used on sensitive work at all. Privacy looks less like a feature and more like the door to enterprise adoption.",
+          "other": "'Private' is easy to claim and hard to check. Without independent audits, buyers can't tell a sealed system from good marketing. And will most users really trade capability for privacy when the better assistant is a tap away?",
+          "also": [],
+          "image": "/figs/2026-11-07-2.jpg",
+          "imageAlt": "Explainer: six approaches AI firms use to keep user data private, from encryption to offline deployment",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Inc42",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "India's private AI push",
+          "emailTeaser": "Startups bet that privacy sells AI to cautious firms",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Global money",
+          "tag": "Opinion",
+          "title": "Wall Street banks pile into dim-sum bonds, building a global yuan",
+          "url": "https://www.livemint.com/opinion/online-views/andy-mukherjee-how-wall-street-is-helping-china-build-a-global-yuan-11793952325395.html",
+          "url2": "",
+          "points": [
+            "Bloomberg columnist Andy Mukherjee notes that the world's biggest banks have sold nearly triple last year's total of offshore yuan (dim-sum) bonds in Hong Kong so far this year, led by Citigroup, Barclays and BNP Paribas.",
+            "The draw is no longer currency arbitrage but China's vast pool of savers, short of returns at home, who can buy offshore through Southbound Bond Connect while staying in yuan.",
+            "Beijing wants deep yuan markets to blunt Western sanctions. The irony, he says: as Washington frets, US megabanks help build them."
+          ],
+          "numbers": [
+            [
+              "3rd",
+              "Offshore yuan's rank as a bank funding currency"
+            ]
+          ],
+          "why": "Each dim-sum deal is a small step toward a yuan that trade partners can hold and earn on without touching the dollar. Currency power is being built through bond plumbing, not summit speeches.",
+          "other": "The yuan is still a sliver of global reserves, and capital controls set the ceiling: the 2016 liquidity squeeze showed Beijing can drain offshore yuan when it chooses. Banks borrowing cheap yuan may be opportunism, not a vote of confidence.",
+          "also": [],
+          "image": "/figs/2026-11-07-3.jpg",
+          "imageAlt": "Explainer: why global banks are issuing dim-sum bonds and what it means for the yuan",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "Wall Street's yuan habit",
+          "emailTeaser": "US banks borrow in yuan while Washington frets",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "AI math breakthroughs may crack encryption before quantum computers",
+          "url": "https://www.wsj.com/tech/ai/ai-math-online-encryption-quantum-computers-57926bb2",
+          "url2": "",
+          "points": [
+            "Engineers are rolling out postquantum cryptography to guard against future quantum codebreakers. Some cryptographers now fear AI-driven math discoveries could get there first.",
+            "Johns Hopkins cryptographer Matthew Green points to AI labs' recent results, including disproving the Exponential Time Hypothesis, which held that some problems have no shortcuts. Vitalik Buterin has called for 'post-AI cryptography'.",
+            "Coinbase's Yehuda Lindell calls the alarm unhelpful: postquantum algorithms should hold, AI may strengthen them, and at worst keys get longer and systems slower."
+          ],
+          "numbers": [],
+          "why": "Bank accounts, email and payments rest on a bet that some math is hard. Encryption upgrades take years, so even a small chance that AI finds shortcuts argues for moving sooner.",
+          "other": "Green himself says there is no evidence any of today's algorithms has been broken, and decades of failed attacks count as evidence too. Alarm without a concrete attack can waste money and erode trust in systems that still work.",
+          "also": [],
+          "image": "/figs/2026-11-07-4.jpg",
+          "imageAlt": "Explainer: how AI math discoveries could threaten encryption, with the case for and against worry",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "AI versus the locks",
+          "emailTeaser": "Math breakthroughs may beat quantum to codebreaking",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI security",
+          "tag": "",
+          "title": "Free Chinese AI models nearly match OpenAI's best at hacking networks",
+          "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/",
+          "url2": "",
+          "points": [
+            "Vals, which measures AI capabilities, set models loose on mock corporate networks. OpenAI's gated cyber model Daybreak completed 81% of tasks; the open-weight DeepSeek managed 73% and tied it on some.",
+            "Vals says open models do the job for about a tenth of the cost, under $3 a run, partly because they can run on one's own hardware.",
+            "That undercuts the idea, behind Anthropic's limited release of Claude Mythos Preview, that gated access buys defenders much time. Real attackers still mostly use older, cheaper models."
+          ],
+          "numbers": [
+            [
+              "73%",
+              "DeepSeek's share of hacking tasks completed"
+            ]
+          ],
+          "why": "Defenders can no longer assume top-tier hacking help sits behind trusted-access programs. Patching and network monitoring now have to plan for anyone with a downloaded model having near-frontier tools.",
+          "other": "Mock networks are not real breaches, and an Edera co-founder notes the closed labs probably hold stronger unreleased models. Cheap open models also help defenders, who can run them to find holes first.",
+          "also": [],
+          "image": "/figs/2026-11-07-5.jpg",
+          "imageAlt": "Explainer: open-weight DeepSeek scores close to OpenAI's gated Daybreak on Vals' simulated hacking test",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "freeUrl": "https://www.vals.ai/benchmarks/cyber_offense",
+          "freeSrc": "Vals AI",
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Open models learn to hack",
+          "emailTeaser": "DeepSeek nears OpenAI's gated cyber model at a fraction of the cost",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Data trade",
+          "tag": "Opinion",
+          "title": "AI labs want your old work emails, and data brokers are selling them",
+          "url": "https://www.wired.com/story/ai-companies-really-really-want-to-buy-your-work-files-and-emails/",
+          "url2": "",
+          "points": [
+            "Steven Levy reports brokers pitching companies, Wired included, one-off fees for old documents, emails, Slack messages and tickets to train AI. Leaders Mercor, Micro1 and Handshake say they strip out personal details first.",
+            "Bankrupt Spirit Airlines' records, including 500 million internal messages, drew rival bids from Google and Micro1; the sale is on hold after the flight attendants' union objected.",
+            "Privacy lawyers say messy emails and chats are hard to fully anonymise, and the data trains AI meant to automate the very work that produced it."
+          ],
+          "numbers": [
+            [
+              "500M",
+              "Spirit internal messages in the data sale"
+            ]
+          ],
+          "why": "Workplace messages are becoming an asset on someone else's balance sheet, often without the staff who wrote them being asked. Once sold and trained on, that data cannot be recalled.",
+          "other": "Buyers say de-identification can be verified, and that real working data makes AI more useful at work. A company winding down may fairly see its records as value it paid to create.",
+          "also": [],
+          "image": "/figs/2026-11-07-6.jpg",
+          "imageAlt": "Explainer: how data brokers buy company emails and files to train AI, and the privacy objections",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Your work emails, for sale",
+          "emailTeaser": "Brokers buy company files to train AI models",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Careers",
+          "tag": "Opinion",
+          "title": "How to get colleagues to say yes: ask directly, and in person",
+          "url": "https://www.wsj.com/lifestyle/careers/how-to-ask-colleagues-agree-requests-72231479",
+          "url2": "",
+          "points": [
+            "Cornell professor Vanessa Bohns says her research finds people agree to requests about twice as often as askers expect, so expect a yes and skip the hedging and apologies.",
+            "Ask directly rather than hint: 'I'd like to meet Steve' is not a request. Ask face to face: in one study, strangers were 34 times likelier to agree in person than by email.",
+            "Then give people time to think, or a heads-up beforehand, so the yes is genuine and doesn't turn into resentment or a quiet backout."
+          ],
+          "numbers": [
+            [
+              "34x",
+              "In-person vs email yes rate, strangers"
+            ]
+          ],
+          "why": "Most of us default to email, the least effective channel, because it feels safer. A small change in how you ask can win the deadline extension, the introduction or the extra hire.",
+          "other": "Studies of strangers and small favours may not carry over to big asks of busy bosses, and in hybrid teams a desk-side ask can feel like pressure. A yes won by presence may be less voluntary than it looks, which is her own closing point.",
+          "also": [],
+          "image": "/figs/2026-11-07-7.jpg",
+          "imageAlt": "Explainer: four research-backed rules for getting colleagues to agree to requests",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ],
+          "emailHead": "The science of asking",
+          "emailTeaser": "Ask directly, in person, and expect a yes",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Price the odds.",
+    "b": "Guard the archive.",
+    "line": "Markets, codebreakers and colleagues reward the same habit: think in probabilities, protect what you cannot take back, and ask plainly for what you want."
+  },
+  "cover": "/figs/2026-11-07-cover.jpg",
+  "coverAlt": "Bubbles are bets. Privacy sells, old emails too. Banks bankroll yuan. AI hacks 73%. A yes needs eye contact.",
+  "stressIndex": {
+    "score": 47,
+    "band": "Elevated",
+    "asOf": "2026-11-06"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25030.3496,
+        "asOf": "2026-11-06",
+        "prev": 24536.5996,
+        "week": 23053.0996,
+        "spark": [
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7376.8599,
+        "asOf": "2026-11-06",
+        "prev": 7353.73,
+        "week": 7580.0698,
+        "spark": [
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.859,
+        "asOf": "2026-11-06",
+        "prev": 4.837,
+        "week": 4.929,
+        "spark": [
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 98.29,
+        "asOf": "2026-11-05",
+        "prev": 94.62,
+        "week": 114.88,
+        "spark": [
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4113.5,
+        "asOf": "2026-11-05",
+        "prev": 4073,
+        "week": 4031.3999,
+        "spark": [
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.4589,
+        "asOf": "2026-11-06",
+        "prev": 94.5154,
+        "week": 95.1524,
+        "spark": [
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589
+        ]
+      }
+    ]
+  }
+}

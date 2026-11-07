@@ -1,5 +1,105 @@
 [
   {
+    "date": "2026-11-07",
+    "slice": "Bubbles are bets. Privacy sells, old emails too. Banks bankroll yuan. AI hacks 73%. A yes needs eye contact.",
+    "artifact": "https://claude.ai/artifact/7m6FuYoAgNWk47jbenVSiE",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-07-1.jpg",
+    "cover": "/figs/2026-11-07-cover.jpg",
+    "coverAlt": "Bubbles are bets. Privacy sells, old emails too. Banks bankroll yuan. AI hacks 73%. A yes needs eye contact.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Jeff Yass: There is no such thing as a stock-market bubble, even in AI",
+        "category": "Markets column",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/theres-no-such-thing-as-a-stock-market-bubble-159ea117",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Private AI rises: Eternal's Dark.ai and the startups selling privacy",
+        "category": "Private AI",
+        "tag": "Explainer",
+        "url": "https://inc42.com/features/inside-the-new-wave-of-private-ai/",
+        "src": "Inc42",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Wall Street banks pile into dim-sum bonds, building a global yuan",
+        "category": "Global money",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/andy-mukherjee-how-wall-street-is-helping-china-build-a-global-yuan-11793952325395.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI math breakthroughs may crack encryption before quantum computers",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/ai-math-online-encryption-quantum-computers-57926bb2",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Free Chinese AI models nearly match OpenAI's best at hacking networks",
+        "category": "AI security",
+        "tag": "",
+        "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI labs want your old work emails, and data brokers are selling them",
+        "category": "Data trade",
+        "tag": "Opinion",
+        "url": "https://www.wired.com/story/ai-companies-really-really-want-to-buy-your-work-files-and-emails/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How to get colleagues to say yes: ask directly, and in person",
+        "category": "Careers",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/lifestyle/careers/how-to-ask-colleagues-agree-requests-72231479",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-06",
     "slice": "China splits, stocks crush homes, junk hits 18%, hackers test with ₹1. AI profits? Still buffering.",
     "artifact": "https://claude.ai/artifact/STtuXbK7mRc2AVuyprwPin",
