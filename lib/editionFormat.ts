@@ -26,6 +26,8 @@ export type Edition = {
 };
 
 const PUBLISHERS: Record<string, string> = {
+  "timeout.com": "Time Out",
+  "bleepingcomputer.com": "BleepingComputer",
   "jamescrabtree.substack.com": "James Crabtree",
   "fred.stlouisfed.org": "St. Louis Fed (FRED)",
   "digitalbureaucracyandgeopolitics.substack.com": "Technology, Geopolitics, and Bureaucracy",

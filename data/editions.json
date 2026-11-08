@@ -1,5 +1,93 @@
 [
   {
+    "date": "2026-11-08",
+    "slice": "US fears AI. Patna, 9th, eats the Louvre's lunch. Servers gulp 945 TWh. Bots eye jobs. Hackers cook fridges.",
+    "artifact": "https://claude.ai/artifact/VARrC7Nodxn66ZdDL2JfJk",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-08-1.jpg",
+    "cover": "/figs/2026-11-08-cover.jpg",
+    "coverAlt": "US fears AI. Patna, 9th, eats the Louvre's lunch. Servers gulp 945 TWh. Bots eye jobs. Hackers cook fridges.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Why does America hate AI? Gillian Tett on the US and Asia attitude gap",
+        "category": "AI attitudes",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/af97585a-3381-42a9-838b-9a205ab81232?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Bihar Museum ranks 9th in world list, ahead of the Met and Louvre",
+        "category": "Culture",
+        "tag": "",
+        "url": "https://yourstory.com/2026/11/bihar-museum-ahead-met-louvre",
+        "src": "YourStory and Time Out",
+        "pay": false,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Green groups embrace AI even as they warn of data centre costs",
+        "category": "AI and climate",
+        "tag": "",
+        "url": "https://www.reuters.com/sustainability/cop/environmental-groups-embrace-ai-even-they-warn-data-center-impacts-2026-11-07/",
+        "src": "Reuters",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why AI should not replace junior White House economists",
+        "category": "AI and jobs",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/ai-is-coming-for-the-jobs-of-white-house-economists-too-11793954967480.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Accenture and Big Four chase mid-sized clients as AI cuts costs",
+        "category": "Consulting",
+        "tag": "",
+        "url": "https://www.ft.com/content/afff9e84-9b68-4a2f-a3f1-7729dec802b1?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Hackers heat fridges at French blood banks and European supermarkets",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wired.com/story/kernel-panic-refrigeration-hacks-internet-of-things/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-07",
     "slice": "Bubbles are bets. Privacy sells, old emails too. Banks bankroll yuan. AI hacks 73%. A yes needs eye contact.",
     "artifact": "https://claude.ai/artifact/7m6FuYoAgNWk47jbenVSiE",
