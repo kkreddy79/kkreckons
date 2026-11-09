@@ -89,6 +89,7 @@ const PUBLISHERS: Record<string, string> = {
   "theverge.com": "The Verge",
   "wired.com": "Wired",
   "coindesk.com": "CoinDesk",
+  "bitcoinmagazine.com": "Bitcoin Magazine",
   "facilitiesdive.com": "Facilities Dive",
   "theguardian.com": "The Guardian",
   "nytimes.com": "The New York Times",
