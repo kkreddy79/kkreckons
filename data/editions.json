@@ -1,5 +1,91 @@
 [
   {
+    "date": "2026-11-09",
+    "slice": "Teens fly. Embryos get ranked. VCs back 14-year-olds. Bots need guards. Bets never expire. Childhood, sold.",
+    "artifact": "https://claude.ai/artifact/F65FEhLU9nVG47wrfYntWX",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-09-1.jpg",
+    "cover": "/figs/2026-11-09-cover.jpg",
+    "coverAlt": "Teens fly. Embryos get ranked. VCs back 14-year-olds. Bots need guards. Bets never expire. Childhood, sold.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Gen Z founders and teen pilots skip the entry-level job ladder",
+        "category": "Careers",
+        "tag": "",
+        "url": "https://www.wsj.com/lifestyle/careers/20-somethings-are-ditching-entry-level-jobs-to-become-their-own-bosses-168d1f48",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "AI"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Would you pay for the best baby? Embryo screening and liberal eugenics",
+        "category": "Long read",
+        "tag": "Opinion",
+        "url": "https://www.theguardian.com/news/ng-interactive/2026/oct/27/would-you-pay-to-have-the-best-baby-liberal-eugenics-and-the-troubling-quest-for-human-perfection",
+        "src": "The Guardian",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Lightspeed's Mohapatra: jagged AI needs young founders, specialist VCs",
+        "category": "Venture capital",
+        "tag": "Opinion",
+        "url": "https://x.com/MohapatraHemant/status/2119104610166354078",
+        "src": "Hemant Mohapatra on X",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Indian firms want on-site security engineers as AI cyber threats rise",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/indian-companies-seek-on-site-security-engineers-as-ai-led-cyber-threats-mount-11793951525980.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Hardship camps for kids: can paid struggle build resilience?",
+        "category": "Parenting",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/mint-lounge/art-and-culture/artificial-hardship-camps-kids-building-resilience-parenting-11794030202607.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Citadel and Cboe-backed group sues to stop Kalshi's single-stock perps",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/regulation/a-popular-new-bet-hailing-from-cryptoland-sets-off-a-wall-street-turf-war-70e37095",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-08",
     "slice": "US fears AI. Patna, 9th, eats the Louvre's lunch. Servers gulp 945 TWh. Bots eye jobs. Hackers cook fridges.",
     "artifact": "https://claude.ai/artifact/VARrC7Nodxn66ZdDL2JfJk",

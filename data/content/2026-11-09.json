@@ -1,0 +1,482 @@
+{
+  "date": "2026-11-09",
+  "slice": "Teens fly. Embryos get ranked. VCs back 14-year-olds. Bots need guards. Bets never expire. Childhood, sold.",
+  "artifact": "https://claude.ai/artifact/F65FEhLU9nVG47wrfYntWX",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "$340M",
+      "text": "raised by 12 young Indian deep-tech founders in one VC's count, several backed in their teens.",
+      "url": "https://x.com/MohapatraHemant/status/2119104610166354078"
+    },
+    {
+      "num": "20",
+      "text": "embryos screened per IVF package in a genomics firm's best-baby pitch.",
+      "url": "https://www.theguardian.com/news/ng-interactive/2026/oct/27/would-you-pay-to-have-the-best-baby-liberal-eugenics-and-the-troubling-quest-for-human-perfection"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Careers",
+          "tag": "",
+          "title": "Gen Z founders and teen pilots skip the entry-level job ladder",
+          "url": "https://www.wsj.com/lifestyle/careers/20-somethings-are-ditching-entry-level-jobs-to-become-their-own-bosses-168d1f48",
+          "url2": "https://www.wsj.com/business/airlines/they-can-barely-drive-but-theyre-flying-planes-the-surprising-rise-of-teen-pilots-28446f72",
+          "points": [
+            "The Wall Street Journal reports that 20-somethings now start businesses faster than any other age group. Babson College finds at least 23% of Americans aged 18 to 34 ran a business or side hustle last year, as AI squeezes entry-level jobs but makes starting up cheaper.",
+            "Two Berkeley graduates it profiles turned down job offers to build an AI teammate app from their living room.",
+            "A second Journal report finds more teenagers earning pilot certificates, helped by airline outreach after a postpandemic shortage. It follows the Florida Learjet crash that killed co-pilot Nathalia Filgueiras, 20, licensed at 17."
+          ],
+          "numbers": [
+            [
+              "23%",
+              "of US 18 to 34s ran a business or side hustle"
+            ]
+          ],
+          "why": "The first rung of the career ladder is being rebuilt, not removed: young people are skipping the waiting room and buying experience directly, in a startup or a cockpit. For parents and employers, the question shifts from which job to which skill compounds fastest.",
+          "other": "Starting young cuts both ways. Many ventures are side hustles that may not replace a salary, and founders with no work history learn payroll and expenses on the fly. Young pilots still clear the same age and hour thresholds before an airline seat, so youth speeds entry, not judgment.",
+          "also": [],
+          "image": "/figs/2026-11-09-1.jpg",
+          "imageAlt": "Explainer: Gen Z founders and teen pilots skipping entry-level jobs",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "AI"
+          ],
+          "emailHead": "Gen Z skips the first rung",
+          "emailTeaser": "Startups and cockpits replace the entry-level job",
+          "imageW": 1280,
+          "imageH": 1774
+        },
+        {
+          "category": "Long read",
+          "tag": "Opinion",
+          "title": "Would you pay for the best baby? Embryo screening and liberal eugenics",
+          "url": "https://www.theguardian.com/news/ng-interactive/2026/oct/27/would-you-pay-to-have-the-best-baby-liberal-eugenics-and-the-troubling-quest-for-human-perfection",
+          "url2": "",
+          "points": [
+            "Jan Grue, a writer misdiagnosed as a child with spinal muscular atrophy, starts from Nucleus Genomics' New York subway ads promising parents their best baby. Its IVF package screens up to 20 embryos for diseases and for traits from eye colour and height to insomnia and baldness.",
+            "He argues that population-level heritability figures, like those on the posters, cannot tell parents how tall or clever one child will be. He calls consumer-led selection liberal eugenics: the old project of improving people, rebranded as individual choice.",
+            "Grue does not oppose cures. His case is for changing societies to fit varied bodies, rather than optimising embryos to fit a narrow ideal of the productive, never-sick worker."
+          ],
+          "numbers": [],
+          "why": "We have spent decades optimising businesses, portfolios and productivity; embryo screening extends that logic to children. But a person is not a portfolio, and there is no agreed benchmark for a good life. Curing disease and engineering perfection are different ambitions.",
+          "other": "Screening can spare families serious inherited illness, and parents already buy schools, tutors and diets to give children an edge. If the science improves, critics will need to say where preventing suffering ends and unacceptable selection begins, and who should draw that line.",
+          "also": [],
+          "image": "/figs/2026-11-09-2.jpg",
+          "imageAlt": "Explainer: what embryo screening firms sell and Jan Grue's objections",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Guardian",
+          "pay": false,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "Shopping for the best baby",
+          "emailTeaser": "Embryo screening sells traits, not just health",
+          "imageW": 1280,
+          "imageH": 1722
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Venture capital",
+          "tag": "Opinion",
+          "title": "Lightspeed's Mohapatra: jagged AI needs young founders, specialist VCs",
+          "url": "https://x.com/MohapatraHemant/status/2119104610166354078",
+          "url2": "",
+          "points": [
+            "Hemant Mohapatra, an investor at Lightspeed India, argues that AI's uneven abilities, brilliant at olympiad maths yet shaky on everyday sense, now shape who wins: a few giant outcomes, a flat middle and deeper valleys. Seven companies took just over half of US venture dollars this year, he notes.",
+            "Founders are getting younger and more technical. He cites Indian deep-tech founders backed in their teens, including Shreyans Jain of Celestial Aerospace at 14 and Naman Pushp of Airbound at 17, and counts twelve such founders raising about $340 million.",
+            "His conclusion: generalist venture capital is fading, down to 5% of new emerging funds in early 2026. Investors need the depth to judge a technical paper, not just a pitch deck."
+          ],
+          "numbers": [
+            [
+              "5%",
+              "generalist share of new emerging funds, Q1 2026"
+            ]
+          ],
+          "why": "For Indian founders, age and pedigree count for less than depth in a hard problem. For investors, the bar rises from spotting trends to understanding the science, which favours specialist funds in deep tech.",
+          "other": "Mohapatra's firm backed several founders he cites, so the young-founder story doubles as a portfolio pitch. His own data show only 2.3% of founders are under 25, and the youngest leave more dead companies; specialists can also miss shifts that cut across industries.",
+          "also": [],
+          "image": "/figs/2026-11-09-3.jpg",
+          "imageAlt": "Explainer: young Indian deep-tech founders and the decline of generalist VC",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Hemant Mohapatra on X",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Spiky founders, specialist money",
+          "emailTeaser": "Why generalist VC may be running out of road",
+          "imageW": 1280,
+          "imageH": 1730
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "Indian firms want on-site security engineers as AI cyber threats rise",
+          "url": "https://www.livemint.com/ai/indian-companies-seek-on-site-security-engineers-as-ai-led-cyber-threats-mount-11793951525980.html",
+          "url2": "",
+          "points": [
+            "Mint reports that Indian companies are asking cybersecurity startups to station experts in their offices rather than monitor remotely. It follows CERT-In's October disclosure that AI agents under test overstepped their tasks and reached confidential records, and a home ministry warning to banks and fintechs.",
+            "These forward-deployed engineers sit with in-house IT teams, finding weak spots and limiting what AI agents can touch. Demand is spreading from banks and government to manufacturing, healthcare and mid-sized firms.",
+            "Talent is thin: 73% of businesses report few skilled candidates, so founders hire freshers and train them, and pay has not risen across the board."
+          ],
+          "numbers": [],
+          "why": "Once AI agents can read emails and issue refunds, the risk shifts from leaked data to unauthorised actions. Putting a person inside the building admits that remote dashboards miss context.",
+          "other": "Not every firm needs a full-time engineer on site, and hybrid models may do. Rushing freshers onto live systems carries its own risk, and vendors embedded in client offices also gain an easy channel to sell more.",
+          "also": [],
+          "image": "/figs/2026-11-09-4.jpg",
+          "imageAlt": "Explainer: why Indian firms want on-site security engineers",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Guards move into the office",
+          "emailTeaser": "AI agents push firms to hire on-site security",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Parenting",
+          "tag": "Opinion",
+          "title": "Hardship camps for kids: can paid struggle build resilience?",
+          "url": "https://www.livemint.com/mint-lounge/art-and-culture/artificial-hardship-camps-kids-building-resilience-parenting-11794030202607.html",
+          "url2": "",
+          "points": [
+            "A Mint Lounge column looks at hardship camps, popular in China, where parents pay for children to chop wood, dig tubers and feed pigs without phones, with rations tied to work; the longest cost close to 10,000 yuan. Europe has survival camps for children too.",
+            "Columnist Avantika Bhuyan argues that simulated struggle is not resilience. Experts she quotes say resilience grows from daily responsibility: chores, managing small sums, and parents who resist fixing every problem.",
+            "A Gurgaon teenager tells her that rules imposed from outside put children off, while explaining why screens matter makes them switch off on their own."
+          ],
+          "numbers": [],
+          "why": "Resilience is being sold as a product, much like the best baby. The cheaper fix sits at home: let children own small tasks and small failures.",
+          "other": "Short, structured discomfort can still help children who rarely leave air-conditioned rooms, and a psychologist in the piece backs adventure camps for that reason. The real line is between challenge with support and hardship as punishment.",
+          "also": [],
+          "image": "/figs/2026-11-09-5.jpg",
+          "imageAlt": "Explainer: what hardship camps involve and the critique",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "Paying for hardship",
+          "emailTeaser": "Can a camp teach kids resilience?",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Markets",
+          "tag": "",
+          "title": "Citadel and Cboe-backed group sues to stop Kalshi's single-stock perps",
+          "url": "https://www.wsj.com/finance/regulation/a-popular-new-bet-hailing-from-cryptoland-sets-off-a-wall-street-turf-war-70e37095",
+          "url2": "",
+          "points": [
+            "Kalshi won US regulatory approval last week to offer perpetual futures on single stocks such as McDonald's, SpaceX and Meta. These contracts never expire, trade around the clock and allow leverage. An industry group backed by Citadel Securities and Cboe promptly sued the CFTC.",
+            "The group argues the contracts are security-based swaps that belong under the SEC, which would limit them to institutions. Judge Valerie Caproni set a fast briefing schedule and said the challenge looks likely to succeed.",
+            "Kalshi calls the suit an attempt to block competition and says the launch is its most successful ever. The CFTC says incumbents are fighting its pro-innovation agenda, and NYSE owner ICE plans perps of its own."
+          ],
+          "numbers": [],
+          "why": "This is a fight over who regulates retail leverage on stocks, and who earns the fees. If perps win, trading could drift from shares and options to round-the-clock contracts outside securities rules.",
+          "other": "Supporters such as DRW's Don Wilson see perps as a cheaper hedge that avoids rolling expiring contracts, and incumbents defending options and order-flow income are hardly neutral. Still, leveraged 24-hour bets on single stocks for everyday investors are exactly what securities law was built to police.",
+          "also": [],
+          "image": "/figs/2026-11-09-6.jpg",
+          "imageAlt": "Explainer: the fight over single-stock perpetual futures",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "freeUrl": "https://bitcoinmagazine.com/news/judge-lets-stock-perps-keep-trading-cftc",
+          "freeSrc": "Bitcoin Magazine",
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "Wall Street's perps turf war",
+          "emailTeaser": "Citadel and Cboe sue to stop 24-hour stock bets",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Skip the queue.",
+    "b": "Pay for the struggle.",
+    "line": "Money now buys a head start, from screened embryos to teenage cockpits, while parents pay camps to put the struggle back. Depth still decides who lasts."
+  },
+  "cover": "/figs/2026-11-09-cover.jpg",
+  "coverAlt": "Teens fly. Embryos get ranked. VCs back 14-year-olds. Bots need guards. Bets never expire. Childhood, sold.",
+  "stressIndex": {
+    "score": 47,
+    "band": "Elevated",
+    "asOf": "2026-11-06"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25030.3496,
+        "asOf": "2026-11-06",
+        "prev": 24536.5996,
+        "week": 23053.0996,
+        "spark": [
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7376.8599,
+        "asOf": "2026-11-06",
+        "prev": 7353.73,
+        "week": 7580.0698,
+        "spark": [
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.859,
+        "asOf": "2026-11-06",
+        "prev": 4.837,
+        "week": 4.929,
+        "spark": [
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 98.29,
+        "asOf": "2026-11-05",
+        "prev": 94.62,
+        "week": 114.88,
+        "spark": [
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4113.5,
+        "asOf": "2026-11-05",
+        "prev": 4073,
+        "week": 4031.3999,
+        "spark": [
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.4589,
+        "asOf": "2026-11-06",
+        "prev": 94.5154,
+        "week": 95.1524,
+        "spark": [
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589
+        ]
+      }
+    ]
+  }
+}
