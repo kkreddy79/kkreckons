@@ -1,0 +1,531 @@
+{
+  "date": "2026-11-10",
+  "slice": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys.",
+  "artifact": "https://claude.ai/artifact/8DqSSbXMT7vdW81gSFMEfM",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "~7%",
+      "text": "Nvidia's weight in the S&P 500. A Lex column says that makes its CEO crisis everyone's problem.",
+      "url": "https://www.ft.com/content/509596ae-e981-4a31-80ec-d016ca01aa3b?syn-25a6b1a6=1"
+    },
+    {
+      "num": "20-30%",
+      "text": "Eligible Indian exports that use FTA perks. A BofA estimate cited by Mint.",
+      "url": "https://www.livemint.com/economy/why-indian-exporters-struggle-to-benefit-from-ftas-11794222712302.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Nvidia / Leadership",
+          "tag": "",
+          "title": "Nvidia board probes Jensen Huang after affair and China spy claims",
+          "url": "https://www.ft.com/content/0b20d24a-580a-41df-a5f3-7f7dba4f552f?syn-25a6b1a6=1",
+          "url2": "https://www.ft.com/content/509596ae-e981-4a31-80ec-d016ca01aa3b?syn-25a6b1a6=1",
+          "points": [
+            "Jensen Huang admitted an affair on Sunday after reports that the woman, an executive at a large Nvidia customer, may have been a Chinese intelligence asset. A board committee with outside lawyers will investigate, though the board says it has no reason to think secrets leaked, the FT reports.",
+            "A WSJ timeline runs from a late-2024 Commerce probe into possible chip diversion to China to a classified memo this spring. On Monday, Trump said Huang told him he had no idea she was a spy.",
+            "An FT Lex column argues Nvidia, nearly 7% of the S&P 500, is now systemic and, with no clear successor and directors averaging 18 years, needs a named number two."
+          ],
+          "numbers": [
+            [
+              "~7%",
+              "Nvidia's share of the S&P 500"
+            ],
+            [
+              "18 yrs",
+              "Average Nvidia director tenure"
+            ]
+          ],
+          "why": "When one founder runs the product vision, the big customer bets and the Washington lobbying, a personal scandal becomes a question for markets, AI labs and national security all at once.",
+          "other": "The board sees no sign of leaks, the White House is backing Huang, and an affair is not espionage. If the probe clears him, pushing out the leader investors trust most could do more damage than the scandal.",
+          "also": [
+            {
+              "title": "A Timeline of Nvidia CEO Jensen Huang's Suspected Spy Drama (WSJ)",
+              "url": "https://www.wsj.com/tech/ai/a-timeline-of-nvidia-ceo-jensen-huangs-suspected-spy-drama-05cbebf3"
+            }
+          ],
+          "image": "/figs/2026-11-10-1.jpg",
+          "imageAlt": "Explainer: Nvidia is nearly 7% of the S&P 500; Huang admits an affair amid spy claims, the board investigates, and directors average 18 years on a board with no chair and no obvious successor.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times and The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Nvidia's boss problem goes systemic",
+          "emailTeaser": "An affair, spy claims and no successor in sight",
+          "imageW": 1280,
+          "imageH": 1767
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Trade",
+          "tag": "",
+          "title": "Signing FTAs is the easy part for India's exporters",
+          "url": "https://www.livemint.com/economy/why-indian-exporters-struggle-to-benefit-from-ftas-11794222712302.html",
+          "url2": "",
+          "points": [
+            "With pacts with the UK and New Zealand in force and the EU deal awaiting implementation, exporters from Surat textiles to auto parts are chasing certificates and learning rules of origin to qualify for lower tariffs, Mint reports.",
+            "The record is weak: Bank of America estimates only 20-30% of eligible exports use FTA preferences. Small firms face certification costs, carbon audits, suppliers who won't open their books and imported Chinese parts that muddy proof of origin.",
+            "Exporters also blame customs disputes and costly inputs; one think tank head suggests cutting India's many import duty rates to a handful."
+          ],
+          "numbers": [
+            [
+              "20-30%",
+              "Eligible exports using FTA benefits (BofA est.)"
+            ],
+            [
+              "1,400+",
+              "Yearly compliance obligations per manufacturer (BofA est.)"
+            ]
+          ],
+          "why": "Tariff cuts only pay off if small firms can prove origin and pass audits. If they can't, the gains go to the few big exporters already equipped, and the old story of FTAs widening the deficit repeats.",
+          "other": "Low use may say more about price than paperwork. If Indian goods still cost more than Vietnamese or Chinese ones, easier forms won't win orders, and skipping the perk can be a rational choice.",
+          "also": [],
+          "image": "/figs/2026-11-10-2.jpg",
+          "imageAlt": "Explainer: a BofA estimate says only 20-30% of eligible Indian exports use FTA benefits; certificates, audits, wary suppliers, Chinese inputs and customs disputes hold small firms back.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "India",
+            "Geopolitics"
+          ],
+          "emailHead": "Trade deals need paperwork muscle",
+          "emailTeaser": "Most eligible exports still skip FTA tariff perks",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI at work",
+          "tag": "Opinion",
+          "title": "Tighter AI rules can push staff to hide their AI use",
+          "url": "https://hbr.org/2026/11/why-leaders-need-to-rethink-their-approach-to-ai-oversight",
+          "url2": "",
+          "points": [
+            "Deloitte consultants writing in HBR describe an \"AI control trap\": leaders answer slow AI adoption with monitoring and mandates, staff respond by hiding their use or routing around rules, and leaders tighten further.",
+            "Their TrustID research finds shadow AI use holding at about 50%, and senior leaders 40% more likely than their staff to say they use it themselves.",
+            "Their fix, drawn from a Salesforce rollout they worked on: reward staff for finding AI flaws, invest in AI training, and let people closest to the work decide, keeping tight controls for sensitive data and big decisions."
+          ],
+          "numbers": [
+            [
+              "~50%",
+              "Workers using shadow AI (Deloitte)"
+            ],
+            [
+              "40%",
+              "How much likelier leaders are to use it"
+            ]
+          ],
+          "why": "If the people best placed to learn what AI can do are hiding it, companies lose exactly the lessons that would make their AI spending pay off.",
+          "other": "The authors are Deloitte consultants who helped with the Salesforce rollout they hold up, and Salesforce sells the AI tools involved. Looser rules also mean more mistakes reaching customers, a risk regulated firms may not accept.",
+          "also": [],
+          "image": "/figs/2026-11-10-3.jpg",
+          "imageAlt": "Explainer: about 50% of workers use unapproved shadow AI, per Deloitte; tighter rules push use underground, while rewarding flaw-finding, training and local decisions offers a way out.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Harvard Business Review",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Watching staff drives AI underground",
+          "emailTeaser": "Half of workers already use unapproved AI tools",
+          "imageW": 1280,
+          "imageH": 1722
+        },
+        {
+          "category": "Privacy",
+          "tag": "Explainer",
+          "title": "Your AI chats are less private than you think, and how to limit that",
+          "url": "https://www.nytimes.com/wirecutter/advice/ai-chat-privacy/",
+          "url2": "",
+          "points": [
+            "Wirecutter warns that the companies behind ChatGPT, Gemini, Claude and Meta's Muse can see what users type, may have human reviewers read excerpts, and must answer law enforcement requests; health chats get few legal protections.",
+            "People confide a lot: in a DuckDuckGo survey, 32% said they had told a chatbot something kept from those closest to them, and OpenAI says over 230 million people ask ChatGPT health questions each week.",
+            "Its advice: switch off model training in settings, use temporary or incognito chats, think twice before rating answers, which can override opt-outs, or try privacy-first options such as Duck.ai, Proton Lumo or Apple's new Siri."
+          ],
+          "numbers": [
+            [
+              "32%",
+              "Told a chatbot something kept from loved ones"
+            ],
+            [
+              "230mn+",
+              "Weekly ChatGPT health askers (OpenAI)"
+            ]
+          ],
+          "why": "Chatbots are turning into diaries and first-stop doctors, but the protection people expect from a doctor or lawyer does not cover them, so what you type can resurface in ads, training data or a courtroom.",
+          "other": "Sharing context is what makes assistants useful, and the privacy-first options do less, cannot act for you and sometimes need a paid plan. For everyday questions, many users may reasonably accept the trade.",
+          "also": [],
+          "image": "/figs/2026-11-10-4.jpg",
+          "imageAlt": "Explainer: in a DuckDuckGo survey, 32% of Americans had told a chatbot something kept from those closest to them; AI firms, reviewers and law enforcement can see chats, and settings can limit training use.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wirecutter",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Your chatbot is not a diary",
+          "emailTeaser": "Who can read your AI chats, and how to limit it",
+          "imageW": 1280,
+          "imageH": 1730
+        },
+        {
+          "category": "AI / Big Tech",
+          "tag": "Opinion",
+          "title": "Big Tech bets on owning the whole AI stack, from chips to robots",
+          "url": "https://www.ft.com/content/d3f706c8-a936-4395-bcf1-7f8bc2bed99a?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "An FT column argues the AI race is now a contest of vertical integration: Alphabet calls itself full stack, SpaceX runs data centres and is building a chip plant, Amazon is pursuing its own frontier model and Nvidia has agreed to buy Hugging Face.",
+            "The least integrated look most exposed: labs such as Anthropic and OpenAI, and neoclouds like CoreWeave, must accept bigger rivals' terms. Anthropic, seeking a $1.5tn IPO valuation and a raise of up to $100bn, wants to own more data centres too.",
+            "Yet history cuts both ways: integrated giants often dominate a technology's dawn and later lose to open rivals, as IBM did in PCs, and their size draws regulators."
+          ],
+          "numbers": [
+            [
+              "$1.5tn",
+              "Anthropic's IPO valuation target"
+            ],
+            [
+              "$100bn",
+              "Most its IPO could raise"
+            ]
+          ],
+          "why": "If owning chips, power and models decides the winner, AI ends up in very few hands, and backers of stand-alone labs and compute renters carry the most risk when money gets tighter.",
+          "other": "Going vertical also means giants that once kept to their own lanes now compete head-on in the costliest race yet. Specialists that partner well may move faster, as open PCs did against IBM.",
+          "also": [],
+          "image": "/figs/2026-11-10-5.jpg",
+          "imageAlt": "Explainer: Anthropic seeks a $1.5tn IPO valuation as Alphabet, SpaceX and Nvidia push to own the whole AI stack; labs and neoclouds look most exposed, while giants face regulators.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "AI's empire builders face a storm",
+          "emailTeaser": "Everyone wants the full stack; history says towers topple",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "Opinion",
+          "title": "Hacks on Binance and freezers expose a fragile connected world",
+          "url": "https://www.ft.com/content/26687a2b-85ef-4ea8-94d3-07debe920f5f?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "An FT editorial links a run of attacks: hackers the FBI ties to North Korea took over $6bn in digital assets from Binance, supermarkets in several European countries had fridges and freezers warmed remotely, and about €100mn was drained from a Crédit Mutuel Arkéa account.",
+            "Its first lesson: wiring up money, data and infrastructure saved costs but widened the attack surface, and decentralisation is no cure, since Binance worked much like a conventional bank.",
+            "Its second: AI makes it worse, spotting bugs such as two that forced PHP websites offline and helping fraudsters pass as humans, so security budgets must rise and critical systems may need cutting off."
+          ],
+          "numbers": [
+            [
+              "$6bn+",
+              "Taken from Binance (FBI blames North Korea)"
+            ],
+            [
+              "€100mn",
+              "Drained from a Crédit Mutuel Arkéa account"
+            ]
+          ],
+          "why": "The same network that lets a chain tune every freezer from one office lets an attacker do it too, and AI now finds weak spots faster than most firms can patch them.",
+          "other": "AI helps defenders find and fix bugs too, and unplugging throws away real savings. Tougher standards and liability rules, which the editorial also backs, may do more than a retreat from connectivity.",
+          "also": [],
+          "image": "/figs/2026-11-10-6.jpg",
+          "imageAlt": "Explainer: over $6bn in digital assets was taken from Binance, which the FBI blames on North Korea; freezers were hacked and AI-found bugs hit PHP sites, so security costs must rise.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Your freezer is now an attack surface",
+          "emailTeaser": "A $6bn crypto heist and hijacked fridges within weeks",
+          "imageW": 1280,
+          "imageH": 1730
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Too much faith in one boss.",
+    "b": "Too little in the team.",
+    "line": "Nvidia leans on a single leader while many firms police the workers they need to trust; misplaced trust gets expensive either way."
+  },
+  "cover": "/figs/2026-11-10-cover.jpg",
+  "coverAlt": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys.",
+  "stressIndex": {
+    "score": 36,
+    "band": "Elevated",
+    "asOf": "2026-11-09"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25044.6504,
+        "asOf": "2026-11-09",
+        "prev": 25030.3496,
+        "week": 23440.8008,
+        "spark": [
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7549.9399,
+        "asOf": "2026-11-09",
+        "prev": 7376.8599,
+        "week": 7541.3999,
+        "spark": [
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.864,
+        "asOf": "2026-11-09",
+        "prev": 4.859,
+        "week": 4.894,
+        "spark": [
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 98.32,
+        "asOf": "2026-11-06",
+        "prev": 98.29,
+        "week": 117.64,
+        "spark": [
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4074.8999,
+        "asOf": "2026-11-06",
+        "prev": 4113.5,
+        "week": 3898.8999,
+        "spark": [
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.4589,
+        "asOf": "2026-11-06",
+        "prev": 94.5154,
+        "week": 95.1524,
+        "spark": [
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589
+        ]
+      }
+    ]
+  }
+}

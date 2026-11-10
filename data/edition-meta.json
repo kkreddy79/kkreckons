@@ -573,5 +573,14 @@
       "band": "Elevated",
       "asOf": "2026-11-06"
     }
+  },
+  "2026-11-10": {
+    "artifact": "https://claude.ai/artifact/8DqSSbXMT7vdW81gSFMEfM",
+    "stressIndex": {
+      "score": 36,
+      "band": "Elevated",
+      "asOf": "2026-11-09"
+    },
+    "slice": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys."
   }
 }

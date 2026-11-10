@@ -1,5 +1,93 @@
 [
   {
+    "date": "2026-11-10",
+    "slice": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys.",
+    "artifact": "https://claude.ai/artifact/8DqSSbXMT7vdW81gSFMEfM",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-10-1.jpg",
+    "cover": "/figs/2026-11-10-cover.jpg",
+    "coverAlt": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Nvidia board probes Jensen Huang after affair and China spy claims",
+        "category": "Nvidia / Leadership",
+        "tag": "",
+        "url": "https://www.ft.com/content/0b20d24a-580a-41df-a5f3-7f7dba4f552f?syn-25a6b1a6=1",
+        "src": "Financial Times and The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Signing FTAs is the easy part for India's exporters",
+        "category": "Trade",
+        "tag": "",
+        "url": "https://www.livemint.com/economy/why-indian-exporters-struggle-to-benefit-from-ftas-11794222712302.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Tighter AI rules can push staff to hide their AI use",
+        "category": "AI at work",
+        "tag": "Opinion",
+        "url": "https://hbr.org/2026/11/why-leaders-need-to-rethink-their-approach-to-ai-oversight",
+        "src": "Harvard Business Review",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Your AI chats are less private than you think, and how to limit that",
+        "category": "Privacy",
+        "tag": "Explainer",
+        "url": "https://www.nytimes.com/wirecutter/advice/ai-chat-privacy/",
+        "src": "Wirecutter",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Big Tech bets on owning the whole AI stack, from chips to robots",
+        "category": "AI / Big Tech",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/d3f706c8-a936-4395-bcf1-7f8bc2bed99a?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Hacks on Binance and freezers expose a fragile connected world",
+        "category": "Cybersecurity",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/26687a2b-85ef-4ea8-94d3-07debe920f5f?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-09",
     "slice": "Teens fly. Embryos get ranked. VCs back 14-year-olds. Bots need guards. Bets never expire. Childhood, sold.",
     "artifact": "https://claude.ai/artifact/F65FEhLU9nVG47wrfYntWX",
