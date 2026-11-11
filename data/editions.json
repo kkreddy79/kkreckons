@@ -1,5 +1,106 @@
 [
   {
+    "date": "2026-11-11",
+    "slice": "Bank bots fake an offer. Oil under $100. 100m Chinese in debt. mRNA cuts relapse 42%. Humanity: mixed results.",
+    "artifact": "https://claude.ai/artifact/1nCxo2g1ht6yKVuMYerCRg",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-11-1.jpg",
+    "cover": "/figs/2026-11-11-cover.jpg",
+    "coverAlt": "Bank bots fake an offer. Oil under $100. 100m Chinese in debt. mRNA cuts relapse 42%. Humanity: mixed results.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "HDFC Bank AI agents invented a fake offer; Kotak and Axis hit too",
+        "category": "Banking and AI",
+        "tag": "",
+        "url": "https://bfsi.eletsonline.com/ai-agents-banks-safeguards/",
+        "src": "Elets BFSI and Karandeep's Second Opinion",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's lenders wire AI agents into loans before the guardrails land",
+        "category": "Lending",
+        "tag": "Opinion",
+        "url": "https://sharatchandra.substack.com/p/why-indias-biggest-lenders-are-struggling",
+        "src": "FinTech Unwrapped",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Oil slips below $100 as midterms raise hopes the Iran war fades",
+        "category": "Oil and the rupee",
+        "tag": "Opinion",
+        "url": "https://tessellatum.in/?p=640",
+        "src": "The Times of India",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Sasmit Patra: UPI needs a backup switch before AI agents pile on",
+        "category": "Payments",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/sasmit-patra-how-india-can-lower-upi-risks-for-the-next-decade-11794209776111.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "IEA: India's renewables pass 300 GW, set to reach 530 GW by 2030",
+        "category": "Energy",
+        "tag": "",
+        "url": "https://www.iea.org/files/9452aeba-6c64-4dfa-9205-569c354b686e/IndiaRenewableEnergyMarketReport2026.pdf",
+        "src": "IEA",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "China's bad consumer debt market booms as up to 100 million struggle",
+        "category": "China",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/features/2026-11-08/china-s-debt-collectors-are-struggling-alongside-borrowers-who-can-t-pay",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "mRNA cancer vaccines show early wins in pancreatic and skin cancer",
+        "category": "Health",
+        "tag": "",
+        "url": "https://www.npr.org/2026/11/02/nx-s1-6009085/mrna-cancer-vaccine-pancreatic-skin",
+        "src": "NPR",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-10",
     "slice": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys.",
     "artifact": "https://claude.ai/artifact/8DqSSbXMT7vdW81gSFMEfM",
