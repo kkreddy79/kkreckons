@@ -26,6 +26,11 @@ export type Edition = {
 };
 
 const PUBLISHERS: Record<string, string> = {
+  "bfsi.eletsonline.com": "Elets BFSI",
+  "groverkds.substack.com": "Karandeep's Second Opinion",
+  "sharatchandra.substack.com": "FinTech Unwrapped",
+  "tessellatum.in": "Tessellatum",
+  "iea.org": "IEA",
   "timeout.com": "Time Out",
   "bleepingcomputer.com": "BleepingComputer",
   "jamescrabtree.substack.com": "James Crabtree",
