@@ -1,5 +1,80 @@
 [
   {
+    "date": "2026-11-12",
+    "slice": "India booms at 6.5%. Nvidia swoons on one man. Junk pays 18%. Bots build firms; labs draw the line.",
+    "artifact": "https://claude.ai/artifact/3LD436aUkwTQFtioChv5sy",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-12-1.jpg",
+    "cover": "/figs/2026-11-12-cover.jpg",
+    "coverAlt": "India booms at 6.5%. Nvidia swoons on one man. Junk pays 18%. Bots build firms; labs draw the line.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "India grows 6.5% a year as hotels fill and foreign money returns",
+        "category": "India's economy",
+        "tag": "",
+        "url": "https://www.noahpinion.blog/p/india-is-quietly-doing-great",
+        "src": "Noahpinion, The Economic Times and Reuters",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Nvidia's CEO probe shows how much markets lean on one man",
+        "category": "Big Tech",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-10/why-nvidia-and-jensen-huang-matter-so-much-to-markets",
+        "src": "Bloomberg and Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The end of cheap money is squeezing America's weakest borrowers",
+        "category": "US credit",
+        "tag": "",
+        "url": "https://www.ft.com/content/50c43ffc-2a91-43ee-8eb7-a19531278b97?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents let start-ups run with no staff and prototype in days",
+        "category": "Start-ups",
+        "tag": "",
+        "url": "https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI firms tighten guardrails on DIY reverse engineering of gadgets",
+        "category": "AI tools",
+        "tag": "Opinion",
+        "url": "https://www.404media.co/reverse-engineer-anything-ai-companies-crack-down-on-the-coolest-thing-people-were-doing-with-ai/",
+        "src": "404 Media",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-11",
     "slice": "Bank bots fake an offer. Oil under $100. 100m Chinese in debt. mRNA cuts relapse 42%. Humanity: mixed results.",
     "artifact": "https://claude.ai/artifact/1nCxo2g1ht6yKVuMYerCRg",
