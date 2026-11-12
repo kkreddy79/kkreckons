@@ -17,7 +17,7 @@ import {
   weekday,
 } from "@/lib/editionFormat";
 import SourcePicker from "@/components/SourcePicker";
-import StorySource, { PaidMark, storyHover, storyPaid } from "@/components/StorySource";
+import StorySource, { SourceMark, storyHover, storyPaid } from "@/components/StorySource";
 
 /** A story's second source link, keyed by "date|title". */
 export type StoryLinks = Record<string, string>;
@@ -363,7 +363,7 @@ export default function ArchiveBrowser({
                       </a>
                       <p className="sr-pub">
                         {r.pub}
-                        {r.paid && <PaidMark />}
+                        <SourceMark paid={r.paid} />
                       </p>
                     </div>
                   </li>

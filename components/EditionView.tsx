@@ -8,7 +8,7 @@ import { followLinks, type Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
 import { watchSummary } from "@/lib/watch";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
+import StorySource, { SourceMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
 import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
@@ -560,7 +560,7 @@ export default function EditionView({
                   {(r.note || publisherName(r.url)) && (
                     <small>
                       {r.note || publisherName(r.url)}
-                      {isPaywalled(r.url) && <PaidMark />}
+                      <SourceMark paid={isPaywalled(r.url)} />
                     </small>
                   )}
                 </li>

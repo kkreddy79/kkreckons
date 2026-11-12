@@ -40,7 +40,7 @@ export function storyPaid(s: SourceStory) {
 }
 
 /** Open or closed lock after a publisher name, as in "Today in 30 seconds": free to read, or may need a subscription. */
-function SourceMark({ paid }: { paid: boolean }) {
+export function SourceMark({ paid }: { paid: boolean }) {
   return paid ? (
     <span className="ev-mark ev-mark-paid ev-mark-sm" title="May need a subscription">
       <LockIcon />
@@ -50,16 +50,6 @@ function SourceMark({ paid }: { paid: boolean }) {
     <span className="ev-mark ev-mark-free ev-mark-sm" title="Free to read">
       <OpenLockIcon />
       <span className="sr-only"> (free to read)</span>
-    </span>
-  );
-}
-
-/** Small lock after a publisher name: the source may need a subscription. Free sources carry no mark. */
-export function PaidMark() {
-  return (
-    <span className="ev-lock" title="May need a subscription">
-      <LockIcon className="ev-lock-ic" />
-      <span className="sr-only"> (may need a subscription)</span>
     </span>
   );
 }
