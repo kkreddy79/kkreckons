@@ -14,6 +14,7 @@ import ShareRow from "@/components/ShareRow";
 import { topicStories } from "@/lib/topics";
 import { editions, getEdition, longDate, shortDate, slugFor, storyHref, themesOf } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
+import { figSrc } from "@/lib/figs";
 
 // One story on its own page, so a shared story previews with its own headline and graphic.
 // The full edition stays the main page: this one links back to the story's place in it.
@@ -43,8 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!f) return {};
   const { edition, story, n } = f;
   const image = story.image
-    ? { url: story.image, ...(story.imageW ? { width: story.imageW, height: story.imageH } : {}), alt: story.imageAlt || story.title }
-    : { url: edition.cover || edition.image || "/about/two-worlds.jpg" };
+    ? { url: figSrc(story.image), ...(story.imageW ? { width: story.imageW, height: story.imageH } : {}), alt: story.imageAlt || story.title }
+    : { url: figSrc(edition.cover || edition.image || "/about/two-worlds.jpg") };
   // The story's one quotable sentence (key figure, source and date) where it has one: what search results,
   // link previews and AI tools show. Otherwise "why it matters".
   const description = clip(story.cite || story.why || story.points[0] || edition.slice, 158);
@@ -87,7 +88,7 @@ export default async function StoryPage({ params }: Props) {
             url,
             mainEntityOfPage: url,
             isPartOf: `${SITE_URL}${editionUrl}`,
-            ...(story.image ? { image: [new URL(story.image, SITE_URL).href] } : {}),
+            ...(story.image ? { image: [new URL(figSrc(story.image), SITE_URL).href] } : {}),
             author: AUTHOR,
             publisher: PUBLISHER,
           },
@@ -109,7 +110,7 @@ export default async function StoryPage({ params }: Props) {
         </nav>
         <div className="ev-tools st-tools">
           <Listen rootId="st-read" minutes={Math.max(1, Math.round(edition.readingMinutes / edition.stories.length))} />
-          <ShareRow url={url} slice={story.emailHead || story.title} image={story.image || undefined} compact />
+          <ShareRow url={url} slice={story.emailHead || story.title} image={story.image ? figSrc(story.image) : undefined} compact />
         </div>
       </div>
       <ReadTracker date={edition.date} story={n} />
