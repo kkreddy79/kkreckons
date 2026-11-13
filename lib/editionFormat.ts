@@ -27,6 +27,8 @@ export type Edition = {
 
 const PUBLISHERS: Record<string, string> = {
   "bfsi.eletsonline.com": "Elets BFSI",
+  "semafor.com": "Semafor",
+  "nar.realtor": "National Association of Realtors",
   "noahpinion.blog": "Noahpinion",
   "timeslive.co.za": "TimesLIVE",
   "groverkds.substack.com": "Karandeep's Second Opinion",

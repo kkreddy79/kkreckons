@@ -1,5 +1,107 @@
 [
   {
+    "date": "2026-11-13",
+    "slice": "Nvidia's king falls. Gold rolls over. Delhi guards tenders. US homes hit 2010 lows. Zurich sours. A bot cares.",
+    "artifact": "https://claude.ai/artifact/LXmzPQ5nnwaWvSHNmsRq1w",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-13-1.jpg",
+    "cover": "/figs/2026-11-13-cover.jpg",
+    "coverAlt": "Nvidia's king falls. Gold rolls over. Delhi guards tenders. US homes hit 2010 lows. Zurich sours. A bot cares.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Nvidia CEO Jensen Huang resigns; shares close 4.3% lower",
+        "category": "AI and markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/stocks/jensen-huangs-exit-will-test-ais-stocks-and-great-man-theory-3c4cd404",
+        "src": "The Wall Street Journal and Semafor",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Gold loan rollovers may hide stress in India's ₹22.5 lakh crore boom",
+        "category": "Gold loans",
+        "tag": "",
+        "url": "https://m.economictimes.com/prime/fintech-and-bfsi/how-indias-inr22-5-lakh-crore-gold-loan-boom-is-hiding-a-big-hole/primearticleshow/135771193.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Trade deals could squeeze Make in India's public procurement edge",
+        "category": "Trade policy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/columns/potential-adverse-impact-of-ftas-on-public-procurement-policies-supporting-made-in-india-11794295722655.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "India",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Inside Jensen Huang's fall: a spy scandal and a 'feudal' Nvidia",
+        "category": "Corporate governance",
+        "tag": "",
+        "url": "https://www.ft.com/content/ef8f85a6-e2d7-4d41-b70e-092b2567813a?syn-25a6b1a6=1",
+        "src": "Financial Times and The New York Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "US existing home sales hit lowest since 2010 as mortgage rates bite",
+        "category": "US housing",
+        "tag": "",
+        "url": "https://www.ft.com/content/1e08661e-1db0-4ff7-8236-77254bb05790?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Sberbank Switzerland rescue: TradeX owners settle after 4-year feud",
+        "category": "Swiss banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/8d5aaf6c-e8b6-47ac-a111-a5827fce2175?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How Gemini helped a WSJ writer get an endometriosis diagnosis",
+        "category": "AI and health",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/health/wellness/how-ai-diagnosed-a-medical-mystery-my-doctors-missed-for-decades-cd5fa842",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Health & science",
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-12",
     "slice": "India booms at 6.5%. Nvidia swoons on one man. Junk pays 18%. Bots build firms; labs draw the line.",
     "artifact": "https://claude.ai/artifact/3LD436aUkwTQFtioChv5sy",
