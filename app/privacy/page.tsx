@@ -43,6 +43,10 @@ export default function PrivacyPage() {
             buttons are tapped (for example, which story sources are opened most). Umami uses no cookies, does not identify
             you and does not track you across other sites.
           </li>
+          <li>
+            Story reactions (👍 👏 😮 🤔) are stored only as totals per story. Which buttons you pressed is kept in your own
+            browser, so you can take a reaction back; nothing about you is sent with it.
+          </li>
           <li>There are no ads and no advertising trackers.</li>
           <li>
             The AI Stress Index page loads its daily data from GitHub, which sees your request in the same way any website
@@ -57,7 +61,7 @@ export default function PrivacyPage() {
           <a href={`mailto:${CORRECTIONS_EMAIL}?subject=${encodeURIComponent("Privacy request")}`}>{CORRECTIONS_EMAIL}</a>.
           See also <Link href="/about">About KKReckons</Link>.
         </p>
-        <p className="fine">Last updated 21 October 2026.</p>
+        <p className="fine">Last updated 14 November 2026.</p>
       </div>
     </main>
   );
