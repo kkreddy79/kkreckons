@@ -12,6 +12,7 @@ import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
 import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
+import Reactions from "@/components/Reactions";
 import FigClamp from "@/components/FigClamp";
 import MarketStrip from "@/components/MarketStrip";
 import PrintImages from "@/components/PrintImages";
@@ -288,6 +289,8 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
           </ul>
         </div>
       )}
+
+      <Reactions date={date} n={n} />
 
       {/* Source and sharing share one line (they wrap only when the card is too narrow). */}
       <div className="ev-foot">

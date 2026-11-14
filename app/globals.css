@@ -755,6 +755,17 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .ev-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line-2); }
 .ev-foot > .ev-src, .ev-foot > .ev-share-sm { margin: 0; padding: 0; border: 0; }
 .ev-has-img > .ev-foot { grid-column: 1 / -1; }
+/* Story reactions (components/Reactions.tsx): a row of emoji buttons above the source line. */
+.ev-react { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ev-has-img > .ev-react { grid-column: 1 / -1; }
+.ev-react button { display: inline-flex; align-items: center; gap: 6px; min-width: 44px; min-height: 40px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink2); font: 700 13px var(--sans); cursor: pointer; transition: transform 0.15s ease, border-color 0.15s ease; }
+.ev-react button span { font-size: 17px; line-height: 1; }
+.ev-react button:hover { border-color: var(--lilac-line-2); }
+.ev-react button:active { transform: scale(0.92); }
+.ev-react button.on { background: var(--lilac-2); border-color: var(--lilac-line-2); }
+:root[data-theme="dark"] .ev-react button.on { background: rgba(184, 173, 255, 0.18); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ev-react button.on { background: rgba(184, 173, 255, 0.18); } }
+@media (prefers-reduced-motion: reduce) { .ev-react button { transition: none; } .ev-react button:active { transform: none; } }
 .ev-share-sm .ev-share-one { min-height: 40px; padding: 3px 12px; font-size: 12.5px; }
 .st-page .ev-story { margin-top: 6px; }
 .st-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 16px; }
