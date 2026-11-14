@@ -1,5 +1,91 @@
 [
   {
+    "date": "2026-11-14",
+    "slice": "$3bn did nothing. India builds its AI. Visas drop 41%. Outlook naps 19 hrs. Bots ignore 'stop'. Get a goat.",
+    "artifact": "https://claude.ai/artifact/WCFqfuwoGscsUQNRiK5fbD",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-14-1.jpg",
+    "cover": "/figs/2026-11-14-cover.jpg",
+    "coverAlt": "$3bn did nothing. India builds its AI. Visas drop 41%. Outlook naps 19 hrs. Bots ignore 'stop'. Get a goat.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Why $3bn school grants and other well-meant policies changed nothing",
+        "category": "Policy / Behaviour",
+        "tag": "Opinion",
+        "url": "https://www.experimental-history.com/p/we-need-more-goat-sacrifices",
+        "src": "Experimental History",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "India backs Sarvam to build homegrown AI models",
+        "category": "AI / Startups",
+        "tag": "",
+        "url": "https://www.ft.com/content/599cd9ab-dbd0-4c0d-818a-f6270871cd97?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Visa curbs squeeze universities that relied on foreign students",
+        "category": "Education / Visas",
+        "tag": "",
+        "url": "https://m.economictimes.com/nri/study/the-foreign-student-cash-cow-is-running-dry-as-us-uk-others-tighten-visa-rules/articleshow/135790898.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Microsoft Outlook outage hits 70+ countries for about 19 hours",
+        "category": "Big Tech / Cloud",
+        "tag": "",
+        "url": "https://www.wsj.com/business/telecom/the-chaos-and-unexpected-joys-of-a-19-hour-global-email-outage-37b7170c",
+        "src": "The Wall Street Journal, Financial Times and WIRED",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why AI and tokenised money could make bank runs faster",
+        "category": "Finance / Crypto",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/91e8c6d1-54ab-48b6-a6ad-ea3b8dc3843f?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why AI agents ignore stop orders, and how to rein them in",
+        "category": "AI / Agents",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/11/11/magazine/ai-behavior-incorrigible.html",
+        "src": "The New York Times and Financial Times",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-13",
     "slice": "Nvidia's king falls. Gold rolls over. Delhi guards tenders. US homes hit 2010 lows. Zurich sours. A bot cares.",
     "artifact": "https://claude.ai/artifact/LXmzPQ5nnwaWvSHNmsRq1w",

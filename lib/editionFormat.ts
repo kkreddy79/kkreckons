@@ -31,6 +31,7 @@ const PUBLISHERS: Record<string, string> = {
   "nar.realtor": "National Association of Realtors",
   "noahpinion.blog": "Noahpinion",
   "timeslive.co.za": "TimesLIVE",
+  "experimental-history.com": "Experimental History",
   "groverkds.substack.com": "Karandeep's Second Opinion",
   "sharatchandra.substack.com": "FinTech Unwrapped",
   "tessellatum.in": "Tessellatum",
