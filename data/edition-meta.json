@@ -606,5 +606,13 @@
       "band": "Elevated",
       "asOf": "2026-11-12"
     }
+  },
+  "2026-11-14": {
+    "artifact": "https://claude.ai/artifact/WCFqfuwoGscsUQNRiK5fbD",
+    "stressIndex": {
+      "score": 36,
+      "band": "Elevated",
+      "asOf": "2026-11-13"
+    }
   }
 }
