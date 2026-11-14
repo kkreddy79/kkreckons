@@ -11,8 +11,12 @@ function load(date: string) {
   let p = loads.get(date);
   if (!p) {
     p = fetch(`/api/react?date=${date}`)
-      .then((r) => (r.ok ? (r.json() as Promise<{ counts: Counts }>) : null))
-      .then((d) => d?.counts ?? null)
+      // Always read the body, even on an error: an unread response stays open in Chromium, so the page never
+      // reaches network idle (scripts/site-check.mjs waits for it).
+      .then(async (r) => {
+        const d = (await r.json().catch(() => null)) as { counts?: Counts } | null;
+        return r.ok ? (d?.counts ?? null) : null;
+      })
       .catch(() => null);
     loads.set(date, p);
   }
@@ -66,10 +70,8 @@ export default function Reactions({ date, n }: { date: string; n: number }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ date, n, kind, undo }),
       });
-      if (r.ok) {
-        const { count } = (await r.json()) as { count: number };
-        setCounts((c) => ({ ...c, [field]: count }));
-      }
+      const d = (await r.json().catch(() => null)) as { count?: number } | null;
+      if (r.ok && typeof d?.count === "number") setCounts((c) => ({ ...c, [field]: d.count! }));
     } catch {}
   };
 
