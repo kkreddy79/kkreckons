@@ -1,5 +1,102 @@
 [
   {
+    "date": "2026-11-15",
+    "slice": "Router grounds the US. India banks on growth. UPI clicks 800mn daily. Nvidia loses its voice. Bonds find mojo.",
+    "artifact": "https://claude.ai/artifact/XdXB6Th5PSUNviJhKLYi4x",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-15-1.jpg",
+    "cover": "/figs/2026-11-15-cover.jpg",
+    "coverAlt": "Router grounds the US. India banks on growth. UPI clicks 800mn daily. Nvidia loses its voice. Bonds find mojo.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "FAA ground stop: one Arkansas router halted nearly all US flights",
+        "category": "Air travel",
+        "tag": "",
+        "url": "https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c",
+        "src": "The Wall Street Journal",
+        "pay": true
+      },
+      {
+        "section": "India edition",
+        "title": "Six Indian sectors grew sales and profit through tariffs and war",
+        "category": "Indian earnings",
+        "tag": "",
+        "url": "https://m.economictimes.com/prime/tariffs-supply-snags-and-a-war-6-sectors-that-pulled-it-off-through-all-of-the-trouble/primearticleshow/135854474.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Oil, El Niño and capital flight: can India keep its fast-growth tag?",
+        "category": "India's economy",
+        "tag": "",
+        "url": "https://www.livemint.com/economy/india-economic-growth-global-shocks-crude-inflation-11794724310106.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Cashless Nation review: the decisions that made UPI work",
+        "category": "Payments",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/mint-lounge/art-and-culture/cashless-nation-story-of-upi-book-review-11794567593068.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Nvidia after Huang: a company with too many enemies in Washington",
+        "category": "Chips and Washington",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How bonds got interesting again for savers near retirement",
+        "category": "Retirement money",
+        "tag": "",
+        "url": "https://www.ft.com/content/3f89c87c-4bc4-40db-8c15-1957079917f3?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Emerging-market bond sales slump 41%, lifting prices",
+        "category": "Emerging-market debt",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-15/bond-drought-in-emerging-markets-lifts-prices-as-sales-slump-41",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-14",
     "slice": "$3bn did nothing. India builds its AI. Visas drop 41%. Outlook naps 19 hrs. Bots ignore 'stop'. Get a goat.",
     "artifact": "https://claude.ai/artifact/WCFqfuwoGscsUQNRiK5fbD",
