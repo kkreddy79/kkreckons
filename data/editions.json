@@ -1,5 +1,92 @@
 [
   {
+    "date": "2026-11-16",
+    "slice": "Growth yawns at 2.8%. Lenders feast. Xi hosts, trade limps. Nvidia ghosts. Only SpaceX sticks the landing.",
+    "artifact": "https://claude.ai/artifact/Htk58fDKDEjeoFH3yU9Gg9",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-16-1.jpg",
+    "cover": "/figs/2026-11-16-cover.jpg",
+    "coverAlt": "Growth yawns at 2.8%. Lenders feast. Xi hosts, trade limps. Nvidia ghosts. Only SpaceX sticks the landing.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Goldman Sachs forecasts 2.8% global growth in 2027 as oil prices fall",
+        "category": "Global outlook",
+        "tag": "",
+        "url": "https://www.goldmansachs.com/insights/articles/the-global-economy-is-forecast-to-grow-2-point-8-percent-in-2027-as-oil-prices-decline",
+        "src": "Goldman Sachs",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Blackstone, Carlyle and Bain bet billions on India's shadow banks",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://m.economictimes.com/industry/banking/finance/india-shadow-banks-nbfc-global-investors-blackstone-carlyle-advent-bain-billion-dollar-investments-credit-growth/articleshow/135703119.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "China uses Apec in Shenzhen to pitch its version of world order",
+        "category": "Geopolitics",
+        "tag": "",
+        "url": "https://www.ft.com/content/fb667289-ae81-42c7-8eb8-ebda09dceff7?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "McKinsey: a quarter of $19 trillion in imports is trade's weak spot",
+        "category": "Trade",
+        "tag": "",
+        "url": "https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/the%20achilles%20heel%20of%20global%20trade%20building%20resilience%20where%20it%20matters%20most/the-achilles-heel-of-global-trade-building-resilience-where-it-matters-most-vf.pdf?shouldIndex=false",
+        "src": "McKinsey Global Institute",
+        "pay": false,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Nvidia's interim CEO set to rein in its AI financing spree",
+        "category": "AI financing",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/nvidias-days-as-an-open-checkbook-for-the-ai-economy-are-numbered-90c7b388",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "SpaceX catches Starship's upper stage after it returns from orbit",
+        "category": "Space",
+        "tag": "",
+        "url": "https://www.wsj.com/science/space-astronomy/spacex-launches-starship-on-ambitious-bid-to-catch-spacecraft-5c806c9b",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-15",
     "slice": "Router grounds the US. India banks on growth. UPI clicks 800mn daily. Nvidia loses its voice. Bonds find mojo.",
     "artifact": "https://claude.ai/artifact/XdXB6Th5PSUNviJhKLYi4x",
