@@ -622,5 +622,18 @@
       "band": "Elevated",
       "asOf": "2026-11-13"
     }
+  },
+  "2026-11-16": {
+    "artifact": "https://claude.ai/artifact/Htk58fDKDEjeoFH3yU9Gg9",
+    "stressIndex": {
+      "score": 36,
+      "band": "Elevated",
+      "asOf": "2026-11-13"
+    },
+    "stories": {
+      "Nvidia's interim CEO set to rein in its AI financing spree": {
+        "stressIndex": true
+      }
+    }
   }
 }

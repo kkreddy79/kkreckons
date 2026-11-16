@@ -1,0 +1,537 @@
+{
+  "date": "2026-11-16",
+  "slice": "Growth yawns at 2.8%. Lenders feast. Xi hosts, trade limps. Nvidia ghosts. Only SpaceX sticks the landing.",
+  "artifact": "https://claude.ai/artifact/Htk58fDKDEjeoFH3yU9Gg9",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$1.8tn",
+      "text": "Global AI investment in 2027, Goldman Sachs forecasts for 2027, up from $1.1tn.",
+      "url": "https://www.goldmansachs.com/insights/articles/the-global-economy-is-forecast-to-grow-2-point-8-percent-in-2027-as-oil-prices-decline"
+    },
+    {
+      "num": "$50bn+",
+      "text": "Potential AI funding pullback, UBS estimates, if Nvidia reins in its financing.",
+      "url": "https://www.wsj.com/tech/ai/nvidias-days-as-an-open-checkbook-for-the-ai-economy-are-numbered-90c7b388"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Global outlook",
+          "tag": "",
+          "title": "Goldman Sachs forecasts 2.8% global growth in 2027 as oil prices fall",
+          "url": "https://www.goldmansachs.com/insights/articles/the-global-economy-is-forecast-to-grow-2-point-8-percent-in-2027-as-oil-prices-decline",
+          "url2": "",
+          "points": [
+            "Goldman Sachs Research expects world GDP to grow 2.8% in 2027, a notch above 2.7% this year and in line with consensus. Chief economist Jan Hatzius calls it solid but unremarkable.",
+            "Energy flips from drag to mild tailwind, with Brent seen at $78 a barrel by end-2027. AI investment is forecast to reach $1.8 trillion, up from $1.1 trillion, adding about 0.4 point to global growth.",
+            "India tops its table at 7.2% for 2027, against a 6.8% consensus. China is seen at 4.5%, the US at 2.4%, while France (0.1%) and Brazil (0.6%) trail."
+          ],
+          "numbers": [
+            [
+              "2.8%",
+              "World growth, 2027"
+            ],
+            [
+              "$78",
+              "Brent, end-2027"
+            ],
+            [
+              "7.2%",
+              "India growth, 2027"
+            ]
+          ],
+          "why": "If cheap oil and the AI boom both hold, inflation cools: Goldman sees US core PCE easing to 2.4% by end-2027. But it still expects the Fed to hike in December and March before cutting, so relief on borrowing costs comes late. For India, cheaper crude is direct help.",
+          "other": "Goldman itself says risks tilt to the downside: a flare-up in the Iran war could push energy prices up again, and AI spending could fall short. A forecast a year out is one bank's view, and the page notes it was prepared by Goldman's executive office rather than its research division.",
+          "also": [],
+          "image": "/figs/2026-11-16-1.jpg",
+          "imageAlt": "Explainer: Goldman Sachs sees 2.8% world growth in 2027, helped by cheaper oil and AI investment; India leads at 7.2%.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Goldman Sachs",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "AI"
+          ],
+          "emailHead": "World growth: steady, not spectacular",
+          "emailTeaser": "Cheaper oil and AI spending lift 2027; India leads.",
+          "cite": "Goldman Sachs forecast on 13 November 2026 that global GDP will grow 2.8% in 2027, up from 2.7% in 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Banking",
+          "tag": "",
+          "title": "Blackstone, Carlyle and Bain bet billions on India's shadow banks",
+          "url": "https://m.economictimes.com/industry/banking/finance/india-shadow-banks-nbfc-global-investors-blackstone-carlyle-advent-bain-billion-dollar-investments-credit-growth/articleshow/135703119.cms",
+          "url2": "",
+          "points": [
+            "Blackstone is in talks to put about ₹5,000 crore into IIFL Finance for a 15% stake, the latest in a run of global bets on India's non-bank lenders: Carlyle in Nido Home Finance, Advent in Aditya Birla Housing Finance and Bain-linked funds in Manappuram.",
+            "Foreign investors have committed over $20 billion to Indian banking, finance and insurance since 2025, ET reports, citing Business Standard. RBI data show NBFC credit grew 15.4% in September, retail loans 21.9%.",
+            "The money is choosy: CRISIL says equity funding for smaller NBFCs fell 30% to 35% in 2025, as investors back big, secured lenders."
+          ],
+          "numbers": [
+            [
+              "$20bn+",
+              "Foreign money into BFSI since 2025"
+            ],
+            [
+              "15.4%",
+              "NBFC credit growth, Sept"
+            ],
+            [
+              "2.50%",
+              "NBFC gross NPAs, June"
+            ]
+          ],
+          "why": "Foreign capital lets lenders that reach first-time borrowers, gold-loan customers and small businesses grow faster and borrow more cheaply. NBFCs already make 47% of new-to-credit consumer loans, so this money shapes who gets credit in India.",
+          "other": "Plentiful capital can push lenders to chase growth. A fresh bad-loan cycle in unsecured retail, microfinance or small-business lending, rich valuations or slow approvals could cool appetite, and the boom is already bypassing smaller NBFCs.",
+          "also": [],
+          "image": "/figs/2026-11-16-2.jpg",
+          "imageAlt": "Explainer: global investors' recent bets on Indian non-bank lenders and the credit data behind them.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ],
+          "emailHead": "Global money hunts India's lenders",
+          "emailTeaser": "Blackstone, Bain and Carlyle pile into India's non-bank lenders.",
+          "cite": "NBFC credit in India grew 15.4% year on year in September 2026, the Reserve Bank of India said on 6 November.",
+          "imageW": 1280,
+          "imageH": 1727
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Geopolitics",
+          "tag": "",
+          "title": "China uses Apec in Shenzhen to pitch its version of world order",
+          "url": "https://www.ft.com/content/fb667289-ae81-42c7-8eb8-ebda09dceff7?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "China hosts this week's Apec summit in Shenzhen, its first since 2014, and the FT says the programme has been cut back: no informal retreats, and leaders travel to meet Xi Jinping one by one at a state guesthouse.",
+            "Beijing pitches Xi's global governance initiative as a fairer, multipolar order with the UN at its centre and more say for the global south. Western analysts see a bid to hollow out the system's liberal core.",
+            "Critics note China puts little money or security behind the vision, beyond Belt and Road infrastructure spending of over $1tn."
+          ],
+          "numbers": [
+            [
+              "2014",
+              "China's last Apec"
+            ],
+            [
+              "$1tn+",
+              "Belt and Road spending"
+            ]
+          ],
+          "why": "How Beijing runs Apec is a preview of how it would run the room. For India, a rival inside Brics and part of the global south China claims to speak for, a China-centred order is a direct concern.",
+          "other": "Chinese scholars argue Beijing does not want to overturn a system it has gained from, only to have more say in it. And parts of the global south may prefer a louder voice in a China-led order to the old one, flaws and all.",
+          "also": [],
+          "image": "/figs/2026-11-16-3.jpg",
+          "imageAlt": "Explainer: China's scaled-back Apec summit in Shenzhen and its pitch for a multipolar world order.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics"
+          ],
+          "emailHead": "China runs Apec its own way",
+          "emailTeaser": "A tightly scripted Shenzhen summit previews Beijing's world order.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Trade",
+          "tag": "",
+          "title": "McKinsey: a quarter of $19 trillion in imports is trade's weak spot",
+          "url": "https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/the%20achilles%20heel%20of%20global%20trade%20building%20resilience%20where%20it%20matters%20most/the-achilles-heel-of-global-trade-building-resilience-where-it-matters-most-vf.pdf?shouldIndex=false",
+          "url2": "",
+          "points": [
+            "About 25% of the world's $19 trillion in imports is highly exposed, the McKinsey Global Institute finds: these goods carry at least two of three risks, being critical, coming from few suppliers, or from geopolitically distant partners.",
+            "Around 80% of seaborne trade passes a chokepoint. China supplies 30% to 60% of many economies' most exposed imports, but dependence runs both ways: Australia sends over half of China's iron ore imports.",
+            "India's product exposure is below the global average, yet its energy leans on Gulf routes, and it has flagged about $51 billion of strategic imports to build at home."
+          ],
+          "numbers": [
+            [
+              "25%",
+              "Imports at high risk"
+            ],
+            [
+              "80%",
+              "Sea trade via chokepoints"
+            ],
+            [
+              "$51bn",
+              "India's make-at-home list"
+            ]
+          ],
+          "why": "Supply shocks now come from both what you buy and the route it takes. Knowing which few imports are truly fragile lets governments and companies protect those, rather than paying to reshore everything. India's $51 billion list is a map of where new factories may follow.",
+          "other": "Resilience is not free: backup suppliers, stockpiles and home production raise costs, and the report itself says ramping up output can take years. Push too hard and fragmented trade could cost more than the shocks it guards against.",
+          "also": [],
+          "image": "/figs/2026-11-16-4.jpg",
+          "imageAlt": "Explainer: a quarter of global imports carry two or more risks; 80% of sea trade passes a chokepoint; India targets $51bn of strategic imports.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "McKinsey Global Institute",
+          "pay": false,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "Trade's weak spot: one in four",
+          "emailTeaser": "Critical imports and choke routes leave every economy exposed.",
+          "cite": "The McKinsey Global Institute found in November 2026 that about 25% of $19 trillion in global imports face significant vulnerabilities.",
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "AI financing",
+          "tag": "",
+          "title": "Nvidia's interim CEO set to rein in its AI financing spree",
+          "url": "https://www.wsj.com/tech/ai/nvidias-days-as-an-open-checkbook-for-the-ai-economy-are-numbered-90c7b388",
+          "url2": "",
+          "points": [
+            "Nvidia's days of bankrolling the AI economy look numbered, the WSJ reports. Interim CEO Colette Kress, the finance chief who had pushed back on some big deals, is expected to pull back further after Jensen Huang resigned over revelations about his personal conduct.",
+            "Huang had already told cloud partners last month to secure upfront customer payments if they wanted GPUs. Over the past year Nvidia backed data-centre debt, rented its own chips from customers and joined a record 129 venture deals.",
+            "A UBS analyst estimates a pullback could drain $50 billion or more from the market, just as interest rates rise."
+          ],
+          "numbers": [
+            [
+              "$50bn+",
+              "UBS estimate of possible pullback"
+            ],
+            [
+              "129",
+              "Nvidia VC deals this year"
+            ]
+          ],
+          "why": "Much of the AI build-out has leaned on Nvidia acting as investor, guarantor and even customer for its own chips. If that support shrinks, cash-hungry startups and cloud firms with little revenue must find money elsewhere, a real test of how much AI demand stands on its own.",
+          "other": "A pullback could be healthy: a supplier financing its own customers is circular, and upfront payments tie spending to real demand. Several big deals, such as Perplexity's, have already closed, and rivals like Google and AMD offer similar support.",
+          "also": [],
+          "image": "/figs/2026-11-16-5.jpg",
+          "imageAlt": "Explainer: how Nvidia financed the AI economy and why its interim CEO is expected to pull back.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Nvidia closes the open checkbook",
+          "emailTeaser": "A new interim boss is set to curb Nvidia's AI financing.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1768
+        },
+        {
+          "category": "Space",
+          "tag": "",
+          "title": "SpaceX catches Starship's upper stage after it returns from orbit",
+          "url": "https://www.wsj.com/science/space-astronomy/spacex-launches-starship-on-ambitious-bid-to-catch-spacecraft-5c806c9b",
+          "url2": "https://www.ft.com/content/ce7c8ab1-8337-4c32-8494-5142ec1697dd?syn-25a6b1a6=1",
+          "points": [
+            "SpaceX caught Starship's upper stage with its launch tower's arms on Saturday, the first time the ship has been recovered after a trip to orbit, the WSJ and FT report.",
+            "The flight lasted about 22 hours and released 26 more Starlink satellites. The booster's catch was called off minutes after launch: the WSJ ties it to a fuel alarm, and the FT reports it flipped and exploded in the Gulf of Mexico.",
+            "Musk congratulated the team on X. A recovered ship can be refurbished and flown again, which is the point of the programme."
+          ],
+          "numbers": [
+            [
+              "22 hrs",
+              "Longest Starship flight"
+            ]
+          ],
+          "why": "Reuse is what turns a rocket into a cargo service. If both stages can be caught and flown again, launching satellites, and Musk's plans for data centres in space, gets much cheaper.",
+          "other": "A catch is not yet reuse. No recovered ship has flown again, the booster was lost this time, and the FT notes Starship still needs major changes before it can fly like an aircraft. It has cost billions so far, with a mixed record.",
+          "also": [],
+          "image": "/figs/2026-11-16-6.jpg",
+          "imageAlt": "Explainer: SpaceX's Flight 15, from launch and the lost booster to the first tower catch of Starship's upper stage.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal and Financial Times",
+          "pay": true,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "SpaceX finally catches its ship",
+          "emailTeaser": "Starship's upper stage comes home; the booster doesn't.",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Cheaper fuel helps.",
+    "b": "Bigger ambitions cost more.",
+    "line": "Growth hinges on energy and AI, lending on loans staying good, AI startups on finding cash beyond Nvidia, and Starship on flying a caught ship again."
+  },
+  "cover": "/figs/2026-11-16-cover.jpg",
+  "coverAlt": "Growth yawns at 2.8%. Lenders feast. Xi hosts, trade limps. Nvidia ghosts. Only SpaceX sticks the landing.",
+  "stressIndex": {
+    "score": 36,
+    "band": "Elevated",
+    "asOf": "2026-11-13"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25144.3008,
+        "asOf": "2026-11-13",
+        "prev": 25299.3496,
+        "week": 25030.3496,
+        "spark": [
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7561.6699,
+        "asOf": "2026-11-13",
+        "prev": 7592.3999,
+        "week": 7376.8599,
+        "spark": [
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.154,
+        "asOf": "2026-11-13",
+        "prev": 5.103,
+        "week": 4.859,
+        "spark": [
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 95.82,
+        "asOf": "2026-11-12",
+        "prev": 92.76,
+        "week": 98.29,
+        "spark": [
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3885.3,
+        "asOf": "2026-11-12",
+        "prev": 4000.5,
+        "week": 4113.5,
+        "spark": [
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.24,
+        "asOf": "2026-11-14",
+        "prev": 94.0338,
+        "week": 94.4589,
+        "spark": [
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24
+        ]
+      }
+    ]
+  }
+}
