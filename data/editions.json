@@ -1,5 +1,80 @@
 [
   {
+    "date": "2026-11-17",
+    "slice": "27-week job hunts. ₹99 AI love. Mandis stay local. Students pick Plan B. Even banks hedge.",
+    "artifact": "https://claude.ai/artifact/9UWvnbwWjLhU9iecwVsrT6",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-17-1.jpg",
+    "cover": "/figs/2026-11-17-cover.jpg",
+    "coverAlt": "27-week job hunts. ₹99 AI love. Mandis stay local. Students pick Plan B. Even banks hedge.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "US job search now takes 27 weeks: what helps job seekers get hired",
+        "category": "Jobs & careers",
+        "tag": "",
+        "url": "https://www.wsj.com/lifestyle/careers/i-talked-to-job-seekers-in-all-50-states-heres-what-it-takes-to-get-hired-right-now-a2612c4b",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI girlfriend apps in India charge for affection, and regulators lag",
+        "category": "AI companions",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/ai-girlfriends-intimacy-at-a-price-11794820754936.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "e-NAM's lesson for AI in India: apps don't fix markets",
+        "category": "AI and farming",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/the-tech-worked-the-market-didnt-ai-farmers-mandis-credit-systems-agriculture-11794809668013.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Rich countries slam the brakes on migration as populations age",
+        "category": "Global migration",
+        "tag": "",
+        "url": "https://www.ft.com/content/12f76b96-6ef9-40fb-924f-60c348935a21?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "S&P warns European banks lean too hard on risk transfer deals",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/3b6cccb1-cac2-4e64-a2c2-3b3801f9a5fb?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-16",
     "slice": "Growth yawns at 2.8%. Lenders feast. Xi hosts, trade limps. Nvidia ghosts. Only SpaceX sticks the landing.",
     "artifact": "https://claude.ai/artifact/Htk58fDKDEjeoFH3yU9Gg9",
