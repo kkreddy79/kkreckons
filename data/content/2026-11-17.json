@@ -1,0 +1,487 @@
+{
+  "date": "2026-11-17",
+  "slice": "27-week job hunts. ₹99 AI love. Mandis stay local. Students pick Plan B. Even banks hedge.",
+  "artifact": "https://claude.ai/artifact/9UWvnbwWjLhU9iecwVsrT6",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "27 weeks",
+      "text": "Average US job search length, the longest in over a decade outside the pandemic.",
+      "url": "https://www.wsj.com/lifestyle/careers/i-talked-to-job-seekers-in-all-50-states-heres-what-it-takes-to-get-hired-right-now-a2612c4b"
+    },
+    {
+      "num": "$35bn",
+      "text": "Record risk transfer issuance S&P expects from European banks this year.",
+      "url": "https://www.ft.com/content/3b6cccb1-cac2-4e64-a2c2-3b3801f9a5fb?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Jobs & careers",
+          "tag": "",
+          "title": "US job search now takes 27 weeks: what helps job seekers get hired",
+          "url": "https://www.wsj.com/lifestyle/careers/i-talked-to-job-seekers-in-all-50-states-heres-what-it-takes-to-get-hired-right-now-a2612c4b",
+          "url2": "",
+          "points": [
+            "WSJ reporter Lindsay Ellis interviewed job seekers in every US state. People in work still get raises and layoffs are down, but white-collar job hunters face the longest searches in over a decade outside the pandemic.",
+            "Mass applying rarely works, yet unemployment rules and fear keep people doing it. Many spend thousands on coaches, premium subscriptions and AI tools, and scammers target 'open to work' profiles.",
+            "What worked: most time on people, little on forms; applying early; following up when a contact says stay in touch; taking jobs outside one's degree. Freelance work is drying up as clients switch to AI, and ageism still bites."
+          ],
+          "numbers": [
+            [
+              "27 wks",
+              "average US job search"
+            ],
+            [
+              "~2x",
+              "interview odds for the earliest applicants"
+            ]
+          ],
+          "why": "In a market screened by software, volume feels productive but speed and relationships decide who gets seen. The cheapest moves, an early application and a kept contact, beat the costliest ones.",
+          "other": "These are stories of people who broke through, so they may overstate what networking can do. Job seekers without strong contacts may find the same tactics fail, and if everyone applies early the edge shrinks.",
+          "also": [],
+          "image": "/figs/2026-11-17-1.jpg",
+          "imageAlt": "Explainer: the average US job search takes 27 weeks; what fails and what works when looking for a job",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ],
+          "emailHead": "How people get hired now",
+          "emailTeaser": "Speed and contacts beat spray-and-pray applications",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "AI companions",
+          "tag": "",
+          "title": "AI girlfriend apps in India charge for affection, and regulators lag",
+          "url": "https://www.livemint.com/ai/ai-girlfriends-intimacy-at-a-price-11794820754936.html",
+          "url2": "",
+          "points": [
+            "Mint finds AI companion apps such as Saathiya, Meetra and Urvashi are free to download but lock voice, unlimited chat and sexual content behind weekly, monthly or coin plans, from ₹99 a week. Users describe prompts that hold back affection until they pay.",
+            "Grand View Research puts India's AI companion market at $1.45bn in 2025. Saathiya was listed for ages 12 and up, and app-store age checks rest on what developers declare.",
+            "Lawyers say dark-pattern rules could cover emotional manipulation, but free services fall outside consumer law. The data law's main consent rules start only in May 2027, and India has no dedicated rules for AI companions."
+          ],
+          "numbers": [
+            [
+              "$1.45bn",
+              "India's AI companion market, 2025"
+            ],
+            [
+              "May 2027",
+              "when data-law consent rules apply"
+            ]
+          ],
+          "why": "These apps target a young, lonely, mobile-first market where a small weekly fee feels harmless. When the product is attachment, ordinary rules on nagging and subscription traps may not be enough.",
+          "other": "Some users say the apps give real comfort, and adults paying for a service they enjoy is not exploitation by itself. Heavy-handed rules could also push users to foreign apps and web versions that are harder to police.",
+          "also": [],
+          "image": "/figs/2026-11-17-2.jpg",
+          "imageAlt": "Explainer: AI girlfriend apps in India charge from Rs 99 a week; how they charge and where rules fall short",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Affection, now a subscription",
+          "emailTeaser": "India's AI girlfriend apps nudge lonely users to pay",
+          "imageW": 1280,
+          "imageH": 1728
+        },
+        {
+          "category": "AI and farming",
+          "tag": "Opinion",
+          "title": "e-NAM's lesson for AI in India: apps don't fix markets",
+          "url": "https://www.livemint.com/opinion/online-views/the-tech-worked-the-market-didnt-ai-farmers-mandis-credit-systems-agriculture-11794809668013.html",
+          "url2": "",
+          "points": [
+            "Ravi Venkatesan, former Microsoft India chairman, argues that e-NAM, the online farm market launched in 2016, looks like a hit, linking over 1,600 mandis and 18 million farmers. Yet trade across state lines, its core purpose, is about 24,000 tonnes out of more than 130 million.",
+            "The blocks are law, credit and trust: most states haven't opened mandis to outside traders, small farmers owe commission agents, and too few labs grade produce.",
+            "He warns AI-for-good projects risk the same trap, citing a Kenyan trial where an AI mentor helped stronger businesses and hurt weaker ones. His fixes: tackle the real barrier first, measure lives not users, and pay vendors for outcomes."
+          ],
+          "numbers": [
+            [
+              "<0.02%",
+              "e-NAM trade that crossed state lines"
+            ],
+            [
+              "18mn",
+              "farmers registered on e-NAM"
+            ]
+          ],
+          "why": "India is betting on AI for farming and public services. If success is judged by downloads, it could repeat e-NAM: a working platform and an unchanged market. Paying for income gains would change what vendors build.",
+          "other": "Adoption still counts: e-NAM built price transparency and digital habits that later reforms can use. Paying only for outcomes is hard when weather and prices swing farm incomes, and could steer vendors away from the hardest regions.",
+          "also": [],
+          "image": "/figs/2026-11-17-3.jpg",
+          "imageAlt": "Explainer: under 0.02% of e-NAM trade crossed state lines; what blocked it and how to fund AI differently",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Apps don't fix markets",
+          "emailTeaser": "e-NAM's warning for India's big AI push",
+          "imageW": 1280,
+          "imageH": 1730
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Global migration",
+          "tag": "",
+          "title": "Rich countries slam the brakes on migration as populations age",
+          "url": "https://www.ft.com/content/12f76b96-6ef9-40fb-924f-60c348935a21?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "OECD data show permanent migration to its members fell 1.6% in 2025 to about 6.1 million, a second yearly drop, though still above 2019. New international students fell to about 1.6 million.",
+            "The FT links the slowdown to tighter visa rules in the US, UK, Canada and Australia, while Spain, Portugal and Italy keep recruiting workers. Politics points to more restriction, not less.",
+            "Migrants ease the cost of ageing by paying taxes in their working years, but rapid inflows can strain housing, as Canada found. In India, the top country of origin, students are weighing Germany, Ireland and the Netherlands over the US."
+          ],
+          "numbers": [
+            [
+              "-1.6%",
+              "permanent migration to OECD countries, 2025"
+            ],
+            [
+              "1.6mn",
+              "new international students, 2025"
+            ]
+          ],
+          "why": "For Indian families, a foreign degree is now a bet on rules that keep shifting. For rich countries, closing doors trades a political win today for slower growth and heavier pension bills later.",
+          "other": "Some economists see this as a return to normal after a one-off post-pandemic surge, and inflows remain above pre-pandemic levels in many countries. Slower arrivals can also ease pressure on housing and services.",
+          "also": [],
+          "image": "/figs/2026-11-17-4.jpg",
+          "imageAlt": "Explainer: permanent migration to OECD countries fell 1.6% in 2025; why it slowed and what it costs",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.oecd.org/en/publications/international-migration-outlook-2026_a9eab36b-en",
+          "freeSrc": "OECD",
+          "themes": [
+            "Geopolitics",
+            "India"
+          ],
+          "emailHead": "Migration to rich countries slows",
+          "emailTeaser": "Fewer arrivals now, heavier pension bills later",
+          "imageW": 1280,
+          "imageH": 1774
+        },
+        {
+          "category": "Banking",
+          "tag": "",
+          "title": "S&P warns European banks lean too hard on risk transfer deals",
+          "url": "https://www.ft.com/content/3b6cccb1-cac2-4e64-a2c2-3b3801f9a5fb?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "S&P Global Ratings expects European lenders to issue a record $35bn of significant risk transfers this year. In these deals banks pay outside investors to take the default risk on a pool of loans, freeing capital.",
+            "The motive has changed: after 2008 they were a gentler alternative to selling shares; now banks use them to lift returns, pay shareholders and lend more. Santander, BNP Paribas and Barclays lead issuance.",
+            "S&P's main worry is forced deleveraging: if new deals stop making sense, reliant banks may have to cut lending or sell assets. A handful of credit funds dominate buying, and regulators have flagged banks financing funds that buy other banks' risk."
+          ],
+          "numbers": [
+            [
+              "$35bn",
+              "record SRT issuance forecast this year"
+            ]
+          ],
+          "why": "When capital relief depends on investors' appetite, credit for households and firms can tighten quickly if that appetite turns. And if banks fund the buyers, the risk may never leave the banking system.",
+          "other": "Regulators broadly accept these deals as an effective balance-sheet tool, and banks now generate more capital from earnings than they need. New buyers such as insurers and pension funds could make demand steadier, not shakier.",
+          "also": [],
+          "image": "/figs/2026-11-17-5.jpg",
+          "imageAlt": "Explainer: European banks to issue a record $35bn of significant risk transfers; how they work and where they can break",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "Markets"
+          ],
+          "emailHead": "Banks rent out their risk",
+          "emailTeaser": "A record year for deals that could reverse fast",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Networks open doors.",
+    "b": "Policies close them.",
+    "line": "Today's stories are about access: to jobs, markets, borders, credit and even affection. More of it now comes with a gatekeeper, a fee or both."
+  },
+  "cover": "/figs/2026-11-17-cover.jpg",
+  "coverAlt": "27-week job hunts. ₹99 AI love. Mandis stay local. Students pick Plan B. Even banks hedge.",
+  "stressIndex": {
+    "score": 36,
+    "band": "Elevated",
+    "asOf": "2026-11-13"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25144.3008,
+        "asOf": "2026-11-13",
+        "prev": 25299.3496,
+        "week": 25030.3496,
+        "spark": [
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7561.6699,
+        "asOf": "2026-11-13",
+        "prev": 7592.3999,
+        "week": 7376.8599,
+        "spark": [
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.154,
+        "asOf": "2026-11-13",
+        "prev": 5.103,
+        "week": 4.859,
+        "spark": [
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 95.82,
+        "asOf": "2026-11-12",
+        "prev": 92.76,
+        "week": 98.29,
+        "spark": [
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3885.3,
+        "asOf": "2026-11-12",
+        "prev": 4000.5,
+        "week": 4113.5,
+        "spark": [
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.24,
+        "asOf": "2026-11-14",
+        "prev": 94.0338,
+        "week": 94.4589,
+        "spark": [
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24
+        ]
+      }
+    ]
+  }
+}

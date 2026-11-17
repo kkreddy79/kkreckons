@@ -34,6 +34,7 @@ const PUBLISHERS: Record<string, string> = {
   "experimental-history.com": "Experimental History",
   "goldmansachs.com": "Goldman Sachs",
   "mckinsey.com": "McKinsey Global Institute",
+  "oecd.org": "OECD",
   "groverkds.substack.com": "Karandeep's Second Opinion",
   "sharatchandra.substack.com": "FinTech Unwrapped",
   "tessellatum.in": "Tessellatum",
