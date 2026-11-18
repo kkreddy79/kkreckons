@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Breaking, not ending: the week the systems failed</title>
+<meta name="description" content="Eight failures in six days, a viral doomsday hoax and an FBI warning about AI that hacks at machine speed. What happened, what's conspiracy, why experts worry, and how the risk can be controlled.">
+<!-- KKReckons special report by KK Reddy, served at https://www.kkreckons.com/special/week-the-systems-failed inside the site's
+     header and footer (app/special/[slug]/page.tsx). Lora and Poppins are the site's self-hosted fonts (app/special/special.css).
+     The graphics are light "poster" cards in both themes, so their colours are fixed rather than themed. -->
+<style>
+:root{
+  --paper:#FAF6EE; --card:#FFFFFF; --ink:#14213D; --text:#1D2433; --mute:#55606B; --line:#E3DCCB; --sand:#F4EEDF;
+  --red:#D31245; --amber:#B26A00; --teal:#0B7A6E; --violet:#5B21B6;
+  --hero1:#0F1535; --hero2:#3A2A7A; --hero3:#B4326E; --gold:#FFC933; --onhero:#FFFFFF; --onhero2:#DAD8F0;
+  --g-red:linear-gradient(135deg,#F43F5E,#BE123C); --g-teal:linear-gradient(135deg,#14B8A6,#0A6F66);
+  --g-amber:linear-gradient(135deg,#FFD23F,#FF9F1C); --g-violet:linear-gradient(135deg,#8B5CF6,#4C1D95);
+  --g-navy:linear-gradient(135deg,#1E1B4B,#3B2FA0); --g-pink:linear-gradient(135deg,#F472B6,#BE185D);
+  --serif:'Lora',Georgia,'Times New Roman',serif; --sans:'Poppins','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0E1424; --card:#182036; --ink:#F4F0E6; --text:#DCDCE8; --mute:#A7AFC2; --line:#2C3654; --sand:#1E2742;
+  --red:#FF6B88; --amber:#FFC14D; --teal:#4FD8C4; --violet:#B79CFF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1424; --card:#182036; --ink:#F4F0E6; --text:#DCDCE8; --mute:#A7AFC2; --line:#2C3654; --sand:#1E2742;
+  --red:#FF6B88; --amber:#FFC14D; --teal:#4FD8C4; --violet:#B79CFF; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.62}
+a{color:var(--red)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);margin:0;color:var(--ink)}
+.lab{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+p{margin:0 0 14px}
+.prose{max-width:780px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:var(--onhero);
+  background:radial-gradient(90% 120% at 100% 0%,rgba(255,138,61,.55) 0%,transparent 55%),radial-gradient(70% 90% at 0% 100%,rgba(34,211,238,.28) 0%,transparent 60%),linear-gradient(150deg,var(--hero1) 0%,var(--hero2) 48%,var(--hero3) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-block:38px 190px}
+.hero .lab{color:var(--gold)}
+.hero h1{color:#fff;font-weight:700;font-size:clamp(34px,5.6vw,62px);line-height:1.05;letter-spacing:-.01em;margin:12px 0 16px;text-wrap:balance}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,#FFD23F,#FF8A3D);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dek{font-size:clamp(16.5px,1.9vw,19.5px);color:var(--onhero2);margin:0 0 18px;max-width:72ch}
+.byline{font-size:13.5px;color:var(--onhero2)}.byline b{color:#fff}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px;color:#14213D}
+.tag:nth-child(1){background:#FFD23F}.tag:nth-child(2){background:#5EEAD4}.tag:nth-child(3){background:#FDA4AF}.tag:nth-child(4){background:#C4B5FD}
+.net{position:absolute;left:0;right:0;bottom:0;width:100%;height:170px;z-index:0}
+
+/* opening card */
+.open{position:relative;z-index:2;margin-top:-120px;background:var(--card);border-radius:20px;box-shadow:0 18px 50px rgba(20,24,60,.25);padding:24px 24px 20px;border:1px solid var(--line)}
+.open > .lab{color:var(--red)}
+.scenes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 16px}
+@media (max-width:980px){.scenes{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.scenes{grid-template-columns:1fr}}
+.scene{border-radius:14px;padding:16px 16px 14px;color:#fff;background:var(--g-navy)}
+.scene:nth-child(2){background:var(--g-teal)}.scene:nth-child(3){background:var(--g-red)}.scene:nth-child(4){background:var(--g-violet)}
+.scene .t{font-weight:700;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#FFE38A}
+.scene p{margin:6px 0 0;font-family:var(--serif);font-size:17.5px;line-height:1.42;color:#fff}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.toc a{font-size:12.5px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--sand);padding:6px 12px;border-radius:99px;border:1px solid var(--line)}
+.toc a:hover{background:var(--gold);color:#14213D}
+
+section{padding:52px 0 6px}
+.sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.sec-head .lab{color:var(--red)}
+.sec-head h2{font-size:clamp(25px,3.3vw,34px);line-height:1.15}
+h3{font-size:21px;margin:24px 0 6px}
+.lead{font-size:18px}
+ul.tight{padding-left:20px;margin:8px 0}ul.tight li{margin:7px 0}
+.note{font-size:13.5px;color:var(--mute)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 0}
+@media (max-width:700px){.nums{grid-template-columns:1fr 1fr}}
+.stat{border-radius:16px;padding:18px 18px 16px;color:#fff;background:var(--g-navy);box-shadow:0 10px 24px rgba(20,24,60,.16)}
+.stat:nth-child(2){background:var(--g-red)}.stat:nth-child(3){background:var(--g-violet)}
+.stat:nth-child(4){background:var(--g-pink)}.stat:nth-child(5){background:var(--g-amber);color:#14213D}.stat:nth-child(6){background:var(--g-teal)}
+.stat b{display:block;font-family:var(--sans);font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1;letter-spacing:-.02em}
+.stat span{display:block;font-size:13.5px;margin-top:8px;line-height:1.35;opacity:.95}
+
+/* two-column blocks */
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 36px;align-items:start}
+.figrow{display:grid;grid-template-columns:minmax(0,1fr);gap:0 24px;align-items:start}
+@media (min-width:900px){
+  .split{grid-template-columns:minmax(0,1fr) minmax(0,440px);grid-template-rows:auto 1fr}
+  .split>*{grid-column:1}
+  .split>figure{grid-column:2;grid-row:1/span 2;margin-top:6px}
+  .split.rf{grid-template-rows:auto auto}
+  .split.rf>div{grid-row:1/span 2}
+  .split.rf>figure:first-child{grid-row:1}
+  .split.rf>figure:last-child{grid-row:2}
+  .figrow{grid-template-columns:1fr 1fr}}
+
+/* pills */
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.p-glitch{background:#C5F6EA;color:#075E54}.p-attack{background:#FFD3DC;color:#9F0F35}.p-open{background:#E4E1FB;color:#3F3A78}.p-ai{background:#FFE9A6;color:#7A4A00}
+
+/* the week's incidents */
+.wk{margin-top:8px}
+.wk-row{margin:0 0 14px;break-inside:avoid}
+@media (min-width:900px){.wk{columns:2;column-gap:16px}}
+.wk-row{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 20px;border-left:6px solid #14B8A6}
+.wk-row.atk{border-left-color:#F43F5E}.wk-row.unk{border-left-color:#8B5CF6}.wk-row.ai{border-left-color:#FFB703}
+.wk-date{font-weight:700;color:var(--red);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+.wk-what{font-family:var(--serif);font-weight:700;font-size:19px;line-height:1.25;color:var(--ink);margin-top:2px}
+.wk-detail{font-size:14.5px;color:var(--mute);margin-top:6px}
+.wk-human{font-size:14px;margin-top:8px;padding:8px 12px;background:var(--sand);border-radius:10px}
+.wk-row .pill{margin-top:10px}
+
+/* figures: light poster cards in both themes */
+figure{position:relative;margin:18px auto;max-width:560px;background:#fff;border-radius:18px;padding:20px 14px 12px;overflow:hidden;box-shadow:0 14px 36px rgba(20,24,60,.14);border:1px solid #E6E1F5}
+figure::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:linear-gradient(90deg,#F43F5E,#FF9F1C 35%,#14B8A6 68%,#8B5CF6)}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:12.5px;line-height:1.45;color:#55606B;margin-top:8px;padding:0 4px}
+.defs{position:absolute;width:0;height:0}
+
+/* history */
+.hist{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0}
+@media (min-width:640px){.hist{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.hist{grid-template-columns:repeat(3,1fr)}}
+.hi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;border-top:6px solid #14B8A6}
+.hi:nth-child(2){border-top-color:#8B5CF6}.hi:nth-child(3){border-top-color:#FFB703}.hi:nth-child(4){border-top-color:#F472B6}.hi:nth-child(5){border-top-color:#22D3EE}
+.hi.now{border-top-color:#F43F5E;background:var(--g-navy);border-color:transparent}
+.hi .y{font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.hi .e{font-family:var(--serif);font-weight:700;font-size:18px;line-height:1.25;color:var(--ink);margin:2px 0 6px}
+.hi .d{font-size:14.5px;color:var(--mute)}
+.hi.now .y{color:#FFC933}.hi.now .e{color:#fff}.hi.now .d{color:#DAD8F0}
+
+/* myth cards */
+details.myth{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+details.myth summary{list-style:none;cursor:pointer;padding:14px 16px;font-family:var(--serif);font-size:18.5px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+details.myth summary::-webkit-details-marker{display:none}
+details.myth summary::after{content:"Tap to check";flex:none;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:#BE123C;padding:5px 10px;border-radius:99px;margin-top:3px}
+details.myth[open] summary::after{content:"Checked";background:#0A6F66}
+details.myth .body{padding:0 16px 14px}
+details.myth .body p{margin:8px 0 0}
+
+/* panels */
+.panel{background:var(--sand);border-radius:16px;padding:18px 20px 10px;margin:18px 0;border-left:6px solid #FFB703}
+.panel h3{margin-top:2px}
+.dark{background:var(--g-navy);color:#E8EBF3;border-radius:18px;padding:20px 18px 14px;margin:16px 0}
+.cols{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:700px){.cols{grid-template-columns:1fr 1fr}}
+.box{background:rgba(255,255,255,.09);border-radius:14px;padding:14px 16px}
+.box h4{margin:0 0 6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.calm h4{color:#5EEAD4}.worry h4{color:#FDA4AF}
+.camp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;border-top:6px solid #14B8A6}
+.camp.b{border-top-color:#F43F5E}
+.camp h4{margin:0 0 6px;font-family:var(--serif);font-size:20px;line-height:1.25;color:var(--ink)}
+.camp p{margin:0;font-size:15px}
+.agree{background:linear-gradient(135deg,#FFF3C9,#FFE08A);color:#14213D;border-radius:14px;padding:14px 18px;margin:14px 0}
+
+/* voices */
+.voices{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:640px){.voices{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.voices{grid-template-columns:repeat(3,1fr)}}
+.voice{background:var(--card);border:1px solid var(--line);border-left:6px solid #14B8A6;border-radius:12px;padding:12px 14px}
+.voice.w{border-left-color:#F43F5E}.voice.m{border-left-color:#FFB703}
+.voice .who{font-weight:700;font-size:14.5px;color:var(--ink)}
+.voice .role{font-size:12.5px;color:var(--mute);margin-bottom:6px}
+.voice p{margin:0;font-size:14.5px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--mute);margin:6px 0 10px}
+.legend span::before{content:"";display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+/* fixes */
+.ctrl{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:14px 0}
+.ctrl h3{margin-top:2px}
+.ctrl.c1{border-top:6px solid #8B5CF6}.ctrl.c2{border-top:6px solid #FFB703}.ctrl.c3{border-top:6px solid #14B8A6}
+@media (min-width:900px){.ctrl.c2 ul.tight{columns:2;column-gap:40px}.ctrl ul.tight li{break-inside:avoid}.todo{columns:2;column-gap:40px}}
+.todo{list-style:none;padding:0;margin:8px 0}
+.todo li{padding:8px 0 8px 32px;position:relative;break-inside:avoid}
+.todo li::before{content:"";position:absolute;left:2px;top:11px;width:18px;height:18px;border:2.5px solid #14B8A6;border-radius:5px}
+.next{counter-reset:w;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:700px){.next{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.next{grid-template-columns:repeat(3,1fr)}}
+.next li{counter-increment:w;position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px 62px;font-size:15px}
+.next li::before{content:counter(w);position:absolute;left:14px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--g-red);color:#fff;font-weight:700;text-align:center;line-height:36px;font-size:16px}
+.next li:nth-child(2)::before{background:var(--g-violet)}.next li:nth-child(3)::before{background:var(--g-teal)}
+.next li:nth-child(4)::before{background:var(--g-amber);color:#14213D}.next li:nth-child(5)::before{background:var(--g-pink)}.next li:nth-child(6)::before{background:var(--g-navy)}
+
+/* takeaway (the site's house layout styles the box) */
+.take{border-radius:18px;margin:24px 0;color:#fff}
+.take .lab{color:var(--gold)}
+.take p{font-family:var(--serif);font-weight:600;color:#fff}
+.take em{font-style:italic;color:var(--gold)}
+.correction{background:linear-gradient(135deg,#FFF3C9,#FFE9A6);color:#14213D;border-radius:14px;padding:14px 18px;margin:14px 0;font-size:15px}
+.sources{font-size:13.5px;padding-left:20px}.sources li{margin:6px 0;word-break:break-word}
+@media (min-width:900px){.sources{columns:2;column-gap:40px}.sources li{break-inside:avoid}}
+.colophon{margin:36px 0 10px;padding:18px 20px;border-radius:14px;background:var(--g-navy);color:#DAD8F0;font-size:13.5px}
+.colophon b{color:#fff}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em}
+</style>
+</head>
+<body>
+
+<svg class="defs" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="kNavy" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E1B4B"/><stop offset="1" stop-color="#3B2FA0"/></linearGradient>
+  <linearGradient id="kRed" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E11D48"/><stop offset="1" stop-color="#BE123C"/></linearGradient>
+  <linearGradient id="kTeal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0C9383"/><stop offset="1" stop-color="#0A6F66"/></linearGradient>
+  <linearGradient id="kAmber" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD23F"/><stop offset="1" stop-color="#FF9F1C"/></linearGradient>
+  <linearGradient id="kViolet" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#5B21B6"/></linearGradient>
+  <linearGradient id="kBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F6F2FF"/></linearGradient>
+</defs></svg>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="lab">KKReckons Special Report · Cyber &amp; resilience</div>
+    <h1>Breaking, not <em>ending</em>: the week the systems failed</h1>
+    <p class="dek">Email went dark, planes stood still, banks stalled, and the internet decided the world would end at 2:20 on Tuesday afternoon. It didn't. But behind the noise, something real is speeding up.</p>
+    <div class="byline"><b>KK Reddy</b> · Tuesday, 17 November 2026 · 21 min read</div>
+    <div class="tags"><span class="tag">AI</span><span class="tag">Cybersecurity</span><span class="tag">Infrastructure</span><span class="tag">Fact check</span></div>
+  </div>
+  <svg class="net" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs><radialGradient id="glowG"><stop offset="0" stop-color="#FFD23F" stop-opacity=".9"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/></radialGradient><radialGradient id="glowC"><stop offset="0" stop-color="#5EEAD4" stop-opacity=".8"/><stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/></radialGradient><radialGradient id="glowR"><stop offset="0" stop-color="#FF5C7A" stop-opacity=".9"/><stop offset="1" stop-color="#FF5C7A" stop-opacity="0"/></radialGradient></defs>
+    <g stroke="rgba(255,255,255,.38)" stroke-width="1.6" fill="none">
+      <path d="M-20,120 L70,70 L160,130 L250,60 L340,115 L430,50 L520,125 L610,75 L700,135 L790,55 L880,120 L970,65 L1060,130 L1150,70 L1230,110"/>
+      <path d="M70,70 L250,60 L430,50 M160,130 L340,115 L520,125 L700,135 M610,75 L790,55 L970,65 L1150,70 M880,120 L1060,130"/>
+      <path d="M-20,160 L160,130 M340,115 L430,160 L520,125 M700,135 L800,165 L880,120 M1060,130 L1230,160"/>
+    </g>
+    <g stroke="#FF5C7A" stroke-width="2.6" stroke-dasharray="7 7" fill="none">
+      <path d="M250,60 L340,115"/><path d="M520,125 L610,75"/><path d="M790,55 L880,120"/><path d="M970,65 L1060,130"/>
+    </g>
+    <g>
+      <circle cx="250" cy="60" r="26" fill="url(#glowR)"/><circle cx="610" cy="75" r="30" fill="url(#glowG)"/><circle cx="880" cy="120" r="26" fill="url(#glowR)"/><circle cx="430" cy="50" r="24" fill="url(#glowC)"/><circle cx="1060" cy="130" r="26" fill="url(#glowG)"/><circle cx="160" cy="130" r="22" fill="url(#glowC)"/>
+      <g fill="#fff"><circle cx="70" cy="70" r="5"/><circle cx="340" cy="115" r="5"/><circle cx="520" cy="125" r="5"/><circle cx="700" cy="135" r="5"/><circle cx="790" cy="55" r="5"/><circle cx="970" cy="65" r="5"/><circle cx="1150" cy="70" r="5"/><circle cx="430" cy="160" r="4"/><circle cx="800" cy="165" r="4"/></g>
+      <circle cx="250" cy="60" r="7" fill="#FF5C7A"/><circle cx="880" cy="120" r="7" fill="#FF5C7A"/>
+      <circle cx="610" cy="75" r="8" fill="#FFD23F"/><circle cx="1060" cy="130" r="7" fill="#FFD23F"/>
+      <circle cx="430" cy="50" r="6" fill="#5EEAD4"/><circle cx="160" cy="130" r="6" fill="#5EEAD4"/>
+    </g>
+  </svg>
+</header>
+
+<main class="wrap">
+
+<div class="open">
+  <div class="lab">Six days</div>
+  <div class="scenes">
+    <div class="scene"><div class="t">Thursday, 4:17 pm in London</div><p>Outlook stops loading. Within two hours, more than four in five of the servers in front of Microsoft's email have frozen.</p></div>
+    <div class="scene"><div class="t">Friday, 3:30 pm in Washington</div><p>Radar feeds and radio links flicker at 17 of America's 22 en-route control centres. Every departure in the country is told to stay on the ground.</p></div>
+    <div class="scene"><div class="t">Monday, 4:21 am UTC</div><p>A few lines of malicious code slip into a script on the BBC's website. Over the day, the same code turns up on Zoom, CNN, HSBC and 175 other organisations' sites.</p></div>
+    <div class="scene"><div class="t">Tuesday, 2:20 pm Eastern</div><p>A routine one-minute alert test, scheduled since September, which millions had been told online was the start of a 90-day blackout.</p></div>
+  </div>
+  <p style="margin:0">This report sorts what broke from what was attacked, and what was just rumour. Then it looks at the real threat underneath, and what experts say would contain it.</p>
+  <div class="toc"><a href="#week">The week</a><a href="#cascade">How Microsoft fell</a><a href="#before">We've been here</a><a href="#rumours">The rumours</a><a href="#europe">Europe's fridges</a><a href="#worry">Real worries</a><a href="#debate">The debate</a><a href="#control">The fixes</a><a href="#watch">What next</a></div>
+</div>
+
+<section style="padding-top:40px">
+  <div class="sec-head"><div class="lab">The short answer</div><h2>No single cause. Two real trends colliding.</h2></div>
+  <ul class="tight">
+    <li><b>The big outages were self-inflicted.</b> Microsoft, the FAA, Chase and Apple each traced their failure to their own software, update or equipment work. The NSA hasn't given a cause, but people familiar with it say there's no sign of an attack.</li>
+    <li><b>The attacks were real but separate.</b> Japan's Fugaku supercomputer was breached, and a hijacked web-testing service planted card-stealing code on 178 organisations' sites. Nothing links either to the outages.</li>
+    <li><b>The doomsday was a hoax.</b> The "17 November blackout" grew out of a routine emergency-alert test.</li>
+    <li><b>The state attacks are in Europe, and in the freezer aisle.</b> Hackers heated supermarket fridges in about 700 French stores in October and dozens more across Europe on 2 November. France blames an Iranian Revolutionary Guards cyber unit. Governments from London to Berlin are telling households to keep days of supplies.</li>
+    <li><b>The worrying part is speed.</b> The FBI says hackers now use an AI tool, ARTEX, to go from first target to admin access in under three hours. An AI agent found a critical Java flaw in about an hour. Leaked cloud keys get used in seconds.</li>
+  </ul>
+  <div class="nums">
+    <div class="stat"><b>~24 h</b><span>Exchange email disrupted worldwide</span></div>
+    <div class="stat"><b>$7 bn</b><span>think-tank estimate of lost productivity from the Microsoft outage</span></div>
+    <div class="stat"><b>9,000+</b><span>US flights cancelled on Friday alone</span></div>
+    <div class="stat"><b>178</b><span>organisations whose sites served stolen-card code</span></div>
+    <div class="stat"><b>7.86 s</b><span>fastest time from a key leaking online to its first use</span></div>
+    <div class="stat"><b>0</b><span>links found between the outages and any attack</span></div>
+  </div>
+</section>
+
+<!-- ============ THE WEEK ============ -->
+<section id="week">
+  <div class="sec-head"><div class="lab">1 · The week, verified</div><h2>What broke, who it hit, and what the owners say</h2></div>
+  <p class="prose">Each entry is checked against the company, agency or researcher involved. Times are as reported; status is as of Tuesday night, Pacific time.</p>
+  <figure><svg viewBox="0 0 400 420" role="img" aria-label="Day-by-day calendar of the six days"><rect width="400" height="420" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><rect x="4" y="4" width="192" height="120" rx="10" fill="#fff" stroke="#D9D4F0" stroke-width="1.5"/><rect x="4" y="4" width="192" height="30" rx="10" fill="url(#kNavy)"/><rect x="4" y="19" width="192" height="15" fill="url(#kNavy)"/><text x="16" y="24" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">THU 12 NOV</text><rect x="167" y="13" width="18" height="12" rx="2" fill="none" stroke="#FFB703" stroke-width="2"/><path d="M167,13 L176,20 L185,13" fill="none" stroke="#FFB703" stroke-width="2"/><circle cx="20" cy="52" r="5" fill="url(#kTeal)"/><text x="32" y="56" font-size="13" font-weight="700" fill="#1d2433">Microsoft 365 down</text><text x="32" y="72" font-size="12" fill="#5b6475">Outlook, Teams, Copilot</text><text x="18" y="100" font-size="12" fill="#5b6475">Email out ~24 hours;</text><text x="18" y="115" font-size="12" fill="#5b6475">80%+ gateway servers down</text><rect x="204" y="4" width="192" height="120" rx="10" fill="#fff" stroke="#D9D4F0" stroke-width="1.5"/><rect x="204" y="4" width="192" height="30" rx="10" fill="url(#kNavy)"/><rect x="204" y="19" width="192" height="15" fill="url(#kNavy)"/><text x="216" y="24" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">FRI 13 NOV</text><path d="M367,19 L385,19 M377,19 L372,11 M377,19 L372,27 M368,19 L366,15 M368,19 L366,23" stroke="#FFB703" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="220" cy="52" r="5" fill="url(#kTeal)"/><text x="232" y="56" font-size="13" font-weight="700" fill="#1d2433">FAA ground stop</text><text x="232" y="72" font-size="12" fill="#5b6475">9,000+ flights cancelled</text><circle cx="220" cy="90" r="5" fill="url(#kRed)"/><text x="232" y="94" font-size="13" font-weight="700" fill="#1d2433">Fugaku intruder</text><text x="232" y="110" font-size="12" fill="#5b6475">detected; logins tried</text><rect x="4" y="132" width="192" height="120" rx="10" fill="#fff" stroke="#D9D4F0" stroke-width="1.5"/><rect x="4" y="132" width="192" height="30" rx="10" fill="url(#kNavy)"/><rect x="4" y="147" width="192" height="15" fill="url(#kNavy)"/><text x="16" y="152" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">SAT 14 NOV</text><rect x="170" y="141" width="12" height="12" rx="2" fill="none" stroke="#FFB703" stroke-width="2"/><path d="M173,138 L173,141 M173,153 L173,156 M167,144 L170,144 M182,144 L185,144" stroke="#FFB703" stroke-width="1.5"/><path d="M179,138 L179,141 M179,153 L179,156 M167,150 L170,150 M182,150 L185,150" stroke="#FFB703" stroke-width="1.5"/><circle cx="20" cy="180" r="5" fill="url(#kRed)"/><text x="32" y="184" font-size="13" font-weight="700" fill="#1d2433">Fugaku shut down</text><text x="32" y="200" font-size="12" fill="#5b6475">researcher keys stolen</text><circle cx="20" cy="218" r="5" fill="url(#kTeal)"/><text x="32" y="222" font-size="13" font-weight="700" fill="#1d2433">Microsoft restored</text><text x="32" y="238" font-size="12" fill="#5b6475">after ~24 h for email</text><rect x="204" y="132" width="192" height="120" rx="10" fill="#fff" stroke="#D9D4F0" stroke-width="1.5"/><rect x="204" y="132" width="192" height="30" rx="10" fill="url(#kNavy)"/><rect x="204" y="147" width="192" height="15" fill="url(#kNavy)"/><text x="216" y="152" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">SUN 15 NOV</text><circle cx="376" cy="147" r="8" fill="none" stroke="#FFB703" stroke-width="2"/><path d="M376,143 L376,147 L379,149" stroke="#FFB703" stroke-width="2" fill="none"/><circle cx="220" cy="180" r="5" fill="url(#kTeal)"/><text x="232" y="184" font-size="13" font-weight="700" fill="#1d2433">Airlines catch up</text><text x="232" y="200" font-size="12" fill="#5b6475">2,000+ more cancellations</text><circle cx="220" cy="218" r="5" fill="url(#kAmber)"/><text x="232" y="222" font-size="13" font-weight="700" fill="#1d2433">Blackout rumours</text><text x="232" y="238" font-size="12" fill="#5b6475">spread on TikTok, X</text><rect x="4" y="260" width="192" height="120" rx="10" fill="#fff" stroke="#D9D4F0" stroke-width="1.5"/><rect x="4" y="260" width="192" height="30" rx="10" fill="url(#kNavy)"/><rect x="4" y="275" width="192" height="15" fill="url(#kNavy)"/><text x="16" y="280" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">MON 16 NOV</text><path d="M167,272 L176,266 L185,272 Z M168,283 L184,283 M171,274 L171,281 M176,274 L176,281 M181,274 L181,281" stroke="#FFB703" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="20" cy="308" r="5" fill="url(#kTeal)"/><text x="32" y="312" font-size="13" font-weight="700" fill="#1d2433">Chase down ~8 h</text><text x="32" y="328" font-size="12" fill="#5b6475">software bug</text><circle cx="20" cy="346" r="5" fill="url(#kRed)"/><text x="32" y="350" font-size="13" font-weight="700" fill="#1d2433">Skimmer on 178 sites</text><text x="32" y="366" font-size="12" fill="#5b6475">via Optimizely</text><rect x="204" y="260" width="192" height="120" rx="10" fill="#fff" stroke="#D9D4F0" stroke-width="1.5"/><rect x="204" y="260" width="192" height="30" rx="10" fill="url(#kNavy)"/><rect x="204" y="275" width="192" height="15" fill="url(#kNavy)"/><text x="216" y="280" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">TUE 17 NOV</text><rect x="370" y="266" width="12" height="18" rx="3" fill="none" stroke="#FFB703" stroke-width="2"/><circle cx="376" cy="280" r="1.3" fill="url(#kAmber)"/><circle cx="220" cy="308" r="5" fill="url(#kTeal)"/><text x="232" y="312" font-size="13" font-weight="700" fill="#1d2433">NSA Net, Apple down</text><text x="232" y="328" font-size="12" fill="#5b6475">no sign of attack</text><circle cx="220" cy="346" r="5" fill="url(#kAmber)"/><text x="232" y="350" font-size="13" font-weight="700" fill="#1d2433">Java4Shell; alert test</text><text x="232" y="366" font-size="12" fill="#5b6475">AI-found bug; hoax date</text><circle cx="14" cy="400" r="5" fill="url(#kTeal)"/><text x="24" y="404" font-size="12" fill="#5b6475">Broke itself</text><circle cx="120" cy="400" r="5" fill="url(#kRed)"/><text x="130" y="404" font-size="12" fill="#5b6475">Attack</text><circle cx="200" cy="400" r="5" fill="url(#kAmber)"/><text x="210" y="404" font-size="12" fill="#5b6475">AI flaw or rumour</text></g></svg><figcaption>KKReckons graphic. The six days at a glance; details for each incident follow.</figcaption></figure>
+
+  <div class="wk">
+    <div class="wk-row"><div class="wk-date">Nov 12–14</div>
+      <div class="wk-what">Microsoft 365: Outlook, Teams, Copilot down worldwide</div>
+      <div class="wk-detail">Exchange Online was disrupted for almost 24 hours; the last customers came back on Saturday. Microsoft blames three things together: a bug hidden in a July fix, extra load, and capacity already out of service (see section 2). No sign of malicious activity.</div>
+      <div class="wk-human">Who felt it: about 430 million users in 70+ countries. NHS staff in England struggled to pass on patient details from 111 and 999 calls; Brazil's Supreme Court paused legal deadlines; some Australian schools couldn't run online classes.</div>
+      <span class="pill p-glitch">Own software</span></div>
+    <div class="wk-row"><div class="wk-date">Nov 13</div>
+      <div class="wk-what">FAA grounds every departing US flight for ~4½ hours</div>
+      <div class="wk-detail">The FAA says contractor L3Harris was installing a new router at a remote site during a routine copper-to-fibre swap. Bad data spread across the air traffic network until the sites were blocked. Officials ruled out a cyberattack; the routers are being examined with FBI agents present.</div>
+      <div class="wk-human">Who felt it: FlightAware counted more than 9,000 cancellations and nearly 25,000 delays on Friday, and over 4,000 more cancellations by Saturday morning. Travellers slept on terminal floors from Miami to Chicago.</div>
+      <span class="pill p-glitch">Own upgrade (contractor)</span></div>
+    <div class="wk-row atk"><div class="wk-date">Nov 10–17</div>
+      <div class="wk-what">Japan's Fugaku supercomputer breached and shut down</div>
+      <div class="wk-detail">An intruder got in through Fugaku's public status dashboard, moved across RIKEN's network and installed malware. RIKEN suspended Fugaku on 14 Nov and disclosed on 17 Nov. Attacker unknown.</div>
+      <div class="wk-human">Who felt it: up to 4,597 researchers, whose names, emails and IDs were taken or may have been, along with SSH keys they kept for other supercomputers. The attacker has already tried to use some of those keys.</div>
+      <span class="pill p-attack">Confirmed attack</span></div>
+    <div class="wk-row"><div class="wk-date">Nov 16</div>
+      <div class="wk-what">Chase online banking down for nearly eight hours</div>
+      <div class="wk-detail">Chase blamed a software bug and said it was not cyber-related. Customers of other big banks reported problems the same day. United Airlines also had a departure-system fault; no cause given.</div>
+      <span class="pill p-glitch">Own software</span></div>
+    <div class="wk-row atk"><div class="wk-date">Nov 16</div>
+      <div class="wk-what">Optimizely hijack plants card-skimming code on 178 organisations' sites</div>
+      <div class="wk-detail">Malicious code was inserted into 188 customer projects on Optimizely's website-testing service, so trusted scripts served from Optimizely's own network ran it on the sites of the BBC, CNN, Fox News, Zoom, Salesforce, GitLab, HSBC, Equifax, IKEA, Air France-KLM and more. It swapped crypto wallet addresses, skimmed card details typed into site forms, stole cookies and pushed exploit kits at older iPhones, for about 17 hours. How the attacker got in is not yet public.</div>
+      <div class="wk-human">Who felt it: anyone who typed card details into an affected site's own form that day. About $7,040 in crypto reached the attacker's wallets; card losses are unknown.</div>
+      <span class="pill p-attack">Confirmed attack</span></div>
+    <div class="wk-row unk"><div class="wk-date">Nov 17</div>
+      <div class="wk-what">NSA Net, the agency's classified internal network, goes down</div>
+      <div class="wk-detail">Six people familiar with the matter told CNN the network was down and staff arrivals were staggered. No evidence of a cyberattack; no official cause.</div>
+      <span class="pill p-open">Cause not public</span></div>
+    <div class="wk-row"><div class="wk-date">Nov 17</div>
+      <div class="wk-what">Apple: iCloud, Apple Pay, App Store falter</div>
+      <div class="wk-detail">Apple says "an internal update" caused the outages and ruled out a cyberattack. Most services were back by the afternoon.</div>
+      <span class="pill p-glitch">Own update</span></div>
+    <div class="wk-row ai"><div class="wk-date">Nov 17</div>
+      <div class="wk-what">"Java4Shell": an AI-found critical flaw in Java</div>
+      <div class="wk-detail">Start-up Calif disclosed CVE-2026-114938, a memory bug in Java's Base64 decoder on x86-64 servers that can let an attacker run code without logging in. It says an AI coding agent found it in about an hour for under $200. Oracle and OpenJDK shipped fixes the same day; CISA urged immediate patching. Not linked to any outage.</div>
+      <span class="pill p-ai">AI-found flaw</span></div>
+  </div>
+  <p class="note" style="margin-top:14px">In the background: the FBI's 13 Nov warning about ARTEX (section 6), October's ConnectWise Cloud Backup compromise, and Barracuda's 44-hour cloud intrusion that began on 1 Nov with a forgotten vendor key.</p>
+  <figure>
+    <svg viewBox="0 0 400 470" role="img" aria-label="Five self-inflicted failures and four attacks or AI-found flaws, with no link found between them"><rect width="400" height="470" fill="url(#kBg)"/>
+      <g font-family="Poppins,sans-serif">
+      <text x="10" y="26" font-size="14" font-weight="700" fill="#0B7A6E" letter-spacing="1.2">BROKE THEMSELVES</text>
+      <rect x="10" y="38" width="380" height="34" rx="8" fill="#C5F6EA"/><text x="24" y="61" font-size="15.5" fill="#1d2433">Microsoft · months-old hidden bug</text>
+      <rect x="10" y="78" width="380" height="34" rx="8" fill="#C5F6EA"/><text x="24" y="101" font-size="15.5" fill="#1d2433">FAA · router during upgrade</text>
+      <rect x="10" y="118" width="380" height="34" rx="8" fill="#C5F6EA"/><text x="24" y="141" font-size="15.5" fill="#1d2433">Chase · software bug</text>
+      <rect x="10" y="158" width="380" height="34" rx="8" fill="#C5F6EA"/><text x="24" y="181" font-size="15.5" fill="#1d2433">Apple · internal update</text>
+      <rect x="10" y="198" width="380" height="34" rx="8" fill="#E4E1FB"/><text x="24" y="221" font-size="15.5" fill="#1d2433">NSA Net · cause not public</text>
+      <line x1="10" y1="244" x2="390" y2="244" stroke="#D9D4F0" stroke-width="2" stroke-dasharray="5 5"/>
+      <text x="10" y="266" font-size="14" font-weight="700" fill="#C8113F" letter-spacing="1.2">ATTACKED OR EXPOSED</text>
+      <rect x="10" y="278" width="380" height="34" rx="8" fill="#FFD3DC"/><text x="24" y="301" font-size="15.5" fill="#1d2433">Fugaku · intruder, data taken</text>
+      <rect x="10" y="318" width="380" height="34" rx="8" fill="#FFD3DC"/><text x="24" y="341" font-size="15.5" fill="#1d2433">Optimizely · skimmer, 178 orgs</text>
+      <rect x="10" y="358" width="380" height="34" rx="8" fill="#FFE9A6"/><text x="24" y="381" font-size="15.5" fill="#1d2433">Java4Shell · AI-found, patched</text>
+      <rect x="10" y="398" width="380" height="34" rx="8" fill="#FFD3DC"/><text x="24" y="421" font-size="15.5" fill="#1d2433">ARTEX · FBI warning</text>
+      <text x="200" y="456" text-anchor="middle" font-size="13" font-weight="600" fill="#5b6475">No link found between the two groups</text>
+      </g></svg>
+    <figcaption>KKReckons graphic. Causes as stated by each company or agency, 12–17 Nov 2026.</figcaption>
+  </figure>
+</section>
+
+<!-- ============ CASCADE ============ -->
+<section id="cascade">
+  <div class="sec-head"><div class="lab">2 · Anatomy of a cascade</div><h2>How a careful company still lost a day of email</h2></div>
+  <div class="split">
+  <div>
+  <p>Microsoft's root-cause summary, shared by executive Charles Lamanna, is worth reading closely, because it undercuts the idea that this week was about carelessness. The faulty code was not rushed. It went through Microsoft's staged, safe rollout from July and ran worldwide for more than three months without trouble. Its labs simply never tested the right conditions: they focused on older, smaller servers, while the bug bit hardest on newer machines with more processor cores.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 400 610" role="img" aria-label="Seven steps of the Microsoft cascade">
+      <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F43F5E"/></marker></defs>
+      <rect width="400" height="610" fill="url(#kBg)"/>
+      <g font-family="Poppins,sans-serif">
+      <text x="10" y="24" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">THREE QUIET CONDITIONS…</text>
+      <rect x="10" y="36" width="380" height="50" rx="10" fill="#FFE9A6"/><text x="22" y="57" font-size="15" font-weight="700" fill="#1E1B4B">July: a fix with a hidden bug</text><text x="22" y="77" font-size="13" fill="#5b6475">Fine for 3+ months; lab tests missed it</text>
+      <rect x="10" y="92" width="380" height="50" rx="10" fill="#FFE9A6"/><text x="22" y="113" font-size="15" font-weight="700" fill="#1E1B4B">−15 h: Teams moves onto the gateway</text><text x="22" y="133" font-size="13" fill="#5b6475">A normal failover; extra load, new traffic mix</text>
+      <rect x="10" y="148" width="380" height="50" rx="10" fill="#FFE9A6"/><text x="22" y="169" font-size="15" font-weight="700" fill="#1E1B4B">~14% of capacity already offline</text><text x="22" y="189" font-size="13" fill="#5b6475">Unrelated fault the day before</text>
+      <path d="M200,202 L200,222" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a2)"/>
+      <text x="10" y="246" font-size="14" font-weight="700" fill="#C8113F" letter-spacing="1.2">…THEN THE DOMINOES</text>
+      <rect x="10" y="258" width="380" height="50" rx="10" fill="#FFD3DC"/><text x="22" y="279" font-size="15" font-weight="700" fill="#1E1B4B">US peak traffic: servers lock up</text><text x="22" y="299" font-size="13" fill="#5b6475">The July bug finally triggers</text>
+      <path d="M200,310 L200,328" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a2)"/>
+      <rect x="10" y="334" width="380" height="50" rx="10" fill="#FFD3DC"/><text x="22" y="355" font-size="15" font-weight="700" fill="#1E1B4B">Safety net spreads the overload</text><text x="22" y="375" font-size="13" fill="#5b6475">Traffic rerouted to healthy servers, which lock up too</text>
+      <path d="M200,386 L200,404" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a2)"/>
+      <rect x="10" y="410" width="380" height="50" rx="10" fill="#FFD3DC"/><text x="22" y="431" font-size="15" font-weight="700" fill="#1E1B4B">&lt;2 hours: 80%+ unresponsive</text><text x="22" y="451" font-size="13" fill="#5b6475">Walls between regions fail to hold</text>
+      <path d="M200,462 L200,480" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a2)"/>
+      <rect x="10" y="486" width="380" height="50" rx="10" fill="#FFD3DC"/><text x="22" y="507" font-size="15" font-weight="700" fill="#1E1B4B">Restart storm</text><text x="22" y="527" font-size="13" fill="#5b6475">Revived servers swamped by waiting traffic</text>
+      <path d="M200,538 L200,556" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a2)"/>
+      <rect x="10" y="562" width="380" height="40" rx="10" fill="url(#kNavy)"/><text x="200" y="588" text-anchor="middle" font-size="15" font-weight="700" fill="#FFC933">Old code, no quick rollback: ~24 hours</text>
+      </g></svg>
+    <figcaption>KKReckons graphic based on Microsoft's root-cause summary. The final post-incident review is due later this week.</figcaption>
+  </figure>
+  <div>
+  <p>Two details stand out for anyone who runs systems. First, the safety feature did the damage: automatic rerouting, which normally saves the day, carried the overload from server to server. Second, the recovery tools assumed a few servers would fail at a time, not most of them, and because the bad code was months old, the usual one-click rollbacks couldn't undo it. Engineers had to patch and restart servers in big batches. The FAA's failure had the same shape: one change at one remote site, then bad data travelling the whole network.</p>
+  <p>The diagram shows why one company's bad day became everyone's. Many Microsoft services pass through the same gateway. Those that could switch to a backup came back sooner; email could not.</p>
+  </div>
+  </div>
+  <figure><svg viewBox="0 0 400 420" role="img" aria-label="Many Microsoft services share one network gateway"><rect width="400" height="420" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><text x="10" y="22" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">ONE DOOR, MANY ROOMS</text><line x1="200" y1="175" x2="200" y2="55" stroke="#F43F5E" stroke-width="2.5" stroke-dasharray="0"/><line x1="200" y1="175" x2="314" y2="138" stroke="#10B3A0" stroke-width="2.5" stroke-dasharray="6 4"/><line x1="200" y1="175" x2="270" y2="272" stroke="#10B3A0" stroke-width="2.5" stroke-dasharray="6 4"/><line x1="200" y1="175" x2="129" y2="272" stroke="#10B3A0" stroke-width="2.5" stroke-dasharray="6 4"/><line x1="200" y1="175" x2="86" y2="138" stroke="#10B3A0" stroke-width="2.5" stroke-dasharray="6 4"/><circle cx="200" cy="175" r="58" fill="url(#kNavy)"/><text x="200" y="169" text-anchor="middle" font-size="13" font-weight="700" fill="#FFC933">Shared network</text><text x="200" y="187" text-anchor="middle" font-size="13" font-weight="700" fill="#FFC933">gateway</text><text x="200" y="205" text-anchor="middle" font-size="11.5" fill="#d6dbe7">80%+ servers froze</text><rect x="125.0" y="39" width="150" height="32" rx="16" fill="url(#kRed)"/><text x="200" y="60" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">Outlook / Exchange</text><rect x="262.0" y="122" width="104" height="32" rx="16" fill="url(#kTeal)"/><text x="314" y="143" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">Teams</text><rect x="218.0" y="256" width="104" height="32" rx="16" fill="url(#kTeal)"/><text x="270" y="277" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">OneDrive</text><rect x="77.0" y="256" width="104" height="32" rx="16" fill="url(#kTeal)"/><text x="129" y="277" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">SharePoint</text><rect x="34.0" y="122" width="104" height="32" rx="16" fill="url(#kTeal)"/><text x="86" y="143" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">Office apps</text><rect x="10" y="312" width="16" height="10" rx="3" fill="url(#kRed)"/><text x="32" y="322" font-size="12.5" fill="#1d2433">Couldn't move off: email down ~24 hours</text><rect x="10" y="334" width="16" height="10" rx="3" fill="url(#kTeal)"/><text x="32" y="344" font-size="12.5" fill="#1d2433">Moved to a backup gateway: back sooner</text><rect x="10" y="362" width="380" height="46" rx="10" fill="#F3F0FF"/><text x="200" y="382" text-anchor="middle" font-size="13" font-weight="700" fill="#1E1B4B">Behind the door: ~430 million users, 70+ countries</text><text x="200" y="399" text-anchor="middle" font-size="12" fill="#5b6475">hospitals, courts, schools, banks, airlines</text></g></svg><figcaption>KKReckons graphic based on Microsoft's root-cause summary; user figures from published estimates.</figcaption></figure>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section id="before">
+  <div class="sec-head"><div class="lab">3 · We've been here before</div><h2>The giant outages almost always start at home</h2></div>
+  <p class="prose">Big, shared systems fail often, and the worst failures of recent years were nearly all self-inflicted changes, not attacks. Cloudflare counted 174 major internet disruptions around the world in 2025 alone, more than three a week.</p>
+  <div class="hist">
+    <div class="hi"><div class="y">Jan 2023</div><div class="e">FAA's pilot-warning system fails</div><div class="d">A contractor deleted files from a key database; the first nationwide ground stop since 9/11 followed, and about 11,000 flights were disrupted.</div></div>
+    <div class="hi"><div class="y">Jul 2024</div><div class="e">CrowdStrike's bad update crashes 8.5 million Windows PCs</div><div class="d">Airports, hospitals and banks went down. Insurer Parametrix put direct losses for Fortune 500 firms at $5.4 billion.</div></div>
+    <div class="hi"><div class="y">Oct 2025</div><div class="e">AWS and Azure, nine days apart</div><div class="d">An Amazon database naming fault cascaded to 113 services for more than 15 hours; a Microsoft configuration change then disrupted Office 365, Xbox and Alaska Airlines for about nine.</div></div>
+    <div class="hi"><div class="y">Nov 2025</div><div class="e">Cloudflare errors across the web</div><div class="d">A company that carries about a fifth of internet traffic served error pages worldwide for hours.</div></div>
+    <div class="hi"><div class="y">Oct 2026</div><div class="e">Google Cloud outage hits UK banks</div><div class="d">Three months after the Bank of England began supervising "critical" cloud suppliers.</div></div>
+    <div class="hi now"><div class="y">Nov 2026</div><div class="e">This week</div><div class="d">Microsoft, the FAA, Chase, Apple, NSA Net: four owned causes, one undisclosed.</div></div>
+  </div>
+  <p class="prose">The lesson from the record: a busy week of outages is normal for a world that runs on a few giant platforms. What has changed is how many people each failure reaches, and how quickly the attack side is moving.</p>
+</section>
+
+<!-- ============ RUMOURS ============ -->
+<section id="rumours">
+  <div class="sec-head"><div class="lab">4 · The rumours</div><h2>How a one-minute alert test became the end of the world</h2></div>
+  <div class="split">
+  <div>
+  <p>In September, the FCC and FEMA announced a nationwide test of the Emergency Alert System for 2:20 pm Eastern on 17 November, the first since October 2023. It was meant to interrupt US television and radio for about a minute; phones would stay silent.</p>
+  <p>Over the following weeks, posts on TikTok, X, Instagram and Facebook turned the date into a "great blackout". Some promised 90 days without power, internet or banking; some tied it to a Pentagon project; France 24's fact-checkers traced the spread through cryptocurrency accounts, misread European advice on keeping 72-hour emergency kits, and the usual claims that <i>The Simpsons</i> had predicted it. Then last week's real outages arrived, and every one looked like confirmation.</p>
+  <p>The rumour also landed on prepared ground. Newsweek counts more than 30 governments advising households to keep emergency supplies, from 72 hours in Britain and France to up to ten days in Germany, and Europe has spent the autumn dealing with real sabotage (next section). When officials are telling you to stock a cupboard, a doomsday date feels less absurd.</p>
+  </div>
+  <figure><svg viewBox="0 0 400 350" role="img" aria-label="Days of emergency supplies governments advise"><rect width="400" height="350" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><text x="10" y="22" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">HOW MANY DAYS TO PREPARE FOR</text><text x="10" y="61" font-size="13" fill="#1d2433">Germany</text><rect x="108" y="48" width="200" height="18" rx="4" fill="url(#kRed)"><title>Germany: 10 days</title></rect><text x="314" y="62" font-size="13" font-weight="700" fill="#1d2433">up to 10 days</text><text x="10" y="95" font-size="13" fill="#1d2433">Sweden</text><rect x="108" y="82" width="140" height="18" rx="4" fill="url(#kViolet)"><title>Sweden: 7 days</title></rect><text x="254" y="96" font-size="13" font-weight="700" fill="#1d2433">about 7 days</text><text x="10" y="129" font-size="13" fill="#1d2433">Norway</text><rect x="108" y="116" width="140" height="18" rx="4" fill="url(#kViolet)"><title>Norway: 7 days</title></rect><text x="254" y="130" font-size="13" font-weight="700" fill="#1d2433">about 7 days</text><text x="10" y="163" font-size="13" fill="#1d2433">UK</text><rect x="108" y="150" width="60" height="18" rx="4" fill="url(#kTeal)"><title>UK: 3 days</title></rect><text x="174" y="164" font-size="13" font-weight="700" fill="#1d2433">3 days</text><text x="10" y="197" font-size="13" fill="#1d2433">France</text><rect x="108" y="184" width="60" height="18" rx="4" fill="url(#kTeal)"><title>France: 3 days</title></rect><text x="174" y="198" font-size="13" font-weight="700" fill="#1d2433">3 days</text><text x="10" y="231" font-size="13" fill="#1d2433">Netherlands</text><rect x="108" y="218" width="60" height="18" rx="4" fill="url(#kTeal)"><title>Netherlands: 3 days</title></rect><text x="174" y="232" font-size="13" font-weight="700" fill="#1d2433">3 days</text><text x="10" y="265" font-size="13" fill="#1d2433">Canada</text><rect x="108" y="252" width="60" height="18" rx="4" fill="url(#kTeal)"><title>Canada: 3 days</title></rect><text x="174" y="266" font-size="13" font-weight="700" fill="#1d2433">3 days</text><text x="10" y="299" font-size="13" fill="#1d2433">Japan</text><rect x="108" y="286" width="60" height="18" rx="4" fill="url(#kTeal)"><title>Japan: 3 days</title></rect><text x="174" y="300" font-size="13" font-weight="700" fill="#1d2433">3 days</text><text x="10" y="336" font-size="12" fill="#5b6475">The US advises "several days"; 30+ governments give advice.</text></g></svg><figcaption>KKReckons graphic. Household emergency-supply advice by country, from Newsweek's survey of official guidance (October 2026).</figcaption></figure>
+  <div>
+  <p>CNN's media desk argued that feeds which reward alarm turned ordinary tech failures into signs of collapse. It also debunked smaller spin-offs, such as a Costco outage that didn't happen and a secret grid test that doesn't exist. Officials didn't always help: one cabinet member said on the day of the ground stop that nothing could be ruled out.</p>
+  </div>
+  </div>
+  <div class="split rf">
+  <figure><svg viewBox="0 0 400 360" role="img" aria-label="How a routine alert test grew into a doomsday rumour"><rect width="400" height="360" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><text x="10" y="22" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">HOW A TEST BECAME A DOOMSDAY</text><rect x="100.0" y="38" width="200" height="54" rx="10" fill="#FFF3C9"/><text x="200" y="61" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1d2433">A routine test</text><text x="200" y="80" text-anchor="middle" font-size="12.5" fill="#1d2433">17 Nov, 2:20 pm ET, ~1 minute</text><rect x="75.0" y="100" width="250" height="54" rx="10" fill="#FFE08A"/><text x="200" y="123" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1d2433">“90-day blackout” posts</text><text x="200" y="142" text-anchor="middle" font-size="12.5" fill="#1d2433">TikTok, X, Instagram, Facebook</text><rect x="50.0" y="162" width="300" height="54" rx="10" fill="url(#kAmber)"/><text x="200" y="185" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1d2433">Amplifiers pile in</text><text x="200" y="204" text-anchor="middle" font-size="12.5" fill="#1d2433">crypto accounts, Simpsons memes</text><rect x="25.0" y="224" width="350" height="54" rx="10" fill="#E8502E"/><text x="200" y="247" text-anchor="middle" font-size="14.5" font-weight="700" fill="#fff">Real outages hit</text><text x="200" y="266" text-anchor="middle" font-size="12.5" fill="#fff">each one looks like proof</text><rect x="10.0" y="286" width="380" height="54" rx="10" fill="url(#kRed)"/><text x="200" y="309" text-anchor="middle" font-size="14.5" font-weight="700" fill="#fff">Feeds reward alarm</text><text x="200" y="328" text-anchor="middle" font-size="12.5" fill="#fff">millions see the doomsday</text></g></svg><figcaption>KKReckons graphic, based on fact-checks by France 24, PolitiFact and CNN. Each step reached more people than the last.</figcaption></figure>
+  <div>
+  <p style="margin-top:18px"><b>Now test yourself.</b> Tap each claim to see how it holds up.</p>
+
+  <details class="myth"><summary>"It's a coordinated attack by a foreign state."</summary><div class="body">
+    <span class="pill p-attack">Not supported</span>
+    <p>Every affected company and agency says it found no sign of an attack on its outage. Director of National Intelligence Jay Clayton told CNBC the government had looked closely and ruled out both a cyberattack and a coordinated nation-state effort; National Cyber Director Sean Cairncross said the same. No group has claimed responsibility, and the causes given are different in kind at different firms.</p></div></details>
+
+  <details class="myth"><summary>"The world goes dark on 17 November."</summary><div class="body">
+    <span class="pill p-attack">Hoax</span>
+    <p>The only planned event was the alert test, announced by the FCC on 16 September with a backup date of 3 December. No government or grid operator announced a blackout.</p></div></details>
+
+  <details class="myth"><summary>"The FAA's new AI system grounded the planes."</summary><div class="body">
+    <span class="pill p-attack">Not supported</span>
+    <p>The FAA had expanded an $875 million AI tool for controllers, called SMART, days earlier. Transportation Secretary Sean Duffy said it played no part; the FAA's account points to the L3Harris router.</p></div></details>
+
+  <details class="myth"><summary>"Banks and the NSA went down too."</summary><div class="body">
+    <span class="pill p-glitch">True</span>
+    <p>Chase confirmed a nearly eight-hour disruption on 16 Nov and blamed a software bug. CNN reported NSA Net down on 17 Nov, with no evidence of an attack. Real, but not shown to be connected.</p></div></details>
+
+  <details class="myth"><summary>"AI is finding three times more flaws than last year."</summary><div class="body">
+    <span class="pill p-ai">Roughly right</span>
+    <p>Public vulnerability records (CVEs) passed 91,000 with two months of 2026 left, nearly double all of 2025, and critical ones are about 2.4 times last year's total, according to Akamai. AI is a main driver: Anthropic says partners in its Project Glasswing found at least 129,000 verified vulnerabilities between April and July.</p></div></details>
+
+  <details class="myth"><summary>"Exploits now arrive before fixes: minus seven days."</summary><div class="body">
+    <span class="pill p-ai">Real, often misread</span>
+    <p>Mandiant's M-Trends 2026 put the mean time to exploit for 2025 at −7 days: among flaws it saw exploited, attacks often began before a patch existed. It's an average over exploited flaws, not all bugs. For flaws on CISA's exploited list, the median gap from publication to confirmed attack has fallen from 33 days in 2022 to about 6 in 2026.</p></div></details>
+
+  <details class="myth"><summary>"…so rushed security patches caused this week's outages."</summary><div class="body">
+    <span class="pill p-attack">The weak link</span>
+    <p>No firm has said its failing change was a security patch. Microsoft's faulty fix was the opposite of rushed: it rolled out carefully over weeks and ran for months. The FAA's was a years-long copper-to-fibre swap. The doom loop describes real pressure in the industry, not a proven cause of last week.</p></div></details>
+  </div>
+  <figure>
+    <svg viewBox="0 0 400 520" role="img" aria-label="The viral doom loop redrawn with sourced figures"><defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F43F5E"/></marker></defs><rect width="400" height="520" fill="url(#kBg)"/>
+    <g font-family="Poppins,sans-serif">
+    <text x="10" y="24" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">THE VIRAL LOOP, FACT-CHECKED</text>
+    <rect x="10" y="42" width="330" height="62" rx="12" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="24" y="68" font-size="16" font-weight="700" fill="#1E1B4B">1 · AI finds more flaws</text><text x="24" y="90" font-size="13.5" font-weight="600" fill="#D31245">~2× CVEs vs 2025 (Akamai)</text>
+    <path d="M175,106 L175,126" stroke="#F43F5E" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+    <rect x="10" y="130" width="330" height="62" rx="12" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="24" y="156" font-size="16" font-weight="700" fill="#1E1B4B">2 · Exploits beat fixes</text><text x="24" y="178" font-size="13.5" font-weight="600" fill="#D31245">−7 days mean time to exploit (Mandiant)</text>
+    <path d="M175,194 L175,214" stroke="#F43F5E" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+    <rect x="10" y="218" width="330" height="62" rx="12" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="24" y="244" font-size="16" font-weight="700" fill="#1E1B4B">3 · Pressure to patch faster</text><text x="24" y="266" font-size="13.5" font-weight="600" fill="#D31245">3-day US federal rule (CISA BOD 26-04)</text>
+    <path d="M175,282 L175,302" stroke="#F43F5E" stroke-width="2.5" fill="none" marker-end="url(#ar)" stroke-dasharray="5 4"/>
+    <rect x="10" y="306" width="330" height="62" rx="12" fill="#fff" stroke="#4338CA" stroke-width="2" stroke-dasharray="6 4"/><text x="24" y="332" font-size="16" font-weight="700" fill="#1E1B4B">4 · Rushed changes break things</text><text x="24" y="354" font-size="13.5" font-weight="600" fill="#5b6475">Not shown for this week's outages</text>
+    <path d="M175,370 L175,390" stroke="#F43F5E" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+    <rect x="10" y="394" width="330" height="62" rx="12" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="24" y="420" font-size="16" font-weight="700" fill="#1E1B4B">5 · Fixes lag</text><text x="24" y="442" font-size="13.5" font-weight="600" fill="#D31245">5 months 10 days for criticals (Qualys)</text>
+    <path d="M342,425 L372,425 L372,73 L346,73" stroke="#F43F5E" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+    <text x="200" y="488" text-anchor="middle" font-size="13" fill="#5b6475">Dashed: the step the viral post asserts but</text><text x="200" y="506" text-anchor="middle" font-size="13" fill="#5b6475">the evidence does not yet show</text>
+    </g></svg>
+    <figcaption>KKReckons graphic. Sources: Akamai; Mandiant M-Trends 2026 via ISACA and CSA; CISA BOD 26-04 via CSA; Qualys 2026 benchmark via CSA.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- ============ EUROPE ============ -->
+<section id="europe">
+  <div class="sec-head"><div class="lab">5 · The real attacks, in Europe</div><h2>The cold war in the freezer aisle</h2></div>
+  <div class="prose">
+  <p>If you want evidence of hostile states hitting ordinary infrastructure, it isn't in last week's American outages. It's in Europe's supermarkets.</p>
+  <p>Over the night of 11–12 October, refrigeration controllers in hundreds of French supermarkets (up to 700 by some counts, across Intermarché, Netto, Coopérative U, Carrefour, Monoprix and others) were switched into a defrost cycle with the food still inside. With no alarms and few staff on site, many cases reached about 50°C within six hours; one Normandy store reported 80°C. Some units melted or caught fire, and stores threw out whole frozen aisles. On 2 November it happened again, this time across Belgium, Luxembourg, the Netherlands, Sweden, Estonia, Ireland and beyond: Delhaize, Carrefour, Colruyt, Coop, SuperValu, an IKEA store and others reported more than 100 sites hit in a day. Hackers also tried to heat refrigerators at three French blood banks; monitoring alarms let staff step in before plasma was lost.</p>
+  </div>
+  <div class="figrow">
+  <figure><svg viewBox="0 0 400 420" role="img" aria-label="Map tiles of countries where supermarket fridges were hacked"><rect width="400" height="420" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><text x="10" y="22" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">WHERE THE FRIDGES WERE HIT</text><rect x="260" y="40" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Sweden</title></rect><text x="287" y="72" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d2433">Sweden</text><rect x="320" y="40" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Estonia</title></rect><text x="347" y="72" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d2433">Estonia</text><rect x="20" y="100" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Ireland</title></rect><text x="47" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d2433">Ireland</text><rect x="80" y="100" width="54" height="54" rx="8" fill="#FFE08A"><title>UK</title></rect><text x="107" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d2433">UK</text><rect x="200" y="100" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Neth.</title></rect><text x="227" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d2433">Neth.</text><rect x="260" y="100" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Germany</title></rect><text x="287" y="132" text-anchor="middle" font-size="10" font-weight="700" fill="#1d2433">Germany</text><rect x="200" y="160" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Belgium</title></rect><text x="227" y="192" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d2433">Belgium</text><rect x="260" y="160" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Lux.</title></rect><text x="287" y="192" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1d2433">Lux.</text><rect x="200" y="220" width="54" height="54" rx="8" fill="url(#kRed)"><title>France</title></rect><text x="227" y="252" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">France</text><rect x="80" y="280" width="54" height="54" rx="8" fill="url(#kAmber)"><title>Portugal</title></rect><text x="107" y="312" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d2433">Portugal</text><text x="20" y="196" font-size="12" font-weight="700" fill="#D31245">France</text><text x="20" y="212" font-size="12" fill="#5b6475">up to ~700 stores, 11–12 Oct;</text><text x="20" y="228" font-size="12" fill="#5b6475">3 blood banks targeted 2 Nov</text><rect x="10" y="348" width="16" height="12" rx="3" fill="url(#kRed)"/><text x="32" y="359" font-size="12.5" fill="#1d2433">First wave, 11–12 Oct (blamed on Iran by France)</text><rect x="10" y="368" width="16" height="12" rx="3" fill="url(#kAmber)"/><text x="32" y="379" font-size="12.5" fill="#1d2433">Second wave, 2 Nov: 100+ sites in a day</text><rect x="10" y="388" width="16" height="12" rx="3" fill="#FFE08A"/><text x="32" y="399" font-size="12.5" fill="#1d2433">A small number of UK cases (NCSC)</text></g></svg><figcaption>KKReckons tile map: each square is a country, placed roughly where it sits in Europe, not to scale. Some reports also mention Italy, Poland and Spain; we could not confirm them.</figcaption></figure>
+
+  <figure>
+    <svg viewBox="0 0 400 470" role="img" aria-label="How the supermarket fridges were hacked">
+      <defs><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F43F5E"/></marker></defs>
+      <rect width="400" height="470" fill="url(#kBg)"/>
+      <g font-family="Poppins,sans-serif">
+      <text x="10" y="24" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">HOW A FRIDGE GETS HACKED</text>
+      <rect x="10" y="38" width="380" height="58" rx="10" fill="#FFE9A6"/><text x="22" y="61" font-size="15" font-weight="700" fill="#1E1B4B">Controller left on the open internet</text><text x="22" y="83" font-size="13" fill="#5b6475">Its web page reachable by anyone</text>
+      <path d="M200,98 L200,116" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a4)"/>
+      <rect x="10" y="122" width="380" height="58" rx="10" fill="#FFE9A6"/><text x="22" y="145" font-size="15" font-weight="700" fill="#1E1B4B">Username "admin"; password = today's date</text><text x="22" y="167" font-size="13" fill="#5b6475">A hidden "code of the day" bypass</text>
+      <path d="M200,182 L200,200" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a4)"/>
+      <rect x="10" y="206" width="380" height="58" rx="10" fill="#FFE9A6"/><text x="22" y="229" font-size="15" font-weight="700" fill="#1E1B4B">Old, unpatched kit</text><text x="22" y="251" font-size="13" fill="#5b6475">Some models unsupported since 2016 and 2021</text>
+      <path d="M200,266 L200,284" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a4)"/>
+      <rect x="10" y="290" width="380" height="58" rx="10" fill="#FFD3DC"/><text x="22" y="313" font-size="15" font-weight="700" fill="#1E1B4B">Overnight: switch to defrost</text><text x="22" y="335" font-size="13" fill="#5b6475">No alarm fires; few staff on site</text>
+      <path d="M200,350 L200,368" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a4)"/>
+      <rect x="10" y="374" width="380" height="80" rx="10" fill="url(#kNavy)"/><text x="22" y="400" font-size="15" font-weight="700" fill="#FFC933">~50°C in six hours</text><text x="22" y="422" font-size="13" fill="#d6dbe7">Spoiled stock, melted units, some fires;</text><text x="22" y="440" font-size="13" fill="#d6dbe7">tens of millions of euros in losses</text>
+      </g></svg>
+    <figcaption>KKReckons graphic. Flaws as reported by researchers at Claroty Team82 and security researcher Kevin Beaumont. The flaws were disclosed in March 2025; Danfoss issued a fix for newer controllers that August, while older models no longer get updates.</figcaption>
+  </figure>
+  </div>
+
+  <div class="prose">
+  <p><b>Who did it?</b> On 9 November France's foreign minister, Jean-Noël Barrot, blamed the October attacks on Shahid Kaveh, a cyber unit tied to Iran's Revolutionary Guards. He called it the first large-scale cyber sabotage on French soil. A joint report by French cyber and intelligence agencies cited Iran-linked infrastructure and IP addresses, traces of Farsi and the unit's known methods. Paris summoned Iran's ambassador, sought EU sanctions, and prosecutors requested international arrest warrants for the unit's leader and two deputies; Barrot said France could respond with cyber measures of its own. Reuters called the hacks among the most disruptive since the Iran war began in February.</p>
+  <p>The 2 November wave has not been formally attributed. Italy's defence minister, Guido Crosetto, said groups in Iran, China and Russia had been identified, while stressing that cyberattacks are hard to attribute and governments may not be directly involved. Some researchers urge caution the other way: because the flaw is so easy to use, Ken Munro of Pen Test Partners suggested copycats or "kids messing around" could be behind some incidents. Across the Atlantic, the Pentagon is treating freezer failures at US military commissaries as suspected cyberattacks, and on 5 November CISA, the FBI and three other US agencies warned of ongoing threats to the food cold chain.</p>
+  </div>
+
+  <div class="panel">
+    <h3>Why this matters more than last week's outages</h3>
+    <p style="margin-top:4px">This was deliberate sabotage of everyday life, using no AI at all: just old devices, exposed to the internet, with passwords anyone could guess. Britain's cyber chief, NCSC head Richard Horne, said his team worked through the night to warn UK firms, and called the fridge attacks "just the foothills". His agency expects AI-powered attacks on British critical infrastructure by 2028, because AI will let attackers find and exploit long-tolerated weaknesses at enormous scale. Firms that "got away with tech on the cheap", he warned, will have to explain empty shelves and dark lights.</p>
+    <p>Britain's defence secretary, Wes Streeting, went further on 22 October. He asked the public to prepare for what he prefers to call "state-sponsored terrorism" against everyday infrastructure, such as cyberattacks that knock out business payment systems or collapse supply chains, and the government issued a three-day "Be Ready" checklist. Days later he wrote that Britain has little more than 1,000 days to prepare for possible conflict with hostile powers by 2030.</p>
+  </div>
+</section>
+
+<!-- ============ WORRY ============ -->
+<section id="worry">
+  <div class="sec-head"><div class="lab">6 · The real worries</div><h2>Not one big hack. A change in speed.</h2></div>
+  <p class="lead prose">Strip out the rumours and five real trends remain. None caused last week's outages, but each makes the next bad week more likely.</p>
+
+  <div class="split">
+  <div>
+  <h3>1. AI now runs whole break-ins</h3>
+  <p>On 13 Nov the FBI warned that criminals and state-aligned hackers are using ARTEX, an open-source tool released on GitHub in July by a developer called "Autumn-27". You describe a goal in plain language and a team of AI agents does the work, from scanning to stealing data, at what the FBI calls "machine speed". Some intrusions reached admin-level access in under three hours. Google's threat team, with Mandiant, watched it split work across six specialised agents and log 27 actions in 23 seconds, a pace no human hacker keeps.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 400 430" role="img" aria-label="How an ARTEX attack runs">
+      <defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F43F5E"/></marker></defs>
+      <rect width="400" height="430" fill="url(#kBg)"/>
+      <g font-family="Poppins,sans-serif">
+      <text x="10" y="24" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">INSIDE AN AI-RUN ATTACK</text>
+      <rect x="10" y="38" width="380" height="54" rx="10" fill="url(#kNavy)"/><text x="22" y="61" font-size="15" font-weight="700" fill="#FFC933">Operator types a goal</text><text x="22" y="81" font-size="13" fill="#d6dbe7">"Get into this company's cloud"</text>
+      <path d="M200,94 L200,112" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a3)"/>
+      <rect x="10" y="118" width="300" height="54" rx="10" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="22" y="141" font-size="15" font-weight="700" fill="#1E1B4B">Planner agent</text><text x="22" y="161" font-size="13" fill="#5b6475">Breaks the goal into tasks</text>
+      <path d="M160,174 L160,192" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a3)"/>
+      <rect x="10" y="198" width="300" height="54" rx="10" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="22" y="221" font-size="15" font-weight="700" fill="#1E1B4B">Worker agents</text><text x="22" y="241" font-size="13" fill="#5b6475">Run real hacking and admin tools</text>
+      <path d="M160,254 L160,272" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a3)"/>
+      <rect x="10" y="278" width="300" height="54" rx="10" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="22" y="301" font-size="15" font-weight="700" fill="#1E1B4B">Shared map of the target</text><text x="22" y="321" font-size="13" fill="#5b6475">Each finding wakes the planner</text>
+      <path d="M312,305 L350,305 L350,145 L316,145" stroke="#F43F5E" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+      <text x="356" y="230" font-size="12" font-weight="700" fill="#D31245" transform="rotate(90 356 230)" text-anchor="middle">LOOPS IN SECONDS</text>
+      <path d="M160,334 L160,352" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a3)"/>
+      <rect x="10" y="358" width="380" height="54" rx="10" fill="#FFD3DC"/><text x="22" y="381" font-size="15" font-weight="700" fill="#1E1B4B">Admin access in &lt;3 h, then data out</text><text x="22" y="401" font-size="13" fill="#5b6475">Low-skill actors can run many at once</text>
+      </g></svg>
+    <figcaption>KKReckons graphic, simplified from descriptions by the FBI, Google Threat Intelligence and independent analysts.</figcaption>
+  </figure>
+  <div>
+  <p>ARTEX doesn't contain an AI model; it plugs into commercial ones. Attacker-run copies mostly use cheap Chinese models such as DeepSeek, though the FBI lists Western providers among those it can connect to. The developer pulled it from GitHub in October after abuse reports, but forks and a paid "Pro" version keep it alive, and researchers have found more than 1,600 exposed control panels. Microsoft says a China-aligned group it calls Storm-0940 used it in October's ConnectWise Cloud Backup compromise, attempting sign-ins at more than 2,250 downstream Microsoft 365 customers (attempts, not confirmed breaches). In South Korea, ARTEX attacks on financial firms took personal data on about 67,000 people.</p>
+  </div>
+  </div>
+
+  <div class="split">
+  <div>
+  <h3>2. Finding flaws now far outruns fixing them</h3>
+  <p>Java4Shell shows both sides. A researcher pointed an AI coding agent at the most delicate part of Java's engine and had a critical, remotely exploitable bug in about an hour, then a working exploit in roughly two more. Java runs at most big banks, airlines and government agencies. Defenders found this one first. But the fixing side is buckling: about 300 new CVEs a day, 2,308 in the Linux kernel alone in the first half of the year, and, by Anthropic's count, open-source maintainers had patched only 516 of the 6,157 vulnerabilities it had reported to them by early October. Google's Project Zero now says AI makes old disclosure timetables "clearly insufficient".</p>
+  </div>
+  <figure><svg viewBox="0 0 400 400" role="img" aria-label="Three charts: more flaws, faster attacks, slow fixes"><rect width="400" height="400" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><text x="10" y="22" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">THE SQUEEZE IN THREE NUMBERS</text><text x="10" y="52" font-size="13.5" font-weight="700" fill="#1E1B4B">More flaws: new CVEs per day</text><text x="10" y="78" font-size="12.5" fill="#5b6475">2020</text><rect x="10" y="83" width="50" height="16" rx="4" fill="#B4BCD8"><title>2020: ~50</title></rect><text x="66" y="96" font-size="13" font-weight="700" fill="#1d2433">~50</text><text x="10" y="118" font-size="12.5" fill="#5b6475">2026</text><rect x="10" y="123" width="300" height="16" rx="4" fill="url(#kRed)"><title>2026: ~300</title></rect><text x="316" y="136" font-size="13" font-weight="700" fill="#1d2433">~300</text><text x="10" y="170" font-size="13.5" font-weight="700" fill="#1E1B4B">Faster attacks: days to first exploit*</text><text x="10" y="196" font-size="12.5" fill="#5b6475">2022</text><rect x="10" y="201" width="300" height="16" rx="4" fill="#B4BCD8"><title>2022: 33 days</title></rect><text x="316" y="214" font-size="13" font-weight="700" fill="#1d2433">33 days</text><text x="10" y="236" font-size="12.5" fill="#5b6475">2026</text><rect x="10" y="241" width="55" height="16" rx="4" fill="url(#kRed)"><title>2026: ~6 days</title></rect><text x="71" y="254" font-size="13" font-weight="700" fill="#1d2433">~6 days</text><text x="10" y="288" font-size="13.5" font-weight="700" fill="#1E1B4B">Slow fixes: open-source flaws from Anthropic</text><text x="10" y="314" font-size="12.5" fill="#5b6475">Reported by early Oct</text><rect x="10" y="319" width="300" height="16" rx="4" fill="url(#kNavy)"><title>Reported by early Oct: 6,157</title></rect><text x="316" y="332" font-size="13" font-weight="700" fill="#1d2433">6,157</text><text x="10" y="354" font-size="12.5" fill="#5b6475">Patched</text><rect x="10" y="359" width="25" height="16" rx="4" fill="url(#kTeal)"><title>Patched: 516</title></rect><text x="41" y="372" font-size="13" font-weight="700" fill="#1d2433">516</text></g></svg><figcaption>KKReckons graphic. *Median, publication to confirmed exploitation, for flaws on CISA's exploited list. Sources: Akamai (vendor) for CVE volume and exploit timing; Anthropic via Software Improvement Group for reported and patched flaws.</figcaption></figure>
+  </div>
+
+  <div class="split">
+  <div>
+  <h3>3. Trusted suppliers are the new front door</h3>
+  <p>Optimizely, ConnectWise and Barracuda share a pattern: the attacker came in through a supplier the victim already trusted. Barracuda, itself a security company, says its intruder used a cloud key it had given an AI vendor and never retired; the vendor's own systems were compromised in October. Scott Helme, whose team spotted the Optimizely attack, put the lesson in a line: trusted code "doesn't always remain trustworthy".</p>
+  </div>
+  <figure><svg viewBox="0 0 400 470" role="img" aria-label="How the Optimizely supply-chain attack reached website visitors"><defs><marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F43F5E"/></marker></defs><rect width="400" height="470" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><text x="10" y="22" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">THE TRUSTED BACK DOOR</text><rect x="10" y="36" width="380" height="56" rx="10" fill="url(#kNavy)"/><text x="22" y="59" font-size="15" font-weight="700" fill="#FFC933">Attacker</text><text x="22" y="79" font-size="13" fill="#d6dbe7">plants code in Optimizely customer projects</text><path d="M200,94 L200,112" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a5)"/><rect x="10" y="118" width="380" height="56" rx="10" fill="#FFE9A6"/><text x="22" y="141" font-size="15" font-weight="700" fill="#1E1B4B">Optimizely's own network</text><text x="22" y="161" font-size="13" fill="#5b6475">serves it as normal, trusted script</text><path d="M200,176 L200,194" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a5)"/><rect x="10" y="200" width="380" height="56" rx="10" fill="#FFE9A6"/><text x="22" y="223" font-size="15" font-weight="700" fill="#1E1B4B">178 organisations' websites</text><text x="22" y="243" font-size="13" fill="#5b6475">BBC, CNN, Zoom, HSBC, IKEA, Equifax…</text><path d="M200,258 L200,276" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a5)"/><rect x="10" y="282" width="380" height="56" rx="10" fill="#FFD3DC"/><text x="22" y="305" font-size="15" font-weight="700" fill="#1E1B4B">Your browser runs it</text><text x="22" y="325" font-size="13" fill="#5b6475">no warning; it looks like the real site</text><path d="M200,340 L200,358" stroke="#F43F5E" stroke-width="2.5" marker-end="url(#a5)"/><rect x="10" y="362" width="120" height="58" rx="10" fill="url(#kRed)"/><text x="70" y="387" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">Skims card</text><text x="70" y="405" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">details</text><rect x="140" y="362" width="120" height="58" rx="10" fill="url(#kRed)"/><text x="200" y="387" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">Swaps crypto</text><text x="200" y="405" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">addresses</text><rect x="270" y="362" width="120" height="58" rx="10" fill="url(#kRed)"/><text x="330" y="387" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">Attacks old</text><text x="330" y="405" text-anchor="middle" font-size="13.5" font-weight="700" fill="#fff">iPhones</text><text x="200" y="446" text-anchor="middle" font-size="12.5" fill="#5b6475">Live for about 17 hours on 16 November</text></g></svg><figcaption>KKReckons graphic based on Report URI's analysis. How the attacker got into Optimizely is not yet public.</figcaption></figure>
+  <div>
+  <h3>4. Secrets leak and get used in seconds</h3>
+  <p>Stony Brook University researchers published 300 decoy container images holding planted cloud and AI keys. On Docker Hub, the fastest AWS key was used 7.86 seconds after publication, the median within 51 seconds, and all 100 AWS keys within 15 minutes. Planted OpenAI and Anthropic keys were drained too. Most of the bots never ran the containers; they just unpacked them looking for secrets.</p>
+  </div>
+  </div>
+
+  <div class="split">
+  <div>
+  <h3>5. Change itself is the risk, and the stakes are concentrated</h3>
+  <p>Four of last week's five outages trace back to their owners' own software or hardware work. FAA chief Bryan Bedford said every government agency has flagged the FAA's telecom network as a "critical weakness" for more than two decades; it costs about $1 billion a year just to keep running. Former Bank of America operations chief Sumeet Chabria called big upgrades "fixing the plane while it's flying", and said last week that stopped being a metaphor. Because so much now runs on a handful of providers, one bad change reaches hundreds of millions of people.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 400 436" role="img" aria-label="Attack and defence timescales on a logarithmic scale"><rect width="400" height="436" fill="url(#kBg)"/>
+    <g font-family="Poppins,sans-serif">
+    <text x="10" y="24" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">HOW FAST IT MOVES · log scale</text>
+    <line x1="86" y1="40" x2="86" y2="364" stroke="#eee"/><text x="86" y="380" text-anchor="middle" font-size="12" fill="#5b6475">1 min</text>
+    <line x1="162" y1="40" x2="162" y2="364" stroke="#eee"/><text x="162" y="380" text-anchor="middle" font-size="12" fill="#5b6475">1 hr</text>
+    <line x1="221" y1="40" x2="221" y2="364" stroke="#eee"/><text x="221" y="380" text-anchor="middle" font-size="12" fill="#5b6475">1 day</text>
+    <line x1="284" y1="40" x2="284" y2="364" stroke="#eee"/><text x="284" y="380" text-anchor="middle" font-size="12" fill="#5b6475">1 mo</text>
+    <line x1="330" y1="40" x2="330" y2="364" stroke="#eee"/><text x="330" y="380" text-anchor="middle" font-size="12" fill="#5b6475">1 yr</text>
+    <text x="10" y="56" font-size="14" fill="#1d2433">Leaked AWS key used</text><rect x="10" y="64" width="39" height="18" rx="4" fill="url(#kRed)"/><text x="55" y="78" font-size="13.5" font-weight="700" fill="#D31245">8 sec</text>
+    <text x="10" y="110" font-size="14" fill="#1d2433">AI finds Java4Shell</text><rect x="10" y="118" width="152" height="18" rx="4" fill="url(#kAmber)"/><text x="168" y="132" font-size="13.5" font-weight="700" fill="#9A5B00">~1 hour</text>
+    <text x="10" y="164" font-size="14" fill="#1d2433">ARTEX: target → admin</text><rect x="10" y="172" width="172" height="18" rx="4" fill="url(#kRed)"/><text x="188" y="186" font-size="13.5" font-weight="700" fill="#D31245">&lt;3 hours</text>
+    <text x="10" y="218" font-size="14" fill="#1d2433">Barracuda intrusion</text><rect x="10" y="226" width="222" height="18" rx="4" fill="url(#kRed)"/><text x="238" y="240" font-size="13.5" font-weight="700" fill="#D31245">44 hours</text>
+    <text x="10" y="272" font-size="14" fill="#1d2433">Published → exploited (median)</text><rect x="10" y="280" width="244" height="18" rx="4" fill="url(#kViolet)"/><text x="260" y="294" font-size="13.5" font-weight="700" fill="#6D28D9">~6 days</text>
+    <text x="10" y="326" font-size="14" fill="#1d2433">Fix a critical flaw (mean)</text><rect x="10" y="334" width="305" height="18" rx="4" fill="url(#kTeal)"/><text x="321" y="348" font-size="13.5" font-weight="700" fill="#0B7A6E">~160 days</text>
+    <text x="10" y="404" font-size="12.5" fill="#5b6475">Red: attacker speed. Teal: defender speed.</text><text x="10" y="422" font-size="12.5" fill="#5b6475">Each gridline is a big jump, so the gap is wider than it looks.</text>
+    </g></svg>
+    <figcaption>KKReckons graphic. Sources: Stony Brook ContainerBots study via BleepingComputer; Calif via Unite.AI and Tech Startups; FBI FLASH-20261113-001; Barracuda; Akamai (2026 median); Qualys 2026 benchmark via CSA (5 months 10 days ≈ 160 days).</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- ============ DEBATE ============ -->
+<section id="debate">
+  <div class="sec-head"><div class="lab">7 · The debate</div><h2>Two camps, and where they agree</h2></div>
+  <div class="cols">
+    <div class="camp a"><h4>"It's operations, not Armageddon"</h4><p>Officials, the companies and many engineers. The causes are mundane and different; big outages have always come in clusters; the record of the past three years is overwhelmingly self-inflicted. Defenders have the strongest AI tools today, and early research on Project Glasswing finds that access helped firms surface more flaws without lowering quality.</p></div>
+    <div class="camp b"><h4>"The clock has changed"</h4><p>Threat researchers, the FBI and many security chiefs. Attack tools that once needed experts now need a sentence. Flaws are found faster than they can be fixed; supply-chain doors are everywhere; keys are stolen in seconds. A week of honest mistakes shows how fragile things are before an attacker deliberately pushes, and Europe's fridges show attackers already are.</p></div>
+  </div>
+  <div class="agree"><b>Where they agree:</b> the outages were not a coordinated attack; concentration on a few providers turns small mistakes into global events; and the answer is engineering discipline and faster fixing, not panic.</div>
+
+  <div class="dark">
+    <div class="cols">
+      <div class="box calm"><h4>Reasons for calm</h4><ul class="tight">
+        <li><b>Clusters happen:</b> 174 major internet disruptions in 2025.</li>
+        <li><b>Mundane causes:</b> a router, a hidden bug, another bug, an update.</li>
+        <li><b>Defenders have AI too:</b> Java4Shell was found and patched by the good side the day it went public.</li>
+        <li><b>Basics work:</b> sites with strict script rules blocked the Optimizely code.</li></ul></div>
+      <div class="box worry"><h4>Still unresolved</h4><ul class="tight">
+        <li>Microsoft's final review is due this week.</li>
+        <li>The FAA hasn't said if it was human error, installation or hardware.</li>
+        <li>The NSA has given no cause; Apple and Chase few details.</li>
+        <li>How Optimizely was breached, and who hit Fugaku, are unknown.</li>
+        <li>Early "not an attack" statements can change once logs are read.</li></ul></div>
+    </div>
+  </div>
+
+  <h3>Who says what</h3>
+  <div class="legend"><span style="--c:#14B8A6">Reassuring</span><span style="--c:#FFB703">Mixed</span><span style="--c:#F43F5E">Warning</span></div>
+  <div class="voices">
+    <div class="voice"><div class="who">Jay Clayton</div><div class="role">Director of National Intelligence</div><p>The government looked closely; it was not a cyberattack and not "a coordinated effort by a nation state".</p></div>
+    <div class="voice"><div class="who">Sean Cairncross</div><div class="role">White House National Cyber Director</div><p>The ground stop and Monday's outages were not a coordinated, malicious attack.</p></div>
+    <div class="voice m"><div class="who">Bryan Bedford</div><div class="role">FAA Administrator</div><p>The failing network has been flagged as a "critical weakness" across government for 20+ years.</p></div>
+    <div class="voice m"><div class="who">Sean Duffy</div><div class="role">US Transportation Secretary</div><p>Without a modern design, failures like this will keep happening; he wants $30 billion more.</p></div>
+    <div class="voice m"><div class="who">Sumeet Chabria</div><div class="role">CEO, ThoughtLinks; ex-Bank of America operations chief</div><p>Big upgrades are "fixing the plane while it's flying"; the lesson is concentration risk.</p></div>
+    <div class="voice m"><div class="who">Chris Nyhuis</div><div class="role">CEO, Vigilant</div><p>An attack was possible, but people shouldn't jump to conclusions in either direction.</p></div>
+    <div class="voice w"><div class="who">Richard Horne</div><div class="role">CEO, UK National Cyber Security Centre</div><p>The fridge attacks are "just the foothills"; expect AI-powered attacks on UK infrastructure by 2028.</p></div>
+    <div class="voice w"><div class="who">Jean-Noël Barrot</div><div class="role">French Foreign Minister</div><p>Called the fridge hacks France's first large-scale cyber sabotage and blamed Iran's Revolutionary Guards.</p></div>
+    <div class="voice w"><div class="who">Wes Streeting</div><div class="role">UK Defence Secretary</div><p>Britain should prepare for "state-sponsored terrorism" against everyday infrastructure.</p></div>
+    <div class="voice m"><div class="who">Guido Crosetto</div><div class="role">Italian Defence Minister</div><p>Groups in Iran, China and Russia were identified, but attribution is hard and states may not be directly involved.</p></div>
+    <div class="voice m"><div class="who">Ken Munro</div><div class="role">Pen Test Partners</div><p>The fridge flaw is so easy that copycats or "kids messing around" could be behind some attacks.</p></div>
+    <div class="voice w"><div class="who">FBI</div><div class="role">FLASH alert, 13 Nov 2026</div><p>ARTEX automates intrusions "at machine speed" and lets low-skilled actors run complex attacks.</p></div>
+    <div class="voice w"><div class="who">Quang Luong &amp; Bruce Dang</div><div class="role">Researchers, Calif</div><p>Java sits at the core of the economy; an AI agent found a critical flaw in it in about an hour.</p></div>
+    <div class="voice w"><div class="who">Scott Helme</div><div class="role">Founder, Report URI</div><p>Trusted third-party code "doesn't always remain trustworthy".</p></div>
+    <div class="voice w"><div class="who">Google Project Zero</div><div class="role">Vulnerability research team</div><p>AI-speed exploitation makes old disclosure timetables insufficient.</p></div>
+    <div class="voice w"><div class="who">Billy Tsouvalas &amp; Nick Nikiforakis</div><div class="role">Stony Brook University</div><p>Their decoy keys were found and used within seconds, mostly by bots.</p></div>
+    <div class="voice w"><div class="who">Linux stable-kernel maintainer</div><div class="role">via Akamai</div><p>Expects the AI-driven flood of bug reports to last at least another 18 months.</p></div>
+  </div>
+  <p class="note" style="margin-top:12px">Quotes are short and attributed; all other wording is KKReckons' summary of the source.</p>
+</section>
+
+<!-- ============ CONTROL ============ -->
+<section id="control">
+  <div class="sec-head"><div class="lab">8 · How it can be controlled</div><h2>What actually reduces the risk</h2></div>
+  <div class="split">
+  <div>
+  <p class="lead">No single defence is perfect; each has holes. Safety engineers stack several, so a mistake or attack that slips through one is caught by the next. Microsoft's outage got through because several holes lined up at once: a hidden bug, extra load, missing capacity and region walls that failed.</p>
+  </div>
+  <figure><svg viewBox="0 0 400 420" role="img" aria-label="Layers of defence: a failure gets through only when the holes line up"><defs><marker id="a9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F43F5E"/></marker></defs><rect width="400" height="420" fill="url(#kBg)"/><g font-family="Poppins,sans-serif"><text x="10" y="22" font-size="14" font-weight="700" fill="#1E1B4B" letter-spacing="1.2">LAYERS, NOT A WALL</text><rect x="10" y="50" width="380" height="40" rx="8" fill="url(#kAmber)"/><circle cx="70" cy="70" r="11" fill="#F3F0FF"/><circle cx="330" cy="70" r="11" fill="#F3F0FF"/><circle cx="370" cy="70" r="11" fill="#F3F0FF"/><text x="200" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#1d2433">Small, staged changes</text><rect x="10" y="112" width="380" height="40" rx="8" fill="#FFC247"/><circle cx="70" cy="132" r="11" fill="#F3F0FF"/><circle cx="330" cy="132" r="11" fill="#F3F0FF"/><text x="200" y="137" text-anchor="middle" font-size="13" font-weight="700" fill="#1d2433">Walls between regions</text><rect x="10" y="174" width="380" height="40" rx="8" fill="url(#kAmber)"/><circle cx="70" cy="194" r="11" fill="#F3F0FF"/><circle cx="330" cy="194" r="11" fill="#F3F0FF"/><circle cx="30" cy="194" r="11" fill="#F3F0FF"/><text x="200" y="199" text-anchor="middle" font-size="13" font-weight="700" fill="#1d2433">Key and vendor hygiene</text><rect x="10" y="236" width="380" height="40" rx="8" fill="#FFC247"/><circle cx="70" cy="256" r="11" fill="#F3F0FF"/><circle cx="365" cy="256" r="11" fill="#F3F0FF"/><text x="200" y="261" text-anchor="middle" font-size="13" font-weight="700" fill="#1d2433">Off the open internet</text><rect x="10" y="298" width="380" height="40" rx="8" fill="url(#kAmber)"/><circle cx="70" cy="318" r="11" fill="#F3F0FF"/><circle cx="350" cy="318" r="11" fill="#F3F0FF"/><circle cx="30" cy="318" r="11" fill="#F3F0FF"/><text x="200" y="323" text-anchor="middle" font-size="13" font-weight="700" fill="#1d2433">Monitoring + AI defence</text><path d="M70,34 L70,352" stroke="#F43F5E" stroke-width="3" marker-end="url(#a9)"/><path d="M330,34 L330,226" stroke="#10B3A0" stroke-width="3"/><path d="M318,232 L342,232" stroke="#10B3A0" stroke-width="4" stroke-linecap="round"/><text x="10" y="384" font-size="12.5" fill="#1d2433"><tspan fill="#D31245" font-weight="700">Red:</tspan> holes line up, the failure or attack gets through.</text><text x="10" y="404" font-size="12.5" fill="#1d2433"><tspan fill="#0B7A6E" font-weight="700">Teal:</tspan> one solid layer stops it.</text></g></svg><figcaption>KKReckons graphic, after the "Swiss cheese" model of safety used in aviation and medicine.</figcaption></figure>
+  <div class="ctrl c1"><h3>For companies and engineers</h3><ul class="tight">
+    <li><b>Make changes small and reversible.</b> Roll out to a few servers or sites, watch, then widen; keep a fast rollback. The FAA's problem stopped once the new site was blocked.</li>
+    <li><b>Test where it hurts, and plan for mass failure.</b> Microsoft's lessons: load-test on the newest, biggest hardware at peak traffic; make sure walls between regions really stop a cascade; and build recovery that can restart a whole fleet, not just a few servers.</li>
+    <li><b>Kill single points of failure.</b> Map which critical work depends on one provider, and keep a tested plan B for email, payments and communications.</li>
+    <li><b>Patch by exposure, contain first.</b> With attacks measured in days, fix what attackers can actually reach and fence off exposed systems while patches are tested. Monthly patch cycles are now slower than the median attacker.</li>
+    <li><b>Treat keys like cash.</b> Scan code, pipelines and container images for secrets; revoke, don't just delete, anything that leaked; retire vendor keys when the work ends.</li>
+    <li><b>Follow the FBI's ARTEX advice:</b> list every internet-facing app, keep admin panels off the open internet, limit what third-party apps can do, watch for new credentials and permission grants, rate-limit sensitive APIs, and stop showing detailed errors to strangers.</li>
+    <li><b>Lock down third-party scripts</b> with a strict Content Security Policy that avoids <span class="mono">unsafe-eval</span>, and monitor for new scripts and data destinations.</li>
+    <li><b>Get machines off the open internet.</b> Fridges, building controls and factory kit belong behind private networks, with default passwords changed, alarms on and unsupported devices replaced. The fridge attacks used flaws public since March 2025, on devices that were never updated or no longer supported.</li>
+    <li><b>Use AI for defence.</b> Run the same agents attackers use against your own code first, and on a schedule.</li></ul></div>
+  </div>
+
+
+  <div class="ctrl c2"><h3>For governments and regulators</h3><ul class="tight">
+    <li><b>Fund the boring upgrades.</b> Congress approved $12.5 billion for air traffic control last year; Duffy wants $30 billion more, and the FAA plans to move controller communications from analogue to digital in late 2027.</li>
+    <li><b>Set patch clocks to match the threat.</b> CISA's June directive, BOD 26-04, gives federal agencies three days to fix the highest-risk flaws.</li>
+    <li><b>Supervise critical suppliers.</b> The Bank of England began overseeing its first designated critical cloud providers in July; watching a few platforms targets concentration risk directly.</li>
+    <li><b>Ban weak defaults and name the attackers.</b> Britain has banned default passwords on new consumer connected devices since 2024, and similar rules could extend to business kit; France's public attribution, sanctions push and arrest warrants show the price states are now willing to impose.</li>
+    <li><b>Help the fixers.</b> Open-source maintainers can't keep up with AI-found bugs; funding, staff and AI tools for patching matter as much as tools for finding.</li>
+    <li><b>Explain outages fast and fully.</b> Quick, detailed post-mortems starve rumours. Microsoft's root-cause note within days is the model.</li></ul></div>
+  <div class="ctrl c3"><h3>Your 10-minute resilience check</h3>
+    <ul class="todo">
+      <li>Update your phone and laptop. The Optimizely code targeted older iPhones; Report URI advises iOS 18.7.3 or 26.3 or later.</li>
+      <li>Check card statements if you typed card details into a big brand's own site form on 16 Nov.</li>
+      <li>Double-check any crypto address before sending; the attack swapped them on screen.</li>
+      <li>Keep a second card or bank account, a little cash, and the 72-hour basics many governments now advise: water, non-perishable food, medicines, a torch, batteries and a radio.</li>
+      <li>Save boarding passes, tickets and key documents offline.</li>
+      <li>Turn on passkeys or app-based two-step sign-in for email, bank and cloud accounts.</li>
+      <li>Before sharing a scary post, check the company's or agency's own status page.</li>
+    </ul></div>
+</section>
+
+<!-- ============ WATCH ============ -->
+<section id="watch">
+  <div class="sec-head"><div class="lab">9 · What to watch next</div><h2>Six things that will tell us more</h2></div>
+  <ol class="next">
+    <li><b>Microsoft's final post-incident review,</b> due this week: did anything else go wrong, and what changes?</li>
+    <li><b>The FAA and L3Harris findings:</b> human error, bad installation or faulty hardware, and whether the copper-to-fibre work pauses.</li>
+    <li><b>How Optimizely was breached</b> and how many card numbers were taken.</li>
+    <li><b>Java4Shell in the wild:</b> whether attackers start exploiting unpatched servers before companies update.</li>
+    <li><b>Europe's response to Iran:</b> whether the EU adopts sanctions over the fridge attacks, and who is blamed for the 2 November wave.</li>
+    <li><b>ARTEX copies:</b> new forks, new victims, and whether AI providers can shut off attackers' access.</li>
+  </ol>
+</section>
+
+<!-- ============ BOTTOM LINE ============ -->
+<section id="bottom">
+  <div class="sec-head"><div class="lab">Bottom line</div><h2>The world isn't ending. It's getting faster.</h2></div>
+  <p class="lead prose">Last week's outages were ordinary failures of change, in systems too big and too shared to fail quietly. The doomsday was a rumour built on an alert test. The genuine state sabotage was in Europe's supermarkets, and it needed nothing cleverer than a default password. The new thing ran alongside: AI that finds and exploits weaknesses in hours, keys stolen in seconds, and attackers who walk in through suppliers we trust. Neither story needs a conspiracy. Both need the same response: safer changes, fewer single points of failure, tighter control of access, and defenders who use AI first.</p>
+  <div class="take"><div class="lab">The takeaway</div><p>The danger isn't one giant hack. <em>It's many small breaks in systems too complex to fix fast, while attackers speed up.</em></p></div>
+  <div class="correction"><b>Correction to our 17 November visual explainer.</b> We marked the US banking disruptions and the NSA network outage as "in post, not verified". Both have since been reported: Chase confirmed a software-bug outage on 16 Nov, and CNN reported NSA Net down on 17 Nov. The explainer's "~12,000 flights cancelled" was, if anything, low: FlightAware counted more than 9,000 cancellations on Friday and over 4,000 more by Saturday morning. The explainer's conclusion stands.</div>
+</section>
+
+<section id="sources">
+  <div class="sec-head"><div class="lab">Sources</div></div>
+  <ul class="sources">
+    <li>FBI FLASH-20261113-001, ARTEX: <a href="https://www.ic3.gov/CSA/2026/261113.pdf">ic3.gov</a></li>
+    <li>ARTEX analysis: <a href="https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks">Google Threat Intelligence</a>; <a href="https://www.zscaler.com/blogs/security-research/threat-actor-abuses-agentic-ai-pentesting-framework-target-south-korean">Zscaler</a>; <a href="https://socradar.io/blog/artex-ai-pentest-tool-what-security-teams-need-to-know/">SOCRadar</a>; <a href="https://www.extrahop.com/blog/artex-and-the-arrival-of-ai-orchestrated-attacks-what-the-network-sees">ExtraHop</a></li>
+    <li>Microsoft 365 outage: root-cause summary posted by Charles Lamanna on <a href="https://x.com/clamanna/status/2122209697226948729">X</a>; <a href="https://blog.incidenthub.cloud/microsoft-365-outage-nov-12-2026">IncidentHub</a>; <a href="https://en.wikipedia.org/wiki/2026_Microsoft_outage">Wikipedia</a>; <a href="https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk">CNN ($7bn estimate)</a>; <a href="https://forbes.com/sites/timkeary/2026/11/17/microsoft-outage-chaos-puts--operational-resilience-under-a-spotlight">Forbes (NHS)</a></li>
+    <li>FAA ground stop: <a href="https://www.faa.gov/newsroom/nationwide-ground-stop-questions-and-answers">FAA Q&amp;A</a>; <a href="https://www.npr.org/2026/11/14/nx-s1-6040952/faa-ground-stop-airplane-travel">NPR</a>; <a href="https://www.washingtonpost.com/transportation/2026/11/13/faa-grounds-flights-all-us-airports-citing-communications-issue/">Washington Post</a>; <a href="https://techcrunch.com/2026/11/14/transportation-secretary-blames-routine-equipment-upgrade-for-grounding-flights-nationwide/">TechCrunch</a>; <a href="https://aerocorner.com/news/faa-ground-stop-fti-network-warnings-gao-inspector-general/">AeroCorner</a>; <a href="https://www.bankinfosecurity.com/us-flights-halted-as-faa-communications-systems-fail-a-33394">BankInfoSecurity</a>; <a href="https://www.fox13news.com/news/outdated-faa-systems-blamed-flight-disruptions-officials-seek-30b-modernization-funding">Reuters via Fox 13</a></li>
+    <li>Fugaku: <a href="https://www.hpcwire.com/off-the-wire/riken-warns-fugaku-and-rikyu-users-of-possible-personal-data-exposure/">RIKEN via HPCwire</a>; <a href="https://windowsforum.com/news/fugaku-supercomputer-suspended-after-status-page-breach-researcher-credentials-at-risk.452831/">WindowsForum</a>; <a href="https://japancyberwatch.com/articles/fugaku-supercomputer-unauthorized-access-ssh-keys-2026">Japan Cyber Watch</a></li>
+    <li>Chase and NSA Net: <a href="https://www.tomsguide.com/news/live/chase-outage-november-16-2026">Tom's Guide</a>; <a href="https://gulfnews.com/world/americas/us-hit-by-wave-of-outages-microsoft-flights-banks-and-nsa-affected-1.500751032">Gulf News</a>; <a href="https://www.wral.com/news/local/national-security-communications-network-outage-november-2026/">CNN via WRAL</a></li>
+    <li>Apple: <a href="https://www.upi.com/Top_News/US/2026/11/17/apple-outage-icloud-pay-store/3741794952559/">UPI</a>; <a href="https://9to5mac.com/2026/11/17/icloud-app-store-and-other-apple-services-hit-by-ongoing-outage/">9to5Mac</a></li>
+    <li>Officials on attacks: <a href="https://www.cnbc.com/2026/11/17/apple-microsoft-faa-jpmorgan-outages.html">CNBC</a>; <a href="https://tech.yahoo.com/cybersecurity/articles/apple-airlines-behind-recent-tech-215007629.html">Yahoo Tech</a>; <a href="https://www.wmtv15news.com/2026/11/18/apple-banks-faa-microsoft-outages-raise-questions-cybersecurity-expert-weighs/">WMTV</a></li>
+    <li>Blackout hoax: <a href="https://docs.fcc.gov/public/attachments/DA-26-989A1.txt">FCC notice DA 26-989</a>; <a href="https://www.france24.com/en/tv-shows/truth-or-fake/20261116-november-17-blackout-hoax-how-a-conspiracy-theory-went-viral-around-the-world">France 24</a>; <a href="https://politifact.com/factchecks/2026/nov/16/tiktok-posts/blackout-nov-17-trump-us-emergency">PolitiFact</a>; <a href="https://www.cnn.com/2026/11/17/media/tech-outages-microsoft-faa-united-blackout-social-media">CNN</a></li>
+    <li>Optimizely: <a href="https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/">Report URI</a>; <a href="https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-delivers-malware-to-cnn-fox-news-bbc-salesforce-sites/">BleepingComputer</a>; <a href="https://www.malwarebytes.com/blog/news/2026/11/cnn-bbc-zoom-and-other-sites-served-malicious-code-in-supply-chain-attack">Malwarebytes</a></li>
+    <li>Java4Shell: <a href="https://www.nytimes.com/2026/11/17/us/politics/ai-security-bug-java.html">New York Times</a> (paywalled); free: <a href="https://www.unite.ai/calif-uses-ai-to-find-java4shell-as-openjdk-and-oracle-ship-fixes/">Unite.AI</a>, <a href="https://lynnwoodtimes.com/2026/11/17/java4shell/">Lynnwood Times</a>, <a href="https://techstartups.com/2026/11/17/ai-discovers-critical-java-security-flaw-threatening-enterprise-systems-used-by-fortune-500-companies/">Tech Startups</a></li>
+    <li>ConnectWise, Barracuda: <a href="https://darkreading.com/cyberattacks-data-breaches/microsoft-storm-0940-connectwise-supply-chain-attack">Dark Reading</a>; <a href="https://blog.barracuda.com/2026/11/11/anatomy-of-a-machine-speed-intrusion">Barracuda</a></li>
+    <li>Docker Hub keys: <a href="https://www.bleepingcomputer.com/news/security/cloud-keys-leaked-in-docker-hub-images-are-stolen-within-seconds/">BleepingComputer</a>; <a href="https://we-fix-pc.com/2026/11/17/cloud-keys-leaked-in-docker-hub-images-are-stolen-within-seconds/">We Fix PC</a></li>
+    <li>Vulnerability data and AI defence: <a href="https://www.akamai.com/blog/ai/ai-vulnerability-surge-exposure-response">Akamai</a> (vendor); <a href="https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2026/ai-has-squeezed-the-vulnerability-exploitation-clock-three-decisive-moves-cisos-must-make">ISACA</a>; <a href="https://labs.cloudsecurityalliance.org/research/csa-whitepaper-ai-vulnerability-disclosure-bottleneck-202611/">CSA</a>; <a href="https://labs.cloudsecurityalliance.org/research/ai-accelerated-patch-wave-enterprise-remediation-model-v1-cs/">CSA patch wave</a>; <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-compressed-disclosure-patch-window-2026/">CSA on Project Zero</a>; <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-bod-2604-ai-accelerated-patch-mandate-ente/">CSA on BOD 26-04</a>; <a href="https://www.softwareimprovementgroup.com/blog/mythos-project-glasswing-security/">SIG on Glasswing</a>; <a href="https://arxiv.org/html/2611.06629v1">Queen Mary study (arXiv)</a></li>
+    <li>Past outages: <a href="https://www.fox13news.com/news/outdated-faa-systems-blamed-flight-disruptions-officials-seek-30b-modernization-funding">FAA 2023 via Reuters</a>; <a href="https://cybersecuritynews.com/crowdstrike-outage-loss-5-4-billion/amp/">CrowdStrike/Parametrix</a>; <a href="https://sqmagazine.co.uk/internet-outage-statistics/">AWS, Azure and Cloudflare Radar data</a>; <a href="https://trainingcamp.com/articles/cloudflare-outage">Cloudflare 2025</a>; <a href="https://finchannel.com/google-cloud-outage-disrupts-uk-banks-as-services-recover/138915/tech-2/2026/10/">Google Cloud and UK banks</a></li>
+    <li>European fridge attacks: <a href="https://www.theguardian.com/technology/2026/nov/02/europe-supermarket-fridges-freezers-who-hacking-why">Guardian</a>; <a href="https://www.cnbc.com/2026/11/03/supermarket-fridges-hack-cyberattack-europe.html">CNBC</a>; <a href="https://www.aljazeera.com/news/2026/11/3/very-cold-war-whos-attacking-europes-supermarket-freezers">Al Jazeera</a>; <a href="https://abcnews.com/International/wireStory/freezers-supermarkets-european-countries-hit-apparent-cyberattacks-137765494">AP via ABC</a>; <a href="https://en.wikipedia.org/wiki/2026_French_supermarket_refrigerator_hack">Wikipedia</a>; <a href="https://www.qatar-tribune.com/article/263491/world/france-blames-iran-for-cyberattacks-on-supermarket-cooling-systems">France blames Iran</a>; <a href="https://www.al-monitor.com/originals/2026/11/france-summons-iran-envoy-over-supermarket-fridge-hack-warns-response">Reuters via Al-Monitor</a>; <a href="https://www.axios.com/2026/11/02/europe-supermarket-fridges-attacks-food">Axios</a></li>
+    <li>NCSC warning: <a href="https://www.insurancejournal.com/news/international/2026/11/04/891443.htm">Reuters via Insurance Journal</a>; <a href="https://www.actionnewsjax.com/news/technology/uk-cyber-chief-says/PS2LXYNBSE4THBXHNT75OHMIBY/">AP</a>; <a href="https://www.cityam.com/uk-food-suppliers-hit-by-european-cyberattacks/">City AM</a></li>
+    <li>Preparedness: <a href="https://www.theguardian.com/politics/2026/oct/22/britain-prepare-infrastructure-attacks-hostile-states-wes-streeting">Guardian on Streeting</a>; <a href="https://www.infrastructure-now.co.uk/article/498192/uk-must-prepare-for-infrastructure-attacks-by-hostile-states-says-streeting">Infrastructure Now</a>; <a href="https://www.upi.com/Top_News/World-News/2026/10/26/United-Kingdom-Russia-European-security-defense-readiness/5391793063650/">UPI</a>; <a href="https://www.newsweek.com/map-shows-countries-urging-residents-to-stockpile-food-12629524">Newsweek stockpiling map</a></li>
+    <li>Concentration risk: <a href="https://finance.yahoo.com/technology/articles/faa-microsoft-outages-show-perils-204324717.html">Yahoo Finance / American Banker</a>; <a href="https://www.sciencemediacentre.org/expert-reaction-to-microsoft-outage/">Science Media Centre</a></li>
+  </ul>
+  <div class="colophon">
+    <b>KKReckons.com · by KK Reddy</b><br>
+    Figures come from primary documents and independent reporting, in our own words. Vendor and think-tank figures are labelled. If we could not confirm it, it is not here. No sponsored content. All graphics are KKReckons originals.
+  </div>
+</section>
+
+</main>
+</body>
+</html>
