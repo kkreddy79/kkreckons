@@ -1,5 +1,28 @@
 [
   {
+    "slug": "week-the-systems-failed",
+    "title": "Breaking, not ending: the week the systems failed",
+    "kicker": "Cyber & resilience",
+    "dek": "Eight failures in six days, a viral doomsday hoax and AI that hacks at machine speed: what broke, what was attacked, and the fixes.",
+    "blurb": "Email went dark, planes stood still, banks stalled, and the internet decided the world would end at 2:20 on Tuesday afternoon. It didn't. This report sorts what broke from what was attacked and what was just rumour, then looks at the real threat underneath, from Europe's hacked supermarket fridges to AI that breaks in within hours, and what experts say would contain it.",
+    "date": "2026-11-17",
+    "themes": ["AI", "Cybersecurity", "Infrastructure"],
+    "reading_minutes": 21,
+    "file": "special/week-the-systems-failed.html",
+    "cover": "/special/week-the-systems-failed.jpg",
+    "cover_alt": "Breaking, not ending: the week the systems failed. A navy-to-dusk sky over a city skyline, with the KKReckons special report kicker.",
+    "sources": [
+      "https://www.ic3.gov/CSA/2026/261113.pdf",
+      "https://www.faa.gov/newsroom/nationwide-ground-stop-questions-and-answers",
+      "https://x.com/clamanna/status/2122209697226948729",
+      "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+      "https://docs.fcc.gov/public/attachments/DA-26-989A1.txt",
+      "https://www.hpcwire.com/off-the-wire/riken-warns-fugaku-and-rikyu-users-of-possible-personal-data-exposure/",
+      "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks",
+      "https://www.theguardian.com/technology/2026/nov/02/europe-supermarket-fridges-freezers-who-hacking-why"
+    ]
+  },
+  {
     "slug": "india-next-unicorns",
     "title": "Lift-off, with turbulence: India's next 161 unicorns",
     "kicker": "India startups",
