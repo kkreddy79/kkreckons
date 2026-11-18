@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-11-18",
+    "slice": "Chips sneak. UPI bites ₹2k+. AI proves physics. Breathe. Google buys hot rock, waist tops BMI. Raise thinkers.",
+    "artifact": "https://claude.ai/artifact/92CBF1MrtT4DRbpJxhpb6m",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-18-1.jpg",
+    "cover": "/figs/2026-11-18-cover.jpg",
+    "coverAlt": "Chips sneak. UPI bites ₹2k+. AI proves physics. Breathe. Google buys hot rock, waist tops BMI. Raise thinkers.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Smuggled Nvidia chips may make up a third of China's AI compute",
+        "category": "AI chips · China",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/the-great-ai-chip-heist-is-here-df70c466",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "UPI's free ride ends for big merchant payments: who pays, who earns",
+        "category": "Payments · UPI",
+        "tag": "",
+        "url": "https://www.moneylife.in/article/npci-defers-upi-mdr-rollout-amid-festive-season-select-merchant-payments-to-attract-charges-postdiwali/81931.html",
+        "src": "Moneylife and Al Jazeera",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "OpenAI's Yang-Mills proof shows AI's power, and its black-box problem",
+        "category": "AI · Science",
+        "tag": "",
+        "url": "https://www.livemint.com/opinion/online-views/the-future-of-science-pitfalls-of-ai-increasingly-deployed-for-research-11794919755184.html",
+        "src": "Mint and The Economist",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "A psychotherapist's guide to staying calm with the people you love",
+        "category": "Wellbeing",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/mint-lounge/ideas/sonali-gupta-equanimity-emotional-balance-wellbeing-mindfulness-11794920316566.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Google signs $500m-plus deal for Quaise's rock-vaporising geothermal",
+        "category": "Energy · AI power",
+        "tag": "",
+        "url": "https://www.wsj.com/business/energy-oil/google-embraces-geothermal-technology-to-vaporize-rock-for-clean-power-dbd66d05",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Waist size beats BMI at predicting death risk, Nature study finds",
+        "category": "Health · Obesity",
+        "tag": "",
+        "url": "https://www.nature.com/articles/d41586-026-03636-5",
+        "src": "Nature",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Daniel Susskind's guide to raising kids for AI: skills over job bets",
+        "category": "AI · Education",
+        "tag": "Opinion",
+        "url": "https://www.businessinsider.com/daniel-susskind-what-should-my-children-do-review-2026-11",
+        "src": "Business Insider",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-17",
     "slice": "27-week job hunts. ₹99 AI love. Mandis stay local. Students pick Plan B. Even banks hedge.",
     "artifact": "https://claude.ai/artifact/9UWvnbwWjLhU9iecwVsrT6",

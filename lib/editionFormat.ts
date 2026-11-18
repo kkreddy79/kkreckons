@@ -67,6 +67,7 @@ const PUBLISHERS: Record<string, string> = {
   "indiatoday.in": "India Today",
   "inc42.com": "Inc42",
   "moneycontrol.com": "Moneycontrol",
+  "moneylife.in": "Moneylife",
   "cnbc.com": "CNBC",
   "cnn.com": "CNN",
   "decrypt.co": "Decrypt",

@@ -1,0 +1,529 @@
+{
+  "date": "2026-11-18",
+  "slice": "Chips sneak. UPI bites ₹2k+. AI proves physics. Breathe. Google buys hot rock, waist tops BMI. Raise thinkers.",
+  "artifact": "https://claude.ai/artifact/92CBF1MrtT4DRbpJxhpb6m",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "1/3",
+      "text": "of China's AI compute may run on smuggled chips, per Epoch AI",
+      "url": "https://www.wsj.com/opinion/the-great-ai-chip-heist-is-here-df70c466"
+    },
+    {
+      "num": "0.4%",
+      "text": "UPI fee on merchant payments above ₹2,000, capped at ₹300",
+      "url": "https://www.moneylife.in/article/npci-defers-upi-mdr-rollout-amid-festive-season-select-merchant-payments-to-attract-charges-postdiwali/81931.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI chips · China",
+          "tag": "Opinion",
+          "title": "Smuggled Nvidia chips may make up a third of China's AI compute",
+          "url": "https://www.wsj.com/opinion/the-great-ai-chip-heist-is-here-df70c466",
+          "url2": "",
+          "points": [
+            "A WSJ Opinion column calls AI chip smuggling possibly the biggest technology theft ever, by value and security risk. It cites Epoch AI estimates that smuggled Nvidia-class chips could supply up to a third of China's computing capacity.",
+            "Its hook: a California tech-company owner, once a restaurateur, arrested last month and charged with shipping over $300 million of GPU servers to China via Malaysia. He hasn't entered a plea.",
+            "The column links this to organised cargo theft: rings steal AI gear in transit, disguise it and ship it abroad. A bipartisan bill to track cargo theft passed the House but is stuck in the Senate."
+          ],
+          "numbers": [
+            [
+              "1/3",
+              "of China's compute may be smuggled"
+            ]
+          ],
+          "why": "Export controls are only as strong as the warehouses, trucks and transit hubs between a US factory and a buyer. If chips leak this easily, the fight over who may buy them matters less than who guards the loading dock.",
+          "other": "The smuggling estimate is a wide range; at its low end, leakage is a nuisance, not a lifeline. The column also admits no one knows how far China drives the theft, and tighter tracking adds cost and paperwork for honest exporters.",
+          "also": [],
+          "image": "/figs/2026-11-18-1.jpg",
+          "imageAlt": "Explainer: up to a third of China's computing power may run on smuggled Nvidia-class chips; how chips leak and what Congress is weighing.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "The great AI chip leak",
+          "emailTeaser": "Smuggled chips may power a third of China's AI",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Payments · UPI",
+          "tag": "",
+          "title": "UPI's free ride ends for big merchant payments: who pays, who earns",
+          "url": "https://www.moneylife.in/article/npci-defers-upi-mdr-rollout-amid-festive-season-select-merchant-payments-to-attract-charges-postdiwali/81931.html",
+          "url2": "https://www.aljazeera.com/features/2026/9/17/india-to-impose-controversial-fee-for-upi-instant-payments-who-benefits",
+          "points": [
+            "NPCI's steering committee has set a 0.4% merchant fee on UPI payments to businesses above ₹2,000, capped at ₹300; fuel, rail, telecom and insurance pay a flat ₹5. Transfers between people stay free, and shops can't pass the fee on to customers.",
+            "NPCI postponed the planned October 15 start, with a new date to be notified separately, Moneylife reported. NPCI says over 95% of merchant payments by volume are under ₹2,000.",
+            "Al Jazeera says analysts see a pool of about ₹17,000 crore a year, roughly 60% to banks and 25% to apps; retailers warn small shops may rethink UPI."
+          ],
+          "numbers": [
+            [
+              "0.4%",
+              "fee on merchant payments over ₹2,000"
+            ]
+          ],
+          "why": "Zero fees made UPI everyone's default but left banks and apps carrying the cost with little direct return. A charge on bigger tickets gives them a revenue line for the first time, which could fund credit and other services built on the rails.",
+          "other": "Critics, including economist Santosh Mehrotra, say banks and apps already profited and the cost will reach consumers anyway. If shops see big-ticket UPI as costly, some may steer buyers to cash, eroding the adoption that made UPI work.",
+          "also": [
+            {
+              "title": "NPCI Announces 0.4% MDR on UPI Transactions Above INR 2,000",
+              "url": "https://india.entrepreneur.com/business-news/npci-announces-0-4-mdr-on-upi-transactions-above-inr-2000"
+            }
+          ],
+          "image": "/figs/2026-11-18-2.jpg",
+          "imageAlt": "Explainer: a 0.4% fee on UPI payments to merchants above ₹2,000; who pays what and how the fee pool is split.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Moneylife and Al Jazeera",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "Personal finance"
+          ],
+          "emailHead": "UPI's free era ends, mostly",
+          "emailTeaser": "Big merchant payments to pay 0.4%; small ones stay free",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI · Science",
+          "tag": "",
+          "title": "OpenAI's Yang-Mills proof shows AI's power, and its black-box problem",
+          "url": "https://www.livemint.com/opinion/online-views/the-future-of-science-pitfalls-of-ai-increasingly-deployed-for-research-11794919755184.html",
+          "url2": "https://www.economist.com/science-and-technology/2026/11/11/ai-has-proved-that-a-theory-underpinning-fundamental-physics-is-trustworthy",
+          "points": [
+            "The Economist reports that outside physicists confirmed on November 10th that an unreleased OpenAI model proved the first part of the Yang-Mills problem: that a core theory of particle physics stands on firm mathematical footing. Its 1,147-page prose proof is unpublished, and the checkers admit they don't fully understand it.",
+            "A Mint editorial welcomes such gains, citing AlphaFold, used by 180,000 Indian scientists, but warns that black-box tools resist reproducibility and could widen the R&D gap with poorer nations.",
+            "Mint wants AI firms to open their models to scrutiny after a reasonable period."
+          ],
+          "numbers": [
+            [
+              "180,000",
+              "Indian scientists use AlphaFold"
+            ]
+          ],
+          "why": "Both pieces point to one tension: AI now produces results scientists can confirm but can't fully explain. If the best tools stay closed and costly, Indian labs risk becoming users of discovery rather than makers of it.",
+          "other": "The proof was checked through Lean code, so a black box can still be verified, and The Economist says the key ideas appear to come from human physicists. Forcing firms to open models could also blunt the incentive to build them.",
+          "also": [],
+          "image": "/figs/2026-11-18-3.jpg",
+          "imageAlt": "Explainer: 180,000 Indian scientists use AlphaFold; OpenAI's Yang-Mills proof and the pitfalls of black-box AI in research.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint and The Economist",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "AI science's black box",
+          "emailTeaser": "AI proves physics, but who checks the AI?",
+          "imageW": 1280,
+          "imageH": 1732
+        },
+        {
+          "category": "Wellbeing",
+          "tag": "Opinion",
+          "title": "A psychotherapist's guide to staying calm with the people you love",
+          "url": "https://www.livemint.com/mint-lounge/ideas/sonali-gupta-equanimity-emotional-balance-wellbeing-mindfulness-11794920316566.html",
+          "url2": "",
+          "points": [
+            "Mumbai psychotherapist Sonali Gupta, drawing on time at monasteries, writes in Mint Lounge that equanimity is a lifelong practice: easiest with strangers, hardest with family.",
+            "She cites psychologist Rick Hanson: the brain grips bad experiences like Velcro and lets good ones slide off like Teflon. Seeing feelings as impermanent loosens that grip.",
+            "Her tools: notice what calms you, such as nature, cooking, knitting or running, and practise meditation, then carry that steadiness into everyday life."
+          ],
+          "numbers": [],
+          "why": "Calm is often treated as a personality trait. Framing it as a skill built through small daily habits makes it something anyone can work on, especially when the hardest tests come from the people closest to us.",
+          "other": "Equanimity can slide into detachment, and some family conflicts call for boundaries or change rather than acceptance. Meditation and hobbies also help less when stress has practical causes that need fixing.",
+          "also": [],
+          "image": "/figs/2026-11-18-4.jpg",
+          "imageAlt": "Explainer: the brain holds bad experiences like Velcro; what gets in the way of calm and what helps.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "The practice of calm",
+          "emailTeaser": "Why family tests equanimity most, and how to train it",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Energy · AI power",
+          "tag": "",
+          "title": "Google signs $500m-plus deal for Quaise's rock-vaporising geothermal",
+          "url": "https://www.wsj.com/business/energy-oil/google-embraces-geothermal-technology-to-vaporize-rock-for-clean-power-dbd66d05",
+          "url2": "",
+          "points": [
+            "Google agreed to buy 50 megawatts from a geothermal plant Houston startup Quaise Energy is building in central Oregon, in a deal valued at more than $500 million, WSJ reports. The power will serve Google's existing Oregon data centres from as early as 2030.",
+            "Quaise drills most of the way with ordinary rigs, then switches to a gyrotron, essentially a giant microwave, that vaporises rock to reach superhot depths. Water pumped down is heated, and its steam makes electricity.",
+            "The method is unproven at commercial scale. Google also has a geothermal deal with Fervo Energy and works with nuclear and long-duration storage developers as it hunts power for AI."
+          ],
+          "numbers": [
+            [
+              "50 MW",
+              "geothermal power for Google in Oregon"
+            ]
+          ],
+          "why": "AI's bottleneck is shifting from chips to electricity. A buyer like Google can turn untested clean tech into a fundable project simply by promising to buy its output, which is how new energy industries get built.",
+          "other": "A purchase deal is not a working plant. Microwave drilling has never run commercially, and if it slips past 2030 Google will need other power in the meantime. Spreading bets across many technologies also means any single one can quietly fail.",
+          "also": [],
+          "image": "/figs/2026-11-18-5.jpg",
+          "imageAlt": "Explainer: Google to buy 50 MW of superhot geothermal power from Quaise in Oregon; how gyrotron drilling works and Google's wider power hunt.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Google drills for clean power",
+          "emailTeaser": "A giant microwave to melt rock for AI power",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Health · Obesity",
+          "tag": "",
+          "title": "Waist size beats BMI at predicting death risk, Nature study finds",
+          "url": "https://www.nature.com/articles/d41586-026-03636-5",
+          "url2": "",
+          "points": [
+            "A study in Nature, using records of more than 800,000 people in China, Spain, the UK and the US, found that an obesity definition adding waist size and other body-fat measures to BMI predicts death risk better than BMI alone.",
+            "The new test classed an extra 5–9% of people as obese whom BMI calls merely overweight, and moved 1–3% the other way. Those flagged obese by BMI alone had no extra risk of death.",
+            "It splits obesity into 'clinical', with at least one of 18 linked illnesses such as heart failure, and 'preclinical'. One critic warns waist checks may make routine visits harder for patients."
+          ],
+          "numbers": [
+            [
+              "5–9%",
+              "more people classed as obese"
+            ]
+          ],
+          "why": "BMI cut-offs decide who gets treatment, and the study's lead author says sicker patients were denied surgery for missing the threshold. A test that tracks real risk could steer care to the people who need it.",
+          "other": "BMI's strength is its simplicity: a scale and a height are enough. More measurements mean more time and discomfort in a routine visit, and records-based studies show who is at risk, not yet whether changing the definition improves outcomes.",
+          "also": [],
+          "image": "/figs/2026-11-18-6.jpg",
+          "imageAlt": "Explainer: records of 800,000 people show a waist-based obesity test predicts death risk better than BMI; what changes and what the study found.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Nature",
+          "pay": false,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "Move over, BMI",
+          "emailTeaser": "Your waist may say more than your weight",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI · Education",
+          "tag": "Opinion",
+          "title": "Daniel Susskind's guide to raising kids for AI: skills over job bets",
+          "url": "https://www.businessinsider.com/daniel-susskind-what-should-my-children-do-review-2026-11",
+          "url2": "",
+          "points": [
+            "In 'What Should My Children Do?', Oxford economist Daniel Susskind argues no one can predict which jobs will survive AI, so parents should stop guessing and build lasting skills, Business Insider's review says.",
+            "His core three are literacy, numeracy and critical thinking, learned both with AI and without it. He suggests a third of university time go to learning about and using AI.",
+            "He backs staying in white-collar fields for problems that grip you, favours work where people want a human, and wants classrooms to teach character and moral questions."
+          ],
+          "numbers": [],
+          "why": "Most AI career advice is a list of 'safe' jobs that dates fast. Training durable skills and choosing problems over job titles gives parents something to act on without having to predict the future.",
+          "other": "Following problems that grip you assumes young people can afford to; many need a paycheque first. And if AI keeps getting easier to use, devoting a third of university time to it may be more than students need.",
+          "also": [],
+          "image": "/figs/2026-11-18-7.jpg",
+          "imageAlt": "Explainer: Daniel Susskind's core skills for children in the AI age and his advice on work and character.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Business Insider",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "What should your kids do?",
+          "emailTeaser": "Skills and character outlast any job list",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Export rules stop at the border.",
+    "b": "Smugglers start there.",
+    "line": "The AI race turns on unglamorous things: guarding the loading dock, opening the black box and finding power that runs all night."
+  },
+  "cover": "/figs/2026-11-18-cover.jpg",
+  "coverAlt": "Chips sneak. UPI bites ₹2k+. AI proves physics. Breathe. Google buys hot rock, waist tops BMI. Raise thinkers.",
+  "stressIndex": {
+    "score": 45,
+    "band": "Elevated",
+    "asOf": "2026-11-17"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25387.4004,
+        "asOf": "2026-11-17",
+        "prev": 25291.0996,
+        "week": 25044.6504,
+        "spark": [
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7340.5298,
+        "asOf": "2026-11-17",
+        "prev": 7416.5898,
+        "week": 7520.9302,
+        "spark": [
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.103,
+        "asOf": "2026-11-17",
+        "prev": 5.121,
+        "week": 4.983,
+        "spark": [
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 93.14,
+        "asOf": "2026-11-17",
+        "prev": 92.44,
+        "week": 91.49,
+        "spark": [
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3864.2,
+        "asOf": "2026-11-17",
+        "prev": 3853,
+        "week": 4030.2,
+        "spark": [
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 93.9631,
+        "asOf": "2026-11-17",
+        "prev": 94.238,
+        "week": 93.9468,
+        "spark": [
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631
+        ]
+      }
+    ]
+  }
+}
