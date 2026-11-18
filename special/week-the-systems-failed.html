@@ -44,7 +44,8 @@ p{margin:0 0 14px}
 .dek{font-size:clamp(16.5px,1.9vw,19.5px);color:var(--onhero2);margin:0 0 18px;max-width:72ch}
 .byline{font-size:13.5px;color:var(--onhero2)}.byline b{color:#fff}
 .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px;color:#14213D}
+.tag{display:inline-flex;align-items:center;min-height:40px;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:5px 16px;border-radius:99px;color:#14213D;transition:transform .15s,box-shadow .15s}
+.tag:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.3);text-decoration:underline}
 .tag:nth-child(1){background:#FFD23F}.tag:nth-child(2){background:#5EEAD4}.tag:nth-child(3){background:#FDA4AF}.tag:nth-child(4){background:#C4B5FD}
 .net{position:absolute;left:0;right:0;bottom:0;width:100%;height:170px;z-index:0}
 
@@ -210,7 +211,7 @@ details.myth .body p{margin:8px 0 0}
     <h1>Breaking, not <em>ending</em>: the week the systems failed</h1>
     <p class="dek">Email went dark, planes stood still, banks stalled, and the internet decided the world would end at 2:20 on Tuesday afternoon. It didn't. But behind the noise, something real is speeding up.</p>
     <div class="byline"><b>KK Reddy</b> · Tuesday, 17 November 2026 · 21 min read</div>
-    <div class="tags"><span class="tag">AI</span><span class="tag">Cybersecurity</span><span class="tag">Infrastructure</span><span class="tag">Fact check</span></div>
+    <div class="tags"><a class="tag" href="/topics/ai">AI</a><a class="tag" href="/daily?q=cyber">Cybersecurity</a><a class="tag" href="/daily?q=infrastructure">Infrastructure</a><a class="tag" href="/standards">Fact check</a></div>
   </div>
   <svg class="net" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <defs><radialGradient id="glowG"><stop offset="0" stop-color="#FFD23F" stop-opacity=".9"/><stop offset="1" stop-color="#FFD23F" stop-opacity="0"/></radialGradient><radialGradient id="glowC"><stop offset="0" stop-color="#5EEAD4" stop-opacity=".8"/><stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/></radialGradient><radialGradient id="glowR"><stop offset="0" stop-color="#FF5C7A" stop-opacity=".9"/><stop offset="1" stop-color="#FF5C7A" stop-opacity="0"/></radialGradient></defs>
