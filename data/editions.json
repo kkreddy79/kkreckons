@@ -1,5 +1,93 @@
 [
   {
+    "date": "2026-11-19",
+    "slice": "$1.4bn game day. Jobless Indian grads: 7% hired. AI: chores, hacks, IPOs, audits. Bank Q&A? Cheat codes.",
+    "artifact": "https://claude.ai/artifact/R3FBs7LU3QQ5562creRCPg",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-19-1.jpg",
+    "cover": "/figs/2026-11-19-cover.jpg",
+    "coverAlt": "$1.4bn game day. Jobless Indian grads: 7% hired. AI: chores, hacks, IPOs, audits. Bank Q&A? Cheat codes.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "GTA VI launches after 13 years while young people's job prospects shrink",
+        "category": "Gen Z economy",
+        "tag": "",
+        "url": "https://apnews.com/article/grand-theft-auto-6-video-game-release-6e255c930da6de820e539721f4682253",
+        "src": "AP, The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI butlers: Indians let assistants run their errands",
+        "category": "AI assistants",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/rise-of-ai-personal-assistants-in-india-11794998089207.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI patch rush, free hacking kits and new UK cyber rules",
+        "category": "Cyber security",
+        "tag": "",
+        "url": "https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1",
+        "src": "Financial Times and Axios",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "DealBook Summit: AI bubble fears, Huang's ouster and Trump ties",
+        "category": "AI and markets",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-musk-altman-ellison.html",
+        "src": "The New York Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "KPMG's AI audit asked 'better questions' than its accountants",
+        "category": "AI at work",
+        "tag": "",
+        "url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Leaked files show chaos inside Deutsche Bank under Christian Sewing",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/4f8dae68-bfec-43bd-bef6-b830815ec538?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-18",
     "slice": "Chips sneak. UPI bites ₹2k+. AI proves physics. Breathe. Google buys hot rock, waist tops BMI. Raise thinkers.",
     "artifact": "https://claude.ai/artifact/92CBF1MrtT4DRbpJxhpb6m",
