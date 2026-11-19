@@ -1,0 +1,542 @@
+{
+  "date": "2026-11-19",
+  "slice": "$1.4bn game day. Jobless Indian grads: 7% hired. AI: chores, hacks, IPOs, audits. Bank Q&A? Cheat codes.",
+  "artifact": "https://claude.ai/artifact/R3FBs7LU3QQ5562creRCPg",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$1.4bn",
+      "text": "Estimated cost to make GTA VI (Citi, via WSJ), out after a 13-year wait.",
+      "url": "https://www.wsj.com/business/media/just-how-big-is-grand-theft-auto-vi-the-multibillion-dollar-frenzy-in-charts-7c6a3893"
+    },
+    {
+      "num": "7%",
+      "text": "Of jobless Indian graduates found permanent salaried jobs within a year.",
+      "url": "https://www.wsj.com/economy/these-charts-show-why-young-people-across-the-world-are-fed-up-with-the-economy-2fd5f804"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Gen Z economy",
+          "tag": "",
+          "title": "GTA VI launches after 13 years while young people's job prospects shrink",
+          "url": "https://apnews.com/article/grand-theft-auto-6-video-game-release-6e255c930da6de820e539721f4682253",
+          "url2": "https://www.wsj.com/business/media/just-how-big-is-grand-theft-auto-vi-the-multibillion-dollar-frenzy-in-charts-7c6a3893",
+          "points": [
+            "After a 13-year wait, GTA VI began rolling out on Thursday, AP reports, and Take-Two shares rose more than 8%. The WSJ says Citi estimates it cost about $1.4 billion to make, and some workers and students are taking days off to play.",
+            "The same week, a WSJ charts piece shows why young people worldwide are fed up: degrees pay off less, AI-exposed entry jobs are thinning and rents keep them at home. In India, only 7% of graduates who reported being unemployed found permanent salaried jobs within a year.",
+            "The FT says a games industry squeezed by soaring memory-chip costs is leaning on the title; one analyst warns a flop would be an \"extinction event\" for current consoles."
+          ],
+          "numbers": [
+            [
+              "$1.4bn",
+              "estimated cost to make GTA VI (Citi, via WSJ)"
+            ],
+            [
+              "7%",
+              "of jobless Indian grads found permanent jobs within a year"
+            ]
+          ],
+          "why": "Same generation, two pictures: told that degrees, jobs and homes are slipping away, many will still clear the week for a game that cost about $1.4 billion to make. Escape sells when prospects feel thin, and the entertainment economy is booming while the entry rung of the job market thins.",
+          "other": "Gamers span every age and income, and many who take a day off have jobs, so the irony is a mood, not a measured cause. The WSJ also notes little evidence yet that AI is causing broad job losses, and a hit game creates work too.",
+          "also": [
+            {
+              "title": "These Charts Show Why Young People Across the World Are Fed Up With the Economy",
+              "url": "https://www.wsj.com/economy/these-charts-show-why-young-people-across-the-world-are-fed-up-with-the-economy-2fd5f804"
+            },
+            {
+              "title": "'Bigger, better' Grand Theft Auto set to smash entertainment records",
+              "url": "https://www.ft.com/content/444ff3e0-08b9-4a48-b935-a8cf65311ea0?syn-25a6b1a6=1"
+            },
+            {
+              "title": "PolitiFact on workers taking days off for GTA VI",
+              "url": "https://politifact.com/article/2026/nov/18/grand-theft-auto-6-sick-days-workers/"
+            },
+            {
+              "title": "India's game developers helped build Grand Theft Auto VI. Now they want to create hits of their own",
+              "url": "https://www.channelnewsasia.com/asia/indias-game-developers-helped-build-grand-theft-auto-vi-now-they-want-create-hits-their-own-6561681"
+            }
+          ],
+          "image": "/figs/2026-11-19-1.jpg",
+          "imageAlt": "Explainer: GTA VI's $1.4 billion launch set against young people's shrinking job prospects.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "AP, The Wall Street Journal and Financial Times",
+          "pay": true,
+          "themes": [
+            "Jobs & careers",
+            "Markets"
+          ],
+          "emailHead": "A $1.4bn game, a jobs squeeze",
+          "emailTeaser": "GTA VI launches while young people's job prospects shrink",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "AI assistants",
+          "tag": "",
+          "title": "AI butlers: Indians let assistants run their errands",
+          "url": "https://www.livemint.com/ai/rise-of-ai-personal-assistants-in-india-11794998089207.html",
+          "url2": "",
+          "points": [
+            "Mint reports a small but growing number of Indians now let AI assistants book, buy, call and chase tasks for them. Rumik's Ira wakes a student with repeated calls, and got a user's Aadhaar address fixed and a property application refiled, phoning an official in Hinglish.",
+            "Indian startups such as Rumik, Littl, Hulp and Faff are taking on US-based Instinct, xAI and Meta. Costs bite: Faff says a ₹2,000-a-month customer costs it ₹3,000-4,000 in compute.",
+            "Risks are real: Instinct bought a bikini with store credit unasked, and experts want minimal access plus fresh approval for sensitive actions."
+          ],
+          "numbers": [
+            [
+              "₹2 cr",
+              "in transactions through Rumik's Ira so far"
+            ],
+            [
+              "40%",
+              "of Hulp's tasks done end-to-end by AI"
+            ]
+          ],
+          "why": "Whoever owns the assistant may own the shopping cart: if agents do the discovery, apps that only list options lose their grip. India's payments, languages and last-mile quirks give local players a real opening.",
+          "other": "Handing an app your email, payments and Aadhaar OTPs is a big trust bet, and India's agent-specific rules on permissions and redress haven't been fully worked out. Global giants have deeper pockets, and Indian firms have rarely beaten them in purely digital products.",
+          "also": [],
+          "image": "/figs/2026-11-19-2.jpg",
+          "imageAlt": "Explainer: Indian AI personal assistants that book, buy and call for users, and the risks of giving them access.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Your errands, run by AI",
+          "emailTeaser": "Indian startups build AI assistants that book, buy and call",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Cyber security",
+          "tag": "",
+          "title": "AI patch rush, free hacking kits and new UK cyber rules",
+          "url": "https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1",
+          "url2": "https://www.ft.com/content/7cd81085-95d0-4511-b640-300a2c8791ff?syn-25a6b1a6=1",
+          "points": [
+            "The FT reports US officials suspect a scramble to patch flaws found by AI behind a week of outages at Microsoft, JPMorgan and the NSA; Senator Mark Warner sees no sign of a cyber attack. Axios adds that free AI kits such as Artex now take some hackers from first target to privileged access in under three hours.",
+            "UK regulators told financial firms to make boards answer for cyber oversight and keep backups off the internet. An Axios essay urges readers to reset passwords and keep some cash."
+          ],
+          "numbers": [
+            [
+              "70+",
+              "countries hit by the Microsoft 365 outage"
+            ],
+            [
+              "<3 hrs",
+              "to privileged access in some Artex intrusions (FBI, via Axios)"
+            ]
+          ],
+          "why": "Your bank app, flights and work email now sit behind a patch queue, while free agent kits make ordinary firms and accounts worth attacking. Officials warn outages are prime time for fake IT-help calls, so the prep list is cheap insurance.",
+          "other": "Citigroup's Jane Fraser argues the patch wave will leave systems sturdier, and Axios notes some outages are just old systems breaking. Warner's view is a likely explanation, not an investigation's finding, and panic, like a rush on cash, can do its own damage.",
+          "also": [
+            {
+              "title": "The terrifying rise of AI hacking tools",
+              "url": "https://www.axios.com/2026/11/18/ai-hacking-tools-artex-cairn"
+            },
+            {
+              "title": "Behind the Curtain: Trust but prepare",
+              "url": "https://www.axios.com/2026/11/18/behind-curtain-outages-ai-prepare"
+            }
+          ],
+          "image": "/figs/2026-11-19-3.jpg",
+          "imageAlt": "Explainer: AI finds software bugs faster, patch rushes and free AI hacking kits strain systems, and how regulators and readers can prepare.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times and Axios",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "AI finds bugs, fixes break things",
+          "emailTeaser": "Outages, free AI hacking kits and how to prepare",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI and markets",
+          "tag": "",
+          "title": "DealBook Summit: AI bubble fears, Huang's ouster and Trump ties",
+          "url": "https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-musk-altman-ellison.html",
+          "url2": "",
+          "points": [
+            "At the NYT's DealBook Summit, ECB chief Christine Lagarde warned AI valuations look stretched and could be corrected; OpenAI's Sam Altman brushed off the swings and said the trend stays strong. Anthropic priced a record IPO valuing it above $1.5 trillion, with trading set for Thursday.",
+            "Anduril's Palmer Luckey blamed recent outages on attackers using AI against outdated systems. Musk and Altman voiced sympathy for Jensen Huang after his ouster from Nvidia.",
+            "Robinhood's Vlad Tenev said bets on what speakers will say are easy to manipulate; Polymarket's Shayne Coplan defended prediction markets."
+          ],
+          "numbers": [],
+          "why": "The people who fund and run AI are split between 'bubble' and 'trend', and a record IPO lands right in the middle of that argument. For savers, the real bet is whether that optimism holds, not any single company.",
+          "other": "Conference stages reward confident soundbites, not forecasts with track records. Lagarde gave no date for a correction, and Altman runs a company expected to go public, so each view comes from its own vantage point.",
+          "also": [],
+          "image": "/figs/2026-11-19-4.jpg",
+          "imageAlt": "Explainer: DealBook Summit takeaways on the AI bubble debate, AI security, Jensen Huang's ouster and prediction markets.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The New York Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Bubble or boom? Bosses split",
+          "emailTeaser": "Lagarde, Altman, Musk and Luckey on AI's highs and risks",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI at work",
+          "tag": "",
+          "title": "KPMG's AI audit asked 'better questions' than its accountants",
+          "url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "KPMG ran its first fully AI-based audit of a UK-listed company, setting more than 100 AI agents on an unnamed FTSE 250 firm's accounts alongside a normal audit. Its UK audit head says the AI sometimes asked better questions and dug deeper.",
+            "A human had to step in when one agent failed to match regulations to documents, and the pilot wasn't relied on for the real sign-off. KPMG plans to expand it to up to 20 larger audits.",
+            "The UK's audit regulator says the auditor stays accountable whatever technology is used."
+          ],
+          "numbers": [
+            [
+              "100+",
+              "AI agents on one audit"
+            ],
+            [
+              "20",
+              "larger audits in the next phase"
+            ]
+          ],
+          "why": "Audits have long been billed on big teams of junior accountants; if agents do that legwork, the entry rung for young accountants thins, the same squeeze as in today's Pick. Clients will also ask why fees don't fall.",
+          "other": "One pilot on one company isn't proof: humans set the agents' goals and caught their errors, and few firms have clean enough data. Regulators also worry auditors could lose their scepticism by leaning on AI.",
+          "also": [],
+          "image": "/figs/2026-11-19-5.jpg",
+          "imageAlt": "Explainer: KPMG's pilot AI audit with more than 100 agents, what it found and what is at stake.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "AI audits the auditors",
+          "emailTeaser": "KPMG's 100-agent pilot audit, and why humans still sign",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Banking",
+          "tag": "",
+          "title": "Leaked files show chaos inside Deutsche Bank under Christian Sewing",
+          "url": "https://www.ft.com/content/4f8dae68-bfec-43bd-bef6-b830815ec538?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "An FT-led investigation of more than 15mn leaked Deutsche Bank documents shows deep control problems under CEO Christian Sewing, who publicly promised a \"more boring\" bank but at times pushed internally for more risk.",
+            "The files show years of weak client vetting, a regulator calling controls \"a shambles\", staff planting questions with friendly analysts on earnings calls, and a cost-target gap that went undisclosed.",
+            "Deutsche says it is \"a different bank today\" and rejects claims it obscured cost pressures."
+          ],
+          "numbers": [
+            [
+              "15mn+",
+              "leaked documents analysed"
+            ],
+            [
+              "€18.6bn",
+              "paid to settle litigation and regulatory actions since 2012"
+            ]
+          ],
+          "why": "If controls this weak survived a celebrated turnaround at Europe's flagship lender, investors should ask how much of any bank's clean-up story rests on what is disclosed rather than what is fixed. Planted analyst questions are a reason to read earnings calls with care.",
+          "other": "Deutsche says its client-vetting fixes were largely done by 2024, and its profits and share price have revived under Sewing. Leaks surface the worst emails, not the full record, and much of this dates back years.",
+          "also": [],
+          "image": "/figs/2026-11-19-6.jpg",
+          "imageAlt": "Explainer: what leaked Deutsche Bank files show about controls under Christian Sewing, and the bank's response.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Banking"
+          ],
+          "emailHead": "Deutsche Bank's leaked files",
+          "emailTeaser": "Weak checks, planted questions, and a bank that says it changed",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Fun has a launch date.",
+    "b": "Jobs don't.",
+    "line": "A generation short on steady work will still clear its calendar for one game; that gap says as much about the economy as any jobs chart."
+  },
+  "cover": "/figs/2026-11-19-cover.jpg",
+  "coverAlt": "$1.4bn game day. Jobless Indian grads: 7% hired. AI: chores, hacks, IPOs, audits. Bank Q&A? Cheat codes.",
+  "stressIndex": {
+    "score": 46,
+    "band": "Elevated",
+    "asOf": "2026-11-18"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25227.9492,
+        "asOf": "2026-11-18",
+        "prev": 25387.4004,
+        "week": 25255.0508,
+        "spark": [
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7323.6299,
+        "asOf": "2026-11-18",
+        "prev": 7340.5298,
+        "week": 7619.3799,
+        "spark": [
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.066,
+        "asOf": "2026-11-18",
+        "prev": 5.103,
+        "week": 4.998,
+        "spark": [
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 91.95,
+        "asOf": "2026-11-18",
+        "prev": 93.14,
+        "week": 92.76,
+        "spark": [
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3741.8999,
+        "asOf": "2026-11-18",
+        "prev": 3864.2,
+        "week": 4000.5,
+        "spark": [
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 93.4746,
+        "asOf": "2026-11-18",
+        "prev": 93.9631,
+        "week": 93.925,
+        "spark": [
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746
+        ]
+      }
+    ]
+  }
+}
