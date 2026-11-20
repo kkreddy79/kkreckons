@@ -6,6 +6,7 @@ import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, sh
 import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL } from "@/lib/site";
 import { followLinks, type Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
+import type { DrawdownSummary } from "@/lib/drawdowns";
 import { watchSummary } from "@/lib/watch";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
 import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
@@ -78,7 +79,7 @@ function changeText(score: number, prev: number | null | undefined, prevDate: st
  * ones only when KK tagged a story): score, band, the day's change and a 30-day line on Home, and the
  * stories it relates to. Edition pages show the reading saved when the edition was published; Home the latest.
  */
-function StressCard({ si, related, prevScore }: { si?: Reading; related: number[]; prevScore?: number | null }) {
+function StressCard({ si, related, prevScore, drawdowns }: { si?: Reading; related: number[]; prevScore?: number | null; drawdowns?: DrawdownSummary | null }) {
   const live = si && "trend" in si ? si : null;
   const band = si && !live?.limited ? bandOf(si.score) : null;
   // A move into a new band since the previous reading is the news: call it out.
@@ -120,12 +121,23 @@ function StressCard({ si, related, prevScore }: { si?: Reading; related: number[
           )}
         </p>
         {live && <WatchLine />}
+        <DrawdownLine s={live ? drawdowns : null} />
       </div>
       {live && live.trend.length > 1 && <Trend points={live.trend} />}
       <Link className="ev-sx-cta" href="/ai-stress-index" prefetch={false}>
         Gauges →
       </Link>
     </section>
+  );
+}
+
+/** Every edition links the stock-by-stock drawdown page; Home (live) adds today's numbers. */
+function DrawdownLine({ s }: { s?: DrawdownSummary | null }) {
+  const pct = (v: number) => `${v < 0 ? "−" : ""}${Math.abs(Math.round(v * 100))}%`;
+  return (
+    <Link className="ev-sx-watch ev-sx-dd" href="/ai-stress-index/drawdowns" prefetch={false}>
+      {s ? <>AI stocks from their peak: <b>median {pct(s.medianDrawdown)}</b>, {s.down50} of {s.count} down 50%+ →</> : <>How far AI stocks have fallen from their peak →</>}
+    </Link>
   );
 }
 
@@ -361,6 +373,7 @@ export default function EditionView({
   related = [],
   signup,
   liveStress,
+  liveDrawdowns,
   prevStressScore,
   children,
 }: {
@@ -376,6 +389,8 @@ export default function EditionView({
   signup?: React.ReactNode;
   /** Home: today's AI Stress Index reading, shown instead of the one saved with the edition. */
   liveStress?: LiveStress | null;
+  /** Home: the drawdown monitor's headline numbers (/ai-stress-index/drawdowns). */
+  liveDrawdowns?: DrawdownSummary | null;
   /** Edition pages: the previous edition's saved index score, to flag a move into a new band. */
   prevStressScore?: number | null;
   children?: React.ReactNode;
@@ -479,7 +494,7 @@ export default function EditionView({
       {special && <SpecialReport r={special} />}
       {digest}
 
-      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} />}
+      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} drawdowns={liveDrawdowns} />}
       {e.markets && e.markets.assets.length > 0 && <MarketStrip m={e.markets} />}
 
       {e.callouts.length > 0 && (
