@@ -1,0 +1,505 @@
+{
+  "date": "2026-11-20",
+  "slice": "Record $81bn AI IPO. Sarvam sells tokens. Chips stay put. Humans want brakes. Retirees face a 22% haircut.",
+  "artifact": "https://claude.ai/artifact/9DyoZiFBEih6z6nQecKvj5",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "$81bn",
+      "text": "Anthropic's IPO is the biggest on record, priced at $83 a share.",
+      "url": "https://www.livemint.com/companies/news/anthropic-ipo-raises-81-billion-at-1-75-trillion-valuation-numbers-that-explain-the-record-listing-11795138451629.html"
+    },
+    {
+      "num": "22%",
+      "text": "Social Security cut the law requires in 2032 unless Congress acts.",
+      "url": "https://www.wsj.com/opinion/ron-johnson-social-security-unsustainable-2807cb1b"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Record IPO",
+          "tag": "",
+          "title": "Anthropic IPO raises $81bn; shares close 17% up on Nasdaq debut",
+          "url": "https://www.ft.com/content/62c0510b-ca65-441e-9baf-675b93903b9e?syn-25a6b1a6=1",
+          "url2": "https://www.livemint.com/companies/news/anthropic-ipo-raises-81-billion-at-1-75-trillion-valuation-numbers-that-explain-the-record-listing-11795138451629.html",
+          "points": [
+            "Anthropic sold its shares at $83 and raised $81bn, the largest IPO yet, Mint reports. The stock opened at $111.50 and ended its first day at $97.17, about 17% higher. Sacra estimates some 2,800 staff may now hold at least $1m each.",
+            "The FT and WSJ say the deal was enlarged and priced above its range after heavy demand, even as tech shares kept sliding. The money feeds a plan of about $900bn for computing power.",
+            "Two FT columns look ahead. Alphaville says funds treat it as a must-own, and index trackers will have to buy. Richard Waters says it must become a full enterprise platform, since 44% of sales come through rival clouds' marketplaces."
+          ],
+          "numbers": [
+            [
+              "$81bn",
+              "raised in the IPO"
+            ],
+            [
+              "$97.17",
+              "day-one close, about 17% up"
+            ]
+          ],
+          "why": "The first pure frontier-AI lab on a stock exchange gives everyone a daily price for the AI boom. Strong demand on a falling day says money still backs the leaders, but index rules now pull passive savers into the same bet.",
+          "other": "A day-one pop is not proof of value. The shares faded from the open, the company still loses money, open-weight models are cheaper, and safety campaigners protested the listing. Insiders able to sell early could add supply.",
+          "also": [
+            {
+              "title": "Anthropic's mega IPO lives up to Wall Street hype but fails to revive AI trade (WSJ)",
+              "url": "https://www.wsj.com/finance/stocks/anthropic-ipo-ai-markets-89e2476f"
+            },
+            {
+              "title": "The key to Anthropic's value (FT, Richard Waters)",
+              "url": "https://www.ft.com/content/aa8290dc-a20a-45af-97ab-1e71f97f236a?syn-25a6b1a6=1"
+            },
+            {
+              "title": "Anthropic is a 'must own'. Is that good? (FT Alphaville)",
+              "url": "https://www.ft.com/content/4224e2ed-116c-466b-97f4-54a5ef43a54e"
+            }
+          ],
+          "image": "/figs/2026-11-20-1.jpg",
+          "imageAlt": "Explainer: Anthropic's $81bn IPO, its first-day prices, and what investors will watch next",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times, Mint and The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Anthropic's record IPO pops 17%",
+          "emailTeaser": "Biggest listing ever, on a red day for tech.",
+          "cite": "Anthropic closed its first trading day on 19 November 2026 at $97.17, about 17% above its $83 IPO price.",
+          "imageW": 1280,
+          "imageH": 1905
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Indian AI",
+          "tag": "",
+          "title": "Sarvam launches Token Factory as AI agents eye the social feed",
+          "url": "https://inc42.com/features/ais-social-layer-sarvams-token-factory/",
+          "url2": "",
+          "points": [
+            "Sarvam AI has launched Token Factory, which runs AI models for developers and companies through one API, on GPUs it operates in India. It offers its own Sarvam 105B plus open models such as DeepSeek, Kimi and Gemma, with serverless or dedicated capacity.",
+            "Inc42 says the pitch is cost, speed and keeping data in India, but rivals abound: Stripe-owned OpenRouter, India's JarvisLabs and Simplismart, and now OpenAI, which lets Indian firms process some workloads locally.",
+            "The same issue argues AI assistants are taking over the job of feeds and search, as shoppers ask a bot instead of scrolling, and research links chatbot companionship to smaller offline circles."
+          ],
+          "numbers": [],
+          "why": "Local inference lets banks, insurers and government users try AI without sending data abroad, a common blocker. And if agents do the shopping, Indian startups built on feeds and ads must win over the bot as well as the buyer.",
+          "other": "Model access is becoming a commodity and developers switch easily; Sarvam must prove lower costs and steady uptime at scale, with OpenAI now hosting in India too. Chatbots may also add to social media rather than replace it.",
+          "also": [],
+          "image": "/figs/2026-11-20-2.jpg",
+          "imageAlt": "Explainer: what Sarvam's Token Factory offers and who it competes with",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Inc42",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Sarvam opens an AI token factory",
+          "emailTeaser": "Indian GPUs, many models, and the bot as shopper.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI debt",
+          "tag": "",
+          "title": "Lenders try to keep SpaceX's loan-backed AI chips on Earth",
+          "url": "https://www.ft.com/content/33b5643c-2957-4d42-9116-5e34a3c54e29?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Investors in SpaceX's latest chip-backed debt pushed for a clause stopping Elon Musk from launching the collateral, Nvidia chips, into orbit for his space data centre plans. A chip in space can't be repossessed and sold if the loan sours. It is unclear whether the clause made the final papers.",
+            "The bonds sit in a separate vehicle off SpaceX's books and are repaid from its five-year lease on the chips, which SpaceX says will run in US data centres. Rating firms gave the debt A-grade marks, citing clauses that stop SpaceX walking away from the lease."
+          ],
+          "numbers": [
+            [
+              "8.3%",
+              "yield on the new bonds"
+            ]
+          ],
+          "why": "AI chips are turning into collateral, like planes and ships, and lenders are inventing rules for an asset that can literally leave the planet. How such deals are priced shows how much risk credit markets see in the AI build-out.",
+          "other": "SpaceX says these chips stay on the ground, and strong ratings plus no-exit lease clauses already protect lenders, so the orbit worry may stay theoretical. The yield premium suggests the novelty is priced in.",
+          "also": [],
+          "image": "/figs/2026-11-20-3.jpg",
+          "imageAlt": "Explainer: why SpaceX's lenders want chips kept on Earth, and how the chip-backed bonds work",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Lenders: keep the chips on Earth",
+          "emailTeaser": "SpaceX's chip loans meet a space-age clause.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1716
+        },
+        {
+          "category": "AI safety",
+          "tag": "Opinion",
+          "title": "Even AI's backers now fear humans handing over control",
+          "url": "https://www.ft.com/content/45194ea4-4fa7-4c38-a5b2-137eb7402d57?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "FT columnist John Thornhill uses Anthropic's listing to flag a new Stanford report: its expert panel praises AI's leaps but warns of a gradual disempowerment of humanity unless the industry changes course. Investor Bill Gurley has attacked handoverism, the idea that people should cede control to AI.",
+            "The fixes on offer: treat AI rollout as a public choice, give universities, regulators and civil society a bigger say, and build AI skill inside government. Former Stanford president John Hennessy expects a federal agency to set ground rules, as for airlines and cars."
+          ],
+          "numbers": [],
+          "why": "The warnings now come from inside the money, in the very week markets crowned an AI lab. Who writes the rules, and when, will shape jobs and safety far beyond Silicon Valley.",
+          "other": "Rules for a fast-moving field can lock in yesterday's fears and slow useful tools; Fei-Fei Li's call for science over science fiction cuts both ways. With President Trump promising vetoes, federal rules may be a long way off.",
+          "also": [],
+          "image": "/figs/2026-11-20-4.jpg",
+          "imageAlt": "Explainer: the Stanford report's warning about AI handoverism and the fixes it proposes",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Who hands AI the keys?",
+          "emailTeaser": "Stanford warns of a slow loss of human control.",
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "AI risk",
+          "tag": "Opinion",
+          "title": "Peggy Noonan: last week's outages are an early AI warning",
+          "url": "https://www.wsj.com/opinion/last-weeks-outages-were-only-the-start-361c19ed",
+          "url2": "",
+          "points": [
+            "Peggy Noonan reads last week's failures at Microsoft, air-traffic control, some banks and the NSA as a taste of AI-era fragility, even though officials traced them mostly to internal patches, not a hack. She expects two or three rocky years as labs speed up rather than slow down.",
+            "She notes voters backed limits on data centres in 40 of 41 local ballot measures, while professionals whose pensions ride on AI bought into the Anthropic IPO. Her ask: pauses, compute limits or auditors, and a politician willing to own the issue."
+          ],
+          "numbers": [],
+          "why": "A mainstream conservative columnist now sides with voters trying to slow AI, which widens the politics beyond tech critics. Her point about retirement money stings: many readers own the boom she fears.",
+          "other": "Officials found no sign of a coordinated attack and traced the outages mostly to routine upgrades, so tying them to AI is a hunch. Her industry source argues AI defences will get better with every attack.",
+          "also": [],
+          "image": "/figs/2026-11-20-5.jpg",
+          "imageAlt": "Explainer: Peggy Noonan's case that last week's outages are an early AI warning",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Noonan: the outages were a warning",
+          "emailTeaser": "Voters slow AI while portfolios buy it.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Retirement",
+          "tag": "Opinion",
+          "title": "WSJ backs Ron Johnson: Social Security's math doesn't add up",
+          "url": "https://www.wsj.com/opinion/ron-johnson-social-security-unsustainable-2807cb1b",
+          "url2": "",
+          "points": [
+            "The WSJ editorial board praises Sen. Ron Johnson's Budget Committee report on Social Security. Longer lives, far fewer workers per retiree and a 1977 formula tying benefits to wages have, it argues, outrun the payroll taxes that fund the program.",
+            "On current law the trust fund runs dry in 2032, forcing a 22% benefit cut. Democrats and Ohio Republican Bernie Moreno want to scrap the cap on taxed earnings; Johnson calls that a big tax rise on an already progressive system and wants the cut repealed instead.",
+            "The board calls his Ponzi scheme jibe a political error that let opponents say he wants to end the program."
+          ],
+          "numbers": [
+            [
+              "2032",
+              "trust fund runs dry"
+            ],
+            [
+              "22%",
+              "automatic benefit cut"
+            ]
+          ],
+          "why": "For anyone near retirement, 2032 is close, and the default is an across-the-board cut unless Congress acts. How the gap is closed, through taxes, slower benefit growth or borrowing, decides who pays.",
+          "other": "This is one side's case: backers of lifting the cap see higher earners paying on all wages as fair. And repealing the cut without new money moves the gap onto federal borrowing, which the editorial leaves unanswered.",
+          "also": [],
+          "image": "/figs/2026-11-20-6.jpg",
+          "imageAlt": "Explainer: why the WSJ says Social Security's math breaks, and the two fixes on the table",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Personal finance"
+          ],
+          "emailHead": "Social Security's 2032 cliff",
+          "emailTeaser": "WSJ says fix benefits, not the tax cap.",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Wall Street said yes.",
+    "b": "The safety camp said not so fast.",
+    "line": "In the week markets crowned an AI lab, lenders and researchers drew lines around the industry: on collateral, on control, and on who writes the rules."
+  },
+  "cover": "/figs/2026-11-20-cover.jpg",
+  "coverAlt": "Record $81bn AI IPO. Sarvam sells tokens. Chips stay put. Humans want brakes. Retirees face a 22% haircut.",
+  "stressIndex": {
+    "score": 49,
+    "band": "Elevated",
+    "asOf": "2026-11-19"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25514.3008,
+        "asOf": "2026-11-19",
+        "prev": 25227.9492,
+        "week": 25299.3496,
+        "spark": [
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7175.8301,
+        "asOf": "2026-11-19",
+        "prev": 7323.6299,
+        "week": 7592.3999,
+        "spark": [
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.052,
+        "asOf": "2026-11-19",
+        "prev": 5.066,
+        "week": 5.103,
+        "spark": [
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 91.98,
+        "asOf": "2026-11-19",
+        "prev": 91.95,
+        "week": 95.82,
+        "spark": [
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3685.5,
+        "asOf": "2026-11-19",
+        "prev": 3741.8999,
+        "week": 3885.3,
+        "spark": [
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 93.4653,
+        "asOf": "2026-11-19",
+        "prev": 93.4746,
+        "week": 93.6984,
+        "spark": [
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653
+        ]
+      }
+    ]
+  }
+}

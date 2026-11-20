@@ -1,5 +1,91 @@
 [
   {
+    "date": "2026-11-20",
+    "slice": "Record $81bn AI IPO. Sarvam sells tokens. Chips stay put. Humans want brakes. Retirees face a 22% haircut.",
+    "artifact": "https://claude.ai/artifact/9DyoZiFBEih6z6nQecKvj5",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-20-1.jpg",
+    "cover": "/figs/2026-11-20-cover.jpg",
+    "coverAlt": "Record $81bn AI IPO. Sarvam sells tokens. Chips stay put. Humans want brakes. Retirees face a 22% haircut.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Anthropic IPO raises $81bn; shares close 17% up on Nasdaq debut",
+        "category": "Record IPO",
+        "tag": "",
+        "url": "https://www.ft.com/content/62c0510b-ca65-441e-9baf-675b93903b9e?syn-25a6b1a6=1",
+        "src": "Financial Times, Mint and The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Sarvam launches Token Factory as AI agents eye the social feed",
+        "category": "Indian AI",
+        "tag": "",
+        "url": "https://inc42.com/features/ais-social-layer-sarvams-token-factory/",
+        "src": "Inc42",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Lenders try to keep SpaceX's loan-backed AI chips on Earth",
+        "category": "AI debt",
+        "tag": "",
+        "url": "https://www.ft.com/content/33b5643c-2957-4d42-9116-5e34a3c54e29?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Even AI's backers now fear humans handing over control",
+        "category": "AI safety",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/45194ea4-4fa7-4c38-a5b2-137eb7402d57?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Peggy Noonan: last week's outages are an early AI warning",
+        "category": "AI risk",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/last-weeks-outages-were-only-the-start-361c19ed",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "WSJ backs Ron Johnson: Social Security's math doesn't add up",
+        "category": "Retirement",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/ron-johnson-social-security-unsustainable-2807cb1b",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-19",
     "slice": "$1.4bn game day. Jobless Indian grads: 7% hired. AI: chores, hacks, IPOs, audits. Bank Q&A? Cheat codes.",
     "artifact": "https://claude.ai/artifact/R3FBs7LU3QQ5562creRCPg",
