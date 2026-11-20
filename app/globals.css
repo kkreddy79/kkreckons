@@ -356,6 +356,8 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-sx-watch { display: inline-block; margin-top: 6px; padding-block: 3px; font-size: 13.5px; color: rgba(255, 255, 255, 0.88); text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.4); text-underline-offset: 3px; }
 .ev-sx-watch b { color: #FBBF24; }
 .ev-sx-watch:hover { color: #fff; }
+.ev-sx-dd { display: block; margin-top: 2px; }
+.ev-sx-dd b { color: #FB923C; }
 .ev-sx-cta { flex: none; display: inline-flex; align-items: center; min-height: 40px; padding: 8px 16px; border-radius: 999px; background: #fff; color: #24123f; font-size: 13.5px; font-weight: 800; white-space: nowrap; }
 .ev-sx-cta:hover { background: #f3ecff; }
 .ev-other { background: var(--other); }

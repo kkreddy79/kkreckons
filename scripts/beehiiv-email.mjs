@@ -212,6 +212,7 @@ if (si || related.length) {
       a(`${SITE}/ai-stress-index`, si ? `&#9679; AI Stress Index: ${si.score}/100, ${esc(si.band)} (${siDate}${si.backCalculated ? ", back-calculated" : ""}) &rarr;` : "&#9679; See today’s AI Stress Index &rarr;", "color:#7048E8;font-weight:700;") +
       (bandMove ? `<span style="color:#C2410C;font-weight:800;"> · New band: ${esc(bandMove)}</span>` : "") +
       (related.length ? `<span style="color:${E.muted};"> · tracks ${related.length === 1 ? "story" : "stories"} ${related.join(", ")}</span>` : "") +
+      `<br>${a(`${SITE}/ai-stress-index/drawdowns`, "&#9679; How far AI stocks have fallen from their peak &rarr;", "color:#C2410C;font-weight:700;")}` +
       `</td></tr>`,
   );
 }

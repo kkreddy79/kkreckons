@@ -6,6 +6,7 @@ import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
 import { relatedFor } from "@/lib/related";
 import { liveStress, loadStressFile } from "@/lib/stress";
+import { loadDrawdowns } from "@/lib/drawdowns";
 import type { Metadata } from "next";
 import { latest } from "@/lib/editions";
 import { INLINE_SIGNUP, SITE_URL } from "@/lib/site";
@@ -27,7 +28,8 @@ export const revalidate = 3600;
 
 export default async function Home() {
   const today = getContent(latest.date);
-  const stress = liveStress(await loadStressFile("data.json"));
+  const [data, drawdowns] = await Promise.all([loadStressFile<Parameters<typeof liveStress>[0]>("data.json"), loadDrawdowns()]);
+  const stress = liveStress(data);
 
   return (
     <main>
@@ -48,6 +50,7 @@ export default async function Home() {
           showCatchUp
           related={relatedFor(latest.date)}
           liveStress={stress}
+          liveDrawdowns={drawdowns?.summary ?? null}
           signup={
             INLINE_SIGNUP && (
               <div className="ev-inbox">
