@@ -4,6 +4,8 @@ import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "rea
 import { bandName, stressBand } from "@/lib/stressBand";
 import WatchList from "@/components/WatchList";
 import type { Watch } from "@/lib/watch";
+import DrawdownCard from "@/components/DrawdownCard";
+import type { Drawdowns } from "@/lib/drawdowns";
 import s from "./StressIndex.module.css";
 import { LIMITED, STRESS_BASES } from "@/lib/stress";
 
@@ -600,7 +602,7 @@ function EmbedBox() {
 /** A KKReckons story about AI debt or credit stress, marked on the trend chart. */
 export type Mark = { date: string; title: string; href: string };
 
-export default function StressIndex({ initial = null, initialBt = null, marks = [], watch = [] }: { initial?: Data | null; initialBt?: Backtest | null; marks?: Mark[]; watch?: Watch[] }) {
+export default function StressIndex({ initial = null, initialBt = null, marks = [], watch = [], drawdowns = null }: { initial?: Data | null; initialBt?: Backtest | null; marks?: Mark[]; watch?: Watch[]; drawdowns?: Drawdowns | null }) {
   const [d, setD] = useState<Data | null>(initial);
   const [bt, setBt] = useState<Backtest | null>(initialBt);
   const [err, setErr] = useState<string | null>(null);
@@ -617,12 +619,12 @@ export default function StressIndex({ initial = null, initialBt = null, marks = 
       <Banner />
       {err ? <div className={`container ${s.page}`}><p className={s.err}>The latest index data couldn’t be loaded ({err}). Please try again shortly.</p></div>
         : !d ? <div className={`container ${s.page}`}><p className={s.loading}>Loading today’s index…</p></div>
-        : <Report d={d} bt={bt} marks={marks} watch={watch} />}
+        : <Report d={d} bt={bt} marks={marks} watch={watch} drawdowns={drawdowns} />}
     </main>
   );
 }
 
-function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | null; marks?: Mark[]; watch?: Watch[] }) {
+function Report({ d, bt, marks = [], watch = [], drawdowns = null }: { d: Data; bt: Backtest | null; marks?: Mark[]; watch?: Watch[]; drawdowns?: Drawdowns | null }) {
   const h = hook(d);
   const sorted = [...d.factors].sort((a, b) => b.stress - a.stress);
   const signal = sorted[0] && sorted[0].stress >= 0.5 ? sorted[0] : null;
@@ -708,6 +710,9 @@ function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | nul
         </div>
       </section>
       {otherNotes.map((n) => <p key={n} className={s.note}><b>Data note:</b> {n}</p>)}
+
+      {/* The stock-by-stock companion: its own page, /ai-stress-index/drawdowns */}
+      {drawdowns && <DrawdownCard data={drawdowns} />}
 
       {watch.length > 0 && <WatchList watch={watch} />}
 

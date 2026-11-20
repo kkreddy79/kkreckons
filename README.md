@@ -24,7 +24,10 @@ Mobile-first editorial site for Krishnakanth Reddy's visual daily briefings, liv
   layout (`docs/special-reports.md`): section heads, the takeaway, fonts and the width rules the site check enforces.
 - `/about` — about the briefing
 - `/api/subscribe` — adds a reader to the beehiiv list from the on-page email form
-- `/api/revalidate` — rebuilds Home, `/ai-stress-index`, its badge and the embed card straight away when the AI Stress Index publishes a
+- `/ai-stress-index/drawdowns` — the AI drawdown monitor: 50 AI-linked stocks measured from their highest-ever close, with sort,
+  severity and segment filters. Reads `drawdowns.json`, which `drawdowns.py` in ai-implosion rebuilds every weekday (basket and
+  rules: `drawdowns/README.md` there). `/ai-stress-index` shows its summary card (`components/DrawdownCard.tsx`).
+- `/api/revalidate` — rebuilds Home, `/ai-stress-index`, `/ai-stress-index/drawdowns`, its badge and the embed card straight away when the AI Stress Index publishes a
   new reading (POSTed by the ai-implosion update workflow with `Authorization: Bearer $REVALIDATE_SECRET`)
 
 ## How editions are stored

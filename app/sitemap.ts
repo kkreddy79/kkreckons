@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/coverage`, lastModified: latest.date, changeFrequency: "daily", priority: 0.6 },
     ...entities().map((x) => ({ url: `${SITE_URL}/coverage/${x.slug}`, lastModified: [...x.stories].sort((a, b) => b.date.localeCompare(a.date))[0].date, changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: `${SITE_URL}/ai-stress-index`, changeFrequency: "daily", priority: 0.7 },
+    { url: `${SITE_URL}/ai-stress-index/drawdowns`, changeFrequency: "daily", priority: 0.6 },
     ...RESEARCH.map((r) => ({ url: `${SITE_URL}/research/${r.slug}`, lastModified: r.date, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: `${SITE_URL}/special`, lastModified: SPECIAL[0]?.date, changeFrequency: "weekly", priority: 0.7 },
     ...hosted().map((r) => ({ url: `${SITE_URL}/special/${r.slug}`, lastModified: r.date, changeFrequency: "monthly" as const, priority: 0.7 })),
