@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import StressIndex, { type Backtest, type Data } from "@/components/StressIndex";
 import { loadStressFile } from "@/lib/stress";
+import { loadDrawdowns } from "@/lib/drawdowns";
 import { getContent } from "@/lib/content";
 import { editions, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
@@ -42,7 +43,7 @@ function trim<T extends object>(o: T, keys: readonly (keyof T)[]): T {
 }
 
 export default async function AiStressIndexPage() {
-  const [d, bt] = await Promise.all([loadStressFile<Data>("data.json"), loadStressFile<Backtest>("backtest.json")]);
+  const [d, bt, dd] = await Promise.all([loadStressFile<Data>("data.json"), loadStressFile<Backtest>("backtest.json"), loadDrawdowns()]);
   const hist = d?.history.filter((h) => h.score != null) ?? [];
   // Stories KK linked to the index, marked on the trend chart on the day they ran.
   const marks = editions.flatMap((e) =>
@@ -68,7 +69,7 @@ export default async function AiStressIndexPage() {
           }}
         />
       )}
-      <StressIndex initial={d && trim(d, DATA_KEYS)} initialBt={bt && trim(bt, BACKTEST_KEYS)} marks={marks} watch={watchList()} />
+      <StressIndex initial={d && trim(d, DATA_KEYS)} initialBt={bt && trim(bt, BACKTEST_KEYS)} marks={marks} watch={watchList()} drawdowns={dd} />
     </>
   );
 }

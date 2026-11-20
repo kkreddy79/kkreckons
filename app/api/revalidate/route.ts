@@ -11,7 +11,7 @@ import { EMBED_CACHE_TAG } from "@/lib/stress";
 // The embed card isn't a cached page but a response the CDN holds, so it's cleared by its cache tag instead:
 // deleted rather than marked stale, so the next viewer gets the new reading, not the old one once more.
 
-const PATHS = ["/", "/ai-stress-index", "/ai-stress-index/badge.svg"];
+const PATHS = ["/", "/ai-stress-index", "/ai-stress-index/drawdowns", "/ai-stress-index/badge.svg"];
 
 const json = (status: number, body: object) => Response.json(body, { status, headers: { "Cache-Control": "no-store" } });
 
