@@ -543,7 +543,7 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ab-join-ic .ab-ic { width: 30px; height: 30px; }
 .ab-join .ab-btn, .ab-join .ab-btn-ghost { text-decoration: none; }
 .ab-join-kicker { margin: 0 0 6px; font: 800 12px var(--sans); letter-spacing: 0.3em; text-transform: uppercase; color: #e4d9f3; }
-.ab-join h2 { font-family: "Playfair Display", Georgia, serif; color: #fff; margin: 0 0 6px; font-size: clamp(24px, 3vw, 34px); line-height: 1.1; }
+.ab-join h2 { font-family: "Playfair Display", Georgia, serif; color: #fff; margin: 0 0 6px; font-size: clamp(24px, 3vw, 30px); line-height: 1.1; }
 .ab-join-text > p:last-child { margin: 0; font-size: 15.5px; color: #e4ddf3; }
 .ab-join-cta { display: grid; gap: 10px; justify-items: stretch; }
 .ab-join-proof { margin: 0 0 4px; font-size: 13px; font-weight: 700; color: #fff; text-align: center; }
