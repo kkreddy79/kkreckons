@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The economy hides in plain sight. Who spots it first?</title>
+<meta name="description" content="Night lights, car parks, ship pings and search bars show the economy weeks before official data. What works, what flops, and a US and India pulse check.">
+<!-- KKReckons special report by KK Reddy, served at https://www.kkreckons.com/special/economy-in-plain-sight
+     inside the site's header and footer (app/special/[slug]/page.tsx). Lora and Poppins are the site's self-hosted fonts (app/special/special.css). -->
+<style>
+/* Layout: navy dusk hero with fact tiles, six icon cards, India state cards, a burger case study, one dark pulse panel, a trust meter, the other side, takeaway, sources. */
+:root{
+  --paper:#FAF6EE; --card:#FFFFFF; --ink:#1D2B3A; --mute:#55606B; --line:#E3D8C6;
+  --brick:#B83A2E; --ochre:#C88A14; --teal:#2C6B78; --sand:#F1E7D4; --blush:#F6E6DF; --mint:#E1ECEA;
+  --hero1:#16222F; --hero2:#2B3550; --hero3:#7A4A52; --gold:#F0B840; --onhero:#F3F1EC; --onhero2:#C9CED6;
+  --panel:#1D2B3A; --onpanel:#EEF1F3;
+  --serif:'Lora',Georgia,'Times New Roman',serif; --sans:'Poppins','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#121A23; --card:#1B2633; --ink:#ECE7DC; --mute:#A6AFB9; --line:#2E3B4A;
+  --brick:#E0725F; --ochre:#E6B04A; --teal:#6FB3BF; --sand:#26303B; --blush:#2E2628; --mint:#1F3134;
+  --panel:#0C1219; --onpanel:#EEF1F3; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121A23; --card:#1B2633; --ink:#ECE7DC; --mute:#A6AFB9; --line:#2E3B4A;
+  --brick:#E0725F; --ochre:#E6B04A; --teal:#6FB3BF; --sand:#26303B; --blush:#2E2628; --mint:#1F3134;
+  --panel:#0C1219; --onpanel:#EEF1F3; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.6;margin:0}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0}
+.lab{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.num{font-family:var(--sans);font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:-.02em}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--hero1) 0%,var(--hero2) 55%,var(--hero3) 100%);color:var(--onhero);position:relative;overflow:hidden}
+.hero .wrap{padding-block:32px 108px;position:relative;z-index:1}
+.sky{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px;z-index:0}
+.hero .lab{color:var(--gold)}
+.hero h1{font-size:clamp(32px,5.2vw,58px);line-height:1.06;font-weight:700;margin:10px 0 14px;letter-spacing:-.01em;text-wrap:balance}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:500}
+.dek{font-size:clamp(16px,1.9vw,19px);max-width:70ch;color:var(--onhero2);margin:0}
+.byline{font-family:var(--sans);font-size:13px;color:var(--onhero2);margin-top:12px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-84px;position:relative;z-index:2}
+.tile{background:var(--card);border-radius:14px;padding:18px 18px 16px;box-shadow:0 10px 30px rgba(20,30,45,.16);border:1px solid var(--line);min-width:0}
+.tile .num{font-size:clamp(28px,4vw,40px);line-height:1;color:var(--brick)}
+.tile p{font-family:var(--sans);font-size:13px;line-height:1.4;margin:8px 0 0;color:var(--mute)}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+
+section{padding-block:48px 8px}
+.sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:22px}
+.sec-head .lab{color:var(--teal)}
+.sec-head h2{font-size:clamp(28px,4vw,40px);line-height:1.1}
+.sec-head p{margin:0;color:var(--mute)}
+
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--sand);border-radius:12px;padding:16px 18px;margin-top:30px;font-size:15.5px}
+.note b{font-family:var(--sans);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--brick)}
+.note svg{flex:none}
+
+/* featured six */
+.six{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:820px){.six{grid-template-columns:1fr}}
+.case{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.case header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.case h3{font-size:26px;line-height:1.1}
+.case .sector{font-family:var(--sans);font-size:12px;color:var(--mute)}
+.case .what{margin:0;font-size:16px}
+.big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.big .num{font-size:52px;line-height:.95;color:var(--brick)}
+.big span{font-family:var(--sans);font-size:14px;line-height:1.35;color:var(--ink);max-width:28ch}
+.bars{display:grid;gap:7px}
+.bar{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:center;font-family:var(--sans);font-size:12.5px}
+.bar .track{height:14px;border-radius:7px;background:transparent;position:relative}
+.bar .fill{height:14px;border-radius:7px;min-width:3px}
+.bar .fill.b{background:var(--mute);opacity:.45}
+.bar .fill.a{background:var(--teal)}
+.bar .t{color:var(--mute)}
+.scale{font-family:var(--sans);font-size:11.5px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--sans);font-size:13px;background:var(--mint);border-radius:999px;padding:5px 11px;line-height:1.3}
+.chip b{color:var(--teal);font-variant-numeric:tabular-nums}
+.watch{border-top:1px dashed var(--line);padding-top:10px;font-size:14.5px;color:var(--mute);margin:0}
+.watch b{font-family:var(--sans);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
+
+/* patterns */
+.pat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.pat{grid-template-columns:1fr}}
+.pat div{border-radius:14px;padding:18px;background:var(--blush)}
+.pat div:nth-child(even){background:var(--sand)}
+.pat h3{font-size:19px;margin-bottom:6px}
+.pat p{margin:0;font-size:15px}
+
+/* data panel */
+.panel{background:var(--panel);color:var(--onpanel);border-radius:18px;padding:28px 24px}
+.panel .lab{color:var(--gold)}
+.panel h2{font-size:clamp(26px,3.6vw,36px);margin:6px 0 18px;color:var(--onpanel)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){.pgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.pgrid{grid-template-columns:1fr}}
+.pgrid .num{font-size:40px;color:var(--gold);line-height:1}
+.pgrid p{font-family:var(--sans);font-size:13.5px;line-height:1.45;margin:6px 0 0;color:#C9CED6}
+.rev{margin-top:24px;display:grid;gap:8px}
+.rev .bar{grid-template-columns:110px 1fr;color:#C9CED6}
+.rev .fill.a{background:var(--gold)}
+.rev .fill.b{background:#8C97A3;opacity:.6}
+.rev .scale{color:#9AA4AF}
+
+/* other side */
+.os{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:760px){.os{grid-template-columns:1fr}}
+.os article{border-left:4px solid var(--brick);background:var(--card);border-radius:4px 12px 12px 4px;padding:16px 18px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.os h3{font-size:19px;margin-bottom:4px}
+.os p{margin:0;font-size:15.5px}
+.os .src{font-family:var(--sans);font-size:12px;color:var(--mute);margin-top:8px}
+
+.check{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0;margin:0;list-style:none}
+@media (max-width:700px){.check{grid-template-columns:1fr}}
+.check li{display:flex;gap:12px;background:var(--mint);border-radius:12px;padding:14px 16px;font-size:15.5px}
+.check li .num{color:var(--teal);font-size:20px;line-height:1.2}
+
+.take{margin-top:44px;background:linear-gradient(120deg,var(--hero1),var(--hero2));color:var(--onhero);border-radius:18px;padding:30px 26px}
+.take .lab{color:var(--gold)}
+.take p{font-size:clamp(21px,3vw,28px);line-height:1.35;margin:10px 0 0}
+.take em{color:var(--gold)}
+
+.sources{font-family:var(--sans);font-size:13.5px;line-height:1.6;columns:2;column-gap:32px;padding-left:18px}
+@media (max-width:700px){.sources{columns:1}}
+.sources li{break-inside:avoid;margin-bottom:6px}
+footer{padding-block:28px 40px;font-family:var(--sans);font-size:12.5px;color:var(--mute)}
+@media (prefers-reduced-motion:no-preference){.uc{transition:transform .15s ease}.uc:hover{transform:translateY(-2px)}}
+
+/* this report: icon cards, state cards, burger duo, pulse panel, trust meter */
+.ico{font-family:var(--sans);font-size:30px;line-height:1}
+.case header{align-items:center}
+.six.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:980px){.six.three{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.six.three{grid-template-columns:1fr}}
+.six.three .case h3{font-size:22px}
+.six.three .big .num{font-size:44px}
+.bar.wide{grid-template-columns:92px 1fr}
+.bar .fill.r{background:var(--brick)}
+.states{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:760px){.states{grid-template-columns:1fr}}
+.state{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;min-width:0}
+.state h3{font-size:21px}
+.state .num{font-size:52px;line-height:1;color:var(--teal);display:block;margin:10px 0 4px}
+.state p{font-family:var(--sans);font-size:13.5px;line-height:1.45;color:var(--mute);margin:0 0 12px}
+.state .track{height:12px;border-radius:6px;background:var(--sand)}
+.state .fill{height:12px;border-radius:6px;background:var(--teal)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:820px){.duo{grid-template-columns:1fr}}
+.duo .case{justify-content:space-between}
+.mini{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mini div{background:var(--sand);border-radius:12px;padding:14px}
+.mini .num{font-size:30px;line-height:1;color:var(--brick);display:block}
+.mini span{display:block;margin-top:4px;font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--mute)}
+.panel h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--onpanel);margin:22px 0 12px}
+.panel .fine{font-family:var(--sans);font-size:12.5px;line-height:1.5;color:#C9CED6;margin:20px 0 0}
+.trust{display:grid;gap:9px}
+.trow{display:grid;grid-template-columns:minmax(150px,230px) 1fr 150px;gap:12px;align-items:center;font-family:var(--sans);font-size:14px}
+.trow .track{height:16px;border-radius:8px;background:var(--sand)}
+.trow .fill{height:16px;border-radius:8px}
+.trow .fill.hi{background:var(--teal)}
+.trow .fill.mid{background:var(--ochre)}
+.trow .fill.lo{background:var(--brick)}
+.trow .v{color:var(--mute);font-size:13px}
+.trow .v b{color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:640px){.trow{grid-template-columns:1fr 96px;row-gap:4px}.trow .track{grid-column:1 / -1;order:3}.trow .v{text-align:right}}
+.free{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0;margin:0;list-style:none}
+@media (max-width:820px){.free{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.free{grid-template-columns:1fr}}
+.free li{background:var(--mint);border-radius:12px;padding:14px 16px;font-size:15px;line-height:1.45}
+.free b{display:block;font-family:var(--sans);font-size:15px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="lab"><a href="https://www.kkreckons.com/special" style="color:inherit;text-decoration:none">KKReckons special reports</a> · Saturday, 21 November 2026</div>
+    <h1>The economy hides in plain sight. <em>Who spots it first?</em></h1>
+    <p class="dek">Satellites, shopping carts, search bars and shipping containers often show where the economy is weeks before the official numbers arrive. Here is what works, what flops and what you can check yourself.</p>
+    <div class="byline">By KK Reddy · Sources: peer-reviewed studies, RBI, IMF and Federal Reserve research · Research to 21 November 2026</div>
+  </div>
+  <svg class="sky" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#0F1924" opacity=".55" d="M0 150V96h60V70h36v26h40V58h28v38h52V80h34v16h70V48h22l8-18 8 18h20v48h56V76h44v20h60V62h30v34h48V84h56V54h26v42h66V72h40v24h58V60h34v36h50V82h70v14h64V66h28v30h60V88h42v62z"/>
+    <path fill="#0B131C" d="M0 150v-30h80v-18h50v18h66v-26h30v26h90v-14h48v14h72v-32h36v32h84v-20h56v20h90v-28h40v28h70v-16h62v16h88v-24h34v24h70v-12h54v12h80v30z"/>
+    <circle cx="1040" cy="40" r="22" fill="#F0B840" opacity=".5"/>
+  </svg>
+</header>
+
+<main class="wrap">
+  <div class="tiles" role="list">
+    <div class="tile" role="listitem"><div class="num">3.4%</div><p>Myanmar's yearly growth as seen from space. The official figure was 8.6%</p></div>
+    <div class="tile" role="listitem"><div class="num">62%</div><p>smaller errors in Gujarat's growth estimate when RBI staff added night lights and searches</p></div>
+    <div class="tile" role="listitem"><div class="num">−3%</div><p>three-day share fall, against the market, for retailers whose car parks had emptied</p></div>
+    <div class="tile" role="listitem"><div class="num">100 of 108</div><p>weeks Google's famous flu tracker ran too high. Big data can flop</p></div>
+  </div>
+
+  <div class="note" role="note">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 7v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="13" cy="19" r="1.6" fill="currentColor"/></svg>
+    <div><b>A window, not a crystal ball.</b> These signals are good at showing the economy as it is today, which official data reports weeks or months late. The evidence that they predict the future is much thinner.</div>
+  </div>
+
+  <section aria-labelledby="six">
+    <div class="sec-head">
+      <div class="lab">Six strange places to look</div>
+      <h2 id="six">Lights, car parks, shadows, pings, searches and swipes</h2>
+      <p>Each one is a real study with a real result, and a catch.</p>
+    </div>
+    <div class="six three">
+
+      <article class="case">
+        <header><h3>Night lights</h3><span class="ico" aria-hidden="true">🛰️</span></header>
+        <p class="what">Brighter nights mean more activity. Economists used satellite images to check official growth figures.</p>
+        <div class="bars" aria-label="Myanmar yearly growth, to scale">
+          <div class="bar wide"><span class="t">Official 8.6%</span><div class="track"><div class="fill b" style="width:100%"></div></div></div>
+          <div class="bar wide"><span class="t">Lights 3.4%</span><div class="track"><div class="fill a" style="width:39.5%"></div></div></div>
+          <div class="scale">Myanmar, to scale. In Congo it ran the other way: lights said +2.4% a year, official data −2.6%.</div>
+        </div>
+        <p class="watch"><b>Catch</b> Farms and offices are dim, and new power lines add light without adding output.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Car parks</h3><span class="ico" aria-hidden="true">🅿️</span></header>
+        <p class="what">Satellites counted cars outside 44 US retailers from 2011 to 2017, quarter after quarter.</p>
+        <div class="big"><span class="num">+1.6%</span><span>three-day gain around earnings when lots were filling; nearly −3% when they were emptying</span></div>
+        <p class="watch"><b>Catch</b> Short sellers took most of the gain, and online orders never park.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Oil tank shadows</h3><span class="ico" aria-hidden="true">🛢️</span></header>
+        <p class="what">A floating tank roof sinks as oil drains, and its shadow grows. Satellites measure the shadow.</p>
+        <div class="big"><span class="num">Fewer jolts</span><span>in oil prices when the US published its weekly stock figures, once satellite estimates existed</span></div>
+        <p class="watch"><b>Catch</b> In cloudy weeks the satellites saw nothing, and the surprises came back.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Ship pings</h3><span class="ico" aria-hidden="true">🚢</span></header>
+        <p class="what">Every large ship broadcasts its position. The IMF turned those radio signals into a live map of trade.</p>
+        <div class="big"><span class="num">80%+</span><span>of goods trade by volume moves by sea, and the pings sometimes arrive before customs data</span></div>
+        <p class="watch"><b>Catch</b> The cargo's weight is a guess from how low the ship sits. A container's contents stay hidden.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Search bars</h3><span class="ico" aria-hidden="true">🔎</span></header>
+        <p class="what">People search for "jobs" and "unemployment benefits" before they show up in the claims figures.</p>
+        <div class="big"><span class="num">15.7%</span><span>smaller error in estimating US jobless claims when Google searches were added</span></div>
+        <p class="watch"><b>Catch</b> A 2018 re-run found the gain depends on the country and the years tested.</p>
+      </article>
+
+      <article class="case">
+        <header><h3>Card swipes</h3><span class="ico" aria-hidden="true">💳</span></header>
+        <p class="what">Card data showed who stopped spending in 2020 within weeks, long before official figures could.</p>
+        <div class="big"><span class="num">Over half</span><span>of the fall in US card spending by June 2020 came from high-income households</span></div>
+        <p class="watch"><b>Catch</b> Cash and anything outside the card networks is invisible.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section aria-labelledby="india">
+    <div class="sec-head">
+      <div class="lab">India from orbit</div>
+      <h2 id="india">Three states, measured by lamplight</h2>
+      <p>India publishes state output once a year, about 12 to 18 months late. In October 2026, RBI staff tried night lights plus Google searches instead.</p>
+    </div>
+    <div class="states">
+      <div class="state"><h3>Gujarat</h3><span class="num">62%</span><p>smaller error than using past growth alone</p><div class="track" role="img" aria-label="62 percent"><div class="fill" style="width:62%"></div></div></div>
+      <div class="state"><h3>Karnataka</h3><span class="num">54%</span><p>smaller error than using past growth alone</p><div class="track" role="img" aria-label="54 percent"><div class="fill" style="width:54%"></div></div></div>
+      <div class="state"><h3>Maharashtra</h3><span class="num">38%</span><p>smaller error. Lights and growth here move almost together (correlation 0.90)</p><div class="track" role="img" aria-label="38 percent"><div class="fill" style="width:38%"></div></div></div>
+    </div>
+    <div class="note" role="note">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 7v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="13" cy="19" r="1.6" fill="currentColor"/></svg>
+      <div><b>Read it carefully.</b> This is research by RBI staff, not RBI policy. It estimates the current quarter, not the future, covers three states only, and is tested against a quarterly series the authors had to build from annual data.</div>
+    </div>
+  </section>
+
+  <section aria-labelledby="burger">
+    <div class="sec-head">
+      <div class="lab">A burger queue as data</div>
+      <h2 id="burger">America's busiest <span style="white-space:nowrap">In-N-Out</span> is in Arizona</h2>
+      <p>Phones that visit a place leave an anonymous trace. Add them up and you get footfall for every store of a chain that publishes no sales at all.</p>
+    </div>
+    <div class="duo">
+      <article class="case">
+        <header><h3>One year of visits</h3><span class="ico" aria-hidden="true">🍔</span></header>
+        <div class="mini">
+          <div><span class="num">395M</span><span>visits across 440 restaurants, November 2025 to October 2026</span></div>
+          <div><span class="num">+40%</span><span>more traffic on a typical Saturday than a typical Monday</span></div>
+        </div>
+        <div class="bars" aria-label="Yearly visits, to scale">
+          <div class="bar wide"><span class="t">Tempe, AZ</span><div class="track"><div class="fill r" style="width:100%"></div></div></div>
+          <div class="bar wide"><span class="t">Typical store</span><div class="track"><div class="fill b" style="width:48.1%"></div></div></div>
+          <div class="scale">To scale: 1,852,674 visits against 891,138, or 2.1 times a typical store.</div>
+        </div>
+      </article>
+      <article class="case">
+        <header><h3>What it can't tell you</h3><span class="ico" aria-hidden="true">🤔</span></header>
+        <p class="what"><b>A visit is not a sale.</b> One car at the drive-thru may be one burger or six.</p>
+        <p class="what"><b>The winner depends on the rules.</b> This ranking left out a Glendale store beside a mall. A different data provider's page puts that store first.</p>
+        <p class="what"><b>Nobody can check it.</b> In-N-Out is private, so there are no reported sales to compare against.</p>
+        <p class="watch"><b>Source</b> The Greenest, 17 November 2026. It does not name its data provider.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="pulse">
+    <div class="panel">
+      <div class="lab">Pulse check · November 2026</div>
+      <h2 id="pulse">Two economies, read without waiting for GDP</h2>
+      <h3>United States</h3>
+      <div class="pgrid">
+        <div><div class="num">203,000</div><p>new jobless claims in the week to 14 November. Low: few people are being laid off</p></div>
+        <div><div class="num">106.2</div><p>Indeed job postings on 13 November (February 2020 = 100). Hiring demand is a little above its pre-pandemic level</p></div>
+        <div><div class="num">3.2%</div><p>growth this quarter, as estimated by the Atlanta Fed's GDPNow on 18 November</p></div>
+      </div>
+      <h3>India</h3>
+      <div class="pgrid">
+        <div><div class="num">25.47 bn</div><p>UPI payments in October 2026, up 23% in a year, worth ₹31.53 lakh crore</p></div>
+        <div><div class="num">156.2 mn</div><p>e-way bills in October, a record. Each one is a truckload of goods on the move</p></div>
+        <div><div class="num">₹2.31 lakh cr</div><p>gross GST collected in October, up 22.9% in a year</p></div>
+      </div>
+      <p class="fine">US figures: Department of Labor and Indeed via FRED, and the Atlanta Fed. India figures: press reports of NPCI and GSTN data. India's October records partly reflect festival timing and lower GST rates, so they overstate the underlying pace.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="trust">
+    <div class="sec-head">
+      <div class="lab">Signal or noise?</div>
+      <h2 id="trust">Which signals have earned trust</h2>
+      <p>Our own score out of 10: up to two points each for peer-reviewed proof, testing on unseen data, ten years of history, free access and a stable data source.</p>
+    </div>
+    <div class="trust">
+      <div class="trow"><span>Night lights</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v"><b>9</b> · proven</span></div>
+      <div class="trow"><span>Power, rail and fuel use</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v"><b>9</b> · proven</span></div>
+      <div class="trow"><span>Job postings</span><div class="track"><div class="fill hi" style="width:70%"></div></div><span class="v"><b>7</b> · proven</span></div>
+      <div class="trow"><span>Ship tracking</span><div class="track"><div class="fill mid" style="width:60%"></div></div><span class="v"><b>6</b> · promising</span></div>
+      <div class="trow"><span>Card spending</span><div class="track"><div class="fill mid" style="width:60%"></div></div><span class="v"><b>6</b> · promising</span></div>
+      <div class="trow"><span>Car parks from space</span><div class="track"><div class="fill mid" style="width:60%"></div></div><span class="v"><b>6</b> · promising</span></div>
+      <div class="trow"><span>Google searches</span><div class="track"><div class="fill mid" style="width:60%"></div></div><span class="v"><b>6</b> · mixed</span></div>
+      <div class="trow"><span>Oil tank images</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v"><b>5</b> · promising</span></div>
+      <div class="trow"><span>Cardboard boxes</span><div class="track"><div class="fill lo" style="width:40%"></div></div><span class="v"><b>4</b> · weak</span></div>
+      <div class="trow"><span>Phone footfall</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v"><b>3</b> · early</span></div>
+      <div class="trow"><span>Sewage chemistry</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v"><b>3</b> · early</span></div>
+      <div class="trow"><span>Social media mood</span><div class="track"><div class="fill lo" style="width:20%"></div></div><span class="v"><b>2</b> · weak</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="other">
+    <div class="sec-head">
+      <div class="lab">The other side</div>
+      <h2 id="other">Where the clever data went wrong</h2>
+    </div>
+    <div class="os">
+      <article><h3>The flu tracker that cried wolf</h3><p>Google Flu Trends overestimated US flu in 100 of 108 weeks from August 2011. It had matched 50 million search terms to a small set of data points and partly learned to spot winter.</p><div class="src">Lazer and others, Science, 2014</div></article>
+      <article><h3>An edge everyone has is no edge</h3><p>Once satellite car counts went on sale, lenders who had relied on private knowledge of borrowers pulled back from loans. The more funds buy a dataset, the less it is worth.</p><div class="src">Kang, Journal of Accounting and Economics, 2024</div></article>
+      <article><h3>Prices are the blind spot</h3><p>When the 2025 US shutdown stopped official releases, private data covered jobs far better than inflation. Alternative data sees activity well and prices poorly.</p><div class="src">Chicago Fed; American Action Forum</div></article>
+      <article><h3>The cardboard box legend</h3><p>Box shipments are a favourite recession signal, and US third-quarter shipments in 2025 were the lowest since 2015. But no peer-reviewed study shows boxes forecasting anything.</p><div class="src">Fibre Box Association data via industry reports; Virginia Tech</div></article>
+      <article><h3>Estimates dressed as counts</h3><p>Footfall figures are scaled up from a panel of phones. A Placer.ai executive has said plainly that they are estimates, not sales data.</p><div class="src">Store Brands interview</div></article>
+      <article><h3>Some signals are only stories</h3><p>Counting workers' cars at factories sounds clever. We found no published study that tests it, so it stays out of our scoreboard.</p><div class="src">KKReckons research, November 2026</div></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="diy">
+    <div class="sec-head">
+      <div class="lab">Try it yourself</div>
+      <h2 id="diy">Six free windows on the economy</h2>
+      <p>No terminal, no subscription.</p>
+    </div>
+    <ul class="free">
+      <li><b>FRED</b>Weekly jobless claims and the Weekly Economic Index for the US.</li>
+      <li><b>Indeed Hiring Lab</b>A daily job postings index, free to download.</li>
+      <li><b>Google Trends</b>Search interest for any phrase, by country or state.</li>
+      <li><b>NPCI</b>Monthly UPI volumes and values for India.</li>
+      <li><b>IMF PortWatch</b>Ship traffic through ports, Suez and Panama.</li>
+      <li><b>NASA Black Marble</b>The night-lights data RBI staff used.</li>
+    </ul>
+  </section>
+
+  <div class="take">
+    <div class="lab">The takeaway</div>
+    <p>Visits are not sales, lights are not income and searches are not jobs. <em>This data shows you now, not next.</em></p>
+  </div>
+
+  <section aria-labelledby="src">
+    <div class="sec-head"><div class="lab">Sources</div><h2 id="src">Read the originals</h2></div>
+    <ul class="sources">
+      <li><a href="https://cepr.org/voxeu/columns/measuring-economic-growth-outer-space">Measuring economic growth from outer space</a> (Henderson, Storeygard and Weil; American Economic Review, 2012)</li>
+      <li><a href="https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63859">RBI Bulletin, October 2026: nowcasting state-level activity with night lights and Google Trends</a> (Ghosh, Singh and Kuruganti; RBI, 23 Oct 2026)</li>
+      <li><a href="https://www.business-standard.com/economy/news/economy-news-satellite-lights-google-searches-estimate-state-quarterly-growth-rbi-bulletin-126102500368_1.html">Satellite lights and Google searches estimate state quarterly growth</a> (Business Standard, Oct 2026)</li>
+      <li><a href="https://ideas.repec.org/a/cup/jfinqa/v60y2025i2p551-579_1.html">On the capital market consequences of big data: evidence from outer space</a> (Katona and others; JFQA, 2025)</li>
+      <li><a href="https://iems.ust.hk/publications/thought-leadership-briefs/mukherjee-eye-in-the-sky-private-satellite-government-data">Eye in the sky: private satellites and government data</a> (Mukherjee and others; Journal of Financial Economics, 2021)</li>
+      <li><a href="https://www.imf.org/en/Publications/WP/Issues/2020/05/14/World-Seaborne-Trade-in-Real-Time-A-Proof-of-Concept-for-Building-AIS-based-Nowcasts-from-49393">World seaborne trade in real time</a> (IMF Working Paper 20/57, May 2020)</li>
+      <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4932.2012.00809.x">Predicting the present with Google Trends</a> (Choi and Varian; Economic Record, 2012)</li>
+      <li><a href="https://www.econstor.eu/bitstream/10419/179669/1/1024415724.pdf">Replicating "Predicting the present with Google Trends"</a> (Coupé, 2018)</li>
+      <li><a href="https://www.nber.org/system/files/working_papers/w27431/revisions/w27431.rev0.pdf">The economic impacts of COVID-19: evidence from a new public database</a> (Opportunity Insights; NBER, June 2020)</li>
+      <li><a href="https://thegreenest.com/busiest-in-n-out-in-america/">The 25 busiest In-N-Outs in America, ranked by visits</a> (The Greenest, 17 Nov 2026)</li>
+      <li><a href="https://www.placer.ai/free-tools/chains/in-n-out-burger">In-N-Out Burger chain page</a> (Placer.ai)</li>
+      <li><a href="https://www.researchgate.net/publication/260809605_The_Parable_of_Google_Flu_Traps_in_Big_Data_Analysis">The parable of Google Flu: traps in big data analysis</a> (Lazer and others; Science, 2014)</li>
+      <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165410123000873">Gone with the big data</a> (Kang; Journal of Accounting and Economics, 2024)</li>
+      <li><a href="https://www.chicagofed.org/publications/chicago-fed-letter/2025/506">Chicago Fed Letter 506: real-time labour market indicators</a> (Chicago Fed, 2025)</li>
+      <li><a href="https://www.americanactionforum.org/daily-dish/what-we-were-watching-during-the-shutdown/">What we were watching during the shutdown</a> (American Action Forum, 2025)</li>
+      <li><a href="https://news.vt.edu/articles/2025/09/Cardboard-boxes-economy-recession-expert.html">Cardboard boxes, the economy and recession</a> (Virginia Tech, Sept 2025)</li>
+      <li><a href="https://storebrands.com/qa-placerais-ethan-chernofsky-talks-grocery-growth-consumer-behavior">Q&amp;A with Placer.ai's Ethan Chernofsky</a> (Store Brands)</li>
+      <li><a href="https://fred.stlouisfed.org/series/ICSA">Initial jobless claims</a> and <a href="https://fred.stlouisfed.org/series/IHLIDXUS">Indeed job postings index</a> (FRED, read 21 Nov 2026)</li>
+      <li><a href="https://www.atlantafed.org/cqer/research/gdpnow">GDPNow</a> (Atlanta Fed, 18 Nov 2026)</li>
+      <li><a href="https://india.entrepreneur.com/business-news/upi-hits-record-25-47-bn-transactions-in-october-daily-value-crosses-inr-1-l-cr">UPI hits record 25.47 bn transactions in October</a> (Entrepreneur India, Nov 2026)</li>
+      <li><a href="https://blog.saginfotech.com/gst-e-way-bill-generation-surges-23-14-yoy-record-156-21-million-october-2026">E-way bill generation at a record 156.21 million in October 2026</a> (SAG Infotech, Nov 2026)</li>
+      <li><a href="https://blog.tatanexarc.com/msme/october-gst-collection-india/">October GST collection</a> (Tata nexarc, Nov 2026)</li>
+    </ul>
+  </section>
+</main>
+<footer class="wrap">KKReckons · Original graphics and text by KK Reddy. All figures as reported in the sources above; scores are KKReckons' own judgement. For information only, not investment advice.</footer>
+
+</body>
+</html>
