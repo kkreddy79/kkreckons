@@ -534,9 +534,9 @@ function Banner() {
       </div>
       <div className={s.bannerInner}>
         <div className={s.bannerText}>
-          <h1>AI Market<br />Stress Index</h1>
+          <h1>AI Market <br />Stress Index</h1>
           <div className={s.stripe} aria-hidden="true"><i /><i /><i /><i /></div>
-          <p className={s.question}>Is the AI boom under pressure?<br />Could the bubble pop?</p>
+          <p className={s.question}>Is the AI boom under pressure? <br />Could the bubble pop?</p>
           <p className={s.daily}>We check the gauges daily.</p>
           <p className={s.meta}>A daily market-stress monitor for AI-related stocks, AI financing proxies and wider credit conditions. Updated every weekday after the US close.</p>
           <div className={s.ctas}>

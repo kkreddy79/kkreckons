@@ -26,11 +26,23 @@
 .ctaAlt:hover { background: rgba(255, 255, 255, 0.1); }
 .page .hero { position: relative; margin-top: 28px; }
 .hero, .h2 { scroll-margin-top: 84px; }
+/* Phones and narrow tablets: a compact banner, so today's score is on the first screen. The illustration sits
+   behind the text instead of above it, the title and question run on one line each where they fit, and the two
+   descriptive lines (which the page repeats under "How it works") are left out. */
 @media (max-width: 860px) {
-  .bannerArt { position: relative; inset: auto; width: 100%; aspect-ratio: 4 / 3; max-height: 380px; }
-  .bannerArt::after { background: linear-gradient(0deg, #1C0F33 0%, rgba(28, 15, 51, 0) 40%); }
-  .bannerInner { padding: 0 20px 84px; margin-top: -40px; position: relative; }
-  .page .hero { margin-top: -56px; }
+  .bannerArt { width: 100%; }
+  .bannerArt img { object-position: 50% 32%; }
+  .bannerArt::after { background: linear-gradient(90deg, rgba(28, 15, 51, 0.95) 0%, rgba(28, 15, 51, 0.82) 48%, rgba(28, 15, 51, 0.3) 100%); }
+  .bannerInner { padding: 16px 16px 16px; }
+  .banner h1 { font-size: clamp(26px, 7.4vw, 34px); letter-spacing: -0.5px; margin-bottom: 10px; }
+  .banner h1 br, .question br { display: none; }
+  .stripe { max-width: 200px; gap: 4px; }
+  .stripe i { height: 4px; }
+  .question { font-size: 16.5px; line-height: 1.3; margin: 10px 0 0; max-width: 300px; }
+  .daily, .meta { display: none; }
+  .ctas { margin-top: 12px; }
+  .ctaAlt { padding: 8px 14px; font-size: 13.5px; min-height: 40px; }
+  .page .hero { margin-top: 16px; }
 }
 
 .page { padding-top: 0; max-width: 1080px; }
