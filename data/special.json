@@ -1,5 +1,28 @@
 [
   {
+    "slug": "economy-in-plain-sight",
+    "title": "The economy hides in plain sight. Who spots it first?",
+    "kicker": "Alternative data",
+    "dek": "Night lights, car parks, ship pings and search bars show the economy weeks before official data. What works, what flops, and a US and India pulse check.",
+    "blurb": "Economists count cars from space, measure oil by its shadow and read a state's growth from its night lights. Six strange signals with what each sees and misses, RBI staff's lamplight test in three Indian states, America's busiest burger queue, a US and India pulse check, and a chart of which signals have earned trust.",
+    "date": "2026-11-21",
+    "themes": ["Economy", "Markets", "India"],
+    "reading_minutes": 9,
+    "file": "special/economy-in-plain-sight.html",
+    "cover": "/special/economy-in-plain-sight.jpg",
+    "cover_alt": "The economy hides in plain sight. Who spots it first? A navy-to-dusk sky over a city skyline, with the KKReckons special report kicker.",
+    "sources": [
+      "https://cepr.org/voxeu/columns/measuring-economic-growth-outer-space",
+      "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63859",
+      "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2F5F99D68D1F8940F61578F198D6C005/S0022109023001448a.pdf/on-the-capital-market-consequences-of-big-data-evidence-from-outer-space.pdf",
+      "https://www.imf.org/en/Publications/WP/Issues/2020/05/14/World-Seaborne-Trade-in-Real-Time-A-Proof-of-Concept-for-Building-AIS-based-Nowcasts-from-49393",
+      "https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4932.2012.00809.x",
+      "https://www.nber.org/system/files/working_papers/w27431/revisions/w27431.rev0.pdf",
+      "https://thegreenest.com/busiest-in-n-out-in-america/",
+      "https://dash.harvard.edu/server/api/core/bitstreams/7312037d-0e0d-6bd4-e053-0100007fdf3b/content"
+    ]
+  },
+  {
     "slug": "week-the-systems-failed",
     "title": "Breaking, not ending: the week the systems failed",
     "kicker": "Cyber & resilience",
