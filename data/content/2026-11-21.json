@@ -1,0 +1,540 @@
+{
+  "date": "2026-11-21",
+  "slice": "Odd Anthropic dips. Nvidia backs $530bn. India evens. Fridges fry. UK texts its ex. Google bets both qubits.",
+  "artifact": "https://claude.ai/artifact/B18dLeaGs93ioLpc6JhUEm",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "7,100",
+      "text": "Cyber extortion cases in 2025, up from about 1,500 in 2020, per Orange Cyberdefense.",
+      "url": "https://www.ft.com/content/3cf882c6-0be6-43f5-b01e-b6f765686c8b?syn-25a6b1a6=1"
+    },
+    {
+      "num": "23.0",
+      "text": "India's consumption Gini in 2023, the lowest among countries with 2023 World Bank data.",
+      "url": "https://m.economictimes.com/opinion/et-commentary/india-less-unequal-than-anyone-else/articleshow/136036546.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "IPO aftermath",
+          "tag": "",
+          "title": "Anthropic shares fall 8.5% on second day after record IPO",
+          "url": "https://www.wsj.com/finance/stocks/the-blame-game-has-begun-over-anthropics-turbulent-trading-debut-280a34b1",
+          "url2": "",
+          "points": [
+            "Anthropic's stock closed down 8.5% on Friday, its second day of trading, after briefly sinking to within a few cents of its IPO price. It still finished above the offer price, while the wider AI trade fell with it.",
+            "Investors are trading blame. Some point to allocations, with more than half the shares going to existing backers and many hedge and mutual funds getting none; others question the opening price and a rule letting some staff sell at once.",
+            "Bankers call the deal a success as long as the stock holds above the offer price. The green-shoe option used to steady the price has already been exercised."
+          ],
+          "numbers": [
+            [
+              "8.5%",
+              "Friday close, day two"
+            ]
+          ],
+          "why": "The biggest AI listing has become the market's mood ring. If it slips below its offer price, OpenAI's planned debut and other AI fundraising get harder.",
+          "other": "What to watch: 15 December, when another large block of Anthropic shares becomes free to trade. Until then, a stock still above its IPO price in one of the worst selloffs on record could be read as resilience, not failure.",
+          "also": [],
+          "image": "/figs/2026-11-21-1.jpg",
+          "imageAlt": "Explainer: Anthropic shares fell 8.5% on day two; why they slid and what bankers say",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Anthropic's day-two hangover",
+          "emailTeaser": "A record IPO, then an 8.5% slide and a blame game.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Profile",
+          "tag": "",
+          "title": "Dario and Daniela Amodei, the siblings keeping Anthropic weird",
+          "url": "https://www.wsj.com/tech/ai/anthropic-dario-daniela-amodei-siblings-ipo-be84ad11",
+          "url2": "",
+          "points": [
+            "A WSJ profile follows the Amodei siblings from San Francisco's Mission district to the biggest IPO on record. Dario, the CEO, sets the vision; Daniela, president and board chair, runs the company day to day.",
+            "The culture is odd on purpose: hires are screened for mission over money, an essay by Dario is handed to staff as a bound book, and the company studies whether Claude could be conscious.",
+            "Each sibling pledged 80% of their founding equity to charity. Anthropic says 'regrettable attrition' was just 1% in the year to September, and credits its culture."
+          ],
+          "numbers": [
+            [
+              "1%",
+              "Regrettable staff attrition"
+            ]
+          ],
+          "why": "In an industry where rivals lure researchers with huge pay packages, a culture that keeps people may be Anthropic's hardest asset to copy.",
+          "other": "Founder quirks can turn into blind spots once public shareholders arrive, and warning about AI's dangers while racing to build stronger models is a tension the company has never fully resolved.",
+          "also": [],
+          "image": "/figs/2026-11-21-2.jpg",
+          "imageAlt": "Explainer: who does what at Anthropic and the company's unusual culture",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "The Amodeis, up close",
+          "emailTeaser": "Pandas, stuffed animals and the biggest IPO ever.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI finance",
+          "tag": "Opinion",
+          "title": "Is Nvidia AI's central bank? Tett sees echoes of AIG",
+          "url": "https://www.ft.com/content/c1f1c0d2-466e-46b9-b346-5ce4677c55ea?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Gillian Tett argues Nvidia now holds up the AI ecosystem much as AIG held up the credit market before 2008, with equity stakes in customers plus more than $530bn in off-balance-sheet guarantees and lease backstops.",
+            "Unlike AIG, Nvidia has a strong core business and little debt, and its circular financing is widely known. But its role rests on an investor halo, much as AIG leaned on its top credit rating.",
+            "With founder Jensen Huang gone, she asks whether his successors grasp the risks he took, and what happens to AI companies if Nvidia's support fades."
+          ],
+          "numbers": [
+            [
+              "$530bn",
+              "Guarantees and lease backstops"
+            ]
+          ],
+          "why": "When one supplier also finances its customers, a stumble at the centre spreads fast. The ECB and BIS are already warning about half-hidden leverage in AI.",
+          "other": "Nvidia's profits are real and its own debt is low, so the AIG comparison may overstate the danger. Interim CEO Colette Kress says its support will stay disciplined and selective.",
+          "also": [],
+          "image": "/figs/2026-11-21-3.jpg",
+          "imageAlt": "Explainer: Nvidia's $530bn in guarantees for customers, echoes of AIG and key differences",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Nvidia, lender of last resort?",
+          "emailTeaser": "Why Gillian Tett hears echoes of AIG in the chip giant.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Inequality",
+          "tag": "Opinion",
+          "title": "India tops World Bank equality table as Gini falls to 23",
+          "url": "https://m.economictimes.com/opinion/et-commentary/india-less-unequal-than-anyone-else/articleshow/136036546.cms",
+          "url2": "",
+          "points": [
+            "An ET column notes that India's consumption-based Gini coefficient fell from 28.8 in 2011 to 23.0 in 2023, the lowest among countries with 2023 data on the World Bank's Poverty and Inequality Platform.",
+            "Converted to an income equivalent with a World Bank ratio, India comes out near 26, below the US at 41.8 and France at 31.8. The World Inequality Database, by contrast, puts India's income Gini at 62.",
+            "The writer argues spending is the fairer gauge in India because welfare schemes top up poorer households' consumption. Extreme poverty fell from 27.1% in 2011-12 to 2.6% in 2023-24."
+          ],
+          "numbers": [
+            [
+              "23.0",
+              "Consumption Gini, 2023"
+            ],
+            [
+              "2.6%",
+              "Extreme poverty, 2023-24"
+            ]
+          ],
+          "why": "How equal India looks shapes how investors and policymakers read its growth. A low spending gap suggests welfare is reaching households, even where incomes stay far apart.",
+          "other": "Do spending surveys capture the richest households? The income Gini of 62 tells a very different story, and consumption propped up by transfers may be harder to sustain than consumption backed by earnings.",
+          "also": [],
+          "image": "/figs/2026-11-21-4.jpg",
+          "imageAlt": "Explainer: India's consumption Gini of 23.0 compared with income-equivalent figures for the US and France",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "India, the equality champion?",
+          "emailTeaser": "World Bank data puts India's consumption Gini at 23.",
+          "cite": "India's consumption-based Gini coefficient fell from 28.8 in 2011 to 23.0 in 2023, according to the World Bank's Poverty and Inequality Platform.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Cyber security",
+          "tag": "",
+          "title": "AI is sharpening cyber attacks, but outages have a duller cause",
+          "url": "https://www.ft.com/content/3cf882c6-0be6-43f5-b01e-b6f765686c8b?syn-25a6b1a6=1",
+          "url2": "https://www.theguardian.com/commentisfree/2026/nov/20/cyber-attacks-outages-blame-economy",
+          "points": [
+            "An FT Big Read argues the urgent AI danger is states and criminal gangs using AI to scale up attacks. Extortion cases tracked by Orange Cyberdefense rose from about 1,500 in 2020 to 7,100 in 2025.",
+            "The FT says experts fear most for poorly defended industrial systems; an Iranian cyber unit was blamed for heating French supermarket freezers, and US officials tied recent outages to rushed software updates.",
+            "In a Guardian column, Bruce Schneier says last week's outages were unrelated coincidences, not attacks or AI, and blames an economy that treats resilience as a cost."
+          ],
+          "numbers": [
+            [
+              "7,100",
+              "Cyber extortion cases, 2025"
+            ]
+          ],
+          "why": "Both pieces land on the same weak spot: old, thinly maintained infrastructure. AI gives attackers more leverage against it, and short-term profit keeps it brittle.",
+          "other": "The two disagree on what to fear. Schneier sees a fragility problem that only regulation and antitrust can fix; the FT's experts see a security race, where AI that spots threats and patches code faster could tilt things back to defenders.",
+          "also": [],
+          "image": "/figs/2026-11-21-5.jpg",
+          "imageAlt": "Explainer: cyber extortion cases rose to 7,100 in 2025; how AI helps attackers, what is exposed, and Schneier's view on outages",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times and The Guardian",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Hackers, outages and the bill",
+          "emailTeaser": "AI arms attackers; Schneier blames the economy for outages.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "UK and Europe",
+          "tag": "",
+          "title": "Britain and the EU start a Brexit rollback in Brussels",
+          "url": "https://www.nytimes.com/2026/11/20/world/europe/britain-and-brussels-have-begun-a-brexit-rollback-how-far-will-it-go.html",
+          "url2": "",
+          "points": [
+            "At a Brussels summit, UK prime minister Andy Burnham agreed to cut many barriers on food and farm trade, link emissions rules, and let 100,000 young people from each side live, work and study across the Channel for up to three years.",
+            "He also opened a yearlong 'brainstorm' with EU leaders on a deeper relationship, promising options for voters but no final decision before the next general election.",
+            "The NYT says Trump's trade war, his warmth toward Putin and China's rise are pushing London and Brussels together. Conservatives and Reform accuse Burnham of reopening the 2016 vote."
+          ],
+          "numbers": [
+            [
+              "100,000",
+              "Young people each way"
+            ]
+          ],
+          "why": "For students, farmers and retailers the gains are practical and near. For investors, it shows Britain leaning on Europe as Washington looks a less dependable partner.",
+          "other": "Rejoining is a long way off: leaving took years, trust between the two sides was lost, and EU appetite for much closer ties after next year's elections is unclear. Even Brexit's champions admit it went badly, but they blame the government, not the idea.",
+          "also": [],
+          "image": "/figs/2026-11-21-6.jpg",
+          "imageAlt": "Explainer: 100,000 young people each way under the UK-EU deal, what was agreed and what is pushing the two together",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The New York Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics"
+          ],
+          "emailHead": "Brexit, slowly rewound",
+          "emailTeaser": "Food trade, youth visas and a yearlong talk on closer EU ties.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Quantum computing",
+          "tag": "",
+          "title": "Neutral atoms speed the race to a working quantum computer",
+          "url": "https://www.nytimes.com/2026/11/20/science/quantum-computer-neutral-atoms.html",
+          "url2": "",
+          "points": [
+            "Many experts now think a usable quantum computer could arrive by the end of the decade or soon after, the NYT reports. China has pledged more than $15.2bn to quantum research and the US has put $2bn into start-ups and chipmakers.",
+            "The twist is Google: after a decade on superconducting chips chilled near absolute zero, it opened a rival lab in Boulder this year to work on neutral atoms, single atoms trapped and moved with lasers.",
+            "Backers say movable atoms make error correction, the field's biggest hurdle, easier. Harvard's Mikhail Lukin says Chinese companies are piling into the same approach."
+          ],
+          "numbers": [
+            [
+              "$15.2bn",
+              "China's quantum pledge"
+            ]
+          ],
+          "why": "A working machine could speed up drug, materials and AI research, and would eventually threaten today's encryption, which is why Google has pledged to overhaul its own before 2030.",
+          "other": "Quantum timelines have slipped for decades, and no approach has yet corrected errors at a useful scale. Google's own lab head still expects superconducting qubits to win in the long run.",
+          "also": [],
+          "image": "/figs/2026-11-21-7.jpg",
+          "imageAlt": "Explainer: China's $15.2bn quantum pledge and Google's two paths to a quantum computer",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The New York Times",
+          "pay": true,
+          "themes": [
+            "Health & science",
+            "AI"
+          ],
+          "emailHead": "Quantum's new sprint",
+          "emailTeaser": "Why Google now funds a rival to its own lab.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Hype sets the price.",
+    "b": "Plumbing sets the risk.",
+    "line": "Anthropic's slide, Nvidia's backstops and AI-assisted hacking point the same way: the AI boom's risks sit in systems few watch, while Britain mends fences and India's numbers look steadier."
+  },
+  "cover": "/figs/2026-11-21-cover.jpg",
+  "coverAlt": "Odd Anthropic dips. Nvidia backs $530bn. India evens. Fridges fry. UK texts its ex. Google bets both qubits.",
+  "stressIndex": {
+    "score": 61,
+    "band": "Severe",
+    "asOf": "2026-11-20"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25800.5996,
+        "asOf": "2026-11-20",
+        "prev": 25514.3008,
+        "week": 25144.3008,
+        "spark": [
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 6910.3901,
+        "asOf": "2026-11-20",
+        "prev": 7175.8301,
+        "week": 7561.6699,
+        "spark": [
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.912,
+        "asOf": "2026-11-20",
+        "prev": 5.052,
+        "week": 5.154,
+        "spark": [
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 91.98,
+        "asOf": "2026-11-19",
+        "prev": 91.95,
+        "week": 95.82,
+        "spark": [
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3685.5,
+        "asOf": "2026-11-19",
+        "prev": 3741.8999,
+        "week": 3885.3,
+        "spark": [
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 93.295,
+        "asOf": "2026-11-20",
+        "prev": 93.4653,
+        "week": 94.0338,
+        "spark": [
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-11-21",
+    "slice": "Odd Anthropic dips. Nvidia backs $530bn. India evens. Fridges fry. UK texts its ex. Google bets both qubits.",
+    "artifact": "https://claude.ai/artifact/B18dLeaGs93ioLpc6JhUEm",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-21-1.jpg",
+    "cover": "/figs/2026-11-21-cover.jpg",
+    "coverAlt": "Odd Anthropic dips. Nvidia backs $530bn. India evens. Fridges fry. UK texts its ex. Google bets both qubits.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Anthropic shares fall 8.5% on second day after record IPO",
+        "category": "IPO aftermath",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/stocks/the-blame-game-has-begun-over-anthropics-turbulent-trading-debut-280a34b1",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Dario and Daniela Amodei, the siblings keeping Anthropic weird",
+        "category": "Profile",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/anthropic-dario-daniela-amodei-siblings-ipo-be84ad11",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Is Nvidia AI's central bank? Tett sees echoes of AIG",
+        "category": "AI finance",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/c1f1c0d2-466e-46b9-b346-5ce4677c55ea?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India tops World Bank equality table as Gini falls to 23",
+        "category": "Inequality",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/india-less-unequal-than-anyone-else/articleshow/136036546.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI is sharpening cyber attacks, but outages have a duller cause",
+        "category": "Cyber security",
+        "tag": "",
+        "url": "https://www.ft.com/content/3cf882c6-0be6-43f5-b01e-b6f765686c8b?syn-25a6b1a6=1",
+        "src": "Financial Times and The Guardian",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Britain and the EU start a Brexit rollback in Brussels",
+        "category": "UK and Europe",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/11/20/world/europe/britain-and-brussels-have-begun-a-brexit-rollback-how-far-will-it-go.html",
+        "src": "The New York Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Neutral atoms speed the race to a working quantum computer",
+        "category": "Quantum computing",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/11/20/science/quantum-computer-neutral-atoms.html",
+        "src": "The New York Times",
+        "pay": true,
+        "themes": [
+          "Health & science",
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-20",
     "slice": "Record $81bn AI IPO. Sarvam sells tokens. Chips stay put. Humans want brakes. Retirees face a 22% haircut.",
     "artifact": "https://claude.ai/artifact/9DyoZiFBEih6z6nQecKvj5",
