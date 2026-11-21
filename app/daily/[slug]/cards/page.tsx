@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { figVariant, webpSrcSet } from "@/lib/figs";
+import { figSrc, figVariant, webpSrcSet } from "@/lib/figs";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import SubscribeBox from "@/components/SubscribeBox";
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!found) return {};
   const { edition } = found;
   const day = `${shortDate(edition.date)} ${edition.date.slice(0, 4)}`;
-  const share = edition.cover ? { url: edition.cover, width: 1600, height: 900 } : { url: edition.image || "/about/two-worlds.jpg" };
+  const share = edition.cover ? { url: figSrc(edition.cover), width: 1600, height: 900 } : { url: figSrc(edition.image || "/about/two-worlds.jpg") };
   return {
     title: `The day in cards | ${day}`,
     description: `Every KKReckons story for ${longDate(edition.date)} as one explainer card each: the number, the takeaway and the other side.`,
@@ -41,12 +41,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /** The card image, served as WebP at the width the grid needs (same files the edition page uses). */
 function CardImage({ s, eager }: { s: FullStory; eager: boolean }) {
   const loading = eager ? "eager" : "lazy";
-  if (!s.imageW) return <img src={s.image} alt={s.imageAlt || s.title} loading={loading} decoding="async" />;
+  if (!s.imageW) return <img src={figSrc(s.image!)} alt={s.imageAlt || s.title} loading={loading} decoding="async" />;
   const srcSet = webpSrcSet(s.image!, s.imageW);
   return (
     <picture>
       <source type="image/webp" srcSet={srcSet} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 520px" />
-      <img src={s.image} alt={s.imageAlt || s.title} width={s.imageW} height={s.imageH} loading={loading} decoding="async" />
+      <img src={figSrc(s.image!)} alt={s.imageAlt || s.title} width={s.imageW} height={s.imageH} loading={loading} decoding="async" />
     </picture>
   );
 }
@@ -81,7 +81,7 @@ export default async function CardsPage({ params }: Props) {
         <ol className="cards-grid">
           {cards.map(({ s, n }, i) => (
             <li key={n} className="cards-item">
-              <a href={s.image} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? figVariant(s.image!, "lg") : undefined} aria-label={`Open the card for “${s.title}” full size`}>
+              <a href={figSrc(s.image!)} target="_blank" rel="noreferrer" className="cards-fig" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? figVariant(s.image!, "lg") : undefined} aria-label={`Open the card for “${s.title}” full size`}>
                 <CardImage s={s} eager={i < 2} />
               </a>
               <Link href={`${editionUrl}/${n}`} className="cards-title">
