@@ -31,11 +31,18 @@ export type DrawdownStock = {
   ipoPrice?: number;
   /** Fetch failed: the row shows its last available close. */
   stale?: boolean;
+  /** Highest close since 1 Jan 2025, its date, and the drop from it (equal to ath/d/dd when the record is from 2025–26). */
+  ath25: number;
+  d25: string;
+  dd25: number;
 };
+
+/** A broad index measured the same two ways, shown beside the basket. */
+export type Benchmark = { id: string; name: string; dd: number; dd25: number };
 
 export type DrawdownSummary = { count: number; medianDrawdown: number; down50: number; down75: number; medianDay: number };
 
-export type Drawdowns = { asOf: string; generatedAt: string; source: string; summary: DrawdownSummary; stocks: DrawdownStock[]; notes: string[] };
+export type Drawdowns = { asOf: string; generatedAt: string; source: string; summary: DrawdownSummary; stocks: DrawdownStock[]; benchmarks: Benchmark[]; notes: string[] };
 
 const num = (v: unknown) => (typeof v === "number" && Number.isFinite(v) ? v : null);
 const str = (v: unknown) => (typeof v === "string" ? v : "");
@@ -53,11 +60,17 @@ export function cleanDrawdowns(raw: unknown): Drawdowns | null {
       t: str(o.t), symbol: str(o.symbol) || str(o.t), n: str(o.n), g: str(o.g) || "Other", ath, d, c, asOf, dd, day,
       old: o.old === true, cur: str(o.cur) || "$", ipo: o.ipo === true, ...(num(o.ipoPrice) != null ? { ipoPrice: num(o.ipoPrice)! } : {}),
       ...(o.stale === true ? { stale: true } : {}),
+      // Files written before the 2025–26 measure have no dd25: fall back to the all-time figures.
+      ...(() => { const dd25 = num(o.dd25), ath25 = num(o.ath25), d25 = iso(o.d25); return dd25 != null && ath25 != null && d25 && dd25 <= 0 && dd25 >= dd ? { ath25, d25, dd25 } : { ath25: ath, d25: d, dd25: dd }; })(),
     }];
   });
   if (!stocks.length) return null;
   return {
     asOf: r.asOf as string, generatedAt: str(r.generatedAt), source: str(r.source), stocks,
+    benchmarks: (Array.isArray(r.benchmarks) ? r.benchmarks : []).flatMap((x) => {
+      const b = x as Partial<Benchmark>, dd = num(b.dd), dd25 = num(b.dd25);
+      return dd != null && dd25 != null && str(b.name) ? [{ id: str(b.id), name: str(b.name), dd, dd25 }] : [];
+    }),
     notes: Array.isArray(r.notes) ? r.notes.filter((n): n is string => typeof n === "string") : [],
     summary: summarize(stocks),
   };

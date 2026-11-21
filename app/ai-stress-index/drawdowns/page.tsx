@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 
 const TITLE = "AI stocks: how far they have fallen from their peak";
 const DESCRIPTION =
-  "50 AI-linked stocks across chips, cloud, data centers, software, networking, power and frontier AI, each measured from its highest-ever close. Updated every weekday. By KK Reddy.";
+  "50 AI-linked stocks across chips, cloud, data centers, software, networking, power, hardware, robotics and frontier AI, each measured from its highest-ever close or its 2025–26 peak, against the S&P 500, Nasdaq-100 and SOX. Updated every weekday. By KK Reddy.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -49,8 +49,8 @@ export default async function DrawdownsPage() {
         <Link href="/ai-stress-index" className={s.back}>← AI Market Stress Index</Link>
         <h1>How far the AI trade has fallen from its peak</h1>
         <p className={s.dek}>
-          {d ? d.stocks.length : 50} AI stocks across chips, cloud, data centers, software, networking, power and frontier AI, each measured
-          from its highest-ever close{d ? <> to the close on <b>{d.asOf.slice(8, 10).replace(/^0/, "")} {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+d.asOf.slice(5, 7) - 1]} {d.asOf.slice(0, 4)}</b></> : null}.
+          {d ? d.stocks.length : 50} AI stocks across chips, cloud, data centers, software, networking, power, hardware, robotics and frontier AI,
+          each measured from its highest-ever close{d ? <> to the close on <b>{d.asOf.slice(8, 10).replace(/^0/, "")} {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+d.asOf.slice(5, 7) - 1]} {d.asOf.slice(0, 4)}</b></> : null}.
         </p>
         <Drawdowns initial={d} />
       </div>

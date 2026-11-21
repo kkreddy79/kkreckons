@@ -35,7 +35,7 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
   const [err, setErr] = useState(false);
   const [seg, setSeg] = useState<string | null>(null);
   const [band, setBand] = useState<number | null>(null);
-  const [recent, setRecent] = useState(false);
+  const [metric, setMetric] = useState<"ath" | "cyc">("ath");
   const [sort, setSort] = useState("deep");
 
   useEffect(() => {
@@ -52,12 +52,14 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
     })();
   }, [initial]);
 
-  const rank = useMemo(() => new Map([...(data?.stocks ?? [])].sort((a, b) => a.dd - b.dd).map((r, i) => [r.symbol, i + 1])), [data]);
+  // The chosen measure: from the all-time high, or from the highest close since 1 Jan 2025 (no pre-2025 stripes then).
+  const view = useMemo(() => (data?.stocks ?? []).map((r) => (metric === "cyc" ? { ...r, dd: r.dd25, d: r.d25, ath: r.ath25, old: false } : r)), [data, metric]);
+  const rank = useMemo(() => new Map([...view].sort((a, b) => a.dd - b.dd).map((r, i) => [r.symbol, i + 1])), [view]);
   const segments = useMemo(() => [...new Set((data?.stocks ?? []).map((r) => r.g))], [data]);
   if (err) return <p className={s.err}>The drawdown data couldn’t be loaded. Please try again shortly.</p>;
   if (!data) return <p className={s.loading}>Loading today’s drawdowns…</p>;
 
-  const base = data.stocks.filter((r) => !recent || !r.old);
+  const base = view;
   const inSeg = base.filter((r) => !seg || r.g === seg);
   const rows = inSeg.filter((r) => band == null || ddBand(r.dd) === band).sort(SORTS[sort].fn);
   const k = summarize(rows);
@@ -76,6 +78,19 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
         <Kpi value={<>{k.down75}<small> / {k.count}</small></>} label="Down 75% or more" cls={s.b3} />
         <Kpi value={pct(k.medianDay)} label={`Median move, ${dayMonth(data.asOf)}`} cls={k.medianDay < 0 ? s.down : s.up} />
       </div>
+
+      {data.benchmarks.length > 0 && (
+        <>
+          <h2 className={s.label}>Against the market · same measure</h2>
+          <div className={s.bench}>
+            <div className={`${s.bItem} ${s.bMe} ${bandClass(median(view.map((r) => r.dd)))}`}><span>AI basket (median)</span><b>{pct(median(view.map((r) => r.dd)))}</b></div>
+            {data.benchmarks.map((b) => {
+              const v = metric === "cyc" ? b.dd25 : b.dd;
+              return <div key={b.id} className={`${s.bItem} ${bandClass(v)}`}><span>{b.name}</span><b>{pct(v)}</b></div>;
+            })}
+          </div>
+        </>
+      )}
 
       <h2 className={s.label}>How deep the damage goes · tap to filter</h2>
       <div className={s.bandBar} role="group" aria-label="Filter by severity">
@@ -109,9 +124,14 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
             {Object.entries(SORTS).map(([key, o]) => <option key={key} value={key}>{o.label}</option>)}
           </select>
         </label>
-        <label className={s.toggle}>
-          <input type="checkbox" checked={recent} onChange={(e) => setRecent(e.target.checked)} /> Only peaks set in 2025–26
-        </label>
+        <div className={s.measure} role="group" aria-label="Measure drops from">
+          <span className={s.label}>Measure from</span>
+          {(["ath", "cyc"] as const).map((m) => (
+            <button key={m} type="button" className={metric === m ? s.mOn : ""} aria-pressed={metric === m} onClick={() => setMetric(m)}>
+              {m === "ath" ? "All-time high" : "2025–26 peak"}
+            </button>
+          ))}
+        </div>
         {(seg || band != null) && <button type="button" className={s.clear} onClick={() => { setSeg(null); setBand(null); }}>Clear filters</button>}
       </div>
 
@@ -119,7 +139,7 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
         <div className={`${s.row} ${s.head}`} role="row">
           <span role="columnheader" title="Rank by drop from peak among all stocks">#</span>
           <span role="columnheader">Stock</span>
-          <span role="columnheader" className={s.hideSm}>Distance from all-time high</span>
+          <span role="columnheader" className={s.hideSm}>{metric === "cyc" ? "Distance from 2025–26 peak" : "Distance from all-time high"}</span>
           <span role="columnheader" className={s.num}>Off peak</span>
           <span role="columnheader" className={`${s.num} ${s.hideSm}`}>Peak → now</span>
           <span role="columnheader" className={s.num}>Today</span>
@@ -148,7 +168,8 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
       <p className={s.note}>
         Daily closes from Yahoo Finance as of {longDate(data.asOf)}, split-adjusted, not dividend-adjusted. Each drop is measured from
         the stock’s own record close, which fell on different dates. Striped bars mark record closes from before 2025, so part of that
-        fall predates the AI boom. The # is each stock’s rank by drop among all {data.stocks.length}, whatever you sort or filter.{" "}
+        fall predates the AI boom; “2025–26 peak” measures every stock from its highest close since 1 Jan 2025 instead. The # is each
+        stock’s rank by drop among all {data.stocks.length} on the chosen measure, whatever you sort or filter.{" "}
         {notes.join(" ")}
       </p>
       <p className={s.credit}>
