@@ -81,12 +81,11 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
 
       {data.benchmarks.length > 0 && (
         <>
-          <h2 className={s.label}>Against the market · same measure</h2>
+          <h2 className={s.label}>Against the market · fall from each one’s own peak</h2>
           <div className={s.bench}>
-            <div className={`${s.bItem} ${s.bMe} ${bandClass(median(view.map((r) => r.dd)))}`}><span>AI basket (median)</span><b>{pct(median(view.map((r) => r.dd)))}</b></div>
             {data.benchmarks.map((b) => {
               const v = metric === "cyc" ? b.dd25 : b.dd;
-              return <div key={b.id} className={`${s.bItem} ${bandClass(v)}`}><span>{b.name}</span><b>{pct(v)}</b></div>;
+              return <div key={b.id} className={`${s.bItem} ${b.id === "basket" ? s.bMe : ""} ${bandClass(v)}`}><span>{b.name}</span><b>{pct(v)}</b></div>;
             })}
           </div>
         </>
@@ -168,7 +167,7 @@ export default function Drawdowns({ initial }: { initial: Data | null }) {
       <p className={s.note}>
         Daily closes from Yahoo Finance as of {longDate(data.asOf)}, split-adjusted, not dividend-adjusted. Each drop is measured from
         the stock’s own record close, which fell on different dates. Striped bars mark record closes from before 2025, so part of that
-        fall predates the AI boom; “2025–26 peak” measures every stock from its highest close since 1 Jan 2025 instead. The # is each
+        fall predates the AI boom; “2025–26 peak” measures every stock from its highest close since 1 Jan 2025 instead. “AI basket as one portfolio” holds all the stocks in equal amounts, rebalanced daily from 2 Jan 2025, so it compares like for like with the indexes; the median above treats each stock on its own. The # is each
         stock’s rank by drop among all {data.stocks.length} on the chosen measure, whatever you sort or filter.{" "}
         {notes.join(" ")}
       </p>
