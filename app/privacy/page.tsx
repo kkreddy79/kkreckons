@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
-import { CORRECTIONS_EMAIL } from "@/lib/site";
+import { CORRECTIONS_EMAIL, EMAIL_SIGNUP } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy",
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       <div className="prose">
         <p>KKReckons is a free daily briefing run by one person, Krishnakanth Reddy. It collects as little as it can.</p>
 
-        <h2>If you subscribe by email</h2>
+        <h2>{EMAIL_SIGNUP ? "If you subscribe by email" : "If you subscribed by email"}</h2>
         <ul>
           <li>
             Your email address is held by <b>beehiiv</b>, the service that sends the newsletter. It is used only to send

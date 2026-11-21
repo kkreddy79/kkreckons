@@ -3,7 +3,7 @@ import Link from "@/components/Link";
 import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
 import { SpecialCard, SpecialMeta, Skyline } from "@/components/SpecialCards";
-import { SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
+import { EMAIL_SIGNUP, SITE_URL, SUBSCRIBE_URL } from "@/lib/site";
 import { SPECIAL, specialHref } from "@/lib/special";
 
 const TITLE = "Special Reports: the long read, made easy to see";
@@ -115,11 +115,16 @@ export default function SpecialHub() {
         </section>
 
         <p className="sp-foot">
-          New special reports arrive in the daily edition first.{" "}
-          <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-            Subscribe
-          </a>{" "}
-          to get them the morning they land.
+          New special reports arrive in the daily edition first.
+          {EMAIL_SIGNUP && (
+            <>
+              {" "}
+              <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+                Subscribe
+              </a>{" "}
+              to get them the morning they land.
+            </>
+          )}
         </p>
         <SubscribeBox />
       </div>

@@ -3,27 +3,28 @@ import { MailIcon, SunIcon } from "@/components/AboutIcons";
 import { editions, totalStories } from "@/lib/editions";
 import EmailSignup from "@/components/EmailSignup";
 import Testimonials from "@/components/Testimonials";
-import { INLINE_SIGNUP, REFERRAL, SUBSCRIBE_URL, WHATSAPP_CHANNEL } from "@/lib/site";
+import { EMAIL_SIGNUP, INLINE_SIGNUP, REFERRAL, SUBSCRIBE_URL, WHATSAPP_CHANNEL } from "@/lib/site";
 
 /**
  * Closing call-to-action band. The default version points readers to today's
  * edition and email sign-up; the "home" version is for readers already on
  * today's edition, so it leads with email and offers past editions instead.
+ * With email sign-up off (EMAIL_SIGNUP), neither version mentions email: Home's points to past editions.
  */
 export default function SubscribeBox({ variant = "default" }: { variant?: "default" | "home" }) {
   const home = variant === "home";
   return (
     <section className="ab-join" aria-labelledby="join-title">
       <span className="ab-join-ic" aria-hidden>
-        {home ? <MailIcon className="ab-ic" /> : <SunIcon className="ab-ic" />}
+        {home && EMAIL_SIGNUP ? <MailIcon className="ab-ic" /> : <SunIcon className="ab-ic" />}
       </span>
       <div className="ab-join-text">
-        <p className="ab-join-kicker">{home ? "Never miss an edition" : "Today’s edition is ready"}</p>
+        <p className="ab-join-kicker">{!home ? "Today’s edition is ready" : EMAIL_SIGNUP ? "Never miss an edition" : "A new edition every day"}</p>
         <h2 id="join-title">
-          {home ? "Get tomorrow’s briefing in your inbox." : "Read deep. Think clearly. Stay curious."}
+          {home && EMAIL_SIGNUP ? "Get tomorrow’s briefing in your inbox." : "Read deep. Think clearly. Stay curious."}
         </h2>
         <p>
-          {home
+          {home && EMAIL_SIGNUP
             ? "Free. One visual briefing a day on India, the world, and what’s next. Unsubscribe anytime."
             : "A daily visual briefing on the stories that matter: India, the world, and what’s next."}
         </p>
@@ -32,14 +33,14 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
       <div className="ab-join-cta">
         {home ? (
           <>
-            {INLINE_SIGNUP ? (
+            {!EMAIL_SIGNUP ? null : INLINE_SIGNUP ? (
               <EmailSignup placement="home-end" tone="dark" />
             ) : (
               <a className="ab-btn" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
                 Subscribe free ↗
               </a>
             )}
-            <Link className="ab-btn-ghost" href="/daily" prefetch={false}>
+            <Link className={EMAIL_SIGNUP ? "ab-btn-ghost" : "ab-btn"} href="/daily" prefetch={false}>
               Catch up on past editions
             </Link>
           </>
@@ -48,7 +49,7 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
             <Link className="ab-btn" href="/">
               Read Today’s Edition →
             </Link>
-            {INLINE_SIGNUP ? (
+            {!EMAIL_SIGNUP ? null : INLINE_SIGNUP ? (
               <EmailSignup placement="page-end" tone="dark" />
             ) : (
               <a className="ab-btn-ghost" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
@@ -63,10 +64,10 @@ export default function SubscribeBox({ variant = "default" }: { variant?: "defau
           </a>
         )}
         <p className="ab-join-proof">
-          Free · {editions.length} editions and {totalStories} stories so far · Unsubscribe anytime
+          Free · {editions.length} editions and {totalStories} stories so far{EMAIL_SIGNUP && " · Unsubscribe anytime"}
         </p>
         <p className="ab-join-privacy">
-          Emails are sent by beehiiv; your address is used only for this newsletter.{" "}
+          {EMAIL_SIGNUP && <>Emails are sent by beehiiv; your address is used only for this newsletter. </>}
           <Link href="/privacy">Privacy</Link> · <Link href="/standards">Editorial standards</Link>
           {REFERRAL.reward && (
             <>

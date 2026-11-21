@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Lightbox from "@/components/Lightbox";
 import SearchKey from "@/components/SearchKey";
 import Umami from "@/components/Umami";
-import { PROFILES, SUBSCRIBE_URL } from "@/lib/site";
+import { EMAIL_SIGNUP, PROFILES, SUBSCRIBE_URL } from "@/lib/site";
 import { months, monthSlug } from "@/lib/month";
 import "./globals.css";
 
@@ -59,9 +59,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </Link>
           <NavLinks />
           <ThemeToggle />
-          <a className="hdr-sub" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-            Subscribe
-          </a>
+          {EMAIL_SIGNUP && (
+            <a className="hdr-sub" href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+              Subscribe
+            </a>
+          )}
         </header>
         <SearchKey />
         <div id="main" tabIndex={-1}>

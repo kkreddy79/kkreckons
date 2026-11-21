@@ -1,4 +1,4 @@
-import { BEEHIIV_PUBLICATION_ID, SITE_URL } from "@/lib/site";
+import { BEEHIIV_PUBLICATION_ID, EMAIL_SIGNUP, SITE_URL } from "@/lib/site";
 
 // Adds a reader to the newsletter from the on-page sign-up form (components/EmailSignup.tsx).
 // The beehiiv API key stays on the server; the browser only ever sends an email address.
@@ -33,6 +33,8 @@ function limited(ip: string, now = Date.now()) {
 const json = (status: number, body: object) => Response.json(body, { status, headers: { "Cache-Control": "no-store" } });
 
 export async function POST(req: Request) {
+  // Sign-up is switched off site-wide (lib/links.ts EMAIL_SIGNUP): nothing is sent to beehiiv.
+  if (!EMAIL_SIGNUP) return json(410, { error: "signup_closed" });
   const key = process.env.BEEHIIV_API_KEY;
   if (!key) return json(503, { error: "not_configured" });
 
