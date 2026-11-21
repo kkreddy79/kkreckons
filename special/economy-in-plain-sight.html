@@ -8,7 +8,7 @@
 <!-- KKReckons special report by KK Reddy, served at https://www.kkreckons.com/special/economy-in-plain-sight
      inside the site's header and footer (app/special/[slug]/page.tsx). Lora and Poppins are the site's self-hosted fonts (app/special/special.css). -->
 <style>
-/* Layout: a NASA night-Earth photograph with four clues, six stories in alternating navy, cream and sage bands, a zoomed India map with a three-state comparison, a leaderboard, a two-country navy dashboard, an evidence-by-speed chart, a Google Flu investigation, a toolkit, a quiet ending, grouped sources. */
+/* Layout: a full-height NASA night-Earth hero with a slow scan line and four glass panels, six stories in alternating navy, cream and sage bands, a zoomed India map with a three-state comparison, a leaderboard, a two-country navy dashboard, an evidence-by-speed chart, a Google Flu investigation, a toolkit, a quiet ending, grouped sources. */
 :root{
   --paper:#FAF6EE; --card:#FFFFFF; --ink:#1D2B3A; --mute:#55606B; --line:#E3D8C6;
   --brick:#B83A2E; --ochre:#C88A14; --teal:#2C6B78; --sand:#F1E7D4; --blush:#F6E6DF; --mint:#E1ECEA;
@@ -573,26 +573,75 @@ details.more p{margin:10px 0 0}
 .tally{font-family:var(--serif);font-size:20px;text-align:center;margin:22px 0 0;min-height:1.4em}
 .lesson{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);line-height:1.35;color:var(--onpanel);margin:30px 0 0;padding:20px 22px;border-left:4px solid var(--gold);background:#16222F;border-radius:0 14px 14px 0}
 .lesson b{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+
+/* v5: full-height cinematic hero */
+.hero.cine2{background:#0B131C;min-height:90vh;display:flex}
+.hbg{position:absolute;inset:0;overflow:hidden}
+.hbg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.hshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,19,28,.86) 0%,rgba(11,19,28,.45) 34%,rgba(11,19,28,.30) 55%,rgba(11,19,28,.88) 100%)}
+.hgrid{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(#8FD0DA 1px,transparent 1px),linear-gradient(90deg,#8FD0DA 1px,transparent 1px);background-size:64px 64px}
+.hscan{position:absolute;left:0;right:0;top:0;height:2px;background:#8FD0DA;box-shadow:0 0 14px 3px rgba(143,208,218,.55);opacity:0}
+.hero.cine2 .wrap.hin{position:relative;z-index:1;display:flex;flex-direction:column;gap:22px;padding-block:28px 26px;width:100%}
+.htop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.htop .track{font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#C5E6EB;display:flex;align-items:center;gap:8px}
+.htop .track i{display:block;width:8px;height:8px;border-radius:50%;background:#8FD0DA;box-shadow:0 0 0 4px rgba(143,208,218,.25)}
+.hmain{margin-block:auto;max-width:880px}
+.hmain .over{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#C5E6EB;margin:0 0 6px}
+.hero.cine2 h1{font-size:clamp(38px,6.6vw,84px);line-height:1.02;margin:6px 0 16px;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.hero.cine2 .dek{font-size:clamp(16px,1.9vw,20px);max-width:60ch;margin:0;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.hero.cine2 .clues{position:static;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0}
+@media (max-width:900px){.hero.cine2 .clues{grid-template-columns:1fr 1fr}}
+.hero.cine2 .clue{position:static;width:auto;max-width:none;padding:0;background:rgba(11,19,28,.80);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);border-top:3px solid var(--ac);border-radius:14px}
+.hero.cine2 .clue.c1{--ac:#F0B840}.hero.cine2 .clue.c2{--ac:#8FD0DA}.hero.cine2 .clue.c3{--ac:#F0907F}.hero.cine2 .clue.c4{--ac:#B9D7A8}
+.hero.cine2 .clue .n{display:none}
+.hero.cine2 .clue .tag{color:var(--ac)}
+.hero.cine2 .clue .num{color:var(--ac);font-size:clamp(34px,4.4vw,52px);font-variant-numeric:tabular-nums;margin:4px 0 6px}
+.hero.cine2 .clue .go{color:var(--onhero)}
+.hfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.hfoot .scroll{color:var(--gold);font-weight:600;text-decoration:none;padding:10px 0}
+.hfoot .strip{color:#C9CED6}
+.afterhero{padding-block:8px 34px}
+.afterhero .capt{text-align:center;max-width:78ch;margin:0 auto}
+@media (prefers-reduced-motion:no-preference){
+  .hbg img{animation:hzoom 40s ease-in-out infinite alternate}
+  .hscan{animation:hscan 9s linear infinite}
+  .hfoot .scroll span{display:inline-block;animation:hbob 1.8s ease-in-out infinite}
+  .htop .track i{animation:hblink 2.4s ease-in-out infinite}
+  @keyframes hzoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+  @keyframes hscan{0%{top:0;opacity:0}6%{opacity:.75}94%{opacity:.75}100%{top:100%;opacity:0}}
+  @keyframes hbob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+  @keyframes hblink{0%,100%{opacity:1}50%{opacity:.35}}
+}
 </style>
 </head>
 <body>
 
-<header class="hero cine">
-  <div class="wrap">
-    <div class="lab"><a href="https://www.kkreckons.com/special" style="color:inherit;text-decoration:none">KKReckons special reports</a> · Saturday, 21 November 2026</div>
-    <h1>The economy hides in plain sight. <em>Who spots it first?</em></h1>
-    <p class="dek">Satellites, shopping carts, search bars and shipping containers often show where the economy is weeks before the official numbers arrive.</p>
-    <div class="byline">By KK Reddy · Research to 21 November 2026 · 9-minute read</div>
-    <div class="scene">
-      <img src="/special/economy-in-plain-sight/hero.jpg" width="1600" height="667" alt="The night side of Earth from orbit: city lights across India under moonlit cloud, with the thin blue line of the atmosphere on the horizon" fetchpriority="high" decoding="async">
-      <ol class="clues" aria-label="Four clues">
-        <li class="clue c1"><a href="#s1"><span class="n">1</span><span class="tag">Measurement</span><span class="num">3.4%</span><span class="ct">Myanmar's yearly growth seen from space, 1992–2003. Official: 8.6%</span><span class="go">See the evidence ↓</span></a></li>
-        <li class="clue c2"><a href="#india"><span class="n">2</span><span class="tag">Nowcasting</span><span class="num">62%</span><span class="ct">smaller error in estimating Gujarat's growth this quarter, with night lights and searches</span><span class="go">See the evidence ↓</span></a></li>
-        <li class="clue c3"><a href="#s2"><span class="n">3</span><span class="tag">Investing</span><span class="num">−3%</span><span class="ct">three-day share fall, against the market, when a retailer's car parks emptied</span><span class="go">See the evidence ↓</span></a></li>
-        <li class="clue c4"><a href="#other"><span class="n">4</span><span class="tag">Failure</span><span class="num">100 of 108</span><span class="ct">weeks from August 2011 in which Google's flu tracker ran too high</span><span class="go">See the evidence ↓</span></a></li>
-      </ol>
+<header class="hero cine2">
+  <div class="hbg" aria-hidden="true">
+    <picture><source srcset="/special/economy-in-plain-sight/hero-full.webp" type="image/webp"><img src="/special/economy-in-plain-sight/hero-full.jpg" width="1920" height="1277" alt="" fetchpriority="high" decoding="async"></picture>
+    <span class="hgrid"></span><span class="hscan"></span><span class="hshade"></span>
+  </div>
+  <div class="wrap hin">
+    <div class="htop">
+      <div class="lab"><a href="https://www.kkreckons.com/special" style="color:inherit;text-decoration:none">KKReckons special investigation</a> · 21 November 2026</div>
+      <div class="track"><i></i>ISS · night pass over India</div>
     </div>
-    <p class="capt">Photo: NASA / Reid Wiseman. A night pass over India from the International Space Station, August 2014. The four clues are four different kinds of evidence, so they are not directly comparable.</p>
+    <div class="hmain">
+      <p class="over">Beyond the official numbers</p>
+      <h1>The economy hides in plain sight. <em>Who spots it first?</em></h1>
+      <p class="dek">The economy leaves clues in the brightness of a city, the car park of a burger joint and the words people type into a search bar. Some show the truth before the official figures. Others confidently get it wrong.</p>
+    </div>
+    <ol class="clues" aria-label="Four clues">
+      <li class="clue c1"><a href="#s1"><span class="n">1</span><span class="tag">Seen from orbit</span><span class="num">3.4%</span><span class="ct">Myanmar's yearly growth by night lights, 1992–2003. Official: 8.6%</span><span class="go">See the evidence ↓</span></a></li>
+      <li class="clue c2"><a href="#india"><span class="n">2</span><span class="tag">Sharper estimate</span><span class="num">62%</span><span class="ct">smaller error in estimating Gujarat's growth this quarter</span><span class="go">See the evidence ↓</span></a></li>
+      <li class="clue c3"><a href="#s2"><span class="n">3</span><span class="tag">Market reaction</span><span class="num">−3%</span><span class="ct">three-day share fall when a retailer's car parks emptied</span><span class="go">See the evidence ↓</span></a></li>
+      <li class="clue c4"><a href="#other"><span class="n">4</span><span class="tag">Warning</span><span class="num">100/108</span><span class="ct">weeks Google's flu tracker ran too high, from August 2011</span><span class="go">See the evidence ↓</span></a></li>
+    </ol>
+    <div class="hfoot"><a class="scroll" href="#six">Scroll to investigate <span aria-hidden="true">↓</span></a><span class="strip">Research · Data · The other side</span></div>
+  </div>
+</header>
+<div class="band navy afterhero">
+  <div class="wrap">
     <div class="thesis">
       <h2>A window, <em>not a crystal ball</em></h2>
       <p>Alternative data can reveal the economy today, sometimes before official statistics arrive. Predicting tomorrow is a different challenge.</p>
@@ -600,8 +649,9 @@ details.more p{margin:10px 0 0}
         <li><a href="#six">Six signals</a></li><li><a href="#india">India from orbit</a></li><li><a href="#burger">Burger queue</a></li><li><a href="#pulse">Pulse check</a></li><li><a href="#trust">Signal or noise</a></li><li><a href="#spot">Your turn</a></li><li><a href="#other">When data lied</a></li><li><a href="#diy">Try it</a></li>
       </ul>
     </div>
+    <p class="capt">By KK Reddy · Research to 21 November 2026 · 10-minute read. Opening photo: NASA / Reid Wiseman, a night pass over India from the International Space Station, August 2014. The four opening figures are four different kinds of evidence, so they are not directly comparable.</p>
   </div>
-</header>
+</div>
 
 <main>
   <div class="band"><div class="wrap">
