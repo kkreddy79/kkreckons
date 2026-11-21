@@ -1,0 +1,332 @@
+{
+  "month": "2026-10",
+  "since": "2026-10-15T00:00:00Z",
+  "until": "2026-10-31T23:59:59Z",
+  "complete": false,
+  "missingDays": [
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14"
+  ],
+  "note": "Saved on 14 November 2026, after Vercel had already dropped 1–14 October (free plan keeps 31 days).",
+  "source": "Vercel Web Analytics (visitors are counted once per day, so their sums are visits, not unique people)",
+  "totals": {
+    "pageviews": 1333,
+    "visits": 490,
+    "daysWithData": 17,
+    "pageviewsPerDay": 78.4,
+    "visitsPerDay": 28.8
+  },
+  "byDay": [
+    {
+      "date": "2026-10-15",
+      "visits": 47,
+      "pageviews": 93
+    },
+    {
+      "date": "2026-10-16",
+      "visits": 32,
+      "pageviews": 73
+    },
+    {
+      "date": "2026-10-17",
+      "visits": 33,
+      "pageviews": 71
+    },
+    {
+      "date": "2026-10-18",
+      "visits": 35,
+      "pageviews": 70
+    },
+    {
+      "date": "2026-10-19",
+      "visits": 35,
+      "pageviews": 77
+    },
+    {
+      "date": "2026-10-20",
+      "visits": 31,
+      "pageviews": 54
+    },
+    {
+      "date": "2026-10-21",
+      "visits": 42,
+      "pageviews": 119
+    },
+    {
+      "date": "2026-10-22",
+      "visits": 34,
+      "pageviews": 118
+    },
+    {
+      "date": "2026-10-23",
+      "visits": 22,
+      "pageviews": 110
+    },
+    {
+      "date": "2026-10-24",
+      "visits": 24,
+      "pageviews": 77
+    },
+    {
+      "date": "2026-10-25",
+      "visits": 26,
+      "pageviews": 91
+    },
+    {
+      "date": "2026-10-26",
+      "visits": 17,
+      "pageviews": 64
+    },
+    {
+      "date": "2026-10-27",
+      "visits": 19,
+      "pageviews": 32
+    },
+    {
+      "date": "2026-10-28",
+      "visits": 33,
+      "pageviews": 141
+    },
+    {
+      "date": "2026-10-29",
+      "visits": 16,
+      "pageviews": 44
+    },
+    {
+      "date": "2026-10-30",
+      "visits": 29,
+      "pageviews": 76
+    },
+    {
+      "date": "2026-10-31",
+      "visits": 15,
+      "pageviews": 23
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "visits": 165,
+      "pageviews": 359
+    },
+    {
+      "path": "/ai-stress-index",
+      "visits": 99,
+      "pageviews": 191
+    },
+    {
+      "path": "/daily",
+      "visits": 62,
+      "pageviews": 113
+    },
+    {
+      "path": "/about",
+      "visits": 44,
+      "pageviews": 61
+    },
+    {
+      "path": "/daily/october-18-2026",
+      "visits": 38,
+      "pageviews": 50
+    },
+    {
+      "path": "/daily/october-15-2026",
+      "visits": 32,
+      "pageviews": 36
+    },
+    {
+      "path": "/special/claude-at-work",
+      "visits": 31,
+      "pageviews": 72
+    },
+    {
+      "path": "/daily/october-22-2026",
+      "visits": 30,
+      "pageviews": 37
+    },
+    {
+      "path": "/daily/october-19-2026",
+      "visits": 28,
+      "pageviews": 35
+    },
+    {
+      "path": "/daily/october-17-2026",
+      "visits": 25,
+      "pageviews": 38
+    },
+    {
+      "path": "/daily/october-20-2026",
+      "visits": 25,
+      "pageviews": 32
+    },
+    {
+      "path": "/daily/october-21-2026",
+      "visits": 25,
+      "pageviews": 35
+    },
+    {
+      "path": "/daily/october-25-2026",
+      "visits": 19,
+      "pageviews": 20
+    },
+    {
+      "path": "/daily/october-16-2026",
+      "visits": 17,
+      "pageviews": 23
+    },
+    {
+      "path": "/daily/october-24-2026",
+      "visits": 13,
+      "pageviews": 23
+    },
+    {
+      "path": "/daily/october-23-2026",
+      "visits": 12,
+      "pageviews": 14
+    },
+    {
+      "path": "/daily/october-28-2026",
+      "visits": 12,
+      "pageviews": 13
+    },
+    {
+      "path": "/daily/october-26-2026",
+      "visits": 11,
+      "pageviews": 16
+    },
+    {
+      "path": "/special",
+      "visits": 11,
+      "pageviews": 31
+    },
+    {
+      "path": "/daily/october-31-2026",
+      "visits": 10,
+      "pageviews": 13
+    },
+    {
+      "path": "Others",
+      "visits": 66,
+      "pageviews": 121
+    }
+  ],
+  "referrers": [
+    {
+      "host": "(none)",
+      "visits": 468,
+      "pageviews": 1302
+    },
+    {
+      "host": "teams.public.onecdn.static.microsoft",
+      "visits": 14,
+      "pageviews": 15
+    },
+    {
+      "host": "google.com",
+      "visits": 8,
+      "pageviews": 9
+    },
+    {
+      "host": "bing.com",
+      "visits": 2,
+      "pageviews": 2
+    },
+    {
+      "host": "com.google.android.gm",
+      "visits": 2,
+      "pageviews": 2
+    },
+    {
+      "host": "com.twitter.android",
+      "visits": 1,
+      "pageviews": 1
+    },
+    {
+      "host": "t.co",
+      "visits": 1,
+      "pageviews": 1
+    },
+    {
+      "host": "trk.shophermedia.net",
+      "visits": 1,
+      "pageviews": 1
+    }
+  ],
+  "countries": [
+    {
+      "country": "US",
+      "visits": 314,
+      "pageviews": 1086
+    },
+    {
+      "country": "IN",
+      "visits": 120,
+      "pageviews": 164
+    },
+    {
+      "country": "CA",
+      "visits": 16,
+      "pageviews": 23
+    },
+    {
+      "country": "SG",
+      "visits": 10,
+      "pageviews": 12
+    },
+    {
+      "country": "SE",
+      "visits": 7,
+      "pageviews": 7
+    },
+    {
+      "country": "AT",
+      "visits": 5,
+      "pageviews": 14
+    },
+    {
+      "country": "AU",
+      "visits": 5,
+      "pageviews": 5
+    },
+    {
+      "country": "CH",
+      "visits": 3,
+      "pageviews": 5
+    },
+    {
+      "country": "Others",
+      "visits": 10,
+      "pageviews": 17
+    }
+  ],
+  "devices": [
+    {
+      "device": "mobile",
+      "visits": 340,
+      "pageviews": 861
+    },
+    {
+      "device": "desktop",
+      "visits": 142,
+      "pageviews": 456
+    },
+    {
+      "device": "tablet",
+      "visits": 8,
+      "pageviews": 16
+    }
+  ],
+  "savedAt": "2026-11-14T07:26:16.652Z"
+}
