@@ -161,7 +161,20 @@ function saveFig(date, n, dataUrl) {
 // newsletter sends another size, with the copyright in its EXIF; no credit strip, so it stays 16:9.
 const COVER_W = 1600;
 const COVER_H = 900;
+// The edition page and Home also show the cover beside the headline, from a smaller WebP copy
+// (<date>-cover-sm.webp, 800px wide: enough for its ~340px slot at 2×, and for a phone's full width).
+const COVER_SM = "-sm.webp";
+async function coverSmall(rel) {
+  if (!rel) return rel;
+  const file = path.join(figsDir, path.basename(rel));
+  const small = file.replace(/\.jpg$/, COVER_SM);
+  if (fs.existsSync(file) && !fs.existsSync(small)) await sharp(file).resize({ width: 800 }).withExif({ IFD0: { Copyright: COPYRIGHT } }).webp({ quality: 78, effort: 6 }).toFile(small);
+  return rel;
+}
 async function saveCover(date, dataUrl) {
+  return coverSmall(await saveCoverFile(date, dataUrl));
+}
+async function saveCoverFile(date, dataUrl) {
   const stored = storedFig(dataUrl);
   if (stored !== null) return stored;
   const m = /^data:image\/(png|jpe?g|webp);base64,(.+)$/.exec(dataUrl || "");
@@ -549,7 +562,7 @@ const usedFigs = new Set([
   ...allContent
     .flatMap((c) => c.sections)
     .flatMap((sec) => sec.stories.flatMap((s) => (s.image ? [s.image, ...[...VARIANTS, THUMB].map(([tag]) => variantName(s.image, tag))].map((f) => path.basename(f)) : []))),
-  ...allContent.flatMap((c) => (c.cover ? [path.basename(c.cover)] : [])),
+  ...allContent.flatMap((c) => (c.cover ? [path.basename(c.cover), path.basename(c.cover).replace(/\.jpg$/, COVER_SM)] : [])),
 ]);
 for (const f of fs.readdirSync(figsDir)) {
   if (usedFigs.has(f)) continue;

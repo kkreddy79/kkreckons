@@ -525,8 +525,12 @@ function Banner() {
   return (
     <section className={s.banner}>
       <div className={s.bannerArt} aria-hidden="true">
-        <img src="/ai-stress-index/hero-1400.webp" srcSet="/ai-stress-index/hero-800.webp 800w, /ai-stress-index/hero-1400.webp 1400w"
-          sizes="(max-width: 860px) 100vw, 62vw" width={1400} height={1200} alt="" fetchPriority="high" />
+        {/* AVIF first (about half the size of the WebP copies), WebP for browsers without it. */}
+        <picture>
+          <source type="image/avif" srcSet="/ai-stress-index/hero-800.avif 800w, /ai-stress-index/hero-1400.avif 1400w" sizes="(max-width: 860px) 100vw, 62vw" />
+          <img src="/ai-stress-index/hero-1400.webp" srcSet="/ai-stress-index/hero-800.webp 800w, /ai-stress-index/hero-1400.webp 1400w"
+            sizes="(max-width: 860px) 100vw, 62vw" width={1400} height={1200} alt="" fetchPriority="high" />
+        </picture>
       </div>
       <div className={s.bannerInner}>
         <div className={s.bannerText}>

@@ -29,7 +29,7 @@ export default async function Feedback({ params }: { params: Promise<{ slug: str
   const date = longDate(found.edition.date);
   return (
     <main className="cu">
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap">
         <section className="cu-hero" aria-labelledby="fb-title">
           <p className="ab-kicker">Your feedback · {date}</p>

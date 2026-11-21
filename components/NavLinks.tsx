@@ -25,6 +25,24 @@ export default function NavLinks() {
     const el = nav.current, on = el?.querySelector<HTMLElement>("a.on");
     if (el && on && el.scrollWidth > el.clientWidth) el.scrollLeft = Math.max(0, on.offsetLeft - el.offsetLeft - 16);
   }, [path]);
+  // Mark which sides of the strip have links off-screen, so the CSS can fade that edge (see globals.css).
+  useEffect(() => {
+    const el = nav.current;
+    if (!el) return;
+    const mark = () => {
+      const start = el.scrollLeft > 4, end = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
+      const more = start && end ? "both" : start ? "start" : end ? "end" : "";
+      if (more) el.dataset.more = more;
+      else delete el.dataset.more;
+    };
+    mark();
+    el.addEventListener("scroll", mark, { passive: true });
+    window.addEventListener("resize", mark);
+    return () => {
+      el.removeEventListener("scroll", mark);
+      window.removeEventListener("resize", mark);
+    };
+  }, [path]);
   return (
     <nav aria-label="Main" ref={nav}>
       {LINKS.map((l) => {
