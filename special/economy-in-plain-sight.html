@@ -8,7 +8,7 @@
 <!-- KKReckons special report by KK Reddy, served at https://www.kkreckons.com/special/economy-in-plain-sight
      inside the site's header and footer (app/special/[slug]/page.tsx). Lora and Poppins are the site's self-hosted fonts (app/special/special.css). -->
 <style>
-/* Layout: a NASA night-Earth photograph with four clues, six stories in alternating navy, cream and sage bands, a zoomed India map, a leaderboard, a two-country navy dashboard, an evidence-by-speed chart, a Google Flu investigation, a toolkit, a quiet ending, grouped sources. */
+/* Layout: a NASA night-Earth photograph with four clues, six stories in alternating navy, cream and sage bands, a zoomed India map with a three-state comparison, a leaderboard, a two-country navy dashboard, an evidence-by-speed chart, a Google Flu investigation, a toolkit, a quiet ending, grouped sources. */
 :root{
   --paper:#FAF6EE; --card:#FFFFFF; --ink:#1D2B3A; --mute:#55606B; --line:#E3D8C6;
   --brick:#B83A2E; --ochre:#C88A14; --teal:#2C6B78; --sand:#F1E7D4; --blush:#F6E6DF; --mint:#E1ECEA;
@@ -513,6 +513,66 @@ details.more p{margin:10px 0 0}
 .banner .scale{margin-top:8px}
 @media (min-width:1000px){.clues{position:static;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}.clue{position:static;width:auto}}
 @media (max-width:999px){.scene img{height:auto}}
+
+/* v4: linked clues, signal marks, tank toggle, state comparison, tiers, reader challenge, pauses */
+.sp-report [id]{scroll-margin-top:130px}
+.clue{padding:0}
+.clue a{display:block;padding:12px 14px;color:inherit;text-decoration:none;border-radius:14px}
+.clue a:hover,.clue a:focus-visible{background:rgba(240,184,64,.12)}
+.clue .ct{display:block;font-family:var(--sans);font-size:12.5px;line-height:1.4;color:var(--onhero2)}
+.clue .go{display:block;font-family:var(--sans);font-size:11.5px;font-weight:600;color:var(--gold);margin-top:8px}
+@media (min-width:1000px){.clue{padding:0}}
+.sico{vertical-align:-7px;margin-right:8px}
+.tankb .pickers{justify-content:center}
+.tankv .lvl,.tankv .shd{transform-box:view-box}
+.tankv .shd{transform-origin:183px 56px}
+.tankb.low .lvl{transform:translateY(112px)}
+.tankb.low .shd{transform:scale(6.1)}
+@media (prefers-reduced-motion:no-preference){.tankv .lvl,.tankv .shd{transition:transform .9s cubic-bezier(.3,.7,.2,1)}}
+.pause{padding:44px 0 4px;text-align:center}
+.pause p{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.2vw,32px);line-height:1.25;margin:0 auto;max-width:24em;color:var(--teal)}
+.band.navy .pause p{color:var(--gold)}
+.band.sage .wrap>.pause:first-child{padding:0 0 40px}
+.cmp{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:26px 0 18px}
+.cmph{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.cmph h3{font-size:24px}
+.cmph .pickers{margin:0}
+.cmpg{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:820px){.cmpg{grid-template-columns:1fr}}
+.cmp .bar.wide,.brk .bar.wide{grid-template-columns:118px 1fr 46px}
+.bar .v{font-family:var(--sans);font-size:13.5px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.bar .fill.g{background:var(--ochre)}
+.bar .fill.hi{background:var(--teal)}.bar .fill.mid{background:#8A5F0C}.bar .fill.lo{background:var(--brick)}
+.cmp .bar.bm .t,.cmp .bar.bm .v{color:var(--mute)}
+@media (prefers-reduced-motion:no-preference){.cmp .fill{transition:width .7s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}}
+.mirror{font-family:var(--serif);font-size:clamp(19px,2.4vw,24px);line-height:1.35;margin:20px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+.mirror em{color:var(--teal)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+@media (max-width:860px){.tiers{grid-template-columns:1fr}}
+.tier{background:var(--card);border-radius:16px;padding:18px;border-top:5px solid var(--mute)}
+.tier.hi{border-top-color:var(--teal)}.tier.mid{border-top-color:#8A5F0C}.tier.lo{border-top-color:var(--brick)}
+.tier h3{font-size:21px}
+.tier p{font-family:var(--sans);font-size:13px;line-height:1.45;color:var(--mute);margin:4px 0 12px}
+.tb{display:grid;gap:6px}
+.tb button{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--sand);border:2px solid transparent;border-radius:10px;padding:8px 12px;font-family:var(--sans);font-size:14.5px;color:var(--ink);cursor:pointer;min-height:44px}
+.tb button b{font-family:var(--serif);font-size:24px;line-height:1;min-width:26px}
+.tb button[aria-pressed="true"]{border-color:var(--ink);background:var(--card)}
+.brk{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.quiz{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.quiz{grid-template-columns:1fr}}
+.q{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.q .sc2{font-size:17.5px;line-height:1.45;margin:0}
+.q .qn{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:14px;font-weight:700;align-items:center;justify-content:center;margin-right:10px;vertical-align:2px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.opts button{font-family:var(--sans);font-size:14px;font-weight:600;border:1.5px solid var(--teal);background:transparent;color:var(--ink);border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer}
+.opts button:disabled{cursor:default;opacity:.55}
+.opts button.ok{background:var(--teal);color:var(--paper);opacity:1}
+.opts button.no{background:var(--brick);border-color:var(--brick);color:var(--paper);opacity:1}
+.q .why{font-family:var(--sans);font-size:14.5px;line-height:1.5;margin:0;background:var(--sand);border-radius:12px;padding:12px 14px}
+.quiz.js .q:not(.done) .why{display:none}
+.tally{font-family:var(--serif);font-size:20px;text-align:center;margin:22px 0 0;min-height:1.4em}
+.lesson{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);line-height:1.35;color:var(--onpanel);margin:30px 0 0;padding:20px 22px;border-left:4px solid var(--gold);background:#16222F;border-radius:0 14px 14px 0}
+.lesson b{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 </style>
 </head>
 <body>
@@ -526,18 +586,18 @@ details.more p{margin:10px 0 0}
     <div class="scene">
       <img src="/special/economy-in-plain-sight/hero.jpg" width="1600" height="667" alt="The night side of Earth from orbit: city lights across India under moonlit cloud, with the thin blue line of the atmosphere on the horizon" fetchpriority="high" decoding="async">
       <ol class="clues" aria-label="Four clues">
-        <li class="clue c1"><span class="n">1</span><span class="tag">Measurement</span><span class="num">3.4%</span><p>Myanmar's yearly growth seen from space, 1992–2003. Official: 8.6%</p></li>
-        <li class="clue c2"><span class="n">2</span><span class="tag">Nowcasting</span><span class="num">62%</span><p>smaller error in estimating Gujarat's growth this quarter, with night lights and searches</p></li>
-        <li class="clue c3"><span class="n">3</span><span class="tag">Investing</span><span class="num">−3%</span><p>three-day share fall, against the market, when a retailer's car parks emptied</p></li>
-        <li class="clue c4"><span class="n">4</span><span class="tag">Failure</span><span class="num">100 of 108</span><p>weeks from August 2011 in which Google's flu tracker ran too high</p></li>
+        <li class="clue c1"><a href="#s1"><span class="n">1</span><span class="tag">Measurement</span><span class="num">3.4%</span><span class="ct">Myanmar's yearly growth seen from space, 1992–2003. Official: 8.6%</span><span class="go">See the evidence ↓</span></a></li>
+        <li class="clue c2"><a href="#india"><span class="n">2</span><span class="tag">Nowcasting</span><span class="num">62%</span><span class="ct">smaller error in estimating Gujarat's growth this quarter, with night lights and searches</span><span class="go">See the evidence ↓</span></a></li>
+        <li class="clue c3"><a href="#s2"><span class="n">3</span><span class="tag">Investing</span><span class="num">−3%</span><span class="ct">three-day share fall, against the market, when a retailer's car parks emptied</span><span class="go">See the evidence ↓</span></a></li>
+        <li class="clue c4"><a href="#other"><span class="n">4</span><span class="tag">Failure</span><span class="num">100 of 108</span><span class="ct">weeks from August 2011 in which Google's flu tracker ran too high</span><span class="go">See the evidence ↓</span></a></li>
       </ol>
     </div>
     <p class="capt">Photo: NASA / Reid Wiseman. A night pass over India from the International Space Station, August 2014. The four clues are four different kinds of evidence, so they are not directly comparable.</p>
     <div class="thesis">
       <h2>A window, <em>not a crystal ball</em></h2>
       <p>Alternative data can reveal the economy today, sometimes before official statistics arrive. Predicting tomorrow is a different challenge.</p>
-      <ul class="jump" aria-label="Jump to a chapter">
-        <li><a href="#six">Six signals</a></li><li><a href="#india">India from orbit</a></li><li><a href="#burger">Burger queue</a></li><li><a href="#pulse">Pulse check</a></li><li><a href="#trust">Signal or noise</a></li><li><a href="#other">When data lied</a></li><li><a href="#diy">Try it</a></li>
+      <ul class="jump" id="sp-jump" aria-label="Jump to a chapter">
+        <li><a href="#six">Six signals</a></li><li><a href="#india">India from orbit</a></li><li><a href="#burger">Burger queue</a></li><li><a href="#pulse">Pulse check</a></li><li><a href="#trust">Signal or noise</a></li><li><a href="#spot">Your turn</a></li><li><a href="#other">When data lied</a></li><li><a href="#diy">Try it</a></li>
       </ul>
     </div>
   </div>
@@ -551,10 +611,10 @@ details.more p{margin:10px 0 0}
       <p>Six real studies. Each shows what the signal sees and what it misses.</p>
     </div>
   </div></div>
-  <section class="band navy" aria-label="Night lights"><div class="wrap"><div class="story rv">
+  <section class="band navy" aria-label="Night lights" id="s1"><div class="wrap"><div class="story rv">
       <div class="vis"><img src="/special/economy-in-plain-sight/delhi.jpg" width="1600" height="800" alt="The city lights of New Delhi and the towns around it, photographed at night from orbit" loading="lazy" decoding="async"><p class="cap">New Delhi from the International Space Station, 2025. Lights cluster where people work, travel and spend. Photo: NASA.</p></div>
       <div class="txt">
-        <div class="lab"><span class="chap">01</span>Peer-reviewed</div>
+        <div class="lab"><svg class="sico" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="13" r="4"/><path d="M13 3v3M13 20v3M3 13h3M20 13h3M6 6l2 2M18 18l2 2M20 6l-2 2M6 20l2-2"/></svg><span class="chap">01</span>Peer-reviewed</div>
         <h3>Night lights</h3>
         <p class="what">Brighter nights mean more activity, so economists used satellite images to check official growth figures.</p>
         <div class="find"><span class="num">3.4%</span><span>Myanmar's yearly growth as seen from space, 1992 to 2003. The official figure was 8.6%.</span></div>
@@ -563,10 +623,10 @@ details.more p{margin:10px 0 0}
         <p class="study"><a href="https://cepr.org/voxeu/columns/measuring-economic-growth-outer-space">Henderson, Storeygard and Weil</a>, American Economic Review, 2012. Official figures: World Bank.</p>
       </div>
     </div></div></section>
-  <section class="band" aria-label="Car parks"><div class="wrap"><div class="story rv flip">
+  <section class="band" aria-label="Car parks" id="s2"><div class="wrap"><div class="story rv flip">
       <div class="vis"><img src="/special/economy-in-plain-sight/lot.jpg" width="1600" height="934" alt="A large store car park seen from above, most bays filled" loading="lazy" decoding="async"><p class="cap">A store car park in Bloomington, US. Software counts the cars in views like this across thousands of stores. Photo: Ian Jeon / Unsplash; not from the study.</p></div>
       <div class="txt">
-        <div class="lab"><span class="chap">02</span>Peer-reviewed</div>
+        <div class="lab"><svg class="sico" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="18" height="18" rx="4"/><path d="M10 18V8h4a3 3 0 0 1 0 6h-4"/></svg><span class="chap">02</span>Peer-reviewed</div>
         <h3>Car parks</h3>
         <p class="what">Satellites counted cars outside 44 US retailers. Traders bought the fullest quarter and bet against the emptiest.</p>
         <div class="find"><span class="num">−3%</span><span>three-day share fall, against the market, for retailers whose car parks had emptied.</span></div>
@@ -574,25 +634,21 @@ details.more p{margin:10px 0 0}
         <div class="sm"><div class="sees"><b>What it sees</b>Estimated store visits.</div><div class="miss"><b>What it misses</b>Online orders, basket size.</div></div>
         <p class="study"><a href="https://ideas.repec.org/a/cup/jfinqa/v60y2025i2p551-579_1.html">Katona, Painter, Patatoukas and Zeng</a>, JFQA, 2025. Data: RS Metrics.</p>
       </div>
-    </div></div></section>
-  <section class="band sage" aria-label="Oil tank shadows"><div class="wrap"><div class="story rv">
-      <div class="vis"><svg viewBox="0 0 600 300" role="img" aria-label="Cutaway diagram of two floating-roof oil tanks. In the full tank the roof sits high and the wall casts a short shadow on it. In the drained tank the roof sits low and the shadow is long."><rect width="600" height="300" fill="#F4F7F4"/><circle cx="46" cy="34" r="16" fill="#F0B840"/><g><rect x="70" y="70" width="200" height="170" fill="#DDE5E1" stroke="#1D2B3A" stroke-width="3"/>
-<rect x="73" y="93.8" width="194" height="144.2" fill="#3B4A57"/>
-<rect x="73" y="83.8" width="194" height="10" fill="#C88A14"/>
-<path d="M73 72L73 83.8L88 83.8Z" fill="#1D2B3A" opacity=".5"/>
-<path d="M24 24L73 72" stroke="#C88A14" stroke-width="2.5" stroke-dasharray="6 5"/>
-<circle cx="170.0" cy="88.8" r="13" fill="#16222F"/><text x="170.0" y="93.8" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">1</text>
-<circle cx="104" cy="82" r="13" fill="#16222F"/><text x="104" y="87" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">2</text>
-<text x="170.0" y="272" font-family="Poppins,Arial,sans-serif" font-size="15" font-weight="600" fill="#1D2B3A" text-anchor="middle">Full</text></g><g><rect x="340" y="70" width="200" height="170" fill="#DDE5E1" stroke="#1D2B3A" stroke-width="3"/>
-<rect x="343" y="189.0" width="194" height="49.0" fill="#3B4A57"/>
-<rect x="343" y="179.0" width="194" height="10" fill="#C88A14"/>
-<path d="M343 72L343 179.0L463 179.0Z" fill="#1D2B3A" opacity=".5"/>
-<path d="M294 24L343 72" stroke="#C88A14" stroke-width="2.5" stroke-dasharray="6 5"/>
-<circle cx="440.0" cy="184.0" r="13" fill="#16222F"/><text x="440.0" y="189.0" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">1</text>
-<circle cx="374" cy="130" r="13" fill="#16222F"/><text x="374" y="134" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">2</text>
-<text x="440.0" y="272" font-family="Poppins,Arial,sans-serif" font-size="15" font-weight="600" fill="#1D2B3A" text-anchor="middle">Drained</text></g></svg><p class="cap">Diagram, not data. 1: the floating roof rides on the oil. 2: the shadow the wall casts on the roof grows as the roof sinks.</p></div>
+    </div><div class="pause"><p>A full car park does not guarantee a full cash register.</p></div></div></section>
+  <section class="band sage" aria-label="Oil tank shadows" id="s3"><div class="wrap"><div class="story rv">
+      <div class="vis"><div class="tankb" id="tankb"><svg class="tankv" viewBox="0 0 600 300" role="img" aria-label="Cutaway of a floating-roof oil tank. When the tank is full the roof sits high and the wall casts a short shadow on it. When it is drained the roof sits low and the shadow is long.">
+<defs><clipPath id="tkc"><rect x="183" y="56" width="234" height="187"/></clipPath></defs>
+<rect width="600" height="300" fill="#F4F7F4"/><circle cx="70" cy="40" r="18" fill="#F0B840"/>
+<path d="M88 52L183 58" stroke="#C88A14" stroke-width="2.5" stroke-dasharray="6 5"/>
+<rect x="180" y="56" width="240" height="190" fill="#DDE5E1" stroke="#1D2B3A" stroke-width="3"/>
+<g clip-path="url(#tkc)"><g class="lvl"><rect x="183" y="90" width="234" height="320" fill="#3B4A57"/><rect x="183" y="78" width="234" height="12" fill="#C88A14"/></g>
+<path class="shd" d="M183 56L183 78L209 78Z" fill="#1D2B3A" opacity=".55"/></g>
+<g font-family="Poppins,Arial,sans-serif" font-size="14" font-weight="600" fill="#1D2B3A"><text x="434" y="70">Tank wall</text><text x="434" y="238">Oil</text></g>
+<path d="M422 66h8M422 234h8" stroke="#1D2B3A" stroke-width="2"/>
+</svg>
+<div class="pickers" role="group" aria-label="Tank level"><button type="button" data-lv="full" aria-pressed="true">Full tank</button><button type="button" data-lv="low" aria-pressed="false">Drained tank</button></div></div><p class="cap">Diagram, not data. The gold roof floats on the oil. As the oil drains the roof sinks, and the shadow the wall casts on it grows. Tap to compare.</p></div>
       <div class="txt">
-        <div class="lab"><span class="chap">03</span>Peer-reviewed</div>
+        <div class="lab"><svg class="sico" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="13" cy="7" rx="8" ry="3"/><path d="M5 7v12c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/></svg><span class="chap">03</span>Peer-reviewed</div>
         <h3>Oil tank shadows</h3>
         <p class="what">A floating tank roof sinks as oil drains. Satellites measure the shadow inside the rim to work out how full the tank is.</p>
         <div class="find"><span class="num">Fewer jolts</span><span>in oil prices when the US published its weekly stock figures, once satellite estimates existed.</span></div>
@@ -601,10 +657,10 @@ details.more p{margin:10px 0 0}
         <p class="study"><a href="https://iems.ust.hk/publications/thought-leadership-briefs/mukherjee-eye-in-the-sky-private-satellite-government-data">Mukherjee, Panayotov and Shon</a>, Journal of Financial Economics, 2021.</p>
       </div>
     </div></div></section>
-  <section class="band navy" aria-label="Ship pings"><div class="wrap"><div class="story rv flip">
+  <section class="band navy" aria-label="Ship pings" id="s4"><div class="wrap"><div class="story rv flip">
       <div class="vis"><img src="/special/economy-in-plain-sight/ship.jpg" width="1600" height="800" alt="A loaded container ship at sea, seen from directly above" loading="lazy" decoding="async"><p class="cap">A container ship near Curaçao. Its position signal says where it is, not what is in the boxes. Photo: Bent Van Aeken / Unsplash.</p></div>
       <div class="txt">
-        <div class="lab"><span class="chap">04</span>Working paper</div>
+        <div class="lab"><svg class="sico" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h20l-3 5H6z"/><path d="M8 17v-6h10v6M13 11V5"/></svg><span class="chap">04</span>Working paper</div>
         <h3>Ship pings</h3>
         <p class="what">Every large ship broadcasts its position. The IMF turned those radio signals into a live map of world trade.</p>
         <div class="find"><span class="num">80%+</span><span>of goods trade by volume moves by sea. The pings sometimes arrive before customs data.</span></div>
@@ -613,12 +669,12 @@ details.more p{margin:10px 0 0}
         <p class="study"><a href="https://www.imf.org/en/Publications/WP/Issues/2020/05/14/World-Seaborne-Trade-in-Real-Time-A-Proof-of-Concept-for-Building-AIS-based-Nowcasts-from-49393">Cerdeiro, Komaromi, Liu and Saeed</a>, IMF Working Paper 20/57, 2020.</p>
       </div>
     </div></div></section>
-  <section class="band" aria-label="Search bars"><div class="wrap"><div class="story rv">
+  <section class="band" aria-label="Search bars" id="s5"><div class="wrap"><div class="story rv">
       <div class="vis"><div class="searchbox"><div class="q"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="7.5" cy="7.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 12l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>jobs near me</div>
 <ul aria-hidden="true"><li>jobs near me hiring now</li><li>how to claim unemployment benefits</li><li>unemployment office hours</li></ul>
 <div class="viz" aria-label="Error in estimating US jobless claims, to scale"><div class="bar wide"><span class="t">Without</span><div class="track"><div class="fill b" style="width:100%"></div></div></div><div class="bar wide"><span class="t">With searches</span><div class="track"><div class="fill a" style="width:84.3%"></div></div></div></div></div><p class="cap">Illustration: KKReckons. Bars show the average error in estimating US jobless claims, to scale.</p></div>
       <div class="txt">
-        <div class="lab"><span class="chap">05</span>Peer-reviewed</div>
+        <div class="lab"><svg class="sico" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16 16l7 7"/></svg><span class="chap">05</span>Peer-reviewed</div>
         <h3>Search bars</h3>
         <p class="what">People search for jobs and unemployment benefits before they show up in the claims figures.</p>
         <div class="find"><span class="num">15.7%</span><span>smaller error in estimating US jobless claims once searches were added.</span></div>
@@ -627,10 +683,10 @@ details.more p{margin:10px 0 0}
         <p class="study"><a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4932.2012.00809.x">Choi and Varian</a>, Economic Record, 2012. A <a href="https://www.econstor.eu/bitstream/10419/179669/1/1024415724.pdf">2018 re-run</a> found weaker gains.</p>
       </div>
     </div></div></section>
-  <section class="band sage" aria-label="Card swipes"><div class="wrap"><div class="story rv flip">
+  <section class="band sage" aria-label="Card swipes" id="s6"><div class="wrap"><div class="story rv flip">
       <div class="vis"><img src="/special/economy-in-plain-sight/card.jpg" width="1600" height="1066" alt="A hand taps a payment card on a small card reader at a café counter" loading="lazy" decoding="async"><p class="cap">Every tap leaves a record of where and how much. Photo: SumUp / Unsplash.</p></div>
       <div class="txt">
-        <div class="lab"><span class="chap">06</span>Working paper</div>
+        <div class="lab"><svg class="sico" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="20" height="14" rx="3"/><path d="M3 11h20M7 16h4"/></svg><span class="chap">06</span>Working paper</div>
         <h3>Card swipes</h3>
         <p class="what">Card data showed who stopped spending in 2020 within weeks, long before official figures could.</p>
         <div class="find"><span class="num">Over half</span><span>of the fall in US card spending by 10 June 2020 came from high-income households.</span></div>
@@ -638,7 +694,7 @@ details.more p{margin:10px 0 0}
         <div class="sm"><div class="sees"><b>What it sees</b>Spending by place, income.</div><div class="miss"><b>What it misses</b>Cash and off-network spending.</div></div>
         <p class="study"><a href="https://www.nber.org/system/files/working_papers/w27431/revisions/w27431.rev0.pdf">Chetty, Friedman, Hendren, Stepner</a> and the Opportunity Insights team, NBER, 2020.</p>
       </div>
-    </div></div></section>
+    </div><div class="pause"><p>The satellite does not know your income.</p></div></div></section>
 
   <section class="band" aria-labelledby="india"><div class="wrap">
     <div class="sec-head">
@@ -655,6 +711,22 @@ details.more p{margin:10px 0 0}
 <div class="viz" aria-label="Estimation error, to scale"><div class="bar wide"><span class="t">Past growth only</span><div class="track"><div class="fill b" style="width:100%"></div></div></div><div class="bar wide"><span class="t">With lights + searches</span><div class="track"><div class="fill a" style="width:46%"></div></div></div><div class="scale">Typical error (RMSE), with the benchmark set to 100. Bars to scale.</div></div></div><div class="spot rv" id="sp-mh"><span class="num huge">38%</span><h3>Maharashtra</h3><p>smaller error than a model using past growth alone. Night lights and state growth move together at 0.90. Tested up to October–December 2024.</p>
 <div class="viz" aria-label="Estimation error, to scale"><div class="bar wide"><span class="t">Past growth only</span><div class="track"><div class="fill b" style="width:100%"></div></div></div><div class="bar wide"><span class="t">With lights + searches</span><div class="track"><div class="fill a" style="width:62%"></div></div></div><div class="scale">Typical error (RMSE), with the benchmark set to 100. Bars to scale.</div></div></div></div>
       </div>
+    </div>
+    <div class="cmp rv" id="cmpb">
+      <div class="cmph"><h3>All three states, side by side</h3>
+        <div class="pickers" role="group" aria-label="Choose a measure"><button type="button" data-m="left" aria-pressed="true">Error left</button><button type="button" data-m="cut" aria-pressed="false">Error cut</button></div></div>
+      <div class="cmpg">
+        <div class="viz" aria-label="Model error by state, to scale">
+          <div class="bar wide"><span class="t">Gujarat</span><div class="track"><div class="fill a" data-left="38" data-cut="62" style="width:38%"></div></div><span class="v" data-left="38" data-cut="62%">38</span></div><div class="bar wide"><span class="t">Karnataka</span><div class="track"><div class="fill a" data-left="46" data-cut="54" style="width:46%"></div></div><span class="v" data-left="46" data-cut="54%">46</span></div><div class="bar wide"><span class="t">Maharashtra</span><div class="track"><div class="fill a" data-left="62" data-cut="38" style="width:62%"></div></div><span class="v" data-left="62" data-cut="38%">62</span></div>
+          <div class="bar wide bm"><span class="t">Past growth only</span><div class="track"><div class="fill b" data-left="100" data-cut="0" style="width:100%"></div></div><span class="v" data-left="100" data-cut="0%">100</span></div>
+          <div class="scale" data-left="Typical error (RMSE) left after adding lights and searches, with the past-growth model set to 100. Shorter is better." data-cut="Share of the past-growth model's typical error (RMSE) removed by adding lights and searches. Longer is better.">Typical error (RMSE) left after adding lights and searches, with the past-growth model set to 100. Shorter is better.</div>
+        </div>
+        <div class="viz" aria-label="How closely night lights and state growth move together, from 0 to 1">
+          <div class="bar wide"><span class="t">Gujarat</span><div class="track"><div class="fill g" style="width:66%"></div></div><span class="v">0.66</span></div><div class="bar wide"><span class="t">Karnataka</span><div class="track"><div class="fill g" style="width:79%"></div></div><span class="v">0.79</span></div><div class="bar wide"><span class="t">Maharashtra</span><div class="track"><div class="fill g" style="width:90%"></div></div><span class="v">0.90</span></div>
+          <div class="scale">A separate measure: how closely night lights and state growth move together, from 0 to 1. Maharashtra tracks best yet gains least, because its past growth was already a good guide.</div>
+        </div>
+      </div>
+      <p class="mirror">State GDP is the rear-view mirror. <em>Night lights are a window on the current quarter</em>, and a lower error means a sharper estimate, not faster growth.</p>
     </div>
     <ul class="facts">
       <li><b>What the % means</b>A fall in typical error (RMSE), not a rise in growth.</li>
@@ -729,7 +801,7 @@ details.more p{margin:10px 0 0}
     <p class="fine">The two panels cover different periods and are not a like-for-like comparison.</p>
   </div></section>
 
-  <section class="band sage" aria-labelledby="trust"><div class="wrap">
+  <section class="band sage" aria-labelledby="trust"><div class="wrap"><div class="pause"><p>Fast data is not necessarily good data.</p></div>
     <div class="sec-head">
       <div class="lab">Signal or noise?</div>
       <h2 id="trust">Which signals have earned trust</h2>
@@ -741,43 +813,69 @@ details.more p{margin:10px 0 0}
         <div class="plot xl" role="group" aria-label="Signals by evidence score, left to right, and speed, top to bottom">
           <span class="qt"></span><span class="qb"></span><span class="vx"></span><span class="hx"></span>
           <span class="q tl">Promising early signals</span><span class="q tr">Strong and timely</span><span class="q bl">Interesting, weakly tested</span><span class="q br">Reliable but slower</span>
-          <span class="tagl l" style="left:86.0%;top:62.5%" aria-hidden="true">Night lights</span><span class="tagl l" style="left:75.0%;top:37.5%" aria-hidden="true">Power, rail and fuel use</span><span class="tagl l" style="left:73.0%;top:12.5%" aria-hidden="true">Ship tracking</span><span class="tagl" style="left:32.0%;top:87.5%" aria-hidden="true">Cardboard boxes</span><span class="tagl" style="left:29.0%;top:62.5%" aria-hidden="true">Sewage chemistry</span><button type="button" class="dot hi" style="left:86.0%;top:62.5%" data-i="1" aria-pressed="false" aria-label="1. Night lights, score 8.6"><span>1</span></button><button type="button" class="dot hi sq" style="left:75.0%;top:37.5%" data-i="2" aria-pressed="false" aria-label="2. Power, rail and fuel use, score 7.5"><span>2</span></button><button type="button" class="dot hi sq" style="left:73.0%;top:12.5%" data-i="3" aria-pressed="false" aria-label="3. Ship tracking, score 7.3"><span>3</span></button><button type="button" class="dot mid" style="left:68.0%;top:20.0%" data-i="4" aria-pressed="false" aria-label="4. Google searches, score 6.8"><span>4</span></button><button type="button" class="dot mid dm" style="left:67.0%;top:5.0%" data-i="5" aria-pressed="false" aria-label="5. Job postings, score 6.7"><span>5</span></button><button type="button" class="dot mid sq" style="left:60.0%;top:30.0%" data-i="6" aria-pressed="false" aria-label="6. Card spending, score 6.0"><span>6</span></button><button type="button" class="dot mid" style="left:57.0%;top:45.0%" data-i="7" aria-pressed="false" aria-label="7. Car parks from space, score 5.7"><span>7</span></button><button type="button" class="dot mid" style="left:53.0%;top:37.5%" data-i="8" aria-pressed="false" aria-label="8. Oil tank images, score 5.3"><span>8</span></button><button type="button" class="dot lo dm" style="left:40.0%;top:37.5%" data-i="9" aria-pressed="false" aria-label="9. Phone footfall, score 4.0"><span>9</span></button><button type="button" class="dot lo dm" style="left:36.0%;top:12.5%" data-i="10" aria-pressed="false" aria-label="10. Social media mood, score 3.6"><span>10</span></button><button type="button" class="dot lo dm" style="left:32.0%;top:87.5%" data-i="11" aria-pressed="false" aria-label="11. Cardboard boxes, score 3.2"><span>11</span></button><button type="button" class="dot lo" style="left:29.0%;top:62.5%" data-i="12" aria-pressed="false" aria-label="12. Sewage chemistry, score 2.9"><span>12</span></button>
+          <span class="tagl l" style="left:86.0%;top:62.5%" aria-hidden="true">Night lights</span><span class="tagl l" style="left:75.0%;top:37.5%" aria-hidden="true">Power, rail and fuel use</span><span class="tagl l" style="left:73.0%;top:12.5%" aria-hidden="true">Ship tracking</span><span class="tagl" style="left:32.0%;top:87.5%" aria-hidden="true">Cardboard boxes</span><span class="tagl" style="left:29.0%;top:62.5%" aria-hidden="true">Sewage chemistry</span><button type="button" class="dot hi" style="left:86.0%;top:62.5%" data-i="1" aria-pressed="false" aria-label="1. Night lights, about 9 out of 10"><span>1</span></button><button type="button" class="dot hi sq" style="left:75.0%;top:37.5%" data-i="2" aria-pressed="false" aria-label="2. Power, rail and fuel use, about 8 out of 10"><span>2</span></button><button type="button" class="dot hi sq" style="left:73.0%;top:12.5%" data-i="3" aria-pressed="false" aria-label="3. Ship tracking, about 7 out of 10"><span>3</span></button><button type="button" class="dot mid" style="left:68.0%;top:20.0%" data-i="4" aria-pressed="false" aria-label="4. Google searches, about 7 out of 10"><span>4</span></button><button type="button" class="dot mid dm" style="left:67.0%;top:5.0%" data-i="5" aria-pressed="false" aria-label="5. Job postings, about 7 out of 10"><span>5</span></button><button type="button" class="dot mid sq" style="left:60.0%;top:30.0%" data-i="6" aria-pressed="false" aria-label="6. Card spending, about 6 out of 10"><span>6</span></button><button type="button" class="dot mid" style="left:57.0%;top:45.0%" data-i="7" aria-pressed="false" aria-label="7. Car parks from space, about 6 out of 10"><span>7</span></button><button type="button" class="dot mid" style="left:53.0%;top:37.5%" data-i="8" aria-pressed="false" aria-label="8. Oil tank images, about 5 out of 10"><span>8</span></button><button type="button" class="dot lo dm" style="left:40.0%;top:37.5%" data-i="9" aria-pressed="false" aria-label="9. Phone footfall, about 4 out of 10"><span>9</span></button><button type="button" class="dot lo dm" style="left:36.0%;top:12.5%" data-i="10" aria-pressed="false" aria-label="10. Social media mood, about 4 out of 10"><span>10</span></button><button type="button" class="dot lo dm" style="left:32.0%;top:87.5%" data-i="11" aria-pressed="false" aria-label="11. Cardboard boxes, about 3 out of 10"><span>11</span></button><button type="button" class="dot lo" style="left:29.0%;top:62.5%" data-i="12" aria-pressed="false" aria-label="12. Sewage chemistry, about 3 out of 10"><span>12</span></button>
         </div>
         <div class="xlab" aria-hidden="true"><span>0 · weaker evidence</span><span>stronger evidence · 10</span></div>
       </div>
       <ul class="shapes" aria-label="Shapes show the kind of evidence"><li class="c"><i></i>Peer-reviewed</li><li class="s"><i></i>Central bank, IMF or working paper</li><li class="d"><i></i>Industry data or our judgement</li></ul>
-      <div class="inds"><div class="ind" id="ind-1"><div class="hd"><h3>1. Night lights</h3><span class="sc">8.6 / 10 · strong</span></div>
+      <div class="inds"><div class="ind" id="ind-1"><div class="hd"><h3>1. Night lights</h3><span class="sc">9 / 10 · strong</span></div>
       <div class="meta"><span class="chip2">Peer-reviewed</span><span class="chip2">Monthly</span><span class="chip2">Good for: Now, with some lead</span></div>
-      <p>Tested in a top journal and again by RBI staff on unseen quarters. Free from NASA, with images back to 1992. <b>Sees:</b> Change in lit-up activity, anywhere on Earth. <b>Misses:</b> Farms, offices and anything that makes little light.</p></div><div class="ind" id="ind-2"><div class="hd"><h3>2. Power, rail and fuel use</h3><span class="sc">7.5 / 10 · strong</span></div>
+      <p>Tested in a top journal and again by RBI staff on unseen quarters. Free from NASA, with images back to 1992. <b>Sees:</b> Change in lit-up activity, anywhere on Earth. <b>Misses:</b> Farms, offices and anything that makes little light.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill hi" style="width:80%"></div></div><span class="v">8</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill hi" style="width:100%"></div></div><span class="v">10</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill hi" style="width:60%"></div></div><span class="v">6</span></div></div></div><div class="ind" id="ind-2"><div class="hd"><h3>2. Power, rail and fuel use</h3><span class="sc">8 / 10 · strong</span></div>
       <div class="meta"><span class="chip2">Institutional research</span><span class="chip2">Weekly</span><span class="chip2">Good for: Now</span></div>
-      <p>The Fed's Weekly Economic Index blends ten weekly series like these and is scaled to yearly GDP growth. It started in April 2020 and covers the US only. <b>Sees:</b> Physical activity: electricity load, rail traffic, fuel sales. <b>Misses:</b> Services, prices and anything driven by the weather.</p></div><div class="ind" id="ind-3"><div class="hd"><h3>3. Ship tracking</h3><span class="sc">7.3 / 10 · strong</span></div>
+      <p>The Fed's Weekly Economic Index blends ten weekly series like these and is scaled to yearly GDP growth. It started in April 2020 and covers the US only. <b>Sees:</b> Physical activity: electricity load, rail traffic, fuel sales. <b>Misses:</b> Services, prices and anything driven by the weather.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill hi" style="width:80%"></div></div><span class="v">8</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill hi" style="width:60%"></div></div><span class="v">6</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill hi" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v">9</span></div></div></div><div class="ind" id="ind-3"><div class="hd"><h3>3. Ship tracking</h3><span class="sc">7 / 10 · strong</span></div>
       <div class="meta"><span class="chip2">Institutional research</span><span class="chip2">Daily</span><span class="chip2">Good for: Now, sometimes days ahead</span></div>
-      <p>IMF papers show a good match with official trade for many countries. The record only starts around 2015. <b>Sees:</b> Where cargo ships are and how full ports look. <b>Misses:</b> What is in the containers and what it is worth.</p></div><div class="ind" id="ind-4"><div class="hd"><h3>4. Google searches</h3><span class="sc">6.8 / 10 · middling</span></div>
+      <p>IMF papers show a good match with official trade for many countries. The record only starts around 2015. <b>Sees:</b> Where cargo ships are and how full ports look. <b>Misses:</b> What is in the containers and what it is worth.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill hi" style="width:80%"></div></div><span class="v">8</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill hi" style="width:60%"></div></div><span class="v">6</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill hi" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill hi" style="width:80%"></div></div><span class="v">8</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill hi" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill hi" style="width:100%"></div></div><span class="v">10</span></div></div></div><div class="ind" id="ind-4"><div class="hd"><h3>4. Google searches</h3><span class="sc">7 / 10 · middling</span></div>
       <div class="meta"><span class="chip2">Peer-reviewed, mixed</span><span class="chip2">Daily</span><span class="chip2">Good for: Now only</span></div>
-      <p>Free, fast and global, which lifts the score. The evidence itself is mixed: one famous success, one famous failure. <b>Sees:</b> What people are worried about or shopping for. <b>Misses:</b> Whether they act on it. Results shift as Google changes.</p></div><div class="ind" id="ind-5"><div class="hd"><h3>5. Job postings</h3><span class="sc">6.7 / 10 · middling</span></div>
+      <p>Free, fast and global, which lifts the score. The evidence itself is mixed: one famous success, one famous failure. <b>Sees:</b> What people are worried about or shopping for. <b>Misses:</b> Whether they act on it. Results shift as Google changes.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill mid" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill mid" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill mid" style="width:100%"></div></div><span class="v">10</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill mid" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill mid" style="width:100%"></div></div><span class="v">10</span></div></div></div><div class="ind" id="ind-5"><div class="hd"><h3>5. Job postings</h3><span class="sc">7 / 10 · middling</span></div>
       <div class="meta"><span class="chip2">Industry data</span><span class="chip2">Daily</span><span class="chip2">Good for: Now, leads hiring a little</span></div>
-      <p>Indeed's index tracks official job openings closely and is free to download, but the series is short. <b>Sees:</b> Employers' demand for new staff, daily. <b>Misses:</b> Jobs filled without an advert, and one website's share of the market.</p></div><div class="ind" id="ind-6"><div class="hd"><h3>6. Card spending</h3><span class="sc">6.0 / 10 · middling</span></div>
+      <p>Indeed's index tracks official job openings closely and is free to download, but the series is short. <b>Sees:</b> Employers' demand for new staff, daily. <b>Misses:</b> Jobs filled without an advert, and one website's share of the market.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill mid" style="width:70%"></div></div><span class="v">7</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill mid" style="width:90%"></div></div><span class="v">9</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill mid" style="width:60%"></div></div><span class="v">6</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill mid" style="width:100%"></div></div><span class="v">10</span></div></div></div><div class="ind" id="ind-6"><div class="hd"><h3>6. Card spending</h3><span class="sc">6 / 10 · middling</span></div>
       <div class="meta"><span class="chip2">Working paper</span><span class="chip2">Weekly</span><span class="chip2">Good for: Now</span></div>
-      <p>Strong match with official retail data, but most of the raw data is private. <b>Sees:</b> What households spend, by place and income group. <b>Misses:</b> Cash, and spending outside the card networks.</p></div><div class="ind" id="ind-7"><div class="hd"><h3>7. Car parks from space</h3><span class="sc">5.7 / 10 · middling</span></div>
+      <p>Strong match with official retail data, but most of the raw data is private. <b>Sees:</b> What households spend, by place and income group. <b>Misses:</b> Cash, and spending outside the card networks.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill mid" style="width:80%"></div></div><span class="v">8</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill mid" style="width:60%"></div></div><span class="v">6</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill mid" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill mid" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill mid" style="width:80%"></div></div><span class="v">8</span></div></div></div><div class="ind" id="ind-7"><div class="hd"><h3>7. Car parks from space</h3><span class="sc">6 / 10 · middling</span></div>
       <div class="meta"><span class="chip2">Peer-reviewed</span><span class="chip2">Weekly</span><span class="chip2">Good for: Now, days before earnings</span></div>
-      <p>The best-proven investor signal here, in two journals. It costs institutional money and covers US retailers only. <b>Sees:</b> Estimated visits to physical stores. <b>Misses:</b> Online orders and how much each shopper spends.</p></div><div class="ind" id="ind-8"><div class="hd"><h3>8. Oil tank images</h3><span class="sc">5.3 / 10 · middling</span></div>
+      <p>The best-proven investor signal here, in two journals. It costs institutional money and covers US retailers only. <b>Sees:</b> Estimated visits to physical stores. <b>Misses:</b> Online orders and how much each shopper spends.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill mid" style="width:80%"></div></div><span class="v">8</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill mid" style="width:70%"></div></div><span class="v">7</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill mid" style="width:10%"></div></div><span class="v">1</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill mid" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill mid" style="width:70%"></div></div><span class="v">7</span></div></div></div><div class="ind" id="ind-8"><div class="hd"><h3>8. Oil tank images</h3><span class="sc">5 / 10 · middling</span></div>
       <div class="meta"><span class="chip2">Peer-reviewed</span><span class="chip2">Weekly</span><span class="chip2">Good for: Now</span></div>
-      <p>A journal study shows markets react less to official stock figures once satellites exist. The data is commercial. <b>Sees:</b> How full floating-roof oil tanks are. <b>Misses:</b> Tanks under cloud, with fixed roofs or underground.</p></div><div class="ind" id="ind-9"><div class="hd"><h3>9. Phone footfall</h3><span class="sc">4.0 / 10 · weak</span></div>
+      <p>A journal study shows markets react less to official stock figures once satellites exist. The data is commercial. <b>Sees:</b> How full floating-roof oil tanks are. <b>Misses:</b> Tanks under cloud, with fixed roofs or underground.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill mid" style="width:70%"></div></div><span class="v">7</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill mid" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill mid" style="width:10%"></div></div><span class="v">1</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill mid" style="width:60%"></div></div><span class="v">6</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill mid" style="width:80%"></div></div><span class="v">8</span></div></div></div><div class="ind" id="ind-9"><div class="hd"><h3>9. Phone footfall</h3><span class="sc">4 / 10 · weak</span></div>
       <div class="meta"><span class="chip2">Industry estimate</span><span class="chip2">Weekly</span><span class="chip2">Good for: Now</span></div>
-      <p>Vendors publish plenty, independent tests are few. <b>Sees:</b> Estimated visits, dwell time and repeat trips. <b>Misses:</b> Sales. The panel also skews towards some phone users.</p></div><div class="ind" id="ind-10"><div class="hd"><h3>10. Social media mood</h3><span class="sc">3.6 / 10 · weak</span></div>
+      <p>Vendors publish plenty, independent tests are few. <b>Sees:</b> Estimated visits, dwell time and repeat trips. <b>Misses:</b> Sales. The panel also skews towards some phone users.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill lo" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill lo" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill lo" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill lo" style="width:80%"></div></div><span class="v">8</span></div></div></div><div class="ind" id="ind-10"><div class="hd"><h3>10. Social media mood</h3><span class="sc">4 / 10 · weak</span></div>
       <div class="meta"><span class="chip2">KKReckons judgement</span><span class="chip2">Daily</span><span class="chip2">Good for: Unproven</span></div>
-      <p>Fast and global, but we found no solid evidence it tracks the economy. <b>Sees:</b> What is being talked about right now. <b>Misses:</b> Bots, media cycles and everyone who is not posting.</p></div><div class="ind" id="ind-11"><div class="hd"><h3>11. Cardboard boxes</h3><span class="sc">3.2 / 10 · weak</span></div>
+      <p>Fast and global, but we found no solid evidence it tracks the economy. <b>Sees:</b> What is being talked about right now. <b>Misses:</b> Bots, media cycles and everyone who is not posting.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill lo" style="width:20%"></div></div><span class="v">2</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill lo" style="width:10%"></div></div><span class="v">1</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill lo" style="width:50%"></div></div><span class="v">5</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill lo" style="width:70%"></div></div><span class="v">7</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill lo" style="width:100%"></div></div><span class="v">10</span></div></div></div><div class="ind" id="ind-11"><div class="hd"><h3>11. Cardboard boxes</h3><span class="sc">3 / 10 · weak</span></div>
       <div class="meta"><span class="chip2">Industry data</span><span class="chip2">Slower</span><span class="chip2">Good for: Unproven</span></div>
-      <p>A long industry record and a good story, with no peer-reviewed forecasting test. <b>Sees:</b> Goods being packed and shipped. <b>Misses:</b> Mailers and bags replacing boxes as shopping moves online.</p></div><div class="ind" id="ind-12"><div class="hd"><h3>12. Sewage chemistry</h3><span class="sc">2.9 / 10 · weak</span></div>
+      <p>A long industry record and a good story, with no peer-reviewed forecasting test. <b>Sees:</b> Goods being packed and shipped. <b>Misses:</b> Mailers and bags replacing boxes as shopping moves online.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill lo" style="width:20%"></div></div><span class="v">2</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill lo" style="width:10%"></div></div><span class="v">1</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill lo" style="width:80%"></div></div><span class="v">8</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill lo" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill lo" style="width:40%"></div></div><span class="v">4</span></div></div></div><div class="ind" id="ind-12"><div class="hd"><h3>12. Sewage chemistry</h3><span class="sc">3 / 10 · weak</span></div>
       <div class="meta"><span class="chip2">Peer-reviewed for health</span><span class="chip2">Monthly</span><span class="chip2">Good for: Unproven for the economy</span></div>
-      <p>Proven for drug and health monitoring. As an economic signal it is still an experiment. <b>Sees:</b> What a city eats, drinks and takes. <b>Misses:</b> Output, income or spending.</p></div></div>
-      <ol class="legend"><li><button type="button" data-i="1"><span class="n hi">1</span>Night lights<b>8.6</b></button></li><li><button type="button" data-i="2"><span class="n hi">2</span>Power, rail and fuel use<b>7.5</b></button></li><li><button type="button" data-i="3"><span class="n hi">3</span>Ship tracking<b>7.3</b></button></li><li><button type="button" data-i="4"><span class="n mid">4</span>Google searches<b>6.8</b></button></li><li><button type="button" data-i="5"><span class="n mid">5</span>Job postings<b>6.7</b></button></li><li><button type="button" data-i="6"><span class="n mid">6</span>Card spending<b>6.0</b></button></li><li><button type="button" data-i="7"><span class="n mid">7</span>Car parks from space<b>5.7</b></button></li><li><button type="button" data-i="8"><span class="n mid">8</span>Oil tank images<b>5.3</b></button></li><li><button type="button" data-i="9"><span class="n lo">9</span>Phone footfall<b>4.0</b></button></li><li><button type="button" data-i="10"><span class="n lo">10</span>Social media mood<b>3.6</b></button></li><li><button type="button" data-i="11"><span class="n lo">11</span>Cardboard boxes<b>3.2</b></button></li><li><button type="button" data-i="12"><span class="n lo">12</span>Sewage chemistry<b>2.9</b></button></li></ol>
+      <p>Proven for drug and health monitoring. As an economic signal it is still an experiment. <b>Sees:</b> What a city eats, drinks and takes. <b>Misses:</b> Output, income or spending.</p>
+      <div class="viz brk" aria-label="Score on each of six tests, out of 10"><div class="bar wide"><span class="t">Evidence</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">Unseen-data test</span><div class="track"><div class="fill lo" style="width:10%"></div></div><span class="v">1</span></div><div class="bar wide"><span class="t">History</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">Free access</span><div class="track"><div class="fill lo" style="width:40%"></div></div><span class="v">4</span></div><div class="bar wide"><span class="t">Reach</span><div class="track"><div class="fill lo" style="width:30%"></div></div><span class="v">3</span></div><div class="bar wide"><span class="t">Speed</span><div class="track"><div class="fill lo" style="width:50%"></div></div><span class="v">5</span></div></div></div></div>
+      <div class="tiers">
+        <div class="tier hi"><h3>Strong evidence</h3><p>Scores of 7 and above. Well tested and usable today.</p><div class="tb"><button type="button" data-i="1" aria-pressed="false"><b>9</b>Night lights</button><button type="button" data-i="2" aria-pressed="false"><b>8</b>Power, rail and fuel use</button><button type="button" data-i="3" aria-pressed="false"><b>7</b>Ship tracking</button></div></div>
+        <div class="tier mid"><h3>Promising, but mixed</h3><p>Scores of 5 to 7. Useful, with real limits.</p><div class="tb"><button type="button" data-i="4" aria-pressed="false"><b>7</b>Google searches</button><button type="button" data-i="5" aria-pressed="false"><b>7</b>Job postings</button><button type="button" data-i="6" aria-pressed="false"><b>6</b>Card spending</button><button type="button" data-i="7" aria-pressed="false"><b>6</b>Car parks from space</button><button type="button" data-i="8" aria-pressed="false"><b>5</b>Oil tank images</button></div></div>
+        <div class="tier lo"><h3>Interesting, weakly tested</h3><p>Below 5. Not reliable indicators yet.</p><div class="tb"><button type="button" data-i="9" aria-pressed="false"><b>4</b>Phone footfall</button><button type="button" data-i="10" aria-pressed="false"><b>4</b>Social media mood</button><button type="button" data-i="11" aria-pressed="false"><b>3</b>Cardboard boxes</button><button type="button" data-i="12" aria-pressed="false"><b>3</b>Sewage chemistry</button></div></div>
+      </div>
     </div>
     <details class="more">
       <summary>How we scored them</summary>
-      <p><span class="chip2">KKReckons judgement</span> These scores are our own assessment, not a research finding. Each signal gets 0 to 10 on six tests, weighted: evidence 25%, testing on unseen data 25%, length of history 15%, free access 15%, geographic reach 10%, update speed 10%. The score is the weighted average. A high score means well proven and usable for seeing the present. It does not mean the signal predicts the future.</p>
+      <p><span class="chip2">KKReckons judgement</span> These scores are our own assessment, not a research finding. We show whole numbers because a judgement is not precise to a decimal; the table below has the working. Each signal gets 0 to 10 on six tests, weighted: evidence 25%, testing on unseen data 25%, length of history 15%, free access 15%, geographic reach 10%, update speed 10%. The score is the weighted average. A high score means well proven and usable for seeing the present. It does not mean the signal predicts the future.</p>
       <div class="tblw"><table class="tbl"><thead><tr><th>Signal</th><th>Evid.</th><th>Test</th><th>Hist.</th><th>Access</th><th>Reach</th><th>Speed</th><th>Score</th></tr></thead><tbody><tr><td>Night lights</td><td>9</td><td>8</td><td>9</td><td>9</td><td>10</td><td>6</td><td><b>8.6</b></td></tr><tr><td>Power, rail and fuel use</td><td>8</td><td>6</td><td>9</td><td>9</td><td>4</td><td>9</td><td><b>7.5</b></td></tr><tr><td>Ship tracking</td><td>8</td><td>6</td><td>5</td><td>8</td><td>9</td><td>10</td><td><b>7.3</b></td></tr><tr><td>Google searches</td><td>5</td><td>3</td><td>9</td><td>10</td><td>9</td><td>10</td><td><b>6.8</b></td></tr><tr><td>Job postings</td><td>7</td><td>5</td><td>5</td><td>9</td><td>6</td><td>10</td><td><b>6.7</b></td></tr><tr><td>Card spending</td><td>8</td><td>6</td><td>5</td><td>4</td><td>4</td><td>8</td><td><b>6.0</b></td></tr><tr><td>Car parks from space</td><td>8</td><td>7</td><td>5</td><td>1</td><td>3</td><td>7</td><td><b>5.7</b></td></tr><tr><td>Oil tank images</td><td>7</td><td>5</td><td>5</td><td>1</td><td>6</td><td>8</td><td><b>5.3</b></td></tr><tr><td>Phone footfall</td><td>4</td><td>3</td><td>4</td><td>3</td><td>4</td><td>8</td><td><b>4.0</b></td></tr><tr><td>Social media mood</td><td>2</td><td>1</td><td>5</td><td>3</td><td>7</td><td>10</td><td><b>3.6</b></td></tr><tr><td>Cardboard boxes</td><td>2</td><td>1</td><td>8</td><td>4</td><td>3</td><td>4</td><td><b>3.2</b></td></tr><tr><td>Sewage chemistry</td><td>3</td><td>1</td><td>3</td><td>4</td><td>3</td><td>5</td><td><b>2.9</b></td></tr></tbody></table></div>
     </details>
+  </div></section>
+
+  <section class="band" aria-labelledby="spot"><div class="wrap">
+    <div class="sec-head">
+      <div class="lab">Your turn</div>
+      <h2 id="spot">Spot the blind spot</h2>
+      <p>Four made-up scenarios, not real data. For each, decide what the clue is worth.</p>
+    </div>
+    <ol class="quiz" id="quizb"><li class="q" data-a="inc"><p class="sc2"><span class="qn">1</span>A big-box chain's car parks look 20% emptier than last year. Over the same months its app orders and kerbside pickups rose sharply.</p><div class="opts" role="group" aria-label="Your call"><button type="button" data-o="real">Real signal</button><button type="button" data-o="false">False alarm</button><button type="button" data-o="inc">Incomplete picture</button></div><p class="why"><b></b>Incomplete picture. Car counts see visits to the building, not orders placed online. Sales may be fine. This is the blind spot the car-park study itself names.</p></li><li class="q" data-a="false"><p class="sc2"><span class="qn">2</span>Searches for flu symptoms double in a week. A famous actor has just announced they are ill.</p><div class="opts" role="group" aria-label="Your call"><button type="button" data-o="real">Real signal</button><button type="button" data-o="false">False alarm</button><button type="button" data-o="inc">Incomplete picture</button></div><p class="why"><b></b>False alarm, most likely. People search because of the news as well as because they are sick. This is how Google Flu Trends went wrong.</p></li><li class="q" data-a="inc"><p class="sc2"><span class="qn">3</span>Night lights over a rural district brighten 15% in a year. A new power line reached its villages that same year.</p><div class="opts" role="group" aria-label="Your call"><button type="button" data-o="real">Real signal</button><button type="button" data-o="false">False alarm</button><button type="button" data-o="inc">Incomplete picture</button></div><p class="why"><b></b>Incomplete picture. New wiring adds light without adding output, so some of the glow is electrification, not growth. You would need a second signal.</p></li><li class="q" data-a="real"><p class="sc2"><span class="qn">4</span>Jobless claims stay low for three months, job postings climb, and card spending is up.</p><div class="opts" role="group" aria-label="Your call"><button type="button" data-o="real">Real signal</button><button type="button" data-o="false">False alarm</button><button type="button" data-o="inc">Incomplete picture</button></div><p class="why"><b></b>Real signal. Three independent sources agree, which is the strongest evidence this kind of data gives. It still describes the present, not next year.</p></li></ol>
+    <p class="tally" id="tally" aria-live="polite"></p>
   </div></section>
 
   <section class="band navy" aria-labelledby="other"><div class="wrap">
@@ -801,6 +899,7 @@ details.more p{margin:10px 0 0}
       <li><span class="yr">2013</span>Nature reports it predicting more than double the CDC's figure.</li>
       <li><span class="yr">2014</span>Researchers find it was partly a winter detector. Combined with CDC data, it beat either alone.</li>
     </ol>
+    <p class="lesson"><b>The lesson</b>A proxy is useful only while its link to the thing you care about stays stable.</p>
     <p class="study" style="margin-top:18px"><span class="chip2">Peer-reviewed</span> <a href="https://dash.harvard.edu/server/api/core/bitstreams/7312037d-0e0d-6bd4-e053-0100007fdf3b/content">Lazer, Kennedy, King and Vespignani</a>, Science, 2014.</p>
   </div></section>
 
@@ -905,9 +1004,9 @@ details.more p{margin:10px 0 0}
     tb.classList.add('js');
     function pick(n){
       all('#trustb .ind').forEach(function(e){e.hidden=(e.id!=='ind-'+n);});
-      all('#trustb .dot').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-i')===String(n)?'true':'false');});
+      all('#trustb .dot, #trustb .tiers button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-i')===String(n)?'true':'false');});
     }
-    all('#trustb .dot, #trustb .legend button').forEach(function(b){b.addEventListener('click',function(){pick(b.getAttribute('data-i'));});});
+    all('#trustb .dot, #trustb .tiers button').forEach(function(b){b.addEventListener('click',function(){pick(b.getAttribute('data-i'));});});
     pick(1);
   }
   var im=root.querySelector('#imapb');
@@ -930,6 +1029,34 @@ details.more p{margin:10px 0 0}
     }
     all('#pulsep .tabs button').forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-c'));});});
     show('us');
+  }
+  var tk=root.querySelector('#tankb');
+  if(tk){all('#tankb button').forEach(function(b){b.addEventListener('click',function(){
+    var low=b.getAttribute('data-lv')==='low'; tk.classList.toggle('low',low);
+    all('#tankb button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+  });});}
+  all('#cmpb .pickers button').forEach(function(b){b.addEventListener('click',function(){
+    var m=b.getAttribute('data-m');
+    all('#cmpb .pickers button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    all('#cmpb [data-left]').forEach(function(e){
+      var v=e.getAttribute('data-'+m);
+      if(e.classList.contains('fill')) e.style.width=v+'%'; else e.textContent=v;
+    });
+  });});
+  var qb=root.querySelector('#quizb');
+  if(qb){
+    qb.classList.add('js'); var done=0, right=0, total=all('#quizb .q').length;
+    all('#quizb .q').forEach(function(q){
+      var btns=Array.prototype.slice.call(q.querySelectorAll('button'));
+      btns.forEach(function(b){b.addEventListener('click',function(){
+        if(q.classList.contains('done')) return;
+        var ok=b.getAttribute('data-o')===q.getAttribute('data-a');
+        q.classList.add('done'); b.classList.add(ok?'ok':'no'); done++; if(ok) right++;
+        btns.forEach(function(x){x.disabled=true; if(x.getAttribute('data-o')===q.getAttribute('data-a')) x.classList.add('ok');});
+        q.querySelector('.why b').textContent=ok?'Good call. ':'Not quite. ';
+        var t=root.querySelector('#tally'); if(t&&done===total) t.textContent='You called '+right+' of '+total+'. The habit that matters: ask what the signal cannot see.';
+      });});
+    });
   }
   var rv=all('.rv');
   if('IntersectionObserver' in window){

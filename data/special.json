@@ -7,7 +7,7 @@
     "blurb": "Economists count cars from space, measure oil by its shadow and read a state's growth from its night lights. Six strange signals with what each sees and misses, RBI staff's lamplight test in three Indian states, America's busiest burger queue, a US and India pulse check, and a chart of which signals have earned trust.",
     "date": "2026-11-21",
     "themes": ["Economy", "Markets", "India"],
-    "reading_minutes": 9,
+    "reading_minutes": 10,
     "file": "special/economy-in-plain-sight.html",
     "cover": "/special/economy-in-plain-sight.jpg",
     "cover_alt": "The economy hides in plain sight. Who spots it first? A navy-to-dusk sky over a city skyline, with the KKReckons special report kicker.",
@@ -20,6 +20,16 @@
       "https://www.nber.org/system/files/working_papers/w27431/revisions/w27431.rev0.pdf",
       "https://thegreenest.com/busiest-in-n-out-in-america/",
       "https://dash.harvard.edu/server/api/core/bitstreams/7312037d-0e0d-6bd4-e053-0100007fdf3b/content"
+    ],
+    "sections": [
+      { "id": "six", "label": "Six signals" },
+      { "id": "india", "label": "India" },
+      { "id": "burger", "label": "Burger queue" },
+      { "id": "pulse", "label": "Pulse" },
+      { "id": "trust", "label": "Signal or noise" },
+      { "id": "spot", "label": "Your turn" },
+      { "id": "other", "label": "When data lied" },
+      { "id": "diy", "label": "Try it" }
     ]
   },
   {
