@@ -6,6 +6,10 @@ model: sonnet
 
 # Draft KKReckons Weekly
 
+> **Paused since 2 November 2026.** Creating beehiiv drafts needs a paid plan and Krishnakanth isn't
+> upgrading. Don't call beehiiv tools: tell him the weekly email is paused, and ask whether he wants
+> the week's best stories listed in chat (or a WhatsApp post) instead.
+
 Make a beehiiv **draft** of KKReckons Weekly, sent **Friday night**: the week's best stories across different
 topics from the 7 days Saturday to Friday (pass that Friday as the end date). Up to 8 stories, one from every
 edition, KK's Picks first, at most one per topic (two for AI); each links to its story card on the site, plus

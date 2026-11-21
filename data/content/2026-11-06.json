@@ -1,0 +1,590 @@
+{
+  "date": "2026-11-06",
+  "slice": "China splits, stocks crush homes, junk hits 18%, hackers test with ₹1. AI profits? Still buffering.",
+  "artifact": "https://claude.ai/artifact/STtuXbK7mRc2AVuyprwPin",
+  "readingMinutes": 9,
+  "callouts": [
+    {
+      "num": "18.17%",
+      "text": "yield on CCC junk bonds on 23 October, up from about 12.5% in January",
+      "url": "https://www.wsj.com/finance/investing/home-vs-stock-market-investment-6783607f"
+    },
+    {
+      "num": "₹1",
+      "text": "test transfers AI-aided hackers use to probe Indian payment systems",
+      "url": "https://www.livemint.com/ai/artificial-intelligence/mint-explainer-how-ai-driven-cyberattacks-are-targeting-indias-financial-sector-11793854055822.html"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Home vs stocks",
+          "tag": "Analysis",
+          "title": "Stocks beat home prices in every US state over 40 years, after tax, a WSJ study finds",
+          "url": "https://www.wsj.com/finance/investing/home-vs-stock-market-investment-6783607f",
+          "url2": "",
+          "points": [
+            "George Mason's Derek Horstmeyer modelled a 1985 buyer of a $100,000 home deciding whether to spend extra cash on a bigger house or the S&P 500, with 20% down, a floating-rate mortgage, and taxes and sale costs counted to end-2025.",
+            "Stocks won everywhere: 7.57% a year after tax, against 6.22% for the best metro, Seattle, and 5.90% for the best state, Idaho. Illinois came last at 2.36%.",
+            "Homes were far steadier, swinging about 9% a year against 16.5% for stocks, and the study leaves out buying to rent."
+          ],
+          "numbers": [
+            [
+              "7.57%",
+              "S&P 500 a year, after tax, 1985-2025"
+            ],
+            [
+              "6.22%",
+              "best metro (Seattle)"
+            ]
+          ],
+          "why": "It reframes a common choice: money that stretches a mortgage for a bigger house has usually compounded faster in a plain index fund. The same logic applies to Indian families weighing a second flat against equity funds, though local prices, taxes and rents differ.",
+          "other": "A home gives shelter, stability and forced saving, and the bigger house saves rent the model does not count. Stocks' far wider swings also test nerves; many investors sell at the bottom, which a house rarely tempts them to do.",
+          "also": [],
+          "image": "/figs/2026-11-06-1.jpg",
+          "imageAlt": "Explainer: S&P 500 returned 7.57% a year after tax, 1985-2025, vs 6.22% for Seattle homes and 2.36% for Illinois.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "Bigger house or index fund?",
+          "emailTeaser": "Even Seattle homes trailed the S&P 500 after tax",
+          "cite": "The S&P 500 returned 7.57% a year after tax from 1985 to 2025, beating home prices in every US state and top metro studied (WSJ).",
+          "imageW": 1280,
+          "imageH": 1610
+        },
+        {
+          "category": "China economy",
+          "tag": "Analysis",
+          "title": "China's K-shaped economy: world-class tech on top, weak jobs and demand below, James Crabtree finds",
+          "url": "https://jamescrabtree.substack.com/p/i-deliver-thoughts-from-beijing",
+          "url2": "",
+          "points": [
+            "After two weeks in China, Crabtree sees a widening K: Shenzhen's EVs, AI and drones on top; falling investment, a property slump and weak private spending below, despite reported 4.5% growth.",
+            "Economist David Daokui Li puts real unemployment at 10.2% against an official rate a little over 5%; the FT counts 53m people in food delivery and ride-hailing. Michael Pettis sees a Japan-style slow decade as the optimistic case.",
+            "Brutal domestic price wars push Chinese firms abroad, and Beijing has new rules to monitor tech exports, covering AI, including open-weight models."
+          ],
+          "numbers": [
+            [
+              "10.2%",
+              "real jobless rate (Li); official ~5%"
+            ],
+            [
+              "53m",
+              "in delivery and ride-hailing (FT)"
+            ]
+          ],
+          "why": "Weak demand at home plus ferociously competitive firms means more cheap Chinese EVs, solar and electronics heading for markets like India. New Chinese controls on AI exports could also affect the open-weight models many startups build on.",
+          "other": "Crabtree calls these quick reflections from one trip, and estimates of real unemployment vary widely. China's strength in physical AI and manufacturing may matter more to the world than its slump at home.",
+          "also": [],
+          "image": "/figs/2026-11-06-2.jpg",
+          "imageAlt": "Explainer: China's real unemployment estimated at 10.2% vs official 5%; 53m work in delivery and ride-hailing while its tech sector soars.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "James Crabtree (Substack)",
+          "pay": false,
+          "themes": [
+            "Geopolitics",
+            "Jobs & careers"
+          ],
+          "emailHead": "China's economy, shaped like a K",
+          "emailTeaser": "Shenzhen dazzles while jobs, property and demand sag",
+          "cite": "Economist David Daokui Li puts China's real unemployment at 10.2%, against an official rate of a little over 5% (James Crabtree, Nov 2026).",
+          "imageW": 1280,
+          "imageH": 1654
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Bank cyber risk",
+          "tag": "Explainer",
+          "title": "CERT-In flags 'critical' AI-driven attacks on Indian banks, NBFCs and fintechs",
+          "url": "https://www.livemint.com/ai/artificial-intelligence/mint-explainer-how-ai-driven-cyberattacks-are-targeting-indias-financial-sector-11793854055822.html",
+          "url2": "",
+          "points": [
+            "CERT-In's 4 November advisory rates a campaign by an AI-assisted group it calls \"Crafty Falcon\" as critical. Targets include banks, NBFCs, digital lenders, payment aggregators and crypto exchanges.",
+            "Attackers use publicly available offensive AI tools to probe payment, loan-disbursal and settlement APIs, test stolen access with transfers as small as ₹1, rotate IP addresses and return where fixes were incomplete, often on holidays.",
+            "New 107-page AI Security Auditing Guidelines sort AI systems into four risk tiers, require 180-day log retention and want qualifying incidents reported within six hours."
+          ],
+          "numbers": [
+            [
+              "₹1",
+              "test transfers before bigger thefts"
+            ],
+            [
+              "6 hrs",
+              "to report qualifying incidents"
+            ]
+          ],
+          "why": "The weak spot is moving from a customer's phished password to the institution's own money-moving plumbing. The audit rules turn AI security into a recurring compliance cost that smaller NBFCs and fintechs will feel most; customers' best defence remains 2FA and never sharing OTPs.",
+          "other": "Advisories exist to sound alarms, and Mint reports no tally of losses. Experts it quotes warn that rules alone won't help unless banks build their own security teams, or audits risk becoming box-ticking.",
+          "also": [],
+          "image": "/figs/2026-11-06-3.jpg",
+          "imageAlt": "Explainer: CERT-In says attackers probe bank payment APIs with ₹1 test transfers; new rules require 180-day logs and 6-hour incident reporting.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "AI",
+            "India"
+          ],
+          "emailHead": "Hackers test bank pipes with ₹1",
+          "emailTeaser": "CERT-In rates an AI-driven campaign critical and sets audit rules",
+          "cite": "CERT-In's 4 Nov 2026 advisory rated an AI-assisted campaign against Indian banks, NBFCs and fintechs as critical (Mint).",
+          "follows": "/daily/november-5-2026/2",
+          "update": "CERT-In raised its warning to critical on 4 November and issued AI security audit rules.",
+          "imageW": 1280,
+          "imageH": 1644
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Credit stress",
+          "tag": "Analysis",
+          "title": "Yields on CCC junk bonds hit 18%, up from 12.5% in January",
+          "url": "https://m.economictimes.com/prime/junk-bonds-are-cracking-at-the-bottom-will-the-noise-get-loud-enough-to-make-junk-bond-a-household-term-again/primearticleshow/135581611.cms",
+          "url2": "",
+          "points": [
+            "ET Prime reports that the average yield on US bonds rated CCC and below, tracked by ICE BofA indices on the St Louis Fed's site, touched 18.17% on October 23, a three-year high and above the April 2025 tariff scare. It began 2026 near 12.5%.",
+            "The pain sits on the bottom rung: BB-rated firms pay about two points over Treasuries, near January's level, while the 10-year Treasury yield rose from about 4.2% to 5.1%.",
+            "It also flags owners moving prized assets, such as brands, into units beyond old lenders' reach, as J.Crew did in 2016-17, a question raised again at Aston Martin in July."
+          ],
+          "numbers": [
+            [
+              "18.17%",
+              "CCC-and-below yield, 23 Oct (≈12.5% in Jan)"
+            ],
+            [
+              "~2 pts",
+              "BB spread over Treasuries, near January"
+            ]
+          ],
+          "why": "Weak firms that must refinance at 18% are where defaults start, and asset-shuffling deals mean lenders may recover less when they do. The number to watch is the BB spread: if it widens, stress is spreading to sturdier borrowers and to the high-yield and private-credit funds many investors hold.",
+          "other": "Trouble confined to the weakest credits is normal when rates rise. BB spreads near January's level suggest no broad credit crunch, and companies never stopped issuing junk bonds.",
+          "also": [],
+          "image": "/figs/2026-11-06-4.jpg",
+          "imageAlt": "Explainer: US CCC-and-below bond yields hit 18.17% on 23 October 2026, up from about 12.5% in January, while BB spreads stay near 2 points.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": true,
+          "freeUrl": "https://fred.stlouisfed.org/series/BAMLH0A3HYCEY",
+          "freeSrc": "FRED (St Louis Fed)",
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "Junk bonds crack at the bottom",
+          "emailTeaser": "The weakest US borrowers now pay about 18% a year",
+          "cite": "Yields on US junk bonds rated CCC and below hit 18.17% on 23 Oct 2026, up from about 12.5% in January (ICE BofA via FRED).",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1699
+        },
+        {
+          "category": "AI adoption",
+          "tag": "Analysis",
+          "title": "88% of US firms use AI vs 26% in Japan, but depth beats speed, HBR authors argue",
+          "url": "https://m.economictimes.com/hbr/ai-at-work/u-s-and-japanese-companies-struggle-with-different-parts-of-ai-adoptionand-offer-different-lessons-for-making-it-work/articleshow/135533612.cms",
+          "url2": "",
+          "points": [
+            "Four researchers say US firms adopt AI widely but shallowly: McKinsey finds 88% use it somewhere, yet only 39% report any EBIT impact, and Deloitte says 30% have redesigned key processes.",
+            "Japan lags on uptake (26%, per Yano Research) and ranks 60th for business agility in IMD's index, but goes deep where it adopts: Toyota factory workers had built 10,000 AI models by 2024.",
+            "Their fix is a six-rung ladder. US firms should redesign a few workflows end to end and cap AI tools per role; Japanese firms need a fast lane for small AI decisions."
+          ],
+          "numbers": [
+            [
+              "88% vs 26%",
+              "firms using AI: US vs Japan"
+            ],
+            [
+              "39%",
+              "US firms seeing any EBIT gain"
+            ]
+          ],
+          "why": "Counting pilots and tokens flatters the scorecard; profits come from rebuilding how work is done. For India's IT services firms, which sell AI into both markets, the money is in the workflow redesign clients tend to skip, not in tool licences.",
+          "other": "The figures come from different surveys, years and definitions, so the gap is rough. And the authors themselves note productivity often dips before it surges with a general-purpose technology, so today's shallow US use may be an early phase.",
+          "also": [],
+          "image": "/figs/2026-11-06-5.jpg",
+          "imageAlt": "Explainer: 88% of US firms vs 26% in Japan use AI; only 39% of US firms see EBIT impact, while Toyota workers built 10,000 AI models.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Harvard Business Review (via The Economic Times)",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "US goes wide, Japan goes deep",
+          "emailTeaser": "Why broad AI rollouts often fail to show a profit",
+          "cite": "McKinsey finds 88% of US firms use AI in at least one function, but only 39% report any EBIT impact (HBR, Nov 2026).",
+          "imageW": 1280,
+          "imageH": 1701
+        },
+        {
+          "category": "AI and wealth",
+          "tag": "Opinion",
+          "title": "John Thornhill: will AI's 'cognitive capitalism' spread wealth or concentrate it?",
+          "url": "https://www.ft.com/content/dd91306a-f3cf-43cc-baf2-9a9134fb92c4?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Thornhill weighs Venkatesh Rao's argument that AI worriers are \"cognitive mercantilists\", treating intelligence as scarce and to be hoarded, as pre-industrial elites treated wealth.",
+            "Rao's hope: cheap AI lets billions build and start microbusinesses, a new \"industrious\" revolution, with AI agents adding demand.",
+            "The counter: AI is concentrating power, US stocks are at record value and concentration, and Pew finds 40% of Americans expect harm versus 16% benefit, though 49% use chatbots. DeepMind's Alex Imas says the missing piece is organisations built for humans and AI agents."
+          ],
+          "numbers": [
+            [
+              "40% vs 16%",
+              "Americans expecting AI harm vs benefit"
+            ],
+            [
+              "49%",
+              "Americans who use AI chatbots"
+            ]
+          ],
+          "why": "It lands on the same point as the HBR piece: the bottleneck is how people organise around AI, not the models. For individuals, the gains will go to those who use the tools to build things, not only to consume answers.",
+          "other": "The analogy may flatter AI. Unlike looms, frontier models and compute are owned by a handful of firms, so abundance for users can sit alongside tighter concentration for owners.",
+          "also": [],
+          "image": "/figs/2026-11-06-6.jpg",
+          "imageAlt": "Explainer: 40% of Americans expect AI to hurt society vs 16% help (Pew); 49% use chatbots; the debate is whether AI spreads or concentrates wealth.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Will AI spread wealth or hoard it?",
+          "emailTeaser": "An essay says AI fear echoes 18th-century thinking",
+          "cite": "Pew finds 40% of Americans expect AI to hurt society over 20 years and 16% expect it to help, yet 49% use AI chatbots (FT, Nov 2026).",
+          "imageW": 1280,
+          "imageH": 1701
+        },
+        {
+          "category": "Tech geopolitics",
+          "tag": "Opinion",
+          "title": "Europe is falling behind on AI and tech, and Britain must chart its own path, says Keegan McBride",
+          "url": "https://digitalbureaucracyandgeopolitics.substack.com/p/technology-geopolitics-and-the-new",
+          "url2": "",
+          "points": [
+            "Keegan McBride, writing with Sam Cash, says frontier AI scales with compute, capital and energy, and Europe is short of all three; Goldman Sachs puts AI-related capex at just under $8tn over five years.",
+            "He cites DIGITALEUROPE research finding Europe behind in seven of eight critical technologies, including old strengths such as robotics and space.",
+            "With only the US and China offering full tech ecosystems, countries must pick partners. Britain, he argues, should become a \"tech-enabled state\": bet on space, quantum and life sciences, stay close to the US, and rebuild government with AI."
+          ],
+          "numbers": [
+            [
+              "7 of 8",
+              "critical techs where Europe trails"
+            ],
+            [
+              "~$8tn",
+              "AI capex, next 5 years (Goldman)"
+            ]
+          ],
+          "why": "India faces the same fork: it has little frontier compute but is exporting its digital public infrastructure, which the essay names as India's play. Which ecosystem it leans on will shape its access to chips, models and capital.",
+          "other": "The case leans heavily on aligning with the US. Sovereignty advocates argue that depending on American firms is itself a strategic risk, and Europe's caution on rules could look wiser if AI harms mount.",
+          "also": [],
+          "image": "/figs/2026-11-06-7.jpg",
+          "imageAlt": "Explainer: Europe trails in 7 of 8 critical technologies; AI capex is forecast near $8tn over five years; Britain urged to bet on space, quantum and life sciences.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Technology, Geopolitics, and Bureaucracy (Substack)",
+          "pay": false,
+          "themes": [
+            "Geopolitics",
+            "AI"
+          ],
+          "emailHead": "Europe thinks it has time. It doesn't",
+          "emailTeaser": "Only two full tech stacks exist, and Europe has neither",
+          "cite": "DIGITALEUROPE research found Europe falling behind in seven of eight critical technologies (Keegan McBride, 5 Nov 2026).",
+          "imageW": 1280,
+          "imageH": 1600
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "title": "Cognitive Mercantilism",
+      "url": "https://contraptions.venkateshrao.com/p/cognitive-mercantilism",
+      "note": "Venkatesh Rao's essay behind Thornhill's column: today's AI fears read like pre-industrial thinking about scarce wealth."
+    }
+  ],
+  "takeaway": {
+    "a": "Thin floors crack.",
+    "b": "Deep builders win.",
+    "line": "Stress shows first where foundations are thin: China's sagging base, the riskiest borrowers, unguarded payment pipes. The gains go to patient builders, from plain index funds to Toyota's shop floor."
+  },
+  "special": {
+    "kicker": "Special report",
+    "title": "Lift-off, with turbulence: India's next 161 unicorns",
+    "intro": "161 Indian startups on the runway to $1 billion: the jobs, the deep tech, the money behind them and the failures.",
+    "url": "https://www.kkreckons.com/special/india-next-unicorns",
+    "cta": "Read the special report"
+  },
+  "cover": "/figs/2026-11-06-cover.jpg",
+  "coverAlt": "China splits, stocks crush homes, junk hits 18%, hackers test with ₹1. AI profits? Still buffering.",
+  "stressIndex": {
+    "score": 48,
+    "band": "Elevated",
+    "asOf": "2026-11-05"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 24536.5996,
+        "asOf": "2026-11-05",
+        "prev": 23960.5996,
+        "week": 22936.75,
+        "spark": [
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7353.73,
+        "asOf": "2026-11-05",
+        "prev": 7688.6201,
+        "week": 7720.3901,
+        "spark": [
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.837,
+        "asOf": "2026-11-05",
+        "prev": 4.894,
+        "week": 4.989,
+        "spark": [
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 98.29,
+        "asOf": "2026-11-05",
+        "prev": 94.62,
+        "week": 114.88,
+        "spark": [
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4113.5,
+        "asOf": "2026-11-05",
+        "prev": 4073,
+        "week": 4031.3999,
+        "spark": [
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.5154,
+        "asOf": "2026-11-05",
+        "prev": 94.7484,
+        "week": 95.2095,
+        "spark": [
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154
+        ]
+      }
+    ]
+  }
+}

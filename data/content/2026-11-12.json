@@ -1,0 +1,459 @@
+{
+  "date": "2026-11-12",
+  "slice": "India booms at 6.5%. Nvidia swoons on one man. Junk pays 18%. Bots build firms; labs draw the line.",
+  "artifact": "https://claude.ai/artifact/3LD436aUkwTQFtioChv5sy",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "$6bn",
+      "text": "Foreign funds put nearly $6bn into Indian shares in November, the most since Sept 2024.",
+      "url": "https://www.reuters.com/world/india/indian-stocks-poised-higher-open-softer-crude-robust-foreign-buying-2026-11-11/"
+    },
+    {
+      "num": "18%",
+      "text": "The riskiest US corporate bonds now yield almost 18%, more than double what they pay.",
+      "url": "https://www.ft.com/content/50c43ffc-2a91-43ee-8eb7-a19531278b97?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "India's economy",
+          "tag": "",
+          "title": "India grows 6.5% a year as hotels fill and foreign money returns",
+          "url": "https://www.noahpinion.blog/p/india-is-quietly-doing-great",
+          "url2": "https://m.economictimes.com/prime/is-the-indian-economy-far-better-placed-than-it-looks-do-some-indicators-provide-clues/primearticleshow/135723027.cms",
+          "points": [
+            "Noah Smith (Noahpinion) argues India is quietly doing great: growth near 6.5% a year, faster than China since the pandemic, extreme poverty largely gone, public investment about four times pre-pandemic levels and exports widening.",
+            "An ET Prime analysis finds the same strength in hotels. After the US-Iran war raised fuel prices and cut flights, Indian guests kept filling rooms and paid higher rates, from budget brands to palace suites.",
+            "Investors are noticing. Foreign funds have bought nearly $6bn of Indian shares in November, the most since September 2024 after two years of selling, Reuters reports, as some look for an alternative to AI-heavy markets."
+          ],
+          "numbers": [
+            [
+              "6.5%",
+              "India's yearly growth (Noahpinion)"
+            ],
+            [
+              "$6bn",
+              "Foreign buying of Indian shares in November (Reuters)"
+            ],
+            [
+              "80%",
+              "Indian Hotels occupancy in Q2, up from 75% (ET)"
+            ]
+          ],
+          "why": "A hotel night is a choice, not a need. When Indians pay more for one during a war shock, it points to a wider base of households with spare cash, the kind of home demand growth needs once the public spending push fades.",
+          "other": "One quarter, a BRICS summit in Delhi and upbeat earnings calls are thin proof, and foreign money that arrives in a month can leave as fast. Smith himself warns that private investment and FDI still lag, and state-led spending lifts growth only for a while.",
+          "also": [
+            {
+              "title": "Indian shares rise on foreign flow optimism; financials, autos lead",
+              "url": "https://www.reuters.com/world/india/indian-stocks-poised-higher-open-softer-crude-robust-foreign-buying-2026-11-11/"
+            }
+          ],
+          "image": "/figs/2026-11-12-1.jpg",
+          "imageAlt": "KKReckons explainer: India's economy, about 6.5% yearly growth, what is going right and the hotel test",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Noahpinion, The Economic Times and Reuters",
+          "pay": true,
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "India is quietly doing well",
+          "emailTeaser": "Growth, full hotels and foreign money flowing back",
+          "imageW": 1280,
+          "imageH": 1774
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Big Tech",
+          "tag": "",
+          "title": "Nvidia's CEO probe shows how much markets lean on one man",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-10/why-nvidia-and-jensen-huang-matter-so-much-to-markets",
+          "url2": "https://www.wired.com/story/jensen-huangs-troubles-leaves-the-ai-industry-reeling/",
+          "points": [
+            "Nvidia shares slid after reports that a woman suspected of being a Chinese intelligence asset had grown close to CEO Jensen Huang, who has acknowledged an affair. An independent board committee is investigating; China calls the spy claim unsubstantiated.",
+            "Bloomberg explains the market stakes: every big decision runs through Huang, no successor is designated, and Nvidia's weight in the S&P 500, about 8% for much of two years, has slipped below Apple's.",
+            "Wired says the AI industry is reeling too. Nvidia controls about 90% of chips for training frontier models, so Huang decides who gets them, and it has invested in customers such as OpenAI and Anthropic."
+          ],
+          "numbers": [],
+          "why": "Index funds tie millions of savers to Nvidia, and AI labs depend on Huang for scarce chips and funding. When one founder's private life can move both, the AI boom's single point of failure is a person, not a chip.",
+          "other": "The board reportedly wants to keep Huang, and Nvidia's lead rests on years of investment and yearly chip launches, not one man's diary. A dip driven by scandal rather than sales may not last; rivals, China and doubts over AI spending are the bigger tests.",
+          "also": [],
+          "image": "/figs/2026-11-12-2.jpg",
+          "imageAlt": "KKReckons explainer: Nvidia's key-man risk, about 8% of the S&P 500, why Huang matters and why markets care",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg and Wired",
+          "pay": true,
+          "freeUrl": "https://www.timeslive.co.za/news/business/2026-11-09-nvidias-shares-slide-as-ceo-probed-over-spy-claims/",
+          "freeSrc": "Reuters",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Nvidia's one-man risk",
+          "emailTeaser": "Why a CEO scandal shakes index funds and AI labs",
+          "imageW": 1280,
+          "imageH": 1724
+        },
+        {
+          "category": "US credit",
+          "tag": "",
+          "title": "The end of cheap money is squeezing America's weakest borrowers",
+          "url": "https://www.ft.com/content/50c43ffc-2a91-43ee-8eb7-a19531278b97?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "An FT Big Read says the era of ultra-low borrowing costs is over for US companies: the Fed raised rates in September, markets price in more hikes, and the 10-year Treasury yield topped 5%, its highest since 2007.",
+            "Strong investment-grade firms can absorb it. The pain falls on junk-rated borrowers, above all CCC names, whose bonds now yield almost 18%, and on companies with floating-rate private-credit loans that reprice every quarter.",
+            "Many firms refinanced early to push out due dates, but past quick-fix debt deals often ended in a second default within three years."
+          ],
+          "numbers": [],
+          "why": "A decade of buybacks and buyouts ran on cheap debt. If losses in the weakest credits force funds to sell what they can, the selling can spread to safer bonds, which is how a niche problem becomes a market one.",
+          "other": "Huge AI capital spending is holding up the US economy, and many investors think a full default wave needs a recession. Until one arrives, the damage may stay with borrowers that were fragile anyway.",
+          "also": [],
+          "image": "/figs/2026-11-12-3.jpg",
+          "imageAlt": "KKReckons explainer: the end of cheap money, CCC bonds yielding about 18%, who can cope and who gets hurt",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Banking"
+          ],
+          "emailHead": "Cheap money is over",
+          "emailTeaser": "Higher rates expose America's weakest corporate borrowers",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1728
+        },
+        {
+          "category": "Start-ups",
+          "tag": "",
+          "title": "AI agents let start-ups run with no staff and prototype in days",
+          "url": "https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Founders now use AI agents for almost every job, from code and company filings to marketing videos. A Helsinki pair has an agent running the build of their next automated biotech lab, from buying kit to directing contractors.",
+            "Founders date the shift to late-2025 coding tools such as Anthropic's Claude Opus 4.5 and Claude Code. One New York founder says a recorded customer call can become a working prototype two days later. Weekly US business applications have mostly stayed above 100,000 since ChatGPT launched, Apollo data show.",
+            "The catch: supervising agents around the clock is draining, and rivals can copy a product just as fast."
+          ],
+          "numbers": [],
+          "why": "When building costs almost nothing, the edge moves to taste, trust and selling. That helps small teams far from Silicon Valley and hurts anyone whose advantage was a big engineering department.",
+          "other": "The one-person billion-dollar company is still a bet. Malt's co-founder argues most firms will hire once AI-made products start to look alike, and more start-ups also means more clones and faster failures.",
+          "also": [],
+          "image": "/figs/2026-11-12-4.jpg",
+          "imageAlt": "KKReckons explainer: start-ups with no staff, prototype in 2 days, what agents do and the catch",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Start-ups with no staff",
+          "emailTeaser": "AI agents now do the coding, marketing and lab building",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI tools",
+          "tag": "Opinion",
+          "title": "AI firms tighten guardrails on DIY reverse engineering of gadgets",
+          "url": "https://www.404media.co/reverse-engineer-anything-ai-companies-crack-down-on-the-coolest-thing-people-were-doing-with-ai/",
+          "url2": "",
+          "points": [
+            "404 Media reports that people using Claude Code and OpenAI's Codex to reverse engineer their own gadgets, from reviving abandoned smart devices to stripping ads off smart TVs, are hitting safety checks, warnings and some account bans.",
+            "An OpenAI engineer said the blocks were mostly accidental and are being fixed. Hobbyists and security researchers say they are shifting to local, open-weight models, many from China, that won't lock them out.",
+            "The author argues AI firms are shielding device makers; law professors warn cheap AI reverse engineering will test copyright, trade-secret and anti-hacking law."
+          ],
+          "numbers": [],
+          "why": "Controlling a device you bought used to take rare skills. If AI makes it trivial, the guardrails a few labs choose will decide whether right-to-repair goes mainstream or drifts to open models that nobody oversees.",
+          "other": "The skills that free a smart TV can also probe someone else's network, and labs under pressure to stop criminal hacking will err on the strict side. The real test is whether they can tell a tinkerer from an attacker.",
+          "also": [],
+          "image": "/figs/2026-11-12-5.jpg",
+          "imageAlt": "KKReckons explainer: who may hack your own gadgets, what people did with AI and what changed",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "404 Media",
+          "pay": false,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "Who may hack your gadgets?",
+          "emailTeaser": "AI labs block users rewriting their own devices",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Outside shocks hit.",
+    "b": "Home demand held.",
+    "line": "India looks sturdier than its headlines, Nvidia shows the cost of a one-man company, weak US borrowers lose cheap credit, and agents stand in for staff."
+  },
+  "cover": "/figs/2026-11-12-cover.jpg",
+  "coverAlt": "India booms at 6.5%. Nvidia swoons on one man. Junk pays 18%. Bots build firms; labs draw the line.",
+  "stressIndex": {
+    "score": 32,
+    "band": "Elevated",
+    "asOf": "2026-11-11"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25255.0508,
+        "asOf": "2026-11-11",
+        "prev": 25044.6504,
+        "week": 23960.5996,
+        "spark": [
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7619.3799,
+        "asOf": "2026-11-11",
+        "prev": 7520.9302,
+        "week": 7688.6201,
+        "spark": [
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.998,
+        "asOf": "2026-11-11",
+        "prev": 4.983,
+        "week": 4.894,
+        "spark": [
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 92.76,
+        "asOf": "2026-11-11",
+        "prev": 91.49,
+        "week": 94.62,
+        "spark": [
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4000.5,
+        "asOf": "2026-11-11",
+        "prev": 4030.2,
+        "week": 4073,
+        "spark": [
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 93.925,
+        "asOf": "2026-11-11",
+        "prev": 93.9468,
+        "week": 94.7484,
+        "spark": [
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925
+        ]
+      }
+    ]
+  }
+}

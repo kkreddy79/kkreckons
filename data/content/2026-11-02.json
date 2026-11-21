@@ -1,0 +1,522 @@
+{
+  "date": "2026-11-02",
+  "slice": "Bots do maths, errands and discounts. Junk and pensions do damage. Hard hats on.",
+  "artifact": "https://claude.ai/artifact/QkLkNn33WANQYggozh7h2x",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "21%+",
+      "text": "Europe's CCC junk yields as lenders abandon the most fragile borrowers in a long sell-off.",
+      "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1"
+    },
+    {
+      "num": "£431.3bn",
+      "text": "Britain's welfare bill forecast for 2031-32, as pensions and disability claims keep climbing.",
+      "url": "https://www.ft.com/content/873aed2b-48e7-4928-b651-b7039a8e3dd3?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Welfare states",
+          "tag": "",
+          "title": "Europe's pension systems strain; UK welfare bill forecast at £431.3bn",
+          "url": "https://www.wsj.com/world/europe/panic-and-anger-spread-as-europes-great-pension-covenant-unravels-69a94ed7",
+          "url2": "https://www.ft.com/content/873aed2b-48e7-4928-b651-b7039a8e3dd3?syn-25a6b1a6=1",
+          "points": [
+            "The Wall Street Journal reports that ageing populations and stretched budgets are breaking Europe's old bargain of heavy taxes in return for a comfortable state pension. Anger is sharpest in France, where today's workers fund today's retirees and Finance Minister Roland Lescure says the maths leaves no way around a later retirement age.",
+            "Northern hybrids such as Denmark's, which add invested workplace funds to a state floor, look sturdier but tie retirement age to life expectancy.",
+            "In a Financial Times column, Tej Parikh argues Britain's benefits system works like a ratchet: easy to widen, hard to trim, driven by the state pension and fast-rising disability claims, with the latest Budget offering no curbs."
+          ],
+          "numbers": [
+            [
+              "€3.6tn",
+              "France's public debt this year"
+            ],
+            [
+              "£431.3bn",
+              "UK welfare bill forecast for 2031-32"
+            ]
+          ],
+          "why": "Pensions are where demographics meet the bond market. Every euro or pound promised to retirees competes with defence, schools and investment, and governments that cannot reform end up paying more to borrow. For younger economies like India, the lesson is to build funded savings while workers still far outnumber retirees.",
+          "other": "Retirees paid in for decades and see these as earned rights, not handouts. Later retirement ages hit manual workers hardest, and part of Britain's disability rise reflects genuinely worse health, so cutting payments without fixing healthcare and jobs may simply move the cost elsewhere.",
+          "also": [],
+          "image": "/figs/2026-11-02-1.jpg",
+          "imageAlt": "Explainer: Europe's pay-as-you-go pensions strain as populations age; France's public debt is 3.6 trillion euros and Britain's welfare bill is forecast at 431.3 billion pounds by 2031-32.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal and Financial Times",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "Europe's pension deal unravels",
+          "emailTeaser": "France balks while Britain's welfare ratchet keeps turning.",
+          "imageW": 1280,
+          "imageH": 1727
+        },
+        {
+          "category": "Credit markets",
+          "tag": "",
+          "title": "Junk debt rout hits CCC borrowers and the funds that bet on them",
+          "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The Financial Times reports a long sell-off in the weakest junk debt, as higher rates, fears of AI disruption and costly energy make lenders doubt heavily indebted companies. Yields on Europe's CCC-rated debt have climbed above 21%, with worries over France's finances adding pressure.",
+            "Owners moving assets beyond creditors' reach, as at Aston Martin and Altice International, have set off sudden drops. Credit hedge fund Arini is down 26% this year, and forced selling by distressed-debt funds has deepened the slide.",
+            "In Europe, telecom borrowers such as Virgin Media have been hit hardest."
+          ],
+          "numbers": [
+            [
+              "21%+",
+              "Yield on Europe's CCC-rated junk debt"
+            ],
+            [
+              "-26%",
+              "Arini's flagship fund this year"
+            ]
+          ],
+          "why": "CCC debt is where stress shows first. When investors stop reaching for yield there, refinancing gets harder for the weakest firms, defaults can climb, and owners' asset shuffling erodes trust in loan documents across the whole market.",
+          "other": "Higher-rated junk is holding up, so this may be a clear-out of the weakest names rather than a broad credit crisis. Yields this high could also tempt bargain hunters once rates stop rising.",
+          "also": [],
+          "image": "/figs/2026-11-02-2.jpg",
+          "imageAlt": "Explainer: yields on Europe's CCC-rated junk debt top 21% and credit fund Arini is down 26% this year.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://hedgeweek.com/news/arini-losses-deepen-to-26-as-european-junk-bond-selloff-accelerates",
+          "freeSrc": "Hedgeweek",
+          "themes": [
+            "Markets",
+            "Banking"
+          ],
+          "emailHead": "Riskiest junk debt gets crushed",
+          "emailTeaser": "CCC yields soar as lenders lose faith in weak borrowers.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI and science",
+          "tag": "",
+          "title": "OpenAI and Anthropic say AI disproved the exponential time hypothesis",
+          "url": "https://www.wired.com/story/ai-made-decades-of-computer-science-research-irrelevant/",
+          "url2": "",
+          "points": [
+            "OpenAI and Anthropic each said this week that their models disproved the exponential time hypothesis, a 27-year-old assumption that some hard problems take exponentially more effort as they grow. Both posted the proofs on GitHub, in plain language and in the machine-checkable Lean format.",
+            "Independent researchers have not verified them yet. OpenAI has asked the UC San Diego scientists who proposed the hypothesis to rally volunteers and has promised to fund a conference.",
+            "Reactions are split. Linköping's Peter Jonsson says much of his upcoming conference paper no longer works, while Copenhagen's Thore Husfeldt calls it a once-in-a-generation result but says the steady run of AI results has left colleagues demoralised."
+          ],
+          "numbers": [
+            [
+              "27 yrs",
+              "Age of the hypothesis the labs say is false"
+            ]
+          ],
+          "why": "If the proofs hold, a large body of theory built on the idea that certain problems cannot be solved quickly has to be redrawn. Cryptography rests on similar too-slow-to-solve assumptions, so its designers will be watching. It also shows AI labs now racing on frontier maths, not just chatbots.",
+          "other": "Nothing is settled until people check the proofs. Machine checking confirms the logic, but humans still have to confirm the formal statement says what the hypothesis says. And after earlier rushed AI paper dumps with errors, some academics suspect the labs time big claims to impress investors.",
+          "also": [],
+          "image": "/figs/2026-11-02-3.jpg",
+          "imageAlt": "Explainer: OpenAI and Anthropic claim AI disproved a 27-year-old hypothesis in computer science; researchers are still checking the proofs.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "freeUrl": "https://kuwaittimes.com/article/52682/world/shock-vindication-regret-scientists-react-as-ai-claims-to-overturn-their-lifes-work/",
+          "freeSrc": "AFP via Kuwait Times",
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "AI topples a computing assumption",
+          "emailTeaser": "Two labs claim a proof; researchers scramble to check it.",
+          "imageW": 1280,
+          "imageH": 1824
+        },
+        {
+          "category": "AI business",
+          "tag": "",
+          "title": "OpenAI's discounts lure customers from Anthropic before its IPO",
+          "url": "https://www.theinformation.com/articles/anthropics-margin-openais-opportunity",
+          "url2": "",
+          "points": [
+            "The Information reports that OpenAI's heavy discounts on its models and its Codex coding tool are pulling some business away from Anthropic. At HR software firm Rippling, Anthropic's share of coding work has dropped to 18% since May, with OpenAI now handling most of it.",
+            "Replit moved most of its AI spending to OpenAI after a discount of more than 30%, a person familiar said, once Anthropic declined to extend its own discount without a bigger commitment.",
+            "Anthropic has largely held firm on pricing and margins, and its new Opus 5.5 model has since retaken the lead on routing service OpenRouter."
+          ],
+          "numbers": [
+            [
+              "18%",
+              "Anthropic's share of Rippling's coding work"
+            ],
+            [
+              "30%+",
+              "OpenAI discount that won Replit, per a source"
+            ]
+          ],
+          "why": "Switching models now takes hours, not months, so loyalty is thin and price counts. Investors weighing Anthropic's planned listing will ask whether its margins can survive a rival willing to lose money to win share.",
+          "other": "Discounts that deepen losses cannot run forever, and a better model can win customers back fast, as the OpenRouter rebound suggests. A handful of startup anecdotes may also say little about large enterprise contracts.",
+          "also": [],
+          "image": "/figs/2026-11-02-4.jpg",
+          "imageAlt": "Explainer: OpenAI's discounts cut Anthropic's share of Rippling's coding work to 18%; Replit switched after a discount of more than 30%.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Information",
+          "pay": true,
+          "freeUrl": "https://thenextweb.com/news/openai-discounts-anthropic-customers-replit-rippling",
+          "freeSrc": "The Next Web",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "OpenAI's discounts bite Anthropic",
+          "emailTeaser": "Cheaper models pull startups away ahead of Anthropic's IPO.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI at work",
+          "tag": "",
+          "title": "AI agents widen what workers attempt, not just how fast they work",
+          "url": "https://hbr.org/2026/07/research-how-ai-agents-broaden-the-scope-of-knowledge-work",
+          "url2": "",
+          "points": [
+            "Perplexity researchers compared the same users on its chat assistant and its autonomous agent from February to May 2026. The agent worked alone far longer per task and paused often to check in, yet users rarely stopped it.",
+            "Counting the human follow-up, agent workflows cut task time by about 87% in their estimate, and users were less often dissatisfied.",
+            "The bigger shift was scope: people handed agents harder, multi-step work outside their own field, and about 23% of agent tasks were ones they never tried with the assistant."
+          ],
+          "numbers": [
+            [
+              "87%",
+              "Estimated cut in task time with an agent"
+            ],
+            [
+              "23%",
+              "Agent tasks never tried with the assistant"
+            ]
+          ],
+          "why": "Dashboards that count hours saved will miss the real change: people stepping into other people's jobs. Managers need to rethink roles, decide who reviews work done outside someone's expertise, and set clear points where a human signs off.",
+          "other": "The authors work at Perplexity, studied early power users of their own product and call the magnitudes approximate. Crossing into unfamiliar fields also means more output that its user cannot properly judge.",
+          "also": [],
+          "image": "/figs/2026-11-02-5.jpg",
+          "imageAlt": "Explainer: Perplexity's study finds agents cut task time by about 87% and 23% of agent tasks were new to users.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Harvard Business Review",
+          "pay": true,
+          "freeUrl": "https://research.perplexity.ai/articles/how-ai-agents-reshape-knowledge-work",
+          "freeSrc": "Perplexity",
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Agents change what we attempt",
+          "emailTeaser": "Study finds workers hand agents bigger, broader tasks.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Work",
+          "tag": "",
+          "title": "Companies court women to fill skilled trade jobs",
+          "url": "https://www.wsj.com/economy/jobs/companies-have-a-solution-for-the-skilled-trade-shortage-more-women-37851f46",
+          "url2": "",
+          "points": [
+            "The Wall Street Journal reports that builders short of workers are courting women with paid maternity leave, flexible hours, properly sized gear and cleaner sites. Women make up just 4.4% of US construction and repair workers, but their share has been rising steadily.",
+            "Turner Construction, busy with data centre work, says it needs every worker it can get. Mortenson added paid leave for new mothers, Skanska pushes team leaders on inclusion, and trade schools such as Universal Technical Institute report far more women enrolling as the work turns more technical.",
+            "Firms are also cracking down on harassment; Turner says it replaced a subcontractor's entire crew over derogatory graffiti."
+          ],
+          "numbers": [
+            [
+              "4.4%",
+              "Women's share of US construction and repair workers"
+            ]
+          ],
+          "why": "The trades pay well, are hard to automate and are needed now for data centres and housing. Drawing on half the population is the quickest fix for a labour shortage that AI will not solve.",
+          "other": "From such a low base, steady gains are still slow, and perks matter less than whether behaviour on site changes. If construction cools after the data centre boom, the newest hires may be the first let go.",
+          "also": [],
+          "image": "/figs/2026-11-02-6.jpg",
+          "imageAlt": "Explainer: women are 4.4% of US construction and repair workers as firms add perks to recruit them.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Jobs & careers"
+          ],
+          "emailHead": "Builders go looking for women",
+          "emailTeaser": "Perks and respect to fix a skilled trade shortage.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Faster answers.",
+    "b": "Older promises.",
+    "line": "Technology now moves at the speed of a proof, while pensions, debts and job sites still move at the speed of voters and lenders."
+  },
+  "cover": "/figs/2026-11-02-cover.jpg",
+  "coverAlt": "Bots do maths, errands and discounts. Junk and pensions do damage. Hard hats on.",
+  "stressIndex": {
+    "score": 33,
+    "band": "Elevated",
+    "asOf": "2026-10-30"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 23053.0996,
+        "asOf": "2026-10-30",
+        "prev": 22936.75,
+        "week": 22600,
+        "spark": [
+          23270.5996,
+          23346.4004,
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7580.0698,
+        "asOf": "2026-10-30",
+        "prev": 7720.3901,
+        "week": 7623.6802,
+        "spark": [
+          7764.7002,
+          7764.6401,
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.929,
+        "asOf": "2026-10-30",
+        "prev": 4.989,
+        "week": 4.988,
+        "spark": [
+          4.963,
+          4.968,
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 117.64,
+        "asOf": "2026-10-30",
+        "prev": 114.88,
+        "week": 116.72,
+        "spark": [
+          100.34,
+          99.25,
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3898.8999,
+        "asOf": "2026-10-30",
+        "prev": 4031.3999,
+        "week": 4007.8999,
+        "spark": [
+          4383.8999,
+          4376.3999,
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.95,
+        "asOf": "2026-10-31",
+        "prev": 95.1524,
+        "week": 94.7113,
+        "spark": [
+          95.712,
+          95.6898,
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95
+        ]
+      }
+    ]
+  }
+}

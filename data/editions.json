@@ -1,5 +1,1999 @@
 [
   {
+    "date": "2026-11-20",
+    "slice": "Record $81bn AI IPO. Sarvam sells tokens. Chips stay put. Humans want brakes. Retirees face a 22% haircut.",
+    "artifact": "https://claude.ai/artifact/9DyoZiFBEih6z6nQecKvj5",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-20-1.jpg",
+    "cover": "/figs/2026-11-20-cover.jpg",
+    "coverAlt": "Record $81bn AI IPO. Sarvam sells tokens. Chips stay put. Humans want brakes. Retirees face a 22% haircut.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Anthropic IPO raises $81bn; shares close 17% up on Nasdaq debut",
+        "category": "Record IPO",
+        "tag": "",
+        "url": "https://www.ft.com/content/62c0510b-ca65-441e-9baf-675b93903b9e?syn-25a6b1a6=1",
+        "src": "Financial Times, Mint and The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Sarvam launches Token Factory as AI agents eye the social feed",
+        "category": "Indian AI",
+        "tag": "",
+        "url": "https://inc42.com/features/ais-social-layer-sarvams-token-factory/",
+        "src": "Inc42",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Lenders try to keep SpaceX's loan-backed AI chips on Earth",
+        "category": "AI debt",
+        "tag": "",
+        "url": "https://www.ft.com/content/33b5643c-2957-4d42-9116-5e34a3c54e29?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Even AI's backers now fear humans handing over control",
+        "category": "AI safety",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/45194ea4-4fa7-4c38-a5b2-137eb7402d57?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Peggy Noonan: last week's outages are an early AI warning",
+        "category": "AI risk",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/last-weeks-outages-were-only-the-start-361c19ed",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "WSJ backs Ron Johnson: Social Security's math doesn't add up",
+        "category": "Retirement",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/ron-johnson-social-security-unsustainable-2807cb1b",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-19",
+    "slice": "$1.4bn game day. Jobless Indian grads: 7% hired. AI: chores, hacks, IPOs, audits. Bank Q&A? Cheat codes.",
+    "artifact": "https://claude.ai/artifact/R3FBs7LU3QQ5562creRCPg",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-19-1.jpg",
+    "cover": "/figs/2026-11-19-cover.jpg",
+    "coverAlt": "$1.4bn game day. Jobless Indian grads: 7% hired. AI: chores, hacks, IPOs, audits. Bank Q&A? Cheat codes.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "GTA VI launches after 13 years while young people's job prospects shrink",
+        "category": "Gen Z economy",
+        "tag": "",
+        "url": "https://apnews.com/article/grand-theft-auto-6-video-game-release-6e255c930da6de820e539721f4682253",
+        "src": "AP, The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI butlers: Indians let assistants run their errands",
+        "category": "AI assistants",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/rise-of-ai-personal-assistants-in-india-11794998089207.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI patch rush, free hacking kits and new UK cyber rules",
+        "category": "Cyber security",
+        "tag": "",
+        "url": "https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1",
+        "src": "Financial Times and Axios",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "DealBook Summit: AI bubble fears, Huang's ouster and Trump ties",
+        "category": "AI and markets",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-musk-altman-ellison.html",
+        "src": "The New York Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "KPMG's AI audit asked 'better questions' than its accountants",
+        "category": "AI at work",
+        "tag": "",
+        "url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Leaked files show chaos inside Deutsche Bank under Christian Sewing",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/4f8dae68-bfec-43bd-bef6-b830815ec538?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-18",
+    "slice": "Chips sneak. UPI bites ₹2k+. AI proves physics. Breathe. Google buys hot rock, waist tops BMI. Raise thinkers.",
+    "artifact": "https://claude.ai/artifact/92CBF1MrtT4DRbpJxhpb6m",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-18-1.jpg",
+    "cover": "/figs/2026-11-18-cover.jpg",
+    "coverAlt": "Chips sneak. UPI bites ₹2k+. AI proves physics. Breathe. Google buys hot rock, waist tops BMI. Raise thinkers.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Smuggled Nvidia chips may make up a third of China's AI compute",
+        "category": "AI chips · China",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/the-great-ai-chip-heist-is-here-df70c466",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "UPI's free ride ends for big merchant payments: who pays, who earns",
+        "category": "Payments · UPI",
+        "tag": "",
+        "url": "https://www.moneylife.in/article/npci-defers-upi-mdr-rollout-amid-festive-season-select-merchant-payments-to-attract-charges-postdiwali/81931.html",
+        "src": "Moneylife and Al Jazeera",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "OpenAI's Yang-Mills proof shows AI's power, and its black-box problem",
+        "category": "AI · Science",
+        "tag": "",
+        "url": "https://www.livemint.com/opinion/online-views/the-future-of-science-pitfalls-of-ai-increasingly-deployed-for-research-11794919755184.html",
+        "src": "Mint and The Economist",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "A psychotherapist's guide to staying calm with the people you love",
+        "category": "Wellbeing",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/mint-lounge/ideas/sonali-gupta-equanimity-emotional-balance-wellbeing-mindfulness-11794920316566.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Google signs $500m-plus deal for Quaise's rock-vaporising geothermal",
+        "category": "Energy · AI power",
+        "tag": "",
+        "url": "https://www.wsj.com/business/energy-oil/google-embraces-geothermal-technology-to-vaporize-rock-for-clean-power-dbd66d05",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Waist size beats BMI at predicting death risk, Nature study finds",
+        "category": "Health · Obesity",
+        "tag": "",
+        "url": "https://www.nature.com/articles/d41586-026-03636-5",
+        "src": "Nature",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Daniel Susskind's guide to raising kids for AI: skills over job bets",
+        "category": "AI · Education",
+        "tag": "Opinion",
+        "url": "https://www.businessinsider.com/daniel-susskind-what-should-my-children-do-review-2026-11",
+        "src": "Business Insider",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-17",
+    "slice": "27-week job hunts. ₹99 AI love. Mandis stay local. Students pick Plan B. Even banks hedge.",
+    "artifact": "https://claude.ai/artifact/9UWvnbwWjLhU9iecwVsrT6",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-17-1.jpg",
+    "cover": "/figs/2026-11-17-cover.jpg",
+    "coverAlt": "27-week job hunts. ₹99 AI love. Mandis stay local. Students pick Plan B. Even banks hedge.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "US job search now takes 27 weeks: what helps job seekers get hired",
+        "category": "Jobs & careers",
+        "tag": "",
+        "url": "https://www.wsj.com/lifestyle/careers/i-talked-to-job-seekers-in-all-50-states-heres-what-it-takes-to-get-hired-right-now-a2612c4b",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI girlfriend apps in India charge for affection, and regulators lag",
+        "category": "AI companions",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/ai-girlfriends-intimacy-at-a-price-11794820754936.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "e-NAM's lesson for AI in India: apps don't fix markets",
+        "category": "AI and farming",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/the-tech-worked-the-market-didnt-ai-farmers-mandis-credit-systems-agriculture-11794809668013.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Rich countries slam the brakes on migration as populations age",
+        "category": "Global migration",
+        "tag": "",
+        "url": "https://www.ft.com/content/12f76b96-6ef9-40fb-924f-60c348935a21?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "S&P warns European banks lean too hard on risk transfer deals",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/3b6cccb1-cac2-4e64-a2c2-3b3801f9a5fb?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-16",
+    "slice": "Growth yawns at 2.8%. Lenders feast. Xi hosts, trade limps. Nvidia ghosts. Only SpaceX sticks the landing.",
+    "artifact": "https://claude.ai/artifact/Htk58fDKDEjeoFH3yU9Gg9",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-16-1.jpg",
+    "cover": "/figs/2026-11-16-cover.jpg",
+    "coverAlt": "Growth yawns at 2.8%. Lenders feast. Xi hosts, trade limps. Nvidia ghosts. Only SpaceX sticks the landing.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Goldman Sachs forecasts 2.8% global growth in 2027 as oil prices fall",
+        "category": "Global outlook",
+        "tag": "",
+        "url": "https://www.goldmansachs.com/insights/articles/the-global-economy-is-forecast-to-grow-2-point-8-percent-in-2027-as-oil-prices-decline",
+        "src": "Goldman Sachs",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Blackstone, Carlyle and Bain bet billions on India's shadow banks",
+        "category": "Banking",
+        "tag": "",
+        "url": "https://m.economictimes.com/industry/banking/finance/india-shadow-banks-nbfc-global-investors-blackstone-carlyle-advent-bain-billion-dollar-investments-credit-growth/articleshow/135703119.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "China uses Apec in Shenzhen to pitch its version of world order",
+        "category": "Geopolitics",
+        "tag": "",
+        "url": "https://www.ft.com/content/fb667289-ae81-42c7-8eb8-ebda09dceff7?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "McKinsey: a quarter of $19 trillion in imports is trade's weak spot",
+        "category": "Trade",
+        "tag": "",
+        "url": "https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/the%20achilles%20heel%20of%20global%20trade%20building%20resilience%20where%20it%20matters%20most/the-achilles-heel-of-global-trade-building-resilience-where-it-matters-most-vf.pdf?shouldIndex=false",
+        "src": "McKinsey Global Institute",
+        "pay": false,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Nvidia's interim CEO set to rein in its AI financing spree",
+        "category": "AI financing",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/nvidias-days-as-an-open-checkbook-for-the-ai-economy-are-numbered-90c7b388",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "SpaceX catches Starship's upper stage after it returns from orbit",
+        "category": "Space",
+        "tag": "",
+        "url": "https://www.wsj.com/science/space-astronomy/spacex-launches-starship-on-ambitious-bid-to-catch-spacecraft-5c806c9b",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15",
+    "slice": "Router grounds the US. India banks on growth. UPI clicks 800mn daily. Nvidia loses its voice. Bonds find mojo.",
+    "artifact": "https://claude.ai/artifact/XdXB6Th5PSUNviJhKLYi4x",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-15-1.jpg",
+    "cover": "/figs/2026-11-15-cover.jpg",
+    "coverAlt": "Router grounds the US. India banks on growth. UPI clicks 800mn daily. Nvidia loses its voice. Bonds find mojo.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "FAA ground stop: one Arkansas router halted nearly all US flights",
+        "category": "Air travel",
+        "tag": "",
+        "url": "https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c",
+        "src": "The Wall Street Journal",
+        "pay": true
+      },
+      {
+        "section": "India edition",
+        "title": "Six Indian sectors grew sales and profit through tariffs and war",
+        "category": "Indian earnings",
+        "tag": "",
+        "url": "https://m.economictimes.com/prime/tariffs-supply-snags-and-a-war-6-sectors-that-pulled-it-off-through-all-of-the-trouble/primearticleshow/135854474.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Oil, El Niño and capital flight: can India keep its fast-growth tag?",
+        "category": "India's economy",
+        "tag": "",
+        "url": "https://www.livemint.com/economy/india-economic-growth-global-shocks-crude-inflation-11794724310106.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Cashless Nation review: the decisions that made UPI work",
+        "category": "Payments",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/mint-lounge/art-and-culture/cashless-nation-story-of-upi-book-review-11794567593068.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "India",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Nvidia after Huang: a company with too many enemies in Washington",
+        "category": "Chips and Washington",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How bonds got interesting again for savers near retirement",
+        "category": "Retirement money",
+        "tag": "",
+        "url": "https://www.ft.com/content/3f89c87c-4bc4-40db-8c15-1957079917f3?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Emerging-market bond sales slump 41%, lifting prices",
+        "category": "Emerging-market debt",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-15/bond-drought-in-emerging-markets-lifts-prices-as-sales-slump-41",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-14",
+    "slice": "$3bn did nothing. India builds its AI. Visas drop 41%. Outlook naps 19 hrs. Bots ignore 'stop'. Get a goat.",
+    "artifact": "https://claude.ai/artifact/WCFqfuwoGscsUQNRiK5fbD",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-14-1.jpg",
+    "cover": "/figs/2026-11-14-cover.jpg",
+    "coverAlt": "$3bn did nothing. India builds its AI. Visas drop 41%. Outlook naps 19 hrs. Bots ignore 'stop'. Get a goat.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Why $3bn school grants and other well-meant policies changed nothing",
+        "category": "Policy / Behaviour",
+        "tag": "Opinion",
+        "url": "https://www.experimental-history.com/p/we-need-more-goat-sacrifices",
+        "src": "Experimental History",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "India backs Sarvam to build homegrown AI models",
+        "category": "AI / Startups",
+        "tag": "",
+        "url": "https://www.ft.com/content/599cd9ab-dbd0-4c0d-818a-f6270871cd97?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Visa curbs squeeze universities that relied on foreign students",
+        "category": "Education / Visas",
+        "tag": "",
+        "url": "https://m.economictimes.com/nri/study/the-foreign-student-cash-cow-is-running-dry-as-us-uk-others-tighten-visa-rules/articleshow/135790898.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Microsoft Outlook outage hits 70+ countries for about 19 hours",
+        "category": "Big Tech / Cloud",
+        "tag": "",
+        "url": "https://www.wsj.com/business/telecom/the-chaos-and-unexpected-joys-of-a-19-hour-global-email-outage-37b7170c",
+        "src": "The Wall Street Journal, Financial Times and WIRED",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why AI and tokenised money could make bank runs faster",
+        "category": "Finance / Crypto",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/91e8c6d1-54ab-48b6-a6ad-ea3b8dc3843f?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why AI agents ignore stop orders, and how to rein them in",
+        "category": "AI / Agents",
+        "tag": "",
+        "url": "https://www.nytimes.com/2026/11/11/magazine/ai-behavior-incorrigible.html",
+        "src": "The New York Times and Financial Times",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-13",
+    "slice": "Nvidia's king falls. Gold rolls over. Delhi guards tenders. US homes hit 2010 lows. Zurich sours. A bot cares.",
+    "artifact": "https://claude.ai/artifact/LXmzPQ5nnwaWvSHNmsRq1w",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-13-1.jpg",
+    "cover": "/figs/2026-11-13-cover.jpg",
+    "coverAlt": "Nvidia's king falls. Gold rolls over. Delhi guards tenders. US homes hit 2010 lows. Zurich sours. A bot cares.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Nvidia CEO Jensen Huang resigns; shares close 4.3% lower",
+        "category": "AI and markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/stocks/jensen-huangs-exit-will-test-ais-stocks-and-great-man-theory-3c4cd404",
+        "src": "The Wall Street Journal and Semafor",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Gold loan rollovers may hide stress in India's ₹22.5 lakh crore boom",
+        "category": "Gold loans",
+        "tag": "",
+        "url": "https://m.economictimes.com/prime/fintech-and-bfsi/how-indias-inr22-5-lakh-crore-gold-loan-boom-is-hiding-a-big-hole/primearticleshow/135771193.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Trade deals could squeeze Make in India's public procurement edge",
+        "category": "Trade policy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/columns/potential-adverse-impact-of-ftas-on-public-procurement-policies-supporting-made-in-india-11794295722655.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "India",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Inside Jensen Huang's fall: a spy scandal and a 'feudal' Nvidia",
+        "category": "Corporate governance",
+        "tag": "",
+        "url": "https://www.ft.com/content/ef8f85a6-e2d7-4d41-b70e-092b2567813a?syn-25a6b1a6=1",
+        "src": "Financial Times and The New York Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "US existing home sales hit lowest since 2010 as mortgage rates bite",
+        "category": "US housing",
+        "tag": "",
+        "url": "https://www.ft.com/content/1e08661e-1db0-4ff7-8236-77254bb05790?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Sberbank Switzerland rescue: TradeX owners settle after 4-year feud",
+        "category": "Swiss banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/8d5aaf6c-e8b6-47ac-a111-a5827fce2175?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How Gemini helped a WSJ writer get an endometriosis diagnosis",
+        "category": "AI and health",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/health/wellness/how-ai-diagnosed-a-medical-mystery-my-doctors-missed-for-decades-cd5fa842",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Health & science",
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-12",
+    "slice": "India booms at 6.5%. Nvidia swoons on one man. Junk pays 18%. Bots build firms; labs draw the line.",
+    "artifact": "https://claude.ai/artifact/3LD436aUkwTQFtioChv5sy",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-12-1.jpg",
+    "cover": "/figs/2026-11-12-cover.jpg",
+    "coverAlt": "India booms at 6.5%. Nvidia swoons on one man. Junk pays 18%. Bots build firms; labs draw the line.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "India grows 6.5% a year as hotels fill and foreign money returns",
+        "category": "India's economy",
+        "tag": "",
+        "url": "https://www.noahpinion.blog/p/india-is-quietly-doing-great",
+        "src": "Noahpinion, The Economic Times and Reuters",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Nvidia's CEO probe shows how much markets lean on one man",
+        "category": "Big Tech",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-10/why-nvidia-and-jensen-huang-matter-so-much-to-markets",
+        "src": "Bloomberg and Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The end of cheap money is squeezing America's weakest borrowers",
+        "category": "US credit",
+        "tag": "",
+        "url": "https://www.ft.com/content/50c43ffc-2a91-43ee-8eb7-a19531278b97?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents let start-ups run with no staff and prototype in days",
+        "category": "Start-ups",
+        "tag": "",
+        "url": "https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI firms tighten guardrails on DIY reverse engineering of gadgets",
+        "category": "AI tools",
+        "tag": "Opinion",
+        "url": "https://www.404media.co/reverse-engineer-anything-ai-companies-crack-down-on-the-coolest-thing-people-were-doing-with-ai/",
+        "src": "404 Media",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-11",
+    "slice": "Bank bots fake an offer. Oil under $100. 100m Chinese in debt. mRNA cuts relapse 42%. Humanity: mixed results.",
+    "artifact": "https://claude.ai/artifact/1nCxo2g1ht6yKVuMYerCRg",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-11-1.jpg",
+    "cover": "/figs/2026-11-11-cover.jpg",
+    "coverAlt": "Bank bots fake an offer. Oil under $100. 100m Chinese in debt. mRNA cuts relapse 42%. Humanity: mixed results.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "HDFC Bank AI agents invented a fake offer; Kotak and Axis hit too",
+        "category": "Banking and AI",
+        "tag": "",
+        "url": "https://bfsi.eletsonline.com/ai-agents-banks-safeguards/",
+        "src": "Elets BFSI and Karandeep's Second Opinion",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's lenders wire AI agents into loans before the guardrails land",
+        "category": "Lending",
+        "tag": "Opinion",
+        "url": "https://sharatchandra.substack.com/p/why-indias-biggest-lenders-are-struggling",
+        "src": "FinTech Unwrapped",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Oil slips below $100 as midterms raise hopes the Iran war fades",
+        "category": "Oil and the rupee",
+        "tag": "Opinion",
+        "url": "https://tessellatum.in/?p=640",
+        "src": "The Times of India",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Sasmit Patra: UPI needs a backup switch before AI agents pile on",
+        "category": "Payments",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/sasmit-patra-how-india-can-lower-upi-risks-for-the-next-decade-11794209776111.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "IEA: India's renewables pass 300 GW, set to reach 530 GW by 2030",
+        "category": "Energy",
+        "tag": "",
+        "url": "https://www.iea.org/files/9452aeba-6c64-4dfa-9205-569c354b686e/IndiaRenewableEnergyMarketReport2026.pdf",
+        "src": "IEA",
+        "pay": false,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "China's bad consumer debt market booms as up to 100 million struggle",
+        "category": "China",
+        "tag": "",
+        "url": "https://www.bloomberg.com/news/features/2026-11-08/china-s-debt-collectors-are-struggling-alongside-borrowers-who-can-t-pay",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "mRNA cancer vaccines show early wins in pancreatic and skin cancer",
+        "category": "Health",
+        "tag": "",
+        "url": "https://www.npr.org/2026/11/02/nx-s1-6009085/mrna-cancer-vaccine-pancreatic-skin",
+        "src": "NPR",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-10",
+    "slice": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys.",
+    "artifact": "https://claude.ai/artifact/8DqSSbXMT7vdW81gSFMEfM",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-10-1.jpg",
+    "cover": "/figs/2026-11-10-cover.jpg",
+    "coverAlt": "Nvidia’s single point of failure. India’s paperwork. AI’s trust problem. Big Tech’s empire. Hackers want keys.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Nvidia board probes Jensen Huang after affair and China spy claims",
+        "category": "Nvidia / Leadership",
+        "tag": "",
+        "url": "https://www.ft.com/content/0b20d24a-580a-41df-a5f3-7f7dba4f552f?syn-25a6b1a6=1",
+        "src": "Financial Times and The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Signing FTAs is the easy part for India's exporters",
+        "category": "Trade",
+        "tag": "",
+        "url": "https://www.livemint.com/economy/why-indian-exporters-struggle-to-benefit-from-ftas-11794222712302.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Tighter AI rules can push staff to hide their AI use",
+        "category": "AI at work",
+        "tag": "Opinion",
+        "url": "https://hbr.org/2026/11/why-leaders-need-to-rethink-their-approach-to-ai-oversight",
+        "src": "Harvard Business Review",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Your AI chats are less private than you think, and how to limit that",
+        "category": "Privacy",
+        "tag": "Explainer",
+        "url": "https://www.nytimes.com/wirecutter/advice/ai-chat-privacy/",
+        "src": "Wirecutter",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Big Tech bets on owning the whole AI stack, from chips to robots",
+        "category": "AI / Big Tech",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/d3f706c8-a936-4395-bcf1-7f8bc2bed99a?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Hacks on Binance and freezers expose a fragile connected world",
+        "category": "Cybersecurity",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/26687a2b-85ef-4ea8-94d3-07debe920f5f?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-09",
+    "slice": "Teens fly. Embryos get ranked. VCs back 14-year-olds. Bots need guards. Bets never expire. Childhood, sold.",
+    "artifact": "https://claude.ai/artifact/F65FEhLU9nVG47wrfYntWX",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-09-1.jpg",
+    "cover": "/figs/2026-11-09-cover.jpg",
+    "coverAlt": "Teens fly. Embryos get ranked. VCs back 14-year-olds. Bots need guards. Bets never expire. Childhood, sold.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Gen Z founders and teen pilots skip the entry-level job ladder",
+        "category": "Careers",
+        "tag": "",
+        "url": "https://www.wsj.com/lifestyle/careers/20-somethings-are-ditching-entry-level-jobs-to-become-their-own-bosses-168d1f48",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers",
+          "AI"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Would you pay for the best baby? Embryo screening and liberal eugenics",
+        "category": "Long read",
+        "tag": "Opinion",
+        "url": "https://www.theguardian.com/news/ng-interactive/2026/oct/27/would-you-pay-to-have-the-best-baby-liberal-eugenics-and-the-troubling-quest-for-human-perfection",
+        "src": "The Guardian",
+        "pay": false,
+        "themes": [
+          "Health & science"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Lightspeed's Mohapatra: jagged AI needs young founders, specialist VCs",
+        "category": "Venture capital",
+        "tag": "Opinion",
+        "url": "https://x.com/MohapatraHemant/status/2119104610166354078",
+        "src": "Hemant Mohapatra on X",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Indian firms want on-site security engineers as AI cyber threats rise",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.livemint.com/ai/indian-companies-seek-on-site-security-engineers-as-ai-led-cyber-threats-mount-11793951525980.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Hardship camps for kids: can paid struggle build resilience?",
+        "category": "Parenting",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/mint-lounge/art-and-culture/artificial-hardship-camps-kids-building-resilience-parenting-11794030202607.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Citadel and Cboe-backed group sues to stop Kalshi's single-stock perps",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/regulation/a-popular-new-bet-hailing-from-cryptoland-sets-off-a-wall-street-turf-war-70e37095",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-08",
+    "slice": "US fears AI. Patna, 9th, eats the Louvre's lunch. Servers gulp 945 TWh. Bots eye jobs. Hackers cook fridges.",
+    "artifact": "https://claude.ai/artifact/VARrC7Nodxn66ZdDL2JfJk",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-08-1.jpg",
+    "cover": "/figs/2026-11-08-cover.jpg",
+    "coverAlt": "US fears AI. Patna, 9th, eats the Louvre's lunch. Servers gulp 945 TWh. Bots eye jobs. Hackers cook fridges.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Why does America hate AI? Gillian Tett on the US and Asia attitude gap",
+        "category": "AI attitudes",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/af97585a-3381-42a9-838b-9a205ab81232?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Bihar Museum ranks 9th in world list, ahead of the Met and Louvre",
+        "category": "Culture",
+        "tag": "",
+        "url": "https://yourstory.com/2026/11/bihar-museum-ahead-met-louvre",
+        "src": "YourStory and Time Out",
+        "pay": false,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Green groups embrace AI even as they warn of data centre costs",
+        "category": "AI and climate",
+        "tag": "",
+        "url": "https://www.reuters.com/sustainability/cop/environmental-groups-embrace-ai-even-they-warn-data-center-impacts-2026-11-07/",
+        "src": "Reuters",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why AI should not replace junior White House economists",
+        "category": "AI and jobs",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/ai-is-coming-for-the-jobs-of-white-house-economists-too-11793954967480.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Accenture and Big Four chase mid-sized clients as AI cuts costs",
+        "category": "Consulting",
+        "tag": "",
+        "url": "https://www.ft.com/content/afff9e84-9b68-4a2f-a3f1-7729dec802b1?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Hackers heat fridges at French blood banks and European supermarkets",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wired.com/story/kernel-panic-refrigeration-hacks-internet-of-things/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "slice": "Bubbles are bets. Privacy sells, old emails too. Banks bankroll yuan. AI hacks 73%. A yes needs eye contact.",
+    "artifact": "https://claude.ai/artifact/7m6FuYoAgNWk47jbenVSiE",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-07-1.jpg",
+    "cover": "/figs/2026-11-07-cover.jpg",
+    "coverAlt": "Bubbles are bets. Privacy sells, old emails too. Banks bankroll yuan. AI hacks 73%. A yes needs eye contact.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Jeff Yass: There is no such thing as a stock-market bubble, even in AI",
+        "category": "Markets column",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/theres-no-such-thing-as-a-stock-market-bubble-159ea117",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Private AI rises: Eternal's Dark.ai and the startups selling privacy",
+        "category": "Private AI",
+        "tag": "Explainer",
+        "url": "https://inc42.com/features/inside-the-new-wave-of-private-ai/",
+        "src": "Inc42",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Wall Street banks pile into dim-sum bonds, building a global yuan",
+        "category": "Global money",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/andy-mukherjee-how-wall-street-is-helping-china-build-a-global-yuan-11793952325395.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI math breakthroughs may crack encryption before quantum computers",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/ai-math-online-encryption-quantum-computers-57926bb2",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Free Chinese AI models nearly match OpenAI's best at hacking networks",
+        "category": "AI security",
+        "tag": "",
+        "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI labs want your old work emails, and data brokers are selling them",
+        "category": "Data trade",
+        "tag": "Opinion",
+        "url": "https://www.wired.com/story/ai-companies-really-really-want-to-buy-your-work-files-and-emails/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How to get colleagues to say yes: ask directly, and in person",
+        "category": "Careers",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/lifestyle/careers/how-to-ask-colleagues-agree-requests-72231479",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-06",
+    "slice": "China splits, stocks crush homes, junk hits 18%, hackers test with ₹1. AI profits? Still buffering.",
+    "artifact": "https://claude.ai/artifact/STtuXbK7mRc2AVuyprwPin",
+    "readingMinutes": 9,
+    "image": "/figs/2026-11-06-1.jpg",
+    "cover": "/figs/2026-11-06-cover.jpg",
+    "coverAlt": "China splits, stocks crush homes, junk hits 18%, hackers test with ₹1. AI profits? Still buffering.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Stocks beat home prices in every US state over 40 years, after tax, a WSJ study finds",
+        "category": "Home vs stocks",
+        "tag": "Analysis",
+        "url": "https://www.wsj.com/finance/investing/home-vs-stock-market-investment-6783607f",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "China's K-shaped economy: world-class tech on top, weak jobs and demand below, James Crabtree finds",
+        "category": "China economy",
+        "tag": "Analysis",
+        "url": "https://jamescrabtree.substack.com/p/i-deliver-thoughts-from-beijing",
+        "src": "James Crabtree (Substack)",
+        "pay": false,
+        "themes": [
+          "Geopolitics",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "CERT-In flags 'critical' AI-driven attacks on Indian banks, NBFCs and fintechs",
+        "category": "Bank cyber risk",
+        "tag": "Explainer",
+        "url": "https://www.livemint.com/ai/artificial-intelligence/mint-explainer-how-ai-driven-cyberattacks-are-targeting-indias-financial-sector-11793854055822.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Yields on CCC junk bonds hit 18%, up from 12.5% in January",
+        "category": "Credit stress",
+        "tag": "Analysis",
+        "url": "https://m.economictimes.com/prime/junk-bonds-are-cracking-at-the-bottom-will-the-noise-get-loud-enough-to-make-junk-bond-a-household-term-again/primearticleshow/135581611.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "88% of US firms use AI vs 26% in Japan, but depth beats speed, HBR authors argue",
+        "category": "AI adoption",
+        "tag": "Analysis",
+        "url": "https://m.economictimes.com/hbr/ai-at-work/u-s-and-japanese-companies-struggle-with-different-parts-of-ai-adoptionand-offer-different-lessons-for-making-it-work/articleshow/135533612.cms",
+        "src": "Harvard Business Review (via The Economic Times)",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "John Thornhill: will AI's 'cognitive capitalism' spread wealth or concentrate it?",
+        "category": "AI and wealth",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/dd91306a-f3cf-43cc-baf2-9a9134fb92c4?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Europe is falling behind on AI and tech, and Britain must chart its own path, says Keegan McBride",
+        "category": "Tech geopolitics",
+        "tag": "Opinion",
+        "url": "https://digitalbureaucracyandgeopolitics.substack.com/p/technology-geopolitics-and-the-new",
+        "src": "Technology, Geopolitics, and Bureaucracy (Substack)",
+        "pay": false,
+        "themes": [
+          "Geopolitics",
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-05",
+    "slice": "Servers borrow, voters balk, orbit beckons, hackers sprint. Who checks the honesty box?",
+    "artifact": "https://claude.ai/artifact/5N4ZC8Ygeu9b82rZAHQM5n",
+    "readingMinutes": 4,
+    "image": "/figs/2026-11-05-1.jpg",
+    "cover": "/figs/2026-11-05-cover.jpg",
+    "coverAlt": "Servers borrow, voters balk, orbit beckons, hackers sprint. Who checks the honesty box?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Martin Wolf: AI buildout at 3.6% of US GDP raises the risk of a bust",
+        "category": "AI bust risk",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/b954b99c-b71e-4334-9789-18e2b69de76d?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI is speeding up hacks. Are banks in India and abroad ready?",
+        "category": "Bank cyber risk",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/prime/ai-is-speeding-up-cyberattacks-how-prepared-are-indian-banks/primearticleshow/135535941.cms",
+        "src": "The Economic Times and Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "After a blue wave, data centre fans look to space",
+        "category": "Data centre politics",
+        "tag": "",
+        "url": "https://www.wired.com/story/the-blue-wave-has-tech-bros-scrambling-for-data-centers-in-space/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Tim Harford on what stolen sweets and parking fines say about cheats",
+        "category": "Economics of honesty",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/ece62af0-f953-43e9-bbbc-d3f54b26c8c6?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-04",
+    "slice": "Fake hires, hot freezers, dear bonds, shaky G7, proud China. Kids get stock. Grads don't.",
+    "artifact": "https://claude.ai/artifact/RExZ4kg8nErLHxExY7u4S7",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-04-1.jpg",
+    "cover": "/figs/2026-11-04-cover.jpg",
+    "coverAlt": "Fake hires, hot freezers, dear bonds, shaky G7, proud China. Kids get stock. Grads don't.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Binance says fake job interviews opened the door to its $6.3bn heist",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.ft.com/content/1ed838c0-a525-49bb-b494-15e4d1296791?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI's borrowing bill is rising as bond buyers demand more",
+        "category": "AI finance",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/5f08f1fb-4948-4420-8fe4-3c8c8cc492ef?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Europe's supermarket freezer hacks: what we know so far",
+        "category": "Cyber warfare",
+        "tag": "Explainer",
+        "url": "https://www.ft.com/content/90e63a7f-45d7-4e7a-940d-6d5145d51941?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI is shutting the door on new hires, not pushing workers out",
+        "category": "Jobs",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/cf6fd711-cfa5-49f9-9958-3aec32369286?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The new Fragile Five are rich nations, a Mint column argues",
+        "category": "Global economy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/make-way-for-a-new-fragile-five-france-italy-germany-the-uk-and-the-us-11793535550176.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Is 'Made in China' heading for its 'Made in Japan' moment?",
+        "category": "Brands",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/is-china-soon-going-to-have-its-own-made-in-japan-moment-11793535476331.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Bank Hapoalim says free shares made new investors, backing Musk",
+        "category": "Investing",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/elon-musk-will-turn-kids-into-capitalists-396c4fcf",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-03",
+    "slice": "Stats lag. India ages and juggles. Markets wobble, crypto cracks, staff coast. Who works?",
+    "artifact": "https://claude.ai/artifact/6ESR4CnmsxjA38zhDzTB2S",
+    "readingMinutes": 6,
+    "image": "/figs/2026-11-03-1.jpg",
+    "cover": "/figs/2026-11-03-cover.jpg",
+    "coverAlt": "Stats lag. India ages and juggles. Markets wobble, crypto cracks, staff coast. Who works?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Why AI is not yet showing up in productivity data",
+        "category": "AI and productivity",
+        "tag": "Explainer",
+        "url": "https://zerodhavarsity.substack.com/p/why-isnt-ai-showing-up-in-productivity",
+        "src": "Zerodha Varsity",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's ageing shift needs a three-track policy reset",
+        "category": "Demographics",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/economy/policy-priority-reset-india-population-demographic-shift-11793623835105.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's three trade-offs: fuel prices, rates and foreign money",
+        "category": "Economy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/economy/india-economic-policy-monetary-policy-fiscal-policy-inflation-fuel-prices-west-asia-war-foreign-portfolio-investors-11793548163541.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Elliott warns of FOGO as bear-market alarm bells ring",
+        "category": "Markets",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/investing/hedge-fund-elliott-warns-of-fogo-fear-of-getting-obliterated-in-the-market-a2cc7027",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "What caused the Binance hack? Eswar Prasad blames crypto's middlemen",
+        "category": "Crypto",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/aee842a2-2949-4746-8742-03c0397f0391",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "UK workers less willing to go the extra mile, survey shows",
+        "category": "UK jobs",
+        "tag": "",
+        "url": "https://www.ft.com/content/d629be83-a1d5-4a08-aa69-93910ce50aa7?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-02",
+    "slice": "Bots do maths, errands and discounts. Junk and pensions do damage. Hard hats on.",
+    "artifact": "https://claude.ai/artifact/QkLkNn33WANQYggozh7h2x",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-02-1.jpg",
+    "cover": "/figs/2026-11-02-cover.jpg",
+    "coverAlt": "Bots do maths, errands and discounts. Junk and pensions do damage. Hard hats on.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Europe's pension systems strain; UK welfare bill forecast at £431.3bn",
+        "category": "Welfare states",
+        "tag": "",
+        "url": "https://www.wsj.com/world/europe/panic-and-anger-spread-as-europes-great-pension-covenant-unravels-69a94ed7",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "Pick of the day",
+        "title": "Junk debt rout hits CCC borrowers and the funds that bet on them",
+        "category": "Credit markets",
+        "tag": "",
+        "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "OpenAI and Anthropic say AI disproved the exponential time hypothesis",
+        "category": "AI and science",
+        "tag": "",
+        "url": "https://www.wired.com/story/ai-made-decades-of-computer-science-research-irrelevant/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "OpenAI's discounts lure customers from Anthropic before its IPO",
+        "category": "AI business",
+        "tag": "",
+        "url": "https://www.theinformation.com/articles/anthropics-margin-openais-opportunity",
+        "src": "The Information",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents widen what workers attempt, not just how fast they work",
+        "category": "AI at work",
+        "tag": "",
+        "url": "https://hbr.org/2026/07/research-how-ai-agents-broaden-the-scope-of-knowledge-work",
+        "src": "Harvard Business Review",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Companies court women to fill skilled trade jobs",
+        "category": "Work",
+        "tag": "",
+        "url": "https://www.wsj.com/economy/jobs/companies-have-a-solution-for-the-skilled-trade-shortage-more-women-37851f46",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-01",
+    "slice": "India wins messily. Jobs, loans, grids, wards strain; bots rank, shop. Trust barometers.",
+    "artifact": "https://claude.ai/artifact/6bEc9v6abhH6Jkxx45GjqY",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-01-1.jpg",
+    "cover": "/figs/2026-11-01-cover.jpg",
+    "coverAlt": "India wins messily. Jobs, loans, grids, wards strain; bots rank, shop. Trust barometers.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Hemant Mohapatra: India misses targets but its rise is inevitable",
+        "category": "India growth",
+        "tag": "Opinion",
+        "url": "https://x.com/MohapatraHemant/status/2116532318940889175",
+        "src": "Hemant Mohapatra on X",
+        "pay": false,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI could plug hospitals' money leaks, if boards measure it",
+        "category": "Health and AI",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/small-biz/security-tech/technology/hospital-balance-sheet-how-ai-could-cut-costs-and-improve-efficiency/articleshow/135389846.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Health & science",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Wall Street gets choosier about funding the AI build-out",
+        "category": "AI financing",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/the-new-bottleneck-in-americas-ai-build-out-a-shortage-of-cheap-money-0c14c84d",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI's job hit so far looks like a Big Tech story, not an economy one",
+        "category": "AI and jobs",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/7f27aa5f-5994-4f82-aed8-1cade18fb487?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "New malware uses AI chatbots to profile and rank its victims",
+        "category": "Cybersecurity",
+        "tag": "",
+        "url": "https://www.wired.com/story/kernel-panic-volta-autodoxer-ai-infostealer-malware/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI agents get better, but businesses see barely any agent orders",
+        "category": "AI agents",
+        "tag": "",
+        "url": "https://www.wired.com/story/metas-muse-could-upend-all-kinds-of-businesses-it-hasnt-yet/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why the D-Day weatherman is a warning for the AI age",
+        "category": "AI and truth",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/only-a-weatherman-knows-which-way-the-wind-blows-why-science-and-truth-matter-in-an-ai-driven-world/articleshow/135407233.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI's power bill means data centres must be designed as energy assets",
+        "category": "AI and energy",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/small-biz/security-tech/technology/the-future-of-ai-depends-on-how-we-design-the-energy-infrastructure-that-powers-it/articleshow/135162471.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-31",
+    "slice": "Hackers loot, Intel sinks, AI builds AI, watches nag, Vizag frets. Who minds the gate?",
+    "artifact": "https://claude.ai/artifact/35rHDC441NAffsGVHiP17T",
+    "readingMinutes": 8,
+    "image": "/figs/2026-10-31-1.jpg",
+    "cover": "/figs/2026-10-31-cover.jpg",
+    "coverAlt": "Hackers loot, Intel sinks, AI builds AI, watches nag, Vizag frets. Who minds the gate?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "North Korea-linked hackers steal $6.3bn from Binance in record heist",
+        "category": "Crypto / Cybercrime",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/currencies/behind-the-scenes-of-cryptos-biggest-nightmare-a-record-breaking-cyber-heist-ffe1d9a3",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India saw 369 million cyber incidents in a year. Is it AI-ready?",
+        "category": "Cybersecurity / AI",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/is-india-prepared-to-tackle-369-million-cybersecurity-incidents-and-ai-challenges-ahead/articleshow/135373464.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "AI"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "From Vizag to Thane, data centres meet local pushback",
+        "category": "Data centres",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/see-data-centres-less-as-energy-sucking-private-warehouses-and-more-as-quasi-public-utilities/articleshow/135372738.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "India",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Intel's record crash caps a week when the AI trade cracked",
+        "category": "Markets / Big Tech",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/stocks/the-week-the-cracks-in-the-ai-trade-grew-deeper-9e25b20f",
+        "src": "The Wall Street Journal and Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "How North Korea turned hacking into a state income machine",
+        "category": "Geopolitics / Cyber",
+        "tag": "Explainer",
+        "url": "https://www.ft.com/content/46c03338-63d5-43fc-a946-ebcbe9e1c07a?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Apollo lends as OpenAI-backed Thrive buys ADT for $15bn",
+        "category": "Private equity",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/95480c09-5018-4400-b9c1-f2d53373a47c?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI now leads a quarter of AI research at Anthropic, company data show",
+        "category": "AI / Research",
+        "tag": "Explainer",
+        "url": "https://www.wsj.com/tech/ai/ai-anthropic-rsi-recursive-self-improvement-bff4e815",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Biomedical engineering is booming, but can health care keep up?",
+        "category": "Health / Tech",
+        "tag": "",
+        "url": "https://www.nature.com/articles/d41586-026-03202-z",
+        "src": "Nature",
+        "pay": true,
+        "themes": [
+          "Health & science"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "slice": "Poor climb, labs beg, vendors pledge. Ads fade, IPOs swell, coins vanish. Grip tight.",
+    "artifact": "https://claude.ai/artifact/QoGGPz6pUNFqMnoCSQtxhw",
+    "readingMinutes": 5,
+    "image": "/figs/2026-10-30-1.jpg",
+    "cover": "/figs/2026-10-30-cover.jpg",
+    "coverAlt": "Poor climb, labs beg, vendors pledge. Ads fade, IPOs swell, coins vanish. Grip tight.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "World Bank: 496 million Indians left poverty between 2011 and 2023",
+        "category": "Poverty & jobs",
+        "tag": "",
+        "url": "https://documents1.worldbank.org/curated/en/099722104222534584/pdf/IDU-25f34333-d3a3-44ae-8268-86830e3bc5a5.pdf",
+        "src": "World Bank",
+        "pay": false,
+        "themes": [
+          "India",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's deep-tech push needs labs, postdocs and buyers, not just cash",
+        "category": "R&D & startups",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/rd-imperative-why-india-must-create-a-deep-tech-ecosystem-of-its-own-11793274193111.html",
+        "src": "Mint",
+        "pay": true,
+        "themes": [
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Fintech body UFF drafts a code for tech vendors after cyberattacks",
+        "category": "Fintech & cyber",
+        "tag": "",
+        "url": "https://m.economictimes.com/industry/banking/finance/fintechs-to-lay-out-a-code-for-technology-vendors-amid-rising-cyberthreats-and-security-risks/articleshow/135329528.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Alphabet's ad slowdown and Anthropic's IPO test the AI money machine",
+        "category": "AI & Big Tech",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/245107d8-ef54-4b30-a75a-538d055bc6d7?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Binance halts transactions after a hack that may be the biggest ever",
+        "category": "Crypto & cyber",
+        "tag": "",
+        "url": "https://www.wsj.com/finance/currencies/binance-founder-says-exchange-may-be-victim-of-biggest-ever-crypto-heist-24a82e5f",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-29",
     "slice": "Labs lease chips, bots brew drugs, Fed waits, China chills, Norway frets. Oddballs win.",
     "artifact": "https://claude.ai/artifact/T1n5SUS4MuirWCoqhZtHmu",

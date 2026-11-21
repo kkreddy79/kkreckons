@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
 import Listen from "@/components/Listen";
+import ReportScripts from "@/components/ReportScripts";
 import ShareRow from "@/components/ShareRow";
 import { SpecialCard } from "@/components/SpecialCards";
 import SubscribeBox from "@/components/SubscribeBox";
@@ -83,9 +84,7 @@ export default async function SpecialReportPage({ params }: Props) {
       <article id="sp-report" className="sp-report" aria-label={r.title}>
         <style dangerouslySetInnerHTML={{ __html: page.css }} />
         <div dangerouslySetInnerHTML={{ __html: page.body }} />
-        {page.scripts.map((s, i) => (
-          <script key={i} dangerouslySetInnerHTML={{ __html: s }} />
-        ))}
+        <ReportScripts rootId="sp-report" scripts={page.scripts} />
       </article>
 
       <div className="sp-wrap sp-end">

@@ -4,25 +4,21 @@ import Banner from "@/components/Banner";
 import JsonLd, { PUBLISHER } from "@/components/JsonLd";
 import SubscribeBox from "@/components/SubscribeBox";
 import { getContent } from "@/lib/content";
-import { editions, longDate, slugFor, totalStories } from "@/lib/editions";
+import { editions, longDate, monthLabel, slugFor, themesOf, THEMES, totalStories } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
-import type { ReadingLink, StoryLinks } from "@/components/ArchiveBrowser";
+import type { ArchiveMonth } from "@/components/ArchiveBrowser";
 
-/** Each story's second source link, keyed by "date|title" (it names a publisher, so search and filters need it).
- *  The summaries load separately, from /daily/summaries.json. */
-function storyLinks(): StoryLinks {
-  const out: StoryLinks = {};
+/** The list of editions by month, with only what a row shows: the stories behind the search load from /daily/index.json. */
+function timeline(): ArchiveMonth[] {
+  const out: ArchiveMonth[] = [];
   for (const e of editions) {
-    for (const sec of getContent(e.date).sections) {
-      for (const s of sec.stories) if (s.url2) out[`${e.date}|${s.title}`] = s.url2;
-    }
+    const label = monthLabel(e.date);
+    const item = { date: e.date, slice: e.slice, heads: e.stories.slice(0, 4).map((s) => s.title).join(" · "), stories: e.stories.length, readingMinutes: e.readingMinutes };
+    const last = out[out.length - 1];
+    if (last?.label === label) last.items.push(item);
+    else out.push({ label, items: [item] });
   }
   return out;
-}
-
-/** Every edition's further reading links, newest first. */
-function readingLinks(): ReadingLink[] {
-  return editions.flatMap((e) => getContent(e.date).reading.map((r) => ({ date: e.date, ...r })));
 }
 
 export const metadata: Metadata = {
@@ -32,7 +28,9 @@ export const metadata: Metadata = {
 };
 
 export default function Archive() {
-  const reading = readingLinks();
+  const reading = editions.reduce((n, e) => n + getContent(e.date).reading.length, 0);
+  const stories = editions.flatMap((e) => e.stories);
+  const themeCounts = Object.fromEntries(THEMES.map((t) => [t.name, stories.filter((s) => themesOf(s).includes(t.name)).length]));
   return (
     <main className="cu">
       <JsonLd
@@ -55,7 +53,7 @@ export default function Archive() {
           },
         }}
       />
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap">
         <section className="cu-hero" aria-labelledby="cu-title">
           <p className="ab-kicker">The archive</p>
@@ -69,11 +67,11 @@ export default function Archive() {
               <b>{totalStories}</b> stories
             </li>
             <li>
-              <b>{reading.length}</b> further reading links
+              <b>{reading}</b> further reading links
             </li>
           </ul>
         </section>
-        <ArchiveBrowser editions={editions} links={storyLinks()} reading={reading} />
+        <ArchiveBrowser months={timeline()} themeCounts={themeCounts} totals={{ stories: totalStories, reading }} />
         <SubscribeBox />
       </div>
     </main>

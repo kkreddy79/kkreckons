@@ -1,17 +1,21 @@
 /** @type {import('next').NextConfig} */
 // Content-Security-Policy: everything comes from this site, except the AI Stress Index data the page re-fetches
-// from GitHub (lib/stress.ts STRESS_BASES), Umami's cloud analytics (components/Umami.tsx) and the Vercel Toolbar on preview deployments (vercel.live, Pusher).
+// from GitHub (lib/stress.ts STRESS_BASES) and Umami's cloud analytics (components/Umami.tsx). Preview deployments
+// also allow the Vercel Toolbar (vercel.live, Pusher); production doesn't load it, so it doesn't allow those hosts.
 // Scripts and styles keep 'unsafe-inline': Next.js inlines its page data and the theme script, and per-request
 // nonces would make every page dynamic. The policy still blocks scripts, frames and objects from anywhere else,
 // <base> hijacking and forms posting off-site.
+const PROD = process.env.VERCEL_ENV === "production";
+/** Hosts only the Vercel Toolbar needs: listed on previews and local builds, left out in production. */
+const toolbar = (...hosts) => (PROD ? "" : ` ${hosts.join(" ")}`);
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://cloud.umami.is https://vercel.live",
-  "style-src 'self' 'unsafe-inline' https://vercel.live",
-  "img-src 'self' data: blob: https://vercel.live https://vercel.com",
-  "font-src 'self' https://vercel.live https://assets.vercel.com",
-  "connect-src 'self' https://kkreddy79.github.io https://raw.githubusercontent.com https://cloud.umami.is https://api-gateway.umami.dev https://vercel.live wss://ws-us3.pusher.com",
-  "frame-src 'self' https://vercel.live",
+  `script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://cloud.umami.is${toolbar("https://vercel.live")}`,
+  `style-src 'self' 'unsafe-inline'${toolbar("https://vercel.live")}`,
+  `img-src 'self' data: blob:${toolbar("https://vercel.live", "https://vercel.com")}`,
+  `font-src 'self'${toolbar("https://vercel.live", "https://assets.vercel.com")}`,
+  `connect-src 'self' https://kkreddy79.github.io https://raw.githubusercontent.com https://cloud.umami.is https://api-gateway.umami.dev${toolbar("https://vercel.live", "wss://ws-us3.pusher.com")}`,
+  `frame-src 'self'${toolbar("https://vercel.live")}`,
   "frame-ancestors 'none'",
   "object-src 'none'",
   "base-uri 'self'",
@@ -29,6 +33,8 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // Don't advertise the framework in an "X-Powered-By" header.
+  poweredByHeader: false,
   images: { unoptimized: true },
   // The AI Stress Index data, published by its own pipeline on GitHub Pages, is also served from this
   // domain, so citations and dataset listings credit kkreckons.com.

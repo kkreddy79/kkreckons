@@ -3,11 +3,15 @@
    Shared by the server render and the browser fallback, so it must stay free of "use client". */
 export const STRESS_BASES = ["https://kkreddy79.github.io/ai-implosion", "https://raw.githubusercontent.com/kkreddy79/ai-implosion/main/docs"];
 
-/** Fetches one of the index's JSON files on the server, re-checked at most hourly; null when no source answers. */
-export async function loadStressFile<T>(file: string): Promise<T | null> {
+/** Cache tag on every CDN copy of the embed card, so /api/revalidate can clear them all when a reading publishes. */
+export const EMBED_CACHE_TAG = "ai-stress-index-embed";
+
+/** Fetches one of the index's JSON files on the server, re-checked at most hourly (`fresh`: every time, for a
+ *  response the CDN caches instead); null when no source answers. */
+export async function loadStressFile<T>(file: string, fresh = false): Promise<T | null> {
   for (const base of STRESS_BASES) {
     try {
-      const r = await fetch(`${base}/${file}`, { next: { revalidate: 3600 } });
+      const r = await fetch(`${base}/${file}`, fresh ? { cache: "no-store" } : { next: { revalidate: 3600 } });
       if (r.ok) return (await r.json()) as T;
     } catch {}
   }

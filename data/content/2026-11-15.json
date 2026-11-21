@@ -1,0 +1,527 @@
+{
+  "date": "2026-11-15",
+  "slice": "Router grounds the US. India banks on growth. UPI clicks 800mn daily. Nvidia loses its voice. Bonds find mojo.",
+  "artifact": "https://claude.ai/artifact/XdXB6Th5PSUNviJhKLYi4x",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "800mn+",
+      "text": "UPI transactions a day on average, India's payments machine in full swing.",
+      "url": "https://www.livemint.com/mint-lounge/art-and-culture/cashless-nation-story-of-upi-book-review-11794567593068.html"
+    },
+    {
+      "num": "17/22",
+      "text": "FAA high-altitude centres disrupted: one router, nationwide chaos.",
+      "url": "https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Air travel",
+          "tag": "",
+          "title": "FAA ground stop: one Arkansas router halted nearly all US flights",
+          "url": "https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c",
+          "url2": "https://www.wsj.com/business/airlines/the-tangle-of-wires-at-the-heart-of-a-nationwide-air-travel-meltdown-0356872e",
+          "points": [
+            "Network gear at an FAA radio site in El Dorado, Arkansas, and possibly a radar site in Amarillo, Texas, flooded FTI, the ageing network controllers use to talk to pilots. Disruptions hit 17 of the FAA's 22 high-altitude centres, and nearly all US departures stopped for more than four hours.",
+            "The Arkansas router, made by HPE's Juniper, had just been installed by L3Harris, which runs FTI. Officials have switched off a broadcasting feature on all its Juniper routers; HPE says the devices did not fail.",
+            "Transportation Secretary Sean Duffy found no sign of foul play, pointed to the router or possible \"incompetence\" by L3Harris, and warned more outages could come until the copper is gone."
+          ],
+          "numbers": [
+            [
+              "17 of 22",
+              "FAA high-altitude centres disrupted"
+            ]
+          ],
+          "why": "The trigger wasn't weather or hackers but a daytime upgrade at a remote site, work officials assumed was safe. While old copper and new fiber run side by side, a single misbehaving box can reach the whole country.",
+          "other": "Blame is unsettled: HPE says its routers worked as designed, and the FAA hasn't decided between a bad unit and a bad setup. The cheaper fix may be stricter rules on when crews touch live systems, not just more money.",
+          "also": [],
+          "image": "/figs/2026-11-15-1.jpg",
+          "imageAlt": "KKReckons explainer: a new router at an FAA site in Arkansas flooded the network, disrupting 17 of 22 high-altitude centres and halting US departures.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "emailHead": "One router grounds America",
+          "emailTeaser": "How a routine upgrade froze US skies for hours",
+          "imageW": 1280,
+          "imageH": 1767
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Indian earnings",
+          "tag": "",
+          "title": "Six Indian sectors grew sales and profit through tariffs and war",
+          "url": "https://m.economictimes.com/prime/tariffs-supply-snags-and-a-war-6-sectors-that-pulled-it-off-through-all-of-the-trouble/primearticleshow/135854474.cms",
+          "url2": "",
+          "points": [
+            "ET Prime screened listed companies' September-quarter results: sales and profit both had to beat the same quarter of 2025 and the June quarter. About four in 10 companies cleared all four checks.",
+            "Banks led (20 of 23), helped by stronger business borrowing and falling bad loans, ahead of auto parts, hospitals, defence, NBFCs and non-ferrous metals. Each rode a structural change, a long tailwind or a very large market.",
+            "Sectors where crude drives costs fared worst, including tyres, cement, fertilisers and shipping: costs rose within weeks while selling prices lag by a quarter or two."
+          ],
+          "numbers": [
+            [
+              "20 of 23",
+              "banks cleared all four checks"
+            ]
+          ],
+          "why": "After US tariffs, supply snags and the Gulf war, the screen shows where steady growth survives: cleaner balance sheets, broader customer bases and demand that outruns supply. That is a sharper map for investors than headline earnings growth.",
+          "other": "One quarter is not a trend. Loan recoveries and record metal prices flatter some winners, and crude-hit sectors recovered after 2022 once price rises came through, so today's laggards may simply be a quarter or two behind.",
+          "also": [],
+          "image": "/figs/2026-11-15-2.jpg",
+          "imageAlt": "KKReckons explainer: banks led six Indian sectors that grew sales and profit on four checks, while crude-linked sectors lagged.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": true,
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "Six sectors beat the storm",
+          "emailTeaser": "Banks led India Inc's toughest test; crude sank the rest",
+          "imageW": 1280,
+          "imageH": 1812
+        },
+        {
+          "category": "India's economy",
+          "tag": "",
+          "title": "Oil, El Niño and capital flight: can India keep its fast-growth tag?",
+          "url": "https://www.livemint.com/economy/india-economic-growth-global-shocks-crude-inflation-11794724310106.html",
+          "url2": "",
+          "points": [
+            "India's GDP grew 7.8% in April-June, and Moody's, the IMF, World Bank and RBI now all see growth of 7% or more. Oil has eased and foreign investors are buying again.",
+            "Mint's N Madhavan lists what could spoil it: a West Asia flare-up with oil buffers used up, inflation of 6.1% keeping the RBI on a hiking path, a Super El Niño that has left several states in drought, and AI trades pulling foreign money toward the US, South Korea and Europe.",
+            "Defending the rupee has drained reserves, and a wider fiscal deficit leaves little room for stimulus."
+          ],
+          "numbers": [
+            [
+              "7.8%",
+              "GDP growth, April-June 2026"
+            ]
+          ],
+          "why": "For households these risks arrive together: dearer food and fuel, costlier loans and a weaker rupee. The cushions that absorbed this year's oil shock, from global stockpiles to RBI reserves, are thinner for the next one.",
+          "other": "Optimists say an AI bust would send global funds back to India's domestic story and cool US yields, while peace talks could keep oil in check. The threats may never all land at once.",
+          "also": [],
+          "image": "/figs/2026-11-15-3.jpg",
+          "imageAlt": "KKReckons explainer: India grew 7.8% in April-June, but oil, El Niño, rate hikes and capital outflows threaten growth as buffers thin.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "India's growth faces a stress test",
+          "emailTeaser": "Oil, drought and AI outflows gather at once",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Payments",
+          "tag": "Opinion",
+          "title": "Cashless Nation review: the decisions that made UPI work",
+          "url": "https://www.livemint.com/mint-lounge/art-and-culture/cashless-nation-story-of-upi-book-review-11794567593068.html",
+          "url2": "",
+          "points": [
+            "Ravi Krishnan reviews Cashless Nation by Santanu Paul and B. Sambamurthy, two former NPCI board members, who trace UPI to choices going back to the mid-1990s, when the RBI set up IDRBT, through bank computerisation and the birth of NPCI.",
+            "The book credits three accelerants: the 2016 note withdrawal, Covid's push to contactless payments and zero merchant fees. UPI now averages over 800 million transactions a day.",
+            "The reviewer finds it clear-eyed on adoption but thin on process, with little on why the RBI backed an open, interoperable system or how banks adapted as cheque revenue faded."
+          ],
+          "numbers": [
+            [
+              "800mn+",
+              "UPI transactions a day"
+            ]
+          ],
+          "why": "The timing matters: the government plans a 0.4% merchant fee on some UPI payments while roughly half of adults are still not on it. Zero fees were one of the three things that drove adoption.",
+          "other": "Free payments still cost someone: banks and payment firms carry the bill, and a small fee could fund the reliability users take for granted. Insider authors may also give institutions more credit than critics would.",
+          "also": [],
+          "image": "/figs/2026-11-15-4.jpg",
+          "imageAlt": "KKReckons explainer: UPI grew from decades of institutional choices and sped up after the 2016 note withdrawal, Covid and zero merchant fees.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "India",
+            "Banking"
+          ],
+          "emailHead": "The long road to UPI",
+          "emailTeaser": "A book traces UPI to choices made in the 1990s",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Chips and Washington",
+          "tag": "Opinion",
+          "title": "Nvidia after Huang: a company with too many enemies in Washington",
+          "url": "https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3",
+          "url2": "",
+          "points": [
+            "Chris Miller, author of Chip War, argues Jensen Huang's exit after revelations of an affair with an alleged Chinese spy won't end the probes: remaining leaders face questions over compliance failures beyond the CEO.",
+            "He says Nvidia's combative lobbying, with Huang calling China hawks shameful, angered both parties, so bills to tighten export controls on AI chips and chipmaking tools, and to track chips' location, now look likelier to pass.",
+            "Next in line: Chinese firms renting chips in overseas data centres, as Megaspeed did for Alibaba. Nvidia's $25mn gift to Trump's ballroom may turn into a liability once a Democratic-led Congress sits in January."
+          ],
+          "numbers": [],
+          "why": "Nvidia sets the pace of the AI boom, and it just lost its loudest voice in Washington. Rules for the whole chip chain, including the cloud-rental loophole, will now be shaped largely by its critics.",
+          "other": "Nvidia's value rests on its chips and software, not on one founder, and the research Miller cites suggests smuggling is a small slice of revenue. Tighter curbs could cost US sellers more than they slow China.",
+          "also": [],
+          "image": "/figs/2026-11-15-5.jpg",
+          "imageAlt": "KKReckons explainer: after Jensen Huang's exit, Nvidia faces compliance questions and likely tighter US chip export rules.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Nvidia loses its shield",
+          "emailTeaser": "Why Huang's exit could tighten every chip rule",
+          "imageW": 1280,
+          "imageH": 1722
+        },
+        {
+          "category": "Retirement money",
+          "tag": "",
+          "title": "How bonds got interesting again for savers near retirement",
+          "url": "https://www.ft.com/content/3f89c87c-4bc4-40db-8c15-1957079917f3?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Bond yields jumped this year as a Middle East-driven inflation surge, firmer growth and heavy borrowing by governments and tech giants dashed hopes of rate cuts. UK pension managers now say gilts pay 2% or more above inflation.",
+            "Stocks look stretched, they argue: Americans hold a record 48% of financial assets in equities. Some advisers suggest ladders of low-coupon gilts from 2020-21, which trade below face value and whose gains are free of UK capital gains tax.",
+            "Others stay cautious: with more Bank of England rate rises likely, several managers would only load up on bonds if a recession looked near."
+          ],
+          "numbers": [
+            [
+              "48%",
+              "US financial assets in stocks, a record"
+            ]
+          ],
+          "why": "For anyone close to retirement, a decent starting yield is a cushion that can absorb further rate rises. That gives the classic 60/40 mix its old balance back after the losses of 2022.",
+          "other": "Yields could climb further if inflation sticks, and very long-dated gilts can still hand big losses to anyone forced to sell early. Cheap only pays if you can hold to maturity.",
+          "also": [],
+          "image": "/figs/2026-11-15-6.jpg",
+          "imageAlt": "KKReckons explainer: higher yields make bonds worth owning again for retirement savers, with US stock holdings at a record 48% of financial assets.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "Bonds earn their keep again",
+          "emailTeaser": "Higher yields put bonds back in retirement plans",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Emerging-market debt",
+          "tag": "",
+          "title": "Emerging-market bond sales slump 41%, lifting prices",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-15/bond-drought-in-emerging-markets-lifts-prices-as-sales-slump-41",
+          "url2": "",
+          "points": [
+            "Emerging-market governments have sold $69bn of hard-currency bonds in the second half so far, 41% less than a year earlier, Bloomberg data show. Without a late revival, annual sales will fall for the first time since 2022.",
+            "Fund managers blame oil swings from the Iran war and sharp moves in US Treasury yields, which left borrowers waiting for a window that never opened.",
+            "Demand hasn't gone: recent deals from Peru, Indonesia and Romania drew orders well above their size, and scarce new paper is pushing funds into existing bonds, propping up prices."
+          ],
+          "numbers": [
+            [
+              "41%",
+              "fall in EM hard-currency bond sales"
+            ]
+          ],
+          "why": "Little new supply plus investors holding cash is a simple recipe for firmer prices, and it shows global money still wants emerging-market debt. Borrowers who waited may meet a friendlier market early next year.",
+          "other": "Part of the strength is scarcity, not conviction. If issuers return in force, as some managers expect, the support could fade, and a fresh jump in US yields or oil would shut the window again.",
+          "also": [],
+          "image": "/figs/2026-11-15-7.jpg",
+          "imageAlt": "KKReckons explainer: emerging-market hard-currency bond sales fell 41%, and scarce supply is propping up prices.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "EM bonds get scarce",
+          "emailTeaser": "Governments stopped borrowing, and prices went up",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Small parts, big outages.",
+    "b": "Quiet assets, loud comeback.",
+    "line": "Friday's ground stop, India's steady sectors and thinning buffers, Nvidia's reckoning and the bond revival share a lesson: the systems nobody watches decide the outcome."
+  },
+  "cover": "/figs/2026-11-15-cover.jpg",
+  "coverAlt": "Router grounds the US. India banks on growth. UPI clicks 800mn daily. Nvidia loses its voice. Bonds find mojo.",
+  "stressIndex": {
+    "score": 36,
+    "band": "Elevated",
+    "asOf": "2026-11-13"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25144.3008,
+        "asOf": "2026-11-13",
+        "prev": 25299.3496,
+        "week": 25030.3496,
+        "spark": [
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7561.6699,
+        "asOf": "2026-11-13",
+        "prev": 7592.3999,
+        "week": 7376.8599,
+        "spark": [
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.154,
+        "asOf": "2026-11-13",
+        "prev": 5.103,
+        "week": 4.859,
+        "spark": [
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 95.82,
+        "asOf": "2026-11-12",
+        "prev": 92.76,
+        "week": 98.29,
+        "spark": [
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3885.3,
+        "asOf": "2026-11-12",
+        "prev": 4000.5,
+        "week": 4113.5,
+        "spark": [
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.24,
+        "asOf": "2026-11-14",
+        "prev": 94.0338,
+        "week": 94.4589,
+        "spark": [
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24
+        ]
+      }
+    ]
+  }
+}

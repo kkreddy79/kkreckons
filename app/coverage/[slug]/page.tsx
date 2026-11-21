@@ -48,7 +48,7 @@ export default async function Coverage({ params }: Props) {
           },
         }}
       />
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap" id="cv-read">
         <section className="cu-hero" aria-labelledby="cv-title">
           <p className="ab-kicker">

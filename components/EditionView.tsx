@@ -1,17 +1,19 @@
 import Link from "@/components/Link";
-import { figSrc, figVariant, webpSrcSet } from "@/lib/figs";
+import { coverSmall, figSrc, figVariant, webpSrcSet } from "@/lib/figs";
 import { stressBand } from "@/lib/stressBand";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor } from "@/lib/editions";
 import { CORRECTIONS_EMAIL, correctionsHref, SITE_URL } from "@/lib/site";
 import { followLinks, type Related } from "@/lib/related";
 import type { LiveStress } from "@/lib/stress";
+import type { DrawdownSummary } from "@/lib/drawdowns";
 import { watchSummary } from "@/lib/watch";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
+import StorySource, { SourceMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
 import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
+import Reactions from "@/components/Reactions";
 import FigClamp from "@/components/FigClamp";
 import MarketStrip from "@/components/MarketStrip";
 import PrintImages from "@/components/PrintImages";
@@ -78,7 +80,7 @@ function changeText(score: number, prev: number | null | undefined, prevDate: st
  * ones only when KK tagged a story): score, band, the day's change and a 30-day line on Home, and the
  * stories it relates to. Edition pages show the reading saved when the edition was published; Home the latest.
  */
-function StressCard({ si, related, prevScore }: { si?: Reading; related: number[]; prevScore?: number | null }) {
+function StressCard({ si, related, prevScore, drawdowns }: { si?: Reading; related: number[]; prevScore?: number | null; drawdowns?: DrawdownSummary | null }) {
   const live = si && "trend" in si ? si : null;
   const band = si && !live?.limited ? bandOf(si.score) : null;
   // A move into a new band since the previous reading is the news: call it out.
@@ -120,12 +122,23 @@ function StressCard({ si, related, prevScore }: { si?: Reading; related: number[
           )}
         </p>
         {live && <WatchLine />}
+        <DrawdownLine s={live ? drawdowns : null} />
       </div>
       {live && live.trend.length > 1 && <Trend points={live.trend} />}
       <Link className="ev-sx-cta" href="/ai-stress-index" prefetch={false}>
         Gauges →
       </Link>
     </section>
+  );
+}
+
+/** Every edition links the stock-by-stock drawdown page; Home (live) adds today's numbers. */
+function DrawdownLine({ s }: { s?: DrawdownSummary | null }) {
+  const pct = (v: number) => `${v < 0 ? "−" : ""}${Math.abs(Math.round(v * 100))}%`;
+  return (
+    <Link className="ev-sx-watch ev-sx-dd" href="/ai-stress-index/drawdowns" prefetch={false}>
+      {s ? <>AI stocks from their peak: <b>median {pct(s.medianDrawdown)}</b>, {s.down50} of {s.count} down 50%+ →</> : <>How far AI stocks have fallen from their peak →</>}
+    </Link>
   );
 }
 
@@ -169,7 +182,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
     </a>
   );
   return (
-    <article id={`story-${n}`} className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
+    <article id={`story-${n}`} className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${s.image && H === "h3" && n % 2 === 0 ? " ev-flip" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
         <span className="ev-num">{n}</span>
         {s.category && (topic ? (
@@ -289,6 +302,8 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
         </div>
       )}
 
+      <Reactions date={date} n={n} />
+
       {/* Source and sharing share one line (they wrap only when the card is too narrow). */}
       <div className="ev-foot">
         <StorySource s={s} id={id} summary={false} short />
@@ -361,6 +376,7 @@ export default function EditionView({
   related = [],
   signup,
   liveStress,
+  liveDrawdowns,
   prevStressScore,
   children,
 }: {
@@ -376,6 +392,8 @@ export default function EditionView({
   signup?: React.ReactNode;
   /** Home: today's AI Stress Index reading, shown instead of the one saved with the edition. */
   liveStress?: LiveStress | null;
+  /** Home: the drawdown monitor's headline numbers (/ai-stress-index/drawdowns). */
+  liveDrawdowns?: DrawdownSummary | null;
   /** Edition pages: the previous edition's saved index score, to flag a move into a new band. */
   prevStressScore?: number | null;
   children?: React.ReactNode;
@@ -448,7 +466,7 @@ export default function EditionView({
 
   return (
     <div className="ev" id={`ev-${e.date}`}>
-      <section className="ev-head">
+      <section className={`ev-head${e.cover ? " ev-head-cover" : ""}`}>
         <p className={`ev-kicker${showDate ? "" : " ev-kicker-size"}`}>
           {showDate && longDate(e.date)}
           <span className="ev-size">
@@ -458,6 +476,13 @@ export default function EditionView({
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
         {/* The slice is a wordplay line; the takeaway sentence under it says plainly what the day is about. */}
         {e.takeaway?.line && <p className="ev-dek">{e.takeaway.line}</p>}
+        {/* The day's cover: beside the headline on wide screens, under it on phones. It gives each edition its own face. */}
+        {e.cover && (
+          <picture className="ev-cover">
+            <source type="image/webp" srcSet={coverSmall(e.cover)} />
+            <img src={figSrc(e.cover)} alt={e.coverAlt && e.coverAlt !== e.slice ? e.coverAlt : ""} width={1600} height={900} decoding="async" />
+          </picture>
+        )}
         <div className="ev-tools">
           <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
           <Listen rootId={`ev-${e.date}`} minutes={e.readingMinutes} />
@@ -479,7 +504,7 @@ export default function EditionView({
       {special && <SpecialReport r={special} />}
       {digest}
 
-      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} />}
+      {(tracked.length > 0 || e.stressIndex || liveStress) && <StressCard si={liveStress ?? e.stressIndex} related={tracked} prevScore={prevStressScore} drawdowns={liveDrawdowns} />}
       {e.markets && e.markets.assets.length > 0 && <MarketStrip m={e.markets} />}
 
       {e.callouts.length > 0 && (
@@ -560,7 +585,7 @@ export default function EditionView({
                   {(r.note || publisherName(r.url)) && (
                     <small>
                       {r.note || publisherName(r.url)}
-                      {isPaywalled(r.url) && <PaidMark />}
+                      <SourceMark paid={isPaywalled(r.url)} />
                     </small>
                   )}
                 </li>

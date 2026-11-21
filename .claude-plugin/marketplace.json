@@ -1,0 +1,13 @@
+{
+  "name": "kk-plugins",
+  "owner": { "name": "kkreddy79" },
+  "metadata": { "description": "Claude Code plugins shared across KK's site and app repos." },
+  "plugins": [
+    {
+      "name": "design-stack-pro",
+      "source": "./plugins/design-stack-pro",
+      "description": "Design, redesign or polish web, Android and iOS UI without the generic AI look: tokens, banned list, build, check, critique.",
+      "version": "1.0.0"
+    }
+  ]
+}

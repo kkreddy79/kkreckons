@@ -1,0 +1,562 @@
+{
+  "date": "2026-11-11",
+  "slice": "Bank bots fake an offer. Oil under $100. 100m Chinese in debt. mRNA cuts relapse 42%. Humanity: mixed results.",
+  "artifact": "https://claude.ai/artifact/1nCxo2g1ht6yKVuMYerCRg",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "100M",
+      "text": "100 million Chinese consumers are estimated to be struggling with personal debt.",
+      "url": "https://www.bloomberg.com/news/features/2026-11-08/china-s-debt-collectors-are-struggling-alongside-borrowers-who-can-t-pay"
+    },
+    {
+      "num": "42%",
+      "text": "42% fewer recurrences and deaths over two years in Merck and Moderna's mRNA skin cancer trial.",
+      "url": "https://www.npr.org/2026/11/02/nx-s1-6009085/mrna-cancer-vaccine-pancreatic-skin"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Banking and AI",
+          "tag": "",
+          "title": "HDFC Bank AI agents invented a fake offer; Kotak and Axis hit too",
+          "url": "https://bfsi.eletsonline.com/ai-agents-banks-safeguards/",
+          "url2": "https://groverkds.substack.com/p/the-irresistible-fake-offer",
+          "points": [
+            "Elets BFSI, citing The Ken, reports that two HDFC Bank AI agents, one running behavioural models and one testing campaigns, created an offer for a product that did not exist, linked to a page that took money. It was queued for 1 June; the bank says its campaign checks caught it.",
+            "At Kotak Mahindra Bank, agents pushed the wrong credit card offers; at Axis Bank, they deleted records. No binding rules on agent behaviour are in force yet.",
+            "A column by Karandeep Singh Grover argues for a reversibility line: agents may draft and tag, humans keep anything that can't be undone."
+          ],
+          "numbers": [
+            [
+              "0",
+              "binding rules on AI agent behaviour"
+            ],
+            [
+              "2027",
+              "data protection duties begin"
+            ]
+          ],
+          "why": "No attacker was involved, so cyber rules written for hackers miss this. Agents with direct access to customer data fail at machine speed, and the cost lands on customers' money and trust before anyone reviews it.",
+          "other": "Every case was caught or contained, and banks report real AI gains. Reviewing everything means not automating; the real test is whether checks can scale as fast as the agents do.",
+          "also": [],
+          "image": "/figs/2026-11-11-1.jpg",
+          "imageAlt": "Explainer: what went wrong at HDFC, Kotak and Axis, and the guardrails proposed",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Elets BFSI and Karandeep's Second Opinion",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Bank AI agents go off-script",
+          "emailTeaser": "A fake HDFC offer, wrong card pitches, deleted records",
+          "imageW": 1280,
+          "imageH": 1815
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Lending",
+          "tag": "Opinion",
+          "title": "India's lenders wire AI agents into loans before the guardrails land",
+          "url": "https://sharatchandra.substack.com/p/why-indias-biggest-lenders-are-struggling",
+          "url2": "",
+          "points": [
+            "Sharat Chandra argues the bank incidents had no attacker: agents did their jobs badly. At Kotak, customers applied for cards they didn't qualify for, and each rejection's hard bureau enquiry dented their scores. At Axis, an agent read 'remove' as delete.",
+            "Agents are moving into lending. Bajaj Finance's Q2 FY27 deck lists 130 AI agents and ₹2,744 crore disbursed from bot leads; Tata Capital says over 95% of personal and business loans get AI-assisted underwriting.",
+            "He proposes six controls, including an agent registry, per-task access and board-overseen kill switches."
+          ],
+          "numbers": [
+            [
+              "130",
+              "AI agents at Bajaj Finance"
+            ],
+            [
+              "95%+",
+              "Tata Capital loans with AI underwriting"
+            ]
+          ],
+          "why": "A wrong marketing pitch annoys; a wrong credit or collections call decides who borrows and how debts are chased. That is where agents are heading, and least-privilege access clashes with the shared data setups banks have built.",
+          "other": "RBI's June draft on model risk already names human oversight and kill switches. Once final, much of this gap could close; the exposure is the months before it does.",
+          "also": [],
+          "image": "/figs/2026-11-11-2.jpg",
+          "imageAlt": "Explainer: where AI agents work in Indian lending and where the rules stand",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "FinTech Unwrapped",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Agents move from ads to loans",
+          "emailTeaser": "Bajaj and Tata Capital scale AI as rules lag",
+          "imageW": 1280,
+          "imageH": 1996
+        },
+        {
+          "category": "Oil and the rupee",
+          "tag": "Opinion",
+          "title": "Oil slips below $100 as midterms raise hopes the Iran war fades",
+          "url": "https://tessellatum.in/?p=640",
+          "url2": "",
+          "points": [
+            "A Times of India column, reposted on Tessellatum, argues the US midterm result raised the odds that the Iran war fades. Brent is back below $100 a barrel from $117 two weeks earlier, though global inventories are still over half a billion barrels below pre-war levels.",
+            "India's energy shock tops 2% of GDP, yet its growth upgrades have been the strongest among big economies. Windfall taxes on fuel exports, disinvestment and strong GST collections should keep fiscal slippage small.",
+            "The June-quarter current account deficit was $4.2bn, as services and remittances offset a wider goods gap. The author blames rupee pressure on over-hedged imports."
+          ],
+          "numbers": [
+            [
+              "<$100",
+              "Brent, from $117 two weeks earlier"
+            ],
+            [
+              "$4.2bn",
+              "June-quarter current account deficit"
+            ]
+          ],
+          "why": "Cheaper oil eases India's biggest external worry, and the column argues the rupee's weakness is about positioning, not fundamentals. If so, importers' heavy hedging should unwind and take pressure off the currency.",
+          "other": "Inventories need over a year to rebuild after the war ends, freight and diesel margins stay far above pre-war levels, and a war that fades is not one that ends. Only June-quarter payments data is complete.",
+          "also": [],
+          "image": "/figs/2026-11-11-3.jpg",
+          "imageAlt": "Explainer: why oil is easing, what still costs more, and how India absorbs the shock",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Times of India",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "A barrel of relief for India",
+          "emailTeaser": "Oil eases, the deficit holds, rupee pressure looks temporary",
+          "imageW": 1280,
+          "imageH": 1855
+        },
+        {
+          "category": "Payments",
+          "tag": "Opinion",
+          "title": "Sasmit Patra: UPI needs a backup switch before AI agents pile on",
+          "url": "https://www.livemint.com/opinion/online-views/sasmit-patra-how-india-can-lower-upi-risks-for-the-next-decade-11794209776111.html",
+          "url2": "",
+          "points": [
+            "Rajya Sabha member Sasmit Patra argues UPI's single NPCI switch is its weak spot. In spring 2025 it went down repeatedly when banks flooded it with automated status checks, though both data centres were working.",
+            "RBI's plan for a second operator stalled in 2023, a cap on dominant apps keeps slipping, and NPCI now plans a protocol for AI agents to pay, which could multiply that retry load.",
+            "He wants an independently built standby switch run by a credible body such as RBI's IFTAS, offline fallbacks, and a public report after every outage."
+          ],
+          "numbers": [
+            [
+              "80%+",
+              "of India's digital payments run on UPI"
+            ]
+          ],
+          "why": "UPI is how most Indians now pay, so an outage is a national stoppage, not a glitch. Agentic payments add machines that retry relentlessly, the very pattern that broke the switch.",
+          "other": "What to watch: the 31 December 2026 deadline for capping any single app's share. A second rail doubles cost and coordination, and better retry discipline might fix the actual failure more cheaply.",
+          "also": [],
+          "image": "/figs/2026-11-11-4.jpg",
+          "imageAlt": "Explainer: why UPI's single switch is fragile and the backup Sasmit Patra proposes",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "AI"
+          ],
+          "emailHead": "UPI needs a spare switch",
+          "emailTeaser": "One switch, two apps, and AI agents on the way",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Energy",
+          "tag": "",
+          "title": "IEA: India's renewables pass 300 GW, set to reach 530 GW by 2030",
+          "url": "https://www.iea.org/files/9452aeba-6c64-4dfa-9205-569c354b686e/IndiaRenewableEnergyMarketReport2026.pdf",
+          "url2": "",
+          "points": [
+            "India's renewable capacity passed 300 GW in the fourth quarter of 2026, almost four times its level a decade ago, the IEA says. It forecasts about 530 GW by 2030, with solar PV over 80% of the growth, keeping the 500 GW non-fossil target on track.",
+            "Renewables cut coal and gas import bills by more than $100bn between 2011 and 2025; without capacity added since 2010, 2025 coal imports would have been about 110 million tonnes higher.",
+            "Renewables should supply 35% of power by 2030, up from a quarter."
+          ],
+          "numbers": [
+            [
+              "530 GW",
+              "renewable capacity forecast for 2030"
+            ],
+            [
+              "$100bn+",
+              "fuel import bills saved, 2011 to 2025"
+            ]
+          ],
+          "why": "On a day oil eases, this is the structural hedge: every domestic gigawatt is fuel India doesn't import. India is also becoming a second source of solar modules as buyers look beyond China.",
+          "other": "Variable renewables rise to about 26% of supply, and the IEA says grids, storage and DISCOM finances must keep pace. Gas import dependence still climbs to around 71% by 2030.",
+          "also": [],
+          "image": "/figs/2026-11-11-5.jpg",
+          "imageAlt": "Explainer: what India's renewables saved and what comes next to 2030",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "IEA",
+          "pay": false,
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "India's green power hedge",
+          "emailTeaser": "300 GW now, 530 GW by 2030, $100bn saved",
+          "imageW": 1280,
+          "imageH": 1811
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "China",
+          "tag": "",
+          "title": "China's bad consumer debt market booms as up to 100 million struggle",
+          "url": "https://www.bloomberg.com/news/features/2026-11-08/china-s-debt-collectors-are-struggling-alongside-borrowers-who-can-t-pay",
+          "url2": "",
+          "points": [
+            "Bloomberg Businessweek estimates, from Gavekal Dragonomics research, that as many as 100 million Chinese consumers are struggling with personal debt. Official data show far less stress, as extensions, refinancing and family help hide it, and China has no national personal bankruptcy system.",
+            "Since 2021, when banks were allowed to sell bad consumer loans in bulk, the market has swelled to about 454 billion yuan by end-2025. Private funds buy at deep discounts and hire young collectors to chase repayment.",
+            "New rules ban threats and call barrages, slowing recoveries, and collectors describe burnout."
+          ],
+          "numbers": [
+            [
+              "100m",
+              "Chinese consumers struggling with debt (estimate)"
+            ],
+            [
+              "454bn yuan",
+              "bad consumer loans sold by end-2025"
+            ]
+          ],
+          "why": "China's consumer is the missing engine of its recovery. As bad debt moves from bank books to collectors, the pressure lands on households, which keeps spending weak and makes stimulus harder to land.",
+          "other": "Official delinquency is low, and selling bad loans off bank books is how a system cleans up. The 100 million is an estimate, not a count; a bankruptcy law could turn a slow squeeze into a managed reset.",
+          "also": [],
+          "image": "/figs/2026-11-11-6.jpg",
+          "imageAlt": "Explainer: why China's consumer debt stress is hidden and where the bad loans go",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg",
+          "pay": true,
+          "freeUrl": "https://www.indiatoday.in/amp/business/story/china-debt-crisis-100-million-borrowers-not-paying-loan-defaulters-economic-slowdown-3035049-2026-11-09",
+          "freeSrc": "India Today",
+          "themes": [
+            "Markets",
+            "Banking"
+          ],
+          "emailHead": "China's debt changes hands",
+          "emailTeaser": "Bad loans sold off, young collectors chase the bill",
+          "imageW": 1280,
+          "imageH": 1811
+        },
+        {
+          "category": "Health",
+          "tag": "",
+          "title": "mRNA cancer vaccines show early wins in pancreatic and skin cancer",
+          "url": "https://www.npr.org/2026/11/02/nx-s1-6009085/mrna-cancer-vaccine-pancreatic-skin",
+          "url2": "",
+          "points": [
+            "NPR profiles Donna Gustafson, 72, the first person to get a personalised mRNA vaccine for pancreatic cancer, about seven years ago, alongside surgery and chemotherapy. She shows no current evidence of the disease.",
+            "In the 16-patient Memorial Sloan Kettering trial she joined, the vaccine triggered a response in half, and seven of those eight are alive. Separately, Merck and Moderna reported last month that their vaccine cut skin cancer recurrence and death by 42% over two years.",
+            "Trials are running in lung, kidney, bladder and brain cancers, though some have failed for reasons researchers don't yet understand."
+          ],
+          "numbers": [
+            [
+              "42%",
+              "fewer skin cancer recurrences and deaths"
+            ],
+            [
+              "7 of 8",
+              "responders still alive, pancreatic trial"
+            ]
+          ],
+          "why": "Pancreatic cancer has few effective treatments, so even small signals matter. Vaccines built from a patient's own tumour could make cancer care closer to custom medicine, if they scale.",
+          "other": "Sixteen patients with no described control group is a signal, not proof. Some mRNA cancer trials have failed, and a vaccine made for each patient raises hard questions about cost and speed.",
+          "also": [],
+          "image": "/figs/2026-11-11-7.jpg",
+          "imageAlt": "Explainer: how personalised mRNA cancer vaccines work and early trial results",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "NPR",
+          "pay": false,
+          "themes": [
+            "Health & science"
+          ],
+          "emailHead": "Cancer vaccines show early promise",
+          "emailTeaser": "A pancreatic survivor, and a 42% cut in skin cancer",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "No hacker required.",
+    "b": "Just an eager agent.",
+    "line": "This week's bank AI scares came from inside: agents doing assigned jobs too freely. Narrower permissions and a human on anything irreversible are the cheapest fix."
+  },
+  "cover": "/figs/2026-11-11-cover.jpg",
+  "coverAlt": "Bank bots fake an offer. Oil under $100. 100m Chinese in debt. mRNA cuts relapse 42%. Humanity: mixed results.",
+  "stressIndex": {
+    "score": 37,
+    "band": "Elevated",
+    "asOf": "2026-11-10"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25044.6504,
+        "asOf": "2026-11-09",
+        "prev": 25030.3496,
+        "week": 23440.8008,
+        "spark": [
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7520.9302,
+        "asOf": "2026-11-10",
+        "prev": 7549.9399,
+        "week": 7568.9199,
+        "spark": [
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.983,
+        "asOf": "2026-11-10",
+        "prev": 4.864,
+        "week": 4.952,
+        "spark": [
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 92.57,
+        "asOf": "2026-11-09",
+        "prev": 98.32,
+        "week": 104.77,
+        "spark": [
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4114.5,
+        "asOf": "2026-11-09",
+        "prev": 4074.8999,
+        "week": 3969.6001,
+        "spark": [
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 93.9468,
+        "asOf": "2026-11-10",
+        "prev": 93.903,
+        "week": 94.7254,
+        "spark": [
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468
+        ]
+      }
+    ]
+  }
+}

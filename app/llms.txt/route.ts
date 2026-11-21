@@ -18,6 +18,7 @@ Editions are published at ${SITE_URL}/daily/<month>-<day>-<year> (for example ${
 - [Latest edition: ${longDate(latest.date)}](${SITE_URL}/daily/${slugFor(latest.date)}): ${latest.slice}
 - [All past editions](${SITE_URL}/daily): searchable archive of every edition and story
 - [AI Market Stress Index](${SITE_URL}/ai-stress-index): an experimental daily 0–100 composite stress score for AI equities, AI financing and credit markets (six of nine gauges are broad-market proxies). A monitoring dashboard, not a probability or forecast. Full methodology, sources and backtest with misses and false alarms ([how it works](${SITE_URL}/ai-stress-index#methodology); live data as JSON: ${SITE_URL}/ai-stress-index/data.json)
+- [AI stocks: distance from peak](${SITE_URL}/ai-stress-index/drawdowns): 50 AI-linked stocks (chips, cloud, data centers, software, networking, power, frontier AI), each measured from its highest-ever close, updated every weekday. A companion to the index, not part of its score.
 - [Special Reports](${SITE_URL}/special): long reads that take one big story and stay with it, built from primary documents, with original graphics and a section on what the evidence does not show
 - [About](${SITE_URL}/about): who curates KKReckons
 - [Editorial standards & corrections](${SITE_URL}/standards): labels, sourcing, image rights and how errors are corrected

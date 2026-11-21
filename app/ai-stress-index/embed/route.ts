@@ -1,5 +1,6 @@
 import { SITE_URL } from "@/lib/site";
-import { liveStress, loadStressFile } from "@/lib/stress";
+import { addCacheTag } from "@vercel/functions";
+import { EMBED_CACHE_TAG, liveStress, loadStressFile } from "@/lib/stress";
 import { STRESS_BANDS, stressBand } from "@/lib/stressBand";
 
 // A small live card other sites can embed in an iframe (snippet on /ai-stress-index). It's a plain HTML
@@ -10,7 +11,9 @@ const day = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en
 
 export async function GET(req: Request) {
   const theme = new URL(req.url).searchParams.get("theme");
-  const si = liveStress(await loadStressFile("data.json"));
+  // Fresh data on every render: the CDN copy below is the cache, and /api/revalidate clears it by tag.
+  const si = liveStress(await loadStressFile("data.json", true));
+  await addCacheTag(EMBED_CACHE_TAG);
   const link = `${SITE_URL}/ai-stress-index?utm_source=embed&utm_medium=widget`;
   let inner: string;
   if (!si) {
@@ -46,6 +49,7 @@ body{font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;colo
 .bar u{position:absolute;top:50%;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:var(--bg);border:3px solid var(--ink);transform:translateY(-50%)}
 .m{margin:10px 0 0;font-size:12.5px;color:var(--mu)}.m a{color:var(--ink);font-weight:800;text-decoration:none}.m a:hover{text-decoration:underline}
 </style></head><body><div class="c">${inner}</div></body></html>`;
-  // Reads ?theme=, so it renders per request; the CDN keeps each version for an hour, like the data.
+  // Reads ?theme=, so it renders per request; the CDN keeps each version for an hour, like the data, or until
+  // /api/revalidate clears the tag when a new reading publishes.
   return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400" } });
 }

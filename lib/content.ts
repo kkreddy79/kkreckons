@@ -45,6 +45,9 @@ export type EditionContent = {
   slice: string;
   artifact: string;
   readingMinutes: number;
+  /** The day's 1600×900 cover (newer editions), shown beside the headline; an 800px WebP copy sits next to it. */
+  cover?: string;
+  coverAlt?: string;
   callouts: { num: string; text: string; url: string }[];
   sections: { name: string; stories: FullStory[] }[];
   /** `special`: KKReckons' own research brief for the day, teased at the top of the edition and the email. */

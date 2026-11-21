@@ -24,7 +24,7 @@ export default function CoverageIndex() {
   const all = entities();
   return (
     <main className="cu">
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap" id="cv-read">
         <section className="cu-hero" aria-labelledby="cvi-title">
           <p className="ab-kicker">In the news</p>

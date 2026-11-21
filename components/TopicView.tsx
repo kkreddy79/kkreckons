@@ -42,7 +42,7 @@ export default function TopicView({ topic, page }: { topic: Topic; page: number 
           },
         }}
       />
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap" id="tp-read">
         <section className="cu-hero" aria-labelledby="tp-title">
           <p className="ab-kicker">

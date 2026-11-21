@@ -1,0 +1,526 @@
+{
+  "date": "2026-11-04",
+  "slice": "Fake hires, hot freezers, dear bonds, shaky G7, proud China. Kids get stock. Grads don't.",
+  "artifact": "https://claude.ai/artifact/RExZ4kg8nErLHxExY7u4S7",
+  "readingMinutes": 6,
+  "callouts": [
+    {
+      "num": "$6.3bn",
+      "text": "stolen from Binance after a fake job interview let hackers in",
+      "url": "https://www.ft.com/content/1ed838c0-a525-49bb-b494-15e4d1296791?syn-25a6b1a6=1"
+    },
+    {
+      "num": "1.2%",
+      "text": "a year to insure Meta's debt, on par with junk-rated South Africa",
+      "url": "https://www.ft.com/content/5f08f1fb-4948-4420-8fe4-3c8c8cc492ef?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "Binance says fake job interviews opened the door to its $6.3bn heist",
+          "url": "https://www.ft.com/content/1ed838c0-a525-49bb-b494-15e4d1296791?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Binance's own investigation says the thieves behind last week's theft, which the FBI blames on the North Korea-linked group TraderTraitor, posed as recruiters and gave an engineer an interview task laced with malware.",
+            "That foothold, plus an earlier tampered download on another engineer's laptop, let them use Binance's in-house AI tool to take over colleagues' machines and trigger the attack on 29 October.",
+            "The exchange says it has rebuilt its wallet systems and AI tools, set aside money to cover users' losses and reopened withdrawals."
+          ],
+          "numbers": [
+            [
+              "$6.3bn",
+              "stolen in the biggest heist on record"
+            ]
+          ],
+          "why": "The weakest point in a crypto vault was a job seeker's trust. As companies wire AI agents into their systems, one infected laptop can now reach much further than it used to.",
+          "other": "This is Binance describing its own breach, and it is keeping some security details private. Its account may stress the attackers' cunning over its own control gaps; an independent review would tell more.",
+          "also": [],
+          "image": "/figs/2026-11-04-1.jpg",
+          "imageAlt": "Explainer: how fake job interviews led to the $6.3bn Binance heist",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.coindesk.com/business/2026/11/03/binance-s-usd6-3-billion-hack-began-with-a-fake-job-interview-exchange-says",
+          "freeSrc": "CoinDesk",
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "A job interview robbed Binance",
+          "emailTeaser": "How a fake recruiter opened the door to a record crypto theft",
+          "imageW": 1280,
+          "imageH": 1766
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI finance",
+          "tag": "Opinion",
+          "title": "AI's borrowing bill is rising as bond buyers demand more",
+          "url": "https://www.ft.com/content/5f08f1fb-4948-4420-8fe4-3c8c8cc492ef?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The FT's editorial board notes that Alphabet, Meta and Oracle went back to bond markets this week but had to pay clearly more than a few months ago; Oracle's new bonds carry coupons above 8.5%.",
+            "Insuring against default is dearer too: protection on Meta's debt now costs about 1.2% a year, which the board likens to junk-rated South Africa.",
+            "Its view: the AI boom may not end with a stock crash but with a slow squeeze in credit. Oracle has even pledged to cap the new money it raises from markets until 2030."
+          ],
+          "numbers": [
+            [
+              "1.2%",
+              "yearly cost to insure Meta's debt"
+            ]
+          ],
+          "why": "Dearer money raises the return every data centre has to earn. If cash-rich, top-rated giants pay more, smaller AI borrowers and the lenders behind them face a much harder test.",
+          "other": "These firms still hold strong ratings and cash-rich core businesses, and they are still raising huge sums. Repricing risk is credit markets working, not breaking.",
+          "also": [],
+          "image": "/figs/2026-11-04-2.jpg",
+          "imageAlt": "Explainer: rising borrowing costs for AI giants",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "A chill in AI credit",
+          "emailTeaser": "Bond buyers want more to fund the data centre boom",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Cyber warfare",
+          "tag": "Explainer",
+          "title": "Europe's supermarket freezer hacks: what we know so far",
+          "url": "https://www.ft.com/content/90e63a7f-45d7-4e7a-940d-6d5145d51941?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "On Monday hackers remotely pushed freezer temperatures as high as 55C in almost 100 stores across Sweden, Finland, Ireland, Belgium, Luxembourg and Estonia, weeks after a similar overnight wave hit French supermarkets.",
+            "The trick was simple: known flaws in internet-linked temperature controllers. Danfoss and Copeland confirmed affected systems; shops kept off the public internet or behind private networks were spared.",
+            "No one has claimed it. A Sentinel researcher suspects a Russia-linked group seeking deniable disruption, and EU officials call it an attack on food security."
+          ],
+          "numbers": [
+            [
+              "55C",
+              "peak freezer temperature set by hackers"
+            ]
+          ],
+          "why": "Cheap hacks with costly results are the new frontier. Freezers, pumps and boilers now sit online, and many owners lack the budget or skills to lock them down.",
+          "other": "Blame rests on one researcher's reading of thin traces, and the fix is routine patching. Calling it state warfare could overstate what copycats might also pull off.",
+          "also": [],
+          "image": "/figs/2026-11-04-3.jpg",
+          "imageAlt": "Explainer: how hackers turned up supermarket freezers",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.facilitiesdive.com/news/european-grocery-stores-hit-with-second-refrigeration-system-hack/873554/",
+          "freeSrc": "Facilities Dive",
+          "themes": [
+            "Geopolitics"
+          ],
+          "emailHead": "Who is melting Europe's freezers?",
+          "emailTeaser": "Hackers thaw supermarket freezers and nobody owns up",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Jobs",
+          "tag": "Opinion",
+          "title": "AI is shutting the door on new hires, not pushing workers out",
+          "url": "https://www.ft.com/content/cf6fd711-cfa5-49f9-9958-3aec32369286?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Sarah O'Connor argues the real AI jobs shock is fewer hires, not mass lay-offs. History fits: boot-sewing machines in Victorian England choked off new artisans rather than sacking existing ones.",
+            "Today's signs match. Lay-offs stay low, entry-level software hiring is falling while demand for seniors holds, Danish firms using AI simply hire more slowly, and call centres shrink because hiring slowed.",
+            "She wants policy aimed at the young: closer ties between schools and employers and more support for start-ups, since retraining schemes such as Sweden's often leave them out."
+          ],
+          "numbers": [],
+          "why": "Lay-off numbers can look calm while a generation struggles to land its first job. For countries with big young workforces, India among them, slower entry hiring matters more than headline cuts.",
+          "other": "It is early and the data are thin. A recession could still bring abrupt cuts, and young people have often adapted fastest to new technology.",
+          "also": [],
+          "image": "/figs/2026-11-04-4.jpg",
+          "imageAlt": "Explainer: AI shrinks hiring rather than causing lay-offs",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "AI's jobs hit: fewer first jobs",
+          "emailTeaser": "The damage shows up at the door, not the exit",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Global economy",
+          "tag": "Opinion",
+          "title": "The new Fragile Five are rich nations, a Mint column argues",
+          "url": "https://www.livemint.com/opinion/online-views/make-way-for-a-new-fragile-five-france-italy-germany-the-uk-and-the-us-11793535550176.html",
+          "url2": "",
+          "points": [
+            "Narayan Ramachandran takes the 2013 label once pinned on Turkey, Brazil, India, South Africa and Indonesia and hands it to France, Italy, the UK, Germany and the US: fragile now in social, not currency, terms.",
+            "Higher rates swell debt costs while inflation and an oil shock squeeze budgets. France's student protests have grown into a cost-of-living revolt against a fiscal deficit above 5% of GDP, and Italy has seen looting and fuel blockades.",
+            "He rates Germany the least at risk of the five."
+          ],
+          "numbers": [
+            [
+              "5%+",
+              "France's fiscal deficit, share of GDP"
+            ]
+          ],
+          "why": "India was on the old list and now watches the roles reverse. Unrest in big rich economies can dent demand for Indian exports and keep oil and interest rates jumpy.",
+          "other": "Floating reserve currencies and deep bond markets give these nations room the old Fragile Five never had. Street protests are not defaults, and the label may stretch the comparison.",
+          "also": [],
+          "image": "/figs/2026-11-04-5.jpg",
+          "imageAlt": "Explainer: why rich G7 nations look fragile",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "Meet the rich Fragile Five",
+          "emailTeaser": "France, Italy, UK, Germany and US look shaky now",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Brands",
+          "tag": "Opinion",
+          "title": "Is 'Made in China' heading for its 'Made in Japan' moment?",
+          "url": "https://www.livemint.com/opinion/online-views/is-china-soon-going-to-have-its-own-made-in-japan-moment-11793535476331.html",
+          "url2": "",
+          "points": [
+            "Bloomberg Opinion's Howard Chua-Eoan, in Mint, recalls when 'Made in Japan' was a joke for flimsy toys, until firms like Nippon Kogaku (now Nikon) and Totsuko (now Sony) made it a badge of quality.",
+            "He sees China at a similar turn: Shenzhen lens maker Viltrox is joining the elite, and Europeans buy Chinese EVs that an HSBC report judged simply better.",
+            "Yet many Chinese brands play down their roots, from Miniso's Uniqlo-like logo to Temu's offshore legal home. He expects that to fade as confidence grows."
+          ],
+          "numbers": [],
+          "why": "If Chinese brands start selling their origin as a plus, rivals from Europe to India lose the easy line that cheaper means worse.",
+          "other": "Japan rose in an era of open markets; China faces tariffs, quotas and security worries. Keeping a low profile may be smart strategy, not shyness.",
+          "also": [],
+          "image": "/figs/2026-11-04-6.jpg",
+          "imageAlt": "Explainer: from Made in Japan to Made in China",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "Markets",
+            "Geopolitics"
+          ],
+          "emailHead": "China's Made in Japan moment",
+          "emailTeaser": "Why Chinese brands may stop hiding where they're from",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Investing",
+          "tag": "Opinion",
+          "title": "Bank Hapoalim says free shares made new investors, backing Musk",
+          "url": "https://www.wsj.com/opinion/elon-musk-will-turn-kids-into-capitalists-396c4fcf",
+          "url2": "",
+          "points": [
+            "In the WSJ, Bank Hapoalim's spokesperson praises Elon Musk's plan to give one SpaceX share to every American child next year.",
+            "Israel's largest retail bank offered customers two of its shares or a cash grant in 2025. In the first round, about 240,000 people who had never held securities with it became shareholders, and it added a free investing-basics platform.",
+            "Her case: owning even one share makes people curious about prices, dividends and earnings, and the first step is the hardest."
+          ],
+          "numbers": [
+            [
+              "240,000",
+              "first-time shareholders in round one"
+            ]
+          ],
+          "why": "Gifting shares is a cheap way to widen market participation, a live question wherever household savings sit mostly in cash, gold or deposits.",
+          "other": "The author speaks for the bank that ran the scheme, and a gift share doubles as marketing. Musk's plan is still a promise, and real financial literacy takes more than one stock.",
+          "also": [],
+          "image": "/figs/2026-11-04-7.jpg",
+          "imageAlt": "Explainer: what gifting single shares does for new investors",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "One free share, a new investor",
+          "emailTeaser": "An Israeli bank's case for Musk's SpaceX gift",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "The threat we watched",
+    "b": "The one that arrived",
+    "line": "Today's risks slip in through side doors: a job test, a freezer dial, a bond coupon, an unfilled first job. Watch the quiet entrances, not just the front gate."
+  },
+  "cover": "/figs/2026-11-04-cover.jpg",
+  "coverAlt": "Fake hires, hot freezers, dear bonds, shaky G7, proud China. Kids get stock. Grads don't.",
+  "stressIndex": {
+    "score": 36,
+    "band": "Elevated",
+    "asOf": "2026-11-03"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 23810.8496,
+        "asOf": "2026-11-03",
+        "prev": 23440.8008,
+        "week": 22749.75,
+        "spark": [
+          23414.3008,
+          23329,
+          23446.8008,
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7568.9199,
+        "asOf": "2026-11-03",
+        "prev": 7541.3999,
+        "week": 7722.6001,
+        "spark": [
+          7706.0298,
+          7704.1299,
+          7743.4102,
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.952,
+        "asOf": "2026-11-03",
+        "prev": 4.894,
+        "week": 4.993,
+        "spark": [
+          5.114,
+          5.162,
+          5.184,
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 103.6,
+        "asOf": "2026-11-03",
+        "prev": 104.77,
+        "week": 113.88,
+        "spark": [
+          103.08,
+          106.6,
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3940.3999,
+        "asOf": "2026-11-03",
+        "prev": 3969.6001,
+        "week": 4074.6001,
+        "spark": [
+          4318.3999,
+          4298,
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.7254,
+        "asOf": "2026-11-03",
+        "prev": 94.905,
+        "week": 95.187,
+        "spark": [
+          95.7412,
+          96.1613,
+          95.7883,
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254
+        ]
+      }
+    ]
+  }
+}

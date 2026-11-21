@@ -43,7 +43,7 @@ export default function Week() {
           },
         }}
       />
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap" id="wk-read">
         <section className="cu-hero" aria-labelledby="wk-title">
           <p className="ab-kicker">This week · {range}</p>

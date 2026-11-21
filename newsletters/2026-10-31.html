@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en"><head><!--
+  KKReckons newsletter template (lite). Copy this file and change ONLY the JSON inside the JSON script whose id is data:
+  date, slice, takeaway, cover, callout, special (optional special-report pointer), pick / india / world (stories) and reading. Field reference:
+  docs/edition-format.md in the kkreckons repo. Leave the CSS, other scripts and markup as they are.
+  Images: "fig" and "cover" take a data:image/...;base64 URL (graphics 1280px wide or more); empty means none.
+  Paywalled story: "pay": "paid", plus "free" (link to a free report of the same news) and "freesrc" (its publisher).
+  Icons: a story's "pic" names its icon, whose SVG sits in the JSON script whose id is pics. Put in that script only
+  the icons the day's stories use, copied from KKReckons_icons.json (a separate file: look an icon up by name
+  rather than reading the whole file), or a new SVG in the same 80x80 style. A "pic" with no SVG shows the plain badge.
+  Icons in the library: agents, aishield, ballot, bankstake, boardq, bondup, brainburger, brainsw, bricks, brinjal, builders, canary, chatbank, cheese, chip, coach, dcdrone, diesel, dino, dog, egg, elnino, exit, feejar, flycar, fridge, frogbond, gavelbot, gem, genz, globe, goldbars, gradcap, gst, healthjar, hello, hospital, hourglass, labtube, loudmic, magnet, mems, midclass, midmkt, mirage, nomad, nursejet, piggy, pledge, puzzle, qrpay, recycle, revgap, rupee, rxphone, satdish, scales, server, ship, solargrid, staffdown, storybook, sulphur, swissbank, taxstorm, torii, train, truck, webcam, whbot, wheat, windtower, workers, yield6.
+  Fonts load from Google Fonts and the device, so this file stays small enough to read in full.
+--><base target="_blank"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>KKReckons draft, Saturday, 31 October 2026</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Serif:ital,opsz,wdth,wght@0,20,62.5,700;1,20,62.5,700&display=swap"><style>@font-face{font-family:'Pagella';src:local('TeX Gyre Pagella'),local('Palatino Linotype'),local('Palatino'),local('Book Antiqua');font-weight:700}
+@font-face{font-family:'Pagella';src:local('TeX Gyre Pagella'),local('Palatino Linotype'),local('Palatino'),local('Book Antiqua');font-style:italic}
+@font-face{font-family:'Heros';src:local('TeX Gyre Heros'),local('Helvetica Neue'),local('Helvetica'),local('Arial');font-weight:400}
+@font-face{font-family:'Heros';src:local('TeX Gyre Heros'),local('Helvetica Neue'),local('Helvetica'),local('Arial');font-weight:700}
+
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--page:#F2ECF7;--bg:#FFFBF5;--ink:#1D1736;--text:#2E2946;--muted:#655F7E;--line:rgba(29,23,54,.10);--card:#FFFFFF;
+--why:#3B2FA8;--flip:#C2410C;--band1:#FFE6CF;--band2:#FCE1EE;--band3:#E6DEFF;
+--o:#EE5A0B;--o-t:#FFE8D4;--t:#0B9484;--t-t:#D6F4EE;--v:#7247EA;--v-t:#ECE5FF;--p:#DB2F77;--p-t:#FFE2EE;--y:#C07E00;--y-t:#FFF1C4;--b:#2B6FDB;--b-t:#E0ECFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#130D20;--bg:#1A132C;--ink:#F4F0FC;--text:#E3DDF1;--muted:#B3AAC9;--line:rgba(255,255,255,.12);--card:#241B3A;--why:#B8ADFF;--flip:#FF9C66;--band1:#3A2418;--band2:#3A1B2C;--band3:#271F46;--o-t:#3D2414;--t-t:#123330;--v-t:#2A2150;--p-t:#3D1A2B;--y-t:#3A2E10;--b-t:#16264A}}
+:root[data-theme="dark"]{--page:#130D20;--bg:#1A132C;--ink:#F4F0FC;--text:#E3DDF1;--muted:#B3AAC9;--line:rgba(255,255,255,.12);--card:#241B3A;--why:#B8ADFF;--flip:#FF9C66;--band1:#3A2418;--band2:#3A1B2C;--band3:#271F46;--o-t:#3D2414;--t-t:#123330;--v-t:#2A2150;--p-t:#3D1A2B;--y-t:#3A2E10;--b-t:#16264A}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--page);color:var(--text);font-family:'Heros','Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:1024px;margin:0 auto;background:var(--bg);display:flex;flex-direction:column}
+.canvas{width:1024px;height:1536px;overflow:hidden}
+.inner{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;padding:12px 18px 12px}
+.canvas .inner{justify-content:space-between}
+.inner>*{flex-shrink:0}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid #E64980;outline-offset:2px}
+.c-o{--a:var(--o);--at:var(--o-t)}.c-t{--a:var(--t);--at:var(--t-t)}.c-v{--a:var(--v);--at:var(--v-t)}.c-p{--a:var(--p);--at:var(--p-t)}.c-y{--a:var(--y);--at:var(--y-t)}.c-b{--a:var(--b);--at:var(--b-t)}
+/* header band */
+.band{position:relative;flex:none;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:linear-gradient(90deg,var(--band1),var(--band2) 50%,var(--band3));overflow:hidden}
+.band .sky{position:absolute;left:0;bottom:0;width:100%;height:54px;opacity:.16}
+.dt{position:relative;font:700 29px/1 'Pagella',Palatino,Georgia,serif;color:var(--ink);letter-spacing:.2px}
+.by{position:relative;font:italic 400 19px/1 'Pagella',Palatino,Georgia,serif;color:#C2255C}
+/* special report pointer */
+.special{flex:none;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;border-radius:14px;padding:16px 20px;background:linear-gradient(110deg,#1D2B3A,#33405E 60%,#7A4A52);color:#F3F1EC;box-shadow:0 4px 14px rgba(43,19,72,.14)}
+.special .sk{font:700 12px 'Poppins',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F0B840;margin-bottom:4px}
+.special h3{font:700 22px 'Pagella','Lora',Palatino,Georgia,serif;line-height:1.15;margin:0 0 4px}
+.special p{font-size:15.5px;line-height:1.45;margin:0;color:#D5DAE1}
+.special .sb{width:46px;height:46px;border-radius:50%;background:#F0B840;display:grid;place-items:center;color:#1D2B3A;font:700 22px Georgia,serif}
+.special a.go{white-space:nowrap;font:600 14px 'Poppins',Arial,sans-serif;color:#1D2B3A;background:#F0B840;border-radius:999px;padding:10px 16px;text-decoration:none}
+@media(max-width:640px){.special{grid-template-columns:1fr}.special .sb{display:none}}
+body.img .special a.go{display:none}
+/* callout */
+.callout{flex:none;display:grid;grid-template-columns:1fr 1fr;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(43,19,72,.14)}
+.co{display:flex;align-items:center;gap:13px;padding:12px 18px;color:#fff}
+.co1{background:linear-gradient(100deg,#F5620F,#E03131)}.co2{background:linear-gradient(100deg,#7C4DFF,#4C3BCF)}
+.co .ic{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;flex:none}
+.co .ic svg{width:26px;height:26px;fill:none;stroke:#FFE9A8;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.big{font:700 40px/1 'Pagella',Palatino,Georgia,serif;color:#FFF1B8;white-space:nowrap;text-shadow:0 2px 6px rgba(0,0,0,.15)}
+.co p{font-size:15.5px;line-height:1.32;color:#FFF4F8}.co b{color:#fff}
+/* section headers */
+.ed{display:flex;flex-direction:column;gap:9px}
+.edh{display:flex;align-items:flex-end;gap:12px;height:34px}
+.pill{font:700 18px/1 'Heros',Helvetica,sans-serif;color:#fff;padding:8px 16px;border-radius:10px;white-space:nowrap;box-shadow:0 3px 8px rgba(43,19,72,.15)}
+.p-pick{background:linear-gradient(90deg,#F08C00,#E8590C)}.p-india{background:linear-gradient(90deg,#F76707,#E64980)}.p-world{background:linear-gradient(90deg,#AE3EC9,#6741D9)}
+.deco{flex:1;height:30px;min-width:0}
+/* cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--a);border-radius:14px;padding:12px 15px;display:flex;flex-direction:column;gap:7px;box-shadow:0 2px 10px rgba(43,19,72,.07)}
+.card::before{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--at) 0%,transparent 68%);pointer-events:none}
+.card>*{position:relative}
+.card>.wm{position:absolute;right:8px;bottom:4px;width:118px;height:118px;opacity:.09;fill:none;stroke:var(--a);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.top{display:flex;gap:11px;align-items:center}
+.badge{width:46px;height:46px;border-radius:50%;background:var(--a);display:grid;place-items:center;flex:none;box-shadow:0 3px 8px rgba(43,19,72,.18)}
+.badge svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.hd{flex:1;min-width:0}
+.meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.num{width:21px;height:21px;border-radius:50%;background:var(--a);color:#fff;display:grid;place-items:center;font:700 12px/1 'Heros',sans-serif;flex:none}
+.cat{font-size:14px;font-weight:700;color:var(--a)}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:1px 9px;color:var(--muted);background:var(--card)}
+.card h3{font:700 20.5px/1.17 'Pagella',Palatino,Georgia,serif;color:var(--ink);margin-top:3px}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:3px}
+.card li{font-size:15.5px;line-height:1.4;padding-left:14px;position:relative;color:var(--text)}
+.card li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--a)}
+.nums{display:flex;background:var(--at);border-radius:10px;padding:7px 12px}
+.nums div{flex:1;min-width:0}
+.nums div+div{border-left:1px solid var(--line);padding-left:10px;margin-left:10px}
+.nums b{display:block;font:700 22px/1.08 'Pagella',Palatino,Georgia,serif;color:var(--a);white-space:nowrap}
+.nums span{display:block;font-size:12.5px;line-height:1.22;color:var(--muted)}
+.nums svg{display:block;width:24px;height:24px;margin:0 auto 3px;fill:none;stroke:var(--a);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tiles{background:none;padding:0;gap:8px}
+.tiles div{background:var(--at);border-radius:12px;padding:8px 6px;text-align:center}
+.tiles div+div{border:0;margin:0;padding-left:6px}
+.why,.flip{display:flex;gap:7px;font-size:15px;line-height:1.32;grid-column:1/-1}
+.why svg,.flip svg{width:16px;height:16px;flex:none;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
+.why svg{stroke:var(--why)}.why strong{color:var(--why)}
+.flip{color:var(--flip);font-style:italic}.flip svg{stroke:var(--flip)}.flip strong{font-weight:700}
+.card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1.25fr 1.25fr;align-items:center;gap:8px 16px}
+.card.wide h3{font-size:22px}
+/* slice, cta, reading */
+.slice{flex:none;display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#FFEFF6,#F4EDFF);border:1.5px dashed #E6498080;border-radius:14px;padding:10px 16px;color:#4A1836}
+.slice .si{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#F06595,#CC5DE8);display:grid;place-items:center;flex:none}
+.slice .si svg{width:21px;height:21px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.slice b{font:italic 700 24px/1 'Pagella',Palatino,Georgia,serif;color:#D6336C;white-space:nowrap}
+.slice span{font:italic 400 19.5px/1.3 'Pagella',Palatino,Georgia,serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .slice{background:#3A1B2C;color:#FBD5E5}}
+:root[data-theme="dark"] .slice{background:#3A1B2C;color:#FBD5E5}
+.cta{flex:none;align-self:center;font:700 15px/1 'Heros',sans-serif;color:#3B2FA8;background:#EFEAFF;border:1px solid #CFC4FF;padding:7px 20px;border-radius:999px}
+body:not(.img) .cta{display:none}
+.reading{flex:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 18px}
+.reading h4{font:700 19px 'Pagella',Palatino,Georgia,serif;margin:0 0 6px;color:var(--ink)}
+.reading ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.reading li{font-size:15px;line-height:1.4;color:var(--muted)}
+.reading li a{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.wfoot{flex:none;text-align:center;font-size:12.5px;color:var(--muted);padding:2px 0 6px}
+body.img .reading,body.img .wfoot{display:none}
+@media (max-width:760px){.inner{padding:12px}.band{height:auto;padding:12px 14px;flex-wrap:wrap;gap:6px}.dt{font-size:23px}
+ .callout{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card.wide{display:flex}.deco{display:none}.slice{flex-wrap:wrap}}
+.ireading{flex:none;display:none;flex-direction:column;gap:9px}
+body.img .ireading{display:flex}
+.p-read{background:linear-gradient(90deg,#0B9484,#2B6FDB)}
+.ireading ol{list-style:none;display:grid;grid-template-columns:1fr;gap:8px}
+.ireading li{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--a);border-radius:12px;padding:10px 14px;font:700 19px/1.25 'Pagella',Palatino,Georgia,serif;color:var(--ink);box-shadow:0 2px 8px rgba(43,19,72,.06)}
+.ireading li .badge{width:36px;height:36px}.ireading li .badge svg{width:19px;height:19px}
+
+/* hybrid v6 */
+.band{height:104px;align-items:flex-start;padding:16px 26px 0;background:#FFF1E2}
+.band .sky{height:104px;opacity:1}
+.dt{font-size:31px;text-shadow:0 1px 0 #fff8}
+.by{display:flex;flex-direction:column;align-items:flex-end;transform:rotate(-4deg);font:italic 700 24px/1 'Pagella',Palatino,Georgia,serif;color:#C2255C;margin-top:-4px;text-shadow:0 1px 0 #fff9}
+.by small{font:italic 400 15px/1.1 'Pagella',Palatino,Georgia,serif;color:#6B2A4A;margin-right:30px}
+.pill{display:inline-flex;align-items:center;gap:8px}
+.pill svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.deco{height:30px}
+.badge .bn{font:700 25px/1 'Pagella',Palatino,Georgia,serif;color:#fff}
+.slice{gap:14px;padding:6px 18px 6px 8px;background:linear-gradient(90deg,#FFEFF6,#F4EDFF 70%,#FFEFF6)}
+.slice .cake{width:96px;height:auto;flex:none;margin:-14px 0 -12px -4px;filter:drop-shadow(0 3px 4px rgba(90,20,60,.18))}
+.slice b{font-size:27px}
+.slice .vr{width:1.5px;align-self:stretch;margin:6px 0;background:#E6498055;flex:none}
+.slice .rd{margin-left:auto;font:italic 700 24px/1 'Pagella',Palatino,Georgia,serif;color:#C2255C;white-space:nowrap;padding-left:6px}
+.canvas .inner{gap:10px;padding-top:10px;padding-bottom:10px}
+.canvas .grid{gap:10px}
+.canvas .card{padding:10px 14px;gap:6px}
+@media (max-width:760px){.band{height:auto;padding:12px 14px 34px}.slice .rd{display:none}}
+.band{height:76px;padding:11px 26px 0}
+.band .sky{height:76px}
+.dt{font-size:28px;text-shadow:0 0 6px #FFF4E6,0 0 12px #FFF4E6}
+.by{font-size:21px;margin-top:-6px;text-shadow:0 0 6px #FFF4E6,0 0 10px #FFF4E6}.by small{font-size:13px}
+.slice{padding:12px 20px}
+
+
+
+
+
+
+
+/* v7: legible fonts, richer colour, story illustrations */
+:root{--o:#E8590C;--o-t:#FFE3CC;--t:#0A8F7F;--t-t:#CFF3EC;--v:#6741D9;--v-t:#E8E0FF;--p:#D6336C;--p-t:#FFDDEA;--y:#B7791F;--y-t:#FFF0C2;--b:#1C7ED6;--b-t:#D8EBFF;--g:#2B8A3E;--g-t:#D8F5DF;--ink:#16123A;--text:#2B2745}
+.c-g{--a:var(--g);--at:var(--g-t)}
+body{font-family:'Poppins','Helvetica Neue',Arial,sans-serif}
+.dt{font-family:'Lora',Georgia,serif;font-weight:700}
+.by,.by small{font-family:'Lora',Georgia,serif}
+.big{font-family:'Lora',Georgia,serif;font-weight:700}
+.co p{font-size:14.5px;line-height:1.38}
+.pill{font:600 17px/1 'Poppins',sans-serif;letter-spacing:.2px}
+.card{background:linear-gradient(160deg,var(--at) 0%,var(--card) 46%);border-left-width:7px}
+.card::before{display:none}
+.card h3{font:700 19.5px/1.22 'Lora',Georgia,serif;color:var(--ink);margin-top:2px}
+.card.wide h3{font-size:21px}
+.cat{font:600 13px/1.2 'Poppins',sans-serif;letter-spacing:.3px;text-transform:uppercase;color:var(--a)}
+.tag{font:500 11.5px/1.5 'Poppins',sans-serif}
+.num{font-family:'Poppins',sans-serif}
+.card li{font-size:14.2px;line-height:1.42}
+.card li::before{top:.6em}
+.nums b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:21px}
+.nums span{font-size:11.8px;line-height:1.25}
+.why,.flip{font-size:13.8px;line-height:1.36}
+.flip{font-style:italic}
+.slice b{font-family:'Lora',Georgia,serif;font-weight:700;font-style:italic}
+.slice span{font-family:'Lora',Georgia,serif;font-style:italic;font-size:18.5px}
+.pic{position:relative;width:70px;height:70px;border-radius:18px;flex:none;background:linear-gradient(140deg,var(--a),color-mix(in srgb,var(--a) 62%,#120c2e));box-shadow:0 5px 12px rgba(30,15,60,.22)}
+.pic svg{display:block;width:100%;height:100%}
+.pic .pn{position:absolute;right:-7px;bottom:-7px;width:27px;height:27px;border-radius:50%;background:#fff;color:var(--a);border:2px solid var(--a);font:700 14px/23px 'Poppins',sans-serif;text-align:center}
+.card.wide{grid-template-columns:1.35fr 1.25fr 1.15fr}
+.reading h4{font-family:'Lora',Georgia,serif}
+@media (max-width:760px){.pic{width:60px;height:60px;border-radius:15px}}
+.fig{grid-column:1/-1;margin:4px 0 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#F8F0E6;max-width:420px;align-self:center}
+.fig img{display:block;width:100%;height:auto}
+body:not(.img) .grid{align-items:start}
+.pic{width:80px;height:80px;border-radius:16px;overflow:hidden;background:none;border:2px solid var(--a);box-shadow:0 6px 14px rgba(30,15,60,.22)}.pic .pn{right:-4px;bottom:-4px}.canvas .card .top{gap:12px}.canvas .inner{gap:8px}.canvas .grid{gap:8px}.canvas .card{padding:9px 14px;gap:5px}
+
+/* Today's slice: hero banner at the top (from 8 Oct 2026 readers' feedback) */
+.slice.top{order:-1;display:flex;align-items:center;gap:14px;padding:10px 20px 10px 12px;border:none;border-radius:16px;
+ background:linear-gradient(100deg,#C2255C 0%,#9C36B5 55%,#5F3DC4 100%);color:#fff;box-shadow:0 6px 18px rgba(120,30,90,.28);position:relative;overflow:hidden}
+.slice.top::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.slice.top .sw{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;box-shadow:0 3px 8px rgba(0,0,0,.18)}
+.slice.top .cakei{width:44px;height:44px}
+.slice.top .st{display:flex;flex-direction:column;gap:3px;min-width:0}
+.slice.top b{font:700 13px/1 'Heros','Poppins',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#FFE3EC;white-space:nowrap}
+.slice.top .sl{font:italic 600 25px/1.22 'Lora',Georgia,serif;color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .slice.top{background:linear-gradient(100deg,#A61E4D,#862E9C 55%,#5F3DC4);color:#fff}}
+:root[data-theme="dark"] .slice.top{background:linear-gradient(100deg,#A61E4D,#862E9C 55%,#5F3DC4);color:#fff}
+@media (max-width:760px){.slice.top{flex-wrap:nowrap;padding:10px 14px 10px 10px}.co{min-width:0}.co p{min-width:0;flex:1}.co .big{font-size:38px}.slice.top .sl{font-size:20px}.slice.top .sw{width:46px;height:46px}.slice.top .cakei{width:36px;height:36px}}
+.slice.top .sd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.slice.top .dtx{font:700 21px/1.1 'Lora',Georgia,serif;color:#fff;white-space:nowrap}
+.slice.top .sd b{padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.18);font-size:11.5px}
+.slice.top .st{gap:5px}
+.inner{padding-top:16px}
+.canvas .slice.top{padding:16px 22px 16px 16px;gap:16px}.canvas .slice.top .sw{width:68px;height:68px}.canvas .slice.top .cakei{width:54px;height:54px}.canvas .slice.top .dtx{font-size:24px}.canvas .slice.top .sl{font-size:28px}
+@media (max-width:760px){.slice.top .dtx{font-size:18px}}
+.also{font:500 13px/1.45 'Poppins',sans-serif;color:var(--muted);margin-top:4px}.also a{color:var(--a);font-weight:600;text-decoration:underline;text-underline-offset:3px}.canvas .slice.top{padding:10px 22px 10px 14px}.canvas .slice.top .sw{width:60px;height:60px}.canvas .slice.top .cakei{width:48px;height:48px}
+</style><style>
+
+
+/* v8 (9 Oct 2026): scenic slice banner, condensed serif headlines, larger illustrations, landmark dividers */
+.slice.top{display:block;padding:0;min-height:168px;background:var(--sk1,#2B1B5A);box-shadow:0 8px 22px rgba(40,15,70,.30)}
+.slice.top::after{display:none}
+.slice.top .scene{position:absolute;inset:0;width:100%;height:100%}
+.slice.top .sw{position:absolute;left:14px;bottom:8px;width:118px;height:110px;background:none;box-shadow:none;border-radius:0;z-index:2}
+.slice.top .cakei{width:118px;height:110px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.35))}
+.slice.top .st{position:relative;z-index:2;padding:16px 26px 52px 150px;gap:8px}
+.slice.top .sd{gap:14px;align-items:center}
+.slice.top .dtx{font:700 26px/1.1 'RSC','Lora',Georgia,serif;letter-spacing:.2px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.slice.top .sd b{background:rgba(214,51,108,.85);color:#fff;border:1px solid rgba(255,255,255,.45);font-size:12px;padding:4px 11px}
+.slice.top .sl{font:700 34px/1.12 'RSC','Lora',Georgia,serif;font-style:normal;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.4);text-wrap:balance}
+.slice.top .sl em{font-style:italic;color:#FFD43B}
+.card h3,.card.wide h3{font-stretch:extra-condensed;font-family:'Roboto Serif','Lora',Georgia,serif;font-weight:700;letter-spacing:.1px;line-height:1.1}
+.card h3{font-size:23px}.card.wide h3{font-size:25px}
+.nums b{font-stretch:extra-condensed;font-family:'Roboto Serif','Lora',Georgia,serif;font-size:24px}
+.big{font-stretch:extra-condensed;font-family:'Roboto Serif','Lora',Georgia,serif;font-size:46px}
+.pill{font:700 20px/1 'RSC','Lora',Georgia,serif;letter-spacing:.3px;padding:8px 18px}
+.reading h4{font-stretch:extra-condensed;font-family:'Roboto Serif','Lora',Georgia,serif}
+.pic{width:96px;height:96px;border-radius:18px;border-width:2.5px}
+.pic::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(155deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,0) 38%,rgba(0,0,0,0) 62%,rgba(20,10,40,.22) 100%);box-shadow:inset 0 -6px 12px rgba(20,10,40,.18)}
+.pic .pn{z-index:1}
+.edh{height:40px}.deco{height:40px}
+@media (max-width:760px){.slice.top{min-height:0}.slice.top .st{padding:12px 14px 46px 96px}.slice.top .sw{width:80px;height:76px;left:8px}.slice.top .cakei{width:80px;height:76px}.slice.top .sl{font-size:22px}.slice.top .dtx{font-size:19px}.pic{width:72px;height:72px}.card h3,.card.wide h3{font-size:21px}}
+.canvas .slice.top .sw,.slice.top .sw{width:124px;height:116px}
+.canvas .slice.top .cakei,.slice.top .cakei{width:124px;height:116px}
+.canvas .slice.top{padding:0}
+.canvas .slice.top .dtx{font-size:27px}.canvas .slice.top .sl{font-size:38px}
+.card h3{font-size:24px;line-height:1.06}.card.wide h3{font-size:27px;line-height:1.04}
+@media (max-width:760px){.slice.top .sw,.slice.top .cakei{width:80px;height:76px}}
+.canvas .card.wide{grid-template-columns:1.62fr 1.22fr 1fr;gap:6px 14px}
+.canvas .card .top{gap:12px}
+.pic{width:88px;height:88px}
+.card.wide h3{font-size:26px}
+.canvas .nums div+div{padding-left:8px;margin-left:8px}
+.canvas .nums b{font-size:23px}
+.canvas .card.wide{grid-template-columns:1.55fr 1.15fr 1.1fr}
+body:not(.img) .card.wide{grid-template-columns:1.5fr 1.4fr 1.1fr}
+body:not(.img) .card.wide h3{font-size:25px}
+.canvas .slice.top{min-height:148px}.canvas .slice.top .st{padding:12px 26px 40px 150px;gap:6px}.canvas .slice.top .sl{font-size:35px}
+.canvas .slice.top .sw,.canvas .slice.top .cakei{width:112px;height:104px}
+.canvas .card{padding:7px 14px;gap:3px}.canvas .card.wide{gap:3px 14px}
+.canvas .why,.canvas .flip{line-height:1.3}
+.canvas .inner{gap:7px}.canvas .grid{gap:7px}.canvas .ed{gap:6px}
+.canvas .co{padding:10px 18px}
+</style></head><body><div class="page">
+<!-- BRAND: header band. Date and India/USA skyline change daily (see buildHeader). -->
+
+<!-- DAILY CONTENT: rendered from the data block below -->
+<div class="inner" id="content"></div>
+</div>
+<template id="flipicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg></template><template id="bulb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></template>
+<script type="application/json" id="icons">{"jobs": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18\"/>", "columns": "<path d=\"M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18\"/>", "bank": "<path d=\"M3 9l9-5 9 5H3zM5 9v8M9 9v8M15 9v8M19 9v8M3 20h18M3 17h18\"/>", "sat": "<rect x=\"9\" y=\"9\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M3 5l4 4M3 5l2-2 4 4-2 2zM21 19l-4-4M21 19l-2 2-4-4 2-2zM15 9l2-2M9 15l-2 2\"/>", "cloud": "<path d=\"M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6.1 9.1 4.5 4.5 0 0 0 7 18z\"/><path d=\"M10 14l4 0\"/>", "receipt": "<path d=\"M6 3h12v18l-3-2-3 2-3-2-3 2z\"/><path d=\"M9 8h6M9 12h6M9 16h3\"/>", "chart": "<path d=\"M3 20h18M5 16l4-5 4 3 6-8\"/><path d=\"M15 6h4v4\"/>", "search": "<circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"M20 20l-4.5-4.5\"/>", "capitol": "<path d=\"M12 3v3M8 10a4 4 0 0 1 8 0M5 10h14M6 10v8M10 10v8M14 10v8M18 10v8M4 20h16\"/>", "chip": "<rect x=\"7\" y=\"7\" width=\"10\" height=\"10\" rx=\"1.5\"/><path d=\"M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4\"/>", "drone": "<circle cx=\"5\" cy=\"6\" r=\"2.5\"/><circle cx=\"19\" cy=\"6\" r=\"2.5\"/><circle cx=\"5\" cy=\"18\" r=\"2.5\"/><circle cx=\"19\" cy=\"18\" r=\"2.5\"/><rect x=\"9.5\" y=\"9.5\" width=\"5\" height=\"5\" rx=\"1\"/><path d=\"M7 8l2.5 2.5M17 8l-2.5 2.5M7 16l2.5-2.5M17 16l-2.5-2.5\"/>", "megaphone": "<path d=\"M3 10v4h3l7 4V6L6 10H3z\"/><path d=\"M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11\"/>", "rocket": "<path d=\"M12 3c3 2 5 5.5 5 9.5L15 16H9l-2-3.5C7 8.5 9 5 12 3z\"/><circle cx=\"12\" cy=\"10\" r=\"1.6\"/><path d=\"M9 16l-2 4 3-1.5M15 16l2 4-3-1.5\"/>", "gauge": "<path d=\"M4 17a8 8 0 1 1 16 0\"/><path d=\"M12 17l4-5\"/><circle cx=\"12\" cy=\"17\" r=\"1.2\"/>", "grad": "<path d=\"M2 9l10-5 10 5-10 5z\"/><path d=\"M6 11v5c3 2 9 2 12 0v-5M22 9v6\"/>", "globe": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z\"/>", "pill": "<path d=\"M10.5 3.5a4.95 4.95 0 0 1 7 7l-7 7a4.95 4.95 0 0 1-7-7z\"/><path d=\"M7 10l7 7\"/>", "home": "<path d=\"M3 11l9-7 9 7\"/><path d=\"M5 10v10h14V10M10 20v-6h4v6\"/>", "eye": "<path d=\"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>", "plane": "<path d=\"M10.5 21l1.5-6-7-1v-2l7-3V4a1.5 1.5 0 0 1 3 0v5l7 3v2l-7 1 1.5 6z\"/>", "gavel": "<path d=\"M14 4l6 6M11 7l6 6M12.5 5.5l-4 4 6 6 4-4M10 11l-7 7 2 2 7-7M4 21h9\"/>", "train": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"13\" rx=\"3\"/><path d=\"M6 10h12M9 19l-2 2M15 19l2 2M9 16v.01M15 16v.01\"/>"}</script>
+<script type="application/json" id="pics">{"agents": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"#fff\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 68 H26 V62 H42 V50 H58 V38 H74\"/><rect x=\"12\" y=\"52\" width=\"13\" height=\"10\" rx=\"3\" fill=\"#fff\" stroke=\"none\"/><circle cx=\"16\" cy=\"57\" r=\"1.4\" fill=\"rgba(40,20,70,.6)\" stroke=\"none\"/><circle cx=\"21\" cy=\"57\" r=\"1.4\" fill=\"rgba(40,20,70,.6)\" stroke=\"none\"/><line x1=\"18.5\" y1=\"52\" x2=\"18.5\" y2=\"48\" stroke-width=\"2\"/><rect x=\"28\" y=\"40\" width=\"13\" height=\"10\" rx=\"3\" fill=\"#fff\" stroke=\"none\"/><circle cx=\"32\" cy=\"45\" r=\"1.4\" fill=\"rgba(40,20,70,.6)\" stroke=\"none\"/><circle cx=\"37\" cy=\"45\" r=\"1.4\" fill=\"rgba(40,20,70,.6)\" stroke=\"none\"/><line x1=\"34.5\" y1=\"40\" x2=\"34.5\" y2=\"36\" stroke-width=\"2\"/><rect x=\"44\" y=\"28\" width=\"13\" height=\"10\" rx=\"3\" fill=\"#fff\" stroke=\"none\"/><circle cx=\"48\" cy=\"33\" r=\"1.4\" fill=\"rgba(40,20,70,.6)\" stroke=\"none\"/><circle cx=\"53\" cy=\"33\" r=\"1.4\" fill=\"rgba(40,20,70,.6)\" stroke=\"none\"/><line x1=\"50.5\" y1=\"28\" x2=\"50.5\" y2=\"24\" stroke-width=\"2\"/><path d=\"M60 10 h12 v5 a6 6 0 0 1 -12 0 z\" fill=\"#FFD43B\" stroke=\"none\"/><line x1=\"66\" y1=\"21\" x2=\"66\" y2=\"26\" stroke=\"#FFD43B\"/><rect x=\"62\" y=\"26\" width=\"8\" height=\"3\" rx=\"1\" fill=\"#FFD43B\" stroke=\"none\"/><\/g><\/svg>", "aishield": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><circle cx=\"58\" cy=\"18\" r=\"22\" fill=\"rgba(255,255,255,.12)\"/><circle cx=\"16\" cy=\"68\" r=\"14\" fill=\"rgba(255,255,255,.08)\"/><g fill=\"#fff\" opacity=\".9\"><rect x=\"8\" y=\"50\" width=\"8\" height=\"20\" rx=\"1.5\"/><rect x=\"19\" y=\"40\" width=\"8\" height=\"30\" rx=\"1.5\"/><\/g><rect x=\"30\" y=\"22\" width=\"8\" height=\"48\" rx=\"1.5\" fill=\"#FF8FA3\"/><rect x=\"41\" y=\"12\" width=\"8\" height=\"58\" rx=\"1.5\" fill=\"#FF8FA3\"/><path d=\"M54 30 l12 -5 l12 5 v12 c0 10 -7 16 -12 19 c-5 -3 -12 -9 -12 -19z\" fill=\"#FFD43B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"66\" y=\"48\" text-anchor=\"middle\" font-family=\"Poppins,sans-serif\" font-weight=\"700\" font-size=\"11\" fill=\"rgba(30,15,60,.6)\">AI<\/text><path d=\"M4 74h72\" stroke=\"#fff\" stroke-width=\"2\"/><\/svg>", "bankstake": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><defs><linearGradient id=\"bs\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#FFE0C2\"/><stop offset=\"1\" stop-color=\"#FFF7EE\"/><\/linearGradient><linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\".55\"/><stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/><\/linearGradient><\/defs><rect width=\"80\" height=\"80\" fill=\"url(#bs)\"/><circle cx=\"64\" cy=\"16\" r=\"9\" fill=\"#FFE8A3\" opacity=\".85\"/><ellipse cx=\"18\" cy=\"14\" rx=\"12\" ry=\"4\" fill=\"#fff\" opacity=\".55\"/><ellipse cx=\"30\" cy=\"11\" rx=\"8\" ry=\"3\" fill=\"#fff\" opacity=\".45\"/><rect y=\"66\" width=\"80\" height=\"14\" fill=\"#E8D8C4\"/><path d=\"M6 30 L34 16 L62 30 Z\" fill=\"#F1E3CF\" stroke=\"#C9A97E\"/><rect x=\"8\" y=\"30\" width=\"52\" height=\"4\" fill=\"#E6D2B5\"/><rect x=\"11\" y=\"34\" width=\"5\" height=\"26\" fill=\"#F8EEDF\" stroke=\"#D3BC9A\" stroke-width=\".6\"/><rect x=\"21\" y=\"34\" width=\"5\" height=\"26\" fill=\"#F8EEDF\" stroke=\"#D3BC9A\" stroke-width=\".6\"/><rect x=\"31\" y=\"34\" width=\"5\" height=\"26\" fill=\"#F8EEDF\" stroke=\"#D3BC9A\" stroke-width=\".6\"/><rect x=\"41\" y=\"34\" width=\"5\" height=\"26\" fill=\"#F8EEDF\" stroke=\"#D3BC9A\" stroke-width=\".6\"/><rect x=\"51\" y=\"34\" width=\"5\" height=\"26\" fill=\"#F8EEDF\" stroke=\"#D3BC9A\" stroke-width=\".6\"/><rect x=\"6\" y=\"60\" width=\"56\" height=\"6\" fill=\"#E6D2B5\"/><circle cx=\"34\" cy=\"25\" r=\"3\" fill=\"#E8590C\"/><rect x=\"52\" y=\"40\" width=\"24\" height=\"24\" rx=\"4\" fill=\"#1E1B4B\" stroke=\"#74C0FC\" stroke-width=\"1.6\"/><rect x=\"58\" y=\"46\" width=\"12\" height=\"12\" rx=\"2\" fill=\"#4DABF7\"/><path d=\"M56 40v-4M64 40v-4M72 40v-4M56 64v3M64 64v3M72 64v3\" stroke=\"#74C0FC\" stroke-width=\"1.4\"/><circle cx=\"64\" cy=\"52\" r=\"3\" fill=\"#E7F5FF\"/><ellipse cx=\"64\" cy=\"69\" rx=\"14\" ry=\"2.5\" fill=\"#74C0FC\" opacity=\".5\"/><\/svg>", "chip": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"#fff\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"21\" y=\"21\" width=\"38\" height=\"38\" rx=\"6\" fill=\"rgba(255,255,255,.22)\"/><rect x=\"30\" y=\"30\" width=\"20\" height=\"20\" rx=\"3\" fill=\"#FFD43B\" stroke=\"none\"/><line x1=\"29\" y1=\"13\" x2=\"29\" y2=\"21\"/><line x1=\"29\" y1=\"59\" x2=\"29\" y2=\"67\"/><line x1=\"13\" y1=\"29\" x2=\"21\" y2=\"29\"/><line x1=\"59\" y1=\"29\" x2=\"67\" y2=\"29\"/><line x1=\"37\" y1=\"13\" x2=\"37\" y2=\"21\"/><line x1=\"37\" y1=\"59\" x2=\"37\" y2=\"67\"/><line x1=\"13\" y1=\"37\" x2=\"21\" y2=\"37\"/><line x1=\"59\" y1=\"37\" x2=\"67\" y2=\"37\"/><line x1=\"45\" y1=\"13\" x2=\"45\" y2=\"21\"/><line x1=\"45\" y1=\"59\" x2=\"45\" y2=\"67\"/><line x1=\"13\" y1=\"45\" x2=\"21\" y2=\"45\"/><line x1=\"59\" y1=\"45\" x2=\"67\" y2=\"45\"/><line x1=\"53\" y1=\"13\" x2=\"53\" y2=\"21\"/><line x1=\"53\" y1=\"59\" x2=\"53\" y2=\"67\"/><line x1=\"13\" y1=\"53\" x2=\"21\" y2=\"53\"/><line x1=\"59\" y1=\"53\" x2=\"67\" y2=\"53\"/><path d=\"M35 40 l4 4 l7 -8\" stroke=\"rgba(40,20,70,.6)\" stroke-width=\"2.4\"/><\/g><\/svg>", "rxphone": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><circle cx=\"58\" cy=\"18\" r=\"22\" fill=\"rgba(255,255,255,.12)\"/><circle cx=\"16\" cy=\"68\" r=\"14\" fill=\"rgba(255,255,255,.08)\"/><rect x=\"12\" y=\"8\" width=\"34\" height=\"62\" rx=\"7\" fill=\"#1E1B3A\" stroke=\"#fff\" stroke-width=\"2.4\"/><rect x=\"16\" y=\"14\" width=\"26\" height=\"46\" rx=\"3\" fill=\"#74C0FC\"/><circle cx=\"29\" cy=\"32\" r=\"9\" fill=\"#FFE0C2\"/><circle cx=\"25.5\" cy=\"30.5\" r=\"1.4\" fill=\"rgba(30,15,60,.6)\"/><circle cx=\"32.5\" cy=\"30.5\" r=\"1.4\" fill=\"rgba(30,15,60,.6)\"/><circle cx=\"24\" cy=\"35\" r=\"1.3\" fill=\"#FF8FA3\"/><circle cx=\"34\" cy=\"34\" r=\"1.1\" fill=\"#FF8FA3\"/><path d=\"M18 20v-4h4M36 16h4v4M40 46v4h-4M22 50h-4v-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M17 41 h24\" stroke=\"#8CE99A\" stroke-width=\"2\" stroke-dasharray=\"3 2\"/><rect x=\"44\" y=\"38\" width=\"28\" height=\"32\" rx=\"6\" fill=\"#FFD43B\"/><text x=\"58\" y=\"60\" text-anchor=\"middle\" font-family=\"Lora,Georgia,serif\" font-weight=\"700\" font-size=\"17\" fill=\"rgba(30,15,60,.6)\">Rx<\/text><\/svg>", "server": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"#fff\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"12\" y=\"14\" width=\"27\" height=\"52\" rx=\"3\" fill=\"rgba(255,255,255,.22)\"/><line x1=\"17\" y1=\"24\" x2=\"30\" y2=\"24\" stroke-width=\"2.2\"/><circle cx=\"34\" cy=\"24\" r=\"1.8\" fill=\"#FFD43B\" stroke=\"none\"/><line x1=\"17\" y1=\"34\" x2=\"30\" y2=\"34\" stroke-width=\"2.2\"/><circle cx=\"34\" cy=\"34\" r=\"1.8\" fill=\"#FFD43B\" stroke=\"none\"/><line x1=\"17\" y1=\"44\" x2=\"30\" y2=\"44\" stroke-width=\"2.2\"/><circle cx=\"34\" cy=\"44\" r=\"1.8\" fill=\"#FFD43B\" stroke=\"none\"/><line x1=\"17\" y1=\"54\" x2=\"30\" y2=\"54\" stroke-width=\"2.2\"/><circle cx=\"34\" cy=\"54\" r=\"1.8\" fill=\"#FFD43B\" stroke=\"none\"/><rect x=\"46\" y=\"59\" width=\"24\" height=\"7\" fill=\"#FFD43B\" stroke=\"none\"/><ellipse cx=\"58\" cy=\"59\" rx=\"12\" ry=\"3.8\" fill=\"#FFE380\" stroke=\"#fff\" stroke-width=\"1.4\"/><rect x=\"46\" y=\"52\" width=\"24\" height=\"7\" fill=\"#FFD43B\" stroke=\"none\"/><ellipse cx=\"58\" cy=\"52\" rx=\"12\" ry=\"3.8\" fill=\"#FFE380\" stroke=\"#fff\" stroke-width=\"1.4\"/><rect x=\"46\" y=\"45\" width=\"24\" height=\"7\" fill=\"#FFD43B\" stroke=\"none\"/><ellipse cx=\"58\" cy=\"45\" rx=\"12\" ry=\"3.8\" fill=\"#FFE380\" stroke=\"#fff\" stroke-width=\"1.4\"/><rect x=\"46\" y=\"38\" width=\"24\" height=\"7\" fill=\"#FFD43B\" stroke=\"none\"/><ellipse cx=\"58\" cy=\"38\" rx=\"12\" ry=\"3.8\" fill=\"#FFE380\" stroke=\"#fff\" stroke-width=\"1.4\"/><text x=\"58\" y=\"41\" text-anchor=\"middle\" font-family=\"Poppins,sans-serif\" font-weight=\"700\" font-size=\"7\" fill=\"#7a5800\" stroke=\"none\">$<\/text><\/g><\/svg>", "swissbank": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><defs><linearGradient id=\"ubs\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#A5D8FF\"/><stop offset=\"1\" stop-color=\"#E7F5FF\"/><\/linearGradient><\/defs><rect width=\"80\" height=\"80\" fill=\"url(#ubs)\"/><path d=\"M0 40 L14 26 L24 34 L38 18 L52 32 L62 24 L80 38 V50 H0z\" fill=\"#fff\" opacity=\".9\"/><path d=\"M38 18 l-6 7 h12z M14 26 l-4 4 h8z\" fill=\"#D0EBFF\"/><rect y=\"64\" width=\"80\" height=\"16\" fill=\"#9BC1E6\"/><path d=\"M10 40 L32 30 L54 40z\" fill=\"#495057\"/><rect x=\"12\" y=\"40\" width=\"40\" height=\"4\" fill=\"#868E96\"/><rect x=\"15\" y=\"44\" width=\"4\" height=\"16\" fill=\"#DEE2E6\"/><rect x=\"24\" y=\"44\" width=\"4\" height=\"16\" fill=\"#DEE2E6\"/><rect x=\"36\" y=\"44\" width=\"4\" height=\"16\" fill=\"#DEE2E6\"/><rect x=\"45\" y=\"44\" width=\"4\" height=\"16\" fill=\"#DEE2E6\"/><rect x=\"10\" y=\"60\" width=\"44\" height=\"5\" fill=\"#868E96\"/><rect x=\"25\" y=\"32\" width=\"14\" height=\"8\" rx=\"1\" fill=\"#E03131\"/><path d=\"M32 33.5v5M29.5 36h5\" stroke=\"#fff\" stroke-width=\"1.8\"/><path d=\"M56 52 h14\" stroke=\"#1C7ED6\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M65 46 l7 6 -7 6\" stroke=\"#1C7ED6\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"64\" cy=\"16\" r=\"5\" fill=\"#FFD43B\"/><text x=\"64\" y=\"18.5\" text-anchor=\"middle\" font-family=\"Poppins,sans-serif\" font-weight=\"700\" font-size=\"7\" fill=\"#7a5800\">$<\/text><\/svg>", "webcam": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><defs><linearGradient id=\"wcs\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#E3FAFC\"/><stop offset=\"1\" stop-color=\"#F8F9FA\"/><\/linearGradient><\/defs><rect width=\"80\" height=\"80\" fill=\"url(#wcs)\"/><ellipse cx=\"17\" cy=\"12\" rx=\"11\" ry=\"3.5\" fill=\"#fff\" opacity=\".55\"/><ellipse cx=\"29\" cy=\"9\" rx=\"7\" ry=\"2.6\" fill=\"#fff\" opacity=\".45\"/><rect y=\"66\" width=\"80\" height=\"14\" fill=\"#E9ECEF\"/><path d=\"M0 66 L14 60 L22 63 L34 56 L46 61 L58 55 L80 62 L80 66Z\" fill=\"#C3FAE8\"/><rect x=\"18\" y=\"34\" width=\"4\" height=\"32\" fill=\"#495057\"/><path d=\"M20 34 L30 28\" stroke=\"#495057\" stroke-width=\"3\" stroke-linecap=\"round\"/><g transform=\"rotate(14 44 26)\"><rect x=\"26\" y=\"18\" width=\"34\" height=\"16\" rx=\"4\" fill=\"#fff\" stroke=\"#087F5B\" stroke-width=\"1.6\"/><rect x=\"58\" y=\"21\" width=\"6\" height=\"10\" rx=\"1.5\" fill=\"#087F5B\"/><circle cx=\"62\" cy=\"26\" r=\"2\" fill=\"#FF6B6B\"/><\/g><path d=\"M66 38 L80 50 L80 26Z\" fill=\"#FFC9C9\" opacity=\".7\"/><circle cx=\"66\" cy=\"54\" r=\"6\" fill=\"#fff\" stroke=\"#E03131\" stroke-width=\"1.4\"/><text x=\"66\" y=\"57\" font-size=\"8\" font-family=\"Arial\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#E03131\">!<\/text><\/svg>"}</script>
+<script type="application/json" id="pilli">{"pick": "<path d=\"M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z\"/>", "india": "<path d=\"M4 20h16M6 20v-7M18 20v-7M12 4c3 2 4 4 4 7H8c0-3 1-5 4-7zM8 11h8v9H8zM12 2v2\"/>", "world": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z\"/>"}</script>
+<script type="application/json" id="deco">{"pick": "<svg class=\"deco\" viewBox=\"0 0 760 30\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><defs><linearGradient id=\"pg\" x1=\"0\" x2=\"1\"><stop offset=\"0\" stop-color=\"#F59F00\" stop-opacity=\".85\"/><stop offset=\"1\" stop-color=\"#F59F00\" stop-opacity=\"0\"/></linearGradient></defs><rect x=\"0\" y=\"14\" width=\"760\" height=\"3\" rx=\"1.5\" fill=\"url(#pg)\"/></svg>", "india": "<svg class=\"deco\" viewBox=\"0 0 760 30\" preserveAspectRatio=\"xMinYMax slice\" aria-hidden=\"true\"><g fill=\"#F76707\" opacity=\".32\"><rect x=\"0\" y=\"20\" width=\"34\" height=\"10\"/><path d=\"M5 21 Q5 6 17 3 Q29 6 29 21Z\"/><rect x=\"16\" y=\"-3\" width=\"2\" height=\"7\"/><rect x=\"40\" y=\"6\" width=\"4\" height=\"24\"/><circle cx=\"42\" cy=\"5\" r=\"3\"/><path d=\"M52 30 V12 H82 V30 H74 V22 Q67 15 60 22 V30Z\"/><rect x=\"50\" y=\"8\" width=\"34\" height=\"4\"/><path d=\"M90 30 L96 14 L102 6 L108 14 L114 30Z\"/><rect x=\"122\" y=\"20\" width=\"34\" height=\"10\"/><path d=\"M127 21 Q127 6 139 3 Q151 6 151 21Z\"/><rect x=\"138\" y=\"-3\" width=\"2\" height=\"7\"/><rect x=\"162\" y=\"6\" width=\"4\" height=\"24\"/><circle cx=\"164\" cy=\"5\" r=\"3\"/><path d=\"M174 30 V12 H204 V30 H196 V22 Q189 15 182 22 V30Z\"/><rect x=\"172\" y=\"8\" width=\"34\" height=\"4\"/><path d=\"M212 30 L218 14 L224 6 L230 14 L236 30Z\"/><rect x=\"244\" y=\"20\" width=\"34\" height=\"10\"/><path d=\"M249 21 Q249 6 261 3 Q273 6 273 21Z\"/><rect x=\"260\" y=\"-3\" width=\"2\" height=\"7\"/><rect x=\"284\" y=\"6\" width=\"4\" height=\"24\"/><circle cx=\"286\" cy=\"5\" r=\"3\"/><path d=\"M296 30 V12 H326 V30 H318 V22 Q311 15 304 22 V30Z\"/><rect x=\"294\" y=\"8\" width=\"34\" height=\"4\"/><path d=\"M334 30 L340 14 L346 6 L352 14 L358 30Z\"/><rect x=\"366\" y=\"20\" width=\"34\" height=\"10\"/><path d=\"M371 21 Q371 6 383 3 Q395 6 395 21Z\"/><rect x=\"382\" y=\"-3\" width=\"2\" height=\"7\"/><rect x=\"406\" y=\"6\" width=\"4\" height=\"24\"/><circle cx=\"408\" cy=\"5\" r=\"3\"/><path d=\"M418 30 V12 H448 V30 H440 V22 Q433 15 426 22 V30Z\"/><rect x=\"416\" y=\"8\" width=\"34\" height=\"4\"/><path d=\"M456 30 L462 14 L468 6 L474 14 L480 30Z\"/><rect x=\"488\" y=\"20\" width=\"34\" height=\"10\"/><path d=\"M493 21 Q493 6 505 3 Q517 6 517 21Z\"/><rect x=\"504\" y=\"-3\" width=\"2\" height=\"7\"/><rect x=\"528\" y=\"6\" width=\"4\" height=\"24\"/><circle cx=\"530\" cy=\"5\" r=\"3\"/><path d=\"M540 30 V12 H570 V30 H562 V22 Q555 15 548 22 V30Z\"/><rect x=\"538\" y=\"8\" width=\"34\" height=\"4\"/><path d=\"M578 30 L584 14 L590 6 L596 14 L602 30Z\"/><rect x=\"610\" y=\"20\" width=\"34\" height=\"10\"/><path d=\"M615 21 Q615 6 627 3 Q639 6 639 21Z\"/><rect x=\"626\" y=\"-3\" width=\"2\" height=\"7\"/><rect x=\"650\" y=\"6\" width=\"4\" height=\"24\"/><circle cx=\"652\" cy=\"5\" r=\"3\"/><path d=\"M662 30 V12 H692 V30 H684 V22 Q677 15 670 22 V30Z\"/><rect x=\"660\" y=\"8\" width=\"34\" height=\"4\"/><path d=\"M700 30 L706 14 L712 6 L718 14 L724 30Z\"/><rect x=\"732\" y=\"20\" width=\"34\" height=\"10\"/><path d=\"M737 21 Q737 6 749 3 Q761 6 761 21Z\"/><rect x=\"748\" y=\"-3\" width=\"2\" height=\"7\"/></g></svg>", "world": "<svg class=\"deco\" viewBox=\"0 0 760 30\" preserveAspectRatio=\"xMinYMax slice\" aria-hidden=\"true\"><g fill=\"#7048E8\" opacity=\".28\"><rect x=\"0\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"15\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"30\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"45\" y=\"8\" width=\"12\" height=\"22\"/><rect x=\"60\" y=\"8\" width=\"12\" height=\"22\"/><rect x=\"75\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"90\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"105\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"120\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"135\" y=\"8\" width=\"12\" height=\"22\"/><rect x=\"150\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"165\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"180\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"195\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"210\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"225\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"240\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"255\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"270\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"285\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"300\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"315\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"330\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"345\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"360\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"375\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"390\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"405\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"420\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"435\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"450\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"465\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"480\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"495\" y=\"8\" width=\"12\" height=\"22\"/><rect x=\"510\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"525\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"540\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"555\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"570\" y=\"8\" width=\"12\" height=\"22\"/><rect x=\"585\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"600\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"615\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"630\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"645\" y=\"20\" width=\"12\" height=\"10\"/><rect x=\"660\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"675\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"690\" y=\"12\" width=\"12\" height=\"18\"/><rect x=\"705\" y=\"4\" width=\"12\" height=\"26\"/><rect x=\"720\" y=\"16\" width=\"12\" height=\"14\"/><rect x=\"735\" y=\"8\" width=\"12\" height=\"22\"/><rect x=\"750\" y=\"8\" width=\"12\" height=\"22\"/><path d=\"M160 30 L165 8 L170 30Z\"/><rect x=\"164\" y=\"2\" width=\"2\" height=\"7\"/><rect x=\"300\" y=\"10\" width=\"10\" height=\"20\"/><path d=\"M299 10 L305 2 L311 10Z\"/><path d=\"M470 30 L478 2 L486 30 Z M474 18 H482\"/><rect x=\"610\" y=\"16\" width=\"6\" height=\"14\"/><circle cx=\"613\" cy=\"12\" r=\"4\"/><path d=\"M613 8 L616 0 L618 6Z\"/></g></svg>"}</script>
+<!-- DAILY DATA: replace this block each day -->
+<script>/* DAILY HEADER: India (left) and USA (right) landmarks + sky palette, picked from the edition date. Override with D.header={india:[..],usa:[..],sky:".."} */
+(function(){
+const B=104;
+const R=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}"/>`;
+const C=(x,y,r)=>`<circle cx="${x}" cy="${y}" r="${r}"/>`;
+const P=d=>`<path d="${d}"/>`;
+const S=(d,w)=>`<path d="${d}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round"/>`;
+const onion=(cx,base,w,h)=>P(`M${cx-w/2} ${base} C${cx-w/2-w*.18} ${base-h*.45} ${cx-w*.2} ${base-h*.8} ${cx} ${base-h} C${cx+w*.2} ${base-h*.8} ${cx+w/2+w*.18} ${base-h*.45} ${cx+w/2} ${base}Z`);
+const IN={
+ taj:{w:122,d:x=>R(x,98,122,6)+R(x+31,72,60,26)+R(x+45,68,32,5)+onion(x+61,69,34,26)+R(x+60,34,2,10)+onion(x+36,73,12,10)+onion(x+86,73,12,10)+R(x+6,56,5,42)+C(x+8.5,55,3.5)+R(x+111,56,5,42)+C(x+113.5,55,3.5)},
+ indiagate:{w:58,d:x=>`<path fill-rule="evenodd" d="M${x} ${B}V62H${x+58}V${B}H${x+41}V82Q${x+29} 68 ${x+17} 82V${B}Z"/>`+R(x-3,58,64,5)+R(x+9,50,40,8)+P(`M${x+20} 50Q${x+29} 38 ${x+38} 50Z`)},
+ charminar:{w:74,d:x=>`<path d="M${x+8} ${B}V66H${x+66}V${B}H${x+49}V84Q${x+37} 68 ${x+25} 84V${B}Z"/>`+R(x+6,62,62,4)+R(x+14,55,46,7)+R(x+3,40,7,64)+R(x+64,40,7,64)+onion(x+6.5,41,9,9)+onion(x+67.5,41,9,9)+R(x+6,26,1.5,7)+R(x+67,26,1.5,7)},
+ gateway:{w:86,d:x=>`<path d="M${x+6} ${B}V58H${x+80}V${B}H${x+57}V78Q${x+43} 58 ${x+29} 78V${B}Z"/>`+R(x+2,46,11,12)+R(x+73,46,11,12)+R(x+27,50,10,8)+R(x+49,50,10,8)+onion(x+7.5,47,10,8)+onion(x+78.5,47,10,8)+onion(x+32,51,8,7)+onion(x+54,51,8,7)},
+ lotus:{w:96,d:x=>R(x-2,100,100,4)+P(`M${x} ${B}Q${x+10} 76 ${x+30} 70Q${x+27} 88 ${x+46} ${B}Z`)+P(`M${x+96} ${B}Q${x+86} 76 ${x+66} 70Q${x+69} 88 ${x+50} ${B}Z`)+P(`M${x+16} ${B}Q${x+20} 68 ${x+44} 56Q${x+38} 84 ${x+50} ${B}Z`)+P(`M${x+80} ${B}Q${x+76} 68 ${x+52} 56Q${x+58} 84 ${x+46} ${B}Z`)+P(`M${x+36} ${B}Q${x+38} 66 ${x+48} 48Q${x+58} 66 ${x+60} ${B}Z`)},
+ qutub:{w:24,d:x=>P(`M${x} ${B}L${x+5} 38H${x+19}L${x+24} ${B}Z`)+R(x-1,84,26,3)+R(x+1,66,22,3)+R(x+3,50,18,3)+R(x+8,30,8,8)+R(x+11.4,24,1.2,6)},
+ hawamahal:{w:76,d:x=>P(`M${x} ${B}V74H${x+8}V64H${x+18}V54H${x+28}V44H${x+48}V54H${x+58}V64H${x+68}V74H${x+76}V${B}Z`)+onion(x+4,74,6,5)+onion(x+13,64,6,5)+onion(x+23,54,6,5)+onion(x+33,44,6,6)+onion(x+43,44,6,6)+onion(x+53,54,6,5)+onion(x+63,64,6,5)+onion(x+72,74,6,5)},
+ gopuram:{w:46,d:x=>P(`M${x} ${B}L${x+7} 52H${x+39}L${x+46} ${B}Z`)+R(x+2,90,42,2)+R(x+4,78,38,2)+R(x+5,66,36,2)+P(`M${x+6} 52Q${x+23} 38 ${x+40} 52Z`)+R(x+12,36,1.4,8)+R(x+22.3,34,1.4,8)+R(x+32.6,36,1.4,8)},
+ howrah:{w:156,d:x=>R(x,92,156,3)+R(x+30,48,6,56)+R(x+120,48,6,56)+S(`M${x} 92L${x+33} 50L${x+78} 72L${x+123} 50L${x+156} 92M${x+33} 50L${x+56} 92L${x+78} 72L${x+100} 92L${x+123} 50`,2.2)}
+};
+const US={
+ liberty:{w:34,d:x=>R(x+4,80,26,24)+R(x+8,72,18,8)+P(`M${x+12} 72L${x+14} 50H${x+20}L${x+22} 72Z`)+C(x+17,46,3.6)+P(`M${x+13} 44L${x+17} 39L${x+21} 44Z`)+P(`M${x+19} 51L${x+24} 31H${x+26.5}L${x+22} 53Z`)+P(`M${x+22.5} 31H${x+28}L${x+29} 26H${x+21.5}Z`)+C(x+25.3,23.5,2.6)+R(x+9,52,4,7)},
+ empire:{w:40,d:x=>R(x,74,40,30)+R(x+5,58,30,16)+R(x+10,44,20,14)+R(x+14,36,12,8)+R(x+17,26,6,10)+R(x+19.4,12,1.2,14)},
+ chrysler:{w:30,d:x=>R(x,62,30,42)+P(`M${x+3} 62Q${x+15} 30 ${x+27} 62Z`)+P(`M${x+14} 40L${x+15} 16L${x+16} 40Z`)},
+ goldengate:{w:176,d:x=>R(x,86,176,3)+R(x+30,32,8,72)+R(x+138,32,8,72)+R(x+30,46,8,2)+R(x+138,46,8,2)+S(`M${x} 86Q${x+18} 72 ${x+34} 34Q${x+88} 90 ${x+142} 34Q${x+158} 72 ${x+176} 86`,1.8)},
+ capitol:{w:124,d:x=>R(x,86,124,18)+R(x+40,76,44,12)+R(x+46,64,32,12)+P(`M${x+46} 64Q${x+46} 40 ${x+62} 38Q${x+78} 40 ${x+78} 64Z`)+R(x+59,30,6,8)+R(x+61.3,23,1.4,7)},
+ needle:{w:44,d:x=>P(`M${x+16} ${B}L${x+21} 40H${x+23}L${x+28} ${B}Z`)+P(`M${x+3} 36Q${x+22} 27 ${x+41} 36L${x+34} 40H${x+10}Z`)+R(x+16,30,12,4)+R(x+21.4,14,1.2,16)},
+ gatewayarch:{w:88,d:x=>S(`M${x+5} ${B}Q${x+44} -12 ${x+83} ${B}`,5)},
+ washington:{w:16,d:x=>P(`M${x+2} ${B}L${x+5} 34L${x+8} 28L${x+11} 34L${x+14} ${B}Z`)},
+ lincoln:{w:80,d:x=>R(x,94,80,10)+R(x+4,70,72,4)+R(x+6,66,68,4)+[0,1,2,3,4,5,6,7].map(i=>R(x+7+i*9,74,4,20)).join('')}
+};
+const palm=(x,h)=>S(`M${x} ${B}Q${x+3} ${B-h/2} ${x+1} ${B-h}`,3)+[[-10,9],[10,9],[-8,3],[8,3],[-4,-3],[4,-3]].map(([dx,dy])=>S(`M${x+1} ${B-h}Q${x+1+dx} ${B-h-9} ${x+1+dx*1.8} ${B-h+dy}`,2.4)).join('');
+const tower=(x,h,w)=>R(x,B-h,w,h);
+const SKIES={
+ dawn:['#FFF4E6','#FFD9B8','#F9C2D4','#FFC86B',0],
+ morning:['#E7F5FF','#FFF3D6','#FFE0C2','#FFD43B',0],
+ noon:['#DBEFFF','#EEF7FF','#FFF4E0','#FFE066',0],
+ golden:['#FFF0D1','#FFD08A','#FFB4A2','#FF922B',0],
+ dusk:['#F3E8FF','#FFC9DE','#FFD6A5','#FF8787',0],
+ twilight:['#D9E2FF','#E9D5FF','#FFD1DC','#FFF3BF',1],
+ monsoon:['#E3F1EE','#D6EFF7','#F1E7FF','#FFFFFF',0]
+};
+function rng(seed){let s=seed>>>0||1;return()=>((s=Math.imul(s^(s>>>15),2246822519)^Math.imul(s^(s>>>13),3266489917),(s^=s>>>16)>>>0)/4294967296);}
+function hash(t){let h=2166136261;for(const c of t){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
+function shuffle(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function place(lib,keys,x0,x1,r,filler){let x=x0,out='';for(const k of keys){const L=lib[k];if(!L)continue;if(x+L.w>x1)continue;out+=L.d(x);x+=L.w+14+Math.floor(r()*14);if(filler&&x+14<x1&&r()<.5){out+=filler(x+4);x+=22;}}
+ while(filler&&x+12<x1){out+=filler(x+4);x+=18+Math.floor(r()*10);}return out;}
+window.buildHeader=function(D){
+ const svg=document.getElementById('hsky');if(!svg)return;
+ const o=D.header||{},r=rng(hash(D.date||''));
+ const t=Date.parse((D.date||'').replace(/^[A-Za-z]+,\s*/,''));const day=isNaN(t)?hash(D.date||''):Math.floor(t/864e5);
+ const rot=(a,k)=>a.slice(k%a.length).concat(a.slice(0,k%a.length));
+ const skyKey=o.sky||Object.keys(SKIES)[((day%7)+7)%7], sk=SKIES[skyKey];
+ const inKeys=o.india||rot(['taj','gateway','lotus','charminar','howrah','indiagate','hawamahal','gopuram','qutub'],day*4), usKeys=o.usa||rot(['liberty','goldengate','capitol','needle','empire','gatewayarch','lincoln','chrysler','washington'],day*4);
+ const sunX=470+Math.floor(r()*84);
+ const inner=place(IN,inKeys,10,sunX-34,r,x=>palm(x,26+Math.floor(r()*16)));
+ const outer=place(US,usKeys,sunX+34,1016,r,x=>tower(x,22+Math.floor(r()*26),12));
+ svg.innerHTML=`<defs><linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${sk[0]}"/><stop offset=".55" stop-color="${sk[1]}"/><stop offset="1" stop-color="${sk[2]}"/></linearGradient>
+ <linearGradient id="hin" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="${sunX}" y2="0"><stop offset="0" stop-color="#E8590C"/><stop offset="1" stop-color="#D6336C"/></linearGradient>
+ <linearGradient id="hus" gradientUnits="userSpaceOnUse" x1="${sunX}" y1="0" x2="1024" y2="0"><stop offset="0" stop-color="#AE3EC9"/><stop offset="1" stop-color="#1C7ED6"/></linearGradient>
+ <radialGradient id="sun"><stop offset="0" stop-color="${sk[3]}"/><stop offset="1" stop-color="${sk[3]}" stop-opacity="0"/></radialGradient></defs>
+ <rect width="1024" height="104" fill="url(#skyg)"/><circle cx="${sunX}" cy="${sk[4]?50:86}" r="70" fill="url(#sun)" opacity=".9"/>
+ ${sk[4]?`<circle cx="${sunX}" cy="50" r="14" fill="${sk[3]}"/><circle cx="${sunX+6}" cy="46" r="12" fill="${sk[1]}"/>`:`<circle cx="${sunX}" cy="88" r="22" fill="${sk[3]}" opacity=".8"/>`}
+ <g fill="url(#hin)" color="#E8590C" opacity=".42">${inner}</g><g fill="url(#hus)" color="#7048E8" opacity=".42">${outer}</g>`;
+ svg.setAttribute('data-sky',skyKey);
+};
+})();
+</script>
+<script type="application/json" id="data">{"date":"Saturday, 31 October 2026","slice":"Hackers loot, Intel sinks, AI builds AI, watches nag, Vizag frets. Who minds the gate?","takeaway":{"a":"Fast money.","b":"Slow consent.","line":"Speed thrilled markets for years. This week it served thieves, spooked investors and left the neighbours of new data centres asking who signed off."},"cover":"kkreckons-fig:/figs/2026-10-31-cover.jpg","covercredit":"Original graphic: KKReckons","callout":[{"num":"$6.3bn","i":"bank","lead":"Stolen from Binance","rest":" in the largest crypto heist yet, linked to North Korea.","url":"https://www.ft.com/content/e84eceda-040b-4e5f-b906-09768085933a?syn-25a6b1a6=1","bg":"linear-gradient(100deg,#C2255C,#F59F00)"},{"num":"-29%","i":"chip","lead":"Intel's worst day on record","rest":" as cracks in the AI trade widened.","url":"https://www.wsj.com/finance/stocks/the-week-the-cracks-in-the-ai-trade-grew-deeper-9e25b20f","bg":"linear-gradient(100deg,#1864AB,#20C997)"}],"pick":[{"a":"b","pic":"swissbank","i":"bank","cat":"Crypto / Cybercrime","wide":true,"title":"North Korea-linked hackers steal $6.3bn from Binance in record heist","ehead":"Crypto's biggest robbery, in minutes","eteaser":"Hackers drained Binance; freezes saved close to half","url":"https://www.wsj.com/finance/currencies/behind-the-scenes-of-cryptos-biggest-nightmare-a-record-breaking-cyber-heist-ffe1d9a3","url2":"https://www.ft.com/content/e84eceda-040b-4e5f-b906-09768085933a?syn-25a6b1a6=1","src":"The Wall Street Journal and Financial Times","pay":"paid","themes":["Banking","Geopolitics"],"pts":["Hackers drained Binance, the world's largest crypto exchange, on Thursday, taking $6.3bn by its own estimate within minutes. Researchers tie the attack to North Korea's state-backed TraderTraitor unit, also blamed for the earlier record Bybit heist.","Binance says the way in was an engineer's compromised laptop, though co-chief executive Richard Teng says the attack was more complex and more breach points have surfaced. Paused withdrawals revived memories of FTX online.","Tether and Circle froze stolen stablecoins fast, catching close to half the haul; the rest was swapped into coins nobody can freeze. Founder Changpeng Zhao says user funds are safe and losses will be covered."],"why":"Crypto sells itself as money no one can seize, yet the only part of this loot that was recovered sat in coins a company could freeze. The heist tests both Binance's security pitch and the industry's case as a safe place to keep savings.","flip":"Binance can absorb the loss and says customers are whole, and the record freeze shows the industry's response tools are getting faster. A rich, well-run state hacking unit may simply be beyond what any single firm can stop.","fig":"kkreckons-fig:/figs/2026-10-31-1.jpg","figalt":"Explainer: $6.3bn stolen from Binance in minutes, linked to North Korean hackers; close to half frozen by stablecoin issuers.","figcredit":"Original graphic: KKReckons"}],"india":[{"a":"y","pic":"aishield","i":"eye","cat":"Cybersecurity / AI","tag":"Opinion","title":"India saw 369 million cyber incidents in a year. Is it AI-ready?","ehead":"India's cyber gap meets AI","eteaser":"702 threats a minute and a 42% skills gap","url":"https://m.economictimes.com/opinion/et-commentary/is-india-prepared-to-tackle-369-million-cybersecurity-incidents-and-ai-challenges-ahead/articleshow/135373464.cms","src":"The Economic Times","pay":false,"themes":["India","AI"],"pts":["Citing the Data Security Council of India, an ET commentary says 369 million security incidents were detected in 2024, about 702 a minute, with healthcare, hospitality and BFSI hit hardest. It flags a 42% shortage of skilled cyber staff and deepfakes used to beat KYC and money-laundering checks.","The writer calls for a national AI Act that fixes algorithmic liability, a stronger AI Safety Institute able to test models used in India, and company rules on AI use, noting a global study where 57% of employees hid their AI use at work."],"why":"India's banking and identity systems run on digital checks that AI fakes can now fool. Without trained people and clear liability, more detection alone will not stop the losses.","flip":"Part of the jump may reflect better detection rather than more attacks. And strict rules too early could slow AI uptake in a country that already ranks low on adoption.","fig":"kkreckons-fig:/figs/2026-10-31-2.jpg","figalt":"Explainer: 369 million security incidents detected in India in 2024, about 702 a minute; the writer urges a national AI Act and stronger model testing.","figcredit":"Original graphic: KKReckons","wide":false},{"a":"t","pic":"server","i":"cloud","cat":"Data centres","tag":"Opinion","title":"From Vizag to Thane, data centres meet local pushback","ehead":"The cloud gets angry neighbours","eteaser":"Why data centres should run like public utilities","url":"https://m.economictimes.com/opinion/et-commentary/see-data-centres-less-as-energy-sucking-private-warehouses-and-more-as-quasi-public-utilities/articleshow/135372738.cms","src":"The Economic Times","pay":false,"themes":["India","AI"],"pts":["Villagers near Google's $15bn AI hub in Visakhapatnam allege land was taken back without proper consultation, and activists object to tree-clearing near the Kambalakonda sanctuary. In Thane, residents oppose Amazon's proposed 53-acre hyperscale site near homes, schools and hospitals.","An ET commentary says India needs the compute but should earn consent: water-saving cooling and clean power, siting away from cities where possible, visible benefits for host communities, and rules set before the damage. It suggests treating big data centres as quasi-public utilities."],"why":"India's AI ambitions depend on building compute at home. If communities feel they carry the costs while others get the gains, protests could become the real bottleneck, not chips or money.","flip":"Sites far from cities mean higher costs and slower service for some uses, and community payouts can slide into bribes for bad projects. Utility-style rules could also deter the investment India is courting.","fig":"kkreckons-fig:/figs/2026-10-31-3.jpg","figalt":"Explainer: Google's $15bn Vizag AI hub and Amazon's Thane site face local pushback; the writer urges better tech, siting, community benefits and early rules.","figcredit":"Original graphic: KKReckons","wide":false}],"world":[{"a":"y","pic":"chip","i":"chart","cat":"Markets / Big Tech","wide":true,"title":"Intel's record crash caps a week when the AI trade cracked","ehead":"The AI trade hits a wall","eteaser":"Intel drops 29% as Big Tech earnings disappoint","url":"https://www.wsj.com/finance/stocks/the-week-the-cracks-in-the-ai-trade-grew-deeper-9e25b20f","src":"The Wall Street Journal and Financial Times","pay":"paid","themes":["Markets","AI"],"stressindex":true,"pts":["Intel fell 29% on Friday, its worst session ever, after warning that memory-chip prices inflated by the AI boom will keep PC sales weak, the WSJ reports. The Nasdaq composite fell 2.9%, its worst day since June.","Alphabet had its worst day on record as Google's search-ad growth slowed, partly due to AI mode, while Amazon's free cash flow plunged. With the Fed raising rates in September, heavy AI spending now reads as a burden.","An FT Unhedged column argues cash flow is what moves these stocks now: Meta, Alphabet and Amazon were punished for spending more than expected, while Microsoft's restraint kept its shares steadier."],"why":"For months the biggest tech firms calmed AI doubts by printing profits. If their own earnings growth is now slowing, the trade loses the cushion that kept smaller, debt-laden AI players afloat, and index-heavy portfolios feel it first.","flip":"One bad week is not a bust. Some investors expect AI listings and a calmer Middle East to restart the rally, and steep falls in quality names have often proved buying chances.","fig":"kkreckons-fig:/figs/2026-10-31-4.jpg","figalt":"Explainer: Intel fell 29% in its worst day on record and the Nasdaq slid 2.9%; investors now reward cash flow over AI spending.","figcredit":"Original graphic: KKReckons","url2":"https://www.ft.com/content/e7f0fb01-fc76-4330-9015-e53096585a5a?syn-25a6b1a6=1"},{"a":"o","pic":"webcam","i":"globe","cat":"Geopolitics / Cyber","tag":"Explainer","title":"How North Korea turned hacking into a state income machine","ehead":"Pyongyang's hackers on the payroll","eteaser":"A state system that grooms coders to steal","url":"https://www.ft.com/content/46c03338-63d5-43fc-a946-ebcbe9e1c07a?syn-25a6b1a6=1","src":"Financial Times","pay":"paid","themes":["Geopolitics"],"pts":["Cut off by sanctions, North Korea has built cyber warfare into a way to earn foreign currency, the FT reports. Students strong in maths and science are picked as teenagers and trained for years, some abroad in China and Russia.","Its record runs from the Sony Pictures hack and a Bangladesh central bank raid to crypto heists at Ronin, Bybit and now Binance. Blockchain firm Chainalysis says its hackers stole about $2bn last year, most of the world's total.","It also plants fake remote workers in foreign firms. Pyongyang denies all of it."],"why":"Exchanges and banks are not up against freelance criminals but a state that recruits, trains and protects its hackers, and uses the loot to fund weapons. One expert warns AI will make such attacks faster to find and automate.","flip":"Attribution rests on investigators and analysts, and Pyongyang calls it slander. Faster freezes and tracing may also shrink what each heist actually nets, so headline sums overstate the regime's take.","fig":"kkreckons-fig:/figs/2026-10-31-5.jpg","figalt":"Explainer: North Korean hackers stole about $2bn last year, most of the world's crypto theft; the state trains hackers from their teens.","figcredit":"Original graphic: KKReckons","wide":false},{"a":"g","pic":"bankstake","i":"bank","cat":"Private equity","tag":"Opinion","title":"Apollo lends as OpenAI-backed Thrive buys ADT for $15bn","ehead":"Old buyout hands turn lenders","eteaser":"AI buyers take ADT; Apollo takes the interest","url":"https://www.ft.com/content/95480c09-5018-4400-b9c1-f2d53373a47c?syn-25a6b1a6=1","src":"Financial Times","pay":"paid","themes":["Markets","AI"],"pts":["Thrive Holdings, spun out of Josh Kushner's Thrive Capital and backed by OpenAI, is buying home-alarm network ADT for $15bn including debt. Apollo, a past owner that made modest returns on it, is financing the deal.","The FT's Lex column says a new breed of AI-focused owners is promising bold makeovers of old businesses, while firms like Apollo shift from buyouts to corporate lending: steadier interest, less risk and less upside."],"why":"It shows where private capital is heading: AI-driven owners chase the equity upside, while the old guard collects interest. For investors in buyout and private-credit funds, the returns mix is changing.","flip":"An AI-led makeover of an alarm company is still a theory, and a buyer paying a big premium has less room for error. Lenders also lose if a heavily financed bet goes wrong.","fig":"kkreckons-fig:/figs/2026-10-31-6.jpg","figalt":"Explainer: Thrive Holdings buys ADT for $15bn including debt, with Apollo lending; AI-focused buyers take equity while the old guard shifts to credit.","figcredit":"Original graphic: KKReckons","wide":false},{"a":"b","pic":"agents","i":"chip","cat":"AI / Research","tag":"Explainer","wide":true,"title":"AI now leads a quarter of AI research at Anthropic, company data show","ehead":"When AI builds the next AI","eteaser":"Claude led 26% of Anthropic's AI research by August","url":"https://www.wsj.com/tech/ai/ai-anthropic-rsi-recursive-self-improvement-bff4e815","src":"The Wall Street Journal","pay":"paid","themes":["AI"],"pts":["A WSJ column spotlights an Anthropic chart tracking how much of its AI research is done by AI. The share where AI leads the work, with a human supervising, rose from 1% in March to 26% in August; none of it is yet fully autonomous.","The idea behind it is recursive self-improvement: each better model helps build a better one. Lab leaders call it vital to stay ahead and also a serious risk, and Anthropic itself says it is not inevitable but could arrive before institutions are ready.","Co-founder Jack Clark has pulled his own estimate for it forward to next year."],"why":"If AI does most of the work on its own successors, progress could speed up beyond what companies, regulators and markets plan for. Who keeps oversight, and how, becomes a practical question rather than a science-fiction one.","flip":"The numbers come from Anthropic's own AI rating its own work, on a company scale with no outside audit. Leading a task under supervision is not the same as independent invention, and a company heading for a listing has reasons to show fast progress.","fig":"kkreckons-fig:/figs/2026-10-31-7.jpg","figalt":"Explainer: AI led 26% of AI research work at Anthropic in August, up from 1% in March; none is fully autonomous yet.","figcredit":"Original graphic: KKReckons"},{"a":"p","pic":"rxphone","i":"pill","cat":"Health / Tech","wide":true,"title":"Biomedical engineering is booming, but can health care keep up?","ehead":"Your smartwatch is swamping your doctor","eteaser":"One patient checked her watch's heart readout 916 times","url":"https://www.nature.com/articles/d41586-026-03202-z","url2":"https://www.nature.com/articles/d41586-026-03203-y","also":[{"t":"Hydrogels and MRI: meet three biomedical engineers reshaping health care","u":"https://www.nature.com/articles/d41586-026-03205-w"}],"src":"Nature","pay":"paid","themes":["Health & science"],"pts":["A Nature editorial says biomedical-engineering papers in the Nature Index grew 70% from 2021 to 2025, with China now well ahead of the US. Its worry: whether the surge reaches patients.","A Nature feature shows the strain. Smartwatches worn by hundreds of millions pour heart, sleep and stress data on doctors; one patient checked her watch's ECG 916 times in a year. Trials test watch alerts to take blood thinners only when needed, but false alarms put families off seizure alerts.","Nature also profiles researchers such as Xinyu Dong, who makes tough hydrogel e-skin, and James Eills, who sharpens MRI signals."],"why":"The hard part of health tech is shifting from invention to absorption. Without standards and clear roles, clinics risk drowning in readings that no one has time to judge, and the promise of cheap, constant monitoring goes unused.","flip":"A data flood is also an early-warning system: some patients already get diagnosed from watch alerts, and AI triage could sort the noise. Past lab advances such as hydrogels and MRI did become routine care; this wave may simply need time.","fig":"kkreckons-fig:/figs/2026-10-31-8.jpg","figalt":"Explainer: biomedical-engineering research grew 70% in four years, while one patient checked her smartwatch heart readout 916 times in a year, showing the data load on clinics.","figcredit":"Original graphic: KKReckons"}],"reading":[]}</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const IC=JSON.parse(document.getElementById('icons').textContent);
+const BULB=document.getElementById('bulb').innerHTML,FLIP=document.getElementById('flipicon').innerHTML;
+if(location.search.includes('img'))document.body.classList.add('img');
+const svg=(k,c='')=>`<svg${c?` class="${c}"`:''} viewBox="0 0 24 24" aria-hidden="true">${IC[k]||''}</svg>`;
+const L=(u,t)=>u?`<a href="${u}" target="_blank" rel="noopener">${t}</a>`:t;
+function card(n,s,tiles){
+ const IM=document.body.classList.contains('img');if(IM){s={...s,title:s.ititle||s.title,pts:s.ipts||s.pts,why:s.iwhy||s.why,flip:s.iflip||s.flip,nums:s.inums!==undefined?s.inums:s.nums};}
+ const tag=s.tag?`<span class="tag">${s.tag}</span>`:'';
+ const nums=s.nums&&s.nums.length?`<div class="nums${tiles?' tiles':''}">${s.nums.map(([v,l,i])=>`<div>${tiles&&i?svg(i):''}<b>${v}</b><span>${l}</span></div>`).join('')}</div>`:'';
+ return `<article class="card c-${s.a}${s.wide?' wide':''}">${s.pic?'':svg(s.i,'wm')}<div class="top">${s.pic&&PICS[s.pic]?`<span class="pic">${PICS[s.pic]}${tiles?`<b class="pn">${n}</b>`:''}</span>`:`<span class="badge">${tiles?`<span class="bn">${n}</span>`:svg(s.i)}</span>`}<div class="hd"><div class="meta">${tiles?'':`<span class="num">${n}</span>`}<span class="cat">${s.cat}</span>${tag}</div><h3>${L(s.url,s.title)}</h3>${s.also&&!IM?`<p class="also">Also read: ${s.also.map(a=>L(a.u,a.t)).join(' · ')}</p>`:''}</div></div><ul>${s.pts.map(p=>`<li>${p}</li>`).join('')}</ul>${nums}${s.why?`<p class="why">${BULB}<span><strong>Why it matters:</strong> ${s.why}</span></p>`:''}${s.flip?`<p class="flip">${FLIP}<span><strong>Other side:</strong> ${s.flip}</span></p>`:''}${s.fig&&!IM?`<figure class="fig"><img src="${s.fig}" alt="${s.figalt||''}" loading="lazy"></figure>`:''}</article>`;
+}
+const DECO=JSON.parse(document.getElementById('deco').textContent);const PIL=JSON.parse(document.getElementById('pilli').textContent);const PICS=JSON.parse(document.getElementById('pics').textContent);
+function section(label,key,items){if(!items||!items.length)return '';return `<section class="ed" id="${key}"><div class="edh"><span class="pill p-${key}"><svg viewBox="0 0 24 24" aria-hidden="true">${PIL[key]||''}</svg>${label}</span>${DECO[key]}</div><div class="grid">${(document.body.classList.contains('img')?items.filter(x=>!x.noimg):items).map((s,i)=>card(i+1,s,key==='pick')).join('')}</div></section>`;}
+
+document.title='KKReckons, '+D.date;
+document.getElementById('content').innerHTML=
+ `<section class="slice top" aria-label="Today’s slice"><span class="sw"><svg class="cakei" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30 L40 18 L42 34 L8 40 Z" fill="#FFE8CC"/><path d="M6 30 L40 18 L41 24 L7 35 Z" fill="#FFC9DE"/><path d="M8 40 L42 34 L42 38 L8 44 Z" fill="#F4A261"/><path d="M6 30 Q14 22 24 24 Q34 18 40 18 L40 21 Q32 22 24 27 Q14 25 7 33 Z" fill="#fff"/><circle cx="33" cy="15" r="5" fill="#E03131"/><path d="M33 10 q2 -4 5 -4" stroke="#2F9E44" stroke-width="1.8" fill="none" stroke-linecap="round"/><text x="22" y="34" font-family="Lora,Georgia,serif" font-weight="700" font-size="8" fill="#C2255C" transform="rotate(-12 22 34)">KK</text></svg></span><span class="st"><span class="sd"><span class="dtx">${D.date}</span><b>Today’s slice</b></span><span class="sl">${D.slice}</span></span></section>`+
+ `<div class="callout">${D.callout.map((c,k)=>`<div class="co co${k+1}"${c.bg?` style="background:${c.bg}"`:''}><span class="ic">${svg(c.i||'chart')}</span><span class="big">${L(c.url,c.num)}</span><p>${L(c.url,`<b>${c.lead}</b>`)}${c.rest}</p></div>`).join('')}</div>`+
+ (D.special&&D.special.url?`<section class="special" aria-label="Special report"><span class="sb" aria-hidden="true">&#9733;</span><div><div class="sk">${D.special.kicker||'Special report'}</div><h3>${L(D.special.url,D.special.title)}</h3><p>${D.special.intro||''}</p></div><a class="go" href="${D.special.url}">${D.special.cta||'Read the special report'} &rarr;</a></section>`:'')+
+ section('Pick of the day','pick',D.pick)+section('India edition','india',D.india)+section('World edition','world',D.world)+
+ (D.reading&&D.reading.some(r=>r.img)?`<section class="ireading ed"><div class="edh"><span class="pill p-read">Also worth a read</span>${DECO.pick}</div><ol>${D.reading.filter(r=>r.img).map((r,k)=>`<li class="c-${['v','p','y'][k%3]}"><span class="badge">${svg(r.i||['chart','bank','eye'][k%3])}</span>${r.img}</li>`).join('')}</ol></section>`:'')+
+ (D.reading&&D.reading.length?`<section class="reading"><h4>Further reading</h4><ul>${D.reading.map(r=>`<li>${L(r.url,r.title)}${r.note?` — ${r.note}`:''}</li>`).join('')}</ul></section>`:'')+
+  `<p class="wfoot">KKReckons · Curated by KK Reddy · For information only. Not financial, legal or career advice.</p>`;
+</script><script>
+(function(){
+const D=JSON.parse(document.getElementById('data').textContent);
+const day=(()=>{const t=Date.parse((D.date||'').replace(/^[A-Za-z]+,\s*/,''));return isNaN(t)?0:Math.floor(t/864e5);})();
+/* daily dusk palettes: sky top, mid, horizon, sun, skyline */
+const PAL=[['#1B1F4B','#7B2C78','#F4A261','#FFD8A8','#1A1236'],['#14284B','#5B3C88','#F08A5D','#FFE3B3','#120E2E'],['#2A1A4F','#A23B72','#F7B267','#FFE8A3','#1C1033'],
+ ['#0F2A47','#3D5A99','#F4845F','#FFD6A5','#0E1A30'],['#231942','#8E3B8C','#F6BD60','#FFF1C1','#170F2E'],['#1D2B53','#7E2553','#FF9F68','#FFE0B5','#120B26'],['#162447','#6A4C93','#F28482','#FFE5D9','#0F1630']];
+const p=PAL[((day%7)+7)%7];
+const st=document.querySelector('.slice.top');
+if(st){
+ st.style.setProperty('--sk1',p[0]);
+ const s=document.createElementNS('http://www.w3.org/2000/svg','svg');
+ s.setAttribute('class','scene');s.setAttribute('viewBox','0 0 1024 170');s.setAttribute('preserveAspectRatio','xMidYMax slice');s.setAttribute('aria-hidden','true');
+ st.prepend(s);
+ // reuse the brand's India + US landmark generator, then restyle it as a dusk silhouette
+ const tmp=document.createElementNS('http://www.w3.org/2000/svg','svg');tmp.id='hsky';document.body.appendChild(tmp);
+ try{window.buildHeader&&window.buildHeader(D);}catch(e){}
+ const groups=[...tmp.querySelectorAll('g')].map(g=>g.innerHTML).join('');tmp.remove();
+ const sunX=480+(day%5)*14;
+ let refl='';for(let i=0;i<7;i++){refl+=`<rect x="${sunX-60+i*6}" y="${150+i*3}" width="${120-i*12}" height="1.6" fill="${p[3]}" opacity="${.55-i*.06}"/>`;}
+ s.innerHTML=`<defs><linearGradient id="v8s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${p[0]}"/><stop offset=".55" stop-color="${p[1]}"/><stop offset=".9" stop-color="${p[2]}"/></linearGradient>
+ <radialGradient id="v8g"><stop offset="0" stop-color="${p[3]}" stop-opacity=".95"/><stop offset=".35" stop-color="${p[3]}" stop-opacity=".45"/><stop offset="1" stop-color="${p[3]}" stop-opacity="0"/></radialGradient>
+ <linearGradient id="v8w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${p[1]}"/><stop offset="1" stop-color="${p[0]}"/></linearGradient>
+ <linearGradient id="v8v" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".38"/><stop offset=".55" stop-color="#000" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient></defs>
+ <rect width="1024" height="170" fill="url(#v8s)"/><circle cx="${sunX}" cy="146" r="150" fill="url(#v8g)"/><circle cx="${sunX}" cy="146" r="26" fill="${p[3]}"/>
+ <g transform="translate(0,42)" fill="${p[4]}" color="${p[4]}" opacity=".92">${groups}</g>
+ <rect y="146" width="1024" height="24" fill="url(#v8w)" opacity=".9"/>${refl}
+ <rect width="1024" height="170" fill="url(#v8v)"/>`;
+ s.querySelectorAll('[fill^="url(#h"]').forEach(e=>e.setAttribute('fill',p[4]));
+ // cake on a plate
+ const ck=st.querySelector('.cakei');if(ck){ck.setAttribute('viewBox','0 0 48 46');ck.insertAdjacentHTML('afterbegin','<ellipse cx="24" cy="42" rx="22" ry="3.6" fill="#fff"/><ellipse cx="24" cy="41.4" rx="17" ry="2.2" fill="#E9ECEF"/>');}
+ // last sentence of the slice in gold italic
+ const sl=st.querySelector('.sl');const m=(D.slice||'').match(/^(.*[.!?])\s+([^.!?]+[.!?])\s*$/);
+ if(sl&&m)sl.innerHTML=`${m[1]} <em>${m[2]}</em>`;
+}
+/* section dividers: India landmarks at dusk; Alps for the World edition */
+const pin=document.querySelector('#india .deco');
+if(pin){
+ const ROT=['taj','indiagate','charminar','gopuram','qutub','lotus','hawamahal','gateway','howrah'];let all='';
+ for(let k=0;k<4;k++){
+  const tmp=document.createElementNS('http://www.w3.org/2000/svg','svg');tmp.id='hsky';document.body.appendChild(tmp);
+  try{window.buildHeader&&window.buildHeader({...D,date:D.date+k,header:{india:ROT.slice(k*2).concat(ROT.slice(0,k*2)),usa:[]}});}catch(e){}
+  const g=tmp.querySelector('g');if(g)all+=`<g transform="translate(${k*470},0)">${g.innerHTML}</g>`;tmp.remove();
+ }
+ pin.setAttribute('viewBox','0 34 1880 70');pin.setAttribute('preserveAspectRatio','xMinYMax slice');
+ pin.innerHTML=`<defs><linearGradient id="v8ih" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1880" y2="0"><stop offset="0" stop-color="#F76707"/><stop offset=".5" stop-color="#E64980"/><stop offset="1" stop-color="#F59F00"/></linearGradient>
+ <linearGradient id="v8ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD8A8" stop-opacity="0"/><stop offset="1" stop-color="#FFC078" stop-opacity=".6"/></linearGradient></defs>
+ <rect x="0" y="34" width="1880" height="70" fill="url(#v8ig)"/>
+ <g fill="url(#v8ih)" color="#E8590C" opacity=".6">${all}</g>`;
+ pin.querySelectorAll('[fill^="url(#h"]').forEach(e=>e.removeAttribute('fill'));
+}
+const pw=document.querySelector('#world .deco');
+if(pw){
+ const peaks=[[0,30],[48,14],[78,22],[120,4],[152,18],[190,9],[232,26],[268,12],[300,2],[338,16],[372,8],[414,24],[452,6],[486,18],[522,11],[566,27],[602,9],[640,19],[680,5],[722,22],[760,14]];
+ const back=[[0,24],[30,10],[70,20],[104,8],[146,22],[176,12],[214,20],[250,6],[286,18],[322,12],[360,24],[396,10],[436,20],[470,4],[508,16],[546,10],[584,22],[622,6],[664,18],[700,10],[740,20],[760,16]];
+ const path=a=>'M0 40 '+a.map(([x,y])=>`L${x} ${y}`).join(' ')+' L760 40Z';
+ const snow=peaks.filter(([x,y])=>y<14).map(([x,y])=>`<path d="M${x-7} ${y+7}L${x} ${y}L${x+7} ${y+7}L${x+3.5} ${y+5.5}L${x} ${y+8.5}L${x-3.5} ${y+5.5}Z" fill="#fff"/>`).join('');
+ pw.setAttribute('viewBox','0 0 760 40');pw.setAttribute('preserveAspectRatio','none');
+ pw.innerHTML=`<defs><linearGradient id="v8w1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7048E8"/><stop offset="1" stop-color="#1C7ED6"/></linearGradient></defs>
+ <path d="${path(back)}" fill="#A5D8FF" opacity=".45"/><path d="${path(peaks)}" fill="url(#v8w1)" opacity=".55"/>${snow}`;
+}
+})();
+</script>
+</body></html>
+</body></html>
+</body></html>
+</body></html>

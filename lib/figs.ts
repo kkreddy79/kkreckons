@@ -41,3 +41,6 @@ export function webpSrcSet(image: string, width: number) {
 
 /** The 184×240 thumbnail for lists (/week, /month); images without WebP copies (the oldest) use the original. */
 export const thumbOf = (s: { image?: string; imageW?: number }) => (s.image ? (s.imageW ? figVariant(s.image, "th") : figSrc(s.image)) : "");
+
+/** The 800px WebP copy of an edition's cover (scripts/build-editions.mjs coverSmall), shown beside the headline. */
+export const coverSmall = (cover: string) => figSrc(cover.replace(/\.jpg$/, "-sm.webp"));

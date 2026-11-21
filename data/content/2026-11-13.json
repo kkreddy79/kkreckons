@@ -1,0 +1,537 @@
+{
+  "date": "2026-11-13",
+  "slice": "Nvidia's king falls. Gold rolls over. Delhi guards tenders. US homes hit 2010 lows. Zurich sours. A bot cares.",
+  "artifact": "https://claude.ai/artifact/LXmzPQ5nnwaWvSHNmsRq1w",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "$2tn",
+      "text": "Wiped off Nvidia at one point from its October high, as Jensen Huang resigned.",
+      "url": "https://www.wsj.com/finance/stocks/jensen-huangs-exit-will-test-ais-stocks-and-great-man-theory-3c4cd404"
+    },
+    {
+      "num": "3x",
+      "text": "Gold loans tripled in three years to ₹22.5 lakh crore, but branch rollovers may hide stress.",
+      "url": "https://m.economictimes.com/prime/fintech-and-bfsi/how-indias-inr22-5-lakh-crore-gold-loan-boom-is-hiding-a-big-hole/primearticleshow/135771193.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI and markets",
+          "tag": "",
+          "title": "Nvidia CEO Jensen Huang resigns; shares close 4.3% lower",
+          "url": "https://www.wsj.com/finance/stocks/jensen-huangs-exit-will-test-ais-stocks-and-great-man-theory-3c4cd404",
+          "url2": "https://www.semafor.com/article/11/12/2026/the-end-of-the-nvidia-put-that-powers-the-ai-ecosystem",
+          "points": [
+            "Jensen Huang resigned as Nvidia's chief on Thursday after revelations of two extramarital affairs, one with a suspected Chinese spy, the WSJ reports. Longtime lieutenant Colette Kress leads in the interim, with no clear succession plan.",
+            "The shares closed 4.3% lower, and at one point Nvidia's value was more than $2 trillion below its October high. Firms backed by Nvidia money, such as CoreWeave, fell; rivals Broadcom and AMD rose.",
+            "A Semafor column by Liz Hoffman argues Huang was AI's buyer of last resort: Nvidia guarantees more than $100 billion of data-centre leases. Without that 'Nvidia put', she expects AI debt and equity to cost more."
+          ],
+          "numbers": [
+            [
+              "4.3%",
+              "Thursday's fall"
+            ],
+            [
+              "$2tn+",
+              "off the October peak at one point"
+            ]
+          ],
+          "why": "Nvidia is the AI boom's supplier, financier and chief voice in Washington. Whoever succeeds Huang decides whether it keeps backstopping customers and deals, and with it how cheaply the AI build-out can be funded.",
+          "other": "What to watch: Nvidia's quarterly results next week. The WSJ notes investors see little change in chip demand, and rivals and cloud buyers rose on the day. If orders hold, a smaller backstop may simply mean healthier, less circular AI financing.",
+          "also": [],
+          "image": "/figs/2026-11-13-1.jpg",
+          "imageAlt": "Explainer: Nvidia shares fell 4.3% as Jensen Huang resigned; what investors watch next, including its data-centre lease guarantees.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal and Semafor",
+          "pay": true,
+          "freeUrl": "https://www.livemint.com/global/jensen-huang-s-exit-will-test-ai-s-stocks-and-great-man-theory-11794532081070.html",
+          "freeSrc": "Mint",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Nvidia loses its frontman, and its put",
+          "emailTeaser": "Huang quits; AI's guaranteed buyer may go with him.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1815
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Gold loans",
+          "tag": "",
+          "title": "Gold loan rollovers may hide stress in India's ₹22.5 lakh crore boom",
+          "url": "https://m.economictimes.com/prime/fintech-and-bfsi/how-indias-inr22-5-lakh-crore-gold-loan-boom-is-hiding-a-big-hole/primearticleshow/135771193.cms",
+          "url2": "",
+          "points": [
+            "India's gold loan book has roughly tripled in three years to ₹22.5 lakh crore, per TransUnion CIBIL, and reported bad loans remain small. One in two borrowers took another gold loan within a year.",
+            "ET Prime describes an informal rollover at bank branches: when a one-year loan falls due and the borrower can't pay, a moneylender bridges it for a day for a fee, the loan is closed and a new one opened, so no default shows.",
+            "Bajaj Finance has stopped short-tenor gold schemes after overdue loans rose. Piramal Finance's Jairam Sridharan says 15% to 23% of the industry's gold loan disbursements last year went to borrowers already 90+ days overdue elsewhere."
+          ],
+          "numbers": [],
+          "why": "Gold loans are now a mainstream source of household credit. If fresh loans are paying off old ones, clean books may be masking stretched borrowers, and a fall in gold prices would test the collateral everyone leans on.",
+          "other": "The gold sits in the vault, so lenders rarely lose money even when borrowers struggle, and the branch rollovers come from an on-ground check, not data. For a household needing quick cash, is a renewed gold loan worse than a moneylender?",
+          "also": [],
+          "image": "/figs/2026-11-13-2.jpg",
+          "imageAlt": "Explainer: India's gold loan book tripled to ₹22.5 lakh crore in three years, while informal rollovers may hide borrower stress.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "Personal finance"
+          ],
+          "emailHead": "The gold loan rollover trick",
+          "emailTeaser": "Old loans close, new ones open, and no default shows.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1855
+        },
+        {
+          "category": "Trade policy",
+          "tag": "Opinion",
+          "title": "Trade deals could squeeze Make in India's public procurement edge",
+          "url": "https://www.livemint.com/opinion/columns/potential-adverse-impact-of-ftas-on-public-procurement-policies-supporting-made-in-india-11794295722655.html",
+          "url2": "",
+          "points": [
+            "Retired Government of India secretary Aruna Sharma argues that opening government buying to foreign suppliers under trade deals could clash with Make in India preferences that help local makers, especially MSMEs. Dairy and textiles may be most exposed.",
+            "She notes the EU has long pushed to bring procurement under non-discrimination rules, and that past deals did not always give India equal access in return; India has used safeguards against import surges, including from South Korea.",
+            "Deals with the UK, EFTA and the UAE show procurement is now on the table. She wants any opening tied to real reciprocity, investment and technology transfer, with care in railways, energy, space and defence."
+          ],
+          "numbers": [],
+          "why": "Government buying is one of India's strongest levers for factory jobs. How much of it is traded away in talks with the EU, the US and others will decide whether MSMEs keep a home market or meet foreign rivals in it.",
+          "other": "Local-preference rules can also mean higher prices and weaker competition for taxpayers. Opening tenders may be the price of wider access for Indian exporters, and foreign bidders could bring better technology. Is shelter or competition the faster route to capability?",
+          "also": [],
+          "image": "/figs/2026-11-13-3.jpg",
+          "imageAlt": "Explainer: how opening public procurement in trade deals could affect Make in India preferences, and the safeguards the author asks for.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "India",
+            "Geopolitics"
+          ],
+          "emailHead": "Trade deals vs Make in India",
+          "emailTeaser": "Opening government tenders could cost local makers, warns an ex-secretary.",
+          "imageW": 1280,
+          "imageH": 1862
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Corporate governance",
+          "tag": "",
+          "title": "Inside Jensen Huang's fall: a spy scandal and a 'feudal' Nvidia",
+          "url": "https://www.ft.com/content/ef8f85a6-e2d7-4d41-b70e-092b2567813a?syn-25a6b1a6=1",
+          "url2": "https://www.nytimes.com/2026/11/12/opinion/jensen-huang-nvidia.html",
+          "points": [
+            "Nvidia's board met late into the night before Huang quit, ending 33 years at the company he co-founded, the FT reports. US agencies suspected a woman he admitted an affair with, an executive at Singapore client MegaSpeed, of spying for China; reports of an alleged affair with a subordinate followed.",
+            "Insiders describe a 'feudal' Nvidia: 60 direct reports to Huang, family members in senior roles, no formal succession plan and no officially named compliance chief.",
+            "In a New York Times guest essay, biographer Stephen Witt argues hubris undid Huang, and that pushing to lift chip export curbs on China set Washington hawks against him."
+          ],
+          "numbers": [],
+          "why": "This is a governance story as much as a markets one: one man held Nvidia's deals, its Washington ties and its culture. Every board of a founder-led giant will now be asked what checks it really has.",
+          "other": "Backers such as Elon Musk defended Huang, and the board and FBI inquiries have not yet reported. Is a private failing being blurred with corporate wrongdoing, and would a more cautious leader have built Nvidia at all?",
+          "also": [],
+          "image": "/figs/2026-11-13-4.jpg",
+          "imageAlt": "Explainer: how Jensen Huang's two-week fall exposed a one-man Nvidia, with 60 direct reports and no succession plan.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times and The New York Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "How Huang's empire cracked",
+          "emailTeaser": "A suspected spy, two affairs and no one to say no.",
+          "imageW": 1280,
+          "imageH": 1855
+        },
+        {
+          "category": "US housing",
+          "tag": "",
+          "title": "US existing home sales hit lowest since 2010 as mortgage rates bite",
+          "url": "https://www.ft.com/content/1e08661e-1db0-4ff7-8236-77254bb05790?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "US sales of previously owned homes fell 5.5% in October from September, the slowest pace since August 2010, the National Association of Realtors said. The annual rate of 3.75mn sales also missed forecasts, the FT reports.",
+            "Higher energy prices from the Iran war have lifted inflation and Treasury yields, pushing mortgage rates as high as 7.5% in early October, a three-year high. Unsold homes now take the longest to sell in more than a decade.",
+            "The Fed raised rates in September and traders expect more. Jefferies expects October's rate jump to weigh on sales in November and December."
+          ],
+          "numbers": [
+            [
+              "5.5%",
+              "fall in October sales"
+            ],
+            [
+              "7.5%",
+              "peak mortgage rate, early October"
+            ]
+          ],
+          "why": "Housing is where higher rates hit households first. Frozen sales lock owners into old mortgages, slow moves for new jobs and cut spending on everything a new home brings, and affordability already shaped the midterms.",
+          "other": "What to watch: the Fed's meeting next month, where traders expect a quarter-point rise. Slower sales are not falling prices, and owners on cheap mortgages can wait. If inflation cools and yields ease, could pent-up demand return fast?",
+          "also": [],
+          "image": "/figs/2026-11-13-5.jpg",
+          "imageAlt": "Explainer: US existing-home sales fell 5.5% in October to the slowest pace since 2010 as mortgage rates rose.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.nar.realtor/newsroom/existing-home-sales-receded-4-1-in-october",
+          "freeSrc": "National Association of Realtors",
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "US home sales hit a 2010 low",
+          "emailTeaser": "Mortgage rates near 7.5% freeze buyers and sellers alike.",
+          "imageW": 1280,
+          "imageH": 1815
+        },
+        {
+          "category": "Swiss banking",
+          "tag": "",
+          "title": "Sberbank Switzerland rescue: TradeX owners settle after 4-year feud",
+          "url": "https://www.ft.com/content/8d5aaf6c-e8b6-47ac-a111-a5827fce2175?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "In September 2022 Swiss regulator Finma briefly eased sanctions curbs so Sberbank's Zurich arm could be sold. Stephen Lynch and Abdallah Chatila bought it for about SFr130mn and renamed it TradeXBank.",
+            "Chatila financed his side with costly bonds through his m3 group, fell behind on payments and fell out with Lynch, who won an arbitration and froze some m3 shares. By 2025 more than 40% of the bank's shares were pledged to creditors, the FT reports.",
+            "Finma warned in October of possible liquidation. This week the owners settled: Lynch drops his claims for a bigger stake, and Chatila wants to sell out."
+          ],
+          "numbers": [
+            [
+              "SFr130mn",
+              "paid to Sberbank in 2022"
+            ],
+            [
+              ">40%",
+              "of shares pledged to creditors"
+            ]
+          ],
+          "why": "Sanctions forced rushed sales of Russian assets across the West. This one shows how a rescue that looks neat on day one can leave a regulated bank with debt-stretched owners, and it adds to doubts about Finma's grip after Credit Suisse.",
+          "other": "Finma did ringfence the bank, which still operates and says it has no Russian shareholders. Liquidating it in 2022 could have meant years of legal limbo and lost jobs. Was a messy survival really worse than a clean shutdown?",
+          "also": [],
+          "image": "/figs/2026-11-13-6.jpg",
+          "imageAlt": "Explainer: Sberbank's Swiss arm was sold for SFr130mn in 2022, then its owners feuded and pledged more than 40% of its shares to creditors.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "Geopolitics"
+          ],
+          "emailHead": "A Swiss rescue gone sour",
+          "emailTeaser": "A sanctioned Russian bank, two buyers, four years of fights.",
+          "imageW": 1280,
+          "imageH": 1967
+        },
+        {
+          "category": "AI and health",
+          "tag": "Opinion",
+          "title": "How Gemini helped a WSJ writer get an endometriosis diagnosis",
+          "url": "https://www.wsj.com/health/wellness/how-ai-diagnosed-a-medical-mystery-my-doctors-missed-for-decades-cd5fa842",
+          "url2": "",
+          "points": [
+            "WSJ writer Katherine Bindley spent two decades with pain episodes, ER visits and negative tests. When she gave Google's Gemini her history, it said she likely had adenomyosis and endometriosis, which earlier scans and surgery had not found.",
+            "An MRI showed no sign of endometriosis, but a specialist's dynamic ultrasound led to both diagnoses, and two more specialists agreed. The disease typically takes eight to 12 years to diagnose. She now plans excision surgery.",
+            "Harvard's Isaac Kohane warns that AI can be wrong and stir anxiety, yet urges patients to use it to prepare for appointments."
+          ],
+          "numbers": [],
+          "why": "Doctors see one visit at a time; AI can read a whole scattered history at once. That matters most in women's health, where pain is often waved off as bad periods.",
+          "other": "This is one patient's story, and Gemini also got the MRI wrong. Chatbots tend to tell users what they want to hear: for each missed diagnosis they catch, how many healthy people do they send chasing scans and surgery?",
+          "also": [],
+          "image": "/figs/2026-11-13-7.jpg",
+          "imageAlt": "Explainer: how AI pointed a patient to endometriosis, which typically takes 8 to 12 years to diagnose.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "freeUrl": "https://www.livemint.com/global/how-ai-diagnosed-a-medical-mystery-my-doctors-missed-for-decades-11794533214112.html",
+          "freeSrc": "Mint",
+          "themes": [
+            "Health & science",
+            "AI"
+          ],
+          "emailHead": "The chatbot that believed her",
+          "emailTeaser": "Two decades of pain, one AI hunch, a diagnosis at last.",
+          "imageW": 1280,
+          "imageH": 1855
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Stars leave.",
+    "b": "Systems stay.",
+    "line": "Nvidia after Huang, a bank after its rescuers fell out and a patient after decades of short appointments all show that what lasts is the structure, not the personality."
+  },
+  "cover": "/figs/2026-11-13-cover.jpg",
+  "coverAlt": "Nvidia's king falls. Gold rolls over. Delhi guards tenders. US homes hit 2010 lows. Zurich sours. A bot cares.",
+  "stressIndex": {
+    "score": 34,
+    "band": "Elevated",
+    "asOf": "2026-11-12"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25299.3496,
+        "asOf": "2026-11-12",
+        "prev": 25255.0508,
+        "week": 24536.5996,
+        "spark": [
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7592.3999,
+        "asOf": "2026-11-12",
+        "prev": 7619.3799,
+        "week": 7353.73,
+        "spark": [
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 5.103,
+        "asOf": "2026-11-12",
+        "prev": 4.998,
+        "week": 4.837,
+        "spark": [
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 95.82,
+        "asOf": "2026-11-12",
+        "prev": 92.76,
+        "week": 98.29,
+        "spark": [
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3885.3,
+        "asOf": "2026-11-12",
+        "prev": 4000.5,
+        "week": 4113.5,
+        "spark": [
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 93.6984,
+        "asOf": "2026-11-12",
+        "prev": 93.925,
+        "week": 94.5154,
+        "spark": [
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984
+        ]
+      }
+    ]
+  }
+}

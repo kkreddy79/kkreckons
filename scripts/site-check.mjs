@@ -52,7 +52,7 @@ const month = `${MONTHS[+editions.at(-1).slice(5, 7) - 1]}-${editions.at(-1).sli
 // Every special report served from its own file.
 const reports = JSON.parse(fs.readFileSync(path.join(root, "data", "special.json"), "utf8")).filter((r) => r.file).map((r) => `/special/${r.slug}`);
 
-const ALL = ["/", "/daily/", "/daily/?theme=AI", `/daily/${earlier}`, `/daily/${latest}/1`, `/daily/${latest}/cards`, "/topics", "/topics/ai", "/topics/ai/page/2", "/week", `/month/${month}`, `/feedback/${latest}/somewhat`, "/quiz", "/coverage", "/coverage/openai", "/special", ...reports, "/ai-stress-index", "/about", "/standards", "/contact", "/privacy"];
+const ALL = ["/", "/daily/", "/daily/?theme=AI", `/daily/${earlier}`, `/daily/${latest}/1`, `/daily/${latest}/cards`, "/topics", "/topics/ai", "/topics/ai/page/2", "/week", `/month/${month}`, `/feedback/${latest}/somewhat`, "/quiz", "/coverage", "/coverage/openai", "/special", ...reports, "/ai-stress-index", "/ai-stress-index/drawdowns", "/about", "/standards", "/contact", "/privacy"];
 // SITE_CHECK_PAGES=/special,/about checks just those pages (for a quick look while fixing one).
 const PAGES = process.env.SITE_CHECK_PAGES ? process.env.SITE_CHECK_PAGES.split(",") : ALL;
 

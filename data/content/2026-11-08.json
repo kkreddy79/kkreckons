@@ -1,0 +1,497 @@
+{
+  "date": "2026-11-08",
+  "slice": "US fears AI. Patna, 9th, eats the Louvre's lunch. Servers gulp 945 TWh. Bots eye jobs. Hackers cook fridges.",
+  "artifact": "https://claude.ai/artifact/VARrC7Nodxn66ZdDL2JfJk",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "945 TWh",
+      "text": "Data centres may use 945 TWh a year by 2030, about as much as Japan, the IEA estimates.",
+      "url": "https://www.reuters.com/sustainability/cop/environmental-groups-embrace-ai-even-they-warn-data-center-impacts-2026-11-07/"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI attitudes",
+          "tag": "Opinion",
+          "title": "Why does America hate AI? Gillian Tett on the US and Asia attitude gap",
+          "url": "https://www.ft.com/content/af97585a-3381-42a9-838b-9a205ab81232?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "In an FT Weekend essay, Gillian Tett argues American hostility to AI is not universal. Anger at data centres helped shape this week's midterms, yet China, much of Asia and most emerging markets are far more optimistic.",
+            "Her first explanation is economics and policy: ageing Japan and Korea welcome automation, rich service economies fear for white-collar work, and the US does little to share AI gains or retrain workers, unlike Singapore.",
+            "Her second is culture: traditions that see humans and machines as linked, and low trust in officials, make machines feel less threatening. Attitudes can shift, she adds."
+          ],
+          "numbers": [
+            [
+              "Half",
+              "UAE government services due to use agentic AI by 2028 (target)"
+            ]
+          ],
+          "why": "Where the public is hostile, AI rollouts meet moratoriums and angry voters; where it is welcomed, adoption moves faster. Tett's point is that the fear is partly a policy choice, which means governments can still change it.",
+          "other": "Survey optimism can reflect less freedom to object, as Tett notes for China. And enthusiasm in Asia and emerging markets could fade quickly if AI starts taking jobs there too, or a major AI accident hits.",
+          "also": [],
+          "image": "/figs/2026-11-08-1.jpg",
+          "imageAlt": "Explainer on why Americans are more hostile to AI than much of Asia: economics and policy on one side, culture and trust on the other, with the UAE aiming to use agentic AI for half of government services by 2028.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Why America fears AI",
+          "emailTeaser": "Asia and emerging markets feel far more upbeat. Tett asks why.",
+          "imageW": 1280,
+          "imageH": 1807
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Culture",
+          "tag": "",
+          "title": "Bihar Museum ranks 9th in world list, ahead of the Met and Louvre",
+          "url": "https://yourstory.com/2026/11/bihar-museum-ahead-met-louvre",
+          "url2": "https://www.timeout.com/india/news/this-indian-museum-beat-the-louvre-and-the-met-to-rank-among-the-worlds-top-10-102926",
+          "points": [
+            "The Bihar Museum in Patna is ninth on German travel guide Worth a Journey's World's 100 Best Museums 2026, ahead of the Met (10th) and the Louvre (31st). Time Out reports Mexico City's anthropology museum tops the list. Bihar's is the only Indian entry.",
+            "YourStory founder Shradha Sharma credits then chief minister Nitish Kumar's backing and IAS officer Chanchal Kumar's execution. The roughly ₹500 crore project, designed by Pritzker winner Fumihiko Maki, fought land disputes and political pressure.",
+            "In 2015 the Patna High Court criticised the spending and contracting, holding the project was not in the public interest, but let construction finish."
+          ],
+          "numbers": [
+            [
+              "9th",
+              "World's 100 Best Museums 2026"
+            ],
+            [
+              "₹500 cr",
+              "Approximate cost of the project"
+            ]
+          ],
+          "why": "A well-built public institution can put a state on the world map and change how people see it. For Bihar, whose ancient history far outshines its modern image, that matters for pride and for tourism.",
+          "other": "One travel guide's ranking is a single opinion, not a verdict, and the court's criticism of cost and transparency still stands. The real test is visitors and upkeep over the next decade.",
+          "also": [],
+          "image": "/figs/2026-11-08-2.jpg",
+          "imageAlt": "Explainer on the Bihar Museum ranking 9th on Worth a Journey's World's 100 Best Museums 2026, ahead of the Met (10th) and Louvre (31st), and the roughly ₹500 crore project's troubled build.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "YourStory and Time Out",
+          "pay": false,
+          "themes": [
+            "India"
+          ],
+          "emailHead": "Patna beats the Louvre",
+          "emailTeaser": "A ₹500 crore bet now ranks ninth in the world.",
+          "imageW": 1280,
+          "imageH": 1771
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI and climate",
+          "tag": "",
+          "title": "Green groups embrace AI even as they warn of data centre costs",
+          "url": "https://www.reuters.com/sustainability/cop/environmental-groups-embrace-ai-even-they-warn-data-center-impacts-2026-11-07/",
+          "url2": "",
+          "points": [
+            "Reuters asked 15 major environmental and conservation groups about AI. All use it, for climate data, fire alerts and wildlife counts, and all worry about the power and water data centres consume.",
+            "Save the Elephants says AI reviews survey images in hours that took nine people nine months, and showed human counts missed about a third of elephants. The Jane Goodall Institute cut a 13 to 15 year notes project to about two.",
+            "Some limit the footprint: WRI caches answers and The Nature Conservancy processes fishing video on board. Greenpeace questions the buildout itself."
+          ],
+          "numbers": [
+            [
+              "945 TWh",
+              "Data centre power use a year by 2030 (IEA estimate)"
+            ],
+            [
+              "1 in 3",
+              "Elephants missed by human surveys"
+            ]
+          ],
+          "why": "Groups that criticise the AI buildout are also its customers, which weakens their case unless they can show the trade pays off. Their careful habits, such as caching and processing on the device, are a template others could copy.",
+          "other": "What to watch: COP31 this month, where host Turkey will seek a pledge on sustainable AI. Even so, savings from careful use by charities are tiny next to a buildout driven by tech giants, so the real question sits elsewhere.",
+          "also": [],
+          "image": "/figs/2026-11-08-3.jpg",
+          "imageAlt": "Explainer on environmental groups using AI while worrying about its footprint: data centres may use 945 TWh a year by 2030 per the IEA, with examples of wildlife surveys, fire alerts and ways groups cut costs.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Reuters",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "The green AI dilemma",
+          "emailTeaser": "AI found missed elephants. Data centres may need 945 TWh.",
+          "imageW": 1280,
+          "imageH": 1823
+        },
+        {
+          "category": "AI and jobs",
+          "tag": "Opinion",
+          "title": "Why AI should not replace junior White House economists",
+          "url": "https://www.livemint.com/opinion/online-views/ai-is-coming-for-the-jobs-of-white-house-economists-too-11793954967480.html",
+          "url2": "",
+          "points": [
+            "Jason Furman, who chaired Obama's Council of Economic Advisers, said he would now use AI instead of hiring 20 economists, later softening that to an AI-heavy council with a skeleton staff.",
+            "In a Bloomberg Opinion column carried by Mint, a former CEA staffer and creator of the Sahm rule replies that the council exists to stop bad ideas, and AI models rarely push back. Junior staff often spot what doesn't add up.",
+            "She backs AI for faster data work and extra checks. The president, she argues, needs a better council, not a smaller one."
+          ],
+          "numbers": [],
+          "why": "The row is a small, public test of a question every employer faces: if AI does entry-level work, where do tomorrow's experts come from, and who is left in the room to say no?",
+          "other": "Furman's case is that taxpayers should not fund jobs a machine can do. Newer AI tools may also challenge assumptions more than the column expects, and junior roles could change shape rather than disappear.",
+          "also": [],
+          "image": "/figs/2026-11-08-4.jpg",
+          "imageAlt": "Explainer on whether AI should replace White House economists: Jason Furman said he would replace 20 economists with AI, while a former staffer argues junior staff are needed to stop bad ideas.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Keep the junior economists",
+          "emailTeaser": "Furman would swap 20 economists for AI. An ex-staffer objects.",
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "Consulting",
+          "tag": "",
+          "title": "Accenture and Big Four chase mid-sized clients as AI cuts costs",
+          "url": "https://www.ft.com/content/afff9e84-9b68-4a2f-a3f1-7729dec802b1?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Accenture and the Big Four accounting firms are moving downmarket, the FT reports, betting mid-sized companies can offset slower growth from blue-chip clients. Accenture launched a unit in June for companies with $300mn to $3bn in revenue.",
+            "KPMG says private companies are its fastest-growing clients and that without new markets it would have to shrink its workforce. EY says AI lets it sell work such as due diligence more cheaply.",
+            "Mid-market specialists such as Grant Thornton say serving these clients well takes more than wanting to."
+          ],
+          "numbers": [
+            [
+              "8%",
+              "Share of Accenture's revenue from mid-market clients"
+            ]
+          ],
+          "why": "The same AI efficiency that threatens junior consulting jobs is being used to find new customers and keep headcount up. If it works, mid-sized companies get big-firm expertise at lower prices.",
+          "other": "Big firms have chased the middle market before whenever large clients cut back, and smaller clients often doubt they will get the same attention. AI could also let those clients skip consultants altogether.",
+          "also": [],
+          "image": "/figs/2026-11-08-5.jpg",
+          "imageAlt": "Explainer on Accenture and the Big Four targeting mid-sized companies as AI lowers delivery costs; mid-market clients already bring in 8% of Accenture's revenue.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Consultants go mid-market",
+          "emailTeaser": "AI makes big-firm advice cheap enough for smaller companies.",
+          "imageW": 1280,
+          "imageH": 1767
+        },
+        {
+          "category": "Cybersecurity",
+          "tag": "",
+          "title": "Hackers heat fridges at French blood banks and European supermarkets",
+          "url": "https://www.wired.com/story/kernel-panic-refrigeration-hacks-internet-of-things/",
+          "url2": "",
+          "points": [
+            "Cold rooms at three French blood service sites were driven to very high temperatures on 2 November, Wired reports. Alarms and staff caught it and the blood was unharmed. Supermarkets in at least 11 European countries have binned food after similar attacks.",
+            "Many hacks used internet-exposed Danfoss temperature controllers on outdated firmware, some with weak passwords based on the date. Stores on US military bases were hit in August.",
+            "Who is behind it is unclear. Some researchers see signs of Russia- or Iran-linked actors; the Kremlin denies involvement."
+          ],
+          "numbers": [],
+          "why": "Amid all the worry about AI-powered hacking, the damage here came from basic lapses: unpatched devices left online. Any business with connected equipment, from clinics to cold stores, carries the same risk, and the fixes are cheap.",
+          "other": "The blood service's alarms and fail-safes worked, which shows layered defences limit the harm. Spoiled groceries are costly but recoverable; the real test is whether operators patch before attackers aim at something less forgiving.",
+          "also": [],
+          "image": "/figs/2026-11-08-6.jpg",
+          "imageAlt": "Explainer on hacks that overheated fridges at three French blood sites and supermarkets in 11 European countries, through unpatched, internet-exposed controllers with weak passwords.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "freeUrl": "https://bleepingcomputer.com/news/security/cyberattack-disrupts-blood-storage-refrigeration-systems-in-france",
+          "freeSrc": "BleepingComputer",
+          "themes": [
+            "Geopolitics",
+            "Health & science"
+          ],
+          "emailHead": "Hackers turn up the heat",
+          "emailTeaser": "Blood banks and supermarkets in 11 countries hit via old controllers.",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Fear in the West.",
+    "b": "Faith in the East.",
+    "line": "Whether AI looks like a threat or a helper depends on who holds it, and the cheapest hacks still need no AI at all."
+  },
+  "cover": "/figs/2026-11-08-cover.jpg",
+  "coverAlt": "US fears AI. Patna, 9th, eats the Louvre's lunch. Servers gulp 945 TWh. Bots eye jobs. Hackers cook fridges.",
+  "stressIndex": {
+    "score": 47,
+    "band": "Elevated",
+    "asOf": "2026-11-06"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25030.3496,
+        "asOf": "2026-11-06",
+        "prev": 24536.5996,
+        "week": 23053.0996,
+        "spark": [
+          23063.0996,
+          23140.5,
+          22780.25,
+          22716.1992,
+          22620.4492,
+          22421.9492,
+          22555.75,
+          22776.0996,
+          22603.0508,
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7376.8599,
+        "asOf": "2026-11-06",
+        "prev": 7353.73,
+        "week": 7580.0698,
+        "spark": [
+          7683.6899,
+          7670.8398,
+          7651.54,
+          7666.4502,
+          7722.7202,
+          7773.9502,
+          7818.9302,
+          7801.77,
+          7765.3599,
+          7811.54,
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.859,
+        "asOf": "2026-11-06",
+        "prev": 4.837,
+        "week": 4.929,
+        "spark": [
+          5.24,
+          5.255,
+          5.293,
+          5.237,
+          5.277,
+          5.311,
+          5.269,
+          5.277,
+          5.231,
+          5.244,
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 98.29,
+        "asOf": "2026-11-05",
+        "prev": 94.62,
+        "week": 114.88,
+        "spark": [
+          104.32,
+          105.28,
+          102.59,
+          103.53,
+          102.31,
+          102.25,
+          100.32,
+          100.58,
+          100.2,
+          104.28,
+          104.72,
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 4113.5,
+        "asOf": "2026-11-05",
+        "prev": 4073,
+        "week": 4031.3999,
+        "spark": [
+          4321.2002,
+          4168.3999,
+          4179.7002,
+          4186.7002,
+          4202.2998,
+          4162.2998,
+          4156.7998,
+          4187.1001,
+          4140.7002,
+          4157,
+          4216.2998,
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 94.4589,
+        "asOf": "2026-11-06",
+        "prev": 94.5154,
+        "week": 95.1524,
+        "spark": [
+          95.9816,
+          96.0507,
+          95.9271,
+          96.2248,
+          96.3253,
+          96.3428,
+          96.3704,
+          96.7568,
+          96.8233,
+          96.7753,
+          95.7759,
+          95.2872,
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589
+        ]
+      }
+    ]
+  }
+}

@@ -4,6 +4,8 @@ import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "rea
 import { bandName, stressBand } from "@/lib/stressBand";
 import WatchList from "@/components/WatchList";
 import type { Watch } from "@/lib/watch";
+import DrawdownCard from "@/components/DrawdownCard";
+import type { Drawdowns } from "@/lib/drawdowns";
 import s from "./StressIndex.module.css";
 import { LIMITED, STRESS_BASES } from "@/lib/stress";
 
@@ -523,14 +525,18 @@ function Banner() {
   return (
     <section className={s.banner}>
       <div className={s.bannerArt} aria-hidden="true">
-        <img src="/ai-stress-index/hero-1400.webp" srcSet="/ai-stress-index/hero-800.webp 800w, /ai-stress-index/hero-1400.webp 1400w"
-          sizes="(max-width: 860px) 100vw, 62vw" width={1400} height={1200} alt="" fetchPriority="high" />
+        {/* AVIF first (about half the size of the WebP copies), WebP for browsers without it. */}
+        <picture>
+          <source type="image/avif" srcSet="/ai-stress-index/hero-800.avif 800w, /ai-stress-index/hero-1400.avif 1400w" sizes="(max-width: 860px) 100vw, 62vw" />
+          <img src="/ai-stress-index/hero-1400.webp" srcSet="/ai-stress-index/hero-800.webp 800w, /ai-stress-index/hero-1400.webp 1400w"
+            sizes="(max-width: 860px) 100vw, 62vw" width={1400} height={1200} alt="" fetchPriority="high" />
+        </picture>
       </div>
       <div className={s.bannerInner}>
         <div className={s.bannerText}>
-          <h1>AI Market<br />Stress Index</h1>
+          <h1>AI Market <br />Stress Index</h1>
           <div className={s.stripe} aria-hidden="true"><i /><i /><i /><i /></div>
-          <p className={s.question}>Is the AI boom under pressure?<br />Could the bubble pop?</p>
+          <p className={s.question}>Is the AI boom under pressure? <br />Could the bubble pop?</p>
           <p className={s.daily}>We check the gauges daily.</p>
           <p className={s.meta}>A daily market-stress monitor for AI-related stocks, AI financing proxies and wider credit conditions. Updated every weekday after the US close.</p>
           <div className={s.ctas}>
@@ -600,7 +606,7 @@ function EmbedBox() {
 /** A KKReckons story about AI debt or credit stress, marked on the trend chart. */
 export type Mark = { date: string; title: string; href: string };
 
-export default function StressIndex({ initial = null, initialBt = null, marks = [], watch = [] }: { initial?: Data | null; initialBt?: Backtest | null; marks?: Mark[]; watch?: Watch[] }) {
+export default function StressIndex({ initial = null, initialBt = null, marks = [], watch = [], drawdowns = null }: { initial?: Data | null; initialBt?: Backtest | null; marks?: Mark[]; watch?: Watch[]; drawdowns?: Drawdowns | null }) {
   const [d, setD] = useState<Data | null>(initial);
   const [bt, setBt] = useState<Backtest | null>(initialBt);
   const [err, setErr] = useState<string | null>(null);
@@ -617,12 +623,12 @@ export default function StressIndex({ initial = null, initialBt = null, marks = 
       <Banner />
       {err ? <div className={`container ${s.page}`}><p className={s.err}>The latest index data couldn’t be loaded ({err}). Please try again shortly.</p></div>
         : !d ? <div className={`container ${s.page}`}><p className={s.loading}>Loading today’s index…</p></div>
-        : <Report d={d} bt={bt} marks={marks} watch={watch} />}
+        : <Report d={d} bt={bt} marks={marks} watch={watch} drawdowns={drawdowns} />}
     </main>
   );
 }
 
-function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | null; marks?: Mark[]; watch?: Watch[] }) {
+function Report({ d, bt, marks = [], watch = [], drawdowns = null }: { d: Data; bt: Backtest | null; marks?: Mark[]; watch?: Watch[]; drawdowns?: Drawdowns | null }) {
   const h = hook(d);
   const sorted = [...d.factors].sort((a, b) => b.stress - a.stress);
   const signal = sorted[0] && sorted[0].stress >= 0.5 ? sorted[0] : null;
@@ -639,6 +645,9 @@ function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | nul
   const priceDates = d.factors.filter((f) => f.type === "DD" && f.lastDate).map((f) => f.lastDate as string).sort();
   const spreadDates = d.factors.filter((f) => f.type === "LVL" && f.lastDate).map((f) => f.lastDate as string).sort();
   const priceDate = priceDates[0] ?? d.asOf, spreadDate = spreadDates[0] ?? null;
+  // Price gauges whose latest close is older than the reading's date (Yahoo sometimes posts an ETF's close late).
+  const priceBehind = priceDates.filter((x) => x < d.asOf).length;
+  const priceLag = weekdaysBetween(priceDate, d.asOf);
   const spreadLag = spreadDate ? weekdaysBetween(spreadDate, d.asOf) : 0;
   const stale = d.factors.filter((f) => f.stale);
   const staleW = stale.reduce((t, f) => t + f.weight, 0) / d.factors.reduce((t, f) => t + f.weight, 0);
@@ -675,7 +684,13 @@ function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | nul
           <p className={s.alert}>Stress band: <b>{band(d.score)}</b> · Formal alert: <b>{active ? `${active.level} ${ALERTS[active.level]}` : "None"}</b>{d.shock && <> · Shock flag: <b style={d.shock.active ? { color: "var(--si-red)" } : undefined}>{d.shock.active ? "On" : "Off"}</b></>}</p>
           {d.shock?.active && <p className={s.staleWarn}>Shock flag: the index is {d.score}, at or above {d.shock.threshold}, but no formal alert has confirmed. Fast sell-offs can do this without holding long enough for an alert. It is a heads-up, not an alert.</p>}
           <div className={s.fresh}>
-            <div><span>Stock &amp; ETF data</span><b>{longDate(priceDate)} · US close</b><em className={s.ok}>Current</em></div>
+            <div><span>Stock &amp; ETF data</span>
+              {priceBehind === 0 ? (
+                <><b>{longDate(d.asOf)} · US close</b><em className={s.ok}>Current</em></>
+              ) : (
+                <><b>{longDate(d.asOf)} · US close; {priceBehind} of {priceDates.length} still {longDate(priceDate)}</b>
+                  <em className={s.bad}>{priceLag <= 1 ? "1 day behind" : `${priceLag} days behind`}</em></>
+              )}</div>
             <div><span>Credit spread data</span><b>{longDate(spreadDate)} · latest available</b>
               <em className={spreadLag > 3 ? s.bad : s.ok}>{spreadLag === 0 ? "Current" : spreadLag <= 3 ? `${spreadLag}-day publication lag` : `Stale (${spreadLag} days)`}</em></div>
             <p><a href="/ai-stress-index/data.json" download>Download the data (JSON)</a> · Refreshed {refreshedTxt}.{carried.length > 0 && spreadDate ? ` No newer credit spread readings were published since ${shortDate(spreadDate)}, so the index uses those.` : ""}{stale.length ? ` ${stale.length} gauge${stale.length > 1 ? "s are" : " is"} stale and ${stale.length > 1 ? "keep their" : "keeps its"} last value in the index.` : ""}</p>
@@ -699,6 +714,9 @@ function Report({ d, bt, marks = [], watch = [] }: { d: Data; bt: Backtest | nul
         </div>
       </section>
       {otherNotes.map((n) => <p key={n} className={s.note}><b>Data note:</b> {n}</p>)}
+
+      {/* The stock-by-stock companion: its own page, /ai-stress-index/drawdowns */}
+      {drawdowns && <DrawdownCard data={drawdowns} />}
 
       {watch.length > 0 && <WatchList watch={watch} />}
 

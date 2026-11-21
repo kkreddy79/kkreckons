@@ -166,6 +166,8 @@ button { font: inherit; cursor: pointer; }
 .chip:hover { border-color: var(--purple); }
 .chip.on { background: var(--purple); color: #fff; border-color: var(--purple); }
 .chip.clear { color: var(--accent); }
+/* Special reports bring their own .chip styles; keep the site's filter-chip layout (inline-flex drops the space before a <b>) out of them. */
+.sp-report .chip { display: inline-block; min-height: 0; border: 0; font-weight: 400; color: inherit; }
 .src-filter { position: relative; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 14px; }
 .src-filter .src-label, .src-filter .chip { flex: none; }
 .src-filter .src-label { font-size: 13px; font-weight: 800; color: var(--control); }
@@ -354,6 +356,8 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-sx-watch { display: inline-block; margin-top: 6px; padding-block: 3px; font-size: 13.5px; color: rgba(255, 255, 255, 0.88); text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.4); text-underline-offset: 3px; }
 .ev-sx-watch b { color: #FBBF24; }
 .ev-sx-watch:hover { color: #fff; }
+.ev-sx-dd { display: block; margin-top: 2px; }
+.ev-sx-dd b { color: #FB923C; }
 .ev-sx-cta { flex: none; display: inline-flex; align-items: center; min-height: 40px; padding: 8px 16px; border-radius: 999px; background: #fff; color: #24123f; font-size: 13.5px; font-weight: 800; white-space: nowrap; }
 .ev-sx-cta:hover { background: #f3ecff; }
 .ev-other { background: var(--other); }
@@ -395,8 +399,6 @@ a.ev-cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ev-src { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 12px 0 0; padding-top: 12px; border-top: 1px solid var(--line-2); font-size: 13px; font-weight: 800; }
 .ev-src a { color: var(--teal-text); display: inline-block; padding-block: 12px; margin-block: -7px; } /* ≥24px tap target */
 .ev-src a:hover { text-decoration: underline; }
-.ev-lock { display: inline-flex; vertical-align: -1px; margin-left: 4px; color: var(--paid-text); }
-.ev-lock-ic { width: 12px; height: 12px; }
 /* "Free sources only": hide paywalled links and say when a story has no free version. */
 .ev-qs-btn { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--lilac-line-b); background: var(--lilac-b); color: var(--violet); font: 800 12.5px var(--sans); cursor: pointer; }
 .ev-qs-btn:hover { background: var(--lilac-2); }
@@ -753,6 +755,17 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .ev-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line-2); }
 .ev-foot > .ev-src, .ev-foot > .ev-share-sm { margin: 0; padding: 0; border: 0; }
 .ev-has-img > .ev-foot { grid-column: 1 / -1; }
+/* Story reactions (components/Reactions.tsx): a row of emoji buttons above the source line. */
+.ev-react { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ev-has-img > .ev-react { grid-column: 1 / -1; }
+.ev-react button { display: inline-flex; align-items: center; gap: 6px; min-width: 44px; min-height: 40px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink2); font: 700 13px var(--sans); cursor: pointer; transition: transform 0.15s ease, border-color 0.15s ease; }
+.ev-react button span { font-size: 17px; line-height: 1; }
+.ev-react button:hover { border-color: var(--lilac-line-2); }
+.ev-react button:active { transform: scale(0.92); }
+.ev-react button.on { background: var(--lilac-2); border-color: var(--lilac-line-2); }
+:root[data-theme="dark"] .ev-react button.on { background: rgba(184, 173, 255, 0.18); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ev-react button.on { background: rgba(184, 173, 255, 0.18); } }
+@media (prefers-reduced-motion: reduce) { .ev-react button { transition: none; } .ev-react button:active { transform: none; } }
 .ev-share-sm .ev-share-one { min-height: 40px; padding: 3px 12px; font-size: 12.5px; }
 .st-page .ev-story { margin-top: 6px; }
 .st-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 16px; }
@@ -879,7 +892,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .ev-30s a .ev-mark { margin-left: auto; align-self: center; }
 .ev-mark-sm { width: 18px; height: 18px; }
 .ev-mark-sm svg { width: 10px; height: 10px; }
-.ev-src a .ev-mark { margin-left: 5px; vertical-align: middle; }
+.ev-src a .ev-mark, .ev-reading small .ev-mark { margin-left: 5px; vertical-align: middle; }
 .ev-30s-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px; margin: 0 0 6px; }
 .ev-30s-head h2 { margin: 0; }
 .ev-30s-key { display: flex; gap: 14px; margin: 0; font-size: 12.5px; font-weight: 700; color: var(--text3); }
@@ -953,4 +966,59 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .site-header nav a, .hdr-sub, .foot-links a, a.chip, button.chip, .ev-poll a, .ev-sx-cta { display: inline-flex; align-items: center; min-height: 44px; }
   .theme-toggle { width: 44px; height: 44px; }
   .ev-share a, .ev-share button, .seg button, .ev-bar a, .srcpick-btn, .ev-listen button { min-height: 44px; }
+}
+
+/* ---------- Slim banner (every page but Home and About) ----------
+   A thin strip of the two-worlds panorama under the header: the page keeps the site's colours without the
+   picture and wordmark taking the top third of a phone screen. The page's heading starts right below it. */
+.ab-top-xs .ab-top-img img { height: clamp(56px, 6.5vw, 92px); aspect-ratio: auto; object-position: 50% 50%;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+.ab-top.ab-top-xs + * > :first-child, .ab-top.ab-top-xs + * :is(.ev-head, .cu-hero) { margin-top: 14px; }
+
+/* ---------- Header menu: a fade where more links are off-screen ----------
+   When the links scroll sideways (phones, narrow tablets), NavLinks marks which sides have more; the fade there
+   says "there is more this way" instead of a link cut off mid-word. */
+.site-header nav[data-more="end"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); }
+.site-header nav[data-more="start"] { -webkit-mask-image: linear-gradient(270deg, #000 calc(100% - 20px), transparent); mask-image: linear-gradient(270deg, #000 calc(100% - 20px), transparent); }
+.site-header nav[data-more="both"] { -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 44px), transparent); }
+
+/* ---------- The day's cover in the edition header ----------
+   Wide screens: to the right of the headline, where the column used to be empty. Narrower: under the takeaway. */
+.ev-cover { display: block; margin: 16px 0 2px; }
+.ev-cover img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(60, 35, 20, 0.12); }
+@media (min-width: 901px) {
+  .ev-head-cover { display: grid; grid-template-columns: minmax(0, 1fr) clamp(280px, 30vw, 360px); column-gap: 36px; align-items: start; }
+  .ev-head-cover > * { grid-column: 1; }
+  .ev-head-cover > .ev-kicker { grid-column: 1 / -1; }
+  .ev-head-cover > .ev-cover { grid-column: 2; grid-row: 2 / span 6; margin: 4px 0 0; }
+}
+
+/* ---------- Story rhythm ----------
+   In an edition's list every second story with a graphic puts it on the right, so six stories don't read as
+   six identical blocks. Phones stack graphic over text either way. */
+@media (min-width: 701px) {
+  .ev-has-img.ev-flip { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+  .ev-has-img.ev-flip > * { grid-column: 1; }
+  .ev-has-img.ev-flip > .ev-fig { grid-column: 2; }
+  .ev-has-img.ev-flip > .ev-pair > .ev-why { grid-column: 1; }
+  .ev-has-img.ev-flip > :is(.ev-next, .ev-also, .ev-src, .ev-share-sm, .ev-foot), .ev-has-img.ev-flip > .ev-pair > .ev-other { grid-column: 1 / -1; }
+}
+
+/* Catch up: the wrapper that notices a reader reaching for the search and filters; it adds no box of its own. */
+.cu-controls { display: contents; }
+
+/* ---------- Topics: the latest story's graphic on each card ---------- */
+.tp-grid .tp-latest { display: flex; gap: 12px; align-items: flex-start; }
+.tp-grid .tp-latest span { flex: 1; min-width: 0; }
+.tp-grid .tp-latest img { flex: none; width: 54px; height: 70px; border-radius: 8px; object-fit: cover; object-position: top; border: 1px solid var(--line); }
+
+/* ---------- Touch: Catch up's story list ----------
+   Each headline, date and source link gets a finger-sized target, with the rows spaced so the targets don't overlap. */
+@media (pointer: coarse) {
+  .story-results li { row-gap: 6px; }
+  .story-results .sr-title { padding-block: 6px; }
+  .story-results .sr-title a { padding-block: 11px; margin-block: -11px; }
+  .story-results a.sr-date, .tp-results a.sr-date { display: inline-block; padding-block: 13px; margin-block: -13px; }
+  /* "Quick summary" under a story, here and on topic pages. */
+  .ev-qs-btn { min-height: 40px; }
 }

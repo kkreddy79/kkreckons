@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Banner from "@/components/Banner";
+import { getContent } from "@/lib/content";
+import { thumbOf } from "@/lib/figs";
 import SubscribeBox from "@/components/SubscribeBox";
 import Listen from "@/components/Listen";
 import ShareRow from "@/components/ShareRow";
@@ -14,11 +16,17 @@ export const metadata: Metadata = {
   alternates: { canonical: "/topics" },
 };
 
+/** The small graphic of a topic's latest story (decorative: its headline is beside it), if it has one. */
+function thumb({ edition, story }: { edition: { date: string }; story: { title: string } }) {
+  const full = getContent(edition.date).sections.flatMap((sec) => sec.stories).find((x) => x.title === story.title);
+  return full ? thumbOf(full) : "";
+}
+
 export default function Topics() {
   const topics = TOPICS.map((t) => ({ ...t, stories: topicStories(t.name) }));
   return (
     <main className="cu">
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap" id="tp-read">
         <section className="cu-hero" aria-labelledby="tp-title">
           <p className="ab-kicker">Topics</p>
@@ -39,7 +47,10 @@ export default function Topics() {
                 <p>{t.blurb}</p>
                 {t.stories[0] && (
                   <p className="tp-latest">
-                    <b>Latest, {longDate(t.stories[0].edition.date)}:</b> {t.stories[0].story.title}
+                    {thumb(t.stories[0]) && <img src={thumb(t.stories[0])} alt="" width={54} height={70} loading="lazy" decoding="async" />}
+                    <span>
+                      <b>Latest, {longDate(t.stories[0].edition.date)}:</b> {t.stories[0].story.title}
+                    </span>
                   </p>
                 )}
               </Link>
