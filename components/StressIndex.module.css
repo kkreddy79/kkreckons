@@ -260,3 +260,8 @@
 .watchLinks a { color: var(--si-link); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; padding-block: 3px; }
 .watchLinks small { font-weight: 600; white-space: nowrap; }
 @media (max-width: 700px) { .watchList { grid-template-columns: minmax(0, 1fr); } }
+
+/* Touch screens: the chart toggles and the embed "Copy" buttons get a finger-sized height. */
+@media (pointer: coarse) {
+  .toggles button, .embedHead button { min-height: 40px; }
+}
