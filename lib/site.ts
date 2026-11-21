@@ -1,6 +1,7 @@
 // Public links live in lib/links.ts, which browser components import without pulling in this file's
 // server settings (environment variables).
-export { PROFILES, SITE_URL, SUBSCRIBE_URL } from "@/lib/links";
+import { EMAIL_SIGNUP } from "@/lib/links";
+export { EMAIL_SIGNUP, PROFILES, SITE_URL, SUBSCRIBE_URL } from "@/lib/links";
 
 /** The KKReckons publication on beehiiv (an ID, not a secret), used by /api/subscribe. */
 export const BEEHIIV_PUBLICATION_ID = "pub_8ac4375a-ab66-4eff-8d3e-d8029c985186";
@@ -10,7 +11,7 @@ export const BEEHIIV_PUBLICATION_ID = "pub_8ac4375a-ab66-4eff-8d3e-d8029c985186"
  * Pages are built statically, so this is read at build time: without a key, sign-up stays a link to
  * beehiiv's page, exactly as before.
  */
-export const INLINE_SIGNUP = Boolean(process.env.BEEHIIV_API_KEY);
+export const INLINE_SIGNUP = EMAIL_SIGNUP && Boolean(process.env.BEEHIIV_API_KEY);
 
 /**
  * Where readers report errors ("Spotted an error?" links and the About page corrections note).

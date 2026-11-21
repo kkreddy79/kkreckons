@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
-import { CORRECTIONS_EMAIL, SUBSCRIBE_URL } from "@/lib/site";
+import { CORRECTIONS_EMAIL, EMAIL_SIGNUP, SUBSCRIBE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -29,11 +29,18 @@ export default function ContactPage() {
             <b>Tips and feedback</b> on stories, the AI Stress Index or the site.
           </li>
           <li>
-            <b>Your subscription.</b> Every email has an unsubscribe link; to subscribe,{" "}
-            <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
-              get it by email ↗
-            </a>
-            .
+            <b>Your subscription.</b>{" "}
+            {EMAIL_SIGNUP ? (
+              <>
+                Every email has an unsubscribe link; to subscribe,{" "}
+                <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer">
+                  get it by email ↗
+                </a>
+                .
+              </>
+            ) : (
+              <>The email edition is paused and new sign-ups are closed. To have your address removed, write to us.</>
+            )}
           </li>
         </ul>
       </div>
