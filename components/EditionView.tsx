@@ -1,5 +1,5 @@
 import Link from "@/components/Link";
-import { figVariant, webpSrcSet } from "@/lib/figs";
+import { coverSmall, figVariant, webpSrcSet } from "@/lib/figs";
 import { stressBand } from "@/lib/stressBand";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor } from "@/lib/editions";
@@ -181,7 +181,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
     </a>
   );
   return (
-    <article id={`story-${n}`} className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${full ? " ev-full" : ""}`}>
+    <article id={`story-${n}`} className={`ev-story${wide ? " ev-wide" : ""}${s.image ? " ev-has-img" : ""}${s.image && H === "h3" && n % 2 === 0 ? " ev-flip" : ""}${full ? " ev-full" : ""}`}>
       <div className="ev-meta">
         <span className="ev-num">{n}</span>
         {s.category && (topic ? (
@@ -463,7 +463,7 @@ export default function EditionView({
 
   return (
     <div className="ev" id={`ev-${e.date}`}>
-      <section className="ev-head">
+      <section className={`ev-head${e.cover ? " ev-head-cover" : ""}`}>
         <p className={`ev-kicker${showDate ? "" : " ev-kicker-size"}`}>
           {showDate && longDate(e.date)}
           <span className="ev-size">
@@ -473,6 +473,13 @@ export default function EditionView({
         <H className="ev-slice">{e.slice || "Today’s briefing"}</H>
         {/* The slice is a wordplay line; the takeaway sentence under it says plainly what the day is about. */}
         {e.takeaway?.line && <p className="ev-dek">{e.takeaway.line}</p>}
+        {/* The day's cover: beside the headline on wide screens, under it on phones. It gives each edition its own face. */}
+        {e.cover && (
+          <picture className="ev-cover">
+            <source type="image/webp" srcSet={coverSmall(e.cover)} />
+            <img src={e.cover} alt={e.coverAlt && e.coverAlt !== e.slice ? e.coverAlt : ""} width={1600} height={900} decoding="async" />
+          </picture>
+        )}
         <div className="ev-tools">
           <ShareRow url={`${SITE_URL}/daily/${slugFor(e.date)}`} slice={e.slice} />
           <Listen rootId={`ev-${e.date}`} minutes={e.readingMinutes} />

@@ -17,7 +17,7 @@ export default function Refer() {
   if (!REFERRAL.reward) notFound();
   return (
     <main className="cu">
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap">
         <section className="cu-hero" aria-labelledby="rf-title">
           <p className="ab-kicker">Share KKReckons</p>

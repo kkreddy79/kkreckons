@@ -958,3 +958,42 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .theme-toggle { width: 44px; height: 44px; }
   .ev-share a, .ev-share button, .seg button, .ev-bar a, .srcpick-btn, .ev-listen button { min-height: 44px; }
 }
+
+/* ---------- Slim banner (every page but Home and About) ----------
+   A thin strip of the two-worlds panorama under the header: the page keeps the site's colours without the
+   picture and wordmark taking the top third of a phone screen. The page's heading starts right below it. */
+.ab-top-xs .ab-top-img img { height: clamp(56px, 6.5vw, 92px); aspect-ratio: auto; object-position: 50% 72%;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+.ab-top.ab-top-xs + * > :first-child, .ab-top.ab-top-xs + * :is(.ev-head, .cu-hero) { margin-top: 14px; }
+
+/* ---------- Header menu: a fade where more links are off-screen ----------
+   When the links scroll sideways (phones, narrow tablets), NavLinks marks which sides have more; the fade there
+   says "there is more this way" instead of a link cut off mid-word. */
+.site-header nav[data-more="end"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); }
+.site-header nav[data-more="start"] { -webkit-mask-image: linear-gradient(270deg, #000 calc(100% - 20px), transparent); mask-image: linear-gradient(270deg, #000 calc(100% - 20px), transparent); }
+.site-header nav[data-more="both"] { -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 44px), transparent); }
+
+/* ---------- The day's cover in the edition header ----------
+   Wide screens: to the right of the headline, where the column used to be empty. Narrower: under the takeaway. */
+.ev-cover { display: block; margin: 16px 0 2px; }
+.ev-cover img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(60, 35, 20, 0.12); }
+@media (min-width: 901px) {
+  .ev-head-cover { display: grid; grid-template-columns: minmax(0, 1fr) clamp(280px, 30vw, 360px); column-gap: 36px; align-items: start; }
+  .ev-head-cover > * { grid-column: 1; }
+  .ev-head-cover > .ev-kicker { grid-column: 1 / -1; }
+  .ev-head-cover > .ev-cover { grid-column: 2; grid-row: 2 / span 6; margin: 4px 0 0; }
+}
+
+/* ---------- Story rhythm ----------
+   In an edition's list every second story with a graphic puts it on the right, so six stories don't read as
+   six identical blocks. Phones stack graphic over text either way. */
+@media (min-width: 701px) {
+  .ev-has-img.ev-flip { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+  .ev-has-img.ev-flip > * { grid-column: 1; }
+  .ev-has-img.ev-flip > .ev-fig { grid-column: 2; }
+  .ev-has-img.ev-flip > .ev-pair > .ev-why { grid-column: 1; }
+  .ev-has-img.ev-flip > :is(.ev-next, .ev-also, .ev-src, .ev-share-sm, .ev-foot), .ev-has-img.ev-flip > .ev-pair > .ev-other { grid-column: 1 / -1; }
+}
+
+/* Catch up: the wrapper that notices a reader reaching for the search and filters; it adds no box of its own. */
+.cu-controls { display: contents; }

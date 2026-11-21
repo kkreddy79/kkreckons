@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "@/components/Link";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Edition,
   THEMES,
   isPaywalled,
   longDate,
-  monthLabel,
   publisherName,
   slugFor,
   storyHref,
@@ -27,21 +26,53 @@ export type StorySummaries = Record<string, { points: string[]; why: string; oth
 
 export type ReadingLink = { date: string; title: string; url: string; note: string };
 
+/** What search, filters and the story list work from (served by /daily/index.json, fetched on first use). */
+export type ArchiveData = { editions: Edition[]; links: StoryLinks; reading: ReadingLink[] };
+
+/** One month of the "By edition" list, with only what its rows show. */
+export type ArchiveMonth = { label: string; items: { date: string; slice: string; heads: string; stories: number; readingMinutes: number }[] };
+
 /** "12 stories" / "1 further reading link" */
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
 /** Dropdown count: stories, plus further reading links when there are any. */
 const countLabel = (stories: number, links: number) => (links ? `${stories} · ${links} reading` : `${stories}`);
 
+const NO_EDITIONS: Edition[] = [];
+const NO_LINKS: StoryLinks = {};
+const NO_READING: ReadingLink[] = [];
+
 export default function ArchiveBrowser({
-  editions,
-  links,
-  reading,
+  months,
+  themeCounts: allThemeCounts,
+  totals,
 }: {
-  editions: Edition[];
-  links: StoryLinks;
-  reading: ReadingLink[];
+  months: ArchiveMonth[];
+  /** Stories in each theme across the archive, counted on the server so the chips show them at once. */
+  themeCounts: Record<string, number>;
+  totals: { stories: number; reading: number };
 }) {
+  // The stories themselves load the first time a reader reaches for the search box, a filter or the story list
+  // (or arrives with a filter in the URL); the list of editions needs none of it.
+  const [data, setData] = useState<ArchiveData | null>(null);
+  const [wanted, setWanted] = useState(false);
+  const want = useCallback(() => setWanted(true), []);
+  useEffect(() => {
+    if (!wanted || data) return;
+    let live = true;
+    fetch("/daily/index.json")
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((d: ArchiveData) => live && setData(d))
+      // Failed (offline, a blip): the next touch of the controls tries again.
+      .catch(() => live && setWanted(false));
+    return () => {
+      live = false;
+    };
+  }, [wanted, data]);
+  const editions = data?.editions ?? NO_EDITIONS;
+  const links = data?.links ?? NO_LINKS;
+  const reading = data?.reading ?? NO_READING;
+
   // Filters live in the URL (?q=, ?theme=, ?source=, ?free=1) but are read after mount, so the page is fully
   // rendered on the server with the default "By edition" list (visible to crawlers and link previews).
   const [query, setQuery] = useState("");
@@ -69,6 +100,10 @@ export default function ArchiveBrowser({
   useEffect(() => {
     if (location.hash === "#search") document.getElementById("archive-search")?.focus();
   }, []);
+
+  useEffect(() => {
+    if (view === "stories") want();
+  }, [view, want]);
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
@@ -141,10 +176,7 @@ export default function ArchiveBrowser({
   );
 
   /** Stories in each theme across the archive, shown on its filter chip (the same counts as the topic pages). */
-  const themeCounts = useMemo(
-    () => Object.fromEntries(THEMES.map((t) => [t.name, all.filter((a) => themesOf(a.story).includes(t.name)).length])),
-    [all]
-  );
+  const themeCounts = allThemeCounts;
 
   /** Stories matching the theme and search, before the source filter, so source counts follow them. */
   const q = query.trim().toLowerCase();
@@ -195,19 +227,10 @@ export default function ArchiveBrowser({
     [readingBase, source, free]
   );
 
-  const months = useMemo(() => {
-    const out: { label: string; items: Edition[] }[] = [];
-    for (const e of editions) {
-      const label = monthLabel(e.date);
-      const last = out[out.length - 1];
-      if (last?.label === label) last.items.push(e);
-      else out.push({ label, items: [e] });
-    }
-    return out;
-  }, [editions]);
-
   return (
     <>
+      {/* Reaching for any control (hover, focus or touch) starts loading the stories behind it. */}
+      <div className="cu-controls" onPointerOver={want} onFocus={want} onTouchStart={want}>
       <div className="toolbar">
         <input
           id="archive-search"
@@ -253,7 +276,7 @@ export default function ArchiveBrowser({
           value={source}
           onChange={(v) => setParam("source", v)}
           options={[
-            { value: "", label: "All sources", count: countLabel(base.length, readingBase.length) },
+            { value: "", label: "All sources", count: data ? countLabel(base.length, readingBase.length) : countLabel(totals.stories, totals.reading) },
             ...publishers.map(([name, [stories, links]]) => ({ value: name, label: name, count: countLabel(stories, links) })),
           ]}
         />
@@ -268,8 +291,9 @@ export default function ArchiveBrowser({
           aria-pressed={free}
           onClick={() => setParam("free", free ? "" : "1")}
         >
-          Free to read ({countLabel(freeCount, freeReading)})
+          Free to read{data && <> ({countLabel(freeCount, freeReading)})</>}
         </button>
+      </div>
       </div>
 
       {view === "editions" ? (
@@ -286,9 +310,9 @@ export default function ArchiveBrowser({
                   <div>
                     <div className="tl-date">{longDate(e.date)}</div>
                     {e.slice && <p className="tl-slice">{e.slice}</p>}
-                    <p className="tl-heads">{e.stories.slice(0, 4).map((s) => s.title).join(" · ")}</p>
+                    <p className="tl-heads">{e.heads}</p>
                     <span className="tl-meta">
-                      {e.stories.length} stories · {e.readingMinutes} min read
+                      {e.stories} stories · {e.readingMinutes} min read
                     </span>
                   </div>
                 </Link>
@@ -296,6 +320,10 @@ export default function ArchiveBrowser({
             </div>
           </section>
         ))
+      ) : !data ? (
+        <section className="story-results" aria-busy="true">
+          <p className="count">Loading stories…</p>
+        </section>
       ) : (
         <section className="story-results">
           <p className="count">

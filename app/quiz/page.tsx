@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function QuizPage() {
   return (
     <main className="cu">
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap">
         <section className="cu-hero" aria-labelledby="qz-title">
           <p className="ab-kicker">Weekly quiz · {range}</p>

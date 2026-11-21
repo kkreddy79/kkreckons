@@ -48,7 +48,7 @@ export default async function Month({ params }: { params: Promise<{ slug: string
           },
         }}
       />
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap" id="mo-read">
         <section className="cu-hero" aria-labelledby="mo-title">
           <p className="ab-kicker">Monthly roundup · {r.label}</p>

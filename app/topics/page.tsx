@@ -18,7 +18,7 @@ export default function Topics() {
   const topics = TOPICS.map((t) => ({ ...t, stories: topicStories(t.name) }));
   return (
     <main className="cu">
-      <Banner />
+      <Banner slim />
       <div className="cu-wrap" id="tp-read">
         <section className="cu-hero" aria-labelledby="tp-title">
           <p className="ab-kicker">Topics</p>
