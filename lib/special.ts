@@ -54,7 +54,9 @@ export type ReportPage = {
 /** Reads and prepares a hosted report's HTML (build time). */
 export function loadReport(r: SpecialReport): ReportPage {
   if (!r.file) throw new Error(`Report ${r.slug} has no file`);
-  const html = fs.readFileSync(path.join(process.cwd(), r.file), "utf8");
+  // Reports live in special/: naming that folder here (rather than joining the whole stored path) lets the build
+  // trace just it, not the entire project.
+  const html = fs.readFileSync(path.join(process.cwd(), "special", path.basename(r.file)), "utf8");
   const css = [...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]).join("\n");
   let body = (/<body[^>]*>([\s\S]*?)<\/body>/i.exec(html)?.[1] ?? html)
     // A page saved from a claude.ai artifact can carry head elements inside its body.

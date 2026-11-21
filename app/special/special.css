@@ -153,12 +153,24 @@
   .sp-feature img { height: auto; aspect-ratio: 16 / 9; }
 }
 @media (max-width: 760px) {
-  .sp-hero .sp-wrap { padding-top: 26px; padding-bottom: 120px; }
-  .sp-sky { height: 110px; }
-  .sp-feature { margin-top: -84px; }
+  /* Phones: a short band (label, one-line title, a sliver of skyline) so the featured report is on the first screen.
+     The standfirst is left out here; "Why read them" below says the same at more length. */
+  .sp-hero .sp-wrap { padding-top: 16px; padding-bottom: 64px; }
+  .sp-hero h1 { margin: 6px 0 0; max-width: none; font-size: clamp(24px, 6.6vw, 32px); }
+  .sp-hero .sp-stand { display: none; }
+  .sp-sky { height: 60px; }
+  .sp-feature { margin-top: -44px; }
   .sp-feature-body { padding: 20px 18px 20px; gap: 8px; }
   .sp-section { padding-top: 34px; }
   .sp-why { grid-template-columns: 1fr; gap: 10px; }
   .sp-why li { padding: 16px; }
   .sp-go { align-self: stretch; text-align: center; padding: 13px 18px; }
+}
+
+/* Touch screens, inside a report: filter buttons and the linked names in card headings get a finger-sized target.
+   Links inside running text and source lists stay as text. */
+@media (pointer: coarse) {
+  .sp .sp-report .filters button { min-height: 42px !important; }
+  .sp .sp-report h4 a { padding-block: 9px; }
+  .sp .crumbs a, .sp .sp-foot a { display: inline-block; padding-block: 10px; margin-block: -10px; }
 }

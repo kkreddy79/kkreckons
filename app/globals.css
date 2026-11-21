@@ -962,7 +962,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 /* ---------- Slim banner (every page but Home and About) ----------
    A thin strip of the two-worlds panorama under the header: the page keeps the site's colours without the
    picture and wordmark taking the top third of a phone screen. The page's heading starts right below it. */
-.ab-top-xs .ab-top-img img { height: clamp(56px, 6.5vw, 92px); aspect-ratio: auto; object-position: 50% 72%;
+.ab-top-xs .ab-top-img img { height: clamp(56px, 6.5vw, 92px); aspect-ratio: auto; object-position: 50% 50%;
   -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
 .ab-top.ab-top-xs + * > :first-child, .ab-top.ab-top-xs + * :is(.ev-head, .cu-hero) { margin-top: 14px; }
 
@@ -997,3 +997,19 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 
 /* Catch up: the wrapper that notices a reader reaching for the search and filters; it adds no box of its own. */
 .cu-controls { display: contents; }
+
+/* ---------- Topics: the latest story's graphic on each card ---------- */
+.tp-grid .tp-latest { display: flex; gap: 12px; align-items: flex-start; }
+.tp-grid .tp-latest span { flex: 1; min-width: 0; }
+.tp-grid .tp-latest img { flex: none; width: 54px; height: 70px; border-radius: 8px; object-fit: cover; object-position: top; border: 1px solid var(--line); }
+
+/* ---------- Touch: Catch up's story list ----------
+   Each headline, date and source link gets a finger-sized target, with the rows spaced so the targets don't overlap. */
+@media (pointer: coarse) {
+  .story-results li { row-gap: 6px; }
+  .story-results .sr-title { padding-block: 6px; }
+  .story-results .sr-title a { padding-block: 11px; margin-block: -11px; }
+  .story-results a.sr-date, .tp-results a.sr-date { display: inline-block; padding-block: 13px; margin-block: -13px; }
+  /* "Quick summary" under a story, here and on topic pages. */
+  .ev-qs-btn { min-height: 40px; }
+}
