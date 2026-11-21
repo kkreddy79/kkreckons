@@ -49,8 +49,8 @@ export default async function DrawdownsPage() {
         <Link href="/ai-stress-index" className={s.back}>← AI Market Stress Index</Link>
         <h1>How far the AI trade has fallen from its peak</h1>
         <p className={s.dek}>
-          {d ? d.stocks.length : 50} AI stocks across chips, cloud, data centers, software, networking, power, hardware, robotics and frontier AI,
-          each measured from its highest-ever close{d ? <> to the close on <b>{d.asOf.slice(8, 10).replace(/^0/, "")} {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+d.asOf.slice(5, 7) - 1]} {d.asOf.slice(0, 4)}</b></> : null}.
+          {d ? d.stocks.length : 50} AI stocks. {d ? new Set(d.stocks.map((r) => r.g)).size : 9} sectors. Each stock’s fall from its all-time closing high
+          {d ? <> to its <b>{d.asOf.slice(8, 10).replace(/^0/, "")} {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+d.asOf.slice(5, 7) - 1]} {d.asOf.slice(0, 4)}</b> close</> : " to its latest close"}.
         </p>
         <Drawdowns initial={d} />
       </div>
