@@ -9,6 +9,7 @@ import { getContent } from "@/lib/content";
 import { relatedFor } from "@/lib/related";
 import { editions, getEdition, longDate, shortDate, slugFor } from "@/lib/editions";
 import { SITE_URL } from "@/lib/site";
+import { figSrc } from "@/lib/figs";
 
 export const dynamicParams = false;
 
@@ -25,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // The 1600×900 cover (when the edition has one) is the share and Discover image; older editions
   // fall back to their first story graphic.
   const share = edition.cover
-    ? { url: edition.cover, width: 1600, height: 900, alt: edition.coverAlt || edition.slice }
-    : { url: edition.image || "/about/two-worlds.jpg" };
+    ? { url: figSrc(edition.cover), width: 1600, height: 900, alt: edition.coverAlt || edition.slice }
+    : { url: figSrc(edition.image || "/about/two-worlds.jpg") };
   // Search results show the lead story's own headline (what people search for), then the date; shared
   // links keep KK's headline for the day (slice), which reads well in a feed but says little in search.
   const day = `${shortDate(edition.date)} ${edition.date.slice(0, 4)}`;
@@ -62,10 +63,10 @@ export default async function EditionPage({ params }: Props) {
   // The latest earlier edition with a saved AI Stress Index reading, to flag a move into a new band.
   const prevStressScore = editions.filter((x) => x.date < edition.date).map((x) => getContent(x.date).stressIndex).find(Boolean)?.score ?? null;
   const url = `${SITE_URL}/daily/${slugFor(edition.date)}`;
-  const image = edition.image ? new URL(edition.image, SITE_URL).href : `${SITE_URL}/about/two-worlds.jpg`;
+  const image = edition.image ? new URL(figSrc(edition.image), SITE_URL).href : `${SITE_URL}/about/two-worlds.jpg`;
   // Cover first: Google picks the article's preview image from this list.
   const images = edition.cover
-    ? [{ "@type": "ImageObject", url: new URL(edition.cover, SITE_URL).href, width: 1600, height: 900 }, image]
+    ? [{ "@type": "ImageObject", url: new URL(figSrc(edition.cover), SITE_URL).href, width: 1600, height: 900 }, image]
     : [image];
   const ld = [
     {

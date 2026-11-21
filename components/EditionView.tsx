@@ -1,5 +1,5 @@
 import Link from "@/components/Link";
-import { coverSmall, figVariant, webpSrcSet } from "@/lib/figs";
+import { coverSmall, figSrc, figVariant, webpSrcSet } from "@/lib/figs";
 import { stressBand } from "@/lib/stressBand";
 import type { EditionContent, FullStory } from "@/lib/content";
 import { editions, isPaywalled, longDate, themeSlug, themesOf, publisherName, shortDate, slugFor } from "@/lib/editions";
@@ -9,10 +9,11 @@ import type { LiveStress } from "@/lib/stress";
 import type { DrawdownSummary } from "@/lib/drawdowns";
 import { watchSummary } from "@/lib/watch";
 import { LockIcon, OpenLockIcon, ScalesIcon, SunIcon } from "@/components/AboutIcons";
-import StorySource, { PaidMark, storyPaid } from "@/components/StorySource";
+import StorySource, { SourceMark, storyPaid } from "@/components/StorySource";
 import { Glossed } from "@/components/Glossary";
 import ReadTracker from "@/components/ReadTracker";
 import ShareRow from "@/components/ShareRow";
+import Reactions from "@/components/Reactions";
 import FigClamp from "@/components/FigClamp";
 import MarketStrip from "@/components/MarketStrip";
 import PrintImages from "@/components/PrintImages";
@@ -165,7 +166,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
   const seen = new Set<string>();
   const follow = followLinks(date, n, s);
   const pic = s.image && (
-    <a href={s.image} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? figVariant(s.image, "lg") : undefined}>
+    <a href={figSrc(s.image)} target="_blank" rel="noreferrer" className="ev-fig-link" aria-label="Open the full-size image" data-lightbox={s.imageAlt || s.title} data-lightbox-src={s.imageW ? figVariant(s.image, "lg") : undefined}>
       {s.imageW ? (
         <picture>
           <source
@@ -173,10 +174,10 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
             srcSet={webpSrcSet(s.image, s.imageW)}
             sizes={wide ? "(max-width: 700px) 100vw, 560px" : "(max-width: 700px) 100vw, 480px"}
           />
-          <img src={s.image} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" />
+          <img src={figSrc(s.image)} alt={s.imageAlt || ""} width={s.imageW} height={s.imageH} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" />
         </picture>
       ) : (
-        <img src={s.image} alt={s.imageAlt || ""} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} />
+        <img src={figSrc(s.image)} alt={s.imageAlt || ""} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} />
       )}
     </a>
   );
@@ -220,7 +221,7 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
             <figcaption>
               {s.imageCredit && <span>{s.imageCredit}</span>}
               {!tall && (
-                <a href={s.image} target="_blank" rel="noreferrer" data-lightbox={s.imageAlt || s.title}>
+                <a href={figSrc(s.image)} target="_blank" rel="noreferrer" data-lightbox={s.imageAlt || s.title}>
                   View full size ↗
                 </a>
               )}
@@ -300,6 +301,8 @@ export function StoryCard({ s, n, wide, full, id, date, as: H = "h3", priority =
           </ul>
         </div>
       )}
+
+      <Reactions date={date} n={n} />
 
       {/* Source and sharing share one line (they wrap only when the card is too narrow). */}
       <div className="ev-foot">
@@ -477,7 +480,7 @@ export default function EditionView({
         {e.cover && (
           <picture className="ev-cover">
             <source type="image/webp" srcSet={coverSmall(e.cover)} />
-            <img src={e.cover} alt={e.coverAlt && e.coverAlt !== e.slice ? e.coverAlt : ""} width={1600} height={900} decoding="async" />
+            <img src={figSrc(e.cover)} alt={e.coverAlt && e.coverAlt !== e.slice ? e.coverAlt : ""} width={1600} height={900} decoding="async" />
           </picture>
         )}
         <div className="ev-tools">
@@ -582,7 +585,7 @@ export default function EditionView({
                   {(r.note || publisherName(r.url)) && (
                     <small>
                       {r.note || publisherName(r.url)}
-                      {isPaywalled(r.url) && <PaidMark />}
+                      <SourceMark paid={isPaywalled(r.url)} />
                     </small>
                   )}
                 </li>
