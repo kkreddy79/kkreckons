@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import JsonLd, { AUTHOR, PUBLISHER } from "@/components/JsonLd";
 import Listen from "@/components/Listen";
 import ReportScripts from "@/components/ReportScripts";
+import SectionBar from "@/components/SectionBar";
 import ShareRow from "@/components/ShareRow";
 import { SpecialCard } from "@/components/SpecialCards";
 import SubscribeBox from "@/components/SubscribeBox";
@@ -79,6 +80,9 @@ export default async function SpecialReportPage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Chapter links that appear under the header once the report's own jump links scroll away. */}
+      {r.sections?.length ? <SectionBar items={r.sections} watch="sp-jump" /> : null}
 
       {/* The report, as supplied, with its stylesheet scoped to this box (lib/special.ts). */}
       <article id="sp-report" className="sp-report" aria-label={r.title}>

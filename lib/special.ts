@@ -28,6 +28,8 @@ export type SpecialReport = {
   cover: string | null;
   cover_alt?: string;
   sources: string[];
+  /** Chapter links for the sticky bar under the header: ids of headings inside the report. Optional. */
+  sections?: { id: string; label: string }[];
 };
 
 /** Every report, newest first. */

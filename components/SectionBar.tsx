@@ -32,6 +32,9 @@ export default function SectionBar({ items, watch }: { items: { id: string; labe
         if (el && el.getBoundingClientRect().top <= line) current = it.id;
       }
       setActive(current);
+      // A jump link or a fast scroll can carry the reader past the anchor without it ever crossing the screen, so the
+      // observer above never fires. Check its position here too.
+      if (anchor) setShow(anchor.getBoundingClientRect().bottom < 0);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
