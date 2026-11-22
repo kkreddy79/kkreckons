@@ -151,6 +151,10 @@ const PUBLISHERS: Record<string, string> = {
   "independent.co.uk": "The Independent",
   "documents1.worldbank.org": "World Bank",
   "thestar.com.my": "The Star",
+  "the-decoder.com": "The Decoder",
+  "pib.gov.in": "PIB",
+  "globalbankingandfinance.com": "Global Banking & Finance Review",
+  "wccftech.com": "Wccftech",
 };
 
 /** "https://www.livemint.com/…" → "Mint" (falls back to the domain) */
