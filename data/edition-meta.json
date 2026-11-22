@@ -675,5 +675,19 @@
       "band": "Severe",
       "asOf": "2026-11-20"
     }
+  },
+  "2026-11-22": {
+    "artifact": "https://claude.ai/artifact/EioMhXLv3JEc1nekBzU6Qx",
+    "stories": {
+      "Nvidia without Huang: the risk in deals sealed on a handshake": {
+        "freeUrl": "https://wccftech.com/elon-musk-warns-nvidia-lose-critical-supply-deals-without-jensen-huang/",
+        "freeSrc": "Wccftech"
+      }
+    },
+    "stressIndex": {
+      "score": 61,
+      "band": "Severe",
+      "asOf": "2026-11-20"
+    }
   }
 }

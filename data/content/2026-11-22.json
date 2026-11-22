@@ -1,0 +1,552 @@
+{
+  "date": "2026-11-22",
+  "slice": "Riemann: 17m lines. India ships kiwi. Handshakes exit Nvidia. Apps sell bets. Deutsche pays. War goes orbital.",
+  "artifact": "https://claude.ai/artifact/EioMhXLv3JEc1nekBzU6Qx",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "17m",
+      "text": "Lines of Lean code in Alpöge's Riemann proof; printed out, over 250,000 pages.",
+      "url": "https://emeraldbook.org/news/nov-2126/"
+    },
+    {
+      "num": "245",
+      "text": "Satellites reportedly planned for Ukraine's own network, an alternative to Starlink.",
+      "url": "https://www.theguardian.com/science/ng-interactive/2026/nov/08/ukraine-space-critical-war-starlink"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Maths and AI",
+          "tag": "",
+          "title": "Anthropic mathematician and Claude claim Riemann hypothesis proof",
+          "url": "https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai",
+          "url2": "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/",
+          "points": [
+            "Anthropic mathematician Levent Alpöge says that, working with Claude, he has proved the Riemann hypothesis, the 1859 prime-number puzzle, and its generalised version. The Guardian reports two groups, the Lean FRO and the Mathlib Initiative, then said they had full confidence the proof is correct.",
+            "Hours later, AMS president Ravi Vakil shared an all-human draft by Alessandro Masullo, and problems were soon flagged in it. New Scientist found awe and caution; the Lean proof runs to 17 million lines, the full argument past 250,000 pages. An Emerald Book column says humans must still audit what the code proves.",
+            "Scientific American says daily life barely changes and encryption isn't directly at risk; the real news is AI creating new knowledge."
+          ],
+          "numbers": [
+            [
+              "1859",
+              "year Riemann posed it"
+            ],
+            [
+              "$1m",
+              "Clay Millennium Prize"
+            ],
+            [
+              "17m",
+              "lines of Lean code"
+            ]
+          ],
+          "why": "If the check holds, hundreds of results that assume Riemann become theorems, and AI moves from helping mathematicians to making discoveries they must catch up with. The bottleneck shifts from finding proofs to checking and explaining them.",
+          "other": "A compiler confirms each step, not whether the starting statement was coded faithfully, and no human has read the full argument. Until people can explain why it works, many will call it checked but not yet understood; how credit splits between Alpöge and Claude is also open.",
+          "also": [
+            {
+              "title": "Mathematicians are amazed by 'holy grail' proof of Riemann hypothesis (New Scientist)",
+              "url": "https://www.newscientist.com/article/2600235-mathematicians-are-amazed-by-holy-grail-proof-of-riemann-hypothesis/"
+            },
+            {
+              "title": "250,000-Page Math Slop: Why Anthropic Didn't Solve the Riemann Hypothesis (Emerald Book)",
+              "url": "https://emeraldbook.org/news/nov-2126/"
+            },
+            {
+              "title": "What the Riemann hypothesis proof really means about AI and the future (Scientific American)",
+              "url": "https://www.scientificamerican.com/article/what-the-riemann-hypothesis-proof-really-means-about-ai-and-the-future/"
+            }
+          ],
+          "image": "/figs/2026-11-22-1.jpg",
+          "imageAlt": "Explainer: the Claude-assisted Riemann hypothesis proof, the rival all-human draft, the doubts and what it means for readers",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Guardian, The Decoder, New Scientist, Scientific American and Emerald Book",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "Claude and a 167-year-old riddle",
+          "emailTeaser": "A checked proof, a rival draft, and what it means for you",
+          "cite": "On 21 November 2026 two groups, the Lean Focused Research Organization and the Mathlib Initiative, said they had full confidence Alpöge's Riemann proof is correct.",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Trade",
+          "tag": "",
+          "title": "India's hidden export winners: meat, oats, handicrafts and kiwi",
+          "url": "https://m.economictimes.com/prime/hidden-export-winners-the-unlikely-products-finding-real-buyers-abroad/primearticleshow/135974977.cms",
+          "url2": "",
+          "points": [
+            "India's merchandise exports rose 21.96% to $309.06bn in April to October 2026, Commerce Ministry data show.",
+            "ET Prime looks past petroleum, electronics and engineering: meat, dairy and poultry added about $1.36bn, while 'other cereals' such as oats, rye, barley and quinoa doubled from a small base. Handicrafts, plastics and marine products also grew.",
+            "It warns that percentage jumps from small bases, higher prices, and first-ever shipments like kiwi from Arunachal's Ziro to Dubai do not yet prove lasting markets."
+          ],
+          "numbers": [
+            [
+              "21.96%",
+              "export growth, Apr-Oct"
+            ]
+          ],
+          "why": "Growth spreading into farm, food and craft exports gives small producers and rural regions a share of India's trade boom, not only the big industrial sectors.",
+          "other": "Category totals can't separate volume from price, or one product from another. Without granular data, some of these winners may be price spikes or one-off orders that fade.",
+          "also": [],
+          "image": "/figs/2026-11-22-2.jpg",
+          "imageAlt": "Explainer: India's export growth April to October 2026 and the less-noticed categories behind it",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": true,
+          "freeUrl": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2335914",
+          "freeSrc": "PIB (Commerce Ministry)",
+          "themes": [
+            "India",
+            "Markets"
+          ],
+          "emailHead": "Exports beyond oil and phones",
+          "emailTeaser": "Small categories are growing fast, but big gains are rarer",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Personal finance",
+          "tag": "Opinion",
+          "title": "Nvidia's 13% fall cost most Indian US funds only 1% to 3.2%",
+          "url": "https://www.livemint.com/money/personal-finance/nvidias-fall-when-a-white-swan-is-mistaken-for-a-black-one-11795238301524.html",
+          "url2": "",
+          "points": [
+            "Value Research's Dhirendra Kumar argues Jensen Huang's exit from Nvidia was no black swan: US scrutiny of a Singapore customer suspected of routing chips to China, and a founder-CEO with no obvious successor, were public long before.",
+            "Nvidia fell 13% in the week to 11 November, yet most Indian funds investing in US shares lost only 1% to 3.2%; Nasdaq 100 trackers, where Nvidia weighs about 8%, lost roughly 1.1% to 1.3%.",
+            "His test: imagine any one holding halving overnight. If your goals would suffer, you own too much of it."
+          ],
+          "numbers": [
+            [
+              "13%",
+              "Nvidia's weekly fall"
+            ],
+            [
+              "8%",
+              "Nvidia in the Nasdaq 100"
+            ]
+          ],
+          "why": "You can't predict which company breaks, but you can cap how much any single break costs you; Kumar applies the same test to Indian firms that hinge on one promoter, client or regulator.",
+          "other": "Diversification also caps the upside: investors concentrated in Nvidia beat broad funds for years, and hindsight makes every fragility look obvious after the fact.",
+          "also": [],
+          "image": "/figs/2026-11-22-3.jpg",
+          "imageAlt": "Explainer: Nvidia's 13% fall versus the much smaller losses of Indian funds investing in US shares",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "The swan was white",
+          "emailTeaser": "Why diversified funds barely felt Nvidia's slide",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Big Tech",
+          "tag": "Opinion",
+          "title": "Nvidia without Huang: the risk in deals sealed on a handshake",
+          "url": "https://www.wsj.com/business/nvidia-jensen-huang-deals-8750daf4",
+          "url2": "",
+          "points": [
+            "WSJ columnist Tim Higgins argues the biggest worry for Nvidia investors is that key supplier and customer deals rested on handshakes with Jensen Huang, not written contracts.",
+            "Elon Musk posted that without Huang some critical deals will be lost; Huang had boasted of decades of TSMC business with no contract. Interim CEO Colette Kress says it is business as usual, citing $390bn in purchase commitments.",
+            "The board has so far rejected a public push, backed by Musk and President Trump, to bring Huang back."
+          ],
+          "numbers": [],
+          "why": "A listed company is meant to outlast any one person; deals that live in a founder's head become a risk the day he leaves.",
+          "other": "Analyst Patrick Moorhead says purchase orders lock in supply for at least 18 months, so the real exposure is the next round of deals, and trust-based dealmaking helped Nvidia move faster than rivals.",
+          "also": [],
+          "image": "/figs/2026-11-22-4.jpg",
+          "imageAlt": "Explainer: Nvidia's handshake deals under Jensen Huang and the company's defence",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Nvidia's handshake problem",
+          "emailTeaser": "Key deals ran on trust in one man",
+          "freeUrl": "https://wccftech.com/elon-musk-warns-nvidia-lose-critical-supply-deals-without-jensen-huang/",
+          "freeSrc": "Wccftech",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Banking",
+          "tag": "Opinion",
+          "title": "Deutsche Bank's leak shows a bank's past is never past",
+          "url": "https://www.ft.com/content/bfa66957-73d4-44f1-bea5-6b141c197920",
+          "url2": "",
+          "points": [
+            "FT columnist Dan Davies argues banks can't make a clean break with the past, because most of their profits and costs flow from decisions taken years ago.",
+            "A new whistleblower leak revisited Deutsche Bank's ties to Russian oligarchs, Jeffrey Epstein and others, and suggested CEO Christian Sewing may have known of some, though the shares had more than doubled since he took over in 2018.",
+            "Many Russian clients, Davies says, looked acceptable once and went bad later: bankers rarely make bad loans, they make good loans that go bad."
+          ],
+          "numbers": [],
+          "why": "Sewing's pitch was a new, clean Deutsche; the leak tests whether investors believe the reform or price the history.",
+          "other": "'It went bad later' can excuse too much. If warnings were ignored after the risks were clear, the problem is today's judgement, not yesterday's history.",
+          "also": [],
+          "image": "/figs/2026-11-22-5.jpg",
+          "imageAlt": "Explainer: Deutsche Bank's whistleblower leak and why a bank's past decisions linger",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.globalbankingandfinance.com/analysis-deutsche-bank-leaks-test-ceo-sewings-pledge-reform/",
+          "freeSrc": "Reuters",
+          "themes": [
+            "Banking"
+          ],
+          "emailHead": "Deutsche's past catches up",
+          "emailTeaser": "Why banks can't make a clean break",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Personal finance",
+          "tag": "Opinion",
+          "title": "Why investing is starting to look like gambling, app by app",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-20/why-investing-is-starting-to-look-more-like-gambling",
+          "url2": "",
+          "points": [
+            "A Bloomberg column argues the line between investing and gambling is blurring: zero-day options, crypto, meme stocks and sports bets now sit inside trading apps, and the Trump administration has put some betting under the commodities regulator.",
+            "Apps earn far more from frequent trading than from buy-and-hold, so they have reason to make investing feel like entertainment. Robinhood says long-term investing remains central; Kalshi says prediction markets are trading, not investment.",
+            "A Finra Foundation researcher found more than 75% of 2020's new investors were still invested two years later, and sees betting as a possible gateway."
+          ],
+          "numbers": [],
+          "why": "Money you spend for the thrill should be budgeted like a night out; the danger is when an app blurs that line for you.",
+          "other": "Adults may choose fun over returns, and losing small sums young can teach discipline; the question is whether apps designed to be habit-forming leave that choice truly free.",
+          "also": [],
+          "image": "/figs/2026-11-22-6.jpg",
+          "imageAlt": "Explainer: how trading apps are blurring investing and gambling",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Bloomberg",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Markets"
+          ],
+          "emailHead": "Your trading app wants you to play",
+          "emailTeaser": "Bets, options and stocks now share one screen",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "This week's long read",
+          "tag": "",
+          "title": "Long read: how space became a front line in Ukraine's war",
+          "url": "https://www.theguardian.com/science/ng-interactive/2026/nov/08/ukraine-space-critical-war-starlink",
+          "url2": "",
+          "points": [
+            "The Guardian's Peter Beaumont traces how the war has spread into orbit: Ukraine struck the Samara plant that builds the Soyuz-2 rockets launching Rassvet, Russia's Starlink replacement, while Russia has fired Oreshnik missiles that rise into near space.",
+            "After Starlink speed curbs, Ukraine and Denmark's GomSpace launched Obria Nano, a test satellite for a sovereign network reportedly of about 245 satellites.",
+            "Experts describe GPS jamming, laser-dazzling and a Russian satellite harassing a Finnish Iceye radar craft that serves Ukraine; everyone now wants their own Starlink, one says."
+          ],
+          "numbers": [
+            [
+              "245",
+              "satellites reportedly planned"
+            ]
+          ],
+          "why": "Space is turning into infrastructure. For investors, look beyond defence contractors: satellite building and launch, earth observation, secure communications, space surveillance and connectivity are separate markets with different business models, capital needs and risks.",
+          "other": "If a private company can shape a country's access to communications and intelligence, who holds the high ground? Going sovereign is costly too: a Ukrainian MP admits funding is a significant issue.",
+          "also": [],
+          "image": "/figs/2026-11-22-7.jpg",
+          "imageAlt": "Explainer: how space has become a front in the Ukraine war, and Ukraine's push for its own satellite network",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Guardian",
+          "pay": false,
+          "themes": [
+            "Geopolitics"
+          ],
+          "emailHead": "The war goes into orbit",
+          "emailTeaser": "Why Ukraine wants its own Starlink",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Machines check the steps.",
+    "b": "People still own the meaning.",
+    "line": "From Nvidia's unwritten deals to Deutsche's old clients, what is written down outlasts whoever wrote it, and someone still has to read it."
+  },
+  "cover": "/figs/2026-11-22-cover.jpg",
+  "coverAlt": "Riemann: 17m lines. India ships kiwi. Handshakes exit Nvidia. Apps sell bets. Deutsche pays. War goes orbital.",
+  "stressIndex": {
+    "score": 61,
+    "band": "Severe",
+    "asOf": "2026-11-20"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25800.5996,
+        "asOf": "2026-11-20",
+        "prev": 25514.3008,
+        "week": 25144.3008,
+        "spark": [
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 6910.3901,
+        "asOf": "2026-11-20",
+        "prev": 7175.8301,
+        "week": 7561.6699,
+        "spark": [
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.912,
+        "asOf": "2026-11-20",
+        "prev": 5.052,
+        "week": 5.154,
+        "spark": [
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 92.57,
+        "asOf": "2026-11-20",
+        "prev": 91.98,
+        "week": 95.84,
+        "spark": [
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98,
+          92.57
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3515.3999,
+        "asOf": "2026-11-20",
+        "prev": 3685.5,
+        "week": 3886.3,
+        "spark": [
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5,
+          3515.3999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 92.67,
+        "asOf": "2026-11-21",
+        "prev": 93.295,
+        "week": 94.24,
+        "spark": [
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295,
+          92.67
+        ]
+      }
+    ]
+  }
+}

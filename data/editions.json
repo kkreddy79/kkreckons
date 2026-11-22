@@ -1,5 +1,105 @@
 [
   {
+    "date": "2026-11-22",
+    "slice": "Riemann: 17m lines. India ships kiwi. Handshakes exit Nvidia. Apps sell bets. Deutsche pays. War goes orbital.",
+    "artifact": "https://claude.ai/artifact/EioMhXLv3JEc1nekBzU6Qx",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-22-1.jpg",
+    "cover": "/figs/2026-11-22-cover.jpg",
+    "coverAlt": "Riemann: 17m lines. India ships kiwi. Handshakes exit Nvidia. Apps sell bets. Deutsche pays. War goes orbital.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Anthropic mathematician and Claude claim Riemann hypothesis proof",
+        "category": "Maths and AI",
+        "tag": "",
+        "url": "https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai",
+        "src": "The Guardian, The Decoder, New Scientist, Scientific American and Emerald Book",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's hidden export winners: meat, oats, handicrafts and kiwi",
+        "category": "Trade",
+        "tag": "",
+        "url": "https://m.economictimes.com/prime/hidden-export-winners-the-unlikely-products-finding-real-buyers-abroad/primearticleshow/135974977.cms",
+        "src": "The Economic Times",
+        "pay": true,
+        "themes": [
+          "India",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Nvidia's 13% fall cost most Indian US funds only 1% to 3.2%",
+        "category": "Personal finance",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/money/personal-finance/nvidias-fall-when-a-white-swan-is-mistaken-for-a-black-one-11795238301524.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Nvidia without Huang: the risk in deals sealed on a handshake",
+        "category": "Big Tech",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/business/nvidia-jensen-huang-deals-8750daf4",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Deutsche Bank's leak shows a bank's past is never past",
+        "category": "Banking",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/bfa66957-73d4-44f1-bea5-6b141c197920",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why investing is starting to look like gambling, app by app",
+        "category": "Personal finance",
+        "tag": "Opinion",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-20/why-investing-is-starting-to-look-more-like-gambling",
+        "src": "Bloomberg",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Long read: how space became a front line in Ukraine's war",
+        "category": "This week's long read",
+        "tag": "",
+        "url": "https://www.theguardian.com/science/ng-interactive/2026/nov/08/ukraine-space-critical-war-starlink",
+        "src": "The Guardian",
+        "pay": false,
+        "themes": [
+          "Geopolitics"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-21",
     "slice": "Odd Anthropic dips. Nvidia backs $530bn. India evens. Fridges fry. UK texts its ex. Google bets both qubits.",
     "artifact": "https://claude.ai/artifact/B18dLeaGs93ioLpc6JhUEm",
