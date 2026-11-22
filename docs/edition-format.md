@@ -105,6 +105,7 @@ like an earlier story are flagged for a second look.
   read them, not republish them.
 - Take care with realistic AI-made likenesses of real people.
 - Every image needs a `figcredit`.
+- Story graphics follow the layout rules in `docs/graphic-layouts.md` (one layout per story type, not one template for all).
 
 **Paywalled sources.** Summarise the gist and give your view; don't reproduce the article's substance, data
 tables or images. Check each publication's terms if you plan to quote from it. Add a `free` link when a free
