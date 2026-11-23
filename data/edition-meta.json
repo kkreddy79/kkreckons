@@ -694,8 +694,9 @@
     "artifact": "https://claude.ai/artifact/C5dJirs99WDB9YvL7GfFnt",
     "stories": {
       "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay": {
-        "image": "",
-        "imageAlt": ""
+        "image": "/figs/2026-11-23-7.jpg",
+        "imageAlt": "Is the AI bubble popping? Nvidia's vendor financing is just under $700bn. The worry: Nvidia props up its customers, tech falls look like 2000 and the S&P 500 is down 12%. The defence: a robust economy, vendor financing that has paid off, and more cautious banks.",
+        "imageCredit": "Original graphic: KKReckons"
       },
       "Hackers hit US ports and tankers with thousands of attacks a day": {
         "image": "/figs/2026-11-23-3.jpg"
