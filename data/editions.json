@@ -1,5 +1,102 @@
 [
   {
+    "date": "2026-11-23",
+    "slice": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
+    "artifact": "https://claude.ai/artifact/C5dJirs99WDB9YvL7GfFnt",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-23-7.jpg",
+    "cover": "/figs/2026-11-23-cover.jpg",
+    "coverAlt": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Nvidia reinstates Jensen Huang as CEO; shares soar more than 30%",
+        "category": "Nvidia",
+        "tag": "",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html",
+        "src": "Yahoo Finance"
+      },
+      {
+        "section": "Pick of the day",
+        "title": "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay",
+        "category": "AI bubble",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/e49add11-3cc8-4edd-8daa-db8daaf994dd?syn-25a6b1a6=1",
+        "src": "Financial Times and The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Indian women's share of mutual fund assets rises to 34.5%",
+        "category": "Women investors",
+        "tag": "Explainer",
+        "url": "https://www.livemint.com/economy/women-investors-india-female-workforce-women-mutual-fund-investors-11795357340342.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "Personal finance",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI solves 49 of 50 hard physics problems; Ken Ono on staying in maths",
+        "category": "AI and science",
+        "tag": "",
+        "url": "https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems",
+        "src": "The Guardian, X and Understanding AI",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Hackers hit US ports and tankers with thousands of attacks a day",
+        "category": "Cyber security",
+        "tag": "",
+        "url": "https://www.ft.com/content/c269cf3e-2275-4244-9a86-f412c8521b4f?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "AI"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The Gulf's new normal: life resumes, but the war's costs mount",
+        "category": "Gulf economy",
+        "tag": "",
+        "url": "https://www.ft.com/content/770e588c-9d85-4999-a25a-c01b8c3078d3?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Chainalysis launches AI agent to trace crypto, reviving privacy fears",
+        "category": "Crypto surveillance",
+        "tag": "Opinion",
+        "url": "https://gizmodo.com/ai-cops-are-now-tracking-crypto-transactions-through-the-dystopian-blockchain-panopticon-2000843186",
+        "src": "Gizmodo",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-22",
     "slice": "Riemann: 17m lines. India ships kiwi. Handshakes exit Nvidia. Apps sell bets. Deutsche pays. War goes orbital.",
     "artifact": "https://claude.ai/artifact/EioMhXLv3JEc1nekBzU6Qx",

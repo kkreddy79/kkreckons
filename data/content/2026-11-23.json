@@ -1,0 +1,561 @@
+{
+  "date": "2026-11-23",
+  "slice": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
+  "artifact": "https://claude.ai/artifact/C5dJirs99WDB9YvL7GfFnt",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "34.5%",
+      "text": "Women's share of India's fund assets in March 2026, up from 32.6% five years earlier.",
+      "url": "https://www.livemint.com/economy/women-investors-india-female-workforce-women-mutual-fund-investors-11795357340342.html"
+    },
+    {
+      "num": "120mn",
+      "text": "Hack attempts stopped at the Port of Los Angeles in August alone.",
+      "url": "https://www.ft.com/content/c269cf3e-2275-4244-9a86-f412c8521b4f?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Nvidia",
+          "tag": "",
+          "title": "Nvidia reinstates Jensen Huang as CEO; shares soar more than 30%",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html",
+          "url2": "",
+          "points": [
+            "Nvidia's board has reinstated Jensen Huang as president, chief executive and a director, effective immediately, less than two weeks after he resigned on 12 November. Chair Harvey Jones called him the right person to lead the company.",
+            "Nvidia shares rose more than 30% on Monday morning. The S&P 500 gained 5% after seven straight days of falls, the Nasdaq 7% and the Dow about 3%. CoreWeave and Nebius jumped as much as 30%.",
+            "The board said senior US government officials told it his return poses no national security risk. Its independent investigation into his ties to a Megaspeed executive will continue, and it has set up a national security and export control committee."
+          ],
+          "numbers": [
+            [
+              "30%+",
+              "rise in Nvidia shares, Monday morning"
+            ],
+            [
+              "5%",
+              "S&P 500 gain after seven straight falls"
+            ]
+          ],
+          "why": "Nvidia sits at the centre of the AI trade, so one boardroom decision lifted the whole market in a morning. For anyone holding AI-heavy index funds, it is a reminder of how much rides on a single company and a single person.",
+          "other": "A one-day rally does not settle the questions behind the selloff: the investigation into Huang is still open, and the financing loop between Nvidia and its customers, covered in the next story, has not changed. These are early-trading figures and may not hold.",
+          "also": [],
+          "image": "",
+          "imageAlt": "",
+          "src": "Yahoo Finance",
+          "emailHead": "Huang is back at Nvidia",
+          "emailTeaser": "Nvidia's board reverses course and the market roars back.",
+          "follows": "/daily/november-13-2026/1",
+          "update": "Nvidia's board reinstated Jensen Huang as chief executive on 23 November; the shares rose more than 30% that morning."
+        },
+        {
+          "category": "AI bubble",
+          "tag": "Opinion",
+          "title": "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay",
+          "url": "https://www.ft.com/content/e49add11-3cc8-4edd-8daa-db8daaf994dd?syn-25a6b1a6=1",
+          "url2": "https://www.wsj.com/finance/stocks/has-the-ai-bubble-already-burst-2f1dcca8",
+          "points": [
+            "An FT column by Rana Foroohar says Nvidia has propped up much of the AI ecosystem with loans, stakes in customers and promises to buy their cloud services, taking its vendor financing to just under $700bn. Such lending, she argues, amplifies booms and busts but rarely causes full financial crises.",
+            "A WSJ column by James Mackintosh finds this year's falls in Intel, Oracle, Micron, Nvidia and other old tech names strikingly like 2000, with the S&P 500 down 12% from its high.",
+            "He thinks a mini-bubble in data centres and chips has already popped. The bigger risk is the circular loop: falling shares cut investment, hit suppliers and lenders, and reverse the wealth effect behind consumer spending."
+          ],
+          "numbers": [
+            [
+              "$700bn",
+              "Nvidia's vendor financing"
+            ],
+            [
+              "12%",
+              "S&P 500 fall from its high"
+            ]
+          ],
+          "why": "Two columnists land on the same loop: money circling between chipmakers and their customers. For anyone holding index funds heavy in AI, the real question is whether the selloff stays inside tech or reaches the wider economy.",
+          "other": "Unlike 2000, the economy still looks robust, vendor financing has historically paid off over decades, and banks are more cautious than in 2008, so a contained mini-bust rather than a crash is a real possibility.",
+          "also": [],
+          "image": "/figs/2026-11-23-7.jpg",
+          "imageAlt": "Is the AI bubble popping? Nvidia's vendor financing is just under $700bn. The worry: Nvidia props up its customers, tech falls look like 2000 and the S&P 500 is down 12%. The defence: a robust economy, vendor financing that has paid off, and more cautious banks.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times and The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Is the AI bubble popping?",
+          "emailTeaser": "A $700bn financing loop meets a dot-com style selloff.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1801
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Women investors",
+          "tag": "Explainer",
+          "title": "Indian women's share of mutual fund assets rises to 34.5%",
+          "url": "https://www.livemint.com/economy/women-investors-india-female-workforce-women-mutual-fund-investors-11795357340342.html",
+          "url2": "",
+          "points": [
+            "Women's share of India's individual mutual fund assets rose from 32.6% in March 2021 to 34.5% in March 2026, per the Amfi-Crisil Factbook. They are 26.4% of investors, so their average holdings are larger than men's.",
+            "Equity now makes up 64% of women's fund assets, up from 49%, while debt funds fell from 24% to 8%. Women's SIP assets grew about 30% a year to ₹4.73 trillion.",
+            "Women's share of bank accounts rose from about 33% in 2019 to over 41%. Some holdings may be notional, with men controlling the money or routing it through female relatives for tax reasons."
+          ],
+          "numbers": [
+            [
+              "34.5%",
+              "women's share of individual fund assets"
+            ],
+            [
+              "₹4.73tn",
+              "SIP assets held by women"
+            ]
+          ],
+          "why": "More money in women's own names, and more of it in equities, changes who banks and fund houses design products for, and builds household wealth that leans less on one earner.",
+          "other": "A share of assets is not control: some holdings are proxies for male relatives, and an equity tilt built during a bull market has yet to be tested by a long downturn like the one AI stocks are now in.",
+          "also": [],
+          "image": "/figs/2026-11-23-2.jpg",
+          "imageAlt": "Explainer: how Indian women's mutual fund holdings and bank deposits have grown",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "Personal finance",
+            "India"
+          ],
+          "emailHead": "Indian women invest more",
+          "emailTeaser": "Women now hold 34.5% of India's individual fund assets.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI and science",
+          "tag": "",
+          "title": "AI solves 49 of 50 hard physics problems; Ken Ono on staying in maths",
+          "url": "https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems",
+          "url2": "https://www.understandingai.org/p/i-spoke-to-seven-physics-experts?utm_campaign=post&utm_medium=web",
+          "points": [
+            "Number theorist Ken Ono writes in the Guardian that he nearly quit maths but stayed, and now works at Axiom Math, where AI helped produce 43.1 million lines of Lean code checking the classification of finite simple groups.",
+            "Understanding AI reports that on Suvrat Raju's benchmark of unpublished theoretical physics problems, GPT-6 Astra got 49 of 50 right at under $3 each, and high-energy theory papers on arXiv are up about 30% this year.",
+            "Both worry most about the young: calculation was how students proved their talent, and Raju is not taking new PhD students for now. Ono wants them judged on what they understood and originated."
+          ],
+          "numbers": [
+            [
+              "49/50",
+              "physics problems solved by GPT-6 Astra"
+            ],
+            [
+              "43.1m",
+              "lines of Lean code at Axiom"
+            ]
+          ],
+          "why": "Maths and physics are the first expert fields where AI does the hard calculation, so they preview what happens to any career built on years of grinding practice: the work speeds up, but the first rungs of the ladder get shakier.",
+          "other": "Physics answers to experiment, and the physicists quoted say testing, not ideas, is the bottleneck, while much theory work is deciding what to calculate. Students may also adapt faster than their seniors expect.",
+          "also": [
+            {
+              "title": "Ken Ono on X: Why I Am Still a Mathematician",
+              "url": "https://x.com/kenono691/status/2124685992527565032?a=AvQ0S0YURpX_4QOr4eQ&s=46"
+            }
+          ],
+          "image": "/figs/2026-11-23-1.jpg",
+          "imageAlt": "Explainer: what AI is doing in maths and physics and what humans still keep",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Guardian, X and Understanding AI",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "AI cracks the hard sums",
+          "emailTeaser": "AI aces physics problems; mathematicians ask what's left for people.",
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "Cyber security",
+          "tag": "",
+          "title": "Hackers hit US ports and tankers with thousands of attacks a day",
+          "url": "https://www.ft.com/content/c269cf3e-2275-4244-9a86-f412c8521b4f?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The Port of Corpus Christi, the biggest US gateway for crude exports, says hackers probe its systems hundreds or thousands of times a day and impersonate executives to trick staff.",
+            "The Coast Guard and FBI boarded two US-bound tankers in August after their networks were breached near Gibraltar. North Carolina Ports had to switch to manual processing after an attack, and Maersk says hackers stole data this month.",
+            "The Port of Los Angeles says it stopped 120mn attempts in August. Experts link Iran, North Korea and China to such operations, and ports say AI is sharpening the threat."
+          ],
+          "numbers": [
+            [
+              "120mn",
+              "attempts stopped at LA, August"
+            ]
+          ],
+          "why": "Ports are chokepoints for fuel and goods, so one successful breach would reach prices and supply chains far from the docks. That is why defenders still keep radios and paper records ready.",
+          "other": "Most attempts are automated and blocked, none of the recent US outages has been linked to an attack, and counting attempts can make the danger look bigger than the breaches that actually land.",
+          "also": [],
+          "image": "/figs/2026-11-23-3.jpg",
+          "imageAlt": "Explainer: recent cyber attacks on US ports and ships, and how ports are defending",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "AI"
+          ],
+          "emailHead": "Ports on cyber alert",
+          "emailTeaser": "Hackers knock on US ports thousands of times a day.",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Gulf economy",
+          "tag": "",
+          "title": "The Gulf's new normal: life resumes, but the war's costs mount",
+          "url": "https://www.ft.com/content/770e588c-9d85-4999-a25a-c01b8c3078d3?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Daily life in Dubai, Kuwait and Doha looks ordinary again, but closed restaurants and attractions, thinner supermarket shelves and lingering shelter signs show the war's mark.",
+            "With the US-Iran stand-off over the Strait of Hormuz unresolved, Qatar's government revenue fell 42% in the first half, and Allianz Trade puts the Gulf's reconstruction bill at $200bn. Iran launched new attacks this past week, which the Gulf states say they intercepted.",
+            "Gulf states are spreading out data centres, reviving a Gulf-wide rail plan and expanding Arabian Sea ports to bypass Hormuz, though some bankers fear the spending crowds out productive investment."
+          ],
+          "numbers": [
+            [
+              "$200bn",
+              "reconstruction bill, Allianz Trade"
+            ],
+            [
+              "42%",
+              "fall in Qatar's revenue, first half"
+            ]
+          ],
+          "why": "The Gulf sells itself on safety as much as low taxes. If that promise dents, the jobs, investment and remittances tied to the region are at stake, not just oil prices.",
+          "other": "UAE officials say they are optimistic confidence can be restored, tourists are tentatively returning to Dubai, and global asset managers are still opening offices in Abu Dhabi.",
+          "also": [],
+          "image": "/figs/2026-11-23-4.jpg",
+          "imageAlt": "Explainer: signs of strain in the Gulf economy and its plans to bypass Hormuz",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "The Gulf's uneasy new normal",
+          "emailTeaser": "Dubai looks normal again; the bills tell another story.",
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "Crypto surveillance",
+          "tag": "Opinion",
+          "title": "Chainalysis launches AI agent to trace crypto, reviving privacy fears",
+          "url": "https://gizmodo.com/ai-cops-are-now-tracking-crypto-transactions-through-the-dystopian-blockchain-panopticon-2000843186",
+          "url2": "",
+          "points": [
+            "Chainalysis has launched Chain, an AI workspace in limited preview that lets AI agents query its blockchain data and turn investigators' methods into automations. Users can connect Claude, ChatGPT or Gemini.",
+            "It showcased tracing funds from last month's $6.3 billion Binance hack across nearly a dozen blockchains. Rivals TRM Labs, Elliptic and Crystal Intelligence have AI investigators too, and ICE gave TRM a $94.7 million contract in July.",
+            "Gizmodo's Kyle Torpey argues this inverts Bitcoin's promise of anonymity and questions the tools' accuracy: a 2025 Delft study found Chainalysis correctly attributed only 24.54% of one mixer's addresses."
+          ],
+          "numbers": [
+            [
+              "$6.3bn",
+              "Binance hack traced"
+            ],
+            [
+              "24.54%",
+              "mixer addresses correctly attributed"
+            ]
+          ],
+          "why": "Crypto was sold on cash-like privacy. AI tracing makes every wallet move searchable at speed, which helps recover hacked funds but also hands agencies a powerful tool whose error rates are not well tested.",
+          "other": "Public ledgers were always traceable, the same Delft study found false positives under 0.5%, and freezing stolen funds, including from North Korea-linked hacks, protects ordinary users.",
+          "also": [],
+          "image": "/figs/2026-11-23-6.jpg",
+          "imageAlt": "Explainer: what Chainalysis's AI tool does and the doubts about blockchain tracing",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Gizmodo",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "AI agents trace your crypto",
+          "emailTeaser": "Chainalysis's new AI follows stolen coins across blockchains.",
+          "imageW": 1280,
+          "imageH": 1719
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Calculation got cheap.",
+    "b": "Judgement did not.",
+    "line": "AI can now grind through the hardest sums in maths and physics, so the scarce skill, from labs to markets, is knowing which questions and which numbers to trust."
+  },
+  "cover": "/figs/2026-11-23-cover.jpg",
+  "coverAlt": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
+  "stressIndex": {
+    "score": 61,
+    "band": "Severe",
+    "asOf": "2026-11-20"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25800.5996,
+        "asOf": "2026-11-20",
+        "prev": 25514.3008,
+        "week": 25144.3008,
+        "spark": [
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 6910.3901,
+        "asOf": "2026-11-20",
+        "prev": 7175.8301,
+        "week": 7561.6699,
+        "spark": [
+          7807.2402,
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.912,
+        "asOf": "2026-11-20",
+        "prev": 5.052,
+        "week": 5.154,
+        "spark": [
+          5.24,
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 92.57,
+        "asOf": "2026-11-20",
+        "prev": 91.98,
+        "week": 95.84,
+        "spark": [
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98,
+          92.57
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3515.3999,
+        "asOf": "2026-11-20",
+        "prev": 3685.5,
+        "week": 3886.3,
+        "spark": [
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5,
+          3515.3999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 92.67,
+        "asOf": "2026-11-21",
+        "prev": 93.295,
+        "week": 94.24,
+        "spark": [
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295,
+          92.67
+        ]
+      }
+    ]
+  }
+}
