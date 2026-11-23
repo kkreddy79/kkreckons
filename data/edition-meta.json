@@ -697,9 +697,11 @@
         "image": "/figs/2026-11-23-7.jpg",
         "imageAlt": "Is the AI bubble popping? Nvidia's vendor financing is just under $700bn. The worry: Nvidia props up its customers, tech falls look like 2000 and the S&P 500 is down 12%. The defence: a robust economy, vendor financing that has paid off, and more cautious banks.",
         "imageCredit": "Original graphic: KKReckons",
+        "follows": "/daily/november-13-2026/1",
+        "update": "Nvidia's board reinstated Jensen Huang as chief executive on 23 November; the shares rose more than 30% that morning.",
         "also": [
           {
-            "title": "Update: Nvidia reinstates Jensen Huang and US stocks rebound (Yahoo Finance live)",
+            "title": "Update: Nvidia reinstates Jensen Huang as CEO; shares soar more than 30% and the S&P 500 rises 5% (Yahoo Finance live)",
             "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html"
           }
         ]
