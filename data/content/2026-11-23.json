@@ -134,8 +134,8 @@
           "why": "Two columnists land on the same loop: money circling between chipmakers and their customers. For anyone holding index funds heavy in AI, the real question is whether the selloff stays inside tech or reaches the wider economy.",
           "other": "Unlike 2000, the economy still looks robust, vendor financing has historically paid off over decades, and banks are more cautious than in 2008, so a contained mini-bust rather than a crash is a real possibility.",
           "also": [],
-          "image": "/figs/2026-11-23-3.jpg",
-          "imageAlt": "Explainer: Nvidia's vendor financing loop and how this year's AI selloff echoes the dot-com bust",
+          "image": "",
+          "imageAlt": "",
           "imageCredit": "Original graphic: KKReckons",
           "src": "Financial Times and The Wall Street Journal",
           "pay": true,
@@ -145,9 +145,7 @@
           ],
           "emailHead": "Is the AI bubble popping?",
           "emailTeaser": "A $700bn financing loop meets a dot-com style selloff.",
-          "stressIndex": true,
-          "imageW": 1280,
-          "imageH": 1710
+          "stressIndex": true
         },
         {
           "category": "Cyber security",
@@ -169,7 +167,7 @@
           "why": "Ports are chokepoints for fuel and goods, so one successful breach would reach prices and supply chains far from the docks. That is why defenders still keep radios and paper records ready.",
           "other": "Most attempts are automated and blocked, none of the recent US outages has been linked to an attack, and counting attempts can make the danger look bigger than the breaches that actually land.",
           "also": [],
-          "image": "/figs/2026-11-23-4.jpg",
+          "image": "/figs/2026-11-23-3.jpg",
           "imageAlt": "Explainer: recent cyber attacks on US ports and ships, and how ports are defending",
           "imageCredit": "Original graphic: KKReckons",
           "src": "Financial Times",
@@ -181,7 +179,7 @@
           "emailHead": "Ports on cyber alert",
           "emailTeaser": "Hackers knock on US ports thousands of times a day.",
           "imageW": 1280,
-          "imageH": 1719
+          "imageH": 1710
         },
         {
           "category": "Gulf economy",
@@ -207,7 +205,7 @@
           "why": "The Gulf sells itself on safety as much as low taxes. If that promise dents, the jobs, investment and remittances tied to the region are at stake, not just oil prices.",
           "other": "UAE officials say they are optimistic confidence can be restored, tourists are tentatively returning to Dubai, and global asset managers are still opening offices in Abu Dhabi.",
           "also": [],
-          "image": "/figs/2026-11-23-5.jpg",
+          "image": "/figs/2026-11-23-4.jpg",
           "imageAlt": "Explainer: signs of strain in the Gulf economy and its plans to bypass Hormuz",
           "imageCredit": "Original graphic: KKReckons",
           "src": "Financial Times",
@@ -219,7 +217,7 @@
           "emailHead": "The Gulf's uneasy new normal",
           "emailTeaser": "Dubai looks normal again; the bills tell another story.",
           "imageW": 1280,
-          "imageH": 1710
+          "imageH": 1719
         },
         {
           "category": "Crypto surveillance",

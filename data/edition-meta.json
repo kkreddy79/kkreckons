@@ -692,6 +692,18 @@
   },
   "2026-11-23": {
     "artifact": "https://claude.ai/artifact/C5dJirs99WDB9YvL7GfFnt",
+    "stories": {
+      "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay": {
+        "image": "",
+        "imageAlt": ""
+      },
+      "Hackers hit US ports and tankers with thousands of attacks a day": {
+        "image": "/figs/2026-11-23-3.jpg"
+      },
+      "The Gulf's new normal: life resumes, but the war's costs mount": {
+        "image": "/figs/2026-11-23-4.jpg"
+      }
+    },
     "stressIndex": {
       "score": 61,
       "band": "Severe",
