@@ -1,24 +1,32 @@
 [
   {
     "date": "2026-11-23",
-    "slice": "AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked, Gulf billed, crypto traced. Still standing.",
+    "slice": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
     "artifact": "https://claude.ai/artifact/C5dJirs99WDB9YvL7GfFnt",
-    "readingMinutes": 7,
-    "image": "/figs/2026-11-23-1.jpg",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-23-7.jpg",
     "cover": "/figs/2026-11-23-cover.jpg",
-    "coverAlt": "AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked, Gulf billed, crypto traced. Still standing.",
+    "coverAlt": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
     "stories": [
       {
         "section": "Pick of the day",
-        "title": "AI solves 49 of 50 hard physics problems; Ken Ono on staying in maths",
-        "category": "AI and science",
+        "title": "Nvidia reinstates Jensen Huang as CEO; shares soar more than 30%",
+        "category": "Nvidia",
         "tag": "",
-        "url": "https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems",
-        "src": "The Guardian, X and Understanding AI",
-        "pay": false,
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html",
+        "src": "Yahoo Finance"
+      },
+      {
+        "section": "Pick of the day",
+        "title": "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay",
+        "category": "AI bubble",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/e49add11-3cc8-4edd-8daa-db8daaf994dd?syn-25a6b1a6=1",
+        "src": "Financial Times and The Wall Street Journal",
+        "pay": true,
         "themes": [
           "AI",
-          "Jobs & careers"
+          "Markets"
         ]
       },
       {
@@ -36,15 +44,15 @@
       },
       {
         "section": "World edition",
-        "title": "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay",
-        "category": "AI bubble",
-        "tag": "Opinion",
-        "url": "https://www.ft.com/content/e49add11-3cc8-4edd-8daa-db8daaf994dd?syn-25a6b1a6=1",
-        "src": "Financial Times and The Wall Street Journal",
-        "pay": true,
+        "title": "AI solves 49 of 50 hard physics problems; Ken Ono on staying in maths",
+        "category": "AI and science",
+        "tag": "",
+        "url": "https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems",
+        "src": "The Guardian, X and Understanding AI",
+        "pay": false,
         "themes": [
           "AI",
-          "Markets"
+          "Jobs & careers"
         ]
       },
       {

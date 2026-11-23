@@ -1,8 +1,8 @@
 {
   "date": "2026-11-23",
-  "slice": "AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked, Gulf billed, crypto traced. Still standing.",
+  "slice": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
   "artifact": "https://claude.ai/artifact/C5dJirs99WDB9YvL7GfFnt",
-  "readingMinutes": 7,
+  "readingMinutes": 8,
   "callouts": [
     {
       "num": "34.5%",
@@ -20,47 +20,75 @@
       "name": "Pick of the day",
       "stories": [
         {
-          "category": "AI and science",
+          "category": "Nvidia",
           "tag": "",
-          "title": "AI solves 49 of 50 hard physics problems; Ken Ono on staying in maths",
-          "url": "https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems",
-          "url2": "https://www.understandingai.org/p/i-spoke-to-seven-physics-experts?utm_campaign=post&utm_medium=web",
+          "title": "Nvidia reinstates Jensen Huang as CEO; shares soar more than 30%",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html",
+          "url2": "",
           "points": [
-            "Number theorist Ken Ono writes in the Guardian that he nearly quit maths but stayed, and now works at Axiom Math, where AI helped produce 43.1 million lines of Lean code checking the classification of finite simple groups.",
-            "Understanding AI reports that on Suvrat Raju's benchmark of unpublished theoretical physics problems, GPT-6 Astra got 49 of 50 right at under $3 each, and high-energy theory papers on arXiv are up about 30% this year.",
-            "Both worry most about the young: calculation was how students proved their talent, and Raju is not taking new PhD students for now. Ono wants them judged on what they understood and originated."
+            "Nvidia's board has reinstated Jensen Huang as president, chief executive and a director, effective immediately, less than two weeks after he resigned on 12 November. Chair Harvey Jones called him the right person to lead the company.",
+            "Nvidia shares rose more than 30% on Monday morning. The S&P 500 gained 5% after seven straight days of falls, the Nasdaq 7% and the Dow about 3%. CoreWeave and Nebius jumped as much as 30%.",
+            "The board said senior US government officials told it his return poses no national security risk. Its independent investigation into his ties to a Megaspeed executive will continue, and it has set up a national security and export control committee."
           ],
           "numbers": [
             [
-              "49/50",
-              "physics problems solved by GPT-6 Astra"
+              "30%+",
+              "rise in Nvidia shares, Monday morning"
             ],
             [
-              "43.1m",
-              "lines of Lean code at Axiom"
+              "5%",
+              "S&P 500 gain after seven straight falls"
             ]
           ],
-          "why": "Maths and physics are the first expert fields where AI does the hard calculation, so they preview what happens to any career built on years of grinding practice: the work speeds up, but the first rungs of the ladder get shakier.",
-          "other": "Physics answers to experiment, and the physicists quoted say testing, not ideas, is the bottleneck, while much theory work is deciding what to calculate. Students may also adapt faster than their seniors expect.",
-          "also": [
-            {
-              "title": "Ken Ono on X: Why I Am Still a Mathematician",
-              "url": "https://x.com/kenono691/status/2124685992527565032?a=AvQ0S0YURpX_4QOr4eQ&s=46"
-            }
+          "why": "Nvidia sits at the centre of the AI trade, so one boardroom decision lifted the whole market in a morning. For anyone holding AI-heavy index funds, it is a reminder of how much rides on a single company and a single person.",
+          "other": "A one-day rally does not settle the questions behind the selloff: the investigation into Huang is still open, and the financing loop between Nvidia and its customers, covered in the next story, has not changed. These are early-trading figures and may not hold.",
+          "also": [],
+          "image": "",
+          "imageAlt": "",
+          "src": "Yahoo Finance",
+          "emailHead": "Huang is back at Nvidia",
+          "emailTeaser": "Nvidia's board reverses course and the market roars back.",
+          "follows": "/daily/november-13-2026/1",
+          "update": "Nvidia's board reinstated Jensen Huang as chief executive on 23 November; the shares rose more than 30% that morning."
+        },
+        {
+          "category": "AI bubble",
+          "tag": "Opinion",
+          "title": "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay",
+          "url": "https://www.ft.com/content/e49add11-3cc8-4edd-8daa-db8daaf994dd?syn-25a6b1a6=1",
+          "url2": "https://www.wsj.com/finance/stocks/has-the-ai-bubble-already-burst-2f1dcca8",
+          "points": [
+            "An FT column by Rana Foroohar says Nvidia has propped up much of the AI ecosystem with loans, stakes in customers and promises to buy their cloud services, taking its vendor financing to just under $700bn. Such lending, she argues, amplifies booms and busts but rarely causes full financial crises.",
+            "A WSJ column by James Mackintosh finds this year's falls in Intel, Oracle, Micron, Nvidia and other old tech names strikingly like 2000, with the S&P 500 down 12% from its high.",
+            "He thinks a mini-bubble in data centres and chips has already popped. The bigger risk is the circular loop: falling shares cut investment, hit suppliers and lenders, and reverse the wealth effect behind consumer spending."
           ],
-          "image": "/figs/2026-11-23-1.jpg",
-          "imageAlt": "Explainer: what AI is doing in maths and physics and what humans still keep",
+          "numbers": [
+            [
+              "$700bn",
+              "Nvidia's vendor financing"
+            ],
+            [
+              "12%",
+              "S&P 500 fall from its high"
+            ]
+          ],
+          "why": "Two columnists land on the same loop: money circling between chipmakers and their customers. For anyone holding index funds heavy in AI, the real question is whether the selloff stays inside tech or reaches the wider economy.",
+          "other": "Unlike 2000, the economy still looks robust, vendor financing has historically paid off over decades, and banks are more cautious than in 2008, so a contained mini-bust rather than a crash is a real possibility.",
+          "also": [],
+          "image": "/figs/2026-11-23-7.jpg",
+          "imageAlt": "Is the AI bubble popping? Nvidia's vendor financing is just under $700bn. The worry: Nvidia props up its customers, tech falls look like 2000 and the S&P 500 is down 12%. The defence: a robust economy, vendor financing that has paid off, and more cautious banks.",
           "imageCredit": "Original graphic: KKReckons",
-          "src": "The Guardian, X and Understanding AI",
-          "pay": false,
+          "src": "Financial Times and The Wall Street Journal",
+          "pay": true,
           "themes": [
             "AI",
-            "Jobs & careers"
+            "Markets"
           ],
-          "emailHead": "AI cracks the hard sums",
-          "emailTeaser": "AI aces physics problems; mathematicians ask what's left for people.",
+          "emailHead": "Is the AI bubble popping?",
+          "emailTeaser": "A $700bn financing loop meets a dot-com style selloff.",
+          "stressIndex": true,
           "imageW": 1280,
-          "imageH": 1719
+          "imageH": 1801
         }
       ]
     },
@@ -111,50 +139,47 @@
       "name": "World edition",
       "stories": [
         {
-          "category": "AI bubble",
-          "tag": "Opinion",
-          "title": "AI bubble: Nvidia's $700bn vendor financing and a dot-com replay",
-          "url": "https://www.ft.com/content/e49add11-3cc8-4edd-8daa-db8daaf994dd?syn-25a6b1a6=1",
-          "url2": "https://www.wsj.com/finance/stocks/has-the-ai-bubble-already-burst-2f1dcca8",
+          "category": "AI and science",
+          "tag": "",
+          "title": "AI solves 49 of 50 hard physics problems; Ken Ono on staying in maths",
+          "url": "https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems",
+          "url2": "https://www.understandingai.org/p/i-spoke-to-seven-physics-experts?utm_campaign=post&utm_medium=web",
           "points": [
-            "An FT column by Rana Foroohar says Nvidia has propped up much of the AI ecosystem with loans, stakes in customers and promises to buy their cloud services, taking its vendor financing to just under $700bn. Such lending, she argues, amplifies booms and busts but rarely causes full financial crises.",
-            "A WSJ column by James Mackintosh finds this year's falls in Intel, Oracle, Micron, Nvidia and other old tech names strikingly like 2000, with the S&P 500 down 12% from its high.",
-            "He thinks a mini-bubble in data centres and chips has already popped. The bigger risk is the circular loop: falling shares cut investment, hit suppliers and lenders, and reverse the wealth effect behind consumer spending."
+            "Number theorist Ken Ono writes in the Guardian that he nearly quit maths but stayed, and now works at Axiom Math, where AI helped produce 43.1 million lines of Lean code checking the classification of finite simple groups.",
+            "Understanding AI reports that on Suvrat Raju's benchmark of unpublished theoretical physics problems, GPT-6 Astra got 49 of 50 right at under $3 each, and high-energy theory papers on arXiv are up about 30% this year.",
+            "Both worry most about the young: calculation was how students proved their talent, and Raju is not taking new PhD students for now. Ono wants them judged on what they understood and originated."
           ],
           "numbers": [
             [
-              "$700bn",
-              "Nvidia's vendor financing"
+              "49/50",
+              "physics problems solved by GPT-6 Astra"
             ],
             [
-              "12%",
-              "S&P 500 fall from its high"
+              "43.1m",
+              "lines of Lean code at Axiom"
             ]
           ],
-          "why": "Two columnists land on the same loop: money circling between chipmakers and their customers. For anyone holding index funds heavy in AI, the real question is whether the selloff stays inside tech or reaches the wider economy.",
-          "other": "Unlike 2000, the economy still looks robust, vendor financing has historically paid off over decades, and banks are more cautious than in 2008, so a contained mini-bust rather than a crash is a real possibility.",
+          "why": "Maths and physics are the first expert fields where AI does the hard calculation, so they preview what happens to any career built on years of grinding practice: the work speeds up, but the first rungs of the ladder get shakier.",
+          "other": "Physics answers to experiment, and the physicists quoted say testing, not ideas, is the bottleneck, while much theory work is deciding what to calculate. Students may also adapt faster than their seniors expect.",
           "also": [
             {
-              "title": "Update: Nvidia reinstates Jensen Huang as CEO; shares soar more than 30% and the S&P 500 rises 5% (Yahoo Finance live)",
-              "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html"
+              "title": "Ken Ono on X: Why I Am Still a Mathematician",
+              "url": "https://x.com/kenono691/status/2124685992527565032?a=AvQ0S0YURpX_4QOr4eQ&s=46"
             }
           ],
-          "image": "/figs/2026-11-23-7.jpg",
-          "imageAlt": "Is the AI bubble popping? Nvidia's vendor financing is just under $700bn. The worry: Nvidia props up its customers, tech falls look like 2000 and the S&P 500 is down 12%. The defence: a robust economy, vendor financing that has paid off, and more cautious banks.",
+          "image": "/figs/2026-11-23-1.jpg",
+          "imageAlt": "Explainer: what AI is doing in maths and physics and what humans still keep",
           "imageCredit": "Original graphic: KKReckons",
-          "src": "Financial Times and The Wall Street Journal",
-          "pay": true,
+          "src": "The Guardian, X and Understanding AI",
+          "pay": false,
           "themes": [
             "AI",
-            "Markets"
+            "Jobs & careers"
           ],
-          "emailHead": "Is the AI bubble popping?",
-          "emailTeaser": "A $700bn financing loop meets a dot-com style selloff.",
-          "stressIndex": true,
-          "follows": "/daily/november-13-2026/1",
-          "update": "Nvidia's board reinstated Jensen Huang as chief executive on 23 November; the shares rose more than 30% that morning.",
+          "emailHead": "AI cracks the hard sums",
+          "emailTeaser": "AI aces physics problems; mathematicians ask what's left for people.",
           "imageW": 1280,
-          "imageH": 1801
+          "imageH": 1719
         },
         {
           "category": "Cyber security",
@@ -276,7 +301,7 @@
     "line": "AI can now grind through the hardest sums in maths and physics, so the scarce skill, from labs to markets, is knowing which questions and which numbers to trust."
   },
   "cover": "/figs/2026-11-23-cover.jpg",
-  "coverAlt": "AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked, Gulf billed, crypto traced. Still standing.",
+  "coverAlt": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
   "stressIndex": {
     "score": 61,
     "band": "Severe",

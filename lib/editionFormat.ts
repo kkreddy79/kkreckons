@@ -64,6 +64,7 @@ const PUBLISHERS: Record<string, string> = {
   "economictimes.indiatimes.com": "The Economic Times",
   "economictimes.com": "The Economic Times",
   "wsj.com": "The Wall Street Journal",
+  "finance.yahoo.com": "Yahoo Finance",
   "understandingai.org": "Understanding AI",
   "gizmodo.com": "Gizmodo",
   "indiatoday.in": "India Today",
