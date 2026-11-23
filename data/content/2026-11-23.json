@@ -133,7 +133,12 @@
           ],
           "why": "Two columnists land on the same loop: money circling between chipmakers and their customers. For anyone holding index funds heavy in AI, the real question is whether the selloff stays inside tech or reaches the wider economy.",
           "other": "Unlike 2000, the economy still looks robust, vendor financing has historically paid off over decades, and banks are more cautious than in 2008, so a contained mini-bust rather than a crash is a real possibility.",
-          "also": [],
+          "also": [
+            {
+              "title": "Update: Nvidia reinstates Jensen Huang and US stocks rebound (Yahoo Finance live)",
+              "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-nvidia-reinstates-jensen-huang-141511975.html"
+            }
+          ],
           "image": "/figs/2026-11-23-7.jpg",
           "imageAlt": "Is the AI bubble popping? Nvidia's vendor financing is just under $700bn. The worry: Nvidia props up its customers, tech falls look like 2000 and the S&P 500 is down 12%. The defence: a robust economy, vendor financing that has paid off, and more cautious banks.",
           "imageCredit": "Original graphic: KKReckons",
