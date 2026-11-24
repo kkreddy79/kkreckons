@@ -1,5 +1,94 @@
 [
   {
+    "date": "2026-11-24",
+    "slice": "Huang back in 11 days. Engines own chess. Rupee nets 413bps. AI takes chips, hackers keys. Slow the race.",
+    "artifact": "https://claude.ai/artifact/V9nBNXAhf1FuWtYeF4Sa1H",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-24-1.jpg",
+    "cover": "/figs/2026-11-24-cover.jpg",
+    "coverAlt": "Huang back in 11 days. Engines own chess. Rupee nets 413bps. AI takes chips, hackers keys. Slow the race.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Nvidia reinstates Jensen Huang as CEO 11 days after he resigned",
+        "category": "Big Tech · Governance",
+        "tag": "",
+        "url": "https://www.ft.com/content/d23fd311-ac96-4dfb-88ef-b1ccb2197f13?syn-25a6b1a6=1",
+        "src": "Financial Times, The Wall Street Journal, Wired and Harvard Business Review",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI conquered chess, yet the game has never been more popular",
+        "category": "Chess · AI",
+        "tag": "Opinion",
+        "url": "https://www.theguardian.com/sport/ng-interactive/2026/nov/23/chess-world-championship-ai",
+        "src": "The Guardian",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Rupee leads global carry trades this quarter, mostly thanks to RBI",
+        "category": "Currency · Markets",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/markets/stocks/news/indias-rupee-has-become-an-accidental-carry-star/articleshow/136117132.cms",
+        "src": "The Economic Times (Bloomberg Opinion)",
+        "pay": false,
+        "themes": [
+          "Markets",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Pulled AI hacking tool ARTEX lives on in copies across GitHub",
+        "category": "Cybersecurity · AI",
+        "tag": "",
+        "url": "https://www.404media.co/the-code-is-already-copied-everywhere-the-ai-hacking-tool-causing-havoc-around-the-world-artex-github/",
+        "src": "404 Media",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The AI build-out is crowding out the rest of the US economy",
+        "category": "US economy · AI",
+        "tag": "",
+        "url": "https://www.wsj.com/tech/ai/the-ai-build-out-is-sucking-up-resources-and-crowding-out-the-rest-of-the-economy-13143007",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Raghuram Rajan: a data-centre slowdown could buy AI time",
+        "category": "AI · Policy",
+        "tag": "Opinion",
+        "url": "https://www.livemint.com/opinion/online-views/datacentre-slowdown-it-has-a-silver-lining-11795365329549.html",
+        "src": "Mint",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-23",
     "slice": "Huang returns as Nvidia CEO. AI aced 49/50. Nvidia looped $700bn. Women own 1/3. Ports hacked. Gulf billed.",
     "artifact": "https://claude.ai/artifact/C5dJirs99WDB9YvL7GfFnt",

@@ -710,5 +710,19 @@
       "band": "Severe",
       "asOf": "2026-11-20"
     }
+  },
+  "2026-11-24": {
+    "artifact": "https://claude.ai/artifact/V9nBNXAhf1FuWtYeF4Sa1H",
+    "stressIndex": {
+      "score": 50,
+      "band": "Severe",
+      "asOf": "2026-11-23"
+    },
+    "stories": {
+      "Pulled AI hacking tool ARTEX lives on in copies across GitHub": {
+        "freeUrl": "https://therecord.media/artex-ai-tool-fbi-flash-alert",
+        "freeSrc": "The Record"
+      }
+    }
   }
 }
