@@ -1,0 +1,536 @@
+{
+  "date": "2026-11-24",
+  "slice": "Huang back in 11 days. Engines own chess. Rupee nets 413bps. AI takes chips, hackers keys. Slow the race.",
+  "artifact": "https://claude.ai/artifact/V9nBNXAhf1FuWtYeF4Sa1H",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "413 bps",
+      "text": "Rupee's dollar-funded carry return since end-September, the world's highest this quarter.",
+      "url": "https://m.economictimes.com/markets/stocks/news/indias-rupee-has-become-an-accidental-carry-star/articleshow/136117132.cms"
+    },
+    {
+      "num": "$1.3tn",
+      "text": "Estimated US AI build-out spend this year, crowding out chips, workers and capital elsewhere.",
+      "url": "https://www.wsj.com/tech/ai/the-ai-build-out-is-sucking-up-resources-and-crowding-out-the-rest-of-the-economy-13143007"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Big Tech · Governance",
+          "tag": "",
+          "title": "Nvidia reinstates Jensen Huang as CEO 11 days after he resigned",
+          "url": "https://www.ft.com/content/d23fd311-ac96-4dfb-88ef-b1ccb2197f13?syn-25a6b1a6=1",
+          "url2": "https://www.ft.com/content/189b5df2-2d06-42db-8843-1a542efb0a8f?syn-25a6b1a6=1",
+          "points": [
+            "Nvidia's board voted unanimously on Monday to bring back Jensen Huang, 11 days after he quit over affairs, one with a customer US officials suspected of spying for China. Its probe into whether he was a foreign-intelligence target continues.",
+            "An FT editorial calls Trump's lobbying a dangerous precedent; Lex calls it money beating morals as the stock jumped over 30%. FT's Robert Armstrong says Huang's own failures, with no succession plan, left Nvidia no alternative.",
+            "Staff cheered, though Wired found some hoped for culture change. An HBR column notes research finds returning CEOs usually underperform; Steve Jobs was the exception."
+          ],
+          "numbers": [
+            [
+              "11 days",
+              "out of the CEO job"
+            ],
+            [
+              "30%+",
+              "share jump on Monday"
+            ]
+          ],
+          "why": "Nvidia sits at the centre of the AI trade, so its boss's fate moves markets everywhere. The episode shows how far political pull and one founder's indispensability now shape governance, and culture, at a shareholder-owned giant.",
+          "other": "Shareholders own Nvidia and cheered with their wallets. Research cited by HBR also suggests the company itself shapes results more than its CEO, so Nvidia's strengths may outweigh the leadership drama. The unfinished board probe could still change the verdict.",
+          "also": [
+            {
+              "title": "The latest chapter in corporate America's rocky history with boardroom romance",
+              "url": "https://www.wsj.com/business/nvidia-jensen-huang-corporate-culture-23e37147"
+            },
+            {
+              "title": "The tragedy, or is it farce, of Jensen Huang",
+              "url": "https://www.ft.com/content/611430d0-9aec-4e5e-95d7-615e86f692ce?syn-25a6b1a6=1"
+            },
+            {
+              "title": "Inside Nvidia, not everyone is celebrating Jensen Huang's return",
+              "url": "https://www.wired.com/story/inside-nvidia-not-everyone-is-celebrating-jensen-huangs-return/"
+            },
+            {
+              "title": "When CEO comebacks succeed, and when they fail",
+              "url": "https://hbr.org/2026/11/when-ceo-comebacks-succeed-and-when-they-fail"
+            }
+          ],
+          "image": "/figs/2026-11-24-1.jpg",
+          "imageAlt": "Timeline of Jensen Huang's exit and return at Nvidia: resignation on 12 November, a board vote to reinstate him on 23 November, and an unfinished probe. Key figures: 11 days out, shares up 30%+.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times, The Wall Street Journal, Wired and Harvard Business Review",
+          "pay": true,
+          "freeUrl": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm",
+          "freeSrc": "Nvidia (SEC filing)",
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Huang is back. The questions aren't gone.",
+          "emailTeaser": "Eleven days out, a 30% share jump, and a precedent",
+          "cite": "On 23 November 2026 Nvidia's board voted unanimously to reinstate Jensen Huang as president, chief executive and board director.",
+          "imageW": 1280,
+          "imageH": 2236
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Chess · AI",
+          "tag": "Opinion",
+          "title": "AI conquered chess, yet the game has never been more popular",
+          "url": "https://www.theguardian.com/sport/ng-interactive/2026/nov/23/chess-world-championship-ai",
+          "url2": "",
+          "points": [
+            "Ahead of the world title match in Geneva between India's reigning champion Gukesh Dommaraju and Uzbekistan's Javokhir Sindarov, both 20, Stephen Marche argues chess shows what AI changes and what it leaves alone.",
+            "Engines now settle opening debates instantly, and fans see the right move before the players do. Yet chess has become a spectator sport: GothamChess has more than 10 million followers.",
+            "Gukesh's coach, Vishnu Prasanna, kept him off AI until he was strong, a sign the tool helps most once you can think."
+          ],
+          "numbers": [
+            [
+              "20",
+              "age of both finalists"
+            ],
+            [
+              "10m+",
+              "GothamChess followers"
+            ]
+          ],
+          "why": "For India, a chess power with a 20-year-old world champion, the lesson travels beyond the board: when machines own the right answers, value can shift to the human contest, the craft of learning and the audience.",
+          "other": "Chess is a game people choose to watch; most work is not. A spectator revival offers little comfort to people whose output a machine can simply replace, and nobody pays to watch humans file invoices.",
+          "also": [],
+          "image": "/figs/2026-11-24-2.jpg",
+          "imageAlt": "AI conquered chess, humans still pack the hall: GothamChess has 10m+ followers. Engines settle openings, but Gukesh, 20, was kept off AI by his coach until he was strong.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Guardian",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Machines won chess. Fans stayed.",
+          "emailTeaser": "Why Gukesh v Sindarov still matters in the engine age",
+          "imageW": 1280,
+          "imageH": 1719
+        },
+        {
+          "category": "Currency · Markets",
+          "tag": "Opinion",
+          "title": "Rupee leads global carry trades this quarter, mostly thanks to RBI",
+          "url": "https://m.economictimes.com/markets/stocks/news/indias-rupee-has-become-an-accidental-carry-star/articleshow/136117132.cms",
+          "url2": "",
+          "points": [
+            "The rupee is delivering the world's highest returns on dollar-funded carry trades this quarter, 413 basis points since end-September, as investors rotate out of AI stocks into laggards like India and oil prices fall.",
+            "Bloomberg Opinion's Srinivasan Sivabalan argues the RBI is the real draw: it has made shorting the rupee costly, and about four-fifths of the carry gains came from the currency rising, not interest.",
+            "India's rate gap with the US has shrunk to 1.5 percentage points from 8.25 in 2011, and some RBI incentives expire later this year."
+          ],
+          "numbers": [
+            [
+              "413bps",
+              "rupee carry return since end-Sept"
+            ],
+            [
+              "1.5 pts",
+              "India-US rate gap, from 8.25 in 2011"
+            ]
+          ],
+          "why": "A firmer rupee cheapens imports and eases inflation, but gains that rest on central-bank props can reverse quickly once the measures lapse, hurting whoever piled in last.",
+          "other": "Policy support can buy time for fundamentals to improve: a rupee rebounding from deeply undervalued levels, cheaper oil and fast growth may keep investors around after the RBI's measures end.",
+          "also": [],
+          "image": "/figs/2026-11-24-3.jpg",
+          "imageAlt": "Chart of returns on dollar-funded carry trades since end-September: Indian rupee 413 bps, Turkish lira 153, Korean won 96, Saudi riyal 19, Chinese yuan 11. About four-fifths of the rupee's gain came from appreciation.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times (Bloomberg Opinion)",
+          "pay": false,
+          "themes": [
+            "Markets",
+            "India"
+          ],
+          "emailHead": "The rupee's surprise carry crown",
+          "emailTeaser": "413bps since September, mostly thanks to the RBI",
+          "imageW": 1280,
+          "imageH": 1713
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Cybersecurity · AI",
+          "tag": "",
+          "title": "Pulled AI hacking tool ARTEX lives on in copies across GitHub",
+          "url": "https://www.404media.co/the-code-is-already-copied-everywhere-the-ai-hacking-tool-causing-havoc-around-the-world-artex-github/",
+          "url2": "",
+          "points": [
+            "ARTEX, an open-source framework that turns a large language model into a team of hacking agents, is being used by Chinese espionage groups and criminals, 404 Media reports. An FBI warning says it can finish a whole intrusion in a few hours.",
+            "Its creator pulled it from GitHub in October and disowned the attacks, but copies remain online. Two people hosting versions told 404 Media they won't take them down, citing legitimate testing by small teams.",
+            "The FBI says targets span government, healthcare, telecoms, legal, defence, finance and chipmaking."
+          ],
+          "numbers": [],
+          "why": "Agentic AI turns days of skilled hacking into hours and lowers the skill needed, so firms of every size now face attackers that never sleep. Defenders need to know these tools as well as attackers do.",
+          "other": "Hackers have long misused open-source testing kits such as Metasploit, and the same tools let small firms check their own defences cheaply. Deleting one copy would remove maintained versions, not the capability.",
+          "also": [],
+          "image": "/figs/2026-11-24-4.jpg",
+          "imageAlt": "How ARTEX works: plug in any AI model, it spawns hacking agents, they scout a target, then break in and take data in a few hours, says the FBI. Its creator pulled it in October, but clones stay online.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "404 Media",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "The AI hacking kit nobody can delete",
+          "emailTeaser": "Creator pulled ARTEX; the clones keep it running",
+          "freeUrl": "https://therecord.media/artex-ai-tool-fbi-flash-alert",
+          "freeSrc": "The Record",
+          "imageW": 1280,
+          "imageH": 1933
+        },
+        {
+          "category": "US economy · AI",
+          "tag": "",
+          "title": "The AI build-out is crowding out the rest of the US economy",
+          "url": "https://www.wsj.com/tech/ai/the-ai-build-out-is-sucking-up-resources-and-crowding-out-the-rest-of-the-economy-13143007",
+          "url2": "",
+          "points": [
+            "The AI build-out now drives US growth, and it is soaking up chips, power equipment, skilled workers and capital that other industries also need, the WSJ reports. A Columbia economist puts this year's US AI spend near $1.3 trillion.",
+            "Memory-chip prices have soared, lifting costs for PC makers, consoles and car suppliers. Utilities struggle to get turbines and transformers, and data centres lure electricians with better pay.",
+            "Big Tech's debt issuance has ballooned, and housing may suffer most: AI-fuelled inflation backs Fed rate rises that push mortgage rates up."
+          ],
+          "numbers": [
+            [
+              "$1.3tn",
+              "est. US AI build-out this year"
+            ]
+          ],
+          "why": "When one sector bids for the same chips, workers and money as everyone else, the bill shows up in pricier gadgets, dearer loans and a weaker housing market, even for people who never touch AI.",
+          "other": "Crowding out is also a sign of strong demand: some suppliers are adding capacity and firms are training workers. If the build-out cools, these pressures could ease while the new infrastructure stays.",
+          "also": [],
+          "image": "/figs/2026-11-24-5.jpg",
+          "imageAlt": "AI is crowding out the rest of the US economy: an estimated $1.3tn US AI build-out this year. Tiles: memory chip prices soar, Big Tech borrowing balloons, utilities wait for turbines, and Fed hikes lift mortgage rates.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "AI is elbowing the economy aside",
+          "emailTeaser": "Chips, workers and money diverted; housing may pay most",
+          "imageW": 1280,
+          "imageH": 1842
+        },
+        {
+          "category": "AI · Policy",
+          "tag": "Opinion",
+          "title": "Raghuram Rajan: a data-centre slowdown could buy AI time",
+          "url": "https://www.livemint.com/opinion/online-views/datacentre-slowdown-it-has-a-silver-lining-11795365329549.html",
+          "url2": "",
+          "points": [
+            "Former RBI governor Raghuram Rajan argues that US calls to pause new data-centre approvals could help, by giving society time to roll out AI deliberately rather than stop it.",
+            "Mainstream business adoption is slow while labs race towards self-improving models. Firms can replace jobs fast or redesign work to augment staff, and few governments have ideas such as taxes on corporate token use or training credits in place.",
+            "Fewer data centres raise AI's cost, let chip and memory supply catch up and give regulators room. He thinks the race with China stays manageable."
+          ],
+          "numbers": [
+            [
+              "377",
+              "maths problems OpenAI claims to have solved"
+            ],
+            [
+              "722",
+              "manuscripts behind those claims"
+            ]
+          ],
+          "why": "A slower build-out changes the maths of replacing workers with AI. Rajan's case is a reminder that how fast AI spreads through jobs is a policy choice, not a law of nature.",
+          "other": "A pause could backfire if China does not slow too, and pricier compute may hurt smaller firms and countries most while rich labs keep training. Rajan's hope that rivals will match restraint is a bet, not a guarantee.",
+          "also": [],
+          "image": "/figs/2026-11-24-6.jpg",
+          "imageAlt": "Rajan's argument, paraphrased: a pause on new data centres buys time to roll out AI deliberately. Facts: OpenAI claims answers to 377 unsolved maths questions in 722 manuscripts; Chinese models stay months behind US ones.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Mint",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Rajan's case for slower AI",
+          "emailTeaser": "Fewer data centres could protect jobs, he argues",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Investors chose the person.",
+    "b": "Fans chose the people.",
+    "line": "Nvidia's board bet on one leader it calls irreplaceable, chess fans bet on human play and rupee traders bet on the RBI; Rajan wants AI's pace chosen as deliberately."
+  },
+  "cover": "/figs/2026-11-24-cover.jpg",
+  "coverAlt": "Huang back in 11 days. Engines own chess. Rupee nets 413bps. AI takes chips, hackers keys. Slow the race.",
+  "stressIndex": {
+    "score": 50,
+    "band": "Severe",
+    "asOf": "2026-11-23"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25800.5996,
+        "asOf": "2026-11-20",
+        "prev": 25514.3008,
+        "week": 25144.3008,
+        "spark": [
+          22231.8008,
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7237.1699,
+        "asOf": "2026-11-23",
+        "prev": 6910.3901,
+        "week": 7416.5898,
+        "spark": [
+          7805.4502,
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901,
+          7237.1699
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.918,
+        "asOf": "2026-11-23",
+        "prev": 4.912,
+        "week": 5.121,
+        "spark": [
+          5.217,
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912,
+          4.918
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 92.57,
+        "asOf": "2026-11-20",
+        "prev": 91.98,
+        "week": 95.84,
+        "spark": [
+          106.65,
+          105.69,
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98,
+          92.57
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3515.3999,
+        "asOf": "2026-11-20",
+        "prev": 3685.5,
+        "week": 3886.3,
+        "spark": [
+          4190.6001,
+          4177.2998,
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5,
+          3515.3999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 92.67,
+        "asOf": "2026-11-21",
+        "prev": 93.295,
+        "week": 94.24,
+        "spark": [
+          95.1513,
+          94.5248,
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295,
+          92.67
+        ]
+      }
+    ]
+  }
+}

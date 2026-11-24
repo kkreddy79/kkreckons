@@ -41,6 +41,7 @@ const PUBLISHERS: Record<string, string> = {
   "iea.org": "IEA",
   "timeout.com": "Time Out",
   "bleepingcomputer.com": "BleepingComputer",
+  "therecord.media": "The Record",
   "jamescrabtree.substack.com": "James Crabtree",
   "fred.stlouisfed.org": "St. Louis Fed (FRED)",
   "digitalbureaucracyandgeopolitics.substack.com": "Technology, Geopolitics, and Bureaucracy",
