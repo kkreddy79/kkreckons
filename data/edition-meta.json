@@ -724,5 +724,13 @@
         "freeSrc": "The Record"
       }
     }
+  },
+  "2026-11-25": {
+    "artifact": "https://claude.ai/artifact/KqPvDsc4AjWapuvHFYLsiq",
+    "stressIndex": {
+      "score": 54,
+      "band": "Severe",
+      "asOf": "2026-11-24"
+    }
   }
 }

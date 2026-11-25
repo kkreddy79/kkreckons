@@ -1,0 +1,509 @@
+{
+  "date": "2026-11-25",
+  "slice": "Tariffs rise. AI freeloaders: $1 Mn. Sarvam guards GPUs. OpenAI finds a bug. Grades grilled. Talent wins.",
+  "artifact": "https://claude.ai/artifact/KqPvDsc4AjWapuvHFYLsiq",
+  "readingMinutes": 7,
+  "callouts": [
+    {
+      "num": "500,000",
+      "text": "paid AI model calls racked up on stolen credentials in under eight hours (Inc42, citing Google)",
+      "url": "https://inc42.com/features/the-growing-toll-of-token-frauds/"
+    },
+    {
+      "num": "77%",
+      "text": "of leading AI companies had immigrant founders or children of immigrants (WSJ)",
+      "url": "https://www.wsj.com/opinion/american-exceptionalism-will-win-ai-8e20e29d"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Trade · Tariffs",
+          "tag": "",
+          "title": "Trump readies new subsidy tariffs on China, EU, Japan, South Korea",
+          "url": "https://www.ft.com/content/335b593d-1478-4550-ab0a-71fec6280eb0?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Trump is set to unveil fresh tariffs this week after trade chief Jamieson Greer's probe into whether China, the EU, Japan, South Korea and others unfairly subsidise their own companies, the FT reports.",
+            "The probe gives the levies a different legal basis from the 'liberation day' tariffs the Supreme Court struck down this year. Earlier deals cap the hit: Japan, Korea and the EU may face only 2.5% to 5% more.",
+            "Vietnam, Cambodia and Malaysia face steeper duties. Oil, gas, fertiliser and goods the US doesn't make should be exempt. How China is handled is the open question."
+          ],
+          "numbers": [
+            [
+              "2.5–5%",
+              "extra tariff expected for deal partners such as Japan, Korea and the EU"
+            ]
+          ],
+          "why": "Tariffs are a tax paid at the checkout. Voters punished Republicans over rising prices in the midterms, yet the White House is rebuilding its tariff wall on firmer legal ground, so higher import costs look set to stay.",
+          "other": "Small top-ups for allies may change little, and a subsidy finding is harder to strike down than emergency powers. If China's rate is set high and then suspended, as officials have discussed, this may be more signal than shock.",
+          "also": [],
+          "image": "/figs/2026-11-25-1.jpg",
+          "imageAlt": "Tariffs, round two: deal partners such as Japan, South Korea and the EU face 2.5% to 5% more; Vietnam, Cambodia and Malaysia face steeper duties; oil, gas and fertiliser expected to be exempt; China's treatment unknown.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics",
+            "Markets"
+          ],
+          "emailHead": "Trump's next tariff wave",
+          "emailTeaser": "A subsidy probe gives new levies a sturdier legal footing",
+          "cite": "Japan, South Korea and the EU could face extra US tariffs of 2.5% to 5% under the subsidy probe, the FT reported on 24 November 2026.",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "AI · Cybersecurity",
+          "tag": "",
+          "title": "AI token fraud: stolen keys and free credits run up $1 Mn bills",
+          "url": "https://inc42.com/features/the-growing-toll-of-token-frauds/",
+          "url2": "",
+          "points": [
+            "Fraudsters steal API keys and cloud credentials to use paid AI models on someone else's bill, and resell that access, Inc42 reports. Google found some victims racked up over $100K in fraudulent charges in a day, and up to $1 Mn before stopping it.",
+            "Others freeload on public chatbots, farm free credits or use stolen cards. JarvisLabs saw crypto miners whenever it offered free GPU credits; ChatPRD dropped free trials after losing tens of thousands of dollars.",
+            "Akamai's Reuben Koh advises tying keys to specific models, hard spending caps, temporary credentials and per-session limits on public AI tools."
+          ],
+          "numbers": [
+            [
+              "$1 Mn",
+              "fraudulent AI cloud bill some victims reached before stopping it (Google)"
+            ],
+            [
+              "500,000",
+              "paid model calls on stolen credentials in under eight hours"
+            ]
+          ],
+          "why": "For Indian AI startups on thin runways, a leaked key is now a cash problem, not just a data problem. Free trials, the cheapest growth tool, carry a compute bill with every click.",
+          "other": "Fraud checks add friction that can turn away genuine users, as JarvisLabs found with card verification in developed markets. Much of the fix is basic hygiene, so lax practice may be a bigger risk than clever criminals.",
+          "also": [],
+          "image": "/figs/2026-11-25-2.jpg",
+          "imageAlt": "The AI bill you didn't run up: some victims reached $1 Mn in fraudulent AI cloud charges; four routes are stolen keys (500,000 calls in under eight hours), chatbot freeloading, free-credit farming, and stolen cards and promo codes.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Inc42",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Someone else is spending your tokens",
+          "emailTeaser": "Stolen keys and free credits turn into AI bills",
+          "imageW": 1280,
+          "imageH": 1855
+        },
+        {
+          "category": "AI · Startups",
+          "tag": "",
+          "title": "Sarvam defends Token Factory: private GPUs, own models still core",
+          "url": "https://inc42.com/buzz/sarvam-ai-defends-token-factory-says-homegrown-models-remain-core-focus/",
+          "url2": "",
+          "points": [
+            "Cofounder Pratyush Kumar says Token Factory, which sells per-token access to Sarvam's models and open-weight ones such as Gemma, DeepSeek and Kimi, runs on privately bought GPUs, Inc42 reports. Its subsidised GPU access ended in March 2026.",
+            "Under the IndiaAI Mission, Sarvam got 4,096 Nvidia H100s for six months, worth about ₹247 Cr with a ₹98.68 Cr subsidy paid to cloud providers, not to Sarvam, and trained its 105B model on them.",
+            "Kumar says local hosting serves firms that need data kept in India or fast responses. Sarvam has released an upgraded 105B model with open weights."
+          ],
+          "numbers": [
+            [
+              "4,096",
+              "Nvidia H100s Sarvam got for six months under the IndiaAI Mission"
+            ],
+            [
+              "₹98.68 Cr",
+              "government subsidy within that ₹247 Cr of compute"
+            ]
+          ],
+          "why": "India uses a few trillion AI tokens a day, mostly served from abroad, Kumar says. Whether a subsidised model-builder should also sell tokens is a test of what India's AI money is meant to buy.",
+          "other": "Reselling Chinese and US open models can look like a retreat from sovereign AI, and Sarvam's claim that its prices match or beat Fireworks AI, Baseten and Together AI is its own. Then again, inference revenue may pay for the next model.",
+          "also": [],
+          "image": "/figs/2026-11-25-3.jpg",
+          "imageAlt": "Sarvam's token test, two sides: the worry that subsidised compute fed a token business hosting Gemma, DeepSeek and Kimi, against Sarvam's defence of privately bought GPUs, subsidised access that ended in March 2026 and an upgraded open-weight 105B model; 4,096 H100s with a 98.68 crore rupee subsidy.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Inc42",
+          "pay": false,
+          "themes": [
+            "AI",
+            "India"
+          ],
+          "emailHead": "Sarvam answers its token critics",
+          "emailTeaser": "Private GPUs, open models, and a new 105B release",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Tech · Espionage",
+          "tag": "",
+          "title": "The spies are coming for Big Tech, and boards aren't ready",
+          "url": "https://www.ft.com/content/c96c40c5-6b07-4433-b65f-19105e9ccb44?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "An FT Big Read argues AI giants now carry state-like risks without state-like defences, from Nvidia's CEO saga to an alleged bug in an OpenAI meeting room and a Russian charged over spying on Palantir staff.",
+            "Prosecutors say they recovered some 160 hours of audio, suspected to be OpenAI meetings, from a former engineer's devices; he has pleaded not guilty. A former Meta executive doubts AI labs have real operational security.",
+            "Nvidia's board has no member with a government, defence or intelligence career and has only now added a national security committee. OpenAI's board includes a former NSA chief."
+          ],
+          "numbers": [
+            [
+              "160 hrs",
+              "of audio from suspected OpenAI meetings found on an ex-engineer's devices, prosecutors say"
+            ]
+          ],
+          "why": "Once AI labs hold secrets worth as much as a country's, an unlocked meeting room or a careless CEO becomes a national security question. Investors should ask whether boards built for start-ups can oversee companies that now sit inside geopolitics.",
+          "other": "Nvidia says it has no reason to believe secrets were compromised, and the OpenAI suspect's lawyers call him an overly curious tinkerer. Tighter security could also slow the open research culture that helped these firms win.",
+          "also": [],
+          "image": "/figs/2026-11-25-4.jpg",
+          "imageAlt": "Timeline of Big Tech's spy scare, from the 2023 Five Eyes warning at Stanford to an alleged bug at OpenAI and Nvidia's CEO saga; prosecutors recovered some 160 hours of suspected OpenAI meeting audio, and no Nvidia board member has a government, defence or intelligence career.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Spies circle Silicon Valley",
+          "emailTeaser": "AI giants carry state-sized secrets with start-up security",
+          "imageW": 1280,
+          "imageH": 2145
+        },
+        {
+          "category": "Private credit",
+          "tag": "",
+          "title": "Private credit's tiny rating agency, and the banks' comeback",
+          "url": "https://www.ft.com/content/26739054-0455-449b-9566-97fb4986088d?syn-25a6b1a6=1",
+          "url2": "https://www.ft.com/content/bf403337-6e87-4aba-a306-17d63fbf1a81?syn-25a6b1a6=1",
+          "points": [
+            "Egan-Jones rated more than 3,200 private deals in 2025 with around 25 analysts, the FT reports. Founder Sean Egan credits technology, including AI, calls critics 'Luddites' and likens his firm to Tesla.",
+            "Its confidential ratings help insurers buy private credit, but regulators ask if such ratings run high, and Blue Owl, Carlyle and Apollo exclude them from their funds.",
+            "A Lex column argues banks are winning back buyout lending as private credit funds hit refinancing strains, giving private equity borrowers a choice of lenders, for now."
+          ],
+          "numbers": [
+            [
+              "3,200+",
+              "private deals rated by Egan-Jones in 2025, with around 25 analysts"
+            ]
+          ],
+          "why": "Much insurance money now sits in privately rated debt. If the gatekeeping grades are soft while private lenders are stretched, losses would land on insurers and their policyholders, not only on the funds.",
+          "other": "Egan says the big three raters have their own misses, such as investment-grade grades on Tricolor before it went bust, and competition is overdue. Banks returning gives borrowers options, though bank loans can get stuck too, as JPMorgan's Qualtrics loan showed.",
+          "also": [],
+          "image": "/figs/2026-11-25-5.jpg",
+          "imageAlt": "Private credit's rating question: Egan-Jones rated 3,200+ private deals in 2025 with around 25 analysts; big investors exclude its ratings; banks are winning back buyout loans while private lenders face refinancing strains.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times and FT Lex",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "Markets"
+          ],
+          "emailHead": "Private credit's two fault lines",
+          "emailTeaser": "A tiny rater defends itself as banks win back loans",
+          "cite": "Egan-Jones rated more than 3,200 private deals in 2025 with around 25 analysts, the FT reported on 23 November 2026.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "AI · Policy",
+          "tag": "Opinion",
+          "title": "Gramm and Gross: America wins AI with markets, not industrial policy",
+          "url": "https://www.wsj.com/opinion/american-exceptionalism-will-win-ai-8e20e29d",
+          "url2": "",
+          "points": [
+            "Former Senate Banking chair Phil Gramm and Brian Gross argue that the US leads AI thanks to open markets, and that being first matters less than commercialising best, as space and the web showed.",
+            "They say immigrants or their children founded 77% of leading AI companies, so tighter immigration, government equity stakes, subsidies and heavy federal borrowing all erode the edge.",
+            "Export controls buy time, not a permanent lead, they write, faulting both Bernie Sanders' proposed superintelligence ban and JD Vance's 'pro-worker' AI push for putting politics over markets."
+          ],
+          "numbers": [],
+          "why": "This is a free-market critique aimed at the President's own policies, not only his opponents. For Indian readers, the talent point lands: Satya Nadella is among their examples of immigrant talent behind US tech.",
+          "other": "Markets alone did not build the internet; the authors note Pentagon research started it and CERN created the web. And with AI firms now targets for spies, some will argue a hands-off state is a luxury.",
+          "also": [],
+          "image": "/figs/2026-11-25-6.jpg",
+          "imageAlt": "Gramm and Gross's argument, paraphrased: America wins AI by keeping markets free. Immigrants or their children founded 77% of leading AI companies; export controls buy time, not a permanent lead.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Let markets win the AI race",
+          "emailTeaser": "Two veterans warn Washington against steering AI",
+          "imageW": 1280,
+          "imageH": 1729
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Walls go up at the border.",
+    "b": "Spies walk in the front door.",
+    "line": "Washington rebuilds tariff walls while AI giants learn their boardrooms leak; the sturdier defence may be sharper boards and a welcome for the best talent."
+  },
+  "cover": "/figs/2026-11-25-cover.jpg",
+  "coverAlt": "Tariffs rise. AI freeloaders: $1 Mn. Sarvam guards GPUs. OpenAI finds a bug. Grades grilled. Talent wins.",
+  "stressIndex": {
+    "score": 54,
+    "band": "Severe",
+    "asOf": "2026-11-24"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25349.6504,
+        "asOf": "2026-11-23",
+        "prev": 25800.5996,
+        "week": 25291.0996,
+        "spark": [
+          22520.4492,
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996,
+          25349.6504
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7201.0898,
+        "asOf": "2026-11-24",
+        "prev": 7237.1699,
+        "week": 7340.5298,
+        "spark": [
+          7718.9399,
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901,
+          7237.1699,
+          7201.0898
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.904,
+        "asOf": "2026-11-24",
+        "prev": 4.918,
+        "week": 5.103,
+        "spark": [
+          5.19,
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912,
+          4.918,
+          4.904
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 91.4,
+        "asOf": "2026-11-24",
+        "prev": 89.37,
+        "week": 93.14,
+        "spark": [
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98,
+          92.57,
+          89.37,
+          91.4
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3561.8999,
+        "asOf": "2026-11-24",
+        "prev": 3651.3999,
+        "week": 3864.2,
+        "spark": [
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5,
+          3515.3999,
+          3651.3999,
+          3561.8999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 92.9152,
+        "asOf": "2026-11-24",
+        "prev": 92.673,
+        "week": 93.9631,
+        "spark": [
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295,
+          92.67,
+          92.673,
+          92.9152
+        ]
+      }
+    ]
+  }
+}

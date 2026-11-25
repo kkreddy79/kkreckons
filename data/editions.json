@@ -1,5 +1,94 @@
 [
   {
+    "date": "2026-11-25",
+    "slice": "Tariffs rise. AI freeloaders: $1 Mn. Sarvam guards GPUs. OpenAI finds a bug. Grades grilled. Talent wins.",
+    "artifact": "https://claude.ai/artifact/KqPvDsc4AjWapuvHFYLsiq",
+    "readingMinutes": 7,
+    "image": "/figs/2026-11-25-1.jpg",
+    "cover": "/figs/2026-11-25-cover.jpg",
+    "coverAlt": "Tariffs rise. AI freeloaders: $1 Mn. Sarvam guards GPUs. OpenAI finds a bug. Grades grilled. Talent wins.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Trump readies new subsidy tariffs on China, EU, Japan, South Korea",
+        "category": "Trade · Tariffs",
+        "tag": "",
+        "url": "https://www.ft.com/content/335b593d-1478-4550-ab0a-71fec6280eb0?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics",
+          "Markets"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "AI token fraud: stolen keys and free credits run up $1 Mn bills",
+        "category": "AI · Cybersecurity",
+        "tag": "",
+        "url": "https://inc42.com/features/the-growing-toll-of-token-frauds/",
+        "src": "Inc42",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "Sarvam defends Token Factory: private GPUs, own models still core",
+        "category": "AI · Startups",
+        "tag": "",
+        "url": "https://inc42.com/buzz/sarvam-ai-defends-token-factory-says-homegrown-models-remain-core-focus/",
+        "src": "Inc42",
+        "pay": false,
+        "themes": [
+          "AI",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "The spies are coming for Big Tech, and boards aren't ready",
+        "category": "Tech · Espionage",
+        "tag": "",
+        "url": "https://www.ft.com/content/c96c40c5-6b07-4433-b65f-19105e9ccb44?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Private credit's tiny rating agency, and the banks' comeback",
+        "category": "Private credit",
+        "tag": "",
+        "url": "https://www.ft.com/content/26739054-0455-449b-9566-97fb4986088d?syn-25a6b1a6=1",
+        "src": "Financial Times and FT Lex",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Gramm and Gross: America wins AI with markets, not industrial policy",
+        "category": "AI · Policy",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/opinion/american-exceptionalism-will-win-ai-8e20e29d",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-24",
     "slice": "Huang back in 11 days. Engines own chess. Rupee nets 413bps. AI takes chips, hackers keys. Slow the race.",
     "artifact": "https://claude.ai/artifact/V9nBNXAhf1FuWtYeF4Sa1H",
