@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-11-26",
+    "slice": "Servers head to orbit. Rich go private. AI bust? $2trn. Swiss fret, Ellison's debt, FinCen hit. All guesswork.",
+    "artifact": "https://claude.ai/artifact/MSah8UfgofjJehUL2i8s5d",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-26-1.jpg",
+    "cover": "/figs/2026-11-26-cover.jpg",
+    "coverAlt": "Servers head to orbit. Rich go private. AI bust? $2trn. Swiss fret, Ellison's debt, FinCen hit. All guesswork.",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "FCC approves SpaceX plan for 1 million data-center satellites",
+        "category": "Space · AI",
+        "tag": "",
+        "url": "https://www.wsj.com/business/fcc-authorizes-spacex-to-build-1-million-data-centers-in-space-0eb20ee7",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "India's rich are moving more of their wealth into private markets",
+        "category": "Wealth · AIFs",
+        "tag": "Opinion",
+        "url": "https://m.economictimes.com/opinion/et-commentary/lengthening-widening-wealth-indias-growing-fortunes-are-flowing-into-private-markets/articleshow/136170747.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Personal finance",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI bust could hit the US economy harder than the dot-com crash, WSJ",
+        "category": "US economy · AI",
+        "tag": "",
+        "url": "https://www.wsj.com/economy/worse-than-the-dot-com-crash-what-an-ai-bust-could-mean-for-the-economy-2a0e5ab3",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Swiss vote on looser arms export rules tests neutrality and industry",
+        "category": "Europe · Defence",
+        "tag": "",
+        "url": "https://www.ft.com/content/06429bc7-51ec-4677-bbba-70ba280c84ac?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Ellisons' $87bn Hollywood debt tests the Oracle-backed family fortune",
+        "category": "Media · Debt",
+        "tag": "",
+        "url": "https://www.ft.com/content/f269760e-e9e4-4bf9-b88b-a5daaa5b5b52?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Treasury's FinCen probes suspected cyber attack on its systems",
+        "category": "Cyber · Banking",
+        "tag": "",
+        "url": "https://www.ft.com/content/43aa7321-2a95-463c-8cb9-77fcc7e39291?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "Banking",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Why economists' forecasts of AI's impact are so far apart",
+        "category": "Economics · AI",
+        "tag": "Opinion",
+        "url": "https://www.ft.com/content/4d330eab-0dda-4d70-be7f-22b9538e0b29",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-25",
     "slice": "Tariffs rise. AI freeloaders: $1 Mn. Sarvam guards GPUs. OpenAI finds a bug. Grades grilled. Talent wins.",
     "artifact": "https://claude.ai/artifact/KqPvDsc4AjWapuvHFYLsiq",
