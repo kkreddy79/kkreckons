@@ -1,0 +1,560 @@
+{
+  "date": "2026-11-26",
+  "slice": "Servers head to orbit. Rich go private. AI bust? $2trn. Swiss fret, Ellison's debt, FinCen hit. All guesswork.",
+  "artifact": "https://claude.ai/artifact/MSah8UfgofjJehUL2i8s5d",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "1m",
+      "text": "satellites the FCC cleared for SpaceX's planned orbital AI data centers.",
+      "url": "https://www.wsj.com/business/fcc-authorizes-spacex-to-build-1-million-data-centers-in-space-0eb20ee7"
+    },
+    {
+      "num": "$2trn",
+      "text": "possible US loan losses if an AI bust comes after data-center borrowing grows.",
+      "url": "https://www.wsj.com/economy/worse-than-the-dot-com-crash-what-an-ai-bust-could-mean-for-the-economy-2a0e5ab3"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "Space · AI",
+          "tag": "",
+          "title": "FCC approves SpaceX plan for 1 million data-center satellites",
+          "url": "https://www.wsj.com/business/fcc-authorizes-spacex-to-build-1-million-data-centers-in-space-0eb20ee7",
+          "url2": "",
+          "points": [
+            "The FCC has cleared Starmind, SpaceX's planned network of one million AI data-center satellites, which Elon Musk has made central to his pitch since merging SpaceX with xAI. Backers say orbit offers solar power and sidesteps fights over data centers on the ground.",
+            "None of it operates yet. SpaceX needs a working Starship, a way to keep chips cool and affordable launches; it aims to send up its first data centers in 2027 and has until 2040 for the full network.",
+            "Amazon, Viasat and astronomers objected, citing thin detail and light pollution."
+          ],
+          "numbers": [
+            [
+              "1m",
+              "satellites approved"
+            ],
+            [
+              "2040",
+              "deadline for the full network"
+            ]
+          ],
+          "why": "Approval turns a sci-fi pitch into a licensed plan SpaceX can show investors and lenders, and it stakes an early claim on orbit before the FCC rules on rival orbital data-center bids.",
+          "other": "A licence is not a working product: cooling, launch costs and Starship are unsolved, and the deadlines stretch to 2040. If data centers on the ground get easier to build, the case for orbit weakens.",
+          "also": [],
+          "image": "/figs/2026-11-26-1.jpg",
+          "imageAlt": "Timeline: SpaceX gets a space data-center licence. The FCC approves the Starmind network this week; first launches planned for 2027, expansion through 2029, first-satellite deadline 2033 and full-network deadline 2040. 1 million satellites approved.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "Data centers, now in orbit",
+          "emailTeaser": "FCC clears Musk's million-satellite AI network.",
+          "imageW": 1280,
+          "imageH": 2236
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Wealth · AIFs",
+          "tag": "Opinion",
+          "title": "India's rich are moving more of their wealth into private markets",
+          "url": "https://m.economictimes.com/opinion/et-commentary/lengthening-widening-wealth-indias-growing-fortunes-are-flowing-into-private-markets/articleshow/136170747.cms",
+          "url2": "",
+          "points": [
+            "An ET Commentary column says India has turned from a nation of savers into one of investors, with about 20,000 ultra-rich, the world's sixth-largest such group, now focused on preserving wealth and passing it on.",
+            "Family offices are channelling that money into alternative investment funds (AIFs), which back deep tech, life sciences and energy and let companies stay private longer. India hosts about 130 of the world's 1,300 to 1,500 unicorns.",
+            "The writer says private markets must earn trust through tight governance and realistic valuations, since prices aren't set daily."
+          ],
+          "numbers": [
+            [
+              "~20,000",
+              "ultra-rich Indians, sixth-largest group"
+            ],
+            [
+              "~130",
+              "Indian unicorns, about 10% of the world's"
+            ]
+          ],
+          "why": "If family money keeps backing companies privately for longer, more of India's growth happens before listing, and ordinary investors buying at the IPO may get the later, pricier slice of the gains.",
+          "other": "Private assets have no daily prices, so returns can look smoother than they are, and fees run high. The column makes the case for AIFs without showing how often they beat cheaper public-market funds.",
+          "also": [],
+          "image": "/figs/2026-11-26-2.jpg",
+          "imageAlt": "Picture tiles: India's rich go private. About 130 of the world's 1,300 to 1,500 unicorns are in India. About 20,000 ultra-rich, the sixth-largest group; family offices focus on preserving wealth; capital goes to deep tech, life sciences and energy; patient capital.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Personal finance",
+            "India"
+          ],
+          "emailHead": "India's rich go private",
+          "emailTeaser": "Family money is flowing into AIFs, not just stocks.",
+          "imageW": 1280,
+          "imageH": 1817
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "US economy · AI",
+          "tag": "",
+          "title": "AI bust could hit the US economy harder than the dot-com crash, WSJ",
+          "url": "https://www.wsj.com/economy/worse-than-the-dot-com-crash-what-an-ai-bust-could-mean-for-the-economy-2a0e5ab3",
+          "url2": "",
+          "points": [
+            "Economists disagree on how hard an AI bust would hit the US. AI spending and the stock rally have carried growth, and stocks now hold about 35% of household wealth, more than at the dot-com peak, so a slump could curb spending by the richest households.",
+            "Columbia's Stijn van Nieuwerburgh says a crash today would cost lenders little, but if data-center borrowing keeps growing, a crash in a couple of years could bring $2 trillion in loan losses. Off-balance-sheet loans and circular deals make exposure hard to trace.",
+            "Harvard's Jason Furman doubts even a big stock fall would cause a recession, since most chips are imported. High federal debt leaves Washington less room to respond."
+          ],
+          "numbers": [
+            [
+              "35%",
+              "of US household wealth in stocks"
+            ],
+            [
+              "$2trn",
+              "possible loan losses if a bust comes later"
+            ]
+          ],
+          "why": "Your exposure isn't only the AI stocks you own; it's how much US growth and household spending now lean on one trade. And timing matters: the more debt the build-out takes on, the costlier a late bust becomes.",
+          "other": "Amazon and Microsoft are profitable and have mostly paid for data centers with cash, and imports blunt the hit to US output. The scariest numbers assume borrowing keeps climbing, which a cooling market could itself stop.",
+          "also": [],
+          "image": "/figs/2026-11-26-3.jpg",
+          "imageAlt": "Two sides: How bad would an AI bust be? The worry: stocks hold more household wealth than at the dot-com peak, data-center debt is growing and hard to trace, a later bust could cost lenders $2 trillion. The defence: imported chips, cash-funded giants, Furman doubts a recession. 35% of household net worth is in stocks.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "How bad could an AI bust be?",
+          "emailTeaser": "Economists split: dot-com rerun or something worse.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1842
+        },
+        {
+          "category": "Europe · Defence",
+          "tag": "",
+          "title": "Swiss vote on looser arms export rules tests neutrality and industry",
+          "url": "https://www.ft.com/content/06429bc7-51ec-4677-bbba-70ba280c84ac?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Swiss voters decide on Sunday whether to ease the War Materiel Act, tightened in 2022, which bars sales to countries at war and limits what buyers can pass on. The change would let partner countries keep buying even if drawn into a conflict.",
+            "Refusals to let Swiss ammunition and tanks reach Ukraine angered neighbours: Germany built its own Gepard ammunition supply and the Netherlands stopped ordering. Rheinmetall, Mowag and drone start-ups have shifted production or growth abroad.",
+            "A poll shows 49% for and 46% against. Left-wing opponents say the change helps arms makers, not Ukraine."
+          ],
+          "numbers": [
+            [
+              "49%",
+              "back looser rules in a poll"
+            ],
+            [
+              "46%",
+              "oppose"
+            ]
+          ],
+          "why": "Swiss neutrality rested on being costly to invade and useful to neighbours. A shrunken army and departing arms makers erode both, a warning for any small country that leans on friends for its security.",
+          "other": "What to watch: Sunday's vote. Exports grew strongly last year despite the rules, so the law may be a ceiling rather than a wall, and opponents see freer re-exports as the end of neutrality, not its defence.",
+          "also": [],
+          "image": "/figs/2026-11-26-4.jpg",
+          "imageAlt": "Switzerland's arms vote: 49% back looser arms export rules in a poll, 46% against. Pressure to change: angry neighbours, arms makers moving abroad, ex-army chief says the army might last possibly only days. Case against: helps arms makers not Ukraine, No camp gaining, defence minister says there is no plan B.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Geopolitics"
+          ],
+          "emailHead": "Switzerland votes on its arms",
+          "emailTeaser": "Neutral, rich and, critics warn, running out of defences.",
+          "imageW": 1280,
+          "imageH": 1724
+        },
+        {
+          "category": "Media · Debt",
+          "tag": "",
+          "title": "Ellisons' $87bn Hollywood debt tests the Oracle-backed family fortune",
+          "url": "https://www.ft.com/content/f269760e-e9e4-4bf9-b88b-a5daaa5b5b52?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Buying Paramount and Warner Bros Discovery has left David and Larry Ellison's combined studio business carrying roughly $87bn of debt, the heaviest load in Hollywood, as it takes on Netflix, Disney and YouTube.",
+            "Some older Paramount bonds trade far below face value, Oracle's credit rating sits one notch above junk and Larry Ellison has pledged Oracle shares for personal loans. Elon Musk even chipped in to help fund the Warner bid.",
+            "Skydance is starting $6bn of cost cuts, with buyouts already offered. Executives call the debt sound; lenders and analysts are less sure."
+          ],
+          "numbers": [
+            [
+              "$87bn",
+              "debt on the combined studios"
+            ],
+            [
+              "$6bn",
+              "planned cost cuts"
+            ]
+          ],
+          "why": "One family's fortune now backs two leveraged bets at once, Oracle's AI build-out and a Hollywood empire. If either stumbles, the cushion for the other thins, and studio staff feel it first through job cuts.",
+          "other": "Management says the plan needs no asset sales or new capital, and cable channels and big franchises still throw off cash. Bond prices swing with markets, so today's discounts may reflect nerves more than real default risk.",
+          "also": [],
+          "image": "/figs/2026-11-26-5.jpg",
+          "imageAlt": "Picture tiles: The Ellisons' Hollywood tab. $87bn of debt on the combined Paramount and Warner Bros Discovery business. Older Paramount bonds trade below face value, Oracle rated one notch above junk, Larry Ellison's loans backed by pledged Oracle shares, Musk helped fund the bid. $6bn cost cuts planned.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Markets"
+          ],
+          "emailHead": "The Ellisons' Hollywood tab",
+          "emailTeaser": "Two studios, one fortune, a mountain of debt.",
+          "stressIndex": true,
+          "imageW": 1280,
+          "imageH": 1824
+        },
+        {
+          "category": "Cyber · Banking",
+          "tag": "",
+          "title": "Treasury's FinCen probes suspected cyber attack on its systems",
+          "url": "https://www.ft.com/content/43aa7321-2a95-463c-8cb9-77fcc7e39291?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "The Financial Crimes Enforcement Network, which collects banks' suspicious activity reports, says someone gained unauthorised access to a limited set of its systems. It took some offline; outages began last week.",
+            "So far there is no sign that Bank Secrecy Act or beneficial ownership data was breached. Bank regulators promised not to penalise late filers, and FinCen opened a phone line for urgent reports.",
+            "It follows outages at Microsoft, JPMorgan, the FAA and the NSA, which officials blamed on rushed software patches, not attacks."
+          ],
+          "numbers": [
+            [
+              "4.8mn",
+              "suspicious activity reports filed in 2025"
+            ]
+          ],
+          "why": "FinCen is where banks' warnings about money laundering land. Even a short outage creates a blind spot criminals can use, and it feeds fears that AI-powered hacking tools are outrunning defences.",
+          "other": "No breach of the most sensitive databases has been found, and the main e-filing system stayed up. Precautionary shutdowns can look worse than the incident, so what investigators find matters more than the headline.",
+          "also": [],
+          "image": "/figs/2026-11-26-6.jpg",
+          "imageAlt": "Diagram: a break-in at the money-laundering hub. Banks file reports through an e-filing system that still runs, to FinCen, where unauthorised access took some systems offline, which feeds regulators and law enforcement. 4.8mn suspicious activity reports were filed in 2025.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "Banking",
+            "Geopolitics"
+          ],
+          "emailHead": "Hackers at the laundering watchdog",
+          "emailTeaser": "FinCen takes systems offline after unauthorised access.",
+          "imageW": 1280,
+          "imageH": 2191
+        },
+        {
+          "category": "Economics · AI",
+          "tag": "Opinion",
+          "title": "Why economists' forecasts of AI's impact are so far apart",
+          "url": "https://www.ft.com/content/4d330eab-0dda-4d70-be7f-22b9538e0b29",
+          "url2": "",
+          "points": [
+            "Economist Emily Fry notes that the UK fiscal watchdog expects AI to add 0.2 points a year to productivity growth by 2031, while Anthropic staff have implied about 15 points on US GDP growth by 2030.",
+            "Using Richard Zeckhauser's split between risk, uncertainty and ignorance, she argues central banks treat AI as a risk, task-automation models deliver huge gains only on bold assumptions, and the real outcomes may be unknowable.",
+            "Her fix: measure how deeply AI is used, not just how widely."
+          ],
+          "numbers": [
+            [
+              "0.2 pts",
+              "OBR: AI's yearly boost to UK productivity"
+            ],
+            [
+              "~15 pts",
+              "implied boost to US growth"
+            ]
+          ],
+          "why": "Growth forecasts set how much governments can spend and how nervous bond markets get. If the gap can't be narrowed, budgets and borrowing costs rest on a guess either way.",
+          "other": "History favours the sceptics, since dramatic growth predictions rarely come true. Then again, AI engineers see how their tools are used first, so official caution may miss what is already happening inside firms.",
+          "also": [],
+          "image": "/figs/2026-11-26-7.jpg",
+          "imageAlt": "One big line: Why AI forecasts don't agree. Emily Fry: each side has the edge on half of the problem. The OBR projects AI adds 0.2 points a year to UK productivity growth; Anthropic staff imply about 15 points on US GDP growth by 2030.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI"
+          ],
+          "emailHead": "AI's growth guesswork",
+          "emailTeaser": "Watchdogs say tiny, labs say huge. Who's right?",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Booms hide the bill.",
+    "b": "Delay adds interest.",
+    "line": "Borrowed money is funding bets on orbit, AI and studios, and the people paid to see trouble coming, from bank watchdogs to economists, can't agree on when it arrives."
+  },
+  "cover": "/figs/2026-11-26-cover.jpg",
+  "coverAlt": "Servers head to orbit. Rich go private. AI bust? $2trn. Swiss fret, Ellison's debt, FinCen hit. All guesswork.",
+  "stressIndex": {
+    "score": 55,
+    "band": "Severe",
+    "asOf": "2026-11-25"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25819.25,
+        "asOf": "2026-11-25",
+        "prev": 25349.6504,
+        "week": 25227.9492,
+        "spark": [
+          22363.3496,
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996,
+          25349.6504,
+          25819.25
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7182.7798,
+        "asOf": "2026-11-25",
+        "prev": 7201.0898,
+        "week": 7323.6299,
+        "spark": [
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901,
+          7237.1699,
+          7201.0898,
+          7182.7798
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.848,
+        "asOf": "2026-11-25",
+        "prev": 4.904,
+        "week": 5.066,
+        "spark": [
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912,
+          4.918,
+          4.904,
+          4.848
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 91.4,
+        "asOf": "2026-11-24",
+        "prev": 89.37,
+        "week": 93.14,
+        "spark": [
+          106.06,
+          105.92,
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98,
+          92.57,
+          89.37,
+          91.4
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3561.8999,
+        "asOf": "2026-11-24",
+        "prev": 3651.3999,
+        "week": 3864.2,
+        "spark": [
+          4107.8999,
+          4170.1001,
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5,
+          3515.3999,
+          3651.3999,
+          3561.8999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 92.9152,
+        "asOf": "2026-11-24",
+        "prev": 92.673,
+        "week": 93.9631,
+        "spark": [
+          94.9777,
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295,
+          92.67,
+          92.673,
+          92.9152
+        ]
+      }
+    ]
+  }
+}
