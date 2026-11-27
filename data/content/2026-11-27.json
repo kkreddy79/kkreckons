@@ -20,40 +20,38 @@
       "name": "Pick of the day",
       "stories": [
         {
-          "category": "AI and encryption",
-          "tag": "",
-          "title": "Bank of England's Bailey flags encryption risk from new AI models",
-          "url": "https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
+          "category": "Coding and AI",
+          "tag": "Opinion",
+          "title": "Wired: AI coding tools mean the end of programmers, not programming",
+          "url": "https://www.wired.com/story/goodbye-world-the-end-of-programmers/",
           "url2": "",
           "points": [
-            "Bank of England governor Andrew Bailey says AI developers are worried their newest models have become more powerful, and are holding back on releasing them. He backed that caution strongly.",
-            "The fear: AI's fast progress in maths could undo the number puzzles that keep bank data and payments secure. No AI company has published anything showing this, and Anthropic declined to comment.",
-            "In its financial stability report, the BoE for the first time told firms to prioritise upgrading their cryptography against AI as well as quantum risks. Bailey also wants countries to test AI models together."
+            "Writer and programmer Sheon Han says AI coding tools went from eager helpers in early 2025 to far better than him at his job within a year.",
+            "His view: programming survives, but programmers become operators who prompt agents, so coding stops being a craft and loses its flow. He says his own coding skill has slipped fast.",
+            "He now builds more software than ever with Claude Code, enough to worry about compulsive use, and has quit his programming job to finish a book."
           ],
           "numbers": [
             [
-              "2030",
-              "after which banks had planned their upgrades"
+              "90%+",
+              "of code at some firms written with AI, per reports"
             ]
           ],
-          "why": "Banks had pencilled in a slow, post-2030 switch to new encryption on a quantum timetable. If AI can get there first, that schedule becomes a liability, and every firm needs to know where its old codes sit.",
-          "other": "The evidence is still rumour and inference: experts say the public breakthroughs pose no immediate threat, and a regulator urging caution is not proof that any code has been broken.",
+          "why": "If coding shifts from making to supervising, the skills employers pay for change: specifying, reviewing and judging output matter more than syntax, and juniors lose the practice that used to build expertise.",
+          "other": "Simon Willison, whom Han quotes, likens AI to a table saw that carpenters still use. Many engineers argue the craft simply moves up a level, as it did from assembly to Python.",
           "also": [],
-          "image": "/figs/2026-11-27-1.jpg",
-          "imageAlt": "Timeline: AI and encryption. Spring, new models surprise their makers; last week, a claimed Riemann proof; Wednesday, Scott Aaronson's warning; Thursday, the BoE tells firms to prioritise cryptography upgrades; after 2030, banks' original upgrade plans.",
+          "image": "/figs/2026-11-27-6.jpg",
+          "imageAlt": "Two sides on AI and programmers. The worry: coders become operators, flow fades, skills decline. The defence: a table saw still needs a carpenter, programming has always climbed abstraction. Figure: over 90% of code at some firms written with AI.",
           "imageCredit": "Original graphic: KKReckons",
-          "src": "Financial Times",
+          "src": "Wired",
           "pay": true,
-          "freeUrl": "https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026",
-          "freeSrc": "Bank of England",
           "themes": [
             "AI",
-            "Banking"
+            "Jobs & careers"
           ],
-          "emailHead": "Bailey's warning on AI and codes",
-          "emailTeaser": "BoE tells banks to fix encryption before AI cracks it",
+          "emailHead": "Coders become AI operators",
+          "emailTeaser": "A programmer-writer says AI ended coding as a craft",
           "imageW": 1280,
-          "imageH": 2146
+          "imageH": 1710
         }
       ]
     },
@@ -103,6 +101,42 @@
     {
       "name": "World edition",
       "stories": [
+        {
+          "category": "AI and encryption",
+          "tag": "",
+          "title": "Bank of England's Bailey flags encryption risk from new AI models",
+          "url": "https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Bank of England governor Andrew Bailey says AI developers are worried their newest models have become more powerful, and are holding back on releasing them. He backed that caution strongly.",
+            "The fear: AI's fast progress in maths could undo the number puzzles that keep bank data and payments secure. No AI company has published anything showing this, and Anthropic declined to comment.",
+            "In its financial stability report, the BoE for the first time told firms to prioritise upgrading their cryptography against AI as well as quantum risks. Bailey also wants countries to test AI models together."
+          ],
+          "numbers": [
+            [
+              "2030",
+              "after which banks had planned their upgrades"
+            ]
+          ],
+          "why": "Banks had pencilled in a slow, post-2030 switch to new encryption on a quantum timetable. If AI can get there first, that schedule becomes a liability, and every firm needs to know where its old codes sit.",
+          "other": "The evidence is still rumour and inference: experts say the public breakthroughs pose no immediate threat, and a regulator urging caution is not proof that any code has been broken.",
+          "also": [],
+          "image": "/figs/2026-11-27-1.jpg",
+          "imageAlt": "Timeline: AI and encryption. Spring, new models surprise their makers; last week, a claimed Riemann proof; Wednesday, Scott Aaronson's warning; Thursday, the BoE tells firms to prioritise cryptography upgrades; after 2030, banks' original upgrade plans.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026",
+          "freeSrc": "Bank of England",
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Bailey's warning on AI and codes",
+          "emailTeaser": "BoE tells banks to fix encryption before AI cracks it",
+          "imageW": 1280,
+          "imageH": 2146
+        },
         {
           "category": "AI and maths",
           "tag": "Opinion",
@@ -203,40 +237,6 @@
           "emailTeaser": "Usage keeps soaring; since October, spending hasn't",
           "imageW": 1280,
           "imageH": 1986
-        },
-        {
-          "category": "Coding and AI",
-          "tag": "Opinion",
-          "title": "Wired: AI coding tools mean the end of programmers, not programming",
-          "url": "https://www.wired.com/story/goodbye-world-the-end-of-programmers/",
-          "url2": "",
-          "points": [
-            "Writer and programmer Sheon Han says AI coding tools went from eager helpers in early 2025 to far better than him at his job within a year.",
-            "His view: programming survives, but programmers become operators who prompt agents, so coding stops being a craft and loses its flow. He says his own coding skill has slipped fast.",
-            "He now builds more software than ever with Claude Code, enough to worry about compulsive use, and has quit his programming job to finish a book."
-          ],
-          "numbers": [
-            [
-              "90%+",
-              "of code at some firms written with AI, per reports"
-            ]
-          ],
-          "why": "If coding shifts from making to supervising, the skills employers pay for change: specifying, reviewing and judging output matter more than syntax, and juniors lose the practice that used to build expertise.",
-          "other": "Simon Willison, whom Han quotes, likens AI to a table saw that carpenters still use. Many engineers argue the craft simply moves up a level, as it did from assembly to Python.",
-          "also": [],
-          "image": "/figs/2026-11-27-6.jpg",
-          "imageAlt": "Two sides on AI and programmers. The worry: coders become operators, flow fades, skills decline. The defence: a table saw still needs a carpenter, programming has always climbed abstraction. Figure: over 90% of code at some firms written with AI.",
-          "imageCredit": "Original graphic: KKReckons",
-          "src": "Wired",
-          "pay": true,
-          "themes": [
-            "AI",
-            "Jobs & careers"
-          ],
-          "emailHead": "Coders become AI operators",
-          "emailTeaser": "A programmer-writer says AI ended coding as a craft",
-          "imageW": 1280,
-          "imageH": 1710
         },
         {
           "category": "Retirement",

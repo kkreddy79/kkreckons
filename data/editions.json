@@ -4,21 +4,21 @@
     "slice": "Maths eyes the locks. HDFC hugs its keys. Guardrails nap, tokens 44x. Coders prompt. Work till you freeze?",
     "artifact": "https://claude.ai/artifact/1MqvToBaekMBNDUguYBP9Z",
     "readingMinutes": 8,
-    "image": "/figs/2026-11-27-1.jpg",
+    "image": "/figs/2026-11-27-6.jpg",
     "cover": "/figs/2026-11-27-cover.jpg",
     "coverAlt": "Maths eyes the locks. HDFC hugs its keys. Guardrails nap, tokens 44x. Coders prompt. Work till you freeze?",
     "stories": [
       {
         "section": "Pick of the day",
-        "title": "Bank of England's Bailey flags encryption risk from new AI models",
-        "category": "AI and encryption",
-        "tag": "",
-        "url": "https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
-        "src": "Financial Times",
+        "title": "Wired: AI coding tools mean the end of programmers, not programming",
+        "category": "Coding and AI",
+        "tag": "Opinion",
+        "url": "https://www.wired.com/story/goodbye-world-the-end-of-programmers/",
+        "src": "Wired",
         "pay": true,
         "themes": [
           "AI",
-          "Banking"
+          "Jobs & careers"
         ]
       },
       {
@@ -32,6 +32,19 @@
         "themes": [
           "Banking",
           "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Bank of England's Bailey flags encryption risk from new AI models",
+        "category": "AI and encryption",
+        "tag": "",
+        "url": "https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
         ]
       },
       {
@@ -71,19 +84,6 @@
         "themes": [
           "AI",
           "Markets"
-        ]
-      },
-      {
-        "section": "World edition",
-        "title": "Wired: AI coding tools mean the end of programmers, not programming",
-        "category": "Coding and AI",
-        "tag": "Opinion",
-        "url": "https://www.wired.com/story/goodbye-world-the-end-of-programmers/",
-        "src": "Wired",
-        "pay": true,
-        "themes": [
-          "AI",
-          "Jobs & careers"
         ]
       },
       {
