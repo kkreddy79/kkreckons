@@ -39,7 +39,7 @@
           "why": "If coding shifts from making to supervising, the skills employers pay for change: specifying, reviewing and judging output matter more than syntax, and juniors lose the practice that used to build expertise.",
           "other": "Simon Willison, whom Han quotes, likens AI to a table saw that carpenters still use. Many engineers argue the craft simply moves up a level, as it did from assembly to Python.",
           "also": [],
-          "image": "/figs/2026-11-27-6.jpg",
+          "image": "/figs/2026-11-27-1.jpg",
           "imageAlt": "Two sides on AI and programmers. The worry: coders become operators, flow fades, skills decline. The defence: a table saw still needs a carpenter, programming has always climbed abstraction. Figure: over 90% of code at some firms written with AI.",
           "imageCredit": "Original graphic: KKReckons",
           "src": "Wired",
@@ -51,7 +51,7 @@
           "emailHead": "Coders become AI operators",
           "emailTeaser": "A programmer-writer says AI ended coding as a craft",
           "imageW": 1280,
-          "imageH": 1710
+          "imageH": 1545
         }
       ]
     },
@@ -94,7 +94,7 @@
           "emailHead": "HDFC pulls its apps back home",
           "emailTeaser": "Cyberattacks on partners push HDFC to build its own",
           "imageW": 1280,
-          "imageH": 1871
+          "imageH": 1765
         }
       ]
     },
@@ -121,7 +121,7 @@
           "why": "Banks had pencilled in a slow, post-2030 switch to new encryption on a quantum timetable. If AI can get there first, that schedule becomes a liability, and every firm needs to know where its old codes sit.",
           "other": "The evidence is still rumour and inference: experts say the public breakthroughs pose no immediate threat, and a regulator urging caution is not proof that any code has been broken.",
           "also": [],
-          "image": "/figs/2026-11-27-1.jpg",
+          "image": "/figs/2026-11-27-3.jpg",
           "imageAlt": "Timeline: AI and encryption. Spring, new models surprise their makers; last week, a claimed Riemann proof; Wednesday, Scott Aaronson's warning; Thursday, the BoE tells firms to prioritise cryptography upgrades; after 2030, banks' original upgrade plans.",
           "imageCredit": "Original graphic: KKReckons",
           "src": "Financial Times",
@@ -135,7 +135,7 @@
           "emailHead": "Bailey's warning on AI and codes",
           "emailTeaser": "BoE tells banks to fix encryption before AI cracks it",
           "imageW": 1280,
-          "imageH": 2146
+          "imageH": 2003
         },
         {
           "category": "AI and maths",
@@ -157,7 +157,7 @@
           "why": "When a well-known sceptic of hype calls this a turning point, the debate shifts from whether AI can do original maths to what happens to the systems built on maths being hard.",
           "other": "Aaronson admits his crypto information is secondhand, and that understanding these proofs may take years; he also concedes results like the Riemann claim have little direct effect on daily life.",
           "also": [],
-          "image": "/figs/2026-11-27-3.jpg",
+          "image": "/figs/2026-11-27-4.jpg",
           "imageAlt": "Picture tiles: four results Aaronson credits to AI. Matrix exponent 9/4 (OpenAI); Fourier transform bound with matching lower bound (OpenAI); QIP(2) = PSPACE (Yupan Liu, AI-assisted); Riemann hypothesis proof claim (Anthropic). Read with care: crypto claims are unverified.",
           "imageCredit": "Original graphic: KKReckons",
           "src": "Shtetl-Optimized (Scott Aaronson)",
@@ -169,7 +169,7 @@
           "emailHead": "A computer scientist's big AI alarm",
           "emailTeaser": "Aaronson says AI proofs are piling up, crypto next",
           "imageW": 1280,
-          "imageH": 1868
+          "imageH": 1713
         },
         {
           "category": "AI safety",
@@ -186,7 +186,7 @@
           "why": "Inside accounts like this are rare, and it says the brakes are coming off just as AI gets most powerful. That shifts more of the job of catching harm onto regulators, courts and users.",
           "other": "It is one unnamed person's view of unnamed firms, with no documents or figures. Companies would argue speed and safety can coexist, and that guardrails are increasingly built into products rather than added by separate teams.",
           "also": [],
-          "image": "/figs/2026-11-27-4.jpg",
+          "image": "/figs/2026-11-27-5.jpg",
           "imageAlt": "One big line, paraphrased: an anonymous AI leader says ethical hesitation is now treated as a luxury. Supporting points: safety teams slimmed or sidelined, faster recently; legal concerns left until after launch.",
           "imageCredit": "Original graphic: KKReckons",
           "src": "The Guardian",
@@ -198,7 +198,7 @@
           "emailHead": "An insider's AI safety alarm",
           "emailTeaser": "A senior AI leader says guardrails are being cut",
           "imageW": 1280,
-          "imageH": 1748
+          "imageH": 1501
         },
         {
           "category": "AI pricing",
@@ -224,7 +224,7 @@
           "why": "AI's investment boom assumes cheaper models unlock ever bigger bills. If buyers now pocket the savings, revenue for model makers could lag usage, a signal worth watching for anyone holding AI stocks.",
           "other": "OpenRouter says elasticity dipped near 1 in December 2024 and November 2025 and bounced back with new launches; this could be a lull, and one platform's paid traffic is not the whole market.",
           "also": [],
-          "image": "/figs/2026-11-27-5.jpg",
+          "image": "/figs/2026-11-27-6.jpg",
           "imageAlt": "Chart: OpenRouter price elasticity by quarter of 2026: Q1 5.4, Q2 5.5, Q3 1.6, Q4 to 16 Nov 1.2, with a line at 1 where spend stays flat. Tokens up 44x, spend up 7.6x, price per token down 83%.",
           "imageCredit": "Original graphic: KKReckons",
           "src": "OpenRouter",
@@ -236,7 +236,7 @@
           "emailHead": "Cheaper AI, flat AI budgets",
           "emailTeaser": "Usage keeps soaring; since October, spending hasn't",
           "imageW": 1280,
-          "imageH": 1986
+          "imageH": 1801
         },
         {
           "category": "Retirement",
@@ -270,7 +270,7 @@
           "emailHead": "The best retirement age? Never",
           "emailTeaser": "Longevity experts tell a humorist to keep working",
           "imageW": 1280,
-          "imageH": 1722
+          "imageH": 1631
         }
       ]
     }
