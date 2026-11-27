@@ -1,5 +1,107 @@
 [
   {
+    "date": "2026-11-27",
+    "slice": "Maths eyes the locks. HDFC hugs its keys. Guardrails nap, tokens 44x. Coders prompt. Work till you freeze?",
+    "artifact": "https://claude.ai/artifact/1MqvToBaekMBNDUguYBP9Z",
+    "readingMinutes": 8,
+    "image": "/figs/2026-11-27-1.jpg",
+    "cover": "/figs/2026-11-27-cover.jpg",
+    "coverAlt": "Maths eyes the locks. HDFC hugs its keys. Guardrails nap, tokens 44x. Coders prompt. Work till you freeze?",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "Bank of England's Bailey flags encryption risk from new AI models",
+        "category": "AI and encryption",
+        "tag": "",
+        "url": "https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "HDFC Bank to bring key digital apps in-house as third-party risks rise",
+        "category": "Banking tech",
+        "tag": "",
+        "url": "https://m.economictimes.com/industry/banking/finance/banking/hdfc-bank-to-bring-key-digital-apps-in-house-amid-rising-third-party-risks/articleshow/136202058.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Scott Aaronson says AI maths is surging and crypto bombshells await",
+        "category": "AI and maths",
+        "tag": "Opinion",
+        "url": "https://scottaaronson.blog/?p=10379",
+        "src": "Shtetl-Optimized (Scott Aaronson)",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Health & science"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Anonymous AI leader: big tech has stopped taking AI safety seriously",
+        "category": "AI safety",
+        "tag": "Opinion",
+        "url": "https://www.theguardian.com/commentisfree/2026/nov/26/ai-leader-tech-giant-trust-safeguarding-privacy-profit",
+        "src": "The Guardian",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "OpenRouter data: AI token use up 44x in 2026 as spending flattens",
+        "category": "AI pricing",
+        "tag": "",
+        "url": "https://openrouter.ai/blog/insights/is-jevons-paradox-holding/",
+        "src": "OpenRouter",
+        "pay": false,
+        "themes": [
+          "AI",
+          "Markets"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "Wired: AI coding tools mean the end of programmers, not programming",
+        "category": "Coding and AI",
+        "tag": "Opinion",
+        "url": "https://www.wired.com/story/goodbye-world-the-end-of-programmers/",
+        "src": "Wired",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Jobs & careers"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "WSJ essay: what is the right age to retire? Experts say never",
+        "category": "Retirement",
+        "tag": "Opinion",
+        "url": "https://www.wsj.com/personal-finance/retirement/best-age-to-retire-b48426c9",
+        "src": "The Wall Street Journal",
+        "pay": true,
+        "themes": [
+          "Personal finance",
+          "Jobs & careers"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-26",
     "slice": "Servers head to orbit. Rich go private. AI bust? $2trn. Swiss fret, Ellison's debt, FinCen hit. All guesswork.",
     "artifact": "https://claude.ai/artifact/MSah8UfgofjJehUL2i8s5d",
