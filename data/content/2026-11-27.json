@@ -1,0 +1,542 @@
+{
+  "date": "2026-11-27",
+  "slice": "Maths eyes the locks. HDFC hugs its keys. Guardrails nap, tokens 44x. Coders prompt. Work till you freeze?",
+  "artifact": "https://claude.ai/artifact/1MqvToBaekMBNDUguYBP9Z",
+  "readingMinutes": 8,
+  "callouts": [
+    {
+      "num": "44x",
+      "text": "paid AI token volume on OpenRouter in 2026, while spend rose only 7.6x (OpenRouter)",
+      "url": "https://openrouter.ai/blog/insights/is-jevons-paradox-holding/"
+    },
+    {
+      "num": "₹300 cr+",
+      "text": "lost by NBFCs to cyberattacks in three months, pushing HDFC Bank to take key apps in-house (ET)",
+      "url": "https://m.economictimes.com/industry/banking/finance/banking/hdfc-bank-to-bring-key-digital-apps-in-house-amid-rising-third-party-risks/articleshow/136202058.cms"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI and encryption",
+          "tag": "",
+          "title": "Bank of England's Bailey flags encryption risk from new AI models",
+          "url": "https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Bank of England governor Andrew Bailey says AI developers are worried their newest models have become more powerful, and are holding back on releasing them. He backed that caution strongly.",
+            "The fear: AI's fast progress in maths could undo the number puzzles that keep bank data and payments secure. No AI company has published anything showing this, and Anthropic declined to comment.",
+            "In its financial stability report, the BoE for the first time told firms to prioritise upgrading their cryptography against AI as well as quantum risks. Bailey also wants countries to test AI models together."
+          ],
+          "numbers": [
+            [
+              "2030",
+              "after which banks had planned their upgrades"
+            ]
+          ],
+          "why": "Banks had pencilled in a slow, post-2030 switch to new encryption on a quantum timetable. If AI can get there first, that schedule becomes a liability, and every firm needs to know where its old codes sit.",
+          "other": "The evidence is still rumour and inference: experts say the public breakthroughs pose no immediate threat, and a regulator urging caution is not proof that any code has been broken.",
+          "also": [],
+          "image": "/figs/2026-11-27-1.jpg",
+          "imageAlt": "Timeline: AI and encryption. Spring, new models surprise their makers; last week, a claimed Riemann proof; Wednesday, Scott Aaronson's warning; Thursday, the BoE tells firms to prioritise cryptography upgrades; after 2030, banks' original upgrade plans.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "freeUrl": "https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026",
+          "freeSrc": "Bank of England",
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Bailey's warning on AI and codes",
+          "emailTeaser": "BoE tells banks to fix encryption before AI cracks it",
+          "imageW": 1280,
+          "imageH": 2146
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Banking tech",
+          "tag": "",
+          "title": "HDFC Bank to bring key digital apps in-house as third-party risks rise",
+          "url": "https://m.economictimes.com/industry/banking/finance/banking/hdfc-bank-to-bring-key-digital-apps-in-house-amid-rising-third-party-risks/articleshow/136202058.cms",
+          "url2": "",
+          "points": [
+            "HDFC Bank is moving card platforms MyCards and OnlyCards in-house and is insourcing PayZapp. It has shut BizX, a third-party platform for small proprietors, and folded its features into its own systems.",
+            "CIO Ramesh Lakshminarayanan says the aim is to build and run 60-70% of key applications in-house within a few years, calling mobile banking, net banking, core payments and API management the crown jewels.",
+            "The push follows attacks on fintechs and NBFCs: over ₹300 crore lost in three months, and about 20 institutions hit in October alone."
+          ],
+          "numbers": [
+            [
+              "60-70%",
+              "key apps to be built in-house"
+            ],
+            [
+              "₹300 cr+",
+              "lost by NBFCs to attacks in 3 months"
+            ]
+          ],
+          "why": "Indian banking leaned on fintech partners and outside vendors for speed. If the biggest lender decides the weak point is the partner, others may follow, which means bigger tech budgets and fewer outsourcing deals for vendors.",
+          "other": "In-house code is not automatically safer: banks have had their own tech failures, HDFC included, and building everything internally is slow and costly. Tighter checks on partners might cut risk at lower cost.",
+          "also": [],
+          "image": "/figs/2026-11-27-2.jpg",
+          "imageAlt": "Diagram of HDFC Bank's security layers. Outside: NBFCs lost over ₹300 crore in three months, about 20 institutions hit in October. The wall: stronger API authentication and partner monitoring. Inside: mobile banking, net banking, core payments, API management; 60-70% of key apps in-house.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ],
+          "emailHead": "HDFC pulls its apps back home",
+          "emailTeaser": "Cyberattacks on partners push HDFC to build its own",
+          "imageW": 1280,
+          "imageH": 1871
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "AI and maths",
+          "tag": "Opinion",
+          "title": "Scott Aaronson says AI maths is surging and crypto bombshells await",
+          "url": "https://scottaaronson.blog/?p=10379",
+          "url2": "",
+          "points": [
+            "Aaronson lists a run of results he credits to AI: OpenAI's claim that the matrix multiplication exponent is exactly 9/4, a faster bound for the Fourier transform, and an AI-assisted proof that QIP(2) = PSPACE.",
+            "He treats proofs that OpenAI or Anthropic back with Lean certificates as correct unless shown otherwise, and now feels a proof of P ≠ NP is not far off.",
+            "He says reliable sources leave him virtually certain the labs hold results that will break deployed cryptosystems, though he is unsure of the details and won't repeat rumours."
+          ],
+          "numbers": [
+            [
+              "9/4",
+              "claimed matrix multiplication exponent"
+            ]
+          ],
+          "why": "When a well-known sceptic of hype calls this a turning point, the debate shifts from whether AI can do original maths to what happens to the systems built on maths being hard.",
+          "other": "Aaronson admits his crypto information is secondhand, and that understanding these proofs may take years; he also concedes results like the Riemann claim have little direct effect on daily life.",
+          "also": [],
+          "image": "/figs/2026-11-27-3.jpg",
+          "imageAlt": "Picture tiles: four results Aaronson credits to AI. Matrix exponent 9/4 (OpenAI); Fourier transform bound with matching lower bound (OpenAI); QIP(2) = PSPACE (Yupan Liu, AI-assisted); Riemann hypothesis proof claim (Anthropic). Read with care: crypto claims are unverified.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Shtetl-Optimized (Scott Aaronson)",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Health & science"
+          ],
+          "emailHead": "A computer scientist's big AI alarm",
+          "emailTeaser": "Aaronson says AI proofs are piling up, crypto next",
+          "imageW": 1280,
+          "imageH": 1868
+        },
+        {
+          "category": "AI safety",
+          "tag": "Opinion",
+          "title": "Anonymous AI leader: big tech has stopped taking AI safety seriously",
+          "url": "https://www.theguardian.com/commentisfree/2026/nov/26/ai-leader-tech-giant-trust-safeguarding-privacy-profit",
+          "url2": "",
+          "points": [
+            "A senior AI leader at one of the world's biggest tech firms, writing anonymously, says products are being rushed out with too little thought, as ethical hesitation comes to feel like a luxury.",
+            "AI teams are the most secretive and siloed, racing rivals, countries and even colleagues, so privacy and trust-and-safety checks get treated as speed bumps.",
+            "Safety staff are being cut or sidelined, and legal worries are left until after launch, on a bet that the next big win lifts the share price."
+          ],
+          "numbers": [],
+          "why": "Inside accounts like this are rare, and it says the brakes are coming off just as AI gets most powerful. That shifts more of the job of catching harm onto regulators, courts and users.",
+          "other": "It is one unnamed person's view of unnamed firms, with no documents or figures. Companies would argue speed and safety can coexist, and that guardrails are increasingly built into products rather than added by separate teams.",
+          "also": [],
+          "image": "/figs/2026-11-27-4.jpg",
+          "imageAlt": "One big line, paraphrased: an anonymous AI leader says ethical hesitation is now treated as a luxury. Supporting points: safety teams slimmed or sidelined, faster recently; legal concerns left until after launch.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Guardian",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "An insider's AI safety alarm",
+          "emailTeaser": "A senior AI leader says guardrails are being cut",
+          "imageW": 1280,
+          "imageH": 1748
+        },
+        {
+          "category": "AI pricing",
+          "tag": "",
+          "title": "OpenRouter data: AI token use up 44x in 2026 as spending flattens",
+          "url": "https://openrouter.ai/blog/insights/is-jevons-paradox-holding/",
+          "url2": "",
+          "points": [
+            "Paid token volume on OpenRouter is up 44x this year and spending 7.6x, as the price per token fell 83%.",
+            "Price elasticity, how much usage rises per 1% price cut, fell from 5.4 and 5.5 in the first half to 1.6 in Q3 and 1.2 so far in Q4. Above 1, cheaper tokens still mean more total spend.",
+            "Spend has been roughly flat since early October while usage kept rising. Enterprises seem to bank the savings more than AI-native firms."
+          ],
+          "numbers": [
+            [
+              "1.2",
+              "Q4 elasticity, through 16 Nov"
+            ],
+            [
+              "-83%",
+              "price per token in 2026"
+            ]
+          ],
+          "why": "AI's investment boom assumes cheaper models unlock ever bigger bills. If buyers now pocket the savings, revenue for model makers could lag usage, a signal worth watching for anyone holding AI stocks.",
+          "other": "OpenRouter says elasticity dipped near 1 in December 2024 and November 2025 and bounced back with new launches; this could be a lull, and one platform's paid traffic is not the whole market.",
+          "also": [],
+          "image": "/figs/2026-11-27-5.jpg",
+          "imageAlt": "Chart: OpenRouter price elasticity by quarter of 2026: Q1 5.4, Q2 5.5, Q3 1.6, Q4 to 16 Nov 1.2, with a line at 1 where spend stays flat. Tokens up 44x, spend up 7.6x, price per token down 83%.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "OpenRouter",
+          "pay": false,
+          "themes": [
+            "AI",
+            "Markets"
+          ],
+          "emailHead": "Cheaper AI, flat AI budgets",
+          "emailTeaser": "Usage keeps soaring; since October, spending hasn't",
+          "imageW": 1280,
+          "imageH": 1986
+        },
+        {
+          "category": "Coding and AI",
+          "tag": "Opinion",
+          "title": "Wired: AI coding tools mean the end of programmers, not programming",
+          "url": "https://www.wired.com/story/goodbye-world-the-end-of-programmers/",
+          "url2": "",
+          "points": [
+            "Writer and programmer Sheon Han says AI coding tools went from eager helpers in early 2025 to far better than him at his job within a year.",
+            "His view: programming survives, but programmers become operators who prompt agents, so coding stops being a craft and loses its flow. He says his own coding skill has slipped fast.",
+            "He now builds more software than ever with Claude Code, enough to worry about compulsive use, and has quit his programming job to finish a book."
+          ],
+          "numbers": [
+            [
+              "90%+",
+              "of code at some firms written with AI, per reports"
+            ]
+          ],
+          "why": "If coding shifts from making to supervising, the skills employers pay for change: specifying, reviewing and judging output matter more than syntax, and juniors lose the practice that used to build expertise.",
+          "other": "Simon Willison, whom Han quotes, likens AI to a table saw that carpenters still use. Many engineers argue the craft simply moves up a level, as it did from assembly to Python.",
+          "also": [],
+          "image": "/figs/2026-11-27-6.jpg",
+          "imageAlt": "Two sides on AI and programmers. The worry: coders become operators, flow fades, skills decline. The defence: a table saw still needs a carpenter, programming has always climbed abstraction. Figure: over 90% of code at some firms written with AI.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Wired",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Jobs & careers"
+          ],
+          "emailHead": "Coders become AI operators",
+          "emailTeaser": "A programmer-writer says AI ended coding as a craft",
+          "imageW": 1280,
+          "imageH": 1710
+        },
+        {
+          "category": "Retirement",
+          "tag": "Opinion",
+          "title": "WSJ essay: what is the right age to retire? Experts say never",
+          "url": "https://www.wsj.com/personal-finance/retirement/best-age-to-retire-b48426c9",
+          "url2": "",
+          "points": [
+            "Humorist Joel Stein asks when people should retire, noting that the US keeps electing very old politicians.",
+            "Stanford longevity researcher Laura Carstensen says age is a poor guide to ability and advises never retiring. She backs raising the Social Security age and means-testing benefits.",
+            "Economist Alicia Munnell, who retired at 82, says she regrets it and can't understand France's protests against a later retirement age."
+          ],
+          "numbers": [
+            [
+              "$100k",
+              "a year in Social Security for Carstensen's household"
+            ]
+          ],
+          "why": "Working longer is quietly becoming the default plan. It is worth modelling several retirement ages and treating part-time work in later life as a real income source, not a fallback.",
+          "other": "Advice from people with long desk-based careers doesn't fit everyone: manual workers, carers and people in poor health often can't work longer, which is why raising the retirement age stays contested.",
+          "also": [],
+          "image": "/figs/2026-11-27-7.jpg",
+          "imageAlt": "Classic explainer: the right age to retire? Experts say never. Carstensen: age is a poor guide to ability, raise the Social Security age and means-test it. Munnell retired at 82 and regrets it.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Wall Street Journal",
+          "pay": true,
+          "themes": [
+            "Personal finance",
+            "Jobs & careers"
+          ],
+          "emailHead": "The best retirement age? Never",
+          "emailTeaser": "Longevity experts tell a humorist to keep working",
+          "imageW": 1280,
+          "imageH": 1722
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Code writes itself now.",
+    "b": "Security, safety and pensions don't.",
+    "line": "AI now does the proving, coding and pricing, while the slow human jobs of guarding data, checking products and funding long lives fall further behind."
+  },
+  "cover": "/figs/2026-11-27-cover.jpg",
+  "coverAlt": "Maths eyes the locks. HDFC hugs its keys. Guardrails nap, tokens 44x. Coders prompt. Work till you freeze?",
+  "stressIndex": {
+    "score": 55,
+    "band": "Severe",
+    "asOf": "2026-11-25"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25884.5,
+        "asOf": "2026-11-26",
+        "prev": 25819.25,
+        "week": 25514.3008,
+        "spark": [
+          22721.9492,
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996,
+          25349.6504,
+          25819.25,
+          25884.5
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7182.7798,
+        "asOf": "2026-11-25",
+        "prev": 7201.0898,
+        "week": 7323.6299,
+        "spark": [
+          7744.0601,
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901,
+          7237.1699,
+          7201.0898,
+          7182.7798
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.848,
+        "asOf": "2026-11-25",
+        "prev": 4.904,
+        "week": 5.066,
+        "spark": [
+          5.089,
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912,
+          4.918,
+          4.904,
+          4.848
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 91.26,
+        "asOf": "2026-11-26",
+        "prev": 94.61,
+        "week": 91.98,
+        "spark": [
+          109.86,
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98,
+          92.57,
+          89.37,
+          91.4,
+          94.61,
+          91.26
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3596.8999,
+        "asOf": "2026-11-26",
+        "prev": 3535.8,
+        "week": 3685.5,
+        "spark": [
+          4181.1001,
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5,
+          3515.3999,
+          3651.3999,
+          3561.8999,
+          3535.8,
+          3596.8999
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 92.8066,
+        "asOf": "2026-11-25",
+        "prev": 92.9152,
+        "week": 93.4746,
+        "spark": [
+          94.9936,
+          94.7164,
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295,
+          92.67,
+          92.673,
+          92.9152,
+          92.8066
+        ]
+      }
+    ]
+  }
+}

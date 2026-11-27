@@ -26,6 +26,9 @@ export type Edition = {
 };
 
 const PUBLISHERS: Record<string, string> = {
+  "bankofengland.co.uk": "Bank of England",
+  "scottaaronson.blog": "Shtetl-Optimized (Scott Aaronson)",
+  "openrouter.ai": "OpenRouter",
   "bfsi.eletsonline.com": "Elets BFSI",
   "semafor.com": "Semafor",
   "nar.realtor": "National Association of Realtors",
