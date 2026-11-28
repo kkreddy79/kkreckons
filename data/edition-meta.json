@@ -748,5 +748,13 @@
       "band": "Severe",
       "asOf": "2026-11-25"
     }
+  },
+  "2026-11-28": {
+    "artifact": "https://claude.ai/artifact/SrMSGDoxNDtaZMcXsQVftB",
+    "stressIndex": {
+      "score": 50,
+      "band": "Severe",
+      "asOf": "2026-11-27"
+    }
   }
 }

@@ -1,5 +1,68 @@
 [
   {
+    "date": "2026-11-28",
+    "slice": "Bots bargain. Gold sheds 30%. Benefits blink, WhatsApp shows 5 holes. Labs eye the codes. Patch or sink!",
+    "artifact": "https://claude.ai/artifact/SrMSGDoxNDtaZMcXsQVftB",
+    "readingMinutes": 5,
+    "image": "/figs/2026-11-28-1.jpg",
+    "cover": "/figs/2026-11-28-cover.jpg",
+    "coverAlt": "Bots bargain. Gold sheds 30%. Benefits blink, WhatsApp shows 5 holes. Labs eye the codes. Patch or sink!",
+    "stories": [
+      {
+        "section": "Pick of the day",
+        "title": "AI agents like Meta's Muse threaten banks, retailers and travel sites",
+        "category": "AI agents",
+        "tag": "",
+        "url": "https://www.ft.com/content/c9de05b8-0916-436a-87fc-40337067b0d2?syn-25a6b1a6=1",
+        "src": "Financial Times",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Personal finance"
+        ]
+      },
+      {
+        "section": "India edition",
+        "title": "RBI watches gold loans closely as bullion falls 30% from its peak",
+        "category": "Gold loans",
+        "tag": "",
+        "url": "https://m.economictimes.com/news/economy/finance/rbi-steps-up-scrutiny-of-gold-loans-as-bullion-price-slump-raises-collateral-risks/articleshow/136241133.cms",
+        "src": "The Economic Times",
+        "pay": false,
+        "themes": [
+          "Banking",
+          "India"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "UK benefits outage and WhatsApp flaws widen a month of cyber scares",
+        "category": "Cyber security",
+        "tag": "",
+        "url": "https://www.ft.com/content/6ab1172b-4f27-49f5-ad53-b384df82da77?syn-25a6b1a6=1",
+        "src": "Financial Times and Inc42",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Geopolitics"
+        ]
+      },
+      {
+        "section": "World edition",
+        "title": "AI maths leaps stir fears for encryption and for unreleased models",
+        "category": "Encryption",
+        "tag": "",
+        "url": "https://www.ft.com/content/1a29e62d-b18d-4bad-937d-34f3eae0587a?syn-25a6b1a6=1",
+        "src": "Financial Times, Nature and Axios",
+        "pay": true,
+        "themes": [
+          "AI",
+          "Banking"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-27",
     "slice": "Maths eyes the locks. HDFC hugs its keys. Guardrails nap, tokens 44x. Coders prompt. Work till you freeze?",
     "artifact": "https://claude.ai/artifact/1MqvToBaekMBNDUguYBP9Z",

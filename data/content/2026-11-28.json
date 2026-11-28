@@ -1,0 +1,453 @@
+{
+  "date": "2026-11-28",
+  "slice": "Bots bargain. Gold sheds 30%. Benefits blink, WhatsApp shows 5 holes. Labs eye the codes. Patch or sink!",
+  "artifact": "https://claude.ai/artifact/SrMSGDoxNDtaZMcXsQVftB",
+  "readingMinutes": 5,
+  "callouts": [
+    {
+      "num": "$247bn",
+      "text": "India's gold-loan market faces collateral stress as gold falls 30% from its January peak.",
+      "url": "https://m.economictimes.com/news/economy/finance/rbi-steps-up-scrutiny-of-gold-loans-as-bullion-price-slump-raises-collateral-risks/articleshow/136241133.cms"
+    },
+    {
+      "num": "8%",
+      "text": "EU banks with a roadmap to quantum-resistant encryption, an EBA survey found.",
+      "url": "https://www.ft.com/content/1a29e62d-b18d-4bad-937d-34f3eae0587a?syn-25a6b1a6=1"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Pick of the day",
+      "stories": [
+        {
+          "category": "AI agents",
+          "tag": "",
+          "title": "AI agents like Meta's Muse threaten banks, retailers and travel sites",
+          "url": "https://www.ft.com/content/c9de05b8-0916-436a-87fc-40337067b0d2?syn-25a6b1a6=1",
+          "url2": "",
+          "points": [
+            "Personal AI agents such as Meta's Muse now compare, switch and buy on users' behalf. One New York user says Muse found him cheaper car cover with the same protection in under five minutes, saving $3,500 a year, the FT reports.",
+            "That threatens businesses that profit from inertia or sit in the middle: banks holding idle deposits, energy suppliers, estate agents and booking sites. Walmart and Sainsbury's are letting agents in; Amazon and United Airlines are keeping outside agents out.",
+            "Use is still tiny, and trust is the catch: the more of your data an agent holds, the more useful it gets, and the better it could learn to steer what you buy."
+          ],
+          "numbers": [
+            [
+              "$47bn",
+              "Yearly cost to JPMorgan, BofA and Wells if their idle deposits had to earn interest"
+            ]
+          ],
+          "why": "If agents make switching effortless, the loyalty tax people quietly pay on savings, insurance and power bills shrinks, and profits built on inertia have to be earned again.",
+          "other": "Agents can be paid to push, just like comparison sites. If the company behind your agent earns commissions or ad money, the cheapest deal may not be the one it shows you, and you will have handed it your data too.",
+          "also": [],
+          "image": "/figs/2026-11-28-1.jpg",
+          "imageAlt": "Picture tiles: Your AI agent is shopping around. $3,500 a year saved by one Muse user on car insurance. Tiles: banking deposits at risk ($47bn), retail split between Walmart and Amazon, travel sites bypassed, utilities switching.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Personal finance"
+          ],
+          "emailHead": "Your bot shops around now",
+          "emailTeaser": "AI agents switch deals for you; inertia-fed firms feel it",
+          "imageW": 1280,
+          "imageH": 1943
+        }
+      ]
+    },
+    {
+      "name": "India edition",
+      "stories": [
+        {
+          "category": "Gold loans",
+          "tag": "",
+          "title": "RBI watches gold loans closely as bullion falls 30% from its peak",
+          "url": "https://m.economictimes.com/news/economy/finance/rbi-steps-up-scrutiny-of-gold-loans-as-bullion-price-slump-raises-collateral-risks/articleshow/136241133.cms",
+          "url2": "",
+          "points": [
+            "RBI supervisors are reviewing early stress in India's ₹23 trillion ($247bn) gold-loan market and checking that lenders stay within the 85% loan-to-value cap; no breach has been found, people familiar told Reuters.",
+            "Gold is down 30% from its January peak, so pledged gold covers less. Borrowers may have to add gold or repay part of the loan, and a rule ending deferred interest payments has added to defaults.",
+            "IIFL Finance's gold bad loans rose to 0.9% from 0.6% in a quarter; Bajaj Finance's stressed share rose to 2.02% from 1.87%. Gold loans are about 2.5% of bank credit."
+          ],
+          "numbers": [
+            [
+              "30%",
+              "Gold's fall since its January peak"
+            ],
+            [
+              "85%",
+              "Most a lender may lend against the gold's value"
+            ]
+          ],
+          "why": "Gold loans are the go-to credit for small businesses and households with nothing else to pledge. A falling price turns a safe-looking loan into a top-up demand on the people least able to meet it.",
+          "other": "The cushions are real: lending is capped at 85% of value, the RBI found no breaches, stressed ratios are still low and the segment is a small slice of bank credit. A price rebound would ease the pressure quickly.",
+          "also": [],
+          "image": "/figs/2026-11-28-2.jpg",
+          "imageAlt": "Diagram: When gold falls, the loan gets thinner. Gold drops 30%, collateral shrinks against the 85% cap, borrowers top up or repay, stress shows at IIFL (0.6% to 0.9%) and Bajaj Finance (1.87% to 2.02%).",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "The Economic Times",
+          "pay": false,
+          "themes": [
+            "Banking",
+            "India"
+          ],
+          "emailHead": "Gold slides, RBI watches loans",
+          "emailTeaser": "A 30% gold fall leaves pledged loans thinner",
+          "cite": "India's gold-lending industry grew almost fivefold in five years to 23 trillion rupees ($247 billion), according to a Motilal Oswal report on 27 November 2026.",
+          "imageW": 1280,
+          "imageH": 1957
+        }
+      ]
+    },
+    {
+      "name": "World edition",
+      "stories": [
+        {
+          "category": "Cyber security",
+          "tag": "",
+          "title": "UK benefits outage and WhatsApp flaws widen a month of cyber scares",
+          "url": "https://www.ft.com/content/6ab1172b-4f27-49f5-ad53-b384df82da77?syn-25a6b1a6=1",
+          "url2": "https://inc42.com/buzz/cert-in-flags-five-cybersecurity-vulnerabilities-in-whatsapp-warns-of-data-exposure/",
+          "points": [
+            "Britain's DWP took much of its benefits system offline on Friday without ruling out an attack, the FT reports, capping a month of incidents at a US Treasury unit, Fifa and the CIA. Outages at Microsoft and the US aviation regulator came from patching.",
+            "In India, CERT-In issued a 'High' severity advisory on 26 November over five WhatsApp flaws on Android, iOS and desktop: a crafted message or link could delete files, leak data or run malicious code, Inc42 reports.",
+            "WhatsApp says four show no sign of abuse; one that exposes IP details may have been used with spam. CERT-In's advice: update the app."
+          ],
+          "numbers": [
+            [
+              "5",
+              "WhatsApp flaws in CERT-In's High-severity alert"
+            ]
+          ],
+          "why": "From welfare payments to the chat app on nearly every Indian phone, everyday systems are only as safe as their last patch. AI speeds up the hunt for flaws for attackers and defenders alike.",
+          "other": "Not every outage is an attack, and patching can itself cause outages. Most of the WhatsApp flaws show no sign of abuse; a steady stream of bugs found, disclosed and fixed is the system working, not failing.",
+          "also": [],
+          "image": "/figs/2026-11-28-3.jpg",
+          "imageAlt": "Timeline: A month of outages and hacks. Microsoft and FAA patching outages, a US Treasury unit breach, Fifa and CIA breaches, CERT-In's 26 November alert on five WhatsApp flaws, and the UK DWP taking benefits offline on Friday 27 November.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times and Inc42",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Geopolitics"
+          ],
+          "emailHead": "Outages and WhatsApp flaws pile up",
+          "emailTeaser": "UK benefits go dark; CERT-In flags five WhatsApp holes",
+          "imageW": 1280,
+          "imageH": 2039
+        },
+        {
+          "category": "Encryption",
+          "tag": "",
+          "title": "AI maths leaps stir fears for encryption and for unreleased models",
+          "url": "https://www.ft.com/content/1a29e62d-b18d-4bad-937d-34f3eae0587a?syn-25a6b1a6=1",
+          "url2": "https://www.nature.com/articles/d41586-026-03875-6",
+          "points": [
+            "AI's maths run, from a Claude-assisted Riemann proof on 20 November to rival OpenAI and Anthropic proofs near P vs NP, has experts asking if encryption's hard maths could fall. Scott Aaronson says labs hold 'bombshells', citing unnamed sources, report Axios and Nature.",
+            "A method fast on paper may still be useless in practice, Nature notes; an FT editorial urges faster security upgrades, not panic. Banks lag: just 8% of EU banks had a quantum-safe roadmap, the FT finds.",
+            "Axios reports Anthropic and OpenAI staff fear unreleased models are too powerful to release safely."
+          ],
+          "numbers": [
+            [
+              "55 yrs",
+              "How long P vs NP has stood unsolved"
+            ]
+          ],
+          "why": "Encryption guards payments, logins and digital signatures. If AI can shortcut its maths, the danger is silent theft, and if labs keep findings private, the public may not know its locks are open.",
+          "other": "Nothing is confirmed. No AI has publicly broken modern encryption, the claims rest on unnamed sources, most scientists expect P not to equal NP, and newer lattice-based ciphers exist. The FT's editors call the doom talk superstition; the real gap is how fast banks and governments upgrade.",
+          "also": [
+            {
+              "title": "AI's assault on the impossible",
+              "url": "https://www.axios.com/2026/11/28/ai-math-breakthroughs-encryption-p-vs-np"
+            },
+            {
+              "title": "AI and the decryption nightmare (The FT View)",
+              "url": "https://www.ft.com/content/4114d053-de5e-46a5-8b46-758726abdcb7?syn-25a6b1a6=1"
+            },
+            {
+              "title": "AI employees sound alarm: models too powerful to ever release",
+              "url": "https://www.axios.com/2026/11/24/anthropic-openai-unreleased-ai-safety-risks"
+            }
+          ],
+          "image": "/figs/2026-11-28-4.jpg",
+          "imageAlt": "Classic explainer: Can AI pick the lock? P vs NP unsolved for 55 years. Worry: RSA rests on hard factoring, labs rumoured to hold breakthroughs, staff fear unreleased models. Response: fast on paper may be impractical, only 8% of EU banks ready, upgrade not panic.",
+          "imageCredit": "Original graphic: KKReckons",
+          "src": "Financial Times, Nature and Axios",
+          "pay": true,
+          "themes": [
+            "AI",
+            "Banking"
+          ],
+          "emailHead": "Can AI pick the lock?",
+          "emailTeaser": "Rumoured AI maths rattles encryption; insiders fret on safety",
+          "imageW": 1280,
+          "imageH": 1710
+        }
+      ]
+    }
+  ],
+  "reading": [],
+  "takeaway": {
+    "a": "Shopping bots sprint.",
+    "b": "Upgrades crawl.",
+    "line": "AI agents save shoppers money, while new maths and fresh flaws test how quickly banks, governments and apps can harden what they run."
+  },
+  "cover": "/figs/2026-11-28-cover.jpg",
+  "coverAlt": "Bots bargain. Gold sheds 30%. Benefits blink, WhatsApp shows 5 holes. Labs eye the codes. Patch or sink!",
+  "stressIndex": {
+    "score": 50,
+    "band": "Severe",
+    "asOf": "2026-11-27"
+  },
+  "markets": {
+    "source": "Yahoo Finance daily closes",
+    "assets": [
+      {
+        "id": "nifty",
+        "name": "Nifty 50",
+        "unit": "index",
+        "close": 25607.1992,
+        "asOf": "2026-11-27",
+        "prev": 25884.5,
+        "week": 25800.5996,
+        "spark": [
+          22622.6992,
+          22997.3496,
+          23146.1504,
+          22888.9492,
+          22811.3496,
+          22687.6504,
+          22600,
+          22753.1992,
+          22749.75,
+          22698.8496,
+          22936.75,
+          23053.0996,
+          23440.8008,
+          23810.8496,
+          23960.5996,
+          24536.5996,
+          25030.3496,
+          25044.6504,
+          25255.0508,
+          25299.3496,
+          25144.3008,
+          25291.0996,
+          25387.4004,
+          25227.9492,
+          25514.3008,
+          25800.5996,
+          25349.6504,
+          25819.25,
+          25884.5,
+          25607.1992
+        ]
+      },
+      {
+        "id": "spx",
+        "name": "S&P 500",
+        "unit": "index",
+        "close": 7297.4902,
+        "asOf": "2026-11-27",
+        "prev": 7182.7798,
+        "week": 6910.3901,
+        "spark": [
+          7659.4399,
+          7690.73,
+          7712.5698,
+          7757.1699,
+          7663.4302,
+          7623.6802,
+          7676.77,
+          7722.6001,
+          7743.98,
+          7720.3901,
+          7580.0698,
+          7541.3999,
+          7568.9199,
+          7688.6201,
+          7353.73,
+          7376.8599,
+          7549.9399,
+          7520.9302,
+          7619.3799,
+          7592.3999,
+          7561.6699,
+          7416.5898,
+          7340.5298,
+          7323.6299,
+          7175.8301,
+          6910.3901,
+          7237.1699,
+          7201.0898,
+          7182.7798,
+          7297.4902
+        ]
+      },
+      {
+        "id": "us10y",
+        "name": "US 10-year yield",
+        "unit": "yield",
+        "close": 4.936,
+        "asOf": "2026-11-27",
+        "prev": 4.848,
+        "week": 4.912,
+        "spark": [
+          5.098,
+          5.136,
+          5.117,
+          5.146,
+          4.953,
+          4.988,
+          4.986,
+          4.993,
+          5.045,
+          4.989,
+          4.929,
+          4.894,
+          4.952,
+          4.894,
+          4.837,
+          4.859,
+          4.864,
+          4.983,
+          4.998,
+          5.103,
+          5.154,
+          5.121,
+          5.103,
+          5.066,
+          5.052,
+          4.912,
+          4.918,
+          4.904,
+          4.848,
+          4.936
+        ]
+      },
+      {
+        "id": "brent",
+        "name": "Brent crude",
+        "unit": "usd",
+        "close": 95.44,
+        "asOf": "2026-11-27",
+        "prev": 91.26,
+        "week": 92.57,
+        "spark": [
+          109.55,
+          108.79,
+          108.82,
+          113.17,
+          116.72,
+          115.81,
+          113.88,
+          115.32,
+          114.88,
+          117.64,
+          104.77,
+          103.6,
+          94.62,
+          98.29,
+          98.32,
+          92.57,
+          91.49,
+          92.76,
+          95.82,
+          95.84,
+          92.44,
+          93.14,
+          91.95,
+          91.98,
+          92.57,
+          89.37,
+          91.4,
+          94.61,
+          91.26,
+          95.44
+        ]
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "unit": "usd",
+        "close": 3639.6001,
+        "asOf": "2026-11-27",
+        "prev": 3596.8999,
+        "week": 3515.3999,
+        "spark": [
+          4160.1001,
+          4142.6001,
+          4150,
+          4060.3999,
+          4007.8999,
+          4038.3999,
+          4074.6001,
+          4051.6001,
+          4031.3999,
+          3898.8999,
+          3969.6001,
+          3940.3999,
+          4073,
+          4113.5,
+          4074.8999,
+          4114.5,
+          4030.2,
+          4000.5,
+          3885.3,
+          3886.3,
+          3853,
+          3864.2,
+          3741.8999,
+          3685.5,
+          3515.3999,
+          3651.3999,
+          3561.8999,
+          3535.8,
+          3596.8999,
+          3639.6001
+        ]
+      },
+      {
+        "id": "usdinr",
+        "name": "USD/INR",
+        "unit": "fx",
+        "close": 92.4499,
+        "asOf": "2026-11-27",
+        "prev": 92.2376,
+        "week": 93.295,
+        "spark": [
+          94.3123,
+          94.7113,
+          94.938,
+          95.187,
+          95.1778,
+          95.2095,
+          95.1524,
+          94.95,
+          94.905,
+          94.7254,
+          94.7484,
+          94.5154,
+          94.4589,
+          93.903,
+          93.9468,
+          93.925,
+          93.6984,
+          94.0338,
+          94.24,
+          94.238,
+          93.9631,
+          93.4746,
+          93.4653,
+          93.295,
+          92.67,
+          92.673,
+          92.9152,
+          92.8066,
+          92.2376,
+          92.4499
+        ]
+      }
+    ]
+  }
+}
